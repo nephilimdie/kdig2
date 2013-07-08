@@ -1,0 +1,3 @@
+kdig_archaeological_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: KdigArchaeologicalBundle:Default:index }
