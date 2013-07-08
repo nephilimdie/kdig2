@@ -389,55 +389,6 @@
         ]
     },
     {
-        "name": "symfony/icu",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
-        "target-dir": "Symfony/Component/Icu",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Icu.git",
-            "reference": "v1.0.0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Icu/zipball/v1.0.0",
-            "reference": "v1.0.0",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "symfony/intl": ">=2.3,<3.0"
-        },
-        "time": "2013-06-03 18:32:07",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Icu\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Bernhard Schussek",
-                "email": "bschussek@gmail.com"
-            }
-        ],
-        "description": "Contains an excerpt of the ICU data and classes to load it.",
-        "homepage": "http://symfony.com",
-        "keywords": [
-            "icu",
-            "intl"
-        ]
-    },
-    {
         "name": "doctrine/doctrine-bundle",
         "version": "v1.2.0",
         "version_normalized": "1.2.0.0",
@@ -1466,128 +1417,6 @@
         ]
     },
     {
-        "name": "knplabs/knp-menu",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/KnpLabs/KnpMenu.git",
-            "reference": "7baf621fb77867e49daca7dd72b443ea232cb5e1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/7baf621fb77867e49daca7dd72b443ea232cb5e1",
-            "reference": "7baf621fb77867e49daca7dd72b443ea232cb5e1",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "pimple/pimple": "1.0.*",
-            "silex/silex": "1.0.*",
-            "twig/twig": ">=1.2,<2.0-dev"
-        },
-        "suggest": {
-            "pimple/pimple": "for the built-in implementations of the menu provider and renderer provider",
-            "silex/silex": "for the integration with your silex application",
-            "twig/twig": "for the TwigRenderer and the integration with your templates"
-        },
-        "time": "2013-06-24 00:02:29",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Knp\\Menu\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Christophe Coevoet",
-                "email": "stof@notk.org"
-            },
-            {
-                "name": "Knplabs",
-                "homepage": "http://knplabs.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://github.com/KnpLabs/KnpMenu/contributors"
-            }
-        ],
-        "description": "An object oriented menu library",
-        "homepage": "http://knplabs.com",
-        "keywords": [
-            "menu",
-            "tree"
-        ]
-    },
-    {
-        "name": "knplabs/knp-menu-bundle",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Knp/Bundle/MenuBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-            "reference": "16e6672dccba58c868b61281e2ec04b7882d3ca4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/16e6672dccba58c868b61281e2ec04b7882d3ca4",
-            "reference": "16e6672dccba58c868b61281e2ec04b7882d3ca4",
-            "shasum": ""
-        },
-        "require": {
-            "knplabs/knp-menu": "~2.0.0-beta1",
-            "symfony/framework-bundle": "~2.0"
-        },
-        "time": "2013-07-05 20:55:59",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Knp\\Bundle\\MenuBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Christophe Coevoet",
-                "email": "stof@notk.org"
-            },
-            {
-                "name": "Knplabs",
-                "homepage": "http://knplabs.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
-            }
-        ],
-        "description": "This bundle provides an integration of the KnpMenu library",
-        "keywords": [
-            "menu"
-        ]
-    },
-    {
         "name": "craue/formflow-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1605,8 +1434,8 @@
         },
         "require": {
             "php": ">=5.3.2",
-            "symfony/form": ">=2.1,<3.0",
-            "symfony/framework-bundle": ">=2.1,<3.0"
+            "symfony/form": "~2.1",
+            "symfony/framework-bundle": "~2.1"
         },
         "require-dev": {
             "doctrine/common": ">=2.3,<3.0",
@@ -2897,6 +2726,637 @@
         "keywords": [
             "block",
             "sonata"
+        ]
+    },
+    {
+        "name": "symfony/icu",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "target-dir": "Symfony/Component/Icu",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Icu.git",
+            "reference": "v1.2.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Icu/zipball/v1.2.0",
+            "reference": "v1.2.0",
+            "shasum": ""
+        },
+        "require": {
+            "lib-icu": ">=4.4",
+            "php": ">=5.3.3",
+            "symfony/intl": ">=2.3,<3.0"
+        },
+        "time": "2013-06-03 18:32:58",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Icu\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@gmail.com"
+            }
+        ],
+        "description": "Contains an excerpt of the ICU data and classes to load it.",
+        "homepage": "http://symfony.com",
+        "keywords": [
+            "icu",
+            "intl"
+        ]
+    },
+    {
+        "name": "leafo/lessphp",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/leafo/lessphp.git",
+            "reference": "ff86f2941c3f3d67d56acad2f8902ca57c73b359"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/leafo/lessphp/zipball/ff86f2941c3f3d67d56acad2f8902ca57c73b359",
+            "reference": "ff86f2941c3f3d67d56acad2f8902ca57c73b359",
+            "shasum": ""
+        },
+        "time": "2013-05-22 17:52:29",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.3-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "lessc.inc.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Leaf Corcoran",
+                "email": "leafot@gmail.com",
+                "homepage": "http://leafo.net"
+            }
+        ],
+        "description": "lessphp is a compiler for LESS written in PHP.",
+        "homepage": "http://leafo.net/lessphp/"
+    },
+    {
+        "name": "knplabs/knp-menu",
+        "version": "v1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "http://github.com/KnpLabs/KnpMenu.git",
+            "reference": "v1.1.2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/KnpLabs/KnpMenu/zipball/v1.1.2",
+            "reference": "v1.1.2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "pimple/pimple": "*",
+            "silex/silex": "1.0.*",
+            "twig/twig": ">=1.2,<2.0-dev"
+        },
+        "suggest": {
+            "pimple/pimple": "for the built-in implementations of the menu provider and renderer provider",
+            "silex/silex": "for the integration with your silex application",
+            "twig/twig": "for the TwigRenderer and the integration with your templates"
+        },
+        "time": "2012-06-10 09:20:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Knp\\Menu\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christophe Coevoet",
+                "email": "stof@notk.org"
+            },
+            {
+                "name": "Knplabs",
+                "homepage": "http://knplabs.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://github.com/KnpLabs/KnpMenu/contributors"
+            }
+        ],
+        "description": "An object oriented menu library",
+        "homepage": "http://knplabs.com",
+        "keywords": [
+            "menu",
+            "tree"
+        ]
+    },
+    {
+        "name": "knplabs/knp-menu-bundle",
+        "version": "v1.1.2",
+        "version_normalized": "1.1.2.0",
+        "target-dir": "Knp/Bundle/MenuBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
+            "reference": "v1.1.2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/v1.1.2",
+            "reference": "v1.1.2",
+            "shasum": ""
+        },
+        "require": {
+            "knplabs/knp-menu": ">=1.1,<2.0",
+            "symfony/framework-bundle": ">=2.0,<3.0"
+        },
+        "time": "2013-05-25 10:20:03",
+        "type": "symfony-bundle",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Knp\\Bundle\\MenuBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christophe Coevoet",
+                "email": "stof@notk.org"
+            },
+            {
+                "name": "Knplabs",
+                "homepage": "http://knplabs.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
+            }
+        ],
+        "description": "This bundle provides an integration of the KnpMenu library",
+        "keywords": [
+            "menu"
+        ]
+    },
+    {
+        "name": "nikic/php-parser",
+        "version": "v0.9.1",
+        "version_normalized": "0.9.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nikic/PHP-Parser",
+            "reference": "v0.9.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/nikic/PHP-Parser/archive/v0.9.1.zip",
+            "reference": "v0.9.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "time": "2012-04-23 15:52:11",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPParser": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD"
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov"
+            }
+        ],
+        "description": "A PHP parser written in PHP",
+        "keywords": [
+            "parser",
+            "php"
+        ]
+    },
+    {
+        "name": "jms/translation-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "JMS/TranslationBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/schmittjoh/JMSTranslationBundle.git",
+            "reference": "5918bccddd1f8509390dd89b1c83885db5fc3721"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/5918bccddd1f8509390dd89b1c83885db5fc3721",
+            "reference": "5918bccddd1f8509390dd89b1c83885db5fc3721",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "0.9.1",
+            "symfony/console": "*",
+            "symfony/framework-bundle": "~2.1"
+        },
+        "conflict": {
+            "twig/twig": "1.10.2"
+        },
+        "require-dev": {
+            "jms/di-extra-bundle": ">=1.1",
+            "sensio/framework-extra-bundle": "*",
+            "symfony/browser-kit": "*",
+            "symfony/class-loader": "*",
+            "symfony/css-selector": "*",
+            "symfony/finder": "*",
+            "symfony/form": "*",
+            "symfony/process": "*",
+            "symfony/security": "*",
+            "symfony/twig-bundle": "*",
+            "symfony/validator": "*",
+            "symfony/yaml": "*"
+        },
+        "time": "2013-06-21 13:04:11",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "JMS\\TranslationBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache2"
+        ],
+        "authors": [
+            {
+                "name": "Johannes M. Schmitt",
+                "email": "schmittjoh@gmail.com",
+                "homepage": "http://jmsyst.com",
+                "role": "Developer of wrapped JMSSerializerBundle"
+            }
+        ],
+        "description": "Puts the Symfony2 Translation Component on steroids",
+        "homepage": "http://jmsyst.com/bundles/JMSTranslationBundle",
+        "keywords": [
+            "extract",
+            "extraction",
+            "i18n",
+            "interface",
+            "multilanguage",
+            "translation",
+            "ui",
+            "webinterface"
+        ]
+    },
+    {
+        "name": "sonata-project/exporter",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sonata-project/exporter.git",
+            "reference": "1.3.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sonata-project/exporter/zipball/1.3.0",
+            "reference": "1.3.0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "php": ">=5.3.0",
+            "symfony/property-access": ">=2.2, <3.0.0-dev",
+            "symfony/routing": "*"
+        },
+        "suggest": {
+            "ext-curl": "*",
+            "symfony/routing": "*"
+        },
+        "time": "2013-06-06 20:59:26",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Exporter": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Rabaix",
+                "email": "thomas.rabaix@gmail.com",
+                "homepage": "http://sonata-project.org/"
+            }
+        ],
+        "description": "Lightweight Exporter library",
+        "homepage": "https://github.com/sonata-project/Exporter",
+        "keywords": [
+            "client",
+            "csv",
+            "data",
+            "export",
+            "xls"
+        ]
+    },
+    {
+        "name": "sonata-project/jquery-bundle",
+        "version": "1.8.3",
+        "version_normalized": "1.8.3.0",
+        "target-dir": "Sonata/jQueryBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sonata-project/SonatajQueryBundle.git",
+            "reference": "1.8.3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sonata-project/SonatajQueryBundle/zipball/1.8.3",
+            "reference": "1.8.3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/framework-bundle": "2.*"
+        },
+        "time": "2013-03-01 17:24:02",
+        "type": "symfony-bundle",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Sonata\\jQueryBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Rabaix",
+                "email": "thomas.rabaix@sonata-project.org",
+                "homepage": "http://sonata-project.org"
+            },
+            {
+                "name": "Sonata Community",
+                "homepage": "https://github.com/sonata-project/SonatajQueryBundle/contributors"
+            }
+        ],
+        "description": "Symfony SonatajQueryBundle",
+        "homepage": "http://sonata-project.org/bundles/jquery",
+        "keywords": [
+            "jquery",
+            "sonata"
+        ]
+    },
+    {
+        "name": "sonata-project/admin-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Sonata/AdminBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sonata-project/SonataAdminBundle.git",
+            "reference": "e99449c2f2c4cb41e710c01c0467aa13cd34d3b6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/e99449c2f2c4cb41e710c01c0467aa13cd34d3b6",
+            "reference": "e99449c2f2c4cb41e710c01c0467aa13cd34d3b6",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": "~2.2",
+            "knplabs/knp-menu-bundle": "~1.1",
+            "sonata-project/block-bundle": "~2.2,>=2.2.1",
+            "sonata-project/exporter": "1.*",
+            "sonata-project/jquery-bundle": "1.8.*",
+            "symfony/config": "~2.2",
+            "symfony/console": "~2.2",
+            "symfony/form": "~2.2",
+            "symfony/http-foundation": "~2.2",
+            "symfony/routing": "~2.2",
+            "symfony/security-bundle": "~2.2",
+            "symfony/twig-bridge": "~2.2",
+            "symfony/validator": "~2.2",
+            "twig/twig": "~1.12"
+        },
+        "require-dev": {
+            "jms/translation-bundle": "*@dev",
+            "sonata-project/intl-bundle": "~2.1"
+        },
+        "suggest": {
+            "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
+            "sonata-project/intl-bundle": "2.1.*"
+        },
+        "time": "2013-07-05 17:01:48",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Sonata\\AdminBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Rabaix",
+                "email": "thomas.rabaix@sonata-project.org",
+                "homepage": "http://sonata-project.org"
+            },
+            {
+                "name": "Sonata Community",
+                "homepage": "https://github.com/sonata-project/SonataAdminBundle/contributors"
+            }
+        ],
+        "description": "Symfony SonataAdminBundle",
+        "homepage": "http://sonata-project.org/bundles/admin",
+        "keywords": [
+            "Admin Generator",
+            "admin",
+            "bootstrap",
+            "sonata"
+        ]
+    },
+    {
+        "name": "sonata-project/doctrine-orm-admin-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Sonata/DoctrineORMAdminBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
+            "reference": "edb395a003715d51836edd6ca8a9729908ad9eec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/edb395a003715d51836edd6ca8a9729908ad9eec",
+            "reference": "edb395a003715d51836edd6ca8a9729908ad9eec",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/orm": "~2.3",
+            "sonata-project/admin-bundle": ">=2.2.2",
+            "symfony/symfony": ">=2.2,<2.4"
+        },
+        "time": "2013-06-24 21:39:11",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Sonata\\DoctrineORMAdminBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Rabaix",
+                "email": "thomas.rabaix@sonata-project.org",
+                "homepage": "http://sonata-project.org"
+            },
+            {
+                "name": "Sonata Community",
+                "homepage": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/contributors"
+            }
+        ],
+        "description": "Symfony Sonata / Integrate Doctrine ORM into the SonataAdminBundle",
+        "homepage": "http://sonata-project.org/bundles/admin",
+        "keywords": [
+            "Admin Generator",
+            "admin",
+            "bootstrap",
+            "generator",
+            "sonata"
+        ]
+    },
+    {
+        "name": "sonata-project/intl-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Sonata/IntlBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sonata-project/SonataIntlBundle.git",
+            "reference": "3ba6929274946df130709419b1e3bb0103deaa4a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sonata-project/SonataIntlBundle/zipball/3ba6929274946df130709419b1e3bb0103deaa4a",
+            "reference": "3ba6929274946df130709419b1e3bb0103deaa4a",
+            "shasum": ""
+        },
+        "require": {
+            "ext-intl": "*",
+            "symfony/dependency-injection": ">=2.2,<2.4-dev",
+            "symfony/http-kernel": ">=2.2,<2.4-dev",
+            "symfony/locale": ">=2.2,<2.4-dev",
+            "symfony/templating": ">=2.2,<2.4-dev",
+            "twig/twig": "*"
+        },
+        "time": "2013-06-23 13:42:29",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Sonata\\IntlBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Rabaix",
+                "email": "thomas.rabaix@sonata-project.org",
+                "homepage": "http://sonata-project.org"
+            },
+            {
+                "name": "Sonata Community",
+                "homepage": "https://github.com/sonata-project/SonataIntlBundle/contributors"
+            }
+        ],
+        "description": "Symfony SonataIntlBundle",
+        "homepage": "http://sonata-project.org/bundles/intl",
+        "keywords": [
+            "date",
+            "intl",
+            "number",
+            "sonata",
+            "time"
         ]
     }
 ]
