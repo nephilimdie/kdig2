@@ -1,0 +1,7 @@
+parameters:
+#    kdig_user.example.class: Kdig\UserBundle\Example
+
+services:
+#    kdig_user.example:
+#        class: %kdig_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

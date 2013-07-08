@@ -1,0 +1,5 @@
+jms_di_extra:
+    locations:
+        all_bundles: true
+#        bundles: [FooBundle, AcmeBlogBundle]
+        directories: ["%kernel.root_dir%/../src"]
