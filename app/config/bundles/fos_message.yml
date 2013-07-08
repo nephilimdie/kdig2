@@ -1,0 +1,2 @@
+fos_message:
+    db_driver: orm

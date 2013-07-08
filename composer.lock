@@ -85,10 +85,10 @@
                 "symfony/framework-bundle": "~2.1"
             },
             "require-dev": {
-                "doctrine/common": ">=2.3,<3.0",
-                "phpunit/phpunit": ">=3.7.10.0,<3.8",
-                "sensio/framework-extra-bundle": ">=2.1,<3.0",
-                "symfony/symfony": ">=2.1,<3.0"
+                "doctrine/common": "~2.3",
+                "phpunit/phpunit": "~3.7.10",
+                "sensio/framework-extra-bundle": "~2.1",
+                "symfony/symfony": "~2.1"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -124,12 +124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ddeboer/data-import.git",
-                "reference": "a450c0df6198e43f79f83bd4842d870e8bf4bdef"
+                "reference": "b9d20085eede4858630b293ebd35278471442cdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ddeboer/data-import/zipball/a450c0df6198e43f79f83bd4842d870e8bf4bdef",
-                "reference": "a450c0df6198e43f79f83bd4842d870e8bf4bdef",
+                "url": "https://api.github.com/repos/ddeboer/data-import/zipball/b9d20085eede4858630b293ebd35278471442cdb",
+                "reference": "b9d20085eede4858630b293ebd35278471442cdb",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +179,7 @@
                 "export",
                 "import"
             ],
-            "time": "2013-05-16 08:08:31"
+            "time": "2013-07-08 11:48:47"
         },
         {
             "name": "ddeboer/data-import-bundle",
@@ -1114,7 +1114,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1178,11 +1178,11 @@
                 "shasum": ""
             },
             "require": {
-                "jms/aop-bundle": ">=1.0,<2.0",
-                "jms/di-extra-bundle": ">=1.3,<2.0",
-                "jms/metadata": ">=1.0,<2.0",
-                "jms/parser-lib": ">=1.0,<2.0",
-                "symfony/framework-bundle": ">=2.1,<3.0",
+                "jms/aop-bundle": "~1.0",
+                "jms/di-extra-bundle": "~1.3",
+                "jms/metadata": "~1.0",
+                "jms/parser-lib": "~1.0",
+                "symfony/framework-bundle": "~2.1",
                 "symfony/security-bundle": "*"
             },
             "require-dev": {
@@ -1218,7 +1218,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1551,7 +1551,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
