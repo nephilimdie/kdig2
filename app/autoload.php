@@ -8,7 +8,7 @@ use Composer\Autoload\ClassLoader;
  */
 $loader = require __DIR__.'/../vendor/autoload.php';
 
-$loader-> add(array('Sonata' => __DIR__));
+//$loader-> add(array('Sonata' => __DIR__));
 
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 

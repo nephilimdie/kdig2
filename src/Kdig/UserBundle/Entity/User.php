@@ -16,10 +16,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Kdig\UserBundle\Repository\PermissionRepository;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
- * @ORM\Entity(repositoryClass="Kdig\UserBundle\Entity\Repository\UserRepository")
+ * @ ORM\Entity(repositoryClass="Kdig\UserBundle\Entity\Repository\UserRepository")
  * @ORM\HasLifecycleCallbacks() 
  * 
  * @category   Kdig_Entities

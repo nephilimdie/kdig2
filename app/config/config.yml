@@ -6,10 +6,11 @@ imports:
     - { resource: bundles/jms_di_extra.yml }
     - { resource: bundles/jms_security_extra.yml }
     - { resource: bundles/doctrine_extensions.yml }
+#    - { resource: bundles/fos_message.yml }
+    - { resource: bundles/fos_user.yml }
     - { resource: bundles/admin/sonata_block.yml }
     - { resource: bundles/admin/sonata_cache.yml }
     
-
 framework:
     #esi:             ~
     #translator:      { fallback: %locale% }
@@ -27,7 +28,7 @@ framework:
     trusted_proxies: ~
     session:         ~
     fragments:       ~
-    translator: ~
+    translator:      ~
 
 # Twig Configuration
 twig:
@@ -67,22 +68,22 @@ doctrine:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
         mappings:
-#            translatable:
-#                type: annotation
-#                alias: Gedmo
-#                prefix: Gedmo\Translatable\Entity
-#                # make sure vendor library location is correct
-#                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
-#            loggable:
-#                type: annotation
-#                alias: Gedmo
-#                prefix: Gedmo\Loggable\Entity
-#                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
-#            tree:
-#                type: annotation
-#                alias: Gedmo
-#                prefix: Gedmo\Tree\Entity
-#                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+            translatable:
+                type: annotation
+                alias: Gedmo
+                prefix: Gedmo\Translatable\Entity
+                # make sure vendor library location is correct
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+            loggable:
+                type: annotation
+                alias: Gedmo
+                prefix: Gedmo\Loggable\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+            tree:
+                type: annotation
+                alias: Gedmo
+                prefix: Gedmo\Tree\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
 
 # Swiftmailer Configuration
 swiftmailer:

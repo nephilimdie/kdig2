@@ -17,27 +17,27 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Kdig\TemplateBundle\KdigTemplateBundle(),
-            
+
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Craue\FormFlowBundle\CraueFormFlowBundle(),
-            
+
             new Ddeboer\DataImportBundle\DdeboerDataImportBundle(),
             new Problematic\AclManagerBundle\ProblematicAclManagerBundle(),
-            
+
             new FOS\UserBundle\FOSUserBundle(),
-            new FOS\MessageBundle\FOSMessageBundle(),
-            
+#            new FOS\MessageBundle\FOSMessageBundle(),
+
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
-            
+
             new APY\DataGridBundle\APYDataGridBundle(),
             new Kdig\UserBundle\KdigUserBundle(),
-            
+
             //admin
             new Sonata\CacheBundle\SonataCacheBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
