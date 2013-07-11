@@ -9,6 +9,7 @@ imports:
 #    - { resource: bundles/fos_message.yml }
     - { resource: bundles/fos_user.yml }
     - { resource: bundles/oneup_uploader.yml }
+    - { resource: bundles/liip_theme.yml }
     - { resource: bundles/admin/sonata_block.yml }
     - { resource: bundles/admin/sonata_cache.yml }
     - { resource: bundles/admin/sonata_media.yml }

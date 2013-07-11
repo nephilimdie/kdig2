@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "761cfedbb1b41957b12f43df4bb98f40",
+    "hash": "b5bb298f5c44a892359bd42271aaa8ac",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -2122,6 +2122,60 @@
             "time": "2013-06-21 08:07:53"
         },
         {
+            "name": "liip/theme-bundle",
+            "version": "dev-master",
+            "target-dir": "Liip/ThemeBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/liip/LiipThemeBundle.git",
+                "reference": "c533c72dc0fa4ef6ade7a25f11a54f07bcc457f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/liip/LiipThemeBundle/zipball/c533c72dc0fa4ef6ade7a25f11a54f07bcc457f1",
+                "reference": "c533c72dc0fa4ef6ade7a25f11a54f07bcc457f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.0"
+            },
+            "require-dev": {
+                "symfony/console": "~2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Liip\\ThemeBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/liip/LiipThemeBundle/contributors"
+                },
+                {
+                    "name": "Liip AG",
+                    "homepage": "http://www.liip.ch/"
+                }
+            ],
+            "description": "Provides theming support for #Symfony2 Bundles",
+            "keywords": [
+                "themes",
+                "theming"
+            ],
+            "time": "2013-06-18 17:12:34"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.5.0",
             "source": {
@@ -2783,6 +2837,49 @@
             "time": "2013-06-05 17:32:22"
         },
         {
+            "name": "simplethings/entity-audit-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simplethings/EntityAudit.git",
+                "reference": "v0.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simplethings/EntityAudit/zipball/v0.5.1",
+                "reference": "v0.5.1",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.1"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SimpleThings\\EntityAudit": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "New BSD"
+            ],
+            "description": "Audit for Doctrine Entities",
+            "keywords": [
+                "Audit",
+                "database",
+                "persistence"
+            ],
+            "time": "2013-07-08 08:18:28"
+        },
+        {
             "name": "sonata-project/admin-bundle",
             "version": "dev-master",
             "target-dir": "Sonata/AdminBundle",
@@ -2864,12 +2961,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "a54e2b7a2c3738e250b8a1b7de753b12e4ecba86"
+                "reference": "1101afbf38fccb58bb3494745ed307bf9a1b0934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/a54e2b7a2c3738e250b8a1b7de753b12e4ecba86",
-                "reference": "a54e2b7a2c3738e250b8a1b7de753b12e4ecba86",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/1101afbf38fccb58bb3494745ed307bf9a1b0934",
+                "reference": "1101afbf38fccb58bb3494745ed307bf9a1b0934",
                 "shasum": ""
             },
             "require": {
@@ -2919,7 +3016,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2013-07-09 16:36:24"
+            "time": "2013-07-11 09:56:48"
         },
         {
             "name": "sonata-project/cache-bundle",
@@ -3987,10 +4084,12 @@
         "sonata-project/block-bundle": 20,
         "sonata-project/admin-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
+        "simplethings/entity-audit-bundle": 20,
         "sonata-project/intl-bundle": 20,
         "sonata-project/media-bundle": 20,
         "liip/imagine-bundle": 20,
         "liip/doctrine-cache-bundle": 20,
+        "liip/theme-bundle": 20,
         "oneup/uploader-bundle": 20
     },
     "platform": {
