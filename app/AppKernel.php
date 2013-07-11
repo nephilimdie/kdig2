@@ -37,6 +37,7 @@ class AppKernel extends Kernel
 
             new APY\DataGridBundle\APYDataGridBundle(),
             new Kdig\UserBundle\KdigUserBundle(),
+            new Kdig\MediaBundle\KdigMediaBundle(),
 
             new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
@@ -56,7 +57,6 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
 
-            new Kdig\MediaBundle\KdigMediaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
