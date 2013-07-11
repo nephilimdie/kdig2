@@ -27,7 +27,7 @@ class AppKernel extends Kernel
             new Problematic\AclManagerBundle\ProblematicAclManagerBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
-#            new FOS\MessageBundle\FOSMessageBundle(),
+//            new FOS\MessageBundle\FOSMessageBundle(),
 
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),

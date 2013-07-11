@@ -6,7 +6,7 @@
  * @ author Stefano Bassetto <stefano.bassetto@gmail.com>
  */
 
-namespace Kdig\ArchaelogicalBundle\Entity;
+namespace Kdig\ArchaelogicalBundle\Entity\Potteryvoc;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -17,10 +17,10 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="voc_machine", schema="public")
+ * @ORM\Table(name="voc_color", schema="public")
  * @Gedmo\Loggable
  */
-class VocMachine {
+class VocColor {
     
     /**
      * @ORM\Id
@@ -39,17 +39,15 @@ class VocMachine {
     
     /**
      * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, length=64, type="string")
-     * 
+     * @ORM\Column(nullable=true, length=64, type="integer")
      */
-    private $sigla;
+    private $number;
     
     /**
      * @Gedmo\Versioned
      * @ORM\Column(nullable=true, length=1024, type="text")
      */
     private $remarks;
-    
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(nullable=true, name="created", type="datetime")
@@ -81,8 +79,31 @@ class VocMachine {
      */
     private $isDelete=false;
 
-    /** 
-     * @ORM\OneToMany(targetEntity="Photolist", mappedBy="machine")
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="color", cascade={"persist"})
      */
-    private $photolist;
+    private $vocpotdecin;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="color", cascade={"persist"})
+     */
+    private $vocpotdecinout;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="color", cascade={"persist"})
+     */
+    private $vocpotdecout;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratin", mappedBy="color")
+     */
+    private $pottery_surfacetratin;
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", mappedBy="color")
+     */
+    private $pottery_surfacetratinout;
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="color")
+     */
+    private $pottery_surfacetratout;
 }
