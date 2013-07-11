@@ -41,7 +41,8 @@ class AppKernel extends Kernel
             new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
-            
+            new Liip\ThemeBundle\LiipThemeBundle(),
+
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),
             new Sonata\CacheBundle\SonataCacheBundle(),
@@ -49,8 +50,13 @@ class AppKernel extends Kernel
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
+//            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
+,
+            new Kdig\MediaBundle\KdigMediaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

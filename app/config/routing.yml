@@ -1,3 +1,7 @@
+kdig_media:
+    resource: "@KdigMediaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kdig_user:
     resource: "@KdigUserBundle/Resources/config/routing.yml"
     prefix:   /
@@ -51,3 +55,14 @@ PrestaSitemapBundle:
 _imagine:
     resource: .
     type:     imagine
+
+
+oneup_uploader:
+    resource: .
+    type: uploader
+
+liip_theme:
+    resource: "@LiipThemeBundle/Resources/config/routing.xml"
+    prefix: /theme
+
+
