@@ -30,9 +30,9 @@ sonata_media:
                 #grandmatv:  { width: 640 , quality: 480}
                 
                 
-    cdn:
-        server:
-            path: %kernel.http_host%/../project/media
+#    cdn:
+#        server:
+#            path: %kernel.http_host%/../project/media
             
         #panther:
         #    path:       http://domain.pantherportal.com/uploads/media
