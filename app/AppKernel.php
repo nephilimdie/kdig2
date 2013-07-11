@@ -43,6 +43,7 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
             new Liip\ThemeBundle\LiipThemeBundle(),
+            new Devtime\BackboneBundle\DevtimeBackboneBundle(),
 
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),
