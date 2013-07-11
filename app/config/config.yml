@@ -8,8 +8,10 @@ imports:
     - { resource: bundles/doctrine_extensions.yml }
 #    - { resource: bundles/fos_message.yml }
     - { resource: bundles/fos_user.yml }
+    - { resource: bundles/oneup_uploader.yml }
     - { resource: bundles/admin/sonata_block.yml }
     - { resource: bundles/admin/sonata_cache.yml }
+    - { resource: bundles/admin/sonata_media.yml }
     
 framework:
     #esi:             ~
@@ -60,6 +62,8 @@ doctrine:
         user:     %database_user%
         password: %database_password%
         charset:  UTF8
+        types:
+            json: Sonata\Doctrine\Types\JsonType
         # if using pdo_sqlite as your database driver, add the path in parameters.yml
         # e.g. database_path: %kernel.root_dir%/data/data.db3
         # path:     %database_path%
@@ -68,6 +72,7 @@ doctrine:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
         mappings:
+            SonataMediaBundle: ~
             translatable:
                 type: annotation
                 alias: Gedmo
@@ -92,3 +97,9 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+knp_gaufrette:
+    adapters:
+        foo:
+            local:
+                directory: /uploads
