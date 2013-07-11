@@ -66,6 +66,7 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common' => array($vendorDir . '/doctrine/common/lib'),
     'Doctrine\\Bundle\\DoctrineBundle' => array($vendorDir . '/doctrine/doctrine-bundle'),
+    'Devtime\\BackboneBundle' => array($vendorDir . '/devtime/backbone-bundle'),
     'Ddeboer\\DataImportBundle' => array($vendorDir . '/ddeboer/data-import-bundle'),
     'Ddeboer\\DataImport' => array($vendorDir . '/ddeboer/data-import/src'),
     'Craue\\FormFlowBundle' => array($vendorDir . '/craue/formflow-bundle'),

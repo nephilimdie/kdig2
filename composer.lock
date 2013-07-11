@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b5bb298f5c44a892359bd42271aaa8ac",
+    "hash": "1d30a6f60726255c46843bc286338397",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -224,6 +224,52 @@
                 "import"
             ],
             "time": "2013-03-11 20:16:26"
+        },
+        {
+            "name": "devtime/backbone-bundle",
+            "version": "dev-master",
+            "target-dir": "Devtime/BackboneBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gigo6000/DevtimeBackboneBundle.git",
+                "reference": "34c9ed708920770aaa699c04185a1208debf4d06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gigo6000/DevtimeBackboneBundle/zipball/34c9ed708920770aaa699c04185a1208debf4d06",
+                "reference": "34c9ed708920770aaa699c04185a1208debf4d06",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": ">=2.1.1",
+                "symfony/finder": ">=2.1.1",
+                "symfony/framework-bundle": ">=2.1.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Devtime\\BackboneBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos Mafla",
+                    "email": "gigo6000@hotmail.com"
+                }
+            ],
+            "description": "Easily setup and use backbone.js with Symfony2",
+            "homepage": "http://github.com/gigo6000/DevtimeBackboneBundle",
+            "keywords": [
+                "Symfony2",
+                "backbone",
+                "backbone.js",
+                "underscore"
+            ],
+            "time": "2013-05-24 23:53:35"
         },
         {
             "name": "doctrine/annotations",
@@ -4090,7 +4136,8 @@
         "liip/imagine-bundle": 20,
         "liip/doctrine-cache-bundle": 20,
         "liip/theme-bundle": 20,
-        "oneup/uploader-bundle": 20
+        "oneup/uploader-bundle": 20,
+        "devtime/backbone-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"
