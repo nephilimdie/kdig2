@@ -55,7 +55,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
-,
+
             new Kdig\MediaBundle\KdigMediaBundle(),
         );
 
