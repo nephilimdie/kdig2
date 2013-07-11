@@ -6,7 +6,7 @@
  * @ author Stefano Bassetto <stefano.bassetto@gmail.com>
  */
 
-namespace Kdig\ArchaelogicalBundle\Entity;
+namespace Kdig\ArchaelogicalBundle\Entity\Potteryvoc;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -17,10 +17,10 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="voc_machine", schema="public")
+ * @ORM\Table(name="voc_surface_trat_option", schema="public")
  * @Gedmo\Loggable
  */
-class VocMachine {
+class VocSurfaceTratOption {
     
     /**
      * @ORM\Id
@@ -39,17 +39,15 @@ class VocMachine {
     
     /**
      * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, length=64, type="string")
-     * 
+     * @ORM\Column(nullable=true, length=64, type="integer")
      */
-    private $sigla;
+    private $number;
     
     /**
      * @Gedmo\Versioned
      * @ORM\Column(nullable=true, length=1024, type="text")
      */
     private $remarks;
-    
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(nullable=true, name="created", type="datetime")
@@ -81,8 +79,19 @@ class VocMachine {
      */
     private $isDelete=false;
 
-    /** 
-     * @ORM\OneToMany(targetEntity="Photolist", mappedBy="machine")
+    /**
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratin", inversedBy="vocsurfacetratoption", cascade={"persist"})
      */
-    private $photolist;
+    private $surfacein;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", inversedBy="vocsurfacetratoption", cascade={"persist"})
+     */
+    private $surfaceinout;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratout", inversedBy="vocsurfacetratoption", cascade={"persist"})
+     */
+    private $surfaceout;
+
 }
