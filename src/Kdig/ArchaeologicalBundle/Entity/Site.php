@@ -106,4 +106,295 @@ class Site {
      * @ORM\Column(nullable=true, name="is_delete", type="boolean")
      */
     private $isDelete=false;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->media = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->uss = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Site
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set remarks
+     *
+     * @param string $remarks
+     * @return Site
+     */
+    public function setRemarks($remarks)
+    {
+        $this->remarks = $remarks;
+    
+        return $this;
+    }
+
+    /**
+     * Get remarks
+     *
+     * @return string 
+     */
+    public function getRemarks()
+    {
+        return $this->remarks;
+    }
+
+    /**
+     * Set campagna
+     *
+     * @param string $campagna
+     * @return Site
+     */
+    public function setCampagna($campagna)
+    {
+        $this->campagna = $campagna;
+    
+        return $this;
+    }
+
+    /**
+     * Get campagna
+     *
+     * @return string 
+     */
+    public function getCampagna()
+    {
+        return $this->campagna;
+    }
+
+    /**
+     * Set sigla
+     *
+     * @param string $sigla
+     * @return Site
+     */
+    public function setSigla($sigla)
+    {
+        $this->sigla = $sigla;
+    
+        return $this;
+    }
+
+    /**
+     * Get sigla
+     *
+     * @return string 
+     */
+    public function getSigla()
+    {
+        return $this->sigla;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Site
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Site
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return Site
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+    
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Set isPublic
+     *
+     * @param boolean $isPublic
+     * @return Site
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+    
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean 
+     */
+    public function getIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * Set isDelete
+     *
+     * @param boolean $isDelete
+     * @return Site
+     */
+    public function setIsDelete($isDelete)
+    {
+        $this->isDelete = $isDelete;
+    
+        return $this;
+    }
+
+    /**
+     * Get isDelete
+     *
+     * @return boolean 
+     */
+    public function getIsDelete()
+    {
+        return $this->isDelete;
+    }
+
+    /**
+     * Add media
+     *
+     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @return Site
+     */
+    public function addMedia(\Kdig\MediaBundle\Entty\Media $media)
+    {
+        $this->media[] = $media;
+    
+        return $this;
+    }
+
+    /**
+     * Remove media
+     *
+     * @param \Kdig\MediaBundle\Entty\Media $media
+     */
+    public function removeMedia(\Kdig\MediaBundle\Entty\Media $media)
+    {
+        $this->media->removeElement($media);
+    }
+
+    /**
+     * Get media
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    /**
+     * Add uss
+     *
+     * @param \Kdig\ArchaeologicalBundle\Entity\Us $uss
+     * @return Site
+     */
+    public function addUs(\Kdig\ArchaeologicalBundle\Entity\Us $uss)
+    {
+        $this->uss[] = $uss;
+    
+        return $this;
+    }
+
+    /**
+     * Remove uss
+     *
+     * @param \Kdig\ArchaeologicalBundle\Entity\Us $uss
+     */
+    public function removeUs(\Kdig\ArchaeologicalBundle\Entity\Us $uss)
+    {
+        $this->uss->removeElement($uss);
+    }
+
+    /**
+     * Get uss
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUss()
+    {
+        return $this->uss;
+    }
 }

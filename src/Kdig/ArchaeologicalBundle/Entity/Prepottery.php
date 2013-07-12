@@ -341,4 +341,14 @@ class Prepottery {
     {
         return $this->media;
     }
+
+    /**
+     * Remove media
+     *
+     * @param \Kdig\ArchaeologicalBundle\Entity\Media $media
+     */
+    public function removeMedia(\Kdig\ArchaeologicalBundle\Entity\Media $media)
+    {
+        $this->media->removeElement($media);
+    }
 }

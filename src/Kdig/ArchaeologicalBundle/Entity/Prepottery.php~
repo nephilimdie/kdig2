@@ -14,15 +14,18 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use APY\DataGridBundle\Grid\Mapping as GRID;
+// DON'T forget this use statement!!!
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="pre_sample", schema="public")
- * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\PresampleRepository")
+ * @ORM\Table(name="pre_pottery", schema="public")
+ * @UniqueEntity("name")
+ * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\PrepotteryRepository")
  * @Gedmo\Loggable
  * @GRID\Source(columns="id, bucket.us.area.name, bucket.us.typeus.name, bucket.us.name, bucket.name, name, isActive, isDelete, isPublic, created")
-*/
-class Presample {
+ */
+class Prepottery {
     
     /**
      * @ORM\Id
@@ -37,7 +40,7 @@ class Presample {
      * @Gedmo\Versioned
      * @ORM\Column(nullable=true, length=64, type="string")
      * @Assert\NotBlank()
-     * @GRID\Column(size="40", title="Name")
+     * @GRID\Column(size="40", title="Name", unique=true)
      */
     private $name;
     
@@ -82,7 +85,7 @@ class Presample {
     private $isDelete=false;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Bucket", inversedBy="presamples", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Bucket", inversedBy="prepotterys", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="bucket.name", title="Bucket")
      * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
@@ -93,23 +96,25 @@ class Presample {
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="presamples", cascade={"persist"})
-     * @ORM\JoinTable(name="presample_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="presample_id", referencedColumnName="id", onDelete="SET NULL")},
+     * @ORM\ManyToMany(targetEntity="Media", inversedBy="prepotterys", cascade={"persist"})
+     * @ORM\JoinTable(name="prepottery_media",
+     *   joinColumns={@ORM\JoinColumn(nullable=true, name="prepottery_id", referencedColumnName="id", onDelete="SET NULL")},
      *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
      * )
      */
     private $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Sample", inversedBy="presample", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\OneToOne(targetEntity="Pottery", inversedBy="prepottery", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true, name="pottery_id", referencedColumnName="id", onDelete="CASCADE")
      */
-    private $sample;
+    private $pottery;
     
-    /**
-     * Constructor
-     */
+    
+    public function __tostring() 
+    {
+        return $this->getName();
+    }
     public function __construct()
     {
         $this->media = new \Doctrine\Common\Collections\ArrayCollection();
@@ -129,13 +134,10 @@ class Presample {
      * Set name
      *
      * @param string $name
-     * @return Presample
      */
     public function setName($name)
     {
         $this->name = $name;
-    
-        return $this;
     }
 
     /**
@@ -151,20 +153,17 @@ class Presample {
     /**
      * Set remarks
      *
-     * @param string $remarks
-     * @return Presample
+     * @param text $remarks
      */
     public function setRemarks($remarks)
     {
         $this->remarks = $remarks;
-    
-        return $this;
     }
 
     /**
      * Get remarks
      *
-     * @return string 
+     * @return text 
      */
     public function getRemarks()
     {
@@ -174,20 +173,17 @@ class Presample {
     /**
      * Set created
      *
-     * @param \DateTime $created
-     * @return Presample
+     * @param datetime $created
      */
     public function setCreated($created)
     {
         $this->created = $created;
-    
-        return $this;
     }
 
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return datetime 
      */
     public function getCreated()
     {
@@ -197,20 +193,17 @@ class Presample {
     /**
      * Set updated
      *
-     * @param \DateTime $updated
-     * @return Presample
+     * @param datetime $updated
      */
     public function setUpdated($updated)
     {
         $this->updated = $updated;
-    
-        return $this;
     }
 
     /**
      * Get updated
      *
-     * @return \DateTime 
+     * @return datetime 
      */
     public function getUpdated()
     {
@@ -221,13 +214,10 @@ class Presample {
      * Set isActive
      *
      * @param boolean $isActive
-     * @return Presample
      */
     public function setIsActive($isActive)
     {
         $this->isActive = $isActive;
-    
-        return $this;
     }
 
     /**
@@ -244,13 +234,10 @@ class Presample {
      * Set isPublic
      *
      * @param boolean $isPublic
-     * @return Presample
      */
     public function setIsPublic($isPublic)
     {
         $this->isPublic = $isPublic;
-    
-        return $this;
     }
 
     /**
@@ -267,13 +254,10 @@ class Presample {
      * Set isDelete
      *
      * @param boolean $isDelete
-     * @return Presample
      */
     public function setIsDelete($isDelete)
     {
         $this->isDelete = $isDelete;
-    
-        return $this;
     }
 
     /**
@@ -289,20 +273,17 @@ class Presample {
     /**
      * Set bucket
      *
-     * @param \Kdig\ArchaeologicalBundle\Entity\Bucket $bucket
-     * @return Presample
+     * @param Kdig\ArchaelogicalBundle\Entity\Bucket $bucket
      */
-    public function setBucket(\Kdig\ArchaeologicalBundle\Entity\Bucket $bucket = null)
+    public function setBucket(\Kdig\ArchaelogicalBundle\Entity\Bucket $bucket)
     {
         $this->bucket = $bucket;
-    
-        return $this;
     }
 
     /**
      * Get bucket
      *
-     * @return \Kdig\ArchaeologicalBundle\Entity\Bucket 
+     * @return Kdig\ArchaelogicalBundle\Entity\Bucket 
      */
     public function getBucket()
     {
@@ -310,58 +291,54 @@ class Presample {
     }
 
     /**
-     * Add media
+     * add bucket
      *
-     * @param \Kdig\ArchaeologicalBundle\Entity\Media $media
-     * @return Presample
-     */
-    public function addMedia(\Kdig\ArchaeologicalBundle\Entity\Media $media)
+     * @param Kdig\ArchaelogicalBundle\Entity\Bucket $bucket
+     *
+    public function addTask(\Kdig\ArchaelogicalBundle\Entity\Bucket $bucket)
     {
-        $this->media[] = $media;
+        if (!$this->bucket->contains($bucket)) {
+            $this->bucket->add($bucket);
+        }
+    }*/
     
-        return $this;
+    /**
+     * Set pottery
+     *
+     * @param Kdig\ArchaelogicalBundle\Entity\Pottery $pottery
+     */
+    public function setPottery(\Kdig\ArchaelogicalBundle\Entity\Pottery $pottery)
+    {
+        $this->pottery = $pottery;
     }
 
     /**
-     * Remove media
+     * Get pottery
      *
-     * @param \Kdig\ArchaeologicalBundle\Entity\Media $media
+     * @return Kdig\ArchaelogicalBundle\Entity\Pottery 
      */
-    public function removeMedia(\Kdig\ArchaeologicalBundle\Entity\Media $media)
+    public function getPottery()
     {
-        $this->media->removeElement($media);
+        return $this->pottery;
+    }
+
+    /**
+     * Add media
+     *
+     * @param Kdig\ArchaelogicalBundle\Entity\Media $media
+     */
+    public function addMedia(\Kdig\ArchaelogicalBundle\Entity\Media $media)
+    {
+        $this->media[] = $media;
     }
 
     /**
      * Get media
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection 
      */
     public function getMedia()
     {
         return $this->media;
-    }
-
-    /**
-     * Set sample
-     *
-     * @param \Kdig\ArchaeologicalBundle\Entity\Sample $sample
-     * @return Presample
-     */
-    public function setSample(\Kdig\ArchaeologicalBundle\Entity\Sample $sample = null)
-    {
-        $this->sample = $sample;
-    
-        return $this;
-    }
-
-    /**
-     * Get sample
-     *
-     * @return \Kdig\ArchaeologicalBundle\Entity\Sample 
-     */
-    public function getSample()
-    {
-        return $this->sample;
     }
 }
