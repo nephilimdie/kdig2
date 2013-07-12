@@ -82,18 +82,18 @@ class Presample {
     private $isDelete=false;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Bucket", inversedBy="presamples", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
-     * @GRID\Column(field="bucket.name", title="Bucket")
-     * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
-     * @GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
-     * @GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
+     * @ ORM\ManyToOne(targetEntity="Bucket", inversedBy="presamples", cascade={"persist"})
+     * @ ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ GRID\Column(field="bucket.name", title="Bucket")
+     * @ GRID\Column(field="bucket.us.name", title="Locus", size="40")
+     * @ GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
+     * @ GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
      */
-    private $bucket;
+//    private $bucket;
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="presamples", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="presamples", cascade={"persist"})
      * @ORM\JoinTable(name="presample_media",
      *   joinColumns={@ORM\JoinColumn(nullable=true, name="presample_id", referencedColumnName="id", onDelete="SET NULL")},
      *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
@@ -102,9 +102,9 @@ class Presample {
     private $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Sample", inversedBy="presample", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ ORM\OneToOne(targetEntity="Sample", inversedBy="presample", cascade={"persist"})
+     * @ ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id", onDelete="SET NULL")
      */
-    private $sample;
+//    private $sample;
     
 }
