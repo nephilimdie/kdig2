@@ -14,7 +14,7 @@ namespace Kdig\UserBundle\Entity;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Kdig\UserBundle\Repository\PermissionRepository;
+//use Kdig\UserBundle\Repository\PermissionRepository;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
