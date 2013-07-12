@@ -19,7 +19,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Kdig\UserBundle\Entity\Ressource
  * 
  * @ORM\Table(name="fos_ressource")
- * @ORM\Entity(repositoryClass="Kdig\UserBundle\Entity\Repository\RessourceRepository")
+ * @ORM\Entity
+ * (repositoryClass="Kdig\UserBundle\Entity\Repository\RessourceRepository")
  * @ORM\HasLifecycleCallbacks()
  * 
  * @category   Kdig_Entities

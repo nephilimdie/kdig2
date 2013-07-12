@@ -9,7 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Kdig\UserBundle\Entity\Permission
  * 
  * @ORM\Table(name="fos_permission")
- * @ORM\Entity(repositoryClass="Kdig\UserBundle\Repository\PermissionRepository")
+ * @ORM\Entity
+ * (repositoryClass="Kdig\UserBundle\Repository\PermissionRepository")
  * @ORM\HasLifecycleCallbacks()
  * 
  * @category   Kdig_Entities
