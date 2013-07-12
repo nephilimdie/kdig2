@@ -53,16 +53,16 @@ class Role
     
     /**
      * @ORM\Column(type="string",length=55, nullable=false)
-     * @Assert\NotBlank()
-     * @Assert\MinLength(limit = 3, message = "Le label doit avoir au moins {{ limit }} caractères")
+     * @ Assert\NotBlank()
+     * @ Assert\MinLength(limit = 3, message = "Le label doit avoir au moins {{ limit }} caractères")
      */
     protected $label;    
     
     /**
      * @ORM\Column(type="string",length=25, nullable=false)
-     * @Assert\NotBlank()
-     * @Assert\MinLength(limit = 8, message = "Le nom doit avoir au moins {{ limit }} caractères")
-     * @Assert\MaxLength(limit = 25, message = "Le nom doit avoir au plus {{ limit }} caractères")
+     * @ Assert\NotBlank()
+     * @ Assert\MinLength(limit = 8, message = "Le nom doit avoir au moins {{ limit }} caractères")
+     * @ Assert\MaxLength(limit = 25, message = "Le nom doit avoir au plus {{ limit }} caractères")
      */
     protected $name;    
     
@@ -70,8 +70,8 @@ class Role
      * @var text $comment
      *
      * @ORM\Column(type="text", nullable=true)
-     * @Assert\NotBlank(message = "You must enter a comment")
-     * @Assert\MinLength(limit = 25, message = "Le commentaire doit avoir au moins {{ limit }} caractères")
+     * @ Assert\NotBlank(message = "You must enter a comment")
+     * @ Assert\MinLength(limit = 25, message = "Le commentaire doit avoir au moins {{ limit }} caractères")
      */
     protected $comment;    
 
@@ -85,8 +85,8 @@ class Role
      * @var string $route_name
      * 
      * @ORM\Column(name="route_name", type="string", nullable=true)
-     * @Assert\MinLength(limit = 3, message = "Le route name doit avoir au moins {{ limit }} caractères")
-     * @Assert\Blank
+     * @ Assert\MinLength(limit = 3, message = "Le route name doit avoir au moins {{ limit }} caractères")
+     * @ Assert\Blank
      */
     protected $route_name;
 
