@@ -48,6 +48,34 @@ class Site {
      * @ORM\Column(nullable=true, length=1024, type="text")
      */
     private $remarks;
+ 
+    /**
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="sites", cascade={"persist"})
+     * @ORM\JoinTable(name="site_media",
+     *   joinColumns={@ORM\JoinColumn(nullable=true, name="site_id", referencedColumnName="id", onDelete="SET NULL")},
+     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
+     * )
+     */
+    private $media;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, length=64, type="string")
+     */
+    private $campagna;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, length=64, type="string")
+     */
+    private $sigla;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Us", mappedBy="site", cascade={"persist"})
+     */
+    private $uss;
+    
+    
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(nullable=true, name="created", type="datetime")
@@ -78,30 +106,4 @@ class Site {
      * @ORM\Column(nullable=true, name="is_delete", type="boolean")
      */
     private $isDelete=false;
- 
-    /**
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="sites", cascade={"persist"})
-     * @ORM\JoinTable(name="site_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="site_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
-     * )
-     */
-    private $media;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, length=64, type="string")
-     */
-    private $campagna;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, length=64, type="string")
-     */
-    private $sigla;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="Us", mappedBy="site", cascade={"persist"})
-     */
-    private $uss;
 }

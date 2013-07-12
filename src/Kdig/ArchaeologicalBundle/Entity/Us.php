@@ -108,16 +108,16 @@ class Us {
     protected $typeus;
     
     /**
-     * @ORM\OneToMany(targetEntity="Bucket", mappedBy="us")
+     * @ ORM\OneToMany(targetEntity="Bucket", mappedBy="us")
      */
-    private $buckets;
+//    private $buckets;
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="uss", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="uss", cascade={"persist"})
      * @ORM\JoinTable(name="us_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="us_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
+     *   joinColumns={@ORM\JoinColumn(nullable=true, name="us_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id")}
      * )
      */
     private $media;

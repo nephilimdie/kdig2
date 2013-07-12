@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             new APY\DataGridBundle\APYDataGridBundle(),
             new Kdig\UserBundle\KdigUserBundle(),
             new Kdig\MediaBundle\KdigMediaBundle(),
+            new Kdig\ArchaeologicalBundle\KdigArchaeologicalBundle(),
 
             new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),

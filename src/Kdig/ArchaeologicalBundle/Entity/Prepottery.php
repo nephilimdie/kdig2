@@ -21,7 +21,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity
  * @ORM\Table(name="pre_pottery", schema="public")
  * @UniqueEntity("name")
- * @ORM\Entity(repositoryClass="Kdig\ArchaelogicalBundle\Repository\PrepotteryRepository")
+ * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\PrepotteryRepository")
  * @Gedmo\Loggable
  * @GRID\Source(columns="id, bucket.us.area.name, bucket.us.typeus.name, bucket.us.name, bucket.name, name, isActive, isDelete, isPublic, created")
  */

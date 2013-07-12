@@ -18,7 +18,7 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
 /**
  * @ORM\Entity
  * @ORM\Table(name="pre_sample", schema="public")
- * @ORM\Entity(repositoryClass="Kdig\ArchaelogicalBundle\Repository\PresampleRepository")
+ * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\PresampleRepository")
  * @Gedmo\Loggable
  * @GRID\Source(columns="id, bucket.us.area.name, bucket.us.typeus.name, bucket.us.name, bucket.name, name, isActive, isDelete, isPublic, created")
 */
