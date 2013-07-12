@@ -22,7 +22,8 @@ use Kdig\UserBundle\Entity\Repository\RoleRepository;
  * Kdig\UserBundle\Entity\Role
  *
  * @ORM\Table(name="fos_role")
- * @ORM\Entity(repositoryClass="Kdig\UserBundle\Entity\Repository\RoleRepository")
+ * @ORM\Entity
+ * (repositoryClass="Kdig\UserBundle\Entity\Repository\RoleRepository")
  * @ORM\HasLifecycleCallbacks() 
  * 
  * @category   Kdig_Entities

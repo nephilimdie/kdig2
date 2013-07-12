@@ -21,7 +21,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
- * @ ORM\Entity(repositoryClass="Kdig\UserBundle\Entity\Repository\UserRepository")
+ * @ ORM\Entity
+ * (repositoryClass="Kdig\UserBundle\Entity\Repository\UserRepository")
  * @ORM\HasLifecycleCallbacks() 
  * 
  * @category   Kdig_Entities
