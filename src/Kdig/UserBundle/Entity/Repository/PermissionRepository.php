@@ -12,7 +12,7 @@
 namespace Kdig\UserBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Kdig\TranslationBundle\Repository\TranslationRepository;
+//use Kdig\TranslationBundle\Repository\TranslationRepository;
 
 /**
  * Permission Repository
@@ -22,7 +22,8 @@ use Kdig\TranslationBundle\Repository\TranslationRepository;
  *
  * @author Stefano Bassetto <stefano.bassetto.nep@gmail.com>
  */
-class PermissionRepository extends TranslationRepository
+class PermissionRepository 
+//extends TranslationRepository
 {
 	const PERMISSION_DEFAULT 		= 'VIEW';
 
