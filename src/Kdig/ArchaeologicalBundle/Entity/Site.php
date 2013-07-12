@@ -50,7 +50,7 @@ class Site {
     private $remarks;
  
     /**
-     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="sites", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="sites", cascade={"persist"})
      * @ORM\JoinTable(name="site_media",
      *   joinColumns={@ORM\JoinColumn(nullable=true, name="site_id", referencedColumnName="id", onDelete="SET NULL")},
      *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
@@ -335,10 +335,10 @@ class Site {
     /**
      * Add media
      *
-     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @param \Kdig\MediaBundle\Entity\Media $media
      * @return Site
      */
-    public function addMedia(\Kdig\MediaBundle\Entty\Media $media)
+    public function addMedia(\Kdig\MediaBundle\Entity\Media $media)
     {
         $this->media[] = $media;
     
@@ -348,9 +348,9 @@ class Site {
     /**
      * Remove media
      *
-     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @param \Kdig\MediaBundle\Entity\Media $media
      */
-    public function removeMedia(\Kdig\MediaBundle\Entty\Media $media)
+    public function removeMedia(\Kdig\MediaBundle\Entity\Media $media)
     {
         $this->media->removeElement($media);
     }

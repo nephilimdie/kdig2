@@ -114,7 +114,7 @@ class Us {
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="uss", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="uss", cascade={"persist"})
      * @ORM\JoinTable(name="us_media",
      *   joinColumns={@ORM\JoinColumn(nullable=true, name="us_id", referencedColumnName="id")},
      *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id")}
@@ -408,10 +408,10 @@ class Us {
     /**
      * Add media
      *
-     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @param \Kdig\MediaBundle\Entity\Media $media
      * @return Us
      */
-    public function addMedia(\Kdig\MediaBundle\Entty\Media $media)
+    public function addMedia(\Kdig\MediaBundle\Entity\Media $media)
     {
         $this->media[] = $media;
     
@@ -421,9 +421,9 @@ class Us {
     /**
      * Remove media
      *
-     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @param \Kdig\MediaBundle\Entity\Media $media
      */
-    public function removeMedia(\Kdig\MediaBundle\Entty\Media $media)
+    public function removeMedia(\Kdig\MediaBundle\Entity\Media $media)
     {
         $this->media->removeElement($media);
     }

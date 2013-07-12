@@ -87,7 +87,7 @@ class Area {
     private $uss;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="areas", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="areas", cascade={"persist"})
      * @ORM\JoinTable(
      *   name="area_media",
      *   joinColumns={@ORM\JoinColumn(nullable=true, name="area_id", referencedColumnName="id")},
@@ -471,10 +471,10 @@ class Area {
     /**
      * Add media
      *
-     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @param \Kdig\MediaBundle\Entity\Media $media
      * @return Area
      */
-    public function addMedia(\Kdig\MediaBundle\Entty\Media $media)
+    public function addMedia(\Kdig\MediaBundle\Entity\Media $media)
     {
         $this->media[] = $media;
     
@@ -484,9 +484,9 @@ class Area {
     /**
      * Remove media
      *
-     * @param \Kdig\MediaBundle\Entty\Media $media
+     * @param \Kdig\MediaBundle\Entity\Media $media
      */
-    public function removeMedia(\Kdig\MediaBundle\Entty\Media $media)
+    public function removeMedia(\Kdig\MediaBundle\Entity\Media $media)
     {
         $this->media->removeElement($media);
     }
