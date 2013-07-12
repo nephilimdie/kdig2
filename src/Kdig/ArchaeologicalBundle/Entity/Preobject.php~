@@ -49,7 +49,7 @@ class Preobject {
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="preobjects", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="preobjects", cascade={"persist"})
      * @ORM\JoinTable(name="preobject_media",
      *   joinColumns={@ORM\JoinColumn(nullable=true, name="preobject_id", referencedColumnName="id", onDelete="SET NULL")},
      *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
@@ -58,10 +58,10 @@ class Preobject {
     public $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Object", inversedBy="preobject", cascade={"persist"}, orphanRemoval=true)
-     * @ORM\JoinColumn(nullable=true, name="object_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ ORM\OneToOne(targetEntity="Object", inversedBy="preobject", cascade={"persist"}, orphanRemoval=true)
+     * @ ORM\JoinColumn(nullable=true, name="object_id", referencedColumnName="id", onDelete="SET NULL")
      */
-    private $object;
+//    private $object;
     
     /**
      * @Gedmo\Timestampable(on="create")
@@ -107,4 +107,5 @@ class Preobject {
      * @ GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
      */
 //    private $bucket;
+    
 }
