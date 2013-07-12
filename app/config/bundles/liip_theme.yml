@@ -1,4 +1,4 @@
 liip_theme:
-    themes: ['web', 'tablet', 'phone']
-    active_theme: 'web'
+    themes: ['default', 'tablet', 'mobile']
+    active_theme: 'default'
     load_controllers: false
