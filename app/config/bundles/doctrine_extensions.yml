@@ -3,7 +3,7 @@
 services:
     # KernelRequest listener
     extension.listener:
-        class: 'Kdig\ArchaeoloicalBundle\Listener\DoctrineExtensionListener'
+        class: 'Kdig\ArchaeologicalBundle\Listener\DoctrineExtensionListener'
         calls:
             - [ setContainer, [ @service_container ] ]
         tags:

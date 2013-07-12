@@ -1,6 +1,6 @@
 <?php
 
-namespace Kdig\ArchaeoloicalBundle\Listener;
+namespace Kdig\ArchaeologicalBundle\Listener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
