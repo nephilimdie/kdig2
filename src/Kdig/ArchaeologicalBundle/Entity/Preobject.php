@@ -20,7 +20,7 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
  * @ORM\Table(name="pre_object", schema="public")
  * @Gedmo\Loggable
  * @GRID\Source(columns="id, bucket.us.area.name, bucket.us.typeus.name, bucket.us.name, bucket.name, name, isActive, isDelete, isPublic, created")
- * @ORM\Entity(repositoryClass="Kdig\ArchaelogicalBundle\Repository\PreobjectRepository")
+ * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\PreobjectRepository")
  */
 class Preobject {
     
@@ -46,6 +46,23 @@ class Preobject {
      * @ORM\Column(nullable=true, length=1024, type="text")
      */
     private $remarks;
+    
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="preobjects", cascade={"persist"})
+     * @ORM\JoinTable(name="preobject_media",
+     *   joinColumns={@ORM\JoinColumn(nullable=true, name="preobject_id", referencedColumnName="id", onDelete="SET NULL")},
+     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
+     * )
+     */
+    public $media;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Object", inversedBy="preobject", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true, name="object_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $object;
+    
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(nullable=true, name="created", type="datetime")
@@ -82,28 +99,12 @@ class Preobject {
     private $isDelete=false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Bucket", inversedBy="preobjects", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
-     * @GRID\Column(field="bucket.name", title="Bucket")
-     * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
-     * @GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
-     * @GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
+     * @ ORM\ManyToOne(targetEntity="Bucket", inversedBy="preobjects", cascade={"persist"})
+     * @ ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ GRID\Column(field="bucket.name", title="Bucket")
+     * @ GRID\Column(field="bucket.us.name", title="Locus", size="40")
+     * @ GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
+     * @ GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
      */
-    private $bucket;
-    
-    /**
-     *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="preobjects", cascade={"persist"})
-     * @ORM\JoinTable(name="preobject_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="preobject_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
-     * )
-     */
-    public $media;
-
-    /**
-     * @ORM\OneToOne(targetEntity="Object", inversedBy="preobject", cascade={"persist"}, orphanRemoval=true)
-     * @ORM\JoinColumn(nullable=true, name="object_id", referencedColumnName="id", onDelete="SET NULL")
-     */
-    private $object;
+//    private $bucket;
 }

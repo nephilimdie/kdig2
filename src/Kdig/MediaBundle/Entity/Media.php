@@ -5,6 +5,7 @@ namespace Kdig\MediaBundle\Entity;
 use Sonata\MediaBundle\Entity\BaseMedia as BaseMedia;
 
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -33,6 +34,101 @@ class Media extends BaseMedia
      */
     protected $heritage;    
 
+    /**
+    * @ORM\ManyToMany(targetEntity="Site", mappedBy="Kdig\ArchaeologicalBundle\Entity\media", cascade={"persist"})
+    */
+    private $sites;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="Area", mappedBy="Kdig\ArchaeologicalBundle\Entity\media", cascade={"persist"})
+    */
+    private $areas;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="Us", mappedBy="Kdig\ArchaeologicalBundle\Entity\media", cascade={"persist"})
+    */
+    private $uss;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="Prepottery", mappedBy="Kdig\ArchaeologicalBundle\Entity\media", cascade={"persist"})
+    */
+    private $prepotterys;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="Preobject", mappedBy="Kdig\ArchaeologicalBundle\Entity\media", cascade={"persist"})
+    */
+    private $preobjects;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="Presample", mappedBy="Kdig\ArchaeologicalBundle\Entity\media", cascade={"persist"})
+    */
+    private $presamples;
+    
+    
+    //orientBundle
+    /**
+    * @ ORM\ManyToMany(targetEntity="Bucket", mappedBy="media", cascade={"persist"})
+    */
+//    private $buckets;
+    
+    /**
+    * @ ORM\ManyToMany(targetEntity="Bucketsheet", mappedBy="media", cascade={"persist"})
+    */
+//    private $bucketsheets;
+    
+    
+    /**
+    * @ ORM\ManyToMany(targetEntity="Pottery", mappedBy="media", cascade={"persist"})
+    */
+//    private $potterys;
+    
+    /**
+    * @ ORM\ManyToMany(targetEntity="Object", mappedBy="media", cascade={"persist"})
+    */
+//    private $objects;
+    
+    /**
+    * @ ORM\ManyToMany(targetEntity="Sample", mappedBy="media", cascade={"persist"})
+    */
+//    private $samples;
+    
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, length=1024, type="text")
+     */
+    private $remarks;
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(nullable=true, name="created", type="datetime")
+     */
+    private $created;
+
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="updated", type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updated;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="is_active", type="boolean")
+     */
+    private $isActive=true;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="is_public", type="boolean")
+     */
+    private $isPublic=false;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="is_delete", type="boolean")
+     */
+    private $isDelete=false;
+    
     /**
      * Get id
      *

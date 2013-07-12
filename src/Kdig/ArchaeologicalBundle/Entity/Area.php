@@ -87,10 +87,11 @@ class Area {
     private $uss;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="areas", cascade={"persist"})
-     * @ORM\JoinTable(name="area_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="area_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entty\Media", inversedBy="areas", cascade={"persist"})
+     * @ORM\JoinTable(
+     *   name="area_media",
+     *   joinColumns={@ORM\JoinColumn(nullable=true, name="area_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id")}
      * )
      */
     private $media;
