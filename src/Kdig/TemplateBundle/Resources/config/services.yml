@@ -21,7 +21,7 @@ services:
             - { menu: '@kdig.template.navbar_menu_archaeological=' }
             - {}
             # third argument: a named array of options
-            - { fixedTop: true, isFluid: true, template: KdigTemplateBundle:Navbar:archaeologicalnav.html.twig }
+            - { fixedTop: true, isFluid: true, template: KdigTemplateBundle:Default:Navbar:archaeologicalnav.html.twig }
         tags:
             # The alias is used to retrieve the navbar in templates
             - { name: mopa_bootstrap.navbar, alias: archaeologicalnav }
