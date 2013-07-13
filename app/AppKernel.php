@@ -41,6 +41,8 @@ class AppKernel extends Kernel
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
             new Liip\ThemeBundle\LiipThemeBundle(),
             new Devtime\BackboneBundle\DevtimeBackboneBundle(),
+            new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
+            new JordiLlonch\Bundle\CrudGeneratorBundle\JordiLlonchCrudGeneratorBundle(),
 
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),

@@ -21,7 +21,9 @@ framework:
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
-    form:            ~
+    form:
+        resources:
+            - LexikFormFilterBundle:Form:form_div_layout.html.twig
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
