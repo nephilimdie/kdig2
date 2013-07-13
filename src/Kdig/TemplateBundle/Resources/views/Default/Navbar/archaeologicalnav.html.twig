@@ -1,0 +1,11 @@
+{% block navbar %}
+<div class="nav-tabs nav-stacked span3 navbar{{ (navbar.hasOption('inverse') and  navbar.getOption('inverse')) ? ' navbar-inverse' : '' }}{{ (navbar.hasOption('fixedTop') and  navbar.getOption('fixedTop')) ? ' navbar-fixed-top' : '' }}{{ (navbar.hasOption('staticTop') and  navbar.getOption('staticTop')) ? ' navbar-static-top' : '' }}">
+    <div class="navbar-inner">
+        <div class="container{{ (navbar.hasOption('isFluid') and navbar.getOption('isFluid')) ? '-fluid' : '' }}">
+            <div class="nav-collapse collapse">
+                {{ navbar.hasMenu('archaeological') ? knp_menu_render(navbar.getMenu('archaeological'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
