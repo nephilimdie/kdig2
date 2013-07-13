@@ -25,11 +25,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav');
 
-        $menu->addChild('Shipdev', array('route' => 'shipdev'));
+        $menu->addChild('Home', array('route' => 'default_index'));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
-        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
-        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
+//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
+//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
+//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
 
         return $menu;
     }
@@ -40,14 +40,12 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
         if ($this->isLoggedIn) {
-            $menu->addChild('Abmelden', array('route' => 'fos_user_security_logout'));
+            $menu->addChild('Logout', array('route' => 'fos_user_security_logout'));
         } else {
-            $menu->addChild('Anmelden', array('route' => 'fos_user_security_login'));
-            $menu->addChild('Registrieren', array('route' => 'fos_user_registration_register'));
+            $menu->addChild('login', array('route' => 'fos_user_security_login'));
         }
 
         $this->addDivider($menu, true);
-        $menu->addChild('Impressum', array('route' => 'impressum'));
 
         return $menu;
     }
