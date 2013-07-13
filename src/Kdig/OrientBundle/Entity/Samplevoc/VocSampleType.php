@@ -80,7 +80,7 @@ class VocSampleType {
     private $isDelete=false;
 
     /** 
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Sample", inversedBy="type") 
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Sample", inversedBy="type") 
      */
     private $sample;
 
