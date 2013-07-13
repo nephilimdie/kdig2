@@ -35,30 +35,28 @@ class User extends BaseUser
 	const ROLE_DEFAULT = 'ROLE_ALLOWED_TO_SWITCH';
 	
     /**
-     * @var bigint $id
-     * 
-     * @ORM\Column(name="id", type="bigint", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+    * @var bigint $id
+    * 
+    * @ORM\Column(name="id", type="bigint", nullable=false)
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="IDENTITY")
+    */
+    protected $id;
+
+    /**
+     * @var string $name
+     * @ORM\Column(name="name", type="string", nullable = true)
      */
-	protected $id;
-	
-	/**
-	 * @var string $name
-	 *
-	 * @ORM\Column(name="name", type="string", nullable = true)
-	 */
-	protected $name;
-		
-	/**
-	 * @var string $nickname
-	 *
-	 * @ORM\Column(name="nickname", type="string", nullable = true)
-	 */
-	protected $nickname;	
+    protected $name;
+
+    /**
+    * @var string $nickname
+    * @ORM\Column(name="nickname", type="string", nullable = true)
+    */
+    protected $nickname;	
 	
 
- 	/**
+    /**
      * @ORM\ManyToMany(targetEntity="Kdig\UserBundle\Entity\Group")
      * @ORM\JoinTable(name="fos_user_group",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
@@ -66,6 +64,18 @@ class User extends BaseUser
      * )
      */
     protected $groups;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Group", inversedBy="userprofilegroup")
+     * @ORM\JoinColumn(nullable=true, name="group_id", referencedColumnName="id")
+     */
+    protected $slectedgroup;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Area", inversedBy="userprofilearea")
+     * @ORM\JoinColumn(nullable=true, name="area_id", referencedColumnName="id")
+     */
+    protected $slectedarea;
      
     
     /**
