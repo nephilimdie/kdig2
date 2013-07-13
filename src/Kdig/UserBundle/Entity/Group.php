@@ -32,7 +32,7 @@ class Group extends BaseGroup
     private $title;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Area", mappedBy="groups", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area", mappedBy="groups", cascade={"persist"})
      */ 
    private $areas;
     /**
