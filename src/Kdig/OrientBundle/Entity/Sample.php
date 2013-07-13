@@ -70,7 +70,7 @@ class Sample {
     private $isDelete=false;
 
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Presample", inversedBy="sample", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Presample", inversedBy="sample", orphanRemoval=true)
      * @GRID\Column(field="presample.bucket.name", title="Bucket")
      * @GRID\Column(field="presample.bucket.us.name", title="Locus", size="40")
      * @GRID\Column(field="presample.bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
