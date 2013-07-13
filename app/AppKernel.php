@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Kdig\TemplateBundle\KdigTemplateBundle(),
 
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
@@ -36,9 +35,6 @@ class AppKernel extends Kernel
             new JMS\TranslationBundle\JMSTranslationBundle(),
 
             new APY\DataGridBundle\APYDataGridBundle(),
-            new Kdig\UserBundle\KdigUserBundle(),
-            new Kdig\MediaBundle\KdigMediaBundle(),
-            new Kdig\ArchaeologicalBundle\KdigArchaeologicalBundle(),
 
             new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
@@ -57,6 +53,11 @@ class AppKernel extends Kernel
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
+            
+            new Kdig\UserBundle\KdigUserBundle(),
+            new Kdig\MediaBundle\KdigMediaBundle(),
+            new Kdig\ArchaeologicalBundle\KdigArchaeologicalBundle(),
+            new Kdig\TemplateBundle\KdigTemplateBundle(),
 
         );
 
