@@ -1,13 +1,18 @@
 kdig_media:
     resource: "@KdigMediaBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /media
 
 kdig_user:
     resource: "@KdigUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /user
 
 kdig_template:
     resource: "@KdigTemplateBundle/Resources/config/routing.yml"
+    prefix:   /template
+
+kdig_template:
+    resource: "@KdigArchaeologicalBundle/Resources/config/routing.yml"
+    type:     annotation
     prefix:   /
 
 
