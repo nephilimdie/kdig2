@@ -10,14 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 
 /**
- * Area controller.
+ * Index controller.
  *
  * @Route("/")
  */
 class DefaultController extends Controller
 {
     /**
-     * Lists all Area entities.
+     * Lists all Index entities.
      *
      * @Route("/", name="default_index")
      * @Method("GET")
