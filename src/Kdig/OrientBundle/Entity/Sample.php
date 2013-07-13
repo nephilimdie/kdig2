@@ -6,7 +6,7 @@
  * @ author Stefano Bassetto <stefano.bassetto@gmail.com>
  */
 
-namespace Kdig\ArchaelogicalBundle\Entity;
+namespace Kdig\OrientBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
