@@ -56,7 +56,17 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
         $menu->addChild('Home', array('route' => 'default_index'));
-
+        $menu->addChild('ciccio', array('route' => 'default_index'));
+        $menu->addChild('ciccia', array('route' => 'default_index'));
+        // object
+        // voc obj
+        // 
+        // pottery
+        // voc pottery
+        // 
+        // sample
+        // voc sample
+        // 
 //        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
 //        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
 //        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));

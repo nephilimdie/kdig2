@@ -75,15 +75,15 @@
             {% block content_row %}
             <div class="row-fluid">
                 {% block content %}
-                <div class="span9">
-                    {% block content_content %}
-                    <strong>Hier könnte Ihre Werbung stehen ... </strong>
-                    {% endblock content_content %}
-                </div>
                 <div class="span3">
                     {% block content_sidebar %}
                     <h2>Sidebar</h2>
                     {% endblock content_sidebar %}
+                </div>
+                <div class="span9">
+                    {% block content_content %}
+                    <strong>Hier könnte Ihre Werbung stehen ... </strong>
+                    {% endblock content_content %}
                 </div>
                 {% endblock content %}
             </div>
@@ -91,7 +91,8 @@
         </div>
         <footer>
             {% block footer %}
-            <p>&copy; <a href="http://www.mohrenweiserpartner.de" target="_blank">Mohrenweiser & Partner</a> 2011-2013</p>
+            <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
+            <p>someone want to write foot?</p>
             {% endblock footer %}
         </footer>
     </div> <!-- /container -->
