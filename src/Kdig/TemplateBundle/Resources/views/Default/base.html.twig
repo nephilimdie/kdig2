@@ -15,6 +15,7 @@
         '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
         '@MopaBootstrapBundle/Resources/public/less/eyecon-bootstrap-datepicker.less'
         '@KdigTemplateBundle/Resources/public/less/archaeological.less'
+        '@KdigTemplateBundle/Resources/public/less/kdigtemplatebundle.less'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
     {% endstylesheets %}
@@ -58,7 +59,7 @@
         <div class="content">
             {% block page_header %}
             <div class="page-header">
-                  <h1>{% block headline %}Kdig Project .2{% endblock headline %}</h1>
+                  <h5>{% block headline %}Kdig Project .2{% endblock headline %}</h5>
             </div>
             {% endblock page_header %}
 
