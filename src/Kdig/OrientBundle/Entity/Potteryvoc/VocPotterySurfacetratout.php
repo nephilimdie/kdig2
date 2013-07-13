@@ -34,7 +34,7 @@ class VocPotterySurfacetratout {
      */
     protected $color;
 
-    /** @ORM\ManyToOne(targetEntity="Pottery", inversedBy="surfacetratout" ) */
+    /** @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", inversedBy="surfacetratout" ) */
     protected $pottery;
 
     /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption", inversedBy="surfaceout" ) */
