@@ -21,9 +21,7 @@ framework:
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
-    form:
-        resources:
-            - LexikFormFilterBundle:Form:form_div_layout.html.twig
+    form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
@@ -39,6 +37,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - LexikFormFilterBundle:Form:form_div_layout.html.twig
 
 # Assetic Configuration
 assetic:
