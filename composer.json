@@ -58,7 +58,9 @@
         "liip/theme-bundle": "dev-master",
 
         "oneup/uploader-bundle": "dev-master",
-        "devtime/backbone-bundle": "dev-master"
+        "devtime/backbone-bundle": "dev-master",
+        "jordillonch/crud-generator": "dev-master",
+        "lexik/form-filter-bundle": "1.2.*"
     },
     "scripts": {
         "post-install-cmd": [
