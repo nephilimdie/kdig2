@@ -46,14 +46,18 @@ assetic:
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
-        lessphp:
+        less:
+            node: /usr/bin/node
+            node_paths: [/usr/local/lib/node_modules]
             apply_to: "\.less$"
-            # Formatter options: compressed, lessjs, classic
-            formatter: "compressed"
-            preserve_comments: false
-            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
-            presets:
-                my_variable: "#000"
+#        lessphp:
+#            apply_to: "\.less$"
+#            # Formatter options: compressed, lessjs, classic
+#            formatter: "compressed"
+#            preserve_comments: false
+#            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+#            presets:
+#                my_variable: "#000"
 # Doctrine Configuration
 doctrine:
     dbal:
