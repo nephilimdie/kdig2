@@ -11,7 +11,7 @@ kdig_template:
     prefix:   /template
 
 kdig_template:
-    resource: "@KdigArchaeologicalBundle/Resources/config/routing.yml"
+    resource: "@KdigArchaeologicalBundle/Controller/"
     type:     annotation
     prefix:   /
 
