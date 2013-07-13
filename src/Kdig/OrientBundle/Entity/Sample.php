@@ -85,14 +85,4 @@ class Sample {
      */
     protected $type;
     
-    /**
-     *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="smaples", cascade={"persist"})
-     * @ORM\JoinTable(name="sample_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
-     * )
-     */
-    private $media;
-    
 }

@@ -109,7 +109,7 @@ class Bucketsheet {
     private $isphotographed;
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="bucketsheets", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="bucketsheets", cascade={"persist"})
      * @ORM\JoinTable(name="bucketsheet_media",
      *   joinColumns={@ORM\JoinColumn(nullable=true, name="bucketsheet_id", referencedColumnName="id", onDelete="SET NULL")},
      *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}

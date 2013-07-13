@@ -34,7 +34,9 @@ class VocPotteryDecorationout {
      */
     protected $color;
 
-    /** @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", inversedBy="potdecorationout" ) */
+    /** 
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", inversedBy="potdecorationout" ) 
+     */
     protected $pottery;
 
     /** 
