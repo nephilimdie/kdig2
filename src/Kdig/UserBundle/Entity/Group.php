@@ -32,6 +32,14 @@ class Group extends BaseGroup
     private $title;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Area", mappedBy="groups", cascade={"persist"})
+     */ 
+   private $areas;
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\UserBundle\Entity\User", mappedBy="slectedgroup", cascade={"persist"})
+     */
+    private $userprofilegroup;
+    /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created", type="datetime")
      */
