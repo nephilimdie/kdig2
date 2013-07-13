@@ -56,8 +56,9 @@ class AppKernel extends Kernel
             
             new Kdig\UserBundle\KdigUserBundle(),
             new Kdig\MediaBundle\KdigMediaBundle(),
-            new Kdig\ArchaeologicalBundle\KdigArchaeologicalBundle(),
             new Kdig\TemplateBundle\KdigTemplateBundle(),
+            new Kdig\ArchaeologicalBundle\KdigArchaeologicalBundle(),
+            new Kdig\OrientBundle\KdigOrientBundle(),
 
         );
 
