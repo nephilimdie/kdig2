@@ -72,7 +72,7 @@ class User extends BaseUser
     protected $slectedgroup;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Area", inversedBy="userprofilearea")
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area", inversedBy="userprofilearea")
      * @ORM\JoinColumn(nullable=true, name="area_id", referencedColumnName="id")
      */
     protected $slectedarea;
