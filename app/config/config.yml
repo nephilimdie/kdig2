@@ -42,7 +42,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: true
-    bundles:        [ ]
+    bundles:        [ KdigTemplateBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
