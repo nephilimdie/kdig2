@@ -80,15 +80,15 @@ class VocDecorationOption {
     private $isDelete=false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationin", inversedBy="decorationoption")
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin", inversedBy="decorationoption")
      */
     private $decorationin;
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationout", inversedBy="decorationoption")
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout", inversedBy="decorationoption")
      */
     private $decorationout;
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationinout", inversedBy="decorationoption")
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout", inversedBy="decorationoption")
      */
     private $decorationinout;
 }

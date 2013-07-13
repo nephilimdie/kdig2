@@ -79,7 +79,7 @@ class Sample {
     private $presample;
     
     /**
-     * @ORM\OneToMany(targetEntity="\Kdig\ArchaelogicalBundle\Entity\Samplevoc\VocSampleType", mappedBy="sample")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Samplevoc\VocSampleType", mappedBy="sample")
      * @GRID\Column(field="type.name", title="Type")
      * @GRID\Column(field="type.name", title="Type", filter="select")
      */

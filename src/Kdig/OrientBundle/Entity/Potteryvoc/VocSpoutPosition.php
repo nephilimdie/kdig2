@@ -80,7 +80,7 @@ class VocSpoutPosition {
     private $isDelete=false;
 
     /** 
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", mappedBy="spoutposition") 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery", mappedBy="spoutposition") 
      */
     private $pottery;
 }
