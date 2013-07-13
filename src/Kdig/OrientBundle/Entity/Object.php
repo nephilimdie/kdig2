@@ -255,14 +255,4 @@ class Object {
      */
     private $itaremarks;
     
-    /**
-     *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="objects", cascade={"persist"})
-     * @ORM\JoinTable(name="object_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="object_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
-     * )
-     */
-    public $media; 
-    
 }

@@ -82,14 +82,14 @@ class Presample {
     private $isDelete=false;
     
     /**
-     * @ ORM\ManyToOne(targetEntity="Bucket", inversedBy="presamples", cascade={"persist"})
-     * @ ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
-     * @ GRID\Column(field="bucket.name", title="Bucket")
-     * @ GRID\Column(field="bucket.us.name", title="Locus", size="40")
-     * @ GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
-     * @ GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Bucket", inversedBy="presamples", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id")
+     * @GRID\Column(field="bucket.name", title="Bucket")
+     * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
+     * @GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
+     * @GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
      */
-//    private $bucket;
+    private $bucket;
     
     /**
      *
@@ -102,220 +102,9 @@ class Presample {
     private $media;
 
     /**
-     * @ ORM\OneToOne(targetEntity="Sample", inversedBy="presample", cascade={"persist"})
-     * @ ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Sample", inversedBy="presample", orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id")
      */
-//    private $sample;
+    private $sample;
     
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->media = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Presample
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set remarks
-     *
-     * @param string $remarks
-     * @return Presample
-     */
-    public function setRemarks($remarks)
-    {
-        $this->remarks = $remarks;
-    
-        return $this;
-    }
-
-    /**
-     * Get remarks
-     *
-     * @return string 
-     */
-    public function getRemarks()
-    {
-        return $this->remarks;
-    }
-
-    /**
-     * Set created
-     *
-     * @param \DateTime $created
-     * @return Presample
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-    
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return \DateTime 
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     * @return Presample
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-    
-        return $this;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return \DateTime 
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    /**
-     * Set isActive
-     *
-     * @param boolean $isActive
-     * @return Presample
-     */
-    public function setIsActive($isActive)
-    {
-        $this->isActive = $isActive;
-    
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return boolean 
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
-    }
-
-    /**
-     * Set isPublic
-     *
-     * @param boolean $isPublic
-     * @return Presample
-     */
-    public function setIsPublic($isPublic)
-    {
-        $this->isPublic = $isPublic;
-    
-        return $this;
-    }
-
-    /**
-     * Get isPublic
-     *
-     * @return boolean 
-     */
-    public function getIsPublic()
-    {
-        return $this->isPublic;
-    }
-
-    /**
-     * Set isDelete
-     *
-     * @param boolean $isDelete
-     * @return Presample
-     */
-    public function setIsDelete($isDelete)
-    {
-        $this->isDelete = $isDelete;
-    
-        return $this;
-    }
-
-    /**
-     * Get isDelete
-     *
-     * @return boolean 
-     */
-    public function getIsDelete()
-    {
-        return $this->isDelete;
-    }
-
-    /**
-     * Add media
-     *
-     * @param \Kdig\MediaBundle\Entity\Media $media
-     * @return Presample
-     */
-    public function addMedia(\Kdig\MediaBundle\Entity\Media $media)
-    {
-        $this->media[] = $media;
-    
-        return $this;
-    }
-
-    /**
-     * Remove media
-     *
-     * @param \Kdig\MediaBundle\Entity\Media $media
-     */
-    public function removeMedia(\Kdig\MediaBundle\Entity\Media $media)
-    {
-        $this->media->removeElement($media);
-    }
-
-    /**
-     * Get media
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getMedia()
-    {
-        return $this->media;
-    }
 }

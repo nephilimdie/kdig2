@@ -80,17 +80,17 @@ class VocColor {
     private $isDelete=false;
 
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="color", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="color")
      */
     private $vocpotdecin;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="color", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="color")
      */
     private $vocpotdecinout;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="color", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="color")
      */
     private $vocpotdecout;
     

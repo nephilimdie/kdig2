@@ -46,6 +46,54 @@ class Bucket {
      * @ORM\Column(nullable=true, length=1024, type="text")
      */
     private $remarks;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us", inversedBy="buckets", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true, name="us_id", referencedColumnName="id", onDelete="SET NULL")
+     * @GRID\Column(field="us.name", title="Locus", size="40")
+     * @GRID\Column(field="us.typeus.name", size="40", title="Type Locus", filter="select")
+     * @GRID\Column(field="us.area.name", size="40", title="Area", filter="select")
+     */
+    private $us;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Prepottery", mappedBy="bucket", cascade={"persist"})
+     */
+    private $prepotterys;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Preobject", mappedBy="bucket", cascade={"persist"})
+     */
+    private $preobjects;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Presample", mappedBy="bucket", cascade={"persist"})
+     */
+    private $presamples;
+    
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="buckets", cascade={"persist"})
+     * @ORM\JoinTable(name="bucket_media",
+     *   joinColumns={@ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")},
+     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
+     * )
+     */
+    private $media;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Bucketsheet", inversedBy="bucket", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true, name="bucketsheet_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $bucketsheet;
+    
+    /**
+     * @ORM\Column(nullable=true, type="string", length=255, name="image_name")
+     *
+     * @var string $imageName
+     */
+    protected $imageName;
+    
     /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(nullable=true, name="created", type="datetime")
@@ -81,50 +129,4 @@ class Bucket {
      */
     private $isDelete=false;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us", inversedBy="buckets", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true, name="us_id", referencedColumnName="id", onDelete="SET NULL")
-     * @GRID\Column(field="us.name", title="Locus", size="40")
-     * @GRID\Column(field="us.typeus.name", size="40", title="Type Locus", filter="select")
-     * @GRID\Column(field="us.area.name", size="40", title="Area", filter="select")
-     */
-    private $us;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Prepottery", mappedBy="bucket", cascade={"persist"})
-     */
-    private $prepotterys;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Preobject", mappedBy="bucket", cascade={"persist"})
-     */
-    private $preobjects;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Presample", mappedBy="bucket", cascade={"persist"})
-     */
-    private $presamples;
-    
-    /**
-     *
-     * @ORM\ManyToMany(targetEntity="Media", inversedBy="buckets", cascade={"persist"})
-     * @ORM\JoinTable(name="bucket_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
-     * )
-     */
-    private $media;
-    
-    /**
-     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Bucketsheet", inversedBy="bucket", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true, name="bucketsheet_id", referencedColumnName="id", onDelete="SET NULL")
-     */
-    private $bucketsheet;
-    
-    /**
-     * @ORM\Column(nullable=true, type="string", length=255, name="image_name")
-     *
-     * @var string $imageName
-     */
-    protected $imageName;
 }

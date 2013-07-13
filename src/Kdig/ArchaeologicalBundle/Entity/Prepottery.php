@@ -85,14 +85,14 @@ class Prepottery {
     private $isDelete=false;
     
     /**
-     * @ ORM\ManyToOne(targetEntity="Bucket", inversedBy="prepotterys", cascade={"persist"})
-     * @ ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id", onDelete="SET NULL")
-     * @ GRID\Column(field="bucket.name", title="Bucket")
-     * @ GRID\Column(field="bucket.us.name", title="Locus", size="40")
-     * @ GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
-     * @ GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Bucket", inversedBy="prepotterys", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id")
+     * @GRID\Column(field="bucket.name", title="Bucket")
+     * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
+     * @GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
+     * @GRID\Column(field="bucket.us.area.name", title="Area", filter="select", size="40")
      */
-//    private $bucket;
+    private $bucket;
     
     /**
      *
@@ -105,10 +105,10 @@ class Prepottery {
     private $media;
 
     /**
-     * @ ORM\OneToOne(targetEntity="Pottery", inversedBy="prepottery", cascade={"persist"})
-     * @ ORM\JoinColumn(nullable=true, name="pottery_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="prepottery", orphanRemoval=true)
+     * @ORM\JoinColumn(nullable=true, name="pottery_id", referencedColumnName="id")
      */
-//    private $pottery;
+    private $pottery;
     
     /**
      * Constructor
