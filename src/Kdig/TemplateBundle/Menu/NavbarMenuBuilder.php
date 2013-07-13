@@ -34,7 +34,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         return $menu;
     }
 
-    public function createRightSideDropdownMenu(Request $request)
+    public function createUserSideDropdownMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
@@ -49,4 +49,19 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
         return $menu;
     }
+    
+    public function createArchaeologicalMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav pull-right');
+
+        $menu->addChild('Home', array('route' => 'default_index'));
+
+//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
+//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
+//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
+
+        return $menu;
+    }
+
 }

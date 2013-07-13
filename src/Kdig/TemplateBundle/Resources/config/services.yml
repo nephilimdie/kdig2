@@ -2,16 +2,31 @@ parameters:
     kdig_template.navbar_menu_builder.class: Kdig\TemplateBundle\Menu\NavbarMenuBuilder
 
 services:
+## horizontal navbar
     kdig.template.navbar:
         class: '%mopa_bootstrap.navbar.generic%'
         scope: request
         arguments:
-            - { leftmenu: '@kdig.template.navbar_main_menu=', rightmenu: '@kdig.template.navbar_right_menu=' }
+            - { leftmenu: '@kdig.template.navbar_main_menu=', rightmenu: '@kdig.template.navbar_user_menu=' }
             - {}
             - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false }
         tags:
             - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
 
+## vertical nav bar
+    kdig.archaeological.verticalnavbar:
+        class: %mopa_bootstrap.navbar.generic%
+        arguments:
+            # first argument: a named array of menues:
+            - { menu: '@kdig.template.navbar_menu_archaeological=' }
+            - {}
+            # third argument: a named array of options
+            - { fixedTop: true, isFluid: true, template: KdigTemplateBundle:Navbar:archaeologicalnav.html.twig }
+        tags:
+            # The alias is used to retrieve the navbar in templates
+            - { name: mopa_bootstrap.navbar, alias: archaeologicalnav }
+            
+            
     kdig.template.navbar_menu_builder:
         class: %kdig_template.navbar_menu_builder.class%
         scope: request
@@ -26,11 +41,20 @@ services:
         tags:
             - { name: knp_menu.menu, alias: main }
 
-    kdig.template.navbar_right_menu:
+    kdig.template.navbar_user_menu:
         class: Knp\Menu\MenuItem
         factory_service: kdig.template.navbar_menu_builder
-        factory_method: createRightSideDropdownMenu
+        factory_method: createUserSideDropdownMenu
         arguments: [ '@request' ]
         scope: request
         tags:
-            - { name: knp_menu.menu, alias: main }
+            - { name: knp_menu.menu, alias: user }
+            
+    kdig.template.navbar_menu_archaeological:
+        class: Knp\Menu\MenuItem
+        factory_service: kdig.template.navbar_menu_builder
+        factory_method: createArchaeologicalMenu
+        arguments: [ '@request' ]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: archaeological }
