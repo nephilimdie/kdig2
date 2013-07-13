@@ -80,7 +80,7 @@ class VocInclusion {
     private $isDelete=false;
 
     /** 
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", mappedBy="inclusion") 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery", mappedBy="inclusion") 
      */
     private $pottery;
 }

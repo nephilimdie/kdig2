@@ -80,7 +80,7 @@ class VocHandlePosition {
     private $isDelete=false;
 
     /** 
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", mappedBy="handleposition") 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery", mappedBy="handleposition") 
      */
     private $pottery;
 }

@@ -80,17 +80,17 @@ class VocSurfaceTratOption {
     private $isDelete=false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratin", inversedBy="vocsurfacetratoption", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin", inversedBy="vocsurfacetratoption", cascade={"persist"})
      */
     private $surfacein;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", inversedBy="vocsurfacetratoption", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", inversedBy="vocsurfacetratoption", cascade={"persist"})
      */
     private $surfaceinout;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratout", inversedBy="vocsurfacetratoption", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", inversedBy="vocsurfacetratoption", cascade={"persist"})
      */
     private $surfaceout;
 

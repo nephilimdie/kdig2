@@ -30,17 +30,17 @@ class VocPotteryDecorationinout {
     private $id;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocColor", inversedBy="vocpotdecinout" ) 
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocColor", inversedBy="vocpotdecinout" ) 
      */
     protected $color;
 
     /** 
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", inversedBy="potdecorationinout" ) 
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="potdecorationinout" ) 
      */
     protected $pottery;
 
     /** 
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocDecorationOption", inversedBy="decorationinout" ) 
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocDecorationOption", inversedBy="decorationinout" ) 
      */
     protected $decorationoption;
 }

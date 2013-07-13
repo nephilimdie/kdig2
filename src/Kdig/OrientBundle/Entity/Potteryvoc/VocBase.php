@@ -80,7 +80,7 @@ class VocBase {
     private $isDelete=false;
 
     /** 
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Pottery", mappedBy="base") 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery", mappedBy="base") 
      */
     private $pottery;
 }

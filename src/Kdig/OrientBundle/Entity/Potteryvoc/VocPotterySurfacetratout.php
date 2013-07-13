@@ -37,6 +37,6 @@ class VocPotterySurfacetratout {
     /** @ORM\ManyToOne(targetEntity="Pottery", inversedBy="surfacetratout" ) */
     protected $pottery;
 
-    /** @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocSurfaceTratOption", inversedBy="surfaceout" ) */
+    /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption", inversedBy="surfaceout" ) */
     protected $vocsurfacetratoption;
 }

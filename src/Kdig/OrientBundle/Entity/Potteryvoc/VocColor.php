@@ -80,30 +80,30 @@ class VocColor {
     private $isDelete=false;
 
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="color")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="color")
      */
     private $vocpotdecin;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="color")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="color")
      */
     private $vocpotdecinout;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="color")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="color")
      */
     private $vocpotdecout;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratin", mappedBy="color")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin", mappedBy="color")
      */
     private $pottery_surfacetratin;
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", mappedBy="color")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", mappedBy="color")
      */
     private $pottery_surfacetratinout;
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="color")
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="color")
      */
     private $pottery_surfacetratout;
 }

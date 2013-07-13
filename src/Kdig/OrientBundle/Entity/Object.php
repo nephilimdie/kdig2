@@ -98,47 +98,47 @@ class Object {
     private $drawned;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjClass", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjClass", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="class_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="class.name", title="Class", filter="select")
      */
     private $class; //voc
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjType", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjType", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="type_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="type.name", title="Type", filter="select")
      */
     private $type; //voc
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjMaterial", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjMaterial", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="material_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="material.name", title="Material", filter="select")
      */
     private $material; //voc
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjTechnique", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjTechnique", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="technique_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="technique.name", title="Technique", filter="select")
      */
     private $technique; //voc
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjDecoration", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="decoration_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="decoration.name", title="Decoration", filter="select")
      */
     private $decoration; //voc
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjPreservation", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="preservation_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="preservation.name", title="Preservation", filter="select")
      */
     private $preservation; //voc  
 
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\ArchaelogicalBundle\Entity\Objectvoc\VocObjDate", inversedBy="object", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Objectvoc\VocObjDate", inversedBy="object", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="dateobject_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="datepbject.name", title="Periods", filter="select")
      */
