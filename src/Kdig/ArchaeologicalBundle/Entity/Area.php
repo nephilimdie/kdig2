@@ -136,7 +136,7 @@ class Area {
     
     public function __tostring() 
     {
-        return $this->getName();
+        return (string)$this->getName();
     }
     /**
      * Constructor
