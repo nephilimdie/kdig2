@@ -63,6 +63,10 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addIcon($obj, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
         $smp = $menu->addChild('Sample', array('route' => 'default_index'));
         $this->addIcon($smp, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+        
+        $dropdown = $this->createDropdownMenuItem($menu, "Voc", true, array('caret' => true));
+        $dropdown->addChild('Prova', array('route' => 'fos_user_security_logout'));
+        $dropdown->addChild('Prova2', array('route' => 'fos_user_security_logout'));
         // object
         // voc obj
         // 
