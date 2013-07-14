@@ -5,6 +5,7 @@
      {{ (navbar.hasOption('fixedTop') and  navbar.getOption('fixedTop')) ? ' navbar-fixed-top' : '' }}
      {{ (navbar.hasOption('staticTop') and  navbar.getOption('staticTop')) ? ' navbar-static-top' : '' }}"
 >
-                {{ navbar.hasMenu('archaeological') ? knp_menu_render(navbar.getMenu('archaeological'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
+    {{ navbar.hasMenu('archaeological') ? knp_menu_render(navbar.getMenu('archaeological'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
 </div>
+{{ knp_menu_render(navbar.getMenu('archaeological'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) }}
 {% endblock %}
