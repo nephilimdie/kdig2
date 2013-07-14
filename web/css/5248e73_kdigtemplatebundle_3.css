@@ -1,0 +1,10 @@
+.navbar {
+  margin: 0px !important;
+}
+.page-header {
+  margin: 0px !important;
+  border-bottom: 1px solid #eeeeee;
+}
+.container-fluid {
+  margin-right: 70px !important;
+}
