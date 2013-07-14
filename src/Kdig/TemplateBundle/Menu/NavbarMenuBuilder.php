@@ -54,11 +54,14 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
     public function createArchaeologicalMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span3');
+        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
 
-        $menu->addChild('Home', array('route' => 'default_index'));
-        $menu->addChild('ciccio', array('route' => 'default_index'));
-        $menu->addChild('ciccia', array('route' => 'default_index'));
+        $pot = $menu->addChild('Pottery', array('route' => 'default_index'));
+        $this->addIcon($pot, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+        $obj = $menu->addChild('Object', array('route' => 'default_index'));
+        $this->addIcon($obj, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+        $smp = $menu->addChild('Sample', array('route' => 'default_index'));
+        $this->addIcon($smp, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
         // object
         // voc obj
         // 
