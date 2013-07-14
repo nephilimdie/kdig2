@@ -109,6 +109,13 @@ class Site {
     /**
      * Constructor
      */
+    
+    
+    public function __tostring() 
+    {
+        return (string)$this->getName();
+    }
+    
     public function __construct()
     {
         $this->media = new \Doctrine\Common\Collections\ArrayCollection();
