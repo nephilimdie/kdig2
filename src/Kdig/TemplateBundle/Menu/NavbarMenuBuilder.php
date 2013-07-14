@@ -26,8 +26,9 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav');
 
         $home = $menu->addChild('Home', array('route' => 'default_index'));
-
         $this->addIcon($home, array('icon' => 'home', 'inverted'=>true, 'append'=>false ));
+        $home = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
+        $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>true, 'append'=>false ));
 //        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
 //        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
 //        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
