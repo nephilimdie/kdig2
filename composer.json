@@ -20,7 +20,6 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
 
-        "leafo/lessphp": "dev-master",
         "presta/sitemap-bundle": "dev-master",
         
         "mopa/bootstrap-bundle": "dev-master",
