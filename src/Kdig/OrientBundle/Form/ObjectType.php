@@ -13,11 +13,6 @@ class ObjectType extends AbstractType
         $builder
             ->add('number')
             ->add('remarks')
-            ->add('created')
-            ->add('updated')
-            ->add('isActive')
-            ->add('isPublic')
-            ->add('isDelete')
             ->add('isphotographed')
             ->add('drawned')
             ->add('fragments')
