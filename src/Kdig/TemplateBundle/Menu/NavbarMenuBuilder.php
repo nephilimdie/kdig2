@@ -25,8 +25,9 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav');
 
-        $menu->addChild('Home', array('route' => 'default_index'));
+        $home = $menu->addChild('Home', array('route' => 'default_index'));
 
+        $this->addIcon($home, array('icon' => 'home', 'inverted'=>true, 'append'=>false ));
 //        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
 //        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
 //        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
@@ -40,7 +41,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
-        $dropdown = $this->createDropdownMenuItem($menu, "User");
+        $dropdown = $this->createDropdownMenuItem($menu, "User", true, array('caret' => true));
+        $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
         if ($this->isLoggedIn) {
             $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
         } else {
