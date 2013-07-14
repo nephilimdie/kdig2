@@ -1,16 +1,16 @@
-{% block subnavbar %}
+{% block navbar %}
 <div class="
      archaeological 
      {{ (navbar.hasOption('inverse') and  navbar.getOption('inverse')) ? ' navbar-inverse' : '' }}
      {{ (navbar.hasOption('fixedTop') and  navbar.getOption('fixedTop')) ? ' navbar-fixed-top' : '' }}
      {{ (navbar.hasOption('staticTop') and  navbar.getOption('staticTop')) ? ' navbar-static-top' : '' }}"
 >
-    {#{ navbar.hasMenu('archaeological') ? knp_menu_render(navbar.getMenu('archaeological'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }#}
+    <div class="navbar-inner">
+        <div class="container{{ (navbar.hasOption('isFluid') and navbar.getOption('isFluid')) ? '-fluid' : '' }}">
+            <div class="nav-collapse collapse">
+                {{ navbar.hasMenu('menu') ? knp_menu_render(navbar.getMenu('menu'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
+            </div>
+        </div>
+    </div>
 </div>
-{{ knp_menu_render(navbar.getMenu('menu'), {
-    'currentClass': 'active', 
-    'ancestorClass': 'active', 
-    'allow_safe_labels': 'false'
-    }) 
-}}
-{% endblock subnavbar %}
+{% endblock %}
