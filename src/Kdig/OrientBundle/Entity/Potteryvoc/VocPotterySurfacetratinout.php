@@ -39,4 +39,83 @@ class VocPotterySurfacetratinout {
 
     /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption", inversedBy="surfaceinout" ) */
     protected $vocsurfacetratoption;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set color
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color
+     * @return VocPotterySurfacetratinout
+     */
+    public function setColor(\Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color = null)
+    {
+        $this->color = $color;
+    
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return \Kdig\OrientBundle\Entity\Potteryvoc\VocColor 
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set pottery
+     *
+     * @param \Kdig\OrientBundle\Entity\Pottery $pottery
+     * @return VocPotterySurfacetratinout
+     */
+    public function setPottery(\Kdig\OrientBundle\Entity\Pottery $pottery = null)
+    {
+        $this->pottery = $pottery;
+    
+        return $this;
+    }
+
+    /**
+     * Get pottery
+     *
+     * @return \Kdig\OrientBundle\Entity\Pottery 
+     */
+    public function getPottery()
+    {
+        return $this->pottery;
+    }
+
+    /**
+     * Set vocsurfacetratoption
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption $vocsurfacetratoption
+     * @return VocPotterySurfacetratinout
+     */
+    public function setVocsurfacetratoption(\Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption $vocsurfacetratoption = null)
+    {
+        $this->vocsurfacetratoption = $vocsurfacetratoption;
+    
+        return $this;
+    }
+
+    /**
+     * Get vocsurfacetratoption
+     *
+     * @return \Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption 
+     */
+    public function getVocsurfacetratoption()
+    {
+        return $this->vocsurfacetratoption;
+    }
 }
