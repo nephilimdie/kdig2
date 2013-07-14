@@ -13,11 +13,6 @@ class BucketsheetType extends AbstractType
         $builder
             ->add('name')
             ->add('remarks')
-            ->add('created')
-            ->add('updated')
-            ->add('isActive')
-            ->add('isPublic')
-            ->add('isDelete')
             ->add('isread')
             ->add('isdrawn')
             ->add('isnumbered')

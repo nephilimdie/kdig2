@@ -12,11 +12,6 @@ class PhotolistType extends AbstractType
     {
         $builder
             ->add('remarks')
-            ->add('created')
-            ->add('updated')
-            ->add('isActive')
-            ->add('isPublic')
-            ->add('isDelete')
             ->add('fromnumber')
             ->add('tonumber')
             ->add('vocmachine')

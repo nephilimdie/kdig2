@@ -14,11 +14,6 @@ class VocMachineType extends AbstractType
             ->add('name')
             ->add('sigla')
             ->add('remarks')
-            ->add('created')
-            ->add('updated')
-            ->add('isActive')
-            ->add('isPublic')
-            ->add('isDelete')
         ;
     }
 
