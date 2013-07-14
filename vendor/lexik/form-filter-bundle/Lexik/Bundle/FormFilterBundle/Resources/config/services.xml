@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="lexik_form_filter.query_builder_updater.class">Lexik\Bundle\FormFilterBundle\Filter\FilterBuilderUpdater</parameter>
+    </parameters>
+
+    <services>
+        <service id="lexik_form_filter.query_builder_updater" class="%lexik_form_filter.query_builder_updater.class%">
+            <argument type="service" id="lexik_form_filter.transformer_aggregator" />
+            <argument type="service" id="event_dispatcher" />
+        </service>
+
+        <!-- Filter transformer agggregator -->
+        <service id="lexik_form_filter.transformer_aggregator" class="Lexik\Bundle\FormFilterBundle\Filter\Transformer\TransformerAggregator" />
+
+        <!-- Tag filter transformer -->
+        <service id="lexik_form_filter.transformer.value_keys" class="Lexik\Bundle\FormFilterBundle\Filter\Transformer\FilterValueKeysTransformer">
+            <tag name="lexik_form_filter.transformer" alias="filter_transformer_value_key" />
+        </service>
+
+        <service id="lexik_form_filter.transformer.default" class="Lexik\Bundle\FormFilterBundle\Filter\Transformer\FilterDefaultTransformer">
+            <tag name="lexik_form_filter.transformer" alias="filter_transformer_default" />
+        </service>
+
+<!--         <service id="lexik_form_filter.transformer.date" class="Lexik\Bundle\FormFilterBundle\Filter\Transformer\FilterDateTransformer"> -->
+<!--             <tag name="lexik_form_filter.transformer" alias="filter_transformer_date" /> -->
+<!--         </service> -->
+
+        <service id="lexik_form_filter.transformer.text" class="Lexik\Bundle\FormFilterBundle\Filter\Transformer\FilterTextTransformer">
+            <tag name="lexik_form_filter.transformer" alias="filter_transformer_text" />
+        </service>
+    </services>
+</container>

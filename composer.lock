@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1d30a6f60726255c46843bc286338397",
+    "hash": "ad4a5989dcf16b4e0a39e86974738797",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -71,12 +71,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craue/CraueFormFlowBundle.git",
-                "reference": "5ac5e657e7036f33c828d953a7944a6b0f5e9dad"
+                "reference": "6c659b9558ba466df7ea07ddaa59345b6ccb3a70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/5ac5e657e7036f33c828d953a7944a6b0f5e9dad",
-                "reference": "5ac5e657e7036f33c828d953a7944a6b0f5e9dad",
+                "url": "https://api.github.com/repos/craue/CraueFormFlowBundle/zipball/6c659b9558ba466df7ea07ddaa59345b6ccb3a70",
+                "reference": "6c659b9558ba466df7ea07ddaa59345b6ccb3a70",
                 "shasum": ""
             },
             "require": {
@@ -116,7 +116,7 @@
                 "Symfony2",
                 "form"
             ],
-            "time": "2013-06-15 08:12:26"
+            "time": "2013-07-13 08:13:28"
         },
         {
             "name": "ddeboer/data-import",
@@ -1536,6 +1536,56 @@
             "time": "2013-07-09 10:50:36"
         },
         {
+            "name": "jordillonch/crud-generator",
+            "version": "dev-master",
+            "target-dir": "JordiLlonch/Bundle/CrudGeneratorBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jordillonch/CrudGeneratorBundle.git",
+                "reference": "2aa0ee4a83cf866c60f55b8494031fe8ec7fff5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jordillonch/CrudGeneratorBundle/zipball/2aa0ee4a83cf866c60f55b8494031fe8ec7fff5a",
+                "reference": "2aa0ee4a83cf866c60f55b8494031fe8ec7fff5a",
+                "shasum": ""
+            },
+            "require": {
+                "lexik/form-filter-bundle": "1.2.*",
+                "pagerfanta/pagerfanta": "1.0.*@dev",
+                "sensio/generator-bundle": ">2.2.0, <2.4-dev",
+                "symfony/symfony": ">2.2.0, <2.4-dev"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JordiLlonch\\Bundle\\CrudGeneratorBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Llonch",
+                    "email": "llonch.jordi@gmail.com"
+                }
+            ],
+            "description": "This bundle generates a nice CRUD",
+            "homepage": "https://github.com/jordillonch/CrudGeneratorBundle",
+            "keywords": [
+                "crud",
+                "generator"
+            ],
+            "time": "2013-06-10 20:32:35"
+        },
+        {
             "name": "knplabs/gaufrette",
             "version": "dev-master",
             "source": {
@@ -2066,6 +2116,58 @@
             "time": "2013-07-09 16:25:09"
         },
         {
+            "name": "lexik/form-filter-bundle",
+            "version": "v1.2.3",
+            "target-dir": "Lexik/Bundle/FormFilterBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikFormFilterBundle.git",
+                "reference": "v1.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikFormFilterBundle/zipball/v1.2.3",
+                "reference": "v1.2.3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "*",
+                "php": ">=5.3.2",
+                "symfony/form": ">=2.1,<2.4-dev",
+                "symfony/framework-bundle": ">=2.1,<2.4-dev"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Lexik\\Bundle\\FormFilterBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                }
+            ],
+            "description": "This bundle aim to provide classes to build some form filters and then build a doctrine query from this form filter.",
+            "homepage": "https://github.com/lexik/LexikFormFilterBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "doctrine",
+                "filter",
+                "form"
+            ],
+            "time": "2013-06-04 08:35:57"
+        },
+        {
             "name": "liip/doctrine-cache-bundle",
             "version": "dev-master",
             "target-dir": "Liip/DoctrineCacheBundle",
@@ -2499,6 +2601,68 @@
                 "upload"
             ],
             "time": "2013-06-25 16:02:16"
+        },
+        {
+            "name": "pagerfanta/pagerfanta",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whiteoctober/Pagerfanta.git",
+                "reference": "v1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whiteoctober/Pagerfanta/zipball/v1.0.0",
+                "reference": "v1.0.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": "*",
+                "doctrine/orm": "2.*",
+                "mandango/mandango": "*",
+                "propel/propel1": ">=1.6,<2.0",
+                "solarium/solarium": "dev-develop"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "To use the DoctrineODMMongoDBAdapter.",
+                "doctrine/orm": "To use the DoctrineORMAdapter.",
+                "mandango/mandango": "To use the MandangoAdapter.",
+                "propel/propel1": "To use the PropelAdapter",
+                "solarium/solarium": "To use the SolariumAdapter."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Pagerfanta\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Díez",
+                    "email": "pablodip@gmail.com",
+                    "homepage": "http://github.com/pablodip"
+                }
+            ],
+            "description": "Pagination for PHP 5.3",
+            "keywords": [
+                "page",
+                "pagination",
+                "paginator",
+                "paging"
+            ],
+            "time": "2013-04-24 11:35:36"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -3007,12 +3171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "1101afbf38fccb58bb3494745ed307bf9a1b0934"
+                "reference": "676cae96966d8ea4d2dfcc85107a143fea8216d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/1101afbf38fccb58bb3494745ed307bf9a1b0934",
-                "reference": "1101afbf38fccb58bb3494745ed307bf9a1b0934",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/676cae96966d8ea4d2dfcc85107a143fea8216d8",
+                "reference": "676cae96966d8ea4d2dfcc85107a143fea8216d8",
                 "shasum": ""
             },
             "require": {
@@ -3062,7 +3226,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2013-07-11 09:56:48"
+            "time": "2013-07-11 16:16:11"
         },
         {
             "name": "sonata-project/cache-bundle",
@@ -4137,7 +4301,8 @@
         "liip/doctrine-cache-bundle": 20,
         "liip/theme-bundle": 20,
         "oneup/uploader-bundle": 20,
-        "devtime/backbone-bundle": 20
+        "devtime/backbone-bundle": 20,
+        "jordillonch/crud-generator": 20
     },
     "platform": {
         "php": ">=5.3.3"
