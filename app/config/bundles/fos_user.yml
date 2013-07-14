@@ -2,3 +2,5 @@ fos_user:
     db_driver: orm 
     firewall_name: main
     user_class: Kdig\UserBundle\Entity\User
+    group:
+        group_class: Kdig\UserBundle\Entity\Group
