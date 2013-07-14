@@ -1,0 +1,40 @@
+parameters:
+#    kdig_archaeological.example.class: Kdig\ArchaeologicalBundle\Example
+
+services:
+   kdig.archaelogical.admin.area:
+      class: Kdig\ArchaeologicalBundle\Admin\AreaAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: kdig_menu, label: Area }
+      arguments: [null, Kdig\ArchaeologicalBundle\Entity\Area, KdigArchaeologicalBundle:AreaAdmin]
+   
+   kdig.archaelogical.admin.vocareatype:
+      class: Kdig\ArchaeologicalBundle\Admin\VocAreaTypeAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: kdig_menu, label: VocAreaType }
+      arguments: [null, Kdig\ArchaeologicalBundle\Entity\VocAreaType, KdigArchaeologicalBundle:VocAreaTypeAdmin]
+   
+   kdig.archaelogical.admin.us:
+      class: Kdig\ArchaeologicalBundle\Admin\UsAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: kdig_menu, label: US }
+      arguments: [null, Kdig\ArchaeologicalBundle\Entity\Us, KdigArchaeologicalBundle:UsAdmin]
+   
+   kdig.archaelogical.admin.sitetype:
+      class: Kdig\ArchaeologicalBundle\Admin\SiteAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: kdig_menu, label: Site }
+      arguments: [null, Kdig\ArchaeologicalBundle\Entity\Site, KdigArchaeologicalBundle:SiteAdmin]
+   
+   kdig.archaelogical.admin.vocrelationtype:
+      class: Kdig\ArchaeologicalBundle\Admin\VocRelationAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: kdig_menu, label: Voc Relation }
+      arguments: [null, Kdig\ArchaeologicalBundle\Entity\VocRelation, KdigArchaeologicalBundle:VocRelationAdmin]
+   
+   kdig.archaelogical.admin.vocustype:
+      class: Kdig\ArchaeologicalBundle\Admin\VocUsTypeAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: kdig_menu, label: Voc Us Type }
+      arguments: [null, Kdig\ArchaeologicalBundle\Entity\VocUsType, KdigArchaeologicalBundle:VocUsTypeAdmin]
+      
