@@ -26,12 +26,13 @@ services:
             # The alias is used to retrieve the navbar in templates
             - { name: mopa_bootstrap.navbar, alias: archaeologicalnav }
             
-            
+## reference class            
     kdig.template.navbar_menu_builder:
         class: %kdig_template.navbar_menu_builder.class%
         scope: request
         arguments: [ '@knp_menu.factory', '@security.context' ]
 
+## Menus
     kdig.template.navbar_main_menu:
         class: Knp\Menu\MenuItem
         factory_service: kdig.template.navbar_menu_builder
