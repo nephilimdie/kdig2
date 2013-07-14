@@ -15,6 +15,7 @@ imports:
     - { resource: bundles/admin/sonata_cache.yml }
     - { resource: bundles/admin/sonata_media.yml }
     - { resource: bundles/admin/sonata_admin.yml }
+    - { resource: bundles/admin/sonata_user.yml }
     - { resource: '@KdigArchaeologicalBundle/Resources/config/admin.yml' }
     
 framework:
