@@ -93,21 +93,6 @@ class User extends BaseUser
      * @var \DateTime
      */
     public $credentialsExpireAt;    
-    
-    /**
-     * @var datetime $created_at
-     *
-     * @ORM\Column(name="created_at", type="datetime", nullable=false)
-     * @Gedmo\Timestampable(on="create")
-     */
-    protected $created_at;
-    
-    /**
-     * @ORM\Column(name="updated", type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     */
-    private $updated;
-    
 
     public function __construct()
     {
