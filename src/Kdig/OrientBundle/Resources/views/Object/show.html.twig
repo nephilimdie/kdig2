@@ -1,0 +1,121 @@
+{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
+
+{% block title %}
+{{ parent() }} - {{ 'views.show.show'|trans({'%entity%': 'Object'}, 'JordiLlonchCrudGeneratorBundle') }}
+{% endblock %}
+
+{% block page %}
+
+<h1>Object</h1>
+
+<form class="form-horizontal">
+    <fieldset>        <div class="control-group">
+            <label class="control-label">Id</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.id }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Number</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.number }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Remarks</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.remarks }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Created</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Updated</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.updated|date('Y-m-d H:i:s') }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Isactive</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isActive }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Ispublic</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isPublic }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Isdelete</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isDelete }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Isphotographed</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isphotographed }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Drawned</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.drawned }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Fragments</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.fragments }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Inscription</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.inscription }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Dateoofcontext</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.dateoofcontext }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Height</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.height }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Lenght</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.lenght }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Width</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.width }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Thickness</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.thickness }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Diameter</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.diameter }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Perforationdiameter</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.perforationdiameter }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Weight</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.weight }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Bibliography</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.bibliography }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Restorationdate</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.restorationdate|date('Y-m-d H:i:s') }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Analysisdate</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.analysisdate|date('Y-m-d H:i:s') }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Analysisreport</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.analysisreport }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Location</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.location }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Museum_acquisition</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.museumacquisition }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Museum_acquisition_notes</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.museumacquisitionnotes }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Exhibition_history</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.exhibitionhistory }}</span>            </div>
+        </div>        <div class="control-group">
+            <label class="control-label">Itaremarks</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.itaremarks }}</span>            </div>
+        </div>    </fieldset>
+</form>
+
+<div>
+    <div class="float-left">
+        <a class="btn" href="{{ path('object') }}">
+            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
+        </a>
+    </div>
+    <div class="float-left">
+        <a class="btn btn-primary" href="{{ path('object_edit', { 'id': entity.id }) }}">
+            {{ 'views.recordactions.edit'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
+        </a>
+    </div>
+    <div class="float-left">
+        <form action="{{ path('object_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button class="btn btn-danger" type="submit" onclick="return confirm('{{ 'views.recordactions.confirm'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}');">{{ 'views.recordactions.delete'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
