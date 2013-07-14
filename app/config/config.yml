@@ -10,9 +10,12 @@ imports:
     - { resource: bundles/fos_user.yml }
     - { resource: bundles/oneup_uploader.yml }
     - { resource: bundles/liip_theme.yml }
+    ## admin 
     - { resource: bundles/admin/sonata_block.yml }
     - { resource: bundles/admin/sonata_cache.yml }
     - { resource: bundles/admin/sonata_media.yml }
+    - { resource: bundles/admin/sonata_admin.yml }
+    - { resource: '@KdigArchaeologicalBundle/Resources/config/admin.yml' }
     
 framework:
     #esi:             ~
