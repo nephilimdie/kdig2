@@ -83,4 +83,238 @@ class VocRim {
      * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery", mappedBy="rim") 
      */
     private $pottery;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->pottery = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return VocRim
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     * @return VocRim
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set remarks
+     *
+     * @param string $remarks
+     * @return VocRim
+     */
+    public function setRemarks($remarks)
+    {
+        $this->remarks = $remarks;
+    
+        return $this;
+    }
+
+    /**
+     * Get remarks
+     *
+     * @return string 
+     */
+    public function getRemarks()
+    {
+        return $this->remarks;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return VocRim
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return VocRim
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return VocRim
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+    
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Set isPublic
+     *
+     * @param boolean $isPublic
+     * @return VocRim
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+    
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean 
+     */
+    public function getIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * Set isDelete
+     *
+     * @param boolean $isDelete
+     * @return VocRim
+     */
+    public function setIsDelete($isDelete)
+    {
+        $this->isDelete = $isDelete;
+    
+        return $this;
+    }
+
+    /**
+     * Get isDelete
+     *
+     * @return boolean 
+     */
+    public function getIsDelete()
+    {
+        return $this->isDelete;
+    }
+
+    /**
+     * Add pottery
+     *
+     * @param \Kdig\OrientBundle\Entity\Pottery $pottery
+     * @return VocRim
+     */
+    public function addPottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
+    {
+        $this->pottery[] = $pottery;
+    
+        return $this;
+    }
+
+    /**
+     * Remove pottery
+     *
+     * @param \Kdig\OrientBundle\Entity\Pottery $pottery
+     */
+    public function removePottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
+    {
+        $this->pottery->removeElement($pottery);
+    }
+
+    /**
+     * Get pottery
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPottery()
+    {
+        return $this->pottery;
+    }
 }

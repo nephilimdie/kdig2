@@ -85,4 +85,238 @@ class VocWall {
      */
     private $pottery;
     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->pottery = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return VocWall
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     * @return VocWall
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set remarks
+     *
+     * @param string $remarks
+     * @return VocWall
+     */
+    public function setRemarks($remarks)
+    {
+        $this->remarks = $remarks;
+    
+        return $this;
+    }
+
+    /**
+     * Get remarks
+     *
+     * @return string 
+     */
+    public function getRemarks()
+    {
+        return $this->remarks;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return VocWall
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return VocWall
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return VocWall
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+    
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Set isPublic
+     *
+     * @param boolean $isPublic
+     * @return VocWall
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+    
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean 
+     */
+    public function getIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * Set isDelete
+     *
+     * @param boolean $isDelete
+     * @return VocWall
+     */
+    public function setIsDelete($isDelete)
+    {
+        $this->isDelete = $isDelete;
+    
+        return $this;
+    }
+
+    /**
+     * Get isDelete
+     *
+     * @return boolean 
+     */
+    public function getIsDelete()
+    {
+        return $this->isDelete;
+    }
+
+    /**
+     * Add pottery
+     *
+     * @param \Kdig\OrientBundle\Entity\Pottery $pottery
+     * @return VocWall
+     */
+    public function addPottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
+    {
+        $this->pottery[] = $pottery;
+    
+        return $this;
+    }
+
+    /**
+     * Remove pottery
+     *
+     * @param \Kdig\OrientBundle\Entity\Pottery $pottery
+     */
+    public function removePottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
+    {
+        $this->pottery->removeElement($pottery);
+    }
+
+    /**
+     * Get pottery
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPottery()
+    {
+        return $this->pottery;
+    }
 }

@@ -85,4 +85,215 @@ class Sample {
      */
     protected $type;
     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->type = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set remarks
+     *
+     * @param string $remarks
+     * @return Sample
+     */
+    public function setRemarks($remarks)
+    {
+        $this->remarks = $remarks;
+    
+        return $this;
+    }
+
+    /**
+     * Get remarks
+     *
+     * @return string 
+     */
+    public function getRemarks()
+    {
+        return $this->remarks;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Sample
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Sample
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     * @return Sample
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+    
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Set isPublic
+     *
+     * @param boolean $isPublic
+     * @return Sample
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+    
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean 
+     */
+    public function getIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * Set isDelete
+     *
+     * @param boolean $isDelete
+     * @return Sample
+     */
+    public function setIsDelete($isDelete)
+    {
+        $this->isDelete = $isDelete;
+    
+        return $this;
+    }
+
+    /**
+     * Get isDelete
+     *
+     * @return boolean 
+     */
+    public function getIsDelete()
+    {
+        return $this->isDelete;
+    }
+
+    /**
+     * Set presample
+     *
+     * @param \Kdig\ArchaeologicalBundle\Entity\Presample $presample
+     * @return Sample
+     */
+    public function setPresample(\Kdig\ArchaeologicalBundle\Entity\Presample $presample = null)
+    {
+        $this->presample = $presample;
+    
+        return $this;
+    }
+
+    /**
+     * Get presample
+     *
+     * @return \Kdig\ArchaeologicalBundle\Entity\Presample 
+     */
+    public function getPresample()
+    {
+        return $this->presample;
+    }
+
+    /**
+     * Add type
+     *
+     * @param \Kdig\OrientBundle\Entity\Samplevoc\VocSampleType $type
+     * @return Sample
+     */
+    public function addType(\Kdig\OrientBundle\Entity\Samplevoc\VocSampleType $type)
+    {
+        $this->type[] = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Remove type
+     *
+     * @param \Kdig\OrientBundle\Entity\Samplevoc\VocSampleType $type
+     */
+    public function removeType(\Kdig\OrientBundle\Entity\Samplevoc\VocSampleType $type)
+    {
+        $this->type->removeElement($type);
+    }
+
+    /**
+     * Get type
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 }

@@ -8,3 +8,6 @@
 .container-fluid {
   margin-right: 70px !important;
 }
+footer {
+  border-top: 1px solid #eeeeee;
+}
