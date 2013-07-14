@@ -1,0 +1,4 @@
+
+sonata_user:
+    security_acl: true
+    manager_type: orm # can be orm or mongodb
