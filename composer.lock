@@ -795,12 +795,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "ef7119fc9076c3c0b652aa9c8266286472e24dc1"
+                "reference": "b2e0ef9691f04c7097bac2183110764d005c39d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/ef7119fc9076c3c0b652aa9c8266286472e24dc1",
-                "reference": "ef7119fc9076c3c0b652aa9c8266286472e24dc1",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/b2e0ef9691f04c7097bac2183110764d005c39d8",
+                "reference": "b2e0ef9691f04c7097bac2183110764d005c39d8",
                 "shasum": ""
             },
             "require": {
@@ -867,7 +867,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2013-07-10 19:03:29"
+            "time": "2013-07-13 17:29:26"
         },
         {
             "name": "imagine/imagine",
