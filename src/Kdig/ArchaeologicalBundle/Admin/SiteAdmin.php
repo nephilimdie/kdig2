@@ -45,7 +45,7 @@ class SiteAdmin extends Admin
                 ->add('remarks')
                 ->add('campagna')
                 ->add('sigla')
-                ->add('media', 'sonata_type_model', array('required' => true))
+                ->add('media')
                 ->add('isPublic')
             ->end()
         ;
