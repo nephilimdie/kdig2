@@ -5658,14 +5658,6 @@ section {
   height: 16px;
 }
 
-.archaeological {
-  top: 0 !important;
-  bottom: 0 !important;
-  left: auto !important;
-  right: 0 !important;
-  margin: auto !important;
-}
-
 .navbar {
   margin: 0px !important;
 }
@@ -5675,4 +5667,12 @@ section {
 }
 .container-fluid {
   margin-right: 70px !important;
+}
+
+.archaeological {
+  top: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  right: 0 !important;
+  margin: auto !important;
 }

@@ -2540,12 +2540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/1up-lab/OneupUploaderBundle.git",
-                "reference": "cbb87b59746d2b035a4981e5ce945b6d0239d19e"
+                "reference": "bff5b86c5477d0dd05b488aa5498324b376d9673"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1up-lab/OneupUploaderBundle/zipball/cbb87b59746d2b035a4981e5ce945b6d0239d19e",
-                "reference": "cbb87b59746d2b035a4981e5ce945b6d0239d19e",
+                "url": "https://api.github.com/repos/1up-lab/OneupUploaderBundle/zipball/bff5b86c5477d0dd05b488aa5498324b376d9673",
+                "reference": "bff5b86c5477d0dd05b488aa5498324b376d9673",
                 "shasum": ""
             },
             "require": {
@@ -2600,7 +2600,7 @@
                 "plupload",
                 "upload"
             ],
-            "time": "2013-06-25 16:02:16"
+            "time": "2013-07-14 09:19:37"
         },
         {
             "name": "pagerfanta/pagerfanta",
