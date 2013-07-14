@@ -54,7 +54,7 @@ services:
     kdig.template.navbar_menu_archaeological:
         class: Knp\Menu\MenuItem
         factory_service: kdig.template.navbar_menu_builder
-        factory_method: createArchaeologicalMenu
+        factory_method: createArchaeologicalMdenu
         arguments: [ '@request' ]
         scope: request
         tags:
