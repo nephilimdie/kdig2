@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ad4a5989dcf16b4e0a39e86974738797",
+    "hash": "847c9caf3ff1fd39e74de5f615c8daf1",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -2073,47 +2073,6 @@
                 "http client"
             ],
             "time": "2013-05-19 03:41:15"
-        },
-        {
-            "name": "leafo/lessphp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leafo/lessphp.git",
-                "reference": "366fb52798d4f120503af0703da11cba4ad06f8d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/366fb52798d4f120503af0703da11cba4ad06f8d",
-                "reference": "366fb52798d4f120503af0703da11cba4ad06f8d",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.3-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "lessc.inc.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "lessphp is a compiler for LESS written in PHP.",
-            "homepage": "http://leafo.net/lessphp/",
-            "time": "2013-07-09 16:25:09"
         },
         {
             "name": "lexik/form-filter-bundle",
@@ -4271,7 +4230,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "leafo/lessphp": 20,
         "presta/sitemap-bundle": 20,
         "mopa/bootstrap-bundle": 20,
         "twitter/bootstrap": 20,
