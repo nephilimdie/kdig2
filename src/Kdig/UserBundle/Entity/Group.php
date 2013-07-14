@@ -50,9 +50,6 @@ class Group extends BaseGroup
      public function __construct($name, $roles = array())
      {
      	parent::__construct($name, $roles);
-     	
-     	$this->setCreatedAt(new \DateTime());
-     	$this->setUpdatedAt(new \DateTime());
      }
      
     /**
@@ -76,16 +73,6 @@ class Group extends BaseGroup
     	return $this->id;
     }    
     
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
     /**
      * Set enabled
      *
