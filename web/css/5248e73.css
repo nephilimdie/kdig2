@@ -5688,3 +5688,9 @@ footer {
   margin: 0px !important;
   padding: 0px !important;
 }
+.leftMenu {
+  position: relative;
+  float: right;
+  margin-right: 67px;
+  margin-top: -32px;
+}
