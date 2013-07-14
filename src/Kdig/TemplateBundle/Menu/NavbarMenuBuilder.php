@@ -69,6 +69,12 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 //        $dropdown->setChildrenAttribute('class', 'nav pull-right');
         $dropdown->addChild('Prova', array('route' => 'fos_user_security_logout'));
         $dropdown->addChild('Prova2', array('route' => 'fos_user_security_logout'));
+        
+        $dropdown = $this->createDropdownMenuItem($menu, "Voc2", true, array('caret' => true));
+        $dropdown->setChildrenAttribute('class', 'leftMenu dropdown-menu');
+//        $dropdown->setChildrenAttribute('class', 'nav pull-right');
+        $dropdown->addChild('Prova3', array('route' => 'fos_user_security_logout'));
+        $dropdown->addChild('Prova4', array('route' => 'fos_user_security_logout'));
         // object
         // voc obj
         // 
