@@ -47,7 +47,7 @@ class AreaAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('groups', 'sonata_type_model', array('required' => true))
+                ->add('groups')
                 ->add('fromrefbucket')
                 ->add('torefbucket')
                 ->add('fromrefus')
