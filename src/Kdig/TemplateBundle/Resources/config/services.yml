@@ -58,4 +58,4 @@ services:
         arguments: [ '@request' ]
         scope: request
         tags:
-            - { name: knp_menu.menu, alias: archaeological }
+            - { name: knp_menu.menu, alias: archaeologicalmenu }
