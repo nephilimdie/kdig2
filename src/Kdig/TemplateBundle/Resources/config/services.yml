@@ -18,13 +18,13 @@ services:
         class: %mopa_bootstrap.navbar.generic%
         arguments:
             # first argument: a named array of menues:
-            - { menu: '@kdig.template.navbar_menu_archaeological=' }
+            - { menu: '@kdig.template.navbar_archaeological_menu=' }
             - {}
             # third argument: a named array of options
             - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Navbar/archaeologicalnav.html.twig' }
         tags:
             # The alias is used to retrieve the navbar in templates
-            - { name: mopa_bootstrap.navbar, alias: archaeologicalnav }
+            - { name: mopa_bootstrap.navbar, alias: archaeologicalsubnav }
             
 ## reference class            
     kdig.template.navbar_menu_builder:
@@ -51,7 +51,7 @@ services:
         tags:
             - { name: knp_menu.menu, alias: user }
             
-    kdig.template.navbar_menu_archaeological:
+    kdig.template.navbar_archaeological_menu:
         class: Knp\Menu\MenuItem
         factory_service: kdig.template.navbar_menu_builder
         factory_method: createArchaeologicalMenu
