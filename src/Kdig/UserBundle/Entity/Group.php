@@ -39,12 +39,6 @@ class Group extends BaseGroup
      * @ORM\OneToMany(targetEntity="Kdig\UserBundle\Entity\User", mappedBy="slectedgroup", cascade={"persist"})
      */
     private $userprofilegroup;
-    /**
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="created", type="datetime")
-     */
-    private $created;
-   
      
      /**
       * @var boolean $enabled
