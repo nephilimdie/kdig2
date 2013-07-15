@@ -6,7 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Kdig\UserBundle\Entity\Group;
 
-class LoadGroupData implements FixtureInterface
+class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
