@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use Kdig\ArchaeologicalBundle\Form\PrepotteryType;
+
 class PotteryType extends AbstractType
 {
     protected $bucketid;
