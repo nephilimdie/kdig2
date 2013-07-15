@@ -54,6 +54,9 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
     
     public function createArchaeologicalMenu(Request $request)
     {
+        // controllo il ruolo del gruppo a cui è associato l'utente 
+//        $securityContext = $this->container->get('security.context')->getToken()->getUser()->getSlectedgroup();
+        
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
 
@@ -65,7 +68,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addIcon($smp, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
         
         
-        if ($securityContext->hasRole('ROLE_ARCHEOLOGO')) {
+        if ($this->securityContext->hasRole('ROLE_ARCHEOLOGO')) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
@@ -92,7 +95,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $media->addChild('New', array('route' => 'default_index'));
             $media->addChild('List', array('route' => 'default_index'));
         
-        } elseif ($securityContext->hasRole('ROLE_CERAMICA')) {
+        } elseif ($this->securityContext->hasRole('ROLE_CERAMICA')) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
@@ -119,7 +122,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $media->addChild('New', array('route' => 'default_index'));
             $media->addChild('List', array('route' => 'default_index'));
             
-        } elseif ($securityContext->hasRole('ROLE_OGGETTI')) {
+        } elseif ($this->securityContext->hasRole('ROLE_OGGETTI')) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
@@ -146,7 +149,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $media->addChild('New', array('route' => 'default_index'));
             $media->addChild('List', array('route' => 'default_index'));
             
-        } elseif ($securityContext->hasRole('ROLE_SAMPLE')) {
+        } elseif ($this->securityContext->hasRole('ROLE_SAMPLE')) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
