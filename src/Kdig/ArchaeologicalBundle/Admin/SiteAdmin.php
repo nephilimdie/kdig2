@@ -45,7 +45,7 @@ class SiteAdmin extends Admin
                 ->add('remarks')
                 ->add('campagna')
                 ->add('sigla')
-                ->add('media')
+                ->add('media', null, array('required' => false))
                 ->add('isPublic')
             ->end()
         ;
@@ -87,7 +87,7 @@ class SiteAdmin extends Admin
             ->add('remarks')
             ->add('campagna')
             ->add('sigla')
-            ->add('media', null, array('required' => false))
+            ->add('media')
             ->add('isPublic')
         ;
     }
