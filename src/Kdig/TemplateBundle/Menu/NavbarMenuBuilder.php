@@ -102,12 +102,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
 //            $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
 //            $bucket->setChildrenAttribute('class', 'leftMenu dropdown-menu');
-            $obj = $this->createDropdownMenuItem($menu, "Object", true, array('caret' => true));
-            $obj->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $pot = $this->createDropdownMenuItem($menu, "Pottery", true, array('caret' => true));
             $pot->setChildrenAttribute('class', 'leftMenu dropdown-menu');
-            $smp = $this->createDropdownMenuItem($menu, "Sample", true, array('caret' => true));
-            $smp->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $media = $this->createDropdownMenuItem($menu, "Media", true, array('caret' => true));
             $media->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             
@@ -115,12 +111,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $su->addChild('List', array('route' => 'us'));
 //            $bucket->addChild('New', array('route' => 'bucket_new'));
 //            $bucket->addChild('List', array('route' => 'bucket'));
-            $obj->addChild('New', array('route' => 'preobject_new'));
-            $obj->addChild('List', array('route' => 'preobject'));
-            $pot->addChild('New', array('route' => 'prepottery_new'));
-            $pot->addChild('List', array('route' => 'prepottery'));
-            $smp->addChild('New', array('route' => 'presample_new'));
-            $smp->addChild('List', array('route' => 'presample'));
+            $pot->addChild('New', array('route' => 'pottery_new'));
+            $pot->addChild('List', array('route' => 'pottery'));
             $media->addChild('New', array('route' => 'default_index'));
             $media->addChild('List', array('route' => 'default_index'));
             
