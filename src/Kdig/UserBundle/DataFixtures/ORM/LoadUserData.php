@@ -30,16 +30,14 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
     {
         $userAdmin = new User();
         $userAdmin->setUsername('admin');
-        $userAdmin->setSalt(md5(uniqid()));
-
-        $encoder = $this->container
-            ->get('security.encoder_factory')
-            ->getEncoder($userAdmin)
-        ;
-        $userAdmin->setPassword($encoder->encodePassword('admin', $userAdmin->getSalt()));
-
-        $userAdmin->setEmail('cambialatuamail@cambiala.com');
-        $userAdmin->SetEnabled(true);
+        $userAdmin->getUsernameCanonical('admin');
+        $userAdmin->setPlainPassword('kdig');
+        $userAdmin->setEmail('admin@kdig.com');
+        $userAdmin->setEmailCanonical('admin@kdig.com');
+        $userAdmin->setEnabled(true);
+        $userAdmin->setRoles(array('ROLE_ADMIN', 'ROLE_SUPER_ADMIN'));
+        $userAdmin->setPermissions(array('VIEW', 'EDIT', 'CREATE', 'DELETE'));
+       	$userAdmin->addGroupUser($this->getReference('group-admin'));
         $userAdmin->setSuperAdmin(true);
 
         $manager->persist($userAdmin);
