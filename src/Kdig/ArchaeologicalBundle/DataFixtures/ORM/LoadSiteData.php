@@ -22,6 +22,8 @@ class LoadSiteData extends AbstractFixture implements OrderedFixtureInterface
 
         $manager->persist($site);
         $manager->flush();
+        
+        $this->addReference('karke-site', $site);
     }
     /**
      * {@inheritDoc}
