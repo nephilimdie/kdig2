@@ -15,21 +15,27 @@ class LoadUsData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $vocustype = new Us();
-        $vocustype->setName('Locus');
-        $vocustype->setShort('L');
+        $vocustype->setName('0001');
+        $vocustype->setSite($this->getReference('pitt-vocustype'));
+        $vocustype->setSite($this->getReference('karke-site'));
         $vocustype->setIsPublic(true);
         $manager->persist($vocustype);
 
         $vocustype2 = new VocAreaType();
-        $vocustype2->setName('Pitt');
-        $vocustype2->setShort('P');
+        $vocustype2->setName('0002');
+        $vocustype2->setTypeus($this->getReference('locus-vocustype'));
+        $vocustype2->setSite($this->getReference('karke-site'));
         $vocustype2->setIsPublic(true);
         $manager->persist($vocustype2);
+        
+        $vocustype3 = new VocAreaType();
+        $vocustype3->setName('0003');
+        $vocustype3->setTypeus($this->getReference('locus-vocustype'));
+        $vocustype3->setSite($this->getReference('karke-site'));
+        $vocustype3->setIsPublic(true);
+        $manager->persist($vocustype3);
 
         $manager->flush();
-        
-        $this->addReference('locus-vocustype', $vocustype);
-        $this->addReference('pitt-vocustype', $vocustype2);
     }
     /**
      * {@inheritDoc}
