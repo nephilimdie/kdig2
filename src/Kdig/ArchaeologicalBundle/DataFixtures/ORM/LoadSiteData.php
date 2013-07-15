@@ -6,7 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Kdig\ArchaeologicalBundle\Entity\Site;
 
-class LoadSiteData implements FixtureInterface
+class LoadSiteData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
