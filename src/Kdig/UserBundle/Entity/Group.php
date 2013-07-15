@@ -15,7 +15,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @package    Entity
  */
 class Group extends BaseGroup
-{        
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     \*/
+    protected $id;
+        
     /**
      * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area", mappedBy="groups", cascade={"persist"})
      */ 
@@ -31,6 +38,16 @@ class Group extends BaseGroup
         $this->areas = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * Add areas
      *
