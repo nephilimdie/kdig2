@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a4cbc703d277a9820f5770d8aa03b59c",
+    "hash": "a6c503f49ac4a6b0366674e19899a3f9",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -65,6 +65,72 @@
             "time": "2013-07-05 22:59:38"
         },
         {
+            "name": "apy/jsfv-bundle",
+            "version": "dev-master",
+            "target-dir": "APY/JsFormValidationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Abhoryo/APYJsFormValidationBundle.git",
+                "reference": "a8153a3c1b926d02fd937058b50cf2e8863beb74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Abhoryo/APYJsFormValidationBundle/zipball/a8153a3c1b926d02fd937058b50cf2e8863beb74",
+                "reference": "a8153a3c1b926d02fd937058b50cf2e8863beb74",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/symfony": ">=2.1,<2.4-dev",
+                "willdurand/expose-translation-bundle": ">=0.2.1"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/doctrine-fixtures-bundle": "*",
+                "doctrine/orm": "*",
+                "jms/aop-bundle": "*",
+                "jms/di-extra-bundle": "*",
+                "liip/functional-test-bundle": "*",
+                "sensio/framework-extra-bundle": "*",
+                "symfony/assetic-bundle": "2.*",
+                "symfony/framework-bundle": ">=2.1,<2.4-dev"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "APY\\JsFormValidationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Yoann Petit",
+                    "email": "abhoryo@free.fr"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Abhoryo/APYJsFormValidationBundle/graphs/contributors"
+                }
+            ],
+            "description": "Symfony2 Javascript Form Validation Bundle with localisation support",
+            "homepage": "https://github.com/Abhoryo/APYJsFormValidationBundle",
+            "keywords": [
+                "form",
+                "g11n",
+                "i18n",
+                "javascript",
+                "l10n",
+                "symfony",
+                "validation"
+            ],
+            "time": "2013-06-12 15:35:05"
+        },
+        {
             "name": "craue/formflow-bundle",
             "version": "dev-master",
             "target-dir": "Craue/FormFlowBundle",
@@ -124,12 +190,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ddeboer/data-import.git",
-                "reference": "b9d20085eede4858630b293ebd35278471442cdb"
+                "reference": "9e34946840f1175cc90f418a06dad0e02983a46e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ddeboer/data-import/zipball/b9d20085eede4858630b293ebd35278471442cdb",
-                "reference": "b9d20085eede4858630b293ebd35278471442cdb",
+                "url": "https://api.github.com/repos/ddeboer/data-import/zipball/9e34946840f1175cc90f418a06dad0e02983a46e",
+                "reference": "9e34946840f1175cc90f418a06dad0e02983a46e",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +245,7 @@
                 "export",
                 "import"
             ],
-            "time": "2013-07-08 11:48:47"
+            "time": "2013-07-15 13:42:43"
         },
         {
             "name": "ddeboer/data-import-bundle",
@@ -980,6 +1046,77 @@
                 "uploadable"
             ],
             "time": "2013-07-13 17:29:26"
+        },
+        {
+            "name": "genemu/form-bundle",
+            "version": "v2.2.0",
+            "target-dir": "Genemu/Bundle/FormBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/genemu/GenemuFormBundle.git",
+                "reference": "v2.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/genemu/GenemuFormBundle/zipball/v2.2.0",
+                "reference": "v2.2.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/form": ">=2.3,<3.0",
+                "symfony/framework-bundle": ">=2.3,<3.0"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "1.*",
+                "doctrine/mongodb-odm-bundle": "*",
+                "doctrine/orm": "2.*",
+                "phpunit/phpunit": "3.7.*",
+                "propel/propel-bundle": "*",
+                "symfony/doctrine-bridge": ">=2.3,<3.0",
+                "symfony/finder": "2.*"
+            },
+            "suggest": {
+                "symfony/doctrine-bundle": "In order to use some form types with Doctrine",
+                "symfony/finder": "For an image type",
+                "symfony/mongodb-odm-bundle": "For MongoDB integration",
+                "symfony/twig-bridge": "For integration into Twig templates"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Genemu\\Bundle\\FormBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Chauvel",
+                    "email": "olivier@generation-multiple.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/genemu/GenemuFormBundle/contributors"
+                },
+                {
+                    "name": "Bilal Amarni",
+                    "email": "bilal.amarni@gmail.com"
+                }
+            ],
+            "description": "Extra form types for your Symfony2 projects",
+            "keywords": [
+                "extra form",
+                "form"
+            ],
+            "time": "2013-06-05 17:09:18"
         },
         {
             "name": "imagine/imagine",
@@ -2611,12 +2748,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/1up-lab/OneupUploaderBundle.git",
-                "reference": "9dbd9056dfe403ce6f1273d2d75fe814d517731a"
+                "reference": "c07642908590218c4a01b4fea7d325beb11cbc48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1up-lab/OneupUploaderBundle/zipball/9dbd9056dfe403ce6f1273d2d75fe814d517731a",
-                "reference": "9dbd9056dfe403ce6f1273d2d75fe814d517731a",
+                "url": "https://api.github.com/repos/1up-lab/OneupUploaderBundle/zipball/c07642908590218c4a01b4fea7d325beb11cbc48",
+                "reference": "c07642908590218c4a01b4fea7d325beb11cbc48",
                 "shasum": ""
             },
             "require": {
@@ -2671,7 +2808,7 @@
                 "plupload",
                 "upload"
             ],
-            "time": "2013-07-14 23:27:32"
+            "time": "2013-07-15 10:26:22"
         },
         {
             "name": "pagerfanta/pagerfanta",
@@ -3744,12 +3881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataMediaBundle.git",
-                "reference": "9e811b73cb69f656984f68c8dca3e152fe6c95cd"
+                "reference": "ecf91655db15751fd8d5a65677edcf91b7afd7bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/9e811b73cb69f656984f68c8dca3e152fe6c95cd",
-                "reference": "9e811b73cb69f656984f68c8dca3e152fe6c95cd",
+                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/ecf91655db15751fd8d5a65677edcf91b7afd7bc",
+                "reference": "ecf91655db15751fd8d5a65677edcf91b7afd7bc",
                 "shasum": ""
             },
             "require": {
@@ -3811,7 +3948,7 @@
                 "vimeo",
                 "youtube"
             ],
-            "time": "2013-07-05 17:53:07"
+            "time": "2013-07-15 08:36:55"
         },
         {
             "name": "sonata-project/notification-bundle",
@@ -4447,6 +4584,59 @@
                 "css"
             ],
             "time": "2013-06-20 19:11:39"
+        },
+        {
+            "name": "willdurand/expose-translation-bundle",
+            "version": "dev-master",
+            "target-dir": "Bazinga/ExposeTranslationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/BazingaExposeTranslationBundle.git",
+                "reference": "6df1246d89d1eb36242c8ee12d57f46a6a43f195"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/BazingaExposeTranslationBundle/zipball/6df1246d89d1eb36242c8ee12d57f46a6a43f195",
+                "reference": "6df1246d89d1eb36242c8ee12d57f46a6a43f195",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": ">=2.0,<2.4-dev",
+                "symfony/finder": ">=2.0,<2.4-dev",
+                "symfony/framework-bundle": ">=2.0,<2.4-dev"
+            },
+            "require-dev": {
+                "symfony/browser-kit": ">=2.0,<2.4-dev",
+                "symfony/yaml": ">=2.0,<2.4-dev"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Bazinga\\ExposeTranslationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                }
+            ],
+            "description": "A pretty nice way to expose your translation messages to your JavaScript.",
+            "keywords": [
+                "javascript",
+                "translation"
+            ],
+            "time": "2013-06-20 15:42:20"
         }
     ],
     "packages-dev": [
@@ -4489,7 +4679,9 @@
         "devtime/backbone-bundle": 20,
         "jordillonch/crud-generator": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
-        "doctrine/data-fixtures": 20
+        "doctrine/data-fixtures": 20,
+        "willdurand/expose-translation-bundle": 20,
+        "apy/jsfv-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"
