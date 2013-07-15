@@ -52,8 +52,8 @@ class Site {
     /**
      * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="sites", cascade={"persist"})
      * @ORM\JoinTable(name="site_media",
-     *   joinColumns={@ORM\JoinColumn(nullable=true, name="site_id", referencedColumnName="id", onDelete="SET NULL")},
-     *   inverseJoinColumns={@ORM\JoinColumn(nullable=true, name="media_id", referencedColumnName="id", onDelete="SET NULL")}
+     *   joinColumns={@ORM\JoinColumn(name="site_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="media_id", referencedColumnName="id")}
      * )
      */
     private $media;
