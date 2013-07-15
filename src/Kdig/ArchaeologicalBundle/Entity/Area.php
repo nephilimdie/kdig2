@@ -76,7 +76,7 @@ class Area {
 
     /**
      * @ORM\ManyToOne(targetEntity="VocAreaType", inversedBy="area")
-     * @ORM\JoinColumn(nullable=true, name="vocareatype_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\JoinColumn(name="vocareatype_id", referencedColumnName="id")
      * @Assert\NotBlank()
      */
     protected $type;
