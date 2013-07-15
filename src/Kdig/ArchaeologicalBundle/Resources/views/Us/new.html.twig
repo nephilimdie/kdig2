@@ -1,5 +1,5 @@
 {% block title %}
-    {{ 'views.new.creation'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }}
+{{ parent() }} - {{ 'views.new.creation'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
