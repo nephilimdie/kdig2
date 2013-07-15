@@ -13,14 +13,8 @@ class PrepotteryType extends AbstractType
         $builder
             ->add('name')
             ->add('remarks')
-            ->add('created')
-            ->add('updated')
-            ->add('isActive')
-            ->add('isPublic')
-            ->add('isDelete')
             ->add('bucket')
             ->add('media')
-            ->add('pottery')
         ;
     }
 
