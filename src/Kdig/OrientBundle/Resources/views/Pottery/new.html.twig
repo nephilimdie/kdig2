@@ -10,7 +10,7 @@
 
 <form class="well" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row">
-        <div class="group span12">
+        <div class="group span12 ">
             <div class="form_input"> 
                 {{ form_label(form.prepottery.bucket) }}
                 {{ form_errors(form.prepottery.bucket) }}
@@ -107,27 +107,27 @@
             {{ form_errors(form.inclusionfrequency) }}
             {{ form_row(form.inclusionfrequency) }}
         </div>
-        <div class="group span12form-box collection large-group">
+        <div class="group span12 form-box collection large-group">
             <a href="#" class="surfacein noajax form-add-new-prototype button green">Add new</a>
             {{ form_row(form.surfacetratin) }}
         </div>
-        <div class="group span12form-box collection large-group">
+        <div class="group span12 form-box collection large-group">
             <a href="#" class="surfaceout noajax button green">Add new</a>
             {{ form_row(form.surfacetratout) }}
         </div>
-        <div class="group span12form-box collection large-group">
+        <div class="group span12 form-box collection large-group">
             <a href="#" class="surfaceinout noajax button green">Add new</a>
             {{ form_row(form.surfacetratinout) }}
         </div>
-        <div class="group span12form-box collection large-group">
+        <div class="group span12 form-box collection large-group">
             <a href="#" class="decorationin noajax button green">Add new</a>
             {{ form_row(form.potdecorationin) }}
         </div>
-        <div class="group span12form-box collection large-group">
+        <div class="group span12 form-box collection large-group">
             <a href="#" class="decorationout noajax button green">Add new</a>
             {{ form_row(form.potdecorationout) }}
         </div>
-        <div class="group span12form-box collection large-group">
+        <div class="group span12 form-box collection large-group">
             <a href="#" class="decorationinout noajax button green">Add new</a>
             {{ form_row(form.potdecorationinout) }}
         </div>
