@@ -143,6 +143,11 @@ class Us {
         $this->relationsto = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    public function __tostring() 
+    {
+        return (string)$this->getName().'('.$this->getSigla().')';
+    }
+    
     /**
      * Get id
      *
