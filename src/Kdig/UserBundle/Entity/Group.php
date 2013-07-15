@@ -34,7 +34,7 @@ class Group extends BaseGroup
 
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct($name, $roles = array());
         $this->areas = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
