@@ -57,11 +57,11 @@
         {% endblock header %}
 
         <div class="content">
-            {% block title %}
+            {% block page_header %}
             <div class="page-header">
                   <h5>{% block headline %}Kdig Project .2{% endblock headline %}</h5>
             </div>
-            {% endblock title %}
+            {% endblock page_header %}
 
             {% block flashes %}
             {% if app.session.flashbag.peekAll|length > 0 %}
