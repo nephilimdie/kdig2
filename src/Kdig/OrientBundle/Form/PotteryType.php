@@ -254,7 +254,7 @@ class PotteryType extends AbstractType
             ))
             ->add('remarks', 'textarea', array(
                 'label' => 'Description',
-                'help'  => 'Scrivi qualcosa.. -.-',
+                'help_block'  => 'Scrivi qualcosa.. -.-',
                 'required' => false
             ))
         ;
