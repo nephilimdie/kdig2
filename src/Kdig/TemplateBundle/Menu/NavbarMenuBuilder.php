@@ -6,6 +6,7 @@ use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Role\SwitchUserRole;
+use Symfony\Component\DependencyInjection\ContainerAware;
 use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 
 class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
