@@ -60,6 +60,7 @@ return array(
     'Incenteev\\ParameterHandler' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Imagine' => array($vendorDir . '/imagine/imagine/lib'),
     'Google\\Authenticator' => array($vendorDir . '/sonata-project/google-authenticator/lib'),
+    'Genemu\\Bundle\\FormBundle' => array($vendorDir . '/genemu/form-bundle'),
     'Gedmo\\' => array($vendorDir . '/gedmo/doctrine-extensions/lib'),
     'Gaufrette' => array($vendorDir . '/knplabs/gaufrette/src'),
     'FOS\\UserBundle' => array($vendorDir . '/friendsofsymfony/user-bundle'),
@@ -79,7 +80,9 @@ return array(
     'Craue\\FormFlowBundle' => array($vendorDir . '/craue/formflow-bundle'),
     'CG\\' => array($vendorDir . '/jms/cg/src'),
     'Buzz' => array($vendorDir . '/kriswallsmith/buzz/lib'),
+    'Bazinga\\ExposeTranslationBundle' => array($vendorDir . '/willdurand/expose-translation-bundle'),
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
+    'APY\\JsFormValidationBundle' => array($vendorDir . '/apy/jsfv-bundle'),
     'APY\\DataGridBundle' => array($vendorDir . '/apy/datagrid-bundle'),
     '' => array($baseDir . '/src'),
 );
