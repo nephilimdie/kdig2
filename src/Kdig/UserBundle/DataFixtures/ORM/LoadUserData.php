@@ -18,6 +18,8 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
         $userAdmin->setUsername('admin');
         $userAdmin->setPassword('admin');
         $userAdmin->setEmail('cambialatuamail@cambiala.com');
+        $userAdmin->SetEnabled(true);
+        $userAdmin->setSuperAdmin(true);
 
         $manager->persist($userAdmin);
         $manager->flush();
