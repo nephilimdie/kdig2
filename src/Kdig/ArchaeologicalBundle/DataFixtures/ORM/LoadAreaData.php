@@ -23,7 +23,7 @@ class LoadAreaData extends AbstractFixture implements OrderedFixtureInterface
         $area->setType($this->getReference('area-vocareatype'));
         $area->setIsPublic(true);
 
-        $manager->persist($site);
+        $manager->persist($area);
         $manager->flush();
     }
     /**
