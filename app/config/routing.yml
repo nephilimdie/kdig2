@@ -60,6 +60,9 @@ liip_theme:
     resource: "@LiipThemeBundle/Resources/config/routing.xml"
     prefix: /theme
 
+_bazinga_exposetranslation:
+    resource: "@BazingaExposeTranslationBundle/Resources/config/routing/routing.yml"
+    
 ##admin configuration
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
