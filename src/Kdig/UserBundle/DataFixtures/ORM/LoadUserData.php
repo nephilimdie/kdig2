@@ -20,8 +20,6 @@ class LoadUserData implements FixtureInterface
 
         $manager->persist($userAdmin);
         $manager->flush();
-
-        $this->addReference('admin-user', $userAdmin);
     }
     /**
      * {@inheritDoc}
