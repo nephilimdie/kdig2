@@ -21,76 +21,76 @@ class Group extends BaseGroup
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
-     * @ORM\generatedValue(strategy="AUTO")
-     */
-     protected $id;
-     
+     * @ORM\GeneratedValue(strategy="AUTO")
+     \*/
+    protected $id;
+        
     /**
-     * @Gedmo\Translatable
-     * @ORM\Column(length=64)
-     */
-    private $title;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area", mappedBy="groups", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaelogicalBundle\Entity\Area", mappedBy="groups", cascade={"persist"})
      */ 
-   private $areas;
+    private $areas;
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\UserBundle\Entity\User", mappedBy="slectedgroup", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Kdig\UserBundle\Entity\Group", mappedBy="slectedgroup", cascade={"persist"})
      */
     private $userprofilegroup;
-     
-     /**
-      * @var boolean $enabled
-      *
-      * @ORM\Column(name="enabled", type="boolean", nullable=true)
-      */
-     protected $enabled;
 
-     public function __construct($name, $roles = array())
-     {
-     	parent::__construct($name, $roles);
-     }
-     
-    /**
-     * 
-     * This method is used when you want to convert to string an object of
-     * this Entity
-     * ex: $value = (string)$entity;
-     * 
-     */    
-    public function __toString() {
-    	return (string) $this->name;
+//    public function __tostring() 
+//    {
+//        return $this->getId();
+//    }
+    public function __construct()
+    {
+        $this->areas = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
+    
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
-    	return $this->id;
-    }    
-    
-    /**
-     * Set enabled
-     *
-     * @param boolean $enabled
-     */
-    public function setEnabled($enabled)
-    {
-        $this->enabled = $enabled;
+        return $this->id;
     }
 
     /**
-     * Get enabled
+     * Add areas
      *
-     * @return boolean 
+     * @param Kdig\ArchaelogicalBundle\Entity\Area $areas
      */
-    public function getEnabled()
+    public function addArea(\Kdig\ArchaelogicalBundle\Entity\Area $areas)
     {
-        return $this->enabled;
+        $this->areas[] = $areas;
+    }
+
+    /**
+     * Get areas
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getAreas()
+    {
+        return $this->areas;
+    }
+
+    /**
+     * Add userprofilegroup
+     *
+     * @param Kdig\UserBundle\Entity\Group $userprofilegroup
+     */
+    public function addGroup(\Kdig\UserBundle\Entity\Group $userprofilegroup)
+    {
+        $this->userprofilegroup[] = $userprofilegroup;
+    }
+
+    /**
+     * Get userprofilegroup
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getUserprofilegroup()
+    {
+        return $this->userprofilegroup;
     }
     
 }
