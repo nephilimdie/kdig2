@@ -36,7 +36,6 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $userAdmin->setEmailCanonical('admin@kdig.com');
         $userAdmin->setEnabled(true);
         $userAdmin->setRoles(array('ROLE_ADMIN', 'ROLE_SUPER_ADMIN'));
-        $userAdmin->setPermissions(array('VIEW', 'EDIT', 'CREATE', 'DELETE'));
        	$userAdmin->addGroupUser($this->getReference('group-admin'));
         $userAdmin->setSuperAdmin(true);
 
