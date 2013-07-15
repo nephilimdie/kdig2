@@ -30,13 +30,13 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
     {
         $userAdmin = new User();
         $userAdmin->setUsername('admin');
-        $user->setSalt(md5(uniqid()));
+        $userAdmin->setSalt(md5(uniqid()));
 
         $encoder = $this->container
             ->get('security.encoder_factory')
-            ->getEncoder($user)
+            ->getEncoder($userAdmin)
         ;
-        $user->setPassword($encoder->encodePassword('admin', $user->getSalt()));
+        $userAdmin->setPassword($encoder->encodePassword('admin', $userAdmin->getSalt()));
 
         $userAdmin->setEmail('cambialatuamail@cambiala.com');
         $userAdmin->SetEnabled(true);
