@@ -5,7 +5,7 @@ namespace Kdig\ArchaeologicalBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Kdig\ArchaeologicalBundle\Entity\VocAreaType;
+use Kdig\ArchaeologicalBundle\Entity\VocUsType;
 
 class LoadVocUsTypeData extends AbstractFixture implements OrderedFixtureInterface
 {
@@ -14,13 +14,13 @@ class LoadVocUsTypeData extends AbstractFixture implements OrderedFixtureInterfa
      */
     public function load(ObjectManager $manager)
     {
-        $vocustype = new VocAreaType();
+        $vocustype = new VocUsType();
         $vocustype->setName('Locus');
         $vocustype->setShort('L');
         $vocustype->setIsPublic(true);
         $manager->persist($vocustype);
 
-        $vocustype2 = new VocAreaType();
+        $vocustype2 = new VocUsType();
         $vocustype2->setName('Pitt');
         $vocustype2->setShort('P');
         $vocustype2->setIsPublic(true);
