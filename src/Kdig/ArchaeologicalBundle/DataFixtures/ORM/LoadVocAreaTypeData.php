@@ -6,7 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Kdig\ArchaeologicalBundle\Entity\VocAreaType;
 
-class LoadVocAreaTypeData implements FixtureInterface
+class LoadVocAreaTypeData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
