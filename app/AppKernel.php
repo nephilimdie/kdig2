@@ -43,6 +43,9 @@ class AppKernel extends Kernel
             new Devtime\BackboneBundle\DevtimeBackboneBundle(),
             new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
             new JordiLlonch\Bundle\CrudGeneratorBundle\JordiLlonchCrudGeneratorBundle(),
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new Bazinga\ExposeTranslationBundle\BazingaExposeTranslationBundle(),
+            new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
 
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),
