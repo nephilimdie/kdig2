@@ -13,8 +13,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * 
  * @category   Kdig_Entities
  * @package    Entity
- * 
- * @author Etienne de Longeaux <etienne.delongeaux@gmail.com>
  */
 class Group extends BaseGroup
 {
