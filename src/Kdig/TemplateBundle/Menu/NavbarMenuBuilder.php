@@ -31,9 +31,9 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav');
 
         $home = $menu->addChild('Home', array('route' => 'default_index'));
-        $this->addIcon($home, array('icon' => 'home', 'inverted'=>true, 'append'=>false ));
+        $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
         $home = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
-        $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>true, 'append'=>false ));
+        $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
 //        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
 //        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
 //        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
@@ -48,7 +48,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
         $dropdown = $this->createDropdownMenuItem($menu, "User", true, array('caret' => true));
-        $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+        $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         if ($this->isLoggedIn) {
             $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
         } else {
@@ -63,11 +63,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
 
 //        $pot = $menu->addChild('Pottery', array('route' => 'default_index'));
-//        $this->addIcon($pot, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+//        $this->addIcon($pot, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
 //        $obj = $menu->addChild('Object', array('route' => 'default_index'));
-//        $this->addIcon($obj, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+//        $this->addIcon($obj, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
 //        $smp = $menu->addChild('Sample', array('route' => 'default_index'));
-//        $this->addIcon($smp, array('icon' => 'user', 'inverted'=>true, 'append'=>false ));
+//        $this->addIcon($smp, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         
         
         if ($this->role_archaeology) {
