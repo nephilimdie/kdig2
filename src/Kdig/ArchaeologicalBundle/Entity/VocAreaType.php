@@ -289,4 +289,9 @@ class VocAreaType {
     {
         return $this->area;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->getName();
+    }
 }
