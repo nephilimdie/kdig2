@@ -4,7 +4,7 @@ namespace Kdig\ArchaeologicalBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Acme\HelloBundle\Entity\User;
+use Kdig\ArchaeologicalBundle\Entity\Site;
 
 class LoadSiteData implements FixtureInterface
 {
