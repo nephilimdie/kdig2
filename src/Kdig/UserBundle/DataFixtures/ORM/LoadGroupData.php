@@ -16,7 +16,6 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
     {
         $groupAdmin = new Group();
         $groupAdmin->setName('admin');
-        $groupAdmin->setEnabled(true);
 
         $manager->persist($groupAdmin);
         $manager->flush();
