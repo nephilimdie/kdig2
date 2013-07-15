@@ -19,7 +19,7 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
  * @ORM\Entity
  * @ORM\Table(name="us", schema="public")
  * @Gedmo\Loggable
- * @ORM\Entity(repositoryClass="Kdig\ArchaelogicalBundle\Repository\UsRepository")
+ * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\UsRepository")
  * @GRID\Source(columns="id, site.name, area.name, typeus.name, name, remarks, created")
  */
 class Us {
