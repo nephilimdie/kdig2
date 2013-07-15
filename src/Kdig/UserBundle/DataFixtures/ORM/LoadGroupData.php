@@ -4,7 +4,7 @@ namespace Kdig\UserBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Acme\HelloBundle\Entity\User;
+use Kdig\UserBundle\Entity\Group;
 
 class LoadGroupData implements FixtureInterface
 {
