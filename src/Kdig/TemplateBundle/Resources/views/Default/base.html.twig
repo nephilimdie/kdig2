@@ -147,6 +147,13 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
+            
+            // load from archaeological menu
+            $(".archaeological a").on("click", function(){ 
+                event.preventDefault();
+                $(".container-fluid").load($(this).attr('href')); 
+            });
+            
         });
     </script>
     {% endblock foot_script_additional %}
