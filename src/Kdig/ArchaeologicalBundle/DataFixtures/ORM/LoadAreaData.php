@@ -16,8 +16,6 @@ class LoadAreaData extends AbstractFixture implements OrderedFixtureInterface
     {
         $area = new Area();
         $area->setName('A');
-        $area->setCampagna('2013');
-        $area->setSigla('kh.');
         $area->setFromrefbucket('0');
         $area->setTorefbucket('99');
         $area->setFromrefus('200');
