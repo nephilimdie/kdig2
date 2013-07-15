@@ -52,6 +52,7 @@
         "sonata-project/exporter": "1.3.0",
         "sonata-project/jquery-bundle": "1.8.3",
         "sonata-project/media-bundle": "dev-master",
+        "sonata-project/user-bundle": "dev-master",
         "liip/imagine-bundle": "dev-master",
         "liip/doctrine-cache-bundle": "dev-master",
         "liip/theme-bundle": "dev-master",
@@ -60,7 +61,7 @@
         "devtime/backbone-bundle": "dev-master",
         "jordillonch/crud-generator": "dev-master",
         "lexik/form-filter-bundle": "1.2.*",
-        "sonata-project/user-bundle": "dev-master"
+        "doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
