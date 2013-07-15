@@ -86,114 +86,114 @@ class PotteryType extends AbstractType
                 'required' => false
             ))
             /*->add('media', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocMedia',
+                'class' => 'KdigOrientBundle:Potteryvoc\Media',
                 'required' => false,
                 'multiple' => true
             ))*/
             ->add('class', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocClass',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('shape', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocShape',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocShape',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Shape', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('rim', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocRim',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocRim',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Rim', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('neck', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocNeck',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocNeck',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Neck', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('wall', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocWall',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('upperwall', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocUpperWall',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocUpperWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Upper wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('lowerwall', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocLowerWall',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocLowerWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Lower wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('base', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocBase',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocBase',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Base', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('handle', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocHandle',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocHandle',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Handle', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('handleposition', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocHandlePosition',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocHandlePosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Handle position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('spout', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocSpout',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocSpout',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Spout', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('spoutposition', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocSpoutPosition',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocSpoutPosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Spout position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('preservation', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocPreservation',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocPreservation',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Preservation', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('technique', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocTechnique',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocTechnique',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Technique', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('firing', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocFiring',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocFiring',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusion', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocInclusion',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocInclusion',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Inclusion', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusionsize', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocInclusionSize',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionSize',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Inclusion size', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusionfrequency', 'entity', array(
-                'class' => 'KdigOrientBundle:PotteryvocVocInclusionFrequency',
+                'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionFrequency',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
