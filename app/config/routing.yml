@@ -10,8 +10,13 @@ kdig_template:
     resource: "@KdigTemplateBundle/Resources/config/routing.yml"
     prefix:   /template
 
-kdig_template:
+kdig_archaeological:
     resource: "@KdigArchaeologicalBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    
+kdig_orient:
+    resource: "@KdigOrientBundle/Controller/"
     type:     annotation
     prefix:   /
 
