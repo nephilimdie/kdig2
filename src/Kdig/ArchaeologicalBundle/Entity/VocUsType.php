@@ -92,6 +92,11 @@ class VocUsType {
         $this->us = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    public function __tostring() 
+    {
+        return (string)$this->getName().'('.$this->getShort().')';
+    }
+    
     /**
      * Get id
      *
