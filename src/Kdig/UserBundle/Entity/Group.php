@@ -32,10 +32,6 @@ class Group extends BaseGroup
      */
     private $userprofilegroup;
 
-//    public function __tostring() 
-//    {
-//        return $this->getId();
-//    }
     public function __construct()
     {
         $this->areas = new \Doctrine\Common\Collections\ArrayCollection();
