@@ -58,7 +58,7 @@ class Group extends BaseGroup
      *
      * @param Kdig\ArchaelogicalBundle\Entity\Area $areas
      */
-    public function addArea(\Kdig\ArchaelogicalBundle\Entity\Area $areas)
+    public function addArea(\Kdig\ArchaeologicalBundle\Entity\Area $areas)
     {
         $this->areas[] = $areas;
     }
