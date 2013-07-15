@@ -18,8 +18,6 @@ class LoadGroupData implements FixtureInterface
 
         $manager->persist($groupAdmin);
         $manager->flush();
-
-        $this->addReference('admin-group', $groupAdmin);
     }
     /**
      * {@inheritDoc}
