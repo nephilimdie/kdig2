@@ -41,7 +41,7 @@ class VocUsType {
      * @Gedmo\Versioned
      * @ORM\Column(nullable=true, length=5, type="string")
      */
-    private $number;
+    private $short;
     
     /**
      * @Gedmo\Versioned
@@ -126,26 +126,26 @@ class VocUsType {
     }
 
     /**
-     * Set number
+     * Set short
      *
-     * @param string $number
+     * @param string $short
      * @return VocUsType
      */
-    public function setNumber($number)
+    public function setShort($short)
     {
-        $this->number = $number;
+        $this->short = $short;
     
         return $this;
     }
 
     /**
-     * Get number
+     * Get short
      *
      * @return string 
      */
-    public function getNumber()
+    public function getShort()
     {
-        return $this->number;
+        return $this->short;
     }
 
     /**
