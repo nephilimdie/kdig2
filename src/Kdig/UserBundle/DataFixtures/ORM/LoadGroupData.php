@@ -16,8 +16,14 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
     {
         $groupAdmin = new Group();
         $groupAdmin->setName('admin');
-
         $manager->persist($groupAdmin);
+        
+        $groupPottery = new Group();
+        $groupPottery->setName('gruppoCeramica');
+        $groupPottery->setRoles(array('ROLE_USER','ROLE_POTTERY','ROLE_ARCHAEOLOGY','ROLE_MEDIA'));
+        $manager->persist($groupPottery);
+        
+        
         $manager->flush();
         
         $this->addReference('group-admin', $groupAdmin);
