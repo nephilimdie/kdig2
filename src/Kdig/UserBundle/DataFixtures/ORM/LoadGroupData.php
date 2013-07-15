@@ -14,7 +14,7 @@ class LoadGroupData implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $groupAdmin = new Group();
-        $groupAdmin->setGroupName('admin');
+        $groupAdmin->setName('admin');
 
         $manager->persist($groupAdmin);
         $manager->flush();
