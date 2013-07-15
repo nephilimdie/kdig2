@@ -1,0 +1,8 @@
+apy_js_form_validation:
+    enabled: true
+    yui_js: false
+    check_modes: [submit, blur]
+    javascript_framework: jquery
+    validation_bundle: APYJsFormValidationBundle
+    script_directory: bundles/jsformvalidation/js/
+    identifier_field: jsfv_identifier
