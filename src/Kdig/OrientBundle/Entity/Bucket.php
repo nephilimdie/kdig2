@@ -19,7 +19,7 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
  * @ORM\Table(name="bucket", schema="public")
  * @Gedmo\Loggable
  * @ORM\Entity
- * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Entity\Repository\BucketRepository")
+ * @ORM\Entity(repositoryClass="Kdig\ArchaeologicalBundle\Repository\BucketRepository")
  * @GRID\Source(columns="id, us.area.name, us.typeus.name, us.name, name, remarks, created")
  */
 class Bucket {
