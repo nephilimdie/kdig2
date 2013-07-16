@@ -128,11 +128,17 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
 //            $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
 //            $bucket->setChildrenAttribute('class', 'leftMenu dropdown-menu');
+            $obj = $this->createDropdownMenuItem($menu, "Object", true, array('caret' => true));
+            $obj->setChildrenAttribute('class', 'leftMenu dropdown-menu');
+            $media = $this->createDropdownMenuItem($menu, "Media", true, array('caret' => true));
+            $media->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             
+            $su->addChild('New', array('route' => 'us_new'));
+            $su->addChild('List', array('route' => 'us'));
 //            $bucket->addChild('New', array('route' => 'bucket_new'));
 //            $bucket->addChild('List', array('route' => 'bucket'));
-            $obj->addChild('New', array('route' => 'preobject_new'));
-            $obj->addChild('List', array('route' => 'preobject'));
+            $obj->addChild('New', array('route' => 'object_new'));
+            $obj->addChild('List', array('route' => 'object'));
             $media->addChild('New', array('route' => 'default_index'));
             $media->addChild('List', array('route' => 'default_index'));
             
