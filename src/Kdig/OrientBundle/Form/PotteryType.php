@@ -203,7 +203,7 @@ class PotteryType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
-                'widget_add_btn' => array('label' => 'Add In Surface Tratment', 'attr' => array('class' => 'btn btn-primary')),
+                'widget_add_btn' => array('label' => 'Add Inner Surface Treatment', 'attr' => array('class' => 'btn btn-primary')),
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
                     'attr' => array('class' => 'span3'),
@@ -212,57 +212,97 @@ class PotteryType extends AbstractType
 //                        'text' => '@',
 //                    ),
                     'widget_control_group' => false,
-                )
-//                
-//                'allow_add'    => true,
-//                'allow_delete' => true,
-//                'prototype'    => true,
-//                'by_reference' => false,
-//                'label' => 'Inner surface treatment',
-//                'required' => false
+                ),
+                'label' => 'Inner surface treatment',
+                'required' => false
             ))
             ->add('surfacetratout', 'collection', array(
                 'type' => new VocPotterySurfacetratoutType(), 
-                'allow_add'    => true,
+                'allow_add' => true,
                 'allow_delete' => true,
-                'prototype'    => true,
-                'by_reference' => false,
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add Outer surface treatment', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+//                    'widget_addon' => array(
+//                        'type' => 'prepend',
+//                        'text' => '@',
+//                    ),
+                    'widget_control_group' => false,
+                ),
                 'label' => 'Outer surface treatment',
                 'required' => false
             ))
             ->add('surfacetratinout', 'collection', array(
                 'type' => new VocPotterySurfacetratinoutType(), 
-                'allow_add'    => true,
+                'allow_add' => true,
                 'allow_delete' => true,
-                'prototype'    => true,
-                'by_reference' => false,
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add Inner & Outer surface treatment', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+//                    'widget_addon' => array(
+//                        'type' => 'prepend',
+//                        'text' => '@',
+//                    ),
+                    'widget_control_group' => false,
+                ),
                 'label' => 'Inner & Outer surface treatment',
                 'required' => false
             ))
             ->add('potdecorationin', 'collection', array(
                 'type' => new VocPotteryDecorationinType(), 
-                'allow_add'    => true,
+                'allow_add' => true,
                 'allow_delete' => true,
-                'prototype'    => true,
-                'by_reference' => false,
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add Inner decoration', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+//                    'widget_addon' => array(
+//                        'type' => 'prepend',
+//                        'text' => '@',
+//                    ),
+                    'widget_control_group' => false,
+                ),
                 'label' => 'Inner decoration',
                 'required' => false
             ))
             ->add('potdecorationout', 'collection', array(
                 'type' => new VocPotteryDecorationoutType(), 
-                'allow_add'    => true,
+                'allow_add' => true,
                 'allow_delete' => true,
-                'prototype'    => true,
-                'by_reference' => false,
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add Outer decoration', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+//                    'widget_addon' => array(
+//                        'type' => 'prepend',
+//                        'text' => '@',
+//                    ),
+                    'widget_control_group' => false,
+                ),
                 'label' => 'Outer decoration',
                 'required' => false
             ))
             ->add('potdecorationinout', 'collection', array(
                 'type' => new VocPotteryDecorationinoutType(), 
-                'allow_add'    => true,
+                'allow_add' => true,
                 'allow_delete' => true,
-                'prototype'    => true,
-                'by_reference' => false,
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add Inner & Outer decoration', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+//                    'widget_addon' => array(
+//                        'type' => 'prepend',
+//                        'text' => '@',
+//                    ),
+                    'widget_control_group' => false,
+                ),
                 'label' => 'Inner & Outer decoration',
                 'required' => false
             ))
