@@ -46,13 +46,34 @@ class ObjectType extends AbstractType
             ->add('museum_acquisition_notes')
             ->add('exhibition_history')
             ->add('itaremarks')
-            ->add('class')
-            ->add('type')
-            ->add('material')
-            ->add('technique')
-            ->add('decoration')
-            ->add('preservation')
-            ->add('dateobject')
+            ->add('class', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
+                'property' => 'name',
+            ))
+            ->add('type', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjType',
+                'property' => 'name',
+            ))
+            ->add('material', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjMaterial',
+                'property' => 'name',
+            ))
+            ->add('technique', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjTechnique',
+                'property' => 'name',
+            ))
+            ->add('decoration', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration',
+                'property' => 'name',
+            ))
+            ->add('preservation', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation',
+                'property' => 'name',
+            ))
+            ->add('dateobject', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDate',
+                'property' => 'name',
+            ))
         ;
     }
 
