@@ -22,7 +22,7 @@ class ObjectType extends AbstractType
         $bucketid = $this->bucketid;
         
         $builder
-            ->add('prepottery', new PreobjectType($bucketid))
+            ->add('preobject', new PreobjectType($bucketid))
             ->add('number')
             ->add('remarks')
             ->add('isphotographed')
