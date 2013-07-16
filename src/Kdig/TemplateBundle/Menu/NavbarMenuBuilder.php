@@ -18,6 +18,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
         $this->securityContext = $securityContext;
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
+        $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
         $this->role_pottery = $this->securityContext->isGranted('ROLE_POTTERY');
         $this->role_object = $this->securityContext->isGranted('ROLE_OBJECT');
         $this->role_sample = $this->securityContext->isGranted('ROLE_SAMPLE');
@@ -52,6 +53,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         if ($this->isLoggedIn) {
             $dropdown->setLabel($this->usr->getUsername());
             $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
+            if ($this->isSuperAdmin)
+                $dropdown->addChild('Administration', array('route' => 'sonata_admin_dashboard'));
         } else {
             $dropdown->addChild('login', array('route' => 'fos_user_security_login'));
         }
