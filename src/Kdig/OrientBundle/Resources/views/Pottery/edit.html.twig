@@ -1,8 +1,10 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
 {% block title %}
-{{ parent() }} -  {{ 'views.edit.edit'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.edit.edit'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
+
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(form) }}
 
 {% block page %}
 
