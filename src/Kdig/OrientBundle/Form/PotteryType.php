@@ -199,7 +199,6 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('surfacetratin', 'collection', array(
-            ->add('surfacetratin', 'collection', array(
                 'type' => new VocPotterySurfacetratinType(), 
                 'allow_add' => true,
                 'allow_delete' => true,
