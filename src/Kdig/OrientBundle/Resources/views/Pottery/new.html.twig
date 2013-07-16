@@ -7,7 +7,7 @@
 <h1>{{ 'views.new.creation'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
 
 <form class="well form-horizontal" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
-    <div class="row">
+    <div class="row-fluid">
         <div class="group span12 ">
             <div class="form_input"> 
                 {{ form_label(form.prepottery.bucket) }}
