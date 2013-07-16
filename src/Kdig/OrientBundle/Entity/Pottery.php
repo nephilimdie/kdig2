@@ -1446,4 +1446,47 @@ class Pottery {
     {
         return $this->potdecorationinout;
     }
+    
+    public function setPotdecorationout($relations)
+    {
+        foreach ($relations as $relation) {
+            $relation->setPottery($this);
+        }
+        $this->potdecorationout = $relations;
+    }
+    public function setPotdecorationinout($relations)
+    {
+        foreach ($relations as $relation) {
+            $relation->setPottery($this);
+        }
+        $this->potdecorationinout = $relations;
+    }
+    public function setPotdecorationin($relations)
+    {
+        foreach ($relations as $relation) {
+            $relation->setPottery($this);
+        }
+        $this->potdecorationin = $relations;
+    }
+    public function setSurfacetratin($relations)
+    {
+        foreach ($relations as $relation) {
+            $relation->setPottery($this);
+        }
+        $this->surfacetratin = $relations;
+    }
+    public function setSurfacetratout($relations)
+    {
+        foreach ($relations as $relation) {
+            $relation->setPottery($this);
+        }
+        $this->surfacetratout = $relations;
+    }
+    public function setSurfacetratinout($relations)
+    {
+        foreach ($relations as $relation) {
+            $relation->setPottery($this);
+        }
+        $this->surfacetratinout = $relations;
+    }
 }
