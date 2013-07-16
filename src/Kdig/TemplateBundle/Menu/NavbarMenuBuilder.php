@@ -52,9 +52,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown = $this->createDropdownMenuItem($menu, "User", true, array('caret' => true));
         if ($this->isLoggedIn) {
             $dropdown->setLabel($this->usr->getUsername());
-            $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
-            if ($this->isSuperAdmin)
+            if ($this->isSuperAdmin) {
                 $dropdown->addChild('Administration', array('route' => 'sonata_admin_dashboard'));
+                $this->addDivider($menu, true);
+            }
+            $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
         } else {
             $dropdown->addChild('login', array('route' => 'fos_user_security_login'));
         }
