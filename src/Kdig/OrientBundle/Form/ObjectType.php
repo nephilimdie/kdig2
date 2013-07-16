@@ -6,11 +6,23 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use Kdig\ArchaeologicalBundle\Form\PreobjectType;
+
 class ObjectType extends AbstractType
 {
+    protected $bucketid;
+    
+    public function __construct($bucketid = null)
+    {
+        $this->bucketid = $bucketid;
+    }
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $bucketid = $this->bucketid;
+        
         $builder
+            ->add('prepottery', new PreobjectType($bucketid))
             ->add('number')
             ->add('remarks')
             ->add('isphotographed')
@@ -34,7 +46,6 @@ class ObjectType extends AbstractType
             ->add('museum_acquisition_notes')
             ->add('exhibition_history')
             ->add('itaremarks')
-            ->add('preobject')
             ->add('class')
             ->add('type')
             ->add('material')
