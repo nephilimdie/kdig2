@@ -50,6 +50,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown = $this->createDropdownMenuItem($menu, "User", true, array('caret' => true));
         $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         if ($this->isLoggedIn) {
+            $dropdown->setLabel('connesso');
             $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
         } else {
             $dropdown->addChild('login', array('route' => 'fos_user_security_login'));
