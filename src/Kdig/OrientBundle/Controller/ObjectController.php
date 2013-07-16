@@ -22,6 +22,15 @@ use Kdig\OrientBundle\Form\ObjectFilterType;
  */
 class ObjectController extends Controller
 {
+    public function myGridAction()
+    {
+        $source = new Entity('MyProjectMyBundle:MyEntity');
+        $grid = $this->get('grid');
+        $grid->setSource($source);
+        // Configuration of the grid
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
+    }
     /**
      * Lists all Object entities.
      *
