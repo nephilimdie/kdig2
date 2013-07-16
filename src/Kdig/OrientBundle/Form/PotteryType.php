@@ -85,11 +85,6 @@ class PotteryType extends AbstractType
                 'label' => 'Date',
                 'required' => false
             ))
-            /*->add('media', 'entity', array(
-                'class' => 'KdigOrientBundle:Potteryvoc\Media',
-                'required' => false,
-                'multiple' => true
-            ))*/
             ->add('class', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
@@ -311,6 +306,12 @@ class PotteryType extends AbstractType
                 'help_block'  => 'Scrivi qualcosa.. -.-',
                 'required' => false
             ))
+                        
+            /*->add('media', 'entity', array(
+                'class' => 'KdigOrientBundle:Potteryvoc\Media',
+                'required' => false,
+                'multiple' => true
+            ))*/
         ;
     }
 
