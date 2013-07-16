@@ -19,7 +19,7 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
  * @ORM\Entity
  * @ORM\Table(name="voc_obj_class", schema="public")
  * @Gedmo\Loggable
- * @ORM\Entity(repositoryClass="Kdig\ArchaelogicalBundle\Repository\VocObjClassRepository")
+ * @ORM\Entity(repositoryClass="Kdig\OrientBundle\Repository\VocObjClassRepository")
  */
 class VocObjClass {
     
