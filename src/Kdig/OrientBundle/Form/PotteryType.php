@@ -199,13 +199,28 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('surfacetratin', 'collection', array(
+            ->add('surfacetratin', 'collection', array(
                 'type' => new VocPotterySurfacetratinType(), 
-                'allow_add'    => true,
+                'allow_add' => true,
                 'allow_delete' => true,
-                'prototype'    => true,
-                'by_reference' => false,
-                'label' => 'Inner surface treatment',
-                'required' => false
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add In Surface Tratment', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+//                    'widget_addon' => array(
+//                        'type' => 'prepend',
+//                        'text' => '@',
+//                    ),
+                    'widget_control_group' => false,
+                )
+//                
+//                'allow_add'    => true,
+//                'allow_delete' => true,
+//                'prototype'    => true,
+//                'by_reference' => false,
+//                'label' => 'Inner surface treatment',
+//                'required' => false
             ))
             ->add('surfacetratout', 'collection', array(
                 'type' => new VocPotterySurfacetratoutType(), 
