@@ -350,13 +350,15 @@ class ObjectController extends Controller
      * @Method("GET")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
-    public function importCSVAction() {
+    public function importcsvAction() {
         
         $rootdir = $this->get('kernel')->getRootDir();
         // import data from old almadig systm to kdig
         $reader = new \EasyCSV\Reader($rootdir.'/../web/uploads/updaobject.csv');
         $csvarray = $reader->getAll();
         
-        die(print_r($data));
+        die(print_r($csvarray));
+        
+        return array();
     }
 }
