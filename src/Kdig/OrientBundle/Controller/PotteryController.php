@@ -72,8 +72,6 @@ class PotteryController extends Controller
     /**
      * Lists all Pottery entities.
      *
-     * @Route("/", name="pottery")
-     * @Method("GET")
      * @Template()
      */
     public function indexAction()
