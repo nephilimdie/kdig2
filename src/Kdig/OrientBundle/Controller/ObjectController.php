@@ -354,7 +354,7 @@ class ObjectController extends Controller
         $reader = new \EasyCSV\Reader($rootdir.'/../web/uploads/updaobject.csv');
         $csvarray = $reader->getAll();
         
-        die(print_r($csvarray));
+//        die(print_r($csvarray));
         
         $i=0; 
         $em = $this->getDoctrine()->getEntityManager();
