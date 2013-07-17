@@ -388,27 +388,27 @@ class ObjectController extends Controller
 
             $Object ->setPreobject($preObject);
             if($csvus['MATERIAL'] != '') {
-                $material = $em->getRepository('KdigOrientBundle:VocObjMaterial')->checkElement($csvus['MATERIAL']);
+                $material = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjMaterial')->checkElement($csvus['MATERIAL']);
                 $Object->setMaterial($material);
             }
             if($csvus['DECORATION'] != ''){
-                $decoration = $em->getRepository('KdigOrientBundle:VocObjDecoration')->checkElement($csvus['DECORATION']);
+                $decoration = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjDecoration')->checkElement($csvus['DECORATION']);
                 $Object->setDecoration($decoration);
             }
             if($csvus['PRESERVATION'] != ''){
-                $preservation = $em->getRepository('KdigOrientBundle:VocObjPreservation')->checkElement($csvus['PRESERVATION']);
+                $preservation = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjPreservation')->checkElement($csvus['PRESERVATION']);
                 $Object->setPreservation($preservation);
             }
             if($csvus['TECHNIQUE'] != ''){
-                $technique = $em->getRepository('KdigOrientBundle:VocObjTechnique')->checkElement($csvus['TECHNIQUE']);
+                $technique = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjTechnique')->checkElement($csvus['TECHNIQUE']);
                 $Object->setTechnique($technique);
             }
             if($csvus['TYPE'] != ''){
-                $type = $em->getRepository('KdigOrientBundle:VocObjType')->checkElement($csvus['TYPE']);
+                $type = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjType')->checkElement($csvus['TYPE']);
                 $Object->setType($type);
             }
             if($csvus['CLASS'] != ''){
-                $class = $em->getRepository('KdigOrientBundle:VocObjClass')->checkElement($csvus['CLASS']);
+                $class = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjClass')->checkElement($csvus['CLASS']);
                 $Object->setClass($class);
             }
 
