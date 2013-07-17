@@ -50,33 +50,6 @@ class Site {
     private $remarks;
  
     /**
-     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="sites", cascade={"persist"})
-     * @ORM\JoinTable(name="site_media",
-     *   joinColumns={@ORM\JoinColumn(name="site_id", referencedColumnName="id")},
-     *   inverseJoinColumns={@ORM\JoinColumn(name="media_id", referencedColumnName="id")}
-     * )
-     */
-    private $media;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, length=64, type="string")
-     */
-    private $campagna;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, length=64, type="string")
-     */
-    private $sigla;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="Us", mappedBy="site", cascade={"persist"})
-     */
-    private $uss;
-    
-    
-    /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(nullable=true, name="created", type="datetime")
      */
@@ -110,6 +83,31 @@ class Site {
      * Constructor
      */
     
+    /**
+     * @ORM\ManyToMany(targetEntity="Kdig\MediaBundle\Entity\Media", inversedBy="sites", cascade={"persist"})
+     * @ORM\JoinTable(name="site_media",
+     *   joinColumns={@ORM\JoinColumn(name="site_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="media_id", referencedColumnName="id")}
+     * )
+     */
+    private $media;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, length=64, type="string")
+     */
+    private $campagna;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, length=64, type="string")
+     */
+    private $sigla;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Us", mappedBy="site", cascade={"persist"})
+     */
+    private $uss;
     
     public function __tostring() 
     {
