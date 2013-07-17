@@ -9,7 +9,6 @@ class VocObjTypeRepository extends EntityRepository
     private function isUnusedMaterial($name) {        
         $result = $this->createQueryBuilder('u')
             ->select('u')
-            ->from('KdigOrientBundle:Objectvoc\VocObjType', 'u')
             ->where('u.name = :name')
             ->setParameter('name', $name)
             ->getQuery();
