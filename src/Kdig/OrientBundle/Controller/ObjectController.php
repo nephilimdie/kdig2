@@ -345,10 +345,8 @@ class ObjectController extends Controller
     }
     
     /**
-     * Edits an existing Object entity.
      *
-     * @Route("/csv", name="object_csv")
-     * @Method("PUT")
+     * @Route("/csv_update", name="object_csv")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
     public function importCSV() {
