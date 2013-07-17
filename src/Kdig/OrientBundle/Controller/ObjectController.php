@@ -20,6 +20,11 @@ use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use Ddeboer\DataImport\Workflow;
+use Ddeboer\DataImport\Source\Http;
+use Ddeboer\DataImport\Source\Filter\Unzip;
+use Ddeboer\DataImport\Reader\CsvReader;
+use Ddeboer\DataImport\ValueConverter\DateTimeValueConverter;
 /**
  * Object controller.
  *
@@ -337,5 +342,32 @@ class ObjectController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    /**
+     * Edits an existing Object entity.
+     *
+     * @Route("/", name="object_update")
+     * @Method("PUT")
+     * @Template("KdigOrientBundle:Object:edit.html.twig")
+     */
+    private function importCSV () {
+        
+        // Create the source; here we use an HTTP one
+        $source = new Http('../web/uploadsupdaobject.csv');
+
+        // Retrieve the \SplFileObject from the source
+        $file = $source->getFile();
+
+        // Create and configure the reader
+        $csvReader = new CsvReader($file);
+        $csvReader->setHeaderRowNumber(0);
+
+        // Create the workflow
+        $workflow = new Workflow($csvReader);
+        // Process the workflow
+        $data = $workflow->process();
+        
+        die(print_r($data));
     }
 }
