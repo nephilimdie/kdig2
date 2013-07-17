@@ -48,6 +48,41 @@ class Bucket {
     private $remarks;
     
     /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(nullable=true, name="created", type="datetime")
+     * @GRID\Column(type="date", size="40", filter="select")
+     */
+    private $created;
+
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="updated", type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updated;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="is_active", type="boolean")
+     * @GRID\Column(visible=false)
+     */
+    private $isActive=true;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="is_public", type="boolean")
+     * @GRID\Column(visible=false)
+     */
+    private $isPublic=false;
+    
+    /**
+     * @Gedmo\Versioned
+     * @ORM\Column(nullable=true, name="is_delete", type="boolean")
+     * @GRID\Column(visible=false)
+     */
+    private $isDelete=false;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us", inversedBy="buckets", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="us_id", referencedColumnName="id", onDelete="SET NULL")
      * @GRID\Column(field="us.name", title="Locus", size="40")
@@ -94,41 +129,6 @@ class Bucket {
      */
     protected $imageName;
     
-    /**
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(nullable=true, name="created", type="datetime")
-     * @GRID\Column(type="date", size="40", filter="select")
-     */
-    private $created;
-
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, name="updated", type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     */
-    private $updated;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, name="is_active", type="boolean")
-     * @GRID\Column(visible=false)
-     */
-    private $isActive=true;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, name="is_public", type="boolean")
-     * @GRID\Column(visible=false)
-     */
-    private $isPublic=false;
-    
-    /**
-     * @Gedmo\Versioned
-     * @ORM\Column(nullable=true, name="is_delete", type="boolean")
-     * @GRID\Column(visible=false)
-     */
-    private $isDelete=false;
-
     /**
      * Constructor
      */
