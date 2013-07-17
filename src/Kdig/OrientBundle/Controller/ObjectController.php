@@ -30,7 +30,7 @@ class ObjectController extends Controller
      */
     public function myGridAction()
     {
-        $source = new Entity('MyProjectMyBundle:MyEntity');
+        $source = new Entity('KdigOrientBundle:Object');
         $grid = $this->get('grid');
         $grid->setSource($source);
         // Configuration of the grid
