@@ -18,7 +18,7 @@ use Kdig\OrientBundle\Form\PotteryFilterType;
 use APY\DataGridBundle\Grid\Source\Entity;
 use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
-use APY\DataGridBundle\Grid\Export\ExcelExport;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
 /**
  * Pottery controller.
@@ -41,7 +41,7 @@ class PotteryController extends Controller
         // Configuration of the grid
         // 
         // Create an Actions Column
-        $actionsColumn = new ActionsColumn('info_column_1', 'Actions 1');
+        $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
         $actionsColumn->setSeparator("<br />");
         $grid->addColumn($actionsColumn, 1);
 
@@ -53,7 +53,19 @@ class PotteryController extends Controller
 //        $rowAction2 = new RowAction('Edit', 'pottery_edit');
 //        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
 //        $grid->addColumn($actionsColumn2, $position2);
-        
+        $fileName = 'pottery-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject");
+        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
+        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
+
+        $grid->addExport(export);
+
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
     }
