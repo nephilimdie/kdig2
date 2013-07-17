@@ -71,7 +71,7 @@ class ObjectController extends Controller
 
         $grid->addExport($export);
         // Manage the grid redirection, exports and the response of the controller
-        return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
+        return $grid->getGridResponse('KdigTemplateBundle:Default:Grid/grid.html.twig');
     }
     /**
      * Lists all Object entities.
@@ -346,7 +346,7 @@ class ObjectController extends Controller
     
     /**
      *
-     * @Route("/csv_update", name="object_csv")
+     * @Route("/object_csv", name="object_csv")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
     public function importCSVAction() {
