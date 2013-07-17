@@ -347,14 +347,14 @@ class ObjectController extends Controller
     /**
      * Edits an existing Object entity.
      *
-     * @Route("/", name="object_update")
+     * @Route("/csv", name="object_csv")
      * @Method("PUT")
-     * @Template("KdigOrientBundle:Object:edit.html.twig")
+     * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
     private function importCSV () {
         
         // Create the source; here we use an HTTP one
-        $source = new Http('../web/uploadsupdaobject.csv');
+        $source = new Http('../web/uploads/updaobject.csv');
 
         // Retrieve the \SplFileObject from the source
         $file = $source->getFile();
