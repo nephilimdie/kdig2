@@ -67,7 +67,7 @@ class PotteryController extends Controller
         $grid->addExport(export);
 
         // Manage the grid redirection, exports and the response of the controller
-        return $grid->getGridResponse('KdigTemplateBundle:Default:Grid\grid.html.twig');
+        return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
     }
     /**
      * Lists all Pottery entities.
