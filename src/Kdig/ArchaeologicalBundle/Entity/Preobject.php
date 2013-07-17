@@ -115,6 +115,10 @@ class Preobject {
         $this->media = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    public function __tostring() 
+    {
+        return (string)$this->getName();
+    }
     /**
      * Get id
      *
