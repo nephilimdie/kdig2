@@ -266,6 +266,10 @@ class Object {
         return $this->id;
     }
 
+    public function __tostring() 
+    {
+        return (string)$this->getName();
+    }
     /**
      * Set number
      *
