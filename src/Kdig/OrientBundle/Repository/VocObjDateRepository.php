@@ -12,7 +12,7 @@ class VocObjDateRepository extends EntityRepository
             ->from('KdigOrientBundle:Objectvoc\VocObjMaterial', 'u')
             ->where('u.name = :name')
             ->setParameter('name', $name)
-            ->createQuery();
+            ->getQuery();
 
         $res = $result->getResult();
         return empty($res);

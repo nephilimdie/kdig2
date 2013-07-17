@@ -12,7 +12,7 @@ class VocObjDecorationRepository extends EntityRepository
             ->from('KdigOrientBundle:Objectvoc\VocObjDecoration', 'u')
             ->where('u.name = :name')
             ->setParameter('name', $name)
-            ->createQuery();
+            ->getQuery();
 
         $res = $result->getResult();
         return empty($res);
