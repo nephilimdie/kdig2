@@ -351,7 +351,7 @@ class ObjectController extends Controller
      * @Method("PUT")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
-    private function importCSV () {
+    public function importCSV() {
         
         // Create the source; here we use an HTTP one
         $source = new Http('../web/uploads/updaobject.csv');
