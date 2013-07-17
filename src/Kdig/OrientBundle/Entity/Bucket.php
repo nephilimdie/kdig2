@@ -140,6 +140,11 @@ class Bucket {
         $this->media = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    public function __tostring() 
+    {
+        return (string)$this->getName().'('.$this->getUs().')';
+    }
+    
     /**
      * Get id
      *
