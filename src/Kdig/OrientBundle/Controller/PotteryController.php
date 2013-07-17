@@ -30,7 +30,7 @@ class PotteryController extends Controller
     /**
      * Lists all Pottery entities.ì in grid
      *
-     * @Route("/", name="object")
+     * @Route("/", name="pottery")
      * @Method("GET")
      */
     public function myGridAction()
