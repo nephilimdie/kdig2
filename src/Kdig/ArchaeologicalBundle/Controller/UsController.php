@@ -28,9 +28,9 @@ use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 class UsController extends Controller
 {
     /**
-     * Lists all Us entities.ì in grid
+     * Lists all Us entities in grid
      *
-     * @Route("/", name="object")
+     * @Route("/", name="us")
      * @Method("GET")
      */
     public function myGridAction()
