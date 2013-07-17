@@ -20,6 +20,7 @@ use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use Kdig\ArchaeologicalBundle\Entity\Preobject;
 /**
  * Object controller.
  *
@@ -346,13 +347,67 @@ class ObjectController extends Controller
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
     public function importcsvAction() {
-        
+        /*
+         * "NUM";
+         * "BUCKET";
+         * "CLASS"
+         * TYPE";"MATERIAL";"TECHNIQUE";"DECORATION";"PRESERVATION";
+         * "FRAGMENTS";"HEIGHT";"LENGHT";"WIDTH";"THICKNESS";"DIAMETER";
+         * "PERF. DIAM.";"WEIGHT";"DESCRIPTION";
+         * 
+         */
         $rootdir = $this->get('kernel')->getRootDir();
         // import data from old almadig systm to kdig
         $reader = new \EasyCSV\Reader($rootdir.'/../web/uploads/updaobject.csv');
         $csvarray = $reader->getAll();
         
         die(print_r($csvarray));
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        $preObject = New Preobject();
+        $preObject->setName($csvus['BUCKET']);
+        $preObject->setRemarks($csvus['DESCRIPTION']);
+        $preObject->setIsPublic(false);
+        $preObject->setIsActive(true);
+        $preObject->setIsDelete(false);
+        //find & add bucket
+        $oldnamebucket = substr_replace($csvus['BUCKET'] ,"",-2);
+        $newbucketname = str_pad($oldnamebucket, 4 , "0000", STR_PAD_LEFT);
+        $bucketname = 'KH.12.P.'.$newbucketname;
+        $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneByName($bucketname);
+        $preObject->setBucket($bucket);
+        $em->persist($preObject);
+        $em->flush();
+            
+        $Object = New Object();
+        $Object ->setPreobject($preObject);
+        if($csvus['MATERIAL'] != '') {
+            $material = $em->getRepository('KdigOrientBundle:VocObjMaterial')->checkElement($csvus['MATERIAL']);
+            $Object->setMaterial($material);
+        }
+        if($csvus['DECORATION'] != ''){
+            $decoration = $em->getRepository('KdigOrientBundle:VocObjDecoration')->checkElement($csvus['DECORATION']);
+            $Object->setDecoration($decoration);
+        }
+        if($csvus['PRESERVATION'] != ''){
+            $preservation = $em->getRepository('KdigOrientBundle:VocObjPreservation')->checkElement($csvus['PRESERVATION']);
+            $Object->setPreservation($preservation);
+        }
+        if($csvus['TECHNIQUE'] != ''){
+            $technique = $em->getRepository('KdigOrientBundle:VocObjTechnique')->checkElement($csvus['TECHNIQUE']);
+            $Object->setTechnique($technique);
+        }
+        if($csvus['TYPE'] != ''){
+            $type = $em->getRepository('KdigOrientBundle:VocObjType')->checkElement($csvus['TYPE']);
+            $Object->setType($type);
+        }
+        if($csvus['CLASS'] != ''){
+            $class = $em->getRepository('KdigOrientBundle:VocObjClass')->checkElement($csvus['CLASS']);
+            $Object->setClass($class);
+        }
+        
+        $em->persist($Object);
+        $em->flush();
         
         return array();
     }
