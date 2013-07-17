@@ -351,20 +351,10 @@ class ObjectController extends Controller
      */
     public function importCSV() {
         
-        // Create the source; here we use an HTTP one
-        $source = new Http('../web/uploads/updaobject.csv');
-
-        // Retrieve the \SplFileObject from the source
-        $file = $source->getFile();
-
-        // Create and configure the reader
-        $csvReader = new CsvReader($file);
-        $csvReader->setHeaderRowNumber(0);
-
-        // Create the workflow
-        $workflow = new Workflow($csvReader);
-        // Process the workflow
-        $data = $workflow->process();
+        $rootdir = $this->get('kernel')->getRootDir();
+        // import data from old almadig systm to kdig
+        $reader = new \EasyCSV\Reader($rootdir.'/../web/uploads/updaobject.csv');
+        $csvarray = $reader->getAll();
         
         die(print_r($data));
     }
