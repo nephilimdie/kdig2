@@ -268,7 +268,7 @@ class Object {
 
     public function __tostring() 
     {
-        return (string)$this->getPreobject()->getName();
+        return (string)$this->getPreobject();
     }
     /**
      * Set number
