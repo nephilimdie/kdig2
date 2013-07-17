@@ -22,6 +22,12 @@ use Kdig\OrientBundle\Form\ObjectFilterType;
  */
 class ObjectController extends Controller
 {
+    /**
+     * Lists all Object entities.ì in grid
+     *
+     * @Route("/", name="object")
+     * @Method("GET")
+     */
     public function myGridAction()
     {
         $source = new Entity('MyProjectMyBundle:MyEntity');
@@ -34,8 +40,6 @@ class ObjectController extends Controller
     /**
      * Lists all Object entities.
      *
-     * @Route("/", name="object")
-     * @Method("GET")
      * @Template()
      */
     public function indexAction()
