@@ -347,6 +347,7 @@ class ObjectController extends Controller
     /**
      *
      * @Route("/object_csv", name="object_csv")
+     * @Method("GET")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
     public function importCSVAction() {
