@@ -64,7 +64,7 @@ class UsController extends Controller
         $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
 
-        $grid->addExport(export);
+        $grid->addExport($export);
 
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
