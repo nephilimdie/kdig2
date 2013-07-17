@@ -19,7 +19,7 @@ class VocObjDecorationRepository extends EntityRepository
     public function checkElement($name){
         if($this->isUnusedMaterial($name)) {
             //createnew
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getEntityManager();
             $entity = new \Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration();
             $entity -> setName($name);
             $em->persist($entity);
