@@ -15,6 +15,11 @@ use Kdig\ArchaeologicalBundle\Entity\Us;
 use Kdig\ArchaeologicalBundle\Form\UsType;
 use Kdig\ArchaeologicalBundle\Form\UsFilterType;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+
 /**
  * Us controller.
  *
@@ -23,10 +28,51 @@ use Kdig\ArchaeologicalBundle\Form\UsFilterType;
 class UsController extends Controller
 {
     /**
+     * Lists all Us entities.ì in grid
+     *
+     * @Route("/", name="object")
+     * @Method("GET")
+     */
+    public function myGridAction()
+    {
+        $source = new Entity('KdigArchaeologicalBundle:Us');
+        $grid = $this->get('grid');
+        $grid->setSource($source);
+        // Configuration of the grid
+        // 
+        // Create an Actions Column
+        $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
+        $actionsColumn->setSeparator("<br />");
+        $grid->addColumn($actionsColumn, 1);
+
+        // Attach a rowAction to the Actions Column
+        $showAction = new RowAction('Show', 'us_show');
+        $showAction->setColumn('info_column');
+        $grid->addRowAction($showAction);
+//        // OR add a second row action directly to a new action column
+//        $rowAction2 = new RowAction('Edit', 'pottery_edit');
+//        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
+//        $grid->addColumn($actionsColumn2, $position2);
+        $fileName = 'us-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel Us 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_USER');
+
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject");
+        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
+        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
+
+        $grid->addExport(export);
+
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
+    }
+    
+    /**
      * Lists all Us entities.
      *
-     * @Route("/", name="us")
-     * @Method("GET")
      * @Template()
      */
     public function indexAction()
