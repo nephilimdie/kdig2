@@ -348,13 +348,6 @@ class ObjectController extends Controller
      */
     public function importcsvAction() {
         /*
-         * "NUM";
-         * "BUCKET";
-         * "CLASS"
-         * TYPE";"MATERIAL";"TECHNIQUE";"DECORATION";"PRESERVATION";
-         * "FRAGMENTS";"HEIGHT";"LENGHT";"WIDTH";"THICKNESS";"DIAMETER";
-         * "PERF. DIAM.";"WEIGHT";"DESCRIPTION";
-         * 
          */
         $rootdir = $this->get('kernel')->getRootDir();
         // import data from old almadig systm to kdig
@@ -383,6 +376,7 @@ class ObjectController extends Controller
             $em->flush();
 
             $Object = New Object();
+            $Object ->setNumber($csvus['NUM']);
             $Object ->setWeight($csvus['WEIGHT']);
             $Object ->setFragments($csvus['FRAGMENTS']);
             $Object ->setHeight($csvus['HEIGHT']);
