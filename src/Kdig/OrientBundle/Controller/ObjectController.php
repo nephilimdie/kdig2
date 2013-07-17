@@ -15,6 +15,7 @@ use Kdig\OrientBundle\Entity\Object;
 use Kdig\OrientBundle\Form\ObjectType;
 use Kdig\OrientBundle\Form\ObjectFilterType;
 
+use APY\DataGridBundle\Grid\Source\Entity;
 /**
  * Object controller.
  *
