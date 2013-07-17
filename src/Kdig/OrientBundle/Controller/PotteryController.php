@@ -15,6 +15,11 @@ use Kdig\OrientBundle\Entity\Pottery;
 use Kdig\OrientBundle\Form\PotteryType;
 use Kdig\OrientBundle\Form\PotteryFilterType;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\ExcelExport;
+
 /**
  * Pottery controller.
  *
@@ -22,6 +27,36 @@ use Kdig\OrientBundle\Form\PotteryFilterType;
  */
 class PotteryController extends Controller
 {
+    /**
+     * Lists all Pottery entities.ì in grid
+     *
+     * @Route("/", name="object")
+     * @Method("GET")
+     */
+    public function myGridAction()
+    {
+        $source = new Entity('KdigOrientBundle:Pottery');
+        $grid = $this->get('grid');
+        $grid->setSource($source);
+        // Configuration of the grid
+        // 
+        // Create an Actions Column
+        $actionsColumn = new ActionsColumn('info_column_1', 'Actions 1');
+        $actionsColumn->setSeparator("<br />");
+        $grid->addColumn($actionsColumn, 1);
+
+        // Attach a rowAction to the Actions Column
+        $showAction = new RowAction('Show', 'pottery_show');
+        $showAction->setColumn('info_column');
+        $grid->addRowAction($showAction);
+//        // OR add a second row action directly to a new action column
+//        $rowAction2 = new RowAction('Edit', 'pottery_edit');
+//        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
+//        $grid->addColumn($actionsColumn2, $position2);
+        
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse('KdigTemplateBundle:Default:grid.html.twig');
+    }
     /**
      * Lists all Pottery entities.
      *
