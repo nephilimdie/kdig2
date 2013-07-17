@@ -1,0 +1,23 @@
+.grid_header {
+  width: 100%;
+}
+.grid_header .pager input[type="text"] {
+  width: 30px;
+}
+.grid_header .pager select {
+  width: 70px;
+}
+.grid_header .pager .exports select {
+  float: right;
+  width: 80px;
+}
+.grid_body {
+  overflow-x: auto;
+  width: 100%;
+}
+.grid_body table select {
+  max-width: 100px;
+}
+.grid_body table input[type="text"] {
+  max-width: 100px;
+}
