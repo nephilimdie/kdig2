@@ -349,7 +349,7 @@ class ObjectController extends Controller
      * @Route("/csv_update", name="object_csv")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
      */
-    public function importCSV() {
+    public function importCSVAction() {
         
         $rootdir = $this->get('kernel')->getRootDir();
         // import data from old almadig systm to kdig
