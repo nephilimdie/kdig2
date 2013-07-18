@@ -35,31 +35,25 @@ class ObjectController extends Controller
      * Lists all Object entities.ì in grid
      *
      * @Route("/", name="object")
-     * @Method({"GET", "POST"})
+     * @ Method({"GET", "POST"})
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      */
     public function myGridAction()
     {
         $user = $this->get('security.context')->getToken()->getUser();
+        
         $source = new Entity('KdigOrientBundle:Object');
         $grid = $this->get('grid');
         $grid->setSource($source);
-        // Configuration of the grid
-        // 
-        // Create an Actions Column
+
         $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
         $actionsColumn->setSeparator("<br />");
         $grid->addColumn($actionsColumn, 1);
-
-        // Attach a rowAction to the Actions Column
         $showAction = new RowAction('Show', 'pottery_show');
         $showAction->setColumn('info_column');
         $grid->addRowAction($showAction);
-        
         $grid->addMassAction(new DeleteMassAction());
-//        // OR add a second row action directly to a new action column
-//        $rowAction2 = new RowAction('Edit', 'pottery_edit');
-//        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
-//        $grid->addColumn($actionsColumn2, $position2);
+        
         $fileName = 'object-'.date("d-m-Y");
 //        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
 //        $export = new PHPExcel2007Export('Excel Object 2007 Export');
@@ -75,7 +69,7 @@ class ObjectController extends Controller
         $grid->addExport(new ExcelExport('Excel Export'));
 //        $grid->addExport($export);
         // Manage the grid redirection, exports and the response of the controller
-        return $grid->getGridResponse('KdigTemplateBundle:Default:Grid/grid.html.twig');
+        return $grid->getGridResponse();
     }
     /**
      * Lists all Object entities.
