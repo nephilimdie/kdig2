@@ -21,7 +21,6 @@ use APY\DataGridBundle\Grid\Action\MassAction;
 use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
-use APY\DataGridBundle\Grid\Export\ExcelExport;
 
 use Kdig\ArchaeologicalBundle\Entity\Preobject;
 /**
@@ -55,18 +54,16 @@ class ObjectController extends Controller
         $grid->addMassAction(new DeleteMassAction());
         
         $fileName = 'object-'.date("d-m-Y");
-//        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
-//        $export = new PHPExcel2007Export('Excel Object 2007 Export');
-//
-//        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
-//        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
-//        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
-//        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
-//        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
-//        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
-//        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
+        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
+        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
+        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
         
-        $grid->addExport(new ExcelExport('Excel Export'));
 //        $grid->addExport($export);
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse();

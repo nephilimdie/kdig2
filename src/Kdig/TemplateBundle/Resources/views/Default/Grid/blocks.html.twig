@@ -6,6 +6,9 @@
         <div class="grid_header">
         {% if grid.massActions|length > 0 %}
             {{ grid_actions(grid) }}
+            {% if grid.exports|length > 0 %}
+                {{ grid_exports(grid) }}
+            {% endif %}
         {% endif %}
         </div>
         <div class="grid_body">
