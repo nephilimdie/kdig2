@@ -67,8 +67,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
     public function createArchaeologicalMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
-//        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
-        $menu->setChildrenAttributes(array('rel'=>'address:/deep-link','class'=>'nav nav-pills nav-stacked span1'));
+        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
 
 //        $pot = $menu->addChild('Pottery', array('route' => 'default_index'));
 //        $this->addIcon($pot, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
@@ -96,14 +95,14 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $su->addChild('List', array('route' => 'us'));
 //            $bucket->addChild('New', array('route' => 'bucket_new'));
 //            $bucket->addChild('List', array('route' => 'bucket'));
-            $obj->addChild('New', array('route' => 'preobject_new'));
-            $obj->addChild('List', array('route' => 'preobject'));
-            $pot->addChild('New', array('route' => 'prepottery_new'));
-            $pot->addChild('List', array('route' => 'prepottery'));
-            $smp->addChild('New', array('route' => 'presample_new'));
-            $smp->addChild('List', array('route' => 'presample'));
-            $media->addChild('New', array('route' => 'default_index'));
-            $media->addChild('List', array('route' => 'default_index'));
+            $obj->addChild('New', array('route' => 'preobject_new', 'rel'=>'address:/deep-link'));
+            $obj->addChild('List', array('route' => 'preobject', 'rel'=>'address:/deep-link'));
+            $pot->addChild('New', array('route' => 'prepottery_new', 'rel'=>'address:/deep-link'));
+            $pot->addChild('List', array('route' => 'prepottery', 'rel'=>'address:/deep-link'));
+            $smp->addChild('New', array('route' => 'presample_new', 'rel'=>'address:/deep-link'));
+            $smp->addChild('List', array('route' => 'presample', 'rel'=>'address:/deep-link'));
+            $media->addChild('New', array('route' => 'default_index', 'rel'=>'address:/deep-link'));
+            $media->addChild('List', array('route' => 'default_index', 'rel'=>'address:/deep-link'));
         
         } elseif ($this->role_pottery) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
@@ -134,14 +133,14 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $media = $this->createDropdownMenuItem($menu, "Media", true, array('caret' => true));
             $media->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             
-            $su->addChild('New', array('route' => 'us_new'));
-            $su->addChild('List', array('route' => 'us'));
+            $su->addChild('New', array('route' => 'us_new', 'rel'=>'address:/deep-link'));
+            $su->addChild('List', array('route' => 'us', 'rel'=>'address:/deep-link'));
 //            $bucket->addChild('New', array('route' => 'bucket_new'));
 //            $bucket->addChild('List', array('route' => 'bucket'));
-            $obj->addChild('New', array('route' => 'object_new'));
-            $obj->addChild('List', array('route' => 'object'));
-            $media->addChild('New', array('route' => 'default_index'));
-            $media->addChild('List', array('route' => 'default_index'));
+            $obj->addChild('New', array('route' => 'object_new', 'rel'=>'address:/deep-link'));
+            $obj->addChild('List', array('route' => 'object', 'rel'=>'address:/deep-link'));
+            $media->addChild('New', array('route' => 'default_index', 'rel'=>'address:/deep-link'));
+            $media->addChild('List', array('route' => 'default_index', 'rel'=>'address:/deep-link'));
             
         } elseif ($this->role_sample) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
