@@ -55,7 +55,8 @@ class ObjectController extends Controller
 //        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
 //        $grid->addColumn($actionsColumn2, $position2);
         $fileName = 'pottery-'.date("d-m-Y");
-        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+//        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+        $export = new PHPExcel2007Export('Excel Pottery 2007 Export');
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject");
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
