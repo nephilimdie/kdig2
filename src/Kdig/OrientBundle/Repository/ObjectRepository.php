@@ -41,7 +41,7 @@ class VocObjClassRepository extends EntityRepository
         return empty($res);
     }
     
-    public function checkElement($name){
+    public function checkAndAdd($name){
         if($this->isUnusedMaterial($name)) {
             //createnew
             $em = $this->getEntityManager();
