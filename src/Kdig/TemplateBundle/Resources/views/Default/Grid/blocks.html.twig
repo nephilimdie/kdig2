@@ -6,13 +6,10 @@
         <div class="grid_header">
         {% if grid.massActions|length > 0 %}
             {{ grid_actions(grid) }}
-            {% if grid.exports|length > 0 %}
-                {{ grid_exports(grid) }}
-            {% endif %}
         {% endif %}
         </div>
         <div class="grid_body">
-        <table>
+        <table class="table table-striped table-hover table-condensed">
         {% if grid.isTitleSectionVisible %}
             {{ grid_titles(grid) }}
         {% endif %}
