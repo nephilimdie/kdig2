@@ -31,43 +31,41 @@ class PotteryController extends Controller
      * Lists all Pottery entities.ì in grid
      *
      * @Route("/", name="pottery")
-     * @Method("GET")
+     * @ Method({"GET", "POST"})
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      */
     public function myGridAction()
     {
-        $source = new Entity('KdigOrientBundle:Pottery');
+        $user = $this->get('security.context')->getToken()->getUser();
+        
+        $source = new Entity('KdigOrientBundle:Object');
         $grid = $this->get('grid');
         $grid->setSource($source);
-        // Configuration of the grid
-        // 
-        // Create an Actions Column
+
+        $grid->setDefaultOrder('number', 'asc');
+
         $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
         $actionsColumn->setSeparator("<br />");
         $grid->addColumn($actionsColumn, 1);
-
-        // Attach a rowAction to the Actions Column
         $showAction = new RowAction('Show', 'pottery_show');
         $showAction->setColumn('info_column');
         $grid->addRowAction($showAction);
-//        // OR add a second row action directly to a new action column
-//        $rowAction2 = new RowAction('Edit', 'pottery_edit');
-//        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
-//        $grid->addColumn($actionsColumn2, $position2);
-        $fileName = 'pottery-'.date("d-m-Y");
-        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+        $grid->addMassAction(new DeleteMassAction());
+        
+        $fileName = 'object-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_OBJECT');
 
-        $export->objPHPExcel->getProperties()->setCreator("KdigProject");
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
-        $export->objPHPExcel->getProperties()->setTitle("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
         $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
         $export->objPHPExcel->getProperties()->setDescription("KdigProject");
         $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
-
-        $grid->addExport(export);
-
+        
+        $grid->addExport($export);
         // Manage the grid redirection, exports and the response of the controller
-        return $grid->getGridResponse('KdigTemplateBundle:Default:Grid\grid.html.twig');
+        return $grid->getGridResponse();
     }
     /**
      * Lists all Pottery entities.
@@ -163,9 +161,10 @@ class PotteryController extends Controller
     /**
      * Creates a new Pottery entity.
      *
-     * @Route("/", name="pottery_create")
+     * @Route("/pottery_create/", name="pottery_create")
      * @Method("POST")
      * @Template("KdigOrientBundle:Pottery:new.html.twig")
+     * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -194,6 +193,7 @@ class PotteryController extends Controller
      * @Route("/new", name="pottery_new")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
     public function newAction()
     {
@@ -209,7 +209,7 @@ class PotteryController extends Controller
     /**
      * Finds and displays a Pottery entity.
      *
-     * @Route("/{id}", name="pottery_show")
+     * @Route("/{id}/show", name="pottery_show")
      * @Method("GET")
      * @Template()
      */
@@ -237,6 +237,7 @@ class PotteryController extends Controller
      * @Route("/{id}/edit", name="pottery_edit")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -261,9 +262,10 @@ class PotteryController extends Controller
     /**
      * Edits an existing Pottery entity.
      *
-     * @Route("/{id}", name="pottery_update")
+     * @Route("/{id}/update", name="pottery_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Pottery:edit.html.twig")
+     * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -299,8 +301,9 @@ class PotteryController extends Controller
     /**
      * Deletes a Pottery entity.
      *
-     * @Route("/{id}", name="pottery_delete")
+     * @Route("/{id}/delete", name="pottery_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
