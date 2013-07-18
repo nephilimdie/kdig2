@@ -151,7 +151,12 @@
                     e.preventDefault();
                 });
             $.address.change(function(event) {  
-                $(".container-fluid").load(event.value); 
+                $(".container-fluid").load(event.value, function() {
+                    new Heyoffline({
+                        monitorFields: true,
+                        elements: ['.content']
+                    });
+                }); 
             });  
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(){ 
@@ -159,10 +164,6 @@
                 $.address.value($(this).attr('href'));  
             });
             
-            new Heyoffline({
-                monitorFields: true,
-                elements: ['.content']
-            });
         });
     </script>
     {% endblock foot_script_additional %}
