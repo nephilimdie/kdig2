@@ -16,7 +16,7 @@ class VocObjDecorationRepository extends EntityRepository
         $res = $result->getResult();
         return empty($res);
     }
-    public function checkElement($name){
+    public function checkAndAdd($name){
         if($this->isUnusedMaterial($name)) {
             //createnew
             $em = $this->getEntityManager();

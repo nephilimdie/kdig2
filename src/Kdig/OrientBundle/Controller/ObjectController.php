@@ -361,7 +361,6 @@ class ObjectController extends Controller
         foreach($csvarray as $csvus) {
             $preObject = New Preobject();
             $preObject->setName($csvus['BUCKET']);
-            $preObject->setRemarks($csvus['DESCRIPTION']);
             $preObject->setIsPublic(false);
             $preObject->setIsActive(true);
             $preObject->setIsDelete(false);
@@ -371,6 +370,7 @@ class ObjectController extends Controller
             $bucketname = 'KH.12.P.'.$newbucketname;
             $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneByName($bucketname);
             $preObject->setBucket($bucket);
+            
             $em->persist($preObject);
             $em->flush();
 
@@ -384,30 +384,31 @@ class ObjectController extends Controller
             $Object ->setThickness($csvus['THICKNESS']);
             $Object ->setDiameter($csvus['DIAMETER']);
             $Object ->setPerforationdiameter($csvus['PERF. DIAM.']);
+            $Object ->setRemarks($csvus['DESCRIPTION']);
 
             $Object ->setPreobject($preObject);
             if($csvus['MATERIAL'] != '') {
-                $material = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjMaterial')->checkElement($csvus['MATERIAL']);
+                $material = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjMaterial')->checkAndAdd($csvus['MATERIAL']);
                 $Object->setMaterial($material);
             }
             if($csvus['DECORATION'] != ''){
-                $decoration = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjDecoration')->checkElement($csvus['DECORATION']);
+                $decoration = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjDecoration')->checkAndAdd($csvus['DECORATION']);
                 $Object->setDecoration($decoration);
             }
             if($csvus['PRESERVATION'] != ''){
-                $preservation = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjPreservation')->checkElement($csvus['PRESERVATION']);
+                $preservation = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjPreservation')->checkAndAdd($csvus['PRESERVATION']);
                 $Object->setPreservation($preservation);
             }
             if($csvus['TECHNIQUE'] != ''){
-                $technique = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjTechnique')->checkElement($csvus['TECHNIQUE']);
+                $technique = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjTechnique')->checkAndAdd($csvus['TECHNIQUE']);
                 $Object->setTechnique($technique);
             }
             if($csvus['TYPE'] != ''){
-                $type = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjType')->checkElement($csvus['TYPE']);
+                $type = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjType')->checkAndAdd($csvus['TYPE']);
                 $Object->setType($type);
             }
             if($csvus['CLASS'] != ''){
-                $class = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjClass')->checkElement($csvus['CLASS']);
+                $class = $em->getRepository('KdigOrientBundle:Objectvoc\VocObjClass')->checkAndAdd($csvus['CLASS']);
                 $Object->setClass($class);
             }
 
