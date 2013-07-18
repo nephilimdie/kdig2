@@ -150,7 +150,7 @@
                     e.preventDefault();
                 });
             $.address.change(function(event) {  
-                $(".container-fluid").load($(this).attr('href')); 
+                $(".container-fluid").load(event.value); 
             });  
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(){ 
