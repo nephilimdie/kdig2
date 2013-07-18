@@ -361,7 +361,6 @@ class ObjectController extends Controller
         foreach($csvarray as $csvus) {
             $preObject = New Preobject();
             $preObject->setName($csvus['BUCKET']);
-            $preObject->setRemarks($csvus['DESCRIPTION']);
             $preObject->setIsPublic(false);
             $preObject->setIsActive(true);
             $preObject->setIsDelete(false);
@@ -384,6 +383,7 @@ class ObjectController extends Controller
             $Object ->setThickness($csvus['THICKNESS']);
             $Object ->setDiameter($csvus['DIAMETER']);
             $Object ->setPerforationdiameter($csvus['PERF. DIAM.']);
+            $Object ->setRemarks($csvus['DESCRIPTION']);
 
             $Object ->setPreobject($preObject);
             if($csvus['MATERIAL'] != '') {
