@@ -134,15 +134,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $media->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             
             $su->addChild('New', array('route' => 'us_new'));
-            $su['New']->setLinkAttribute('rel', 'address:/deep-link');
             $su->addChild('List', array('route' => 'us'));
-            $su['List']->setLinkAttribute('rel', 'address:/deep-link');
 //            $bucket->addChild('New', array('route' => 'bucket_new'));
 //            $bucket->addChild('List', array('route' => 'bucket'));
             $obj->addChild('New', array('route' => 'object_new'));
-            $obj['New']->setLinkAttribute('rel', 'address:/deep-link');
             $obj->addChild('List', array('route' => 'object'));
-            $obj['List']->setLinkAttribute('rel', 'address:/deep-link');
             $media->addChild('New', array('route' => 'default_index'));
             $media->addChild('List', array('route' => 'default_index'));
             
