@@ -149,12 +149,14 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
-            
-            // load from archaeological menu
-            /*$(".archaeological ul > li > ul > li > a").on("click", function(){ 
-                event.preventDefault();
+            $.address.change(function(event) {  
                 $(".container-fluid").load($(this).attr('href')); 
-            });*/
+            });  
+            // load from archaeological menu
+            $(".archaeological ul > li > ul > li > a").on("click", function(){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
+            });
             
         });
     </script>
