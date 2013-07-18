@@ -123,6 +123,7 @@
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
         '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
         '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
+        '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -149,7 +150,6 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
-                
             $.address.change(function(event) {  
                 $(".container-fluid").load(event.value); 
             });  
@@ -158,11 +158,11 @@
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
             });
-            /*
+            
             new Heyoffline({
                 monitorFields: true,
                 elements: ['.content']
-            });*/
+            });
         });
     </script>
     {% endblock foot_script_additional %}
