@@ -36,7 +36,7 @@ class Object {
      * @Gedmo\Versioned
      * @ORM\Column(nullable=true,length=64, type="integer", unique=true)
      * @Assert\Type(type="integer", message="The value {{ value }} is not a valid {{ type }}.")
-     * @GRID\Column(type="date", size="30")
+     * @GRID\Column(size="30")
      */
     private $number;
     
