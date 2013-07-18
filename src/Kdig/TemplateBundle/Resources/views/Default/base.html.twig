@@ -122,6 +122,7 @@
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
         '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -150,10 +151,10 @@
                 });
             
             // load from archaeological menu
-            $(".archaeological ul > li > ul > li > a").on("click", function(){ 
+            /*$(".archaeological ul > li > ul > li > a").on("click", function(){ 
                 event.preventDefault();
                 $(".container-fluid").load($(this).attr('href')); 
-            });
+            });*/
             
         });
     </script>
