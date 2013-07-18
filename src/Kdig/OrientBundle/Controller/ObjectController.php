@@ -17,6 +17,8 @@ use Kdig\OrientBundle\Form\ObjectFilterType;
 
 use APY\DataGridBundle\Grid\Source\Entity;
 use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Action\MassAction;
+use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
@@ -36,6 +38,7 @@ class ObjectController extends Controller
      */
     public function myGridAction()
     {
+        $user = $this->get('security.context')->getToken()->getUser();
         $source = new Entity('KdigOrientBundle:Object');
         $grid = $this->get('grid');
         $grid->setSource($source);
@@ -50,15 +53,17 @@ class ObjectController extends Controller
         $showAction = new RowAction('Show', 'pottery_show');
         $showAction->setColumn('info_column');
         $grid->addRowAction($showAction);
+        
+        $grid->addMassAction(new DeleteMassAction());
 //        // OR add a second row action directly to a new action column
 //        $rowAction2 = new RowAction('Edit', 'pottery_edit');
 //        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
 //        $grid->addColumn($actionsColumn2, $position2);
         $fileName = 'object-'.date("d-m-Y");
 //        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
-        $export = new PHPExcel2007Export('Excel Pottery 2007 Export');
+        $export = new PHPExcel2007Export('Excel Object 2007 Export');
 
-        $export->objPHPExcel->getProperties()->setCreator("KdigProject");
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
         $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
         $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
