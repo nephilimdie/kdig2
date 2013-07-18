@@ -54,18 +54,18 @@ class ObjectController extends Controller
 //        $rowAction2 = new RowAction('Edit', 'pottery_edit');
 //        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
 //        $grid->addColumn($actionsColumn2, $position2);
-        $fileName = 'pottery-'.date("d-m-Y");
+        $fileName = 'object-'.date("d-m-Y");
 //        $export = new PHPExcel2007Export('Excel Pottery 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
         $export = new PHPExcel2007Export('Excel Pottery 2007 Export');
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject");
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
-        $export->objPHPExcel->getProperties()->setTitle("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
         $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
         $export->objPHPExcel->getProperties()->setDescription("KdigProject");
         $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
-
+        
         $grid->addExport($export);
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse('KdigTemplateBundle:Default:Grid/grid.html.twig');
