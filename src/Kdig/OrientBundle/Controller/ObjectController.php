@@ -34,7 +34,7 @@ class ObjectController extends Controller
      * Lists all Object entities.ì in grid
      *
      * @Route("/", name="object")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
     public function myGridAction()
     {
