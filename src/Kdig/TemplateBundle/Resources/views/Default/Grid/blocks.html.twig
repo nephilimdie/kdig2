@@ -3,23 +3,13 @@
 <div class="grid">
 {% if grid.totalCount > 0 or grid.isFiltered or grid.noDataMessage is sameas(false) %}
     <form id="{{ grid.hash }}" action="{{ grid.routeUrl }}" method="post">
-        <div class="grid_header" style="float: left;">
-            <div class="navbar">
-              <div class="navbar-inner">
-                {% if grid.massActions|length > 0 %}
-                    {{ grid_actions(grid) }}
-                {% endif %}
-                {% if grid.isPagerSectionVisible %}
-                    {{ grid_pager(grid) }}
-                {% endif %}
-                {% if grid.exports|length > 0 %}
-                    {{ grid_exports(grid) }}
-                {% endif %}
-            </div>
-          </div>
+        <div class="grid_header">
+        {% if grid.massActions|length > 0 %}
+            {{ grid_actions(grid) }}
+        {% endif %}
         </div>
         <div class="grid_body">
-        <table class="table table-striped table-hover table-condensed">
+        <table>
         {% if grid.isTitleSectionVisible %}
             {{ grid_titles(grid) }}
         {% endif %}
@@ -30,21 +20,15 @@
         </table>
         </div>
         <div class="grid_footer">
-            <div class="navbar" style="float: left; width: 100%;">
-              <div class="navbar-inner">
-                <div class="grid_footer">
-                {% if grid.isPagerSectionVisible %}
-                    {{ grid_pager(grid) }}
-                {% endif %}
-                {% if grid.exports|length > 0 %}
-                    {{ grid_exports(grid) }}
-                {% endif %}
-                {% if grid.tweaks|length > 0 %}
-                    {{ grid_tweaks(grid) }}
-                {% endif %}
-                </div>
-              </div>
-            </div>
+        {% if grid.isPagerSectionVisible %}
+            {{ grid_pager(grid) }}
+        {% endif %}
+        {% if grid.exports|length > 0 %}
+            {{ grid_exports(grid) }}
+        {% endif %}
+        {% if grid.tweaks|length > 0 %}
+            {{ grid_tweaks(grid) }}
+        {% endif %}
         </div>
         {% if withjs %}
             {{ grid_scripts(grid) }}
