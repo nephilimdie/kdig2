@@ -370,6 +370,7 @@ class ObjectController extends Controller
             $bucketname = 'KH.12.P.'.$newbucketname;
             $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneByName($bucketname);
             $preObject->setBucket($bucket);
+            
             $em->persist($preObject);
             $em->flush();
 
