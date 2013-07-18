@@ -137,6 +137,10 @@
     #}
     <script type="text/javascript">
         $(document).ready( function () {
+            new Heyoffline({
+                monitorFields: true,
+                elements: ['.container-fluid']
+            });
             // popover demo
             $("a[data-toggle=tooltip]")
                 .tooltip()
