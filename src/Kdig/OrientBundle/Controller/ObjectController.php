@@ -78,7 +78,7 @@ class ObjectController extends Controller
     /**
      * Lists all Object entities.
      *
-     * @Template()
+     * @ Template()
      */
     public function indexAction()
     {
@@ -169,7 +169,7 @@ class ObjectController extends Controller
     /**
      * Creates a new Object entity.
      *
-     * @Route("/", name="object_create")
+     * @Route("/object_create/", name="object_create")
      * @Method("POST")
      * @Template("KdigOrientBundle:Object:new.html.twig")
      */
@@ -215,7 +215,7 @@ class ObjectController extends Controller
     /**
      * Finds and displays a Object entity.
      *
-     * @Route("/{id}", name="object_show")
+     * @Route("/{id}/show", name="object_show")
      * @Method("GET")
      * @Template()
      */
@@ -267,7 +267,7 @@ class ObjectController extends Controller
     /**
      * Edits an existing Object entity.
      *
-     * @Route("/{id}", name="object_update")
+     * @Route("/{id}/update", name="object_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Object:edit.html.twig")
      */
@@ -305,7 +305,7 @@ class ObjectController extends Controller
     /**
      * Deletes a Object entity.
      *
-     * @Route("/{id}", name="object_delete")
+     * @Route("/{id}/delete", name="object_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
