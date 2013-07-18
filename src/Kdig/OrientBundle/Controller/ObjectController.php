@@ -14,6 +14,7 @@ use Pagerfanta\View\TwitterBootstrapView;
 use Kdig\OrientBundle\Entity\Object;
 use Kdig\OrientBundle\Form\ObjectType;
 use Kdig\OrientBundle\Form\ObjectFilterType;
+use Kdig\ArchaeologicalBundle\Entity\Preobject;
 
 use APY\DataGridBundle\Grid\Source\Entity;
 use APY\DataGridBundle\Grid\Action\RowAction;
@@ -22,7 +23,7 @@ use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
-use Kdig\ArchaeologicalBundle\Entity\Preobject;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 /**
  * Object controller.
  *
@@ -167,6 +168,7 @@ class ObjectController extends Controller
      * @Route("/object_create/", name="object_create")
      * @Method("POST")
      * @Template("KdigOrientBundle:Object:new.html.twig")
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -195,6 +197,7 @@ class ObjectController extends Controller
      * @Route("/new", name="object_new")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function newAction()
     {
@@ -238,6 +241,7 @@ class ObjectController extends Controller
      * @Route("/{id}/edit", name="object_edit")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -265,6 +269,7 @@ class ObjectController extends Controller
      * @Route("/{id}/update", name="object_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Object:edit.html.twig")
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -302,6 +307,7 @@ class ObjectController extends Controller
      *
      * @Route("/{id}/delete", name="object_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
@@ -346,6 +352,7 @@ class ObjectController extends Controller
      * @Route("/object_csv/", name="object_csv")
      * @Method("GET")
      * @Template("KdigOrientBundle:Object:csv.html.twig")
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function importcsvAction() {
         /*
