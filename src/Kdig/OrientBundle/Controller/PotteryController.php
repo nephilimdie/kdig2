@@ -42,7 +42,7 @@ class PotteryController extends Controller
     {
         $user = $this->get('security.context')->getToken()->getUser();
         
-        $source = new Entity('KdigOrientBundle:Object');
+        $source = new Entity('KdigOrientBundle:Pottery');
         $grid = $this->get('grid');
         $grid->setSource($source);
 
@@ -56,8 +56,8 @@ class PotteryController extends Controller
         $grid->addRowAction($showAction);
         $grid->addMassAction(new DeleteMassAction());
         
-        $fileName = 'object-'.date("d-m-Y");
-        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_OBJECT');
+        $fileName = 'Pottery-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");

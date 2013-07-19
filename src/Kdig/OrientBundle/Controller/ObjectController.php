@@ -51,7 +51,7 @@ class ObjectController extends Controller
         $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
         $actionsColumn->setSeparator("<br />");
         $grid->addColumn($actionsColumn, 1);
-        $showAction = new RowAction('Show', 'pottery_show');
+        $showAction = new RowAction('Show', 'object_show');
         $showAction->setColumn('info_column');
         $grid->addRowAction($showAction);
         $grid->addMassAction(new DeleteMassAction());
