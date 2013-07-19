@@ -13,7 +13,10 @@ class PrepotteryType extends AbstractType
         $builder
             ->add('name')
             ->add('remarks')
-            ->add('bucket')
+            ->add('bucket', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Bucket',
+                'property' => 'name',
+            ))
             ->add('media')
         ;
     }
