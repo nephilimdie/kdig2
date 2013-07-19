@@ -67,6 +67,7 @@ class AppKernel extends Kernel
             new Kdig\OrientBundle\KdigOrientBundle(),
 
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
 
         );
 
