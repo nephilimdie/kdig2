@@ -20,6 +20,8 @@ use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Pottery controller.
  *
