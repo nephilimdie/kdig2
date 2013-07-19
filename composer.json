@@ -65,7 +65,9 @@
         "doctrine/data-fixtures":  "dev-master",
         "genemu/form-bundle": "2.2.*",
         "willdurand/expose-translation-bundle":"dev-master",
-        "apy/jsfv-bundle":"dev-master"
+        "apy/jsfv-bundle":"dev-master",
+        
+        "ob/highcharts-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
