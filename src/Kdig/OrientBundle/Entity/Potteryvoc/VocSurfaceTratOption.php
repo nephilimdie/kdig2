@@ -357,4 +357,9 @@ class VocSurfaceTratOption {
     {
         return $this->surfaceout;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->getName();
+    }
 }

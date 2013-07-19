@@ -118,4 +118,9 @@ class VocPotterySurfacetratinout {
     {
         return $this->vocsurfacetratoption;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->getVocsurfacetratoption().' - '.$this->getColor();
+    }
 }
