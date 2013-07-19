@@ -148,11 +148,13 @@
     
         $(document).ready( function () {
             // popover demo
-            $.address.change(function(event) {  
-                $(".container-fluid").load(event.value, function() {
+            $.address.change(function(event) {
+                var eventObj = event || window.event;
+                $(".container-fluid").load(eventObj.value, function() {
                 }); 
             });  
             $.address.init(function(event) {  
+                var eventObj = event || window.event;
                 return;
             });  
             $("a[data-toggle=tooltip]")
