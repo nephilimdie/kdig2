@@ -136,6 +136,11 @@
     and also remove the bootstrap-popover.js include.
     #}
     <script type="text/javascript">
+        
+      window.addEventListener('load', function(){
+        new Heyoffline();
+      }, false);
+    
         $(document).ready( function () {
             // popover demo
             $("a[data-toggle=tooltip]")
@@ -152,11 +157,6 @@
                 });
             $.address.change(function(event) {  
                 $(".container-fluid").load(event.value, function() {
-                    /*
-                    new Heyoffline({
-                        monitorFields: true,
-                        elements: ['.content']
-                    }); */
                 }); 
             });  
             // load from archaeological menu

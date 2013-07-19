@@ -363,7 +363,8 @@ class ObjectController extends Controller
         $csvarray = $reader->getAll();
         
 //        die(print_r($csvarray));
-        
+        $vectBucketExist = array();
+        $vectBucketExist = array();
         $i=0; 
         $em = $this->getDoctrine()->getEntityManager();
         
@@ -377,6 +378,7 @@ class ObjectController extends Controller
             $oldnamebucket = substr_replace($csvus['BUCKET'] ,"",-2);
             $newbucketname = str_pad($oldnamebucket, 4 , "0000", STR_PAD_LEFT);
             $bucketname = 'KH.12.P.'.$newbucketname;
+            
             $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneByName($bucketname);
             $preObject->setBucket($bucket);
             
