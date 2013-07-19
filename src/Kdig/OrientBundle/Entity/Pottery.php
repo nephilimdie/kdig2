@@ -253,7 +253,7 @@ class Pottery {
     
     /**
      * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="pottery", orphanRemoval=true) 
-     * @GRID\Column(field="surfacetratout.vocsurfacetratoption.name:StringAgg", title="Surface Treatament Out", type="array", joinType="inner")
+     * @GRID\Column(field="surfacetratout.vocsurfacetratoption.name", title="Surface Treatament Out", type="array", joinType="inner")
      */
     private $surfacetratout;
     
