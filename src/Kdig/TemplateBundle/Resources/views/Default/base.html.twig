@@ -149,12 +149,10 @@
         $(document).ready( function () {
             // popover demo
             $.address.change(function(event) {
-                var eventObj = event || window.event;
-                $(".container-fluid").load(eventObj.value, function() {
+                $(".container-fluid").load(event.value, function() {
                 }); 
             });  
             $.address.init(function(event) {  
-                var eventObj = event || window.event;
                 return;
             });  
             $("a[data-toggle=tooltip]")
@@ -170,7 +168,7 @@
                     e.preventDefault();
                 });
             // load from archaeological menu
-            $(".archaeological ul > li > ul > li > a").on("click", function(){ 
+            $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
             });
