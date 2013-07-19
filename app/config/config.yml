@@ -85,30 +85,31 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
 #        auto_mapping: true
-        mappings:
-            SonataMediaBundle: ~
-            translatable:
-                type: annotation
-                alias: Gedmo
-                prefix: Gedmo\Translatable\Entity
-                # make sure vendor library location is correct
-                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
-            loggable:
-                type: annotation
-                alias: Gedmo
-                prefix: Gedmo\Loggable\Entity
-                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
-            tree:
-                type: annotation
-                alias: Gedmo
-                prefix: Gedmo\Tree\Entity
-                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
-
         entity_managers:
             default:
                 dql:
                     string_functions:
                         string_add: Kdig\ArchaeologicalBundle\DQL\StringFunction
+                        
+                mappings:
+                    SonataMediaBundle: ~
+                    translatable:
+                        type: annotation
+                        alias: Gedmo
+                        prefix: Gedmo\Translatable\Entity
+                        # make sure vendor library location is correct
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                    loggable:
+                        type: annotation
+                        alias: Gedmo
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                    tree:
+                        type: annotation
+                        alias: Gedmo
+                        prefix: Gedmo\Tree\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
