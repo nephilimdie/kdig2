@@ -354,4 +354,9 @@ class VocDecorationOption {
     {
         return $this->decorationinout;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->Name();
+    }
 }

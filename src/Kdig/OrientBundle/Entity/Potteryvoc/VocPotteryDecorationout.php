@@ -122,4 +122,9 @@ class VocPotteryDecorationout {
     {
         return $this->decorationoption;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->getDecorationoption().' - '.$this->getColor();
+    }
 }

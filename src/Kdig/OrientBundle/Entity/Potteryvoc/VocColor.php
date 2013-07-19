@@ -510,4 +510,9 @@ class VocColor {
     {
         return $this->pottery_surfacetratout;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->Name();
+    }
 }

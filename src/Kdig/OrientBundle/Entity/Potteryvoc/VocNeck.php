@@ -317,4 +317,9 @@ class VocNeck {
     {
         return $this->pottery;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->Name();
+    }
 }
