@@ -1492,6 +1492,6 @@ class Pottery {
     
     public function __tostring() 
     {
-        return (string)$this->getPrepottery();
+        return (string)$this->getPrepottery()->getName().' ('.$this->getTcode().')';
     }
 }
