@@ -126,6 +126,10 @@
         '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
+        
+    <!-- Load jQuery from Google's CDN if needed -->
+    <script src="{{ asset('bundles/obhighcharts/js/highcharts/highcharts.js') }}"></script>
+    <script src="{{ asset('bundles/obhighcharts/js/highcharts/modules/exporting.js') }}"></script>
     {% endjavascripts %}
     {% endblock foot_script %}
     {% block foot_script_additional %}
