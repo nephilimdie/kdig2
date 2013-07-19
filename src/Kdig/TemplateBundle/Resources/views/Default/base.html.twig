@@ -26,6 +26,33 @@
      #}
     {% endblock head_style %}
 
+    {% javascripts
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-transition.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-alert.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-modal.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-scrollspy.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tab.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tooltip.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-popover.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-button.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-collapse.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-carousel.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-typeahead.js'
+        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
+        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
+        '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
+        '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        
+        <!-- Load jQuery from Google's CDN if needed -->
+        <script src="{{ asset('bundles/obhighcharts/js/highcharts/highcharts.js') }}"></script>
+        <script src="{{ asset('bundles/obhighcharts/js/highcharts/modules/exporting.js') }}"></script>
+    {% endjavascripts %}
+        
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% block head_script %}
@@ -105,32 +132,6 @@
     Otherwise the regeneration is done on every load in dev more with use_controller: true
      #}
 
-    {% javascripts
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-transition.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-alert.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-modal.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-scrollspy.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tab.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tooltip.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-popover.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-button.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-collapse.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-carousel.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-typeahead.js'
-        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
-        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
-        '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
-        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
-        '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
-    %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-        
-    <!-- Load jQuery from Google's CDN if needed -->
-    <script src="{{ asset('bundles/obhighcharts/js/highcharts/highcharts.js') }}"></script>
-    <script src="{{ asset('bundles/obhighcharts/js/highcharts/modules/exporting.js') }}"></script>
-    {% endjavascripts %}
     {% endblock foot_script %}
     {% block foot_script_additional %}
     {#
