@@ -5678,7 +5678,7 @@ footer {
   left: auto !important;
   right: 10px !important;
   margin: auto !important;
-  position: absolute;
+  position: fixed;
 }
 .archaeological a {
   margin: 0px !important;
@@ -5705,6 +5705,19 @@ footer {
   width: 70px;
 }
 .grid_header .pager .exports select {
+  float: right;
+  width: 80px;
+}
+.grid_footer {
+  width: 100%;
+}
+.grid_footer .pager input[type="text"] {
+  width: 30px;
+}
+.grid_footer .pager select {
+  width: 70px;
+}
+.grid_footer .pager .exports select {
   float: right;
   width: 80px;
 }
