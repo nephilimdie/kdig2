@@ -137,10 +137,14 @@
     #}
     <script type="text/javascript">
         
-      window.addEventListener('load', function(){
-        new Heyoffline();
-      }, false);
+        window.addEventListener('load', function(){
+            new Heyoffline();
+        }, false);
     
+        $.address.change(function(event) {  
+            $(".container-fluid").load(event.value, function() {
+            }); 
+        });  
         $(document).ready( function () {
             // popover demo
             $("a[data-toggle=tooltip]")
@@ -155,10 +159,6 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
-            $.address.change(function(event) {  
-                $(".container-fluid").load(event.value, function() {
-                }); 
-            });  
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(){ 
                 event.preventDefault();
