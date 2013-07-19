@@ -25,7 +25,7 @@ use Symfony\Component\HttpKernel\Kernel;
  * @ORM\Table(name="pottery", schema="public")
  * @Gedmo\Loggable
  * @ORM\HasLifecycleCallbacks
- * @GRID\Source(columns="id,surfacetratout.color.name:StringAgg,prepottery.bucket.us.site.campagna, prepottery.bucket.us.area.name, typecontext, prepottery.bucket.us.typeus.name, prepottery.bucket.us.name, prepottery.bucket.name, prepottery.name, class.name, shape.name, rim.name, neck.name, wall.name, upperwall.name, lowerwall.name, base.name, handle.name, handleposition.name, spout.name, spoutposition.name, preservation.name, technique.name, firing.name, outercolor, innercolor, fabriccolor, inclusion.name, inclusionsize.name, inclusionfrequency.name, rimdiameter, rimwidth, wallwidth,  maxwalldiameter, bottomwidth, height, basediameter,datation,restored, remarks, created, tcode", groupBy={"surfacetratout.color.name:StringAgg"})
+ * @GRID\Source(columns="id,prepottery.bucket.us.site.campagna, prepottery.bucket.us.area.name, typecontext, prepottery.bucket.us.typeus.name, prepottery.bucket.us.name, prepottery.bucket.name, prepottery.name, class.name, shape.name, rim.name, neck.name, wall.name, upperwall.name, lowerwall.name, base.name, handle.name, handleposition.name, spout.name, spoutposition.name, preservation.name, technique.name, firing.name, outercolor, innercolor, fabriccolor, inclusion.name, inclusionsize.name, inclusionfrequency.name, rimdiameter, rimwidth, wallwidth,  maxwalldiameter, bottomwidth, height, basediameter,datation,restored, remarks, created, tcode")
  */
 class Pottery {
     
@@ -253,7 +253,7 @@ class Pottery {
     
     /**
      * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="pottery", orphanRemoval=true) 
-     * @GRID\Column(field="surfacetratout.color.name:StringAgg", title="Surface Treatament Out", type="array")
+     * @GRID\Column(field="surfacetratout.color.name", title="Surface Treatament Out", type="array")
      */
     private $surfacetratout;
     
