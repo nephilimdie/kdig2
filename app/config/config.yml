@@ -84,7 +84,7 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
+#        auto_mapping: true
         entity_managers:
             default:
                 dql:
@@ -93,6 +93,10 @@ doctrine:
                         
                 mappings:
                     SonataMediaBundle: ~
+                    KdigUserBundle: ~
+                    KdigTemplateBundle: ~
+                    KdigOrientBundle: ~
+                    KdigArchaeologicalBundle: ~
                     translatable:
                         type: annotation
                         alias: Gedmo
