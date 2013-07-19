@@ -1489,4 +1489,9 @@ class Pottery {
         }
         $this->surfacetratinout = $relations;
     }
+    
+    public function __tostring() 
+    {
+        return (string)$this->getPrepottery();
+    }
 }
