@@ -106,7 +106,6 @@ doctrine:
 
         entity_managers:
             default:
-                # ...
                 dql:
                     string_functions:
                         string_add: Kdig\ArchaeologicalBundle\DQL\StringFunction
