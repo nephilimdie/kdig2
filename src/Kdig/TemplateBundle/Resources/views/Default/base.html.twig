@@ -146,12 +146,15 @@
             new Heyoffline();
         }, false);
     
-        $.address.change(function(event) {  
-            $(".container-fluid").load(event.value, function() {
-            }); 
-        });  
         $(document).ready( function () {
             // popover demo
+            $.address.change(function(event) {  
+                $(".container-fluid").load(event.value, function() {
+                }); 
+            });  
+            $.address.init(function(event) {  
+                return;
+            });  
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
