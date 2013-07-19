@@ -320,6 +320,6 @@ class VocInclusion {
     
     public function __tostring() 
     {
-        return (string)$this->Name();
+        return (string)$this->getName().'('.$this->getNumber().')';
     }
 }
