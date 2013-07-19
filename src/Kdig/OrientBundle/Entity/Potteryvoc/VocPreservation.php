@@ -320,6 +320,6 @@ class VocPreservation {
     
     public function __tostring() 
     {
-        return (string)$this->getName();
+        return (string)$this->getName().'('.$this->getNumber().')';
     }
 }
