@@ -92,11 +92,8 @@ doctrine:
                         string_add: Kdig\ArchaeologicalBundle\DQL\StringFunction
                         
                 mappings:
+                    auto_mapping:         true
                     SonataMediaBundle: ~
-                    KdigUserBundle: ~
-                    KdigTemplateBundle: ~
-                    KdigOrientBundle: ~
-                    KdigArchaeologicalBundle: ~
                     translatable:
                         type: annotation
                         alias: Gedmo
