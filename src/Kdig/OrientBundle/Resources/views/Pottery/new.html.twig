@@ -12,20 +12,19 @@
 
 <form class="well" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
-        <div class="group span12 ">
-            <div class="form_input"> 
-                {{ form_label(form.prepottery.bucket) }}
-                {{ form_errors(form.prepottery.bucket) }}
-                {{ form_widget(form.prepottery.bucket) }}
-            </div>
-            <div class="form_input">
-                {{ form_label(form.prepottery.name) }}
-                {{ form_errors(form.prepottery.name) }}
-                {{ form_widget(form.prepottery.name) }}
-                <a href="#" class="form_reload_text noajax button form-cancel" title="Reload field name"><span class="icon icon158"></span></a>
-            </div>
+        <div class="group span3 ">
+            {{ form_label(form.prepottery.bucket) }}
+            {{ form_errors(form.prepottery.bucket) }}
+            {{ form_widget(form.prepottery.bucket) }}
+        </div>
+        <div class="group span3 ">
+            {{ form_label(form.prepottery.name) }}
+            {{ form_errors(form.prepottery.name) }}
+            {{ form_widget(form.prepottery.name) }}
+            <a href="#" class="form_reload_text noajax button form-cancel" title="Reload field name"><span class="icon icon158"></span></a>
         </div>
         <div class="group span3">
+            {{ form_label(form.typecontext) }}
             {{ form_errors(form.typecontext) }}
             {{ form_row(form.typecontext) }}
         </div>
