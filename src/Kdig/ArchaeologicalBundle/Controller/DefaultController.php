@@ -21,7 +21,6 @@ class DefaultController extends Controller
      * Lists all Index entities.
      *
      * @Route("/", name="default_index")
-     * @Method("GET")
      * @Template()
      */
     public function indexAction()
