@@ -146,7 +146,7 @@
             new Heyoffline();
         }, false);
     
-        $.address.change(function(event) {  
+        $.address.internalChange(function(event) {  
             $(".container-fluid").load(event.value, function() {
             }); 
         });  
