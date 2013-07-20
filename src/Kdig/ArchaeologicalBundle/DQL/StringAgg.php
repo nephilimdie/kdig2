@@ -32,8 +32,8 @@ class StringAgg extends FunctionNode
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
         $this->expression = $parser->SingleValuedPathExpression();
-        $parser->match(Lexer::T_COMMA);
-        $this->delimiter = $parser->ArithmeticExpression();
+        if($parser->match(Lexer::T_COMMA))
+            $this->delimiter = $parser->ArithmeticExpression();
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 }
