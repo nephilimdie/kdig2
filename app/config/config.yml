@@ -89,7 +89,7 @@ doctrine:
             default:
                 dql:
                     string_functions:
-                        string_add: 'Kdig\ArchaeologicalBundle\DQL\StringFunction'
+                        string_agg: 'Kdig\ArchaeologicalBundle\DQL\StringAgg'
                         
                 auto_mapping:         true
                 mappings:
