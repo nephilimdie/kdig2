@@ -246,8 +246,7 @@ class Pottery {
       
     /**
      * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin", mappedBy="pottery", orphanRemoval=true) 
-     * @GRID\Column(field="surfacetratin", title="Surface Treatment In")
-     * @GRID\Column(field="surfacetratin", title="Color", joinType="left")
+     * @GRID\Column(field="surfacetratin", title="surface trat in", joinType="inner")
      */
     private $surfacetratin;
     
