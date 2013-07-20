@@ -145,7 +145,7 @@
         }, false);
     
         $(document).ready( function () {
-            var opts = {
+            /*var opts = {
                 lines: 13, // The number of lines to draw
                 length: 35, // The length of each line
                 width: 16, // The line thickness
@@ -162,12 +162,11 @@
                 zIndex: 2e9, // The z-index (defaults to 2000000000)
                 top: 'auto', // Top position relative to parent in px
                 left: 'auto' // Left position relative to parent in px
-            };
+            }; */
             $.address.change(function(event) {
-                var target = $('.container-fluid');
-                var spinner = new Spinner(opts).spin(target);
-                $(".container-fluid").load(event.value, function() {
-                }); 
+                /*var target = $('.container-fluid');
+                var spinner = new Spinner(opts).spin(target);*/
+                $(".container-fluid").load(event.value); 
             });  
             $.address.init(function(event) {  
                 return;
