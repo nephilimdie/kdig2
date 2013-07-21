@@ -37,6 +37,7 @@ class Potterypostpreupdate
             $entityManager->flush();
         }
     }
+    
     public function postPersist(LifecycleEventArgs $args) {
         $entity = $args->getEntity();
         $entityManager = $args->getEntityManager();
