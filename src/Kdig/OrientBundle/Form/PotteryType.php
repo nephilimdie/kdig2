@@ -344,7 +344,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => "inline"
             ))
             ->add('media', 'entity', array(
-                'class' => 'KdigOrientBundle:Potteryvoc\Media',
+                'class' => 'KdigMediaBundle:Media',
                 'required' => false,
                 'multiple' => true
             ))
