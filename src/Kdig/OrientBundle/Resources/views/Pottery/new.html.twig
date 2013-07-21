@@ -179,9 +179,10 @@
 
     <script type="text/javascript">
         $(document).ready( function () {
+            $('.controls').hide();
             $(".control-label").on("click", function(event){ 
                 event.preventDefault(); 
-                $(this).next().not('.collection').toggle();
+                $(this).next('.controls').not('.collection').toggle();
             });
             
         });
