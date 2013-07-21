@@ -172,8 +172,16 @@ class PotteryController extends Controller
      */
     public function createAction(Request $request)
     {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $em = $this->getDoctrine()->getEntityManager();
+        $bucketid = $em->getRepository('KdigArchaelogicalBundle:Bucket')->getmygroupelement($user);
+        
+        $request = $this->getRequest();
+        if( $request->request->get('bucketid')) {
+            $bucketid = $request->request->get('bucketid');
+        }
         $entity  = new Pottery();
-        $form = $this->createForm(new PotteryType(), $entity);
+        $form   = $this->createForm(new PotteryType($bucketid), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
