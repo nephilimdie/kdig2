@@ -179,10 +179,10 @@
 
     <script type="text/javascript">
         $(document).ready( function () {
-            $('.controls').hide();
+            $('.controls').hide('slow');
             $(".control-label").on("click", function(event){ 
                 event.preventDefault(); 
-                $(this).next('.controls').not('.collection').toggle();
+                $(this).next('.controls').not('.collection').toggle('fast');
             });
             
         });
