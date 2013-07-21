@@ -8,6 +8,12 @@
 
 {% block page %}
 
+    {# Override this block to add your own files! #}
+    {% stylesheets
+        '@KdigOrientBundle/Resources/public/less/orient.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
 <form class="well form-inline" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         <div class="group span4 ">
