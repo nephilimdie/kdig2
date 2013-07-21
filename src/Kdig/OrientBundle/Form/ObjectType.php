@@ -74,11 +74,11 @@ class ObjectType extends AbstractType
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDate',
                 'property' => 'name',
             ))
-            ->add('media', 'entity', array(
-                'class' => 'KdigMediaBundle:Media',
-                'required' => false,
-                'multiple' => true
-            ))
+//            ->add('media', 'entity', array(
+//                'class' => 'KdigMediaBundle:Media',
+//                'required' => false,
+//                'multiple' => true
+//            ))
         ;
     }
 
