@@ -182,13 +182,13 @@
     <script type="text/javascript">
         $(document).ready( function () {
             $('.controls').not('.collection > .control-group > .controls').hide('slow');
+            $('body').click( function() {
+                $('.controls').not('.collection > .control-group > .controls').hide()
+            });
             $(".control-label").on("click", function(event){ 
                 event.preventDefault(); 
                 var control = $(this).next('.controls').not('.collection > .control-group > .controls');
                 control.toggle('fast');
-                $('body').click( function() {
-                    control.hide()
-                });
             });
             
         });
