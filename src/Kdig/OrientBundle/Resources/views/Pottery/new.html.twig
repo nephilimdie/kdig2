@@ -181,11 +181,7 @@
         $(document).ready( function () {
             $(".control-label").on("click", function(event){ 
                 event.preventDefault(); 
-                $(this).next().toggle('fast', function() {
-                    $(this).hide();
-                }, function() {
-                    $(this).show();
-                });
+                $(this).next().toggle();
             });
             
         });
