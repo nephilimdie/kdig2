@@ -21,7 +21,7 @@ class Potterypostpreupdate
     public function postUpdate(LifecycleEventArgs $args) {
         $entity = $args->getEntity();
         $entityManager = $args->getEntityManager();
-        $aclProvider = $this->get('problematic.acl_manager');
+        $aclProvider = $this->container->get('problematic.acl_manager');
         
         if ($entity instanceof Pottery) {
             $tcode = $entity->getClass()->getNumber()
