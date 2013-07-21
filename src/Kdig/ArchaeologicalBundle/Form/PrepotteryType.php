@@ -19,16 +19,20 @@ class PrepotteryType extends AbstractType
         $bucketid = $this->bucketid;
         
         $builder
-            ->add('bucket', 'entity', array(
-                'class' => 'KdigOrientBundle:Bucket',
-                'query_builder' => function($repository) use ($bucketid) {
-                    $expr = new \Doctrine\ORM\Query\Expr();
-                    $idiota = $repository->createQueryBuilder('p')
-                        ->setParameter('buckets', $bucketid)
-                        ->add('where', ($expr->in('p.id', ':buckets')))
-                        ->orderBy('p.name', 'ASC'); 
-                    return $idiota;
-                }
+//            ->add('bucket', 'entity', array(
+//                'class' => 'KdigOrientBundle:Bucket',
+//                'query_builder' => function($repository) use ($bucketid) {
+//                    $expr = new \Doctrine\ORM\Query\Expr();
+//                    $idiota = $repository->createQueryBuilder('p')
+//                        ->setParameter('buckets', $bucketid)
+//                        ->add('where', ($expr->in('p.id', ':buckets')))
+//                        ->orderBy('p.name', 'ASC'); 
+//                    return $idiota;
+//                }
+//            ))
+            ->add('bucket', 'genemu_jqueryselect2_entity', array(
+                'class' => 'Kdig\OrientBundle\Entity\Bucket',
+                'property' => 'name'
             ))
             ->add('name')
             ->add('remarks')
