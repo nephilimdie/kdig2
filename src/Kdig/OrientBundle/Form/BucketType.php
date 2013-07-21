@@ -15,7 +15,11 @@ class BucketType extends AbstractType
             ->add('remarks')
             ->add('imageName')
             ->add('us')
-            ->add('media')
+            ->add('media', 'entity', array(
+                'class' => 'KdigMediaBundle:Media',
+                'required' => false,
+                'multiple' => true
+            ))
             ->add('bucketsheet')
         ;
     }

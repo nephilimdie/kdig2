@@ -20,7 +20,11 @@ class SiteType extends AbstractType
             ->add('isActive')
             ->add('isPublic')
             ->add('isDelete')
-            ->add('media')
+            ->add('media', 'entity', array(
+                'class' => 'KdigMediaBundle:Media',
+                'required' => false,
+                'multiple' => true
+            ))
         ;
     }
 

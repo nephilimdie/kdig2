@@ -22,7 +22,11 @@ class UsType extends AbstractType
             ->add('area')
             ->add('site')
             ->add('typeus')
-            ->add('media')
+            ->add('media', 'entity', array(
+                'class' => 'KdigMediaBundle:Media',
+                'required' => false,
+                'multiple' => true
+            ))
         ;
     }
 

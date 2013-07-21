@@ -17,7 +17,6 @@ class PrepotteryType extends AbstractType
                 'class' => 'Kdig\OrientBundle\Entity\Bucket',
                 'property' => 'name'
             ))
-            ->add('media')
         ;
     }
 
