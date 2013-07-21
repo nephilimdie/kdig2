@@ -73,6 +73,7 @@ class ObjectType extends AbstractType
             ->add('dateobject', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDate',
                 'property' => 'name',
+                'required' => false
             ))
 //            ->add('media', 'entity', array(
 //                'class' => 'KdigMediaBundle:Media',
