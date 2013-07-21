@@ -343,11 +343,11 @@ class PotteryType extends AbstractType
                 'required' => false,
                 'widget_type'  => "inline"
             ))
-            ->add('media', 'entity', array(
-                'class' => 'KdigMediaBundle:Media',
-                'required' => false,
-                'multiple' => true
-            ))
+//            ->add('media', 'entity', array(
+//                'class' => 'KdigMediaBundle:Media',
+//                'required' => false,
+//                'multiple' => true
+//            ))
         ;
     }
 
