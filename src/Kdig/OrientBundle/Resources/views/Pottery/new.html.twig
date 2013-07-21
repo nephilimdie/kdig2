@@ -179,11 +179,15 @@
 
     <script type="text/javascript">
         $(document).ready( function () {
-            $('.control-label').toggle(function() {
-                $(this).next().hide();
-            }, function() {
-                $(this).next().show();
+            $(".control-label").on("click", function(event){ 
+                event.preventDefault(); 
+                $(this).next().toggle(function() {
+                    $(this).hide();
+                }, function() {
+                    $(this).show();
+                });
             });
+            
         });
     </script>
 {% endblock %}
