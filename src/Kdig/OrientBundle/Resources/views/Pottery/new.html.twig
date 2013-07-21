@@ -181,7 +181,7 @@
         $(document).ready( function () {
             $(".control-label").on("click", function(event){ 
                 event.preventDefault(); 
-                $(this).next().toggle();
+                $(this).next().not('.collection').toggle();
             });
             
         });
