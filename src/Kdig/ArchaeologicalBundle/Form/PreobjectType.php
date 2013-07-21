@@ -13,7 +13,6 @@ class PreobjectType extends AbstractType
         $builder
             ->add('name')
             ->add('remarks')
-            ->add('media')
             ->add('bucket')
         ;
     }

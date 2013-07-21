@@ -23,7 +23,11 @@ class AreaType extends AbstractType
             ->add('fromrefus')
             ->add('torefus')
             ->add('type')
-            ->add('media')
+            ->add('media', 'entity', array(
+                'class' => 'KdigOrientBundle:Potteryvoc\Media',
+                'required' => false,
+                'multiple' => true
+            ))
             ->add('groups')
         ;
     }

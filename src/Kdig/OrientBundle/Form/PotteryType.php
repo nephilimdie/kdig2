@@ -343,12 +343,11 @@ class PotteryType extends AbstractType
                 'required' => false,
                 'widget_type'  => "inline"
             ))
-                        
-            /*->add('media', 'entity', array(
+            ->add('media', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\Media',
                 'required' => false,
                 'multiple' => true
-            ))*/
+            ))
         ;
     }
 
