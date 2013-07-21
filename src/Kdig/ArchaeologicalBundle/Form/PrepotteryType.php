@@ -20,7 +20,7 @@ class PrepotteryType extends AbstractType
         
         $builder
             ->add('bucket', 'entity', array(
-                'class' => 'KdigArchaelogicalBundle:Bucket',
+                'class' => 'KdigOrientBundle:Bucket',
                 'query_builder' => function($repository) use ($bucketid) {
                     $expr = new \Doctrine\ORM\Query\Expr();
                     $idiota = $repository->createQueryBuilder('p')
