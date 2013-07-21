@@ -11,9 +11,16 @@ class VocPotteryDecorationoutType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('color')
-            ->add('pottery')
-            ->add('decorationoption')
+            ->add('color', null, array(
+                'label' => 'Color',
+                'required' => false,
+                'widget_type'  => "inline"
+            ))
+            ->add('decorationoption', null, array(
+                'label' => 'Decoration Option',
+                'required' => false,
+                'widget_type'  => "inline"
+            ))
         ;
     }
 
