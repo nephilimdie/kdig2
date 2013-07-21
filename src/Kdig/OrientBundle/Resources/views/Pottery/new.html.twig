@@ -185,6 +185,9 @@
             $(".control-label").on("click", function(event){ 
                 event.preventDefault(); 
                 $(this).next('.controls').not('.collection > .control-group > .controls').toggle('fast');
+                $('body').click( function() {
+                    $(this).next('.controls').not('.collection > .control-group > .controls').hide()
+                });
             });
             
         });
