@@ -11,9 +11,18 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Potterypostpreupdate 
 {
+    private $container;
+ 
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+ 
     public function postUpdate(LifecycleEventArgs $args) {
         $entity = $args->getEntity();
         $entityManager = $args->getEntityManager();
+        $aclProvider = $this->get('problematic.acl_manager');
+        
         if ($entity instanceof Pottery) {
             $tcode = $entity->getClass()->getNumber()
                     .$entity->getShape()->getNumber()
@@ -35,6 +44,11 @@ class Potterypostpreupdate
             $entity->setTcode($tcode);
             $entityManager->persist($entity);
             $entityManager->flush();
+            
+            //add ACL information
+            if (($person = $entity->getTarget()) && ($user = $person->getUser())) {
+                $aclProvider->addObjectPermission($comment, MaskBuilder::MASK_OWNER, $user);
+            }
         }
     }
     
