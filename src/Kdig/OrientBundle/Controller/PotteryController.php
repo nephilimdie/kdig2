@@ -174,7 +174,7 @@ class PotteryController extends Controller
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getEntityManager();
-        $bucketid = $em->getRepository('KdigArchaelogicalBundle:Bucket')->getmygroupelement($user);
+        $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
         
         $request = $this->getRequest();
         if( $request->request->get('bucketid')) {
