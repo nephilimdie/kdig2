@@ -245,37 +245,37 @@ class Pottery {
     protected $inclusionfrequency;
       
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin", mappedBy="pottery", orphanRemoval=true, cascade={"remove"}) 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
      * @GRID\Column(field="surfacetratin", title="surface trat in", joinType="inner")
      */
     private $surfacetratin;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="pottery", orphanRemoval=true, cascade={"remove"}) 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
      * @GRID\Column(field="surfacetratout.color.name", title="Surface Treatament Out", type="array")
      */
     private $surfacetratout;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", mappedBy="pottery", orphanRemoval=true, cascade={"remove"}) 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
      * @GRID\Column(field="surfacetratinout.name", title="Surface Tratment In and Out", filter="select")
      */
     private $surfacetratinout;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="pottery", orphanRemoval=true, cascade={"remove"}) 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
      * @GRID\Column(field="decorationin.name", title="Decoration In", filter="select")
      */
     private $potdecorationin;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="pottery", orphanRemoval=true, cascade={"remove"}) 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
      * @GRID\Column(field="decorationout.name", title="Decoration Out", filter="select")
      */
     private $potdecorationout;
     
     /**
-     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="pottery", orphanRemoval=true, cascade={"remove"}) 
+     * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
      * @GRID\Column(field="decorationinout.name", title="Decoration In and Out", filter="select")
      */
     private $potdecorationinout;
