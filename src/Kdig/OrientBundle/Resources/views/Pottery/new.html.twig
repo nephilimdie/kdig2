@@ -163,9 +163,11 @@
             </div>
         </div>
         {{ form_rest(form) }}
-        <p>
-            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-        </p>
+        <div class="group span12">
+            <p class="create-button">
+                <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+            </p>
+        </div>
     </div>
 </form>
 
