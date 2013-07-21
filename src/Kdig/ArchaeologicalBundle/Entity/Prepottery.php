@@ -85,7 +85,7 @@ class Prepottery {
     private $isDelete=false;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Bucket", inversedBy="prepotterys", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Bucket", inversedBy="prepotterys", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id")
      * @GRID\Column(field="bucket.name", title="Bucket")
      * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
@@ -105,7 +105,7 @@ class Prepottery {
     private $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="prepottery", orphanRemoval=true)
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="prepottery", orphanRemoval=true, cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="pottery_id", referencedColumnName="id")
      */
     private $pottery;
