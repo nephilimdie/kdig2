@@ -30,14 +30,14 @@ class VocPotterySurfacetratout {
     private $id;
     
     /**
-     * @ORM\ManyToOne(targetEntity="VocColor", inversedBy="pottery_surfacetratout", cascade={"remove"} ) 
+     * @ORM\ManyToOne(targetEntity="VocColor", inversedBy="pottery_surfacetratout" ) 
      */
     protected $color;
 
-    /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="surfacetratout", cascade={"remove"} ) */
+    /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="surfacetratout" ) */
     protected $pottery;
 
-    /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption", inversedBy="surfaceout", cascade={"remove"} ) */
+    /** @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption", inversedBy="surfaceout" ) */
     protected $vocsurfacetratoption;
 
     /**
