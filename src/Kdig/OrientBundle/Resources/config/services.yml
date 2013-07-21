@@ -3,8 +3,13 @@ parameters:
 
 services:
   orient.pottery.listener:
-    
         class: 'Kdig\OrientBundle\Listener\Potterypostpreupdate'
+        arguments: [ '@service_container' ]
+        tags:
+            - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+            - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+  orient.object.listener:
+        class: 'Kdig\OrientBundle\Listener\ObjectListener'
         arguments: [ '@service_container' ]
         tags:
             - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
