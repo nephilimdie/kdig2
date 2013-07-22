@@ -1,7 +1,5 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
 {% block title %}
-{{ parent() }} - {{ 'views.show.show'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.show.show'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
@@ -9,30 +7,17 @@
 <h1>Pottery</h1>
 
 <form class="form-horizontal">
-    <fieldset>        <div class="control-group">
-            <label class="control-label">Id</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.id }}</span>            </div>
-        </div>        <div class="control-group">
+    <fieldset>        
+        <div class="control-group">
+            <label class="control-label">Tcode</label>
+            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.tcode }}</span>            </div>
+        </div>        
+        <div class="control-group">
             <label class="control-label">Remarks</label>
             <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.remarks }}</span>            </div>
         </div>        <div class="control-group">
             <label class="control-label">Created</label>
             <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Updated</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.updated|date('Y-m-d H:i:s') }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Isactive</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isActive }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Ispublic</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isPublic }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Isdelete</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isDelete }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Tcode</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.tcode }}</span>            </div>
         </div>        <div class="control-group">
             <label class="control-label">Typecontext</label>
             <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.typecontext }}</span>            </div>
@@ -69,10 +54,74 @@
         </div>        <div class="control-group">
             <label class="control-label">Restored</label>
             <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.restored }}</span>            </div>
-        </div>        <div class="control-group">
+        </div>
+        <div class="control-group">
             <label class="control-label">Datation</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.datation }}</span>            </div>
-        </div>    </fieldset>
+            <div class="controls">                
+                <span class="input-xlarge uneditable-input">{{ entity.datation }}</span>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label">Inner Surface Treatment</label>
+            <div class="controls">
+                <span class="input-xlarge uneditable-input">
+                    {% for element in entity.surfacetratin %}
+                        <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
+                    {% endfor %}
+                </span>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label">Outer Surface Treatment</label>
+            <div class="controls">
+                <span class="input-xlarge uneditable-input">
+                {% for element in entity.surfacetratout %}
+                    <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
+                {% endfor %}
+                </span>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label">Inner & Outer Surface Treatment</label>
+            <div class="controls">
+                <span class="input-xlarge uneditable-input">
+                {% for element in entity.surfacetratinout %}
+                    <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
+                {% endfor %}
+                </span>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label">Decoration Inner</label>
+            <div class="controls">
+                <span class="input-xlarge uneditable-input">
+                {% for element in entity.potdecorationin %}
+                    <label>{{element.decorationoption}}</label> <label>{{element.color}}</label> <br />
+                {% endfor %}
+                </span>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label">Decoration Outer</label>
+            <div class="controls">
+                <span class="input-xlarge uneditable-input">
+                {% for element in entity.potdecorationout %}
+                    <label>{{element.decorationoption}}</label> <label>{{element.color}}</label> <br />
+                {% endfor %}
+                </span>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label">Decoration Inner & Outer</label>
+            <div class="controls">
+                <span class="input-xlarge uneditable-input">
+                {% for element in entity.potdecorationinout %}
+                    <label>{{element.decorationoption}}</label> <label>{{element.color}}</label> <br />
+                {% endfor %}
+                </span>
+            </div>
+        </div>  
+    </fieldset>
 </form>
 
 <div>
