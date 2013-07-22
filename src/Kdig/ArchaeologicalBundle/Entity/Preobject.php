@@ -101,6 +101,7 @@ class Preobject {
     /**
      * @ORM\ManyToOne(targetEntity="Kdig\OrientBundle\Entity\Bucket", inversedBy="preobjects", cascade={"persist"})
      * @ORM\JoinColumn(nullable=true, name="bucket_id", referencedColumnName="id")
+     * @Assert\NotBlank()
      * @GRID\Column(field="bucket.name", title="Bucket")
      * @GRID\Column(field="bucket.us.name", title="Locus", size="40")
      * @GRID\Column(field="bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
