@@ -47,9 +47,9 @@ class Potterypostpreupdate
             
             //add ACL information
             
-            $user = $this->container->get('security.context');
-            if ($user->getUser()) {
-                $aclProvider->addObjectPermission($entity, MaskBuilder::MASK_OWNER, $user->getUser());
+            $user = $this->container->get('security.context')->getToken()->getUser();
+            if ($user) {
+                $aclProvider->addObjectPermission($entity, MaskBuilder::MASK_OWNER, $user);
             }
         }
     }
