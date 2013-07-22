@@ -6,8 +6,30 @@
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
+<style>
 
-<form class="well form-inline" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
+div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the top of the form */
+    width:200px;
+    padding:2px 5px;
+    border:1px solid gray;
+    background:#fff6e5;
+    -webkit-box-shadow: 0 0 8px #818181;
+    box-shadow: 0 0 8px #818181;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    color:red;
+    position:absolute;
+    top:-10px;
+    }
+
+form#feedbackform div{ /*CSS used by demo form*/
+    margin-bottom:9px;
+}
+
+</style>
+
+<form id="objectform" class="well form-inline" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         {{ form_widget(form) }}
         <p>
@@ -23,4 +45,12 @@
         </a>
     </div>
 </div>
+<script type="text/javascript">
+
+var formsave1 = new autosaveform({
+	formid: 'objectform',
+	pause: 1000 //<--no comma following last option!
+})
+
+</script>
 {% endblock %}
