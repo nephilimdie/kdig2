@@ -1446,12 +1446,12 @@ class Pottery {
         return $this->potdecorationinout;
     }
     
-    public function setPotdecorationout($relations)
+    
+    public function setPotdecorationout(ArrayCollection $relations)
     {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-        $this->potdecorationout = $relations;
+        $relations->setPottery($this);
+        $this->potdecorationout->add($relations);
+        
     }
     public function setPotdecorationinout($relations)
     {
