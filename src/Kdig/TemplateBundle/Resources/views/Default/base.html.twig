@@ -142,11 +142,11 @@
     and also remove the bootstrap-popover.js include.
     #}
     <script type="text/javascript">
-        
+        /*
         window.addEventListener('load', function(){
             new Heyoffline();
         }, false);
-    
+    */
         var options = { 
             target:        '.container-fluid',
             beforeSubmit:  showRequest,  
@@ -178,6 +178,7 @@
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
+                $(".container-fluid").spin(optsspin);
                 $(".container-fluid").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
