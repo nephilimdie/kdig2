@@ -56,7 +56,7 @@ class VocPotterySurfacetratout {
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color
      * @return VocPotterySurfacetratout
      */
-    public function setColor(\Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color = null)
+    public function setColor(\Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color)
     {
         $this->color = $color;
     
@@ -79,7 +79,7 @@ class VocPotterySurfacetratout {
      * @param \Kdig\OrientBundle\Entity\Pottery $pottery
      * @return VocPotterySurfacetratout
      */
-    public function setPottery(\Kdig\OrientBundle\Entity\Pottery $pottery = null)
+    public function setPottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
     {
         $this->pottery = $pottery;
     
@@ -102,7 +102,7 @@ class VocPotterySurfacetratout {
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption $vocsurfacetratoption
      * @return VocPotterySurfacetratout
      */
-    public function setVocsurfacetratoption(\Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption $vocsurfacetratoption = null)
+    public function setVocsurfacetratoption(\Kdig\OrientBundle\Entity\Potteryvoc\VocSurfaceTratOption $vocsurfacetratoption)
     {
         $this->vocsurfacetratoption = $vocsurfacetratoption;
     
