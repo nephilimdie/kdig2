@@ -32,9 +32,12 @@ class PrepotteryType extends AbstractType
 //            ))
             ->add('bucket', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Bucket',
-                'property' => 'name'
+                'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
-            ->add('name')
+            ->add('name', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
             ->add('remarks')
         ;
     }
