@@ -8,8 +8,6 @@
 
 {% block page %}
 
-<h1>{{ 'views.new.creation'|trans({'%entity%': 'Object'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
-
 <form class="well" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <p>
