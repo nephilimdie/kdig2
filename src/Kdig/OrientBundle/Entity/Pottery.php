@@ -1386,7 +1386,7 @@ class Pottery {
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout $potdecorationout
      * @return Pottery
      */
-    public function addPotdecorationout(ArrayCollection $potdecorationout)
+    public function addPotdecorationout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout $potdecorationout)
     {
         $potdecorationout->setPottery($this);
         $this->potdecorationout->add($potdecorationout);
