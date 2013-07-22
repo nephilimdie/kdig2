@@ -14,7 +14,7 @@
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
     {% endstylesheets %}
-<form class="well form-inline" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
+<form id="potteryform" class="well form-inline" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         <div class="group span4 ">
             {{ form_label(form.prepottery.bucket) }}
@@ -178,6 +178,14 @@
         </a>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready( function () {
+    var formsave1 = new autosaveform({
+            formid: 'potteryform',
+            pause: 2000 
+    });
+});
+</script>
 
     <script type="text/javascript">
         /*$(document).ready( function () {
