@@ -1256,9 +1256,8 @@ class Pottery {
      */
     public function addSurfacetratin(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin $surfacetratin)
     {
-        $this->surfacetratin[] = $surfacetratin;
-    
-        return $this;
+        $surfacetratin->setPottery($this);
+        $this->surfacetratin->add($surfacetratin);
     }
 
     /**
@@ -1289,9 +1288,8 @@ class Pottery {
      */
     public function addSurfacetratout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout $surfacetratout)
     {
-        $this->surfacetratout[] = $surfacetratout;
-    
-        return $this;
+        $surfacetratout->setPottery($this);
+        $this->surfacetratout->add($surfacetratout);
     }
 
     /**
@@ -1322,9 +1320,8 @@ class Pottery {
      */
     public function addSurfacetratinout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout $surfacetratinout)
     {
-        $this->surfacetratinout[] = $surfacetratinout;
-    
-        return $this;
+        $surfacetratinout->setPottery($this);
+        $this->surfacetratinout->add($surfacetratinout);
     }
 
     /**
@@ -1355,9 +1352,8 @@ class Pottery {
      */
     public function addPotdecorationin(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin $potdecorationin)
     {
-        $this->potdecorationin[] = $potdecorationin;
-    
-        return $this;
+        $potdecorationin->setPottery($this);
+        $this->potdecorationin->add($potdecorationin);
     }
 
     /**
@@ -1420,9 +1416,8 @@ class Pottery {
      */
     public function addPotdecorationinout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout $potdecorationinout)
     {
-        $this->potdecorationinout[] = $potdecorationinout;
-    
-        return $this;
+        $potdecorationinout->setPottery($this);
+        $this->potdecorationinout->add($potdecorationinout);
     }
 
     /**
