@@ -26,7 +26,7 @@ class ObjectType extends AbstractType
                 'attr'=> array('class'=>'span3')
             ))
             ->add('preobject', new PreobjectType($bucketid), array(
-                'attr'=> array('class'=>'span12')
+                'attr'=> array('class'=>'row-fluid')
             ))
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
