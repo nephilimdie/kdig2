@@ -145,6 +145,15 @@
             new Heyoffline();
         }, false);
     
+        var options = { 
+            target:        '.container-fluid',
+            beforeSubmit:  showRequest,  
+        //                success:       showResponse,
+            error: function(jqXHR, exception) {
+                ajaxerror(jqXHR, exception);
+            }
+        }; 
+
         $(document).ready( function () {
             /*var opts = {
                 lines: 13, // The number of lines to draw
@@ -167,7 +176,12 @@
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
-                $(".container-fluid").load(event.value); 
+                $(".container-fluid").load(event.value, function() {
+                    $('form').submit(function() { 
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                });
             });  
             $.address.init(function(event) {  
                 return;
@@ -190,19 +204,6 @@
                 $.address.value($(this).attr('href'));  
             });
             
-            var options = { 
-                target:        '.container-fluid',
-                beforeSubmit:  showRequest,  
-//                success:       showResponse,
-                error: function(jqXHR, exception) {
-                    ajaxerror(jqXHR, exception);
-                }
-            }; 
-
-            $('form').submit(function() { 
-                $(this).ajaxSubmit(options); 
-                return false; 
-            }); 
 
         });
         
