@@ -176,6 +176,8 @@
             left: 'auto' // Left position relative to parent in px
         }; 
         $(document).ready( function () {
+            $.address.state('kdig');
+            $.address.strict(false);
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
