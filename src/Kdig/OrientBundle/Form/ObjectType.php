@@ -27,26 +27,32 @@ class ObjectType extends AbstractType
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
                 'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
             ->add('type', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjType',
                 'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
             ->add('material', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjMaterial',
                 'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
             ->add('technique', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjTechnique',
                 'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
             ->add('decoration', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration',
                 'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
             ->add('preservation', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation',
                 'property' => 'name',
+                'attr'=> array('class'=>'span3')
             ))
             ->add('fragments')
             ->add('height')
