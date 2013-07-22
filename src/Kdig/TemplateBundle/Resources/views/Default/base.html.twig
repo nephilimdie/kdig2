@@ -212,10 +212,9 @@
             /*if (jqXHR.status === 0) {
                 alert('Not connect.\n Verify Network.');
             } else */ 
-            var errorMessage = $('<div />');
 
-            $('.modal-body').html(jqXHR.responseText);
             var title = 'not understand';
+            
             if (jqXHR.status == 404) {
                 var title = 'Requested page not found. [404]';
             } else if (jqXHR.status == 500) {
@@ -229,8 +228,7 @@
             } else {
                 var title = 'Uncaught Error.\n' + jqXHR.responseText;
             }
-            $('.myModalLabel').html(title);
-            $('#myModal').modal();
+            bootbox.alert(jqXHR.responseText);
         }
         // pre-submit callback 
         function showRequest(formData, jqForm, options) { 
