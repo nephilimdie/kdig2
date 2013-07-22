@@ -22,30 +22,8 @@ class ObjectType extends AbstractType
         $bucketid = $this->bucketid;
         
         $builder
-            ->add('preobject', new PreobjectType($bucketid))
             ->add('number')
-            ->add('remarks')
-            ->add('isphotographed')
-            ->add('drawned')
-            ->add('fragments')
-            ->add('inscription')
-            ->add('dateoofcontext')
-            ->add('height')
-            ->add('lenght')
-            ->add('width')
-            ->add('thickness')
-            ->add('diameter')
-            ->add('perforationdiameter')
-            ->add('weight')
-            ->add('bibliography')
-            ->add('restorationdate')
-            ->add('analysisdate')
-            ->add('analysisreport')
-            ->add('location')
-            ->add('museum_acquisition')
-            ->add('museum_acquisition_notes')
-            ->add('exhibition_history')
-            ->add('itaremarks')
+            ->add('preobject', new PreobjectType($bucketid))
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
                 'property' => 'name',
@@ -70,11 +48,34 @@ class ObjectType extends AbstractType
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation',
                 'property' => 'name',
             ))
-            ->add('dateobject', 'genemu_jqueryselect2_entity', array(
-                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDate',
-                'property' => 'name',
-                'required' => false
-            ))
+            ->add('fragments')
+            ->add('height')
+            ->add('lenght')
+            ->add('width')
+            ->add('thickness')
+            ->add('diameter')
+            ->add('perforationdiameter')
+            ->add('weight')
+            ->add('remarks')
+                
+//            ->add('isphotographed')
+//            ->add('drawned')
+//            ->add('inscription')
+//            ->add('dateoofcontext')
+//            ->add('bibliography')
+//            ->add('restorationdate')
+//            ->add('analysisdate')
+//            ->add('analysisreport')
+//            ->add('location')
+//            ->add('museum_acquisition')
+//            ->add('museum_acquisition_notes')
+//            ->add('exhibition_history')
+//            ->add('itaremarks')
+//            ->add('dateobject', 'genemu_jqueryselect2_entity', array(
+//                'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDate',
+//                'property' => 'name',
+//                'required' => false
+//            ))
 //            ->add('media', 'entity', array(
 //                'class' => 'KdigMediaBundle:Media',
 //                'required' => false,
