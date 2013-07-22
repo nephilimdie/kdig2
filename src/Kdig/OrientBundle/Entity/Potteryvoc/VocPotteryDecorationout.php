@@ -127,11 +127,4 @@ class VocPotteryDecorationout {
     {
         return (string)$this->getDecorationoption().' - '.$this->getColor();
     }
-    
-    public function addPottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
-    {
-        if (!$this->pottery->contains($pottery)) {
-            $this->pottery->add($pottery);
-        }
-    }
 }
