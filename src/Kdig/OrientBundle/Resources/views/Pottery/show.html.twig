@@ -83,20 +83,18 @@
         </div>  
         <div class="control-group">
             <label class="control-label">Inner & Outer Surface Treatment</label>
-            <div class="controls">
                 <span class="input-xlarge uneditable-input">
                 {% for element in entity.surfacetratinout %}
                     <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
                 </span>
-            </div>
         </div>  
         <div class="control-group">
             <label class="control-label">Decoration Inner</label>
             <div class="controls">
                 <span class="input-xlarge uneditable-input">
                 {% for element in entity.potdecorationin %}
-                    <label>{{element.decorationoption}}</label> <label>{{element.color}}</label> <br />
+                    <label>{{element.decorationoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
                 </span>
             </div>
@@ -104,11 +102,9 @@
         <div class="control-group">
             <label class="control-label">Decoration Outer</label>
             <div class="controls">
-                <span class="input-xlarge uneditable-input">
                 {% for element in entity.potdecorationout %}
-                    <label>{{element.decorationoption}}</label> <label>{{element.color}}</label> <br />
+                    <p>{{element.decorationoption}}- {{element.color}}</p> <br />
                 {% endfor %}
-                </span>
             </div>
         </div>  
         <div class="control-group">
@@ -116,7 +112,7 @@
             <div class="controls">
                 <span class="input-xlarge uneditable-input">
                 {% for element in entity.potdecorationinout %}
-                    <label>{{element.decorationoption}}</label> <label>{{element.color}}</label> <br />
+                    <label>{{element.decorationoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
                 </span>
             </div>
