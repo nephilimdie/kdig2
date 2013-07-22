@@ -60,7 +60,7 @@ class VocPotteryDecorationinout {
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color
      * @return VocPotteryDecorationinout
      */
-    public function setColor(\Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color = null)
+    public function setColor(\Kdig\OrientBundle\Entity\Potteryvoc\VocColor $color)
     {
         $this->color = $color;
     
@@ -83,7 +83,7 @@ class VocPotteryDecorationinout {
      * @param \Kdig\OrientBundle\Entity\Pottery $pottery
      * @return VocPotteryDecorationinout
      */
-    public function setPottery(\Kdig\OrientBundle\Entity\Pottery $pottery = null)
+    public function setPottery(\Kdig\OrientBundle\Entity\Pottery $pottery)
     {
         $this->pottery = $pottery;
     
@@ -106,7 +106,7 @@ class VocPotteryDecorationinout {
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocDecorationOption $decorationoption
      * @return VocPotteryDecorationinout
      */
-    public function setDecorationoption(\Kdig\OrientBundle\Entity\Potteryvoc\VocDecorationOption $decorationoption = null)
+    public function setDecorationoption(\Kdig\OrientBundle\Entity\Potteryvoc\VocDecorationOption $decorationoption)
     {
         $this->decorationoption = $decorationoption;
     
