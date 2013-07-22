@@ -22,8 +22,12 @@ class ObjectType extends AbstractType
         $bucketid = $this->bucketid;
         
         $builder
-            ->add('number')
-            ->add('preobject', new PreobjectType($bucketid))
+            ->add('number', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('preobject', new PreobjectType($bucketid), array(
+                'attr'=> array('class'=>'span12')
+            ))
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
                 'property' => 'name',
@@ -54,15 +58,33 @@ class ObjectType extends AbstractType
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
-            ->add('fragments')
-            ->add('height')
-            ->add('lenght')
-            ->add('width')
-            ->add('thickness')
-            ->add('diameter')
-            ->add('perforationdiameter')
-            ->add('weight')
-            ->add('remarks')
+            ->add('fragments', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('height', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('lenght', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('width', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('thickness', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('diameter', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('perforationdiameter', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('weight', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
+            ->add('remarks', null, array(
+                'attr'=> array('class'=>'span12')
+            ))
                 
 //            ->add('isphotographed')
 //            ->add('drawned')
