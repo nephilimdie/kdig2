@@ -46,8 +46,8 @@ class Potterypostpreupdate
             $entityManager->flush();
             
             //add ACL information
-            if (($person = $entity->getTarget()) && ($user = $person->getUser())) {
-                $aclProvider->addObjectPermission($comment, MaskBuilder::MASK_OWNER, $user);
+            if ($user = $person->getUser()) {
+                $aclProvider->addObjectPermission($entity, MaskBuilder::MASK_OWNER, $user);
             }
         }
     }
