@@ -2,11 +2,10 @@
     {{ 'views.new.creation'|trans({'%entity%': 'Object'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
+{% block page %}
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
-
-{% block page %}
 
 <form class="well form-inline" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
