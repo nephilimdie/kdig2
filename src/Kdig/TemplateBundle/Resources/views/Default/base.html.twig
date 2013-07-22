@@ -156,7 +156,7 @@
             }
         }; 
 
-        var opts = {
+        var optsspin = {
             lines: 13, // The number of lines to draw
             length: 35, // The length of each line
             width: 16, // The line thickness
@@ -175,17 +175,16 @@
             left: 'auto' // Left position relative to parent in px
         }; 
         $(document).ready( function () {
-            var spinner = new Spinner(opts).spin();
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
-                $(".container-fluid").append(spinner.el);
+                $(".container-fluid").spin(optsspin);
                 $(".container-fluid").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
                         return false; 
                     }); 
-                    spinner.stop()
+                    $(".container-fluid").spin(false);
                 });
             });  
             $.address.init(function(event) {  
