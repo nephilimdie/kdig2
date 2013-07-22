@@ -30,7 +30,7 @@ class Prepottery {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @Gedmo\Versioned
      * @GRID\Column(title="ID", size="50",visible=false)
      */
