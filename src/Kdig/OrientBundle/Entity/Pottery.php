@@ -1249,6 +1249,19 @@ class Pottery {
     }
 
     /**
+     * Add surfacetratin
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin $surfacetratin
+     * @return Pottery
+     */
+    public function addSurfacetratin(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin $surfacetratin)
+    {
+        $this->surfacetratin[] = $surfacetratin;
+    
+        return $this;
+    }
+
+    /**
      * Remove surfacetratin
      *
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratin $surfacetratin
@@ -1266,6 +1279,19 @@ class Pottery {
     public function getSurfacetratin()
     {
         return $this->surfacetratin;
+    }
+
+    /**
+     * Add surfacetratout
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout $surfacetratout
+     * @return Pottery
+     */
+    public function addSurfacetratout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout $surfacetratout)
+    {
+        $this->surfacetratout[] = $surfacetratout;
+    
+        return $this;
     }
 
     /**
@@ -1289,6 +1315,19 @@ class Pottery {
     }
 
     /**
+     * Add surfacetratinout
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout $surfacetratinout
+     * @return Pottery
+     */
+    public function addSurfacetratinout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout $surfacetratinout)
+    {
+        $this->surfacetratinout[] = $surfacetratinout;
+    
+        return $this;
+    }
+
+    /**
      * Remove surfacetratinout
      *
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratinout $surfacetratinout
@@ -1306,6 +1345,19 @@ class Pottery {
     public function getSurfacetratinout()
     {
         return $this->surfacetratinout;
+    }
+
+    /**
+     * Add potdecorationin
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin $potdecorationin
+     * @return Pottery
+     */
+    public function addPotdecorationin(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationin $potdecorationin)
+    {
+        $this->potdecorationin[] = $potdecorationin;
+    
+        return $this;
     }
 
     /**
@@ -1329,6 +1381,18 @@ class Pottery {
     }
 
     /**
+     * Add potdecorationout
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout $potdecorationout
+     * @return Pottery
+     */
+    public function addPotdecorationout(ArrayCollection $potdecorationout)
+    {
+        $potdecorationout->setPottery($this);
+        $this->potdecorationout->add($potdecorationout);
+    }
+
+    /**
      * Remove potdecorationout
      *
      * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationout $potdecorationout
@@ -1346,6 +1410,19 @@ class Pottery {
     public function getPotdecorationout()
     {
         return $this->potdecorationout;
+    }
+
+    /**
+     * Add potdecorationinout
+     *
+     * @param \Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout $potdecorationinout
+     * @return Pottery
+     */
+    public function addPotdecorationinout(\Kdig\OrientBundle\Entity\Potteryvoc\VocPotteryDecorationinout $potdecorationinout)
+    {
+        $this->potdecorationinout[] = $potdecorationinout;
+    
+        return $this;
     }
 
     /**
@@ -1368,48 +1445,6 @@ class Pottery {
         return $this->potdecorationinout;
     }
     
-    
-    public function setPotdecorationout(ArrayCollection $relations)
-    {
-        $relations->setPottery($this);
-        $this->potdecorationout->add($relations);
-        
-    }
-    public function setPotdecorationinout($relations)
-    {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-        $this->potdecorationinout = $relations;
-    }
-    public function setPotdecorationin($relations)
-    {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-        $this->potdecorationin = $relations;
-    }
-    public function setSurfacetratin($relations)
-    {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-        $this->surfacetratin = $relations;
-    }
-    public function setSurfacetratout($relations)
-    {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-        $this->surfacetratout = $relations;
-    }
-    public function setSurfacetratinout($relations)
-    {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-        $this->surfacetratinout = $relations;
-    }
     
     public function __tostring() 
     {
