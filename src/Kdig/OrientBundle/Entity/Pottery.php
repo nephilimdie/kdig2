@@ -1449,10 +1449,7 @@ class Pottery {
     
     public function setPotdecorationout(ArrayCollection $relations)
     {
-        foreach ($relations as $relation) {
-            $relation->setPottery($this);
-        }
-//        $relations->setPottery($this);
+        $relations->setPottery($this);
         $this->potdecorationout->add($relations);
         
     }
