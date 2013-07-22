@@ -8,7 +8,7 @@
 
 {% block page %}
 
-<form class="well" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
+<form class="well form-inline" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <p>
         <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
