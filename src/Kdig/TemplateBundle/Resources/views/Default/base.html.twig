@@ -190,7 +190,50 @@
                 $.address.value($(this).attr('href'));  
             });
             
+            var options = { 
+                target:        '.container-fluid',
+                beforeSubmit:  showRequest,  
+//                success:       showResponse,
+                error: function(jqXHR, exception) {
+                    ajaxerror(jqXHR, exception);
+                }
+            }; 
+
+            $('form').submit(function() { 
+                $(this).ajaxSubmit(options); 
+                return false; 
+            }); 
+
         });
+        
+        function ajaxerror(jqXHR, exception) {
+            /*if (jqXHR.status === 0) {
+                alert('Not connect.\n Verify Network.');
+            } else */ 
+                if (jqXHR.status == 404) {
+                alert('Requested page not found. [404]');
+            } else if (jqXHR.status == 500) {
+                alert('Internal Server Error [500].');
+            } else if (exception === 'parsererror') {
+                alert('Requested JSON parse failed.');
+            } else if (exception === 'timeout') {
+                alert('Time out error.');
+            } else if (exception === 'abort') {
+                alert('Ajax request aborted.');
+            } else {
+                alert('Uncaught Error.\n' + jqXHR.responseText);
+            }
+        }
+        // pre-submit callback 
+        function showRequest(formData, jqForm, options) { 
+            return true; 
+        } 
+
+        /* post-submit callback 
+        function showResponse(responseText, statusText, xhr, $form)  { 
+            alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+                '\n\nThe output div should have already been updated with the responseText.'); 
+            } */
     </script>
     {% endblock foot_script_additional %}
 {% endblock body %}
