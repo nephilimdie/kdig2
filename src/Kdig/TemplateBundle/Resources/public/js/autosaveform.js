@@ -24,11 +24,7 @@ function autosaveform(setting){
 	})
 	var thissession=this
 	jQuery(function($){ //on document.ready
-                //changed by stefano Bassetto - stefano.bassetto.nep@gmail.com
-//		var $f=$('form#'+setting.formid).css({position:'relative'})
-                var formSB=setting.formid;
-		var $f=formSB.css({position:'relative'});
-                
+		var $f=$('form#'+setting.formid).css({position:'relative'})
 		thissession.f=$f.get(0)
 		var targetfields=$(thissession.f.elements).filter(setting.includefields.join(',')).get() //filter out form fields that should be auto saved
 		thissession.targetfields=targetfields
