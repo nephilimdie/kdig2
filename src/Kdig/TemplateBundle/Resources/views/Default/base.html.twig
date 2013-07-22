@@ -181,11 +181,6 @@
                 var spinner = new Spinner(opts).spin(target);*/
                 $(".container-fluid").spin(optsspin);
                 $(".container-fluid").load(event.value, function() {
-                    
-                    var formsave1 = new autosaveform({
-                            formid: $('.form'),
-                            pause: 1000 //<--no comma following last option!
-                    });
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
                         return false; 
