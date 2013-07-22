@@ -14,7 +14,9 @@ class PreobjectType extends AbstractType
             ->add('name', null, array(
                 'attr'=> array('class'=>'span3')
             ))
-            ->add('remarks')
+            ->add('remarks', null, array(
+                'attr'=> array('class'=>'span12')
+            ))
             ->add('bucket', null, array(
                 'attr'=> array('class'=>'span3')
             ))
