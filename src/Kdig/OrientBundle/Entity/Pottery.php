@@ -78,7 +78,7 @@ class Pottery {
      */
     private $isDelete=false;
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Prepottery", inversedBy="pottery", orphanRemoval=true, cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Prepottery", inversedBy="pottery", cascade={"remove"})
      * @GRID\Column(field="prepottery.name", title="Field", size="40")
      * @GRID\Column(field="prepottery.bucket.us.name", title="Locus", filter="select", size="40")
      * @GRID\Column(field="prepottery.bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
