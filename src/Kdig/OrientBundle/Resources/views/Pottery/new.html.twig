@@ -2,11 +2,11 @@
 {{ 'views.new.creation'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
-<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
-<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
-{{ JSFV(form) }}
-
 {% block page %}
+
+    <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+    {{ JSFV(form) }}
 
     {# Override this block to add your own files! #}
     {% stylesheets
