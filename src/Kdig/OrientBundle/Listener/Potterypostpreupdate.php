@@ -13,10 +13,9 @@ class Potterypostpreupdate
 {
     private $container;
  
-    public function __construct(ContainerInterface $container, SecurityContext $context)
+    public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->context = $context;
     }
  
     public function postUpdate(LifecycleEventArgs $args) {
@@ -47,8 +46,10 @@ class Potterypostpreupdate
             $entityManager->flush();
             
             //add ACL information
-            if ($this->context->getToken()->getUser()) {
-                $aclProvider->addObjectPermission($entity, MaskBuilder::MASK_OWNER, $this->context->getToken()->getUser());
+            
+            $user = $this->container->get('security.context');
+            if ($user->getUser()) {
+                $aclProvider->addObjectPermission($entity, MaskBuilder::MASK_OWNER, $user->getUser());
             }
         }
     }
