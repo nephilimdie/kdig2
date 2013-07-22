@@ -204,7 +204,7 @@
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
-                $(".container-fluid").appendChild(spinner.el);
+                $(".container-fluid").append(spinner.el);
                 $.address.value($(this).attr('href'));  
             });
             
