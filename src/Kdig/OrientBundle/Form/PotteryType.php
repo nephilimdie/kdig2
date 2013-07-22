@@ -225,6 +225,7 @@ class PotteryType extends AbstractType
                 'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('surfacetratin', 'collection', array(
                 'type' => new VocPotterySurfacetratinType(), 
+                'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
@@ -244,6 +245,7 @@ class PotteryType extends AbstractType
             ))
             ->add('surfacetratout', 'collection', array(
                 'type' => new VocPotterySurfacetratoutType(), 
+                'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
@@ -263,6 +265,7 @@ class PotteryType extends AbstractType
             ))
             ->add('surfacetratinout', 'collection', array(
                 'type' => new VocPotterySurfacetratinoutType(), 
+                'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
@@ -282,6 +285,7 @@ class PotteryType extends AbstractType
             ))
             ->add('potdecorationin', 'collection', array(
                 'type' => new VocPotteryDecorationinType(), 
+                'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
@@ -301,6 +305,7 @@ class PotteryType extends AbstractType
             ))
             ->add('potdecorationout', 'collection', array(
                 'type' => new VocPotteryDecorationoutType(), 
+                'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
@@ -320,6 +325,7 @@ class PotteryType extends AbstractType
             ))
             ->add('potdecorationinout', 'collection', array(
                 'type' => new VocPotteryDecorationinoutType(), 
+                'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'prototype' => true,
