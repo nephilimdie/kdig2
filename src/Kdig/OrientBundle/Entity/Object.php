@@ -19,6 +19,7 @@ use APY\DataGridBundle\Grid\Mapping as GRID;
  * @ORM\Entity
  * @ORM\Table(name="object", schema="public")
  * @Gedmo\Loggable
+ * @ORM\HasLifecycleCallbacks
  * @GRID\Source(columns="id, number, preobject.bucket.us.area.name, preobject.bucket.us.typeus.name, preobject.bucket.us.name, preobject.name, class.name, type.name, material.name, technique.name, decoration.name, preservation.name, dateobject.name, fragments, height, lenght, width, thickness, diameter, perforationdiameter, weight, bibliography, restorationdate, analysisdate, analysisreport, location, museum_acquisition, museum_acquisition_notes, exhibition_history, itaremarks, remarks, dateoofcontext, created")
  */
 class Object {
