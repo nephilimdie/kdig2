@@ -178,6 +178,7 @@
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
+                $(".container-fluid").append(spinner.el);
                 $(".container-fluid").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
@@ -204,7 +205,6 @@
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
-                $(".container-fluid").append(spinner.el);
                 $.address.value($(this).attr('href'));  
             });
             
