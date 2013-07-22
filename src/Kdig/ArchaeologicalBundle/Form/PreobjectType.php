@@ -11,9 +11,13 @@ class PreobjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('name', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
             ->add('remarks')
-            ->add('bucket')
+            ->add('bucket', null, array(
+                'attr'=> array('class'=>'span3')
+            ))
         ;
     }
 
