@@ -60,7 +60,7 @@
     {# Overwrite this block to add your own js here, to get them generated into final files #}
     {% endblock head_script %}
 
-    <title>{% block title %}Kdig Project .2{% endblock title %}</title>
+    <title>{#% block title %}Kdig Project .2{% endblock title %#}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     {% block head_bottom %}
     {% endblock head_bottom %}
@@ -88,7 +88,7 @@
         <div class="content">
             {% block page_header %}
             <div class="page-header">
-                  <h5>{% block headline %}Kdig Project .2{% endblock headline %}</h5>
+                  <h5>{% block title %}Kdig Project .2{% endblock title %}</h5>
             </div>
             {% endblock page_header %}
 
