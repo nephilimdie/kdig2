@@ -1,16 +1,54 @@
 parameters:
-#    kdig_orient.example.class: Kdig\OrientBundle\Example
+    kdig_orient.orient_menu_builder.class: 'Kdig\OrientBundle\Menu\OrientMenuBuilder'
 
 services:
+  ## post pre update event after persist object
   orient.pottery.listener:
-        class: 'Kdig\OrientBundle\Listener\Potterypostpreupdate'
-        arguments: [ '@service_container' ]
-        tags:
-            - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
-            - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+      class: 'Kdig\OrientBundle\Listener\Potterypostpreupdate'
+      arguments: [ '@service_container' ]
+      tags:
+          - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+          - { name: doctrine.event_listener, event: postPersist, method: postPersist }
   orient.object.listener:
-        class: 'Kdig\OrientBundle\Listener\ObjectListener'
-        arguments: [ '@service_container' ]
-        tags:
-            - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
-            - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+      class: 'Kdig\OrientBundle\Listener\ObjectListener'
+      arguments: [ '@service_container' ]
+      tags:
+          - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+          - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+          
+## show nav bar
+  kdig.archaeological.potteryshow:
+      class: %mopa_bootstrap.navbar.generic%
+      arguments:
+          # first argument: a named array of menues:
+          - { menu: '@kdig.orient.kdig.orient.orient_menu_builder=' }
+          - {}
+          # third argument: a named array of options
+          - { fixedTop: false, isFluid: true, template: 'KdigOrientBundle:Menu:showmenu.html.twig' }
+      tags:
+          # The alias is used to retrieve the navbar in templates
+          - { name: mopa_bootstrap.navbar, alias: showmenupottery }
+
+## reference class            
+  kdig.orient.orient_menu_builder:
+      class: %kdig_orient.orient_menu_builder.class%
+      scope: request
+      arguments: [ '@knp_menu.factory', '@security.context' ]
+ 
+  pottery.show.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.orient.orient_menu_builder
+      factory_method: createPotteryMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: potterymenu }
+          
+  object.show.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.orient.orient_menu_builder
+      factory_method: createObjectMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: objectmenu }
