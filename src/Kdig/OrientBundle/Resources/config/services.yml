@@ -16,12 +16,12 @@ services:
           - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
-## show nav bar
+## show pottery menu
   kdig.archaeological.potteryshow:
       class: %mopa_bootstrap.navbar.generic%
       arguments:
           # first argument: a named array of menues:
-          - { menu: '@kdig.orient.kdig.orient.orient_menu_builder=' }
+          - { menu: '@kdig.orient.pottery.show.menu=' }
           - {}
           # third argument: a named array of options
           - { fixedTop: false, isFluid: true, template: 'KdigOrientBundle:Menu:showmenu.html.twig' }
@@ -29,13 +29,26 @@ services:
           # The alias is used to retrieve the navbar in templates
           - { name: mopa_bootstrap.navbar, alias: showmenupottery }
 
+## show object menu
+  kdig.archaeological.potteryshow:
+      class: %mopa_bootstrap.navbar.generic%
+      arguments:
+          # first argument: a named array of menues:
+          - { menu: '@kdig.orient.object.show.menu=' }
+          - {}
+          # third argument: a named array of options
+          - { fixedTop: false, isFluid: true, template: 'KdigOrientBundle:Menu:showmenu.html.twig' }
+      tags:
+          # The alias is used to retrieve the navbar in templates
+          - { name: mopa_bootstrap.navbar, alias: showmenuobject }
+
 ## reference class            
   kdig.orient.orient_menu_builder:
       class: %kdig_orient.orient_menu_builder.class%
       scope: request
       arguments: [ '@knp_menu.factory', '@security.context' ]
  
-  pottery.show.menu:
+  kdig.orient.pottery.show.menu:
       class: Knp\Menu\MenuItem
       factory_service: kdig.orient.orient_menu_builder
       factory_method: createPotteryMenu
@@ -44,7 +57,7 @@ services:
       tags:
           - { name: knp_menu.menu, alias: potterymenu }
           
-  object.show.menu:
+  kdig.orient.object.show.menu:
       class: Knp\Menu\MenuItem
       factory_service: kdig.orient.orient_menu_builder
       factory_method: createObjectMenu
