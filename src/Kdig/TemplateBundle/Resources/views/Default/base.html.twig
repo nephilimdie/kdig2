@@ -245,7 +245,7 @@
         function checkname(route, element) {
             var idname = element.value;
             var routechecknamesu = Routing.generate(route, { name: idname });
-            getdefaultstringAjax(routechecknamesu, element, 'fill');
+            getdefaultstringAjax(routechecknamesu, element, 'html');
         }
         function showResponse(data, how) {
             $(".container-fluid").spin(false);
