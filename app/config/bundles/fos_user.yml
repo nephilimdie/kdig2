@@ -4,3 +4,10 @@ fos_user:
     user_class: Kdig\UserBundle\Entity\User
     group:
         group_class: Kdig\UserBundle\Entity\Group
+
+    profile:  # Authentication Form
+        form:
+            type:               fos_user_profile
+            handler:            fos_user.profile.form.handler.default
+            name:               fos_user_profile_form
+            validation_groups:  [Profile] # Please note : this is not the default value
