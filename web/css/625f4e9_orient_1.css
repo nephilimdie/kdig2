@@ -1,0 +1,11 @@
+.group .control-group {
+  width: 100%;
+  float: left;
+}
+.group .control-group .control {
+  float: left;
+}
+.group .control-group .control .selection .radio {
+  width: 100%;
+  float: left;
+}

@@ -6,8 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib'),
-    'Zend\\Json\\' => array($vendorDir . '/zendframework/zend-json'),
     'Twig_Extensions_' => array($vendorDir . '/twig/extensions/lib'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Symfony\\Component\\Icu\\' => array($vendorDir . '/symfony/icu'),
@@ -38,7 +36,6 @@ return array(
     'Pagerfanta\\' => array($vendorDir . '/pagerfanta/pagerfanta/src'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
     'Oneup\\UploaderBundle' => array($vendorDir . '/oneup/uploader-bundle'),
-    'Ob\\HighchartsBundle' => array($vendorDir . '/ob/highcharts-bundle'),
     'Mopa\\Bundle\\BootstrapBundle' => array($vendorDir . '/mopa/bootstrap-bundle'),
     'Mopa\\Bridge\\Composer' => array($vendorDir . '/mopa/composer-bridge/src'),
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
@@ -68,6 +65,7 @@ return array(
     'Gaufrette' => array($vendorDir . '/knplabs/gaufrette/src'),
     'FOS\\UserBundle' => array($vendorDir . '/friendsofsymfony/user-bundle'),
     'FOS\\MessageBundle' => array($vendorDir . '/friendsofsymfony/message-bundle'),
+    'FOS\\JsRoutingBundle' => array($vendorDir . '/friendsofsymfony/jsrouting-bundle'),
     'Exporter' => array($vendorDir . '/sonata-project/exporter/lib'),
     'Doctrine\\ORM' => array($vendorDir . '/doctrine/orm/lib'),
     'Doctrine\\DBAL' => array($vendorDir . '/doctrine/dbal/lib'),

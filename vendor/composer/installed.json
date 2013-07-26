@@ -1741,67 +1741,6 @@
         ]
     },
     {
-        "name": "apy/datagrid-bundle",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "APY/DataGridBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Abhoryo/APYDataGridBundle.git",
-            "reference": "787bc0ef7b122c28eb7cad5d4a17e4f736af2c57"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Abhoryo/APYDataGridBundle/zipball/787bc0ef7b122c28eb7cad5d4a17e4f736af2c57",
-            "reference": "787bc0ef7b122c28eb7cad5d4a17e4f736af2c57",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2",
-            "symfony/symfony": ">=2.0.0",
-            "twig/twig": ">=1.5.0"
-        },
-        "suggest": {
-            "PHPExcel": "Export the grid (Excel, HTML or PDF)",
-            "ext-intl": "Translate the grid",
-            "ext-mbstring": "Convert your data with the right charset"
-        },
-        "time": "2013-07-05 22:59:38",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "APY\\DataGridBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Stanislav Turza",
-                "email": "stanislav.turza@gmail.com"
-            },
-            {
-                "name": "Evan Owens",
-                "email": "eaowens@gmail.com"
-            },
-            {
-                "name": "Yoann Petit",
-                "email": "abhoryo@free.fr"
-            }
-        ],
-        "description": "Symfony2 Datagrid Bundle",
-        "homepage": "https://github.com/Abhoryo/APYDataGridBundle",
-        "keywords": [
-            "datagrid",
-            "symfony"
-        ]
-    },
-    {
         "name": "ddeboer/data-import-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -2721,82 +2660,6 @@
         ]
     },
     {
-        "name": "jms/translation-bundle",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "JMS/TranslationBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/schmittjoh/JMSTranslationBundle.git",
-            "reference": "f58087eddcf5251784a40e01bb11c3f3f79a98ea"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/f58087eddcf5251784a40e01bb11c3f3f79a98ea",
-            "reference": "f58087eddcf5251784a40e01bb11c3f3f79a98ea",
-            "shasum": ""
-        },
-        "require": {
-            "nikic/php-parser": "0.9.1",
-            "symfony/console": "*",
-            "symfony/framework-bundle": "~2.1"
-        },
-        "conflict": {
-            "twig/twig": "1.10.2"
-        },
-        "require-dev": {
-            "jms/di-extra-bundle": ">=1.1",
-            "sensio/framework-extra-bundle": "*",
-            "symfony/browser-kit": "*",
-            "symfony/class-loader": "*",
-            "symfony/css-selector": "*",
-            "symfony/finder": "*",
-            "symfony/form": "*",
-            "symfony/process": "*",
-            "symfony/security": "*",
-            "symfony/twig-bundle": "*",
-            "symfony/validator": "*",
-            "symfony/yaml": "*"
-        },
-        "time": "2013-07-09 10:50:36",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "JMS\\TranslationBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache2"
-        ],
-        "authors": [
-            {
-                "name": "Johannes M. Schmitt",
-                "email": "schmittjoh@gmail.com",
-                "homepage": "http://jmsyst.com",
-                "role": "Developer of wrapped JMSSerializerBundle"
-            }
-        ],
-        "description": "Puts the Symfony2 Translation Component on steroids",
-        "homepage": "http://jmsyst.com/bundles/JMSTranslationBundle",
-        "keywords": [
-            "extract",
-            "extraction",
-            "i18n",
-            "interface",
-            "multilanguage",
-            "translation",
-            "ui",
-            "webinterface"
-        ]
-    },
-    {
         "name": "sonata-project/admin-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -2804,12 +2667,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-            "reference": "1a0681ff2466b29b9fd123e4aad6f65ffad0c6ee"
+            "reference": "8f85e960aaadfab246fbb4f526b18047a5c776f7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/1a0681ff2466b29b9fd123e4aad6f65ffad0c6ee",
-            "reference": "1a0681ff2466b29b9fd123e4aad6f65ffad0c6ee",
+            "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/8f85e960aaadfab246fbb4f526b18047a5c776f7",
+            "reference": "8f85e960aaadfab246fbb4f526b18047a5c776f7",
             "shasum": ""
         },
         "require": {
@@ -2836,7 +2699,7 @@
             "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
             "sonata-project/intl-bundle": "2.1.*"
         },
-        "time": "2013-07-19 10:02:30",
+        "time": "2013-07-26 09:53:05",
         "type": "symfony-bundle",
         "extra": {
             "branch-alias": {
@@ -3322,58 +3185,6 @@
             "pagination",
             "paginator",
             "paging"
-        ]
-    },
-    {
-        "name": "jordillonch/crud-generator",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "JordiLlonch/Bundle/CrudGeneratorBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jordillonch/CrudGeneratorBundle.git",
-            "reference": "2aa0ee4a83cf866c60f55b8494031fe8ec7fff5a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jordillonch/CrudGeneratorBundle/zipball/2aa0ee4a83cf866c60f55b8494031fe8ec7fff5a",
-            "reference": "2aa0ee4a83cf866c60f55b8494031fe8ec7fff5a",
-            "shasum": ""
-        },
-        "require": {
-            "lexik/form-filter-bundle": "1.2.*",
-            "pagerfanta/pagerfanta": "1.0.*@dev",
-            "sensio/generator-bundle": ">2.2.0, <2.4-dev",
-            "symfony/symfony": ">2.2.0, <2.4-dev"
-        },
-        "time": "2013-06-10 20:32:35",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "JordiLlonch\\Bundle\\CrudGeneratorBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jordi Llonch",
-                "email": "llonch.jordi@gmail.com"
-            }
-        ],
-        "description": "This bundle generates a nice CRUD",
-        "homepage": "https://github.com/jordillonch/CrudGeneratorBundle",
-        "keywords": [
-            "crud",
-            "generator"
         ]
     },
     {
@@ -3962,147 +3773,6 @@
         ]
     },
     {
-        "name": "zendframework/zend-stdlib",
-        "version": "2.1.5",
-        "version_normalized": "2.1.5.0",
-        "target-dir": "Zend/Stdlib",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/Component_ZendStdlib.git",
-            "reference": "release-2.1.5"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/release-2.1.5",
-            "reference": "release-2.1.5",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "suggest": {
-            "pecl-weakref": "Implementation of weak references for Stdlib\\CallbackHandler"
-        },
-        "time": "2013-04-15 11:43:47",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev",
-                "dev-develop": "2.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Zend\\Stdlib\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "keywords": [
-            "stdlib",
-            "zf2"
-        ]
-    },
-    {
-        "name": "zendframework/zend-json",
-        "version": "2.1.5",
-        "version_normalized": "2.1.5.0",
-        "target-dir": "Zend/Json",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/Component_ZendJson.git",
-            "reference": "release-2.1.5"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/Component_ZendJson/zipball/release-2.1.5",
-            "reference": "release-2.1.5",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "zendframework/zend-stdlib": "self.version"
-        },
-        "suggest": {
-            "zendframework/zend-server": "Zend\\Server component"
-        },
-        "time": "2013-04-16 21:18:18",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev",
-                "dev-develop": "2.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Zend\\Json\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "provides convenience methods for serializing native PHP to JSON and decoding JSON to native PHP",
-        "keywords": [
-            "json",
-            "zf2"
-        ]
-    },
-    {
-        "name": "ob/highcharts-bundle",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Ob/HighchartsBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/marcaube/ObHighchartsBundle.git",
-            "reference": "7d89837509e35887ca3832b479910b718d55c636"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/marcaube/ObHighchartsBundle/zipball/7d89837509e35887ca3832b479910b718d55c636",
-            "reference": "7d89837509e35887ca3832b479910b718d55c636",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0",
-            "symfony/symfony": "2.*",
-            "zendframework/zend-json": "2.1.*@dev"
-        },
-        "time": "2013-07-11 17:32:48",
-        "type": "symfony-bundle",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Ob\\HighchartsBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Marc Aubé"
-            }
-        ],
-        "description": "Symfony2 Bundle that ease the use of highcharts to display rich graph and charts in your app",
-        "homepage": "https://github.com/marcaube/ObHighchartsBundle",
-        "keywords": [
-            "Symfony2",
-            "chart",
-            "charting",
-            "charts",
-            "graph",
-            "graphs",
-            "highcharts",
-            "marcaube",
-            "ob"
-        ]
-    },
-    {
         "name": "symfony/symfony",
         "version": "v2.3.2",
         "version_normalized": "2.3.2.0",
@@ -4490,71 +4160,6 @@
         ]
     },
     {
-        "name": "mopa/bootstrap-bundle",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Mopa/Bundle/BootstrapBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/phiamo/MopaBootstrapBundle.git",
-            "reference": "a5ed93861a81121c45a9b75f165a2dc2026ffae6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/a5ed93861a81121c45a9b75f165a2dc2026ffae6",
-            "reference": "a5ed93861a81121c45a9b75f165a2dc2026ffae6",
-            "shasum": ""
-        },
-        "require": {
-            "mopa/composer-bridge": "1.*",
-            "symfony/symfony": "~2.3-dev"
-        },
-        "suggest": {
-            "craue/formflow-bundle": "dev-master",
-            "jlong/sass-twitter-bootstrap": "dev-master",
-            "knplabs/knp-menu-bundle": "2.0.*",
-            "knplabs/knp-paginator-bundle": "dev-master",
-            "mopa/bootstrap-sandbox-bundle": "~2.3",
-            "twitter/bootstrap": "2.*"
-        },
-        "time": "2013-07-16 11:49:01",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Mopa\\Bundle\\BootstrapBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Philipp A. Mohrenweiser",
-                "email": "phiamo@googlemail.com",
-                "homepage": "http://bootstrap.mohrenweiserpartner.de"
-            },
-            {
-                "name": "Community contributions",
-                "homepage": "https://github.com/phiamo/MopaBootstrapBundle/contributors"
-            }
-        ],
-        "description": "Easy integration of twitters bootstrap into symfony2",
-        "keywords": [
-            "bootstrap",
-            "bootstrap form",
-            "extra form",
-            "form",
-            "template"
-        ]
-    },
-    {
         "name": "liip/imagine-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -4723,88 +4328,6 @@
         ]
     },
     {
-        "name": "gedmo/doctrine-extensions",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-            "reference": "93cc1c9d023ec77dadff5a6d6df1859e04295c3a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/93cc1c9d023ec77dadff5a6d6df1859e04295c3a",
-            "reference": "93cc1c9d023ec77dadff5a6d6df1859e04295c3a",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/common": ">=2.2,<2.5-dev",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "doctrine/common": ">=2.4.0-RC3",
-            "doctrine/dbal": ">=2.4.0-RC1",
-            "doctrine/mongodb": ">=1.0.3",
-            "doctrine/mongodb-odm": ">=1.0.0-BETA9",
-            "doctrine/orm": ">=2.4.0-RC1",
-            "symfony/yaml": "2.3.1"
-        },
-        "suggest": {
-            "doctrine/dbal": ">=2.3.2",
-            "doctrine/mongodb": ">=1.0.1",
-            "doctrine/mongodb-odm": ">=1.0.0-BETA7",
-            "doctrine/orm": ">=2.3.2"
-        },
-        "time": "2013-07-19 10:23:18",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Gedmo\\": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "David Buchmann",
-                "email": "david@liip.ch"
-            },
-            {
-                "name": "Gediminas Morkevicius",
-                "email": "gediminas.morkevicius@gmail.com"
-            },
-            {
-                "name": "Gustavo Falco",
-                "email": "comfortablynumb84@gmail.com"
-            }
-        ],
-        "description": "Doctrine2 behavioral extensions",
-        "homepage": "http://gediminasm.org/",
-        "keywords": [
-            "Blameable",
-            "behaviors",
-            "doctrine2",
-            "extensions",
-            "gedmo",
-            "loggable",
-            "nestedset",
-            "sluggable",
-            "sortable",
-            "timestampable",
-            "translatable",
-            "tree",
-            "uploadable"
-        ]
-    },
-    {
         "name": "doctrine/doctrine-fixtures-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -4865,6 +4388,401 @@
         ]
     },
     {
+        "name": "jms/translation-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "JMS/TranslationBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/schmittjoh/JMSTranslationBundle.git",
+            "reference": "ac61ae1cb2e29bad2b05198ae231390256fa105d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/schmittjoh/JMSTranslationBundle/zipball/ac61ae1cb2e29bad2b05198ae231390256fa105d",
+            "reference": "ac61ae1cb2e29bad2b05198ae231390256fa105d",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "0.9.1",
+            "symfony/console": "*",
+            "symfony/framework-bundle": "~2.1"
+        },
+        "conflict": {
+            "twig/twig": "1.10.2"
+        },
+        "require-dev": {
+            "jms/di-extra-bundle": ">=1.1",
+            "sensio/framework-extra-bundle": "*",
+            "symfony/browser-kit": "*",
+            "symfony/class-loader": "*",
+            "symfony/css-selector": "*",
+            "symfony/finder": "*",
+            "symfony/form": "*",
+            "symfony/process": "*",
+            "symfony/security": "*",
+            "symfony/twig-bundle": "*",
+            "symfony/validator": "*",
+            "symfony/yaml": "*"
+        },
+        "time": "2013-07-19 14:48:56",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "JMS\\TranslationBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache2"
+        ],
+        "authors": [
+            {
+                "name": "Johannes M. Schmitt",
+                "email": "schmittjoh@gmail.com",
+                "homepage": "http://jmsyst.com",
+                "role": "Developer of wrapped JMSSerializerBundle"
+            }
+        ],
+        "description": "Puts the Symfony2 Translation Component on steroids",
+        "homepage": "http://jmsyst.com/bundles/JMSTranslationBundle",
+        "keywords": [
+            "extract",
+            "extraction",
+            "i18n",
+            "interface",
+            "multilanguage",
+            "translation",
+            "ui",
+            "webinterface"
+        ]
+    },
+    {
+        "name": "friendsofsymfony/jsrouting-bundle",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "target-dir": "FOS/JsRoutingBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+            "reference": "1.2.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/1.2.0",
+            "reference": "1.2.0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/console": "~2.0",
+            "symfony/framework-bundle": "~2.0",
+            "symfony/serializer": "~2.0"
+        },
+        "time": "2013-07-15 09:21:37",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "FOS\\JsRoutingBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "William Durand",
+                "email": "william.durand1@gmail.com",
+                "homepage": "http://www.willdurand.fr"
+            },
+            {
+                "name": "FriendsOfSymfony Community",
+                "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+            }
+        ],
+        "description": "Symfony FOSJsRoutingBundle",
+        "homepage": "http://friendsofsymfony.github.com",
+        "keywords": [
+            "Js Routing"
+        ]
+    },
+    {
+        "name": "apy/datagrid-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "APY/DataGridBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Abhoryo/APYDataGridBundle.git",
+            "reference": "a62bceabf6a42bddae528bf7f109c045c0220cb9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Abhoryo/APYDataGridBundle/zipball/a62bceabf6a42bddae528bf7f109c045c0220cb9",
+            "reference": "a62bceabf6a42bddae528bf7f109c045c0220cb9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/symfony": ">=2.0.0",
+            "twig/twig": ">=1.5.0"
+        },
+        "suggest": {
+            "PHPExcel": "Export the grid (Excel, HTML or PDF)",
+            "ext-intl": "Translate the grid",
+            "ext-mbstring": "Convert your data with the right charset"
+        },
+        "time": "2013-07-25 13:26:17",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "APY\\DataGridBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Stanislav Turza",
+                "email": "stanislav.turza@gmail.com"
+            },
+            {
+                "name": "Evan Owens",
+                "email": "eaowens@gmail.com"
+            },
+            {
+                "name": "Yoann Petit",
+                "email": "abhoryo@free.fr"
+            }
+        ],
+        "description": "Symfony2 Datagrid Bundle",
+        "homepage": "https://github.com/Abhoryo/APYDataGridBundle",
+        "keywords": [
+            "datagrid",
+            "symfony"
+        ]
+    },
+    {
+        "name": "mopa/bootstrap-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Mopa/Bundle/BootstrapBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phiamo/MopaBootstrapBundle.git",
+            "reference": "cd0e9a54d1cd338bf2cc5f7f47b99d1b04ef218b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/cd0e9a54d1cd338bf2cc5f7f47b99d1b04ef218b",
+            "reference": "cd0e9a54d1cd338bf2cc5f7f47b99d1b04ef218b",
+            "shasum": ""
+        },
+        "require": {
+            "mopa/composer-bridge": "1.*",
+            "symfony/symfony": "~2.3-dev"
+        },
+        "suggest": {
+            "craue/formflow-bundle": "dev-master",
+            "jlong/sass-twitter-bootstrap": "dev-master",
+            "knplabs/knp-menu-bundle": "2.0.*",
+            "knplabs/knp-paginator-bundle": "dev-master",
+            "mopa/bootstrap-sandbox-bundle": "~2.3",
+            "twitter/bootstrap": "2.*"
+        },
+        "time": "2013-07-25 10:51:17",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Mopa\\Bundle\\BootstrapBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Philipp A. Mohrenweiser",
+                "email": "phiamo@googlemail.com",
+                "homepage": "http://bootstrap.mohrenweiserpartner.de"
+            },
+            {
+                "name": "Community contributions",
+                "homepage": "https://github.com/phiamo/MopaBootstrapBundle/contributors"
+            }
+        ],
+        "description": "Easy integration of twitters bootstrap into symfony2",
+        "keywords": [
+            "bootstrap",
+            "bootstrap form",
+            "extra form",
+            "form",
+            "template"
+        ]
+    },
+    {
+        "name": "jordillonch/crud-generator",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "JordiLlonch/Bundle/CrudGeneratorBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jordillonch/CrudGeneratorBundle.git",
+            "reference": "de9e30c24dcad5fc8e6b1879a9b75020b1731434"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jordillonch/CrudGeneratorBundle/zipball/de9e30c24dcad5fc8e6b1879a9b75020b1731434",
+            "reference": "de9e30c24dcad5fc8e6b1879a9b75020b1731434",
+            "shasum": ""
+        },
+        "require": {
+            "lexik/form-filter-bundle": "1.2.*",
+            "pagerfanta/pagerfanta": "1.0.*@dev",
+            "sensio/generator-bundle": ">2.2.0, <2.4-dev",
+            "symfony/symfony": ">2.2.0, <2.4-dev"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-07-23 14:06:24",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "JordiLlonch\\Bundle\\CrudGeneratorBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Llonch",
+                "email": "llonch.jordi@gmail.com"
+            }
+        ],
+        "description": "This bundle generates a nice CRUD",
+        "homepage": "https://github.com/jordillonch/CrudGeneratorBundle",
+        "keywords": [
+            "crud",
+            "generator"
+        ]
+    },
+    {
+        "name": "gedmo/doctrine-extensions",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
+            "reference": "9662cee48b2abe5d3805e52f8973718c7144c0c9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/9662cee48b2abe5d3805e52f8973718c7144c0c9",
+            "reference": "9662cee48b2abe5d3805e52f8973718c7144c0c9",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": ">=2.2,<2.5-dev",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "doctrine/common": ">=2.4.0-RC3",
+            "doctrine/dbal": ">=2.4.0-RC1",
+            "doctrine/mongodb": ">=1.0.3",
+            "doctrine/mongodb-odm": ">=1.0.0-BETA9",
+            "doctrine/orm": ">=2.4.0-RC1",
+            "symfony/yaml": "2.3.1"
+        },
+        "suggest": {
+            "doctrine/dbal": ">=2.3.2",
+            "doctrine/mongodb": ">=1.0.1",
+            "doctrine/mongodb-odm": ">=1.0.0-BETA7",
+            "doctrine/orm": ">=2.3.2"
+        },
+        "time": "2013-07-21 15:51:21",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Gedmo\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Buchmann",
+                "email": "david@liip.ch"
+            },
+            {
+                "name": "Gediminas Morkevicius",
+                "email": "gediminas.morkevicius@gmail.com"
+            },
+            {
+                "name": "Gustavo Falco",
+                "email": "comfortablynumb84@gmail.com"
+            }
+        ],
+        "description": "Doctrine2 behavioral extensions",
+        "homepage": "http://gediminasm.org/",
+        "keywords": [
+            "Blameable",
+            "behaviors",
+            "doctrine2",
+            "extensions",
+            "gedmo",
+            "loggable",
+            "nestedset",
+            "sluggable",
+            "sortable",
+            "timestampable",
+            "translatable",
+            "tree",
+            "uploadable"
+        ]
+    },
+    {
         "name": "oneup/uploader-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -4872,12 +4790,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/1up-lab/OneupUploaderBundle.git",
-            "reference": "da546beef7587cceefa93504cd6b90e3553e614f"
+            "reference": "1819ca7236b823cd03fe55b383313b1aef5f37b8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/1up-lab/OneupUploaderBundle/zipball/da546beef7587cceefa93504cd6b90e3553e614f",
-            "reference": "da546beef7587cceefa93504cd6b90e3553e614f",
+            "url": "https://api.github.com/repos/1up-lab/OneupUploaderBundle/zipball/1819ca7236b823cd03fe55b383313b1aef5f37b8",
+            "reference": "1819ca7236b823cd03fe55b383313b1aef5f37b8",
             "shasum": ""
         },
         "require": {
@@ -4901,7 +4819,7 @@
         "suggest": {
             "knplabs/knp-gaufrette-bundle": "0.1.*"
         },
-        "time": "2013-07-18 11:13:04",
+        "time": "2013-07-25 18:55:44",
         "type": "symfony-bundle",
         "installation-source": "source",
         "autoload": {
