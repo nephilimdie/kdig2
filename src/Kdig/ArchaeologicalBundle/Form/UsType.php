@@ -34,7 +34,7 @@ class UsType extends AbstractType
                 },
                 'property' => 'name',
                 'label' => 'Area',
-                'help'  => 'Select your excavation area'
+                'help_block'  => 'Select your excavation area'
             ));
         else
             $builder->add('area');
