@@ -360,4 +360,21 @@ class UsController extends Controller
         
         return new Response($stringa);
     }
+    
+    /** 
+     * Get a default text for Us from selected us.
+     *
+     * @Route("/{name}/checkname", name="kdig_us_checkname", options={"expose"=true})
+     * @Method("get")
+     */
+    public function checkname($name)
+    { 
+        $em = $this->getDoctrine()->getEntityManager();
+        $response = $em->getRepository('KdigArchaeologicalBundle:Us')->isUnusedName($name);
+        if($response)
+            $stringa = '<label style="button green">OK</label>';
+        else 
+            $stringa = '<label style="button red">the name exist <a href="'.$this->generateUrl('kdig_us_show', array('id' => $response->getId())).'">'.$response->getName().'</a></label>';
+        return new Response($stringa);
+    }
 }
