@@ -219,12 +219,7 @@
         });
         
         function ajaxerror(jqXHR, exception) {
-            /*if (jqXHR.status === 0) {
-                alert('Not connect.\n Verify Network.');
-            } else */ 
-
             var title = 'not understand';
-            
             if (jqXHR.status == 404) {
                 var title = 'Requested page not found. [404]';
             } else if (jqXHR.status == 500) {
@@ -256,10 +251,10 @@
   
                 case 'fill': 
                     $(where).attr('disabled', false);
-                    $(where).val(data);
+                    $(where).val(data.responseText);
                     break; 
                 case 'html': 
-                    $(where).append(data);
+                    $(where).append(data.responseText);
                     break; 
                 default: 
               }
@@ -273,7 +268,7 @@
                     $(".container-fluid").spin(optsspin);
                     $(where).attr('disabled', true);
                 },
-                success: showResponse(data, how),
+                success: showResponse(jqXHR, how),
                 error: function(jqXHR, exception) {
                     ajaxerror(jqXHR, exception);
                 }
