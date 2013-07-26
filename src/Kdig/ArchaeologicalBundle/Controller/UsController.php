@@ -340,4 +340,24 @@ class UsController extends Controller
             ->getForm()
         ;
     }
+    
+    /**
+     * Get a default text for Us from selected us.
+     *
+     * @Route("/{id}/getdefaulttext", name="kdig_us_defaulttext", options={"expose"=true})
+     * @Method("post")
+     */
+    public function getdefaulttextaction($id) 
+    {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        $site = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id);
+        $sigla = $site->getSigla();
+        
+        $stringa = $em->getRepository('KdigArchaeologicalBundle:Us')->freeName($sigla, $user);
+        
+        return new Response($stringa);
+    }
 }
