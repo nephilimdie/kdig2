@@ -245,10 +245,23 @@
         function checkname(route, element) {
             var idname = element.value;
             var routechecknamesu = Routing.generate(route, { name: idname });
-            getdefaultstringAjax (routechecknamesu, element);
+            getdefaultstringAjax(routechecknamesu, element, 'fill');
         }
-        
-        function getdefaultstringAjax (route, where) { 
+        function showResponse(data, how) {
+            $(".container-fluid").spin(false);
+            switch(how) { 
+  
+                case 'fill': 
+                    $(where).attr('disabled', false);
+                    $(where).val(data);
+                    break; 
+                case 'html': 
+                    $(where).append(data);
+                    break; 
+                default: 
+              }
+        }
+        function getdefaultstringAjax (route, where, how) { 
             var eseguiminchia = jQuery.ajax({
                 url: route,
                 type: 'POST',
@@ -257,11 +270,7 @@
                     $(".container-fluid").spin(optsspin);
                     $(where).attr('disabled', true);
                 },
-                success: function (data) { 
-                    $(where).val(data);
-                    $(".container-fluid").spin(false);
-                    $(where).attr('disabled', false);
-                },
+                success: showResponse(data, how),
                 error: function(jqXHR, exception) {
                     ajaxerror(jqXHR, exception);
                 }
