@@ -242,6 +242,31 @@
             return true; 
         } 
 
+        function checkname(route, element) {
+            var idname = element.value;
+            var routechecknamesu = Routing.generate(route, { name: idname });
+            getdefaultstringAjax (routechecknamesu, element);
+        }
+        
+        function getdefaultstringAjax (route, where) { 
+            var eseguiminchia = jQuery.ajax({
+                url: route,
+                type: 'POST',
+                cache: false,
+                beforeSend: function () {
+                    $(".container-fluid").spin(optsspin);
+                    $(where).attr('disabled', true);
+                },
+                success: function (data) { 
+                    $(where).val(data);
+                    $(".container-fluid").spin(false);
+                    $(where).attr('disabled', false);
+                },
+                error: function(jqXHR, exception) {
+                    ajaxerror(jqXHR, exception);
+                }
+            }) 
+        }
         /* post-submit callback 
         function showResponse(responseText, statusText, xhr, $form)  { 
             alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
