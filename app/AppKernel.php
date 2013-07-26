@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             new APY\DataGridBundle\APYDataGridBundle(),
 
