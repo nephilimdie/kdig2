@@ -54,4 +54,15 @@ class UsRepository extends EntityRepository
 
         return str_pad($numC, 4 , "0000", STR_PAD_LEFT);
     }
+    
+    private function isUnusedName($name) {        
+        $result = $this->createQueryBuilder('u')
+            ->select('u')
+            ->where('u.name = :name')
+            ->setParameter('name', $name)
+            ->getQuery();
+
+        $res = $result->getResult();
+        return empty($res);
+    }
 }
