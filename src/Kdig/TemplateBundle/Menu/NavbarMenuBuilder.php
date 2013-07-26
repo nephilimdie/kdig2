@@ -63,7 +63,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
-    
+    public function createSelectareamenu(Request $request)
+    {
+        return false;
+    }
+
     public function createArchaeologicalMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
