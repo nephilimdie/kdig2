@@ -5,3 +5,10 @@ sonata_user:
     class:
         user:  Kdig\UserBundle\Entity\User
         group: Kdig\UserBundle\Entity\Group
+        
+    profile:  # Profile Form (firstname, lastname, etc ...)
+        form:
+            type:               sonata_user_profile
+            handler:            sonata.user.profile.form.handler.default
+            name:               sonata_user_profile_form
+            validation_groups:  [Profile]
