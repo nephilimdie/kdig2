@@ -161,6 +161,15 @@ class UsController extends Controller
         return array($entities, $pagerHtml);
     }
 
+    private function getArea() {
+        
+        $user = $this->get('security.context')->getToken()->getUser();
+        $group = $user->getSlectedgroup();
+        foreach ($group->getAreas() as $area)
+            $areas[]=$area->getId(); 
+        return $areas;
+    }
+    
     /**
      * Creates a new Us entity.
      *
@@ -170,8 +179,10 @@ class UsController extends Controller
      */
     public function createAction(Request $request)
     {
+        $areas = $this->getArea();
+        
         $entity  = new Us();
-        $form = $this->createForm(new UsType(), $entity);
+        $form = $this->createForm(new UsType($areas, null), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -188,7 +199,7 @@ class UsController extends Controller
             'form'   => $form->createView(),
         );
     }
-
+    
     /**
      * Displays a form to create a new Us entity.
      *
@@ -198,8 +209,9 @@ class UsController extends Controller
      */
     public function newAction()
     {
+        $areas = $this->getArea();
         $entity = new Us();
-        $form   = $this->createForm(new UsType(), $entity);
+        $form   = $this->createForm(new UsType($areas, null), $entity);
 
         return array(
             'entity' => $entity,
@@ -249,7 +261,9 @@ class UsController extends Controller
             throw $this->createNotFoundException('Unable to find Us entity.');
         }
 
-        $editForm = $this->createForm(new UsType(), $entity);
+        $areas = $this->getArea();
+        
+        $editForm = $this->createForm(new UsType($areas, null), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -275,9 +289,10 @@ class UsController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Us entity.');
         }
+        $areas = $this->getArea();
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new UsType(), $entity);
+        $editForm = $this->createForm(new UsType($areas, null), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
