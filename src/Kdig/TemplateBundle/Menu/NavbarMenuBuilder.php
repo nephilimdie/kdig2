@@ -73,6 +73,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $dropdown = $this->createDropdownMenuItem($menu, "Group", true, array('caret' => true));
             foreach ($this->usr->getGroups() as $group)
                 $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('id' => $group->getId())));
+            
             return $menu;
         }
         return false;
