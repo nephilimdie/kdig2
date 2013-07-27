@@ -1,5 +1,5 @@
 parameters:
-#    kdig_archaeological.example.class: Kdig\ArchaeologicalBundle\Example
+    kdig_archaeological.archaeological_menu_builder.class: 'Kdig\ArchaeologicalBundle\Menu\ArchaeologicalMenuBuilder'
 
 services:
   ## post pre update event after persist object
@@ -9,3 +9,32 @@ services:
       tags:
           - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+          
+## show pottery menu
+  kdig.archaeological.potteryshow:
+      class: %mopa_bootstrap.navbar.generic%
+      arguments:
+          # first argument: a named array of menues:
+          - { menu: '@kdig.archaeological.us.show.menu=' }
+          - {}
+          # third argument: a named array of options
+          - { fixedTop: false, isFluid: true, template: 'KdigArchaeologicalBundle:Menu:showmenu.html.twig' }
+      tags:
+          # The alias is used to retrieve the navbar in templates
+          - { name: mopa_bootstrap.navbar, alias: showmenuus }
+
+## reference class            
+  kdig.archaeological.archaeological_menu_builder:
+      class: %kdig_archaeological.archaeological_menu_builder.class%
+      scope: request
+      arguments: [ '@knp_menu.factory', '@security.context' ]
+ 
+  kdig.archaeological.us.show.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.archaeological.archaeological_menu_builder
+      factory_method: createUsShowMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: usshowmenu }
+          
