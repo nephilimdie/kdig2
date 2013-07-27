@@ -28,11 +28,12 @@
     $(document).ready(function(){
         var id_us = $("#kdig_archaelogicalbundle_ustype_site option:selected").val();
         var routegetdefault = Routing.generate('kdig_us_defaulttext', { id: id_us });
-        getdefaultstringAjax(routegetdefault,'#kdig_archaelogicalbundle_ustype_name');
+        getdefaultstringAjax(routegetdefault,'#kdig_archaelogicalbundle_ustype_name','fill');
+        
         $('#kdig_archaeologicalbundle_ustype_us').change(function(o) {
             id_us = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
             var routegetdefault = Routing.generate('kdig_us_defaulttext', { id: id_us });
-            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name');
+            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
         });
     });
 </script>
