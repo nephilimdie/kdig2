@@ -45,7 +45,7 @@ services:
           - { name: mopa_bootstrap.navbar, alias: showmenupottery }
 
 ## show object menu
-  kdig.archaeological.potteryshow:
+  kdig.archaeological.objectshow:
       class: %mopa_bootstrap.navbar.generic%
       arguments:
           # first argument: a named array of menues:
@@ -57,6 +57,19 @@ services:
           # The alias is used to retrieve the navbar in templates
           - { name: mopa_bootstrap.navbar, alias: showmenuobject }
 
+## show object menu
+  kdig.archaeological.sampleshow:
+      class: %mopa_bootstrap.navbar.generic%
+      arguments:
+          # first argument: a named array of menues:
+          - { menu: '@kdig.orient.sample.show.menu=' }
+          - {}
+          # third argument: a named array of options
+          - { fixedTop: false, isFluid: true, template: 'KdigOrientBundle:Menu:showmenu.html.twig' }
+      tags:
+          # The alias is used to retrieve the navbar in templates
+          - { name: mopa_bootstrap.navbar, alias: showmenusample }
+
 ## reference class            
   kdig.orient.orient_menu_builder:
       class: %kdig_orient.orient_menu_builder.class%
@@ -66,7 +79,7 @@ services:
   kdig.orient.pottery.show.menu:
       class: Knp\Menu\MenuItem
       factory_service: kdig.orient.orient_menu_builder
-      factory_method: createPotteryMenu
+      factory_method: createPotteryShowMenu
       arguments: [ '@request' ]
       scope: request
       tags:
@@ -75,7 +88,16 @@ services:
   kdig.orient.object.show.menu:
       class: Knp\Menu\MenuItem
       factory_service: kdig.orient.orient_menu_builder
-      factory_method: createObjectMenu
+      factory_method: createObjectShowMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: objectmenu }
+          
+  kdig.orient.sample.show.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.orient.orient_menu_builder
+      factory_method: createSampleShowMenu
       arguments: [ '@request' ]
       scope: request
       tags:
