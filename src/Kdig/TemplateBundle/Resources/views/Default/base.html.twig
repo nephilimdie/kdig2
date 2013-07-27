@@ -251,10 +251,10 @@
   
                 case 'fill': 
                     $(where).attr('disabled', false);
-                    $(where).val(data.responseText);
+                    $(where).val(data);
                     break; 
                 case 'html': 
-                    $(where).append(data.responseText);
+                    $(where).append(data);
                     break; 
                 default: 
               }
@@ -268,7 +268,19 @@
                     $(".container-fluid").spin(optsspin);
                     $(where).attr('disabled', true);
                 },
-                success: showResponse(jqXHR, how),
+                success: function(data, how){
+                    $(".container-fluid").spin(false);
+                    switch(how) { 
+                        case 'fill': 
+                            $(where).attr('disabled', false);
+                            $(where).val(data);
+                            break; 
+                        case 'html': 
+                            $(where).append(data);
+                            break; 
+                        default: 
+                      }
+                },
                 error: function(jqXHR, exception) {
                     ajaxerror(jqXHR, exception);
                 }
