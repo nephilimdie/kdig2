@@ -47,7 +47,7 @@ class UsController extends Controller
         $grid->addColumn($actionsColumn, 1);
 
         // Attach a rowAction to the Actions Column
-        $showAction = new RowAction('Show', 'us_show');
+        $showAction = new RowAction('Show', 'us_show', null, null, array('class'=>'ajax'));
         $showAction->setColumn('info_column');
         $grid->addRowAction($showAction);
 //        // OR add a second row action directly to a new action column
