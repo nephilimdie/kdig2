@@ -77,7 +77,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             
             return $menu;
         }
-        return false;
+        return true;
     }
 
     public function createArchaeologicalMenu(Request $request)
