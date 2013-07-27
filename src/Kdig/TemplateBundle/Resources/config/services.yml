@@ -11,7 +11,7 @@ services:
             - {}
             - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false }
         tags:
-            - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
+            - { name: mopa_bootstrap.navbar, alias: ArchaeologicalfrontendNavbar }
 
 ## vertical nav bar
     kdig.archaeological.verticalnavbar:
