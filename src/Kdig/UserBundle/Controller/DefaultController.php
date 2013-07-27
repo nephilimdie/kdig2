@@ -27,7 +27,7 @@ class DefaultController extends Controller
         return false;
     }
     /**
-     * @Route("/{group_id}", name="user_change_group")
+     * @Route("/", name="user_change_group")
      * @Method("POST")
      */
     public function changeGroupAction(Request $request)
