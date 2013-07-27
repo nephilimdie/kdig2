@@ -360,18 +360,19 @@ class UsController extends Controller
     /**
      * Get a default text for Us from selected us.
      *
-     * @Route("/{id}/getdefaulttext", name="kdig_us_defaulttext", options={"expose"=true})
+     * @Route("/{id_site}/{id_area}/getdefaulttext", name="kdig_us_defaulttext", options={"expose"=true})
      * @Method("post")
      */
-    public function getdefaulttextaction($id) 
+    public function getdefaulttextaction($id_site, $id_area) 
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
         
-        $site = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id);
+        $site = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id_site);
         $sigla = $site->getSigla();
         
-        $stringa = $em->getRepository('KdigArchaeologicalBundle:Us')->freeName($sigla, $user);
+        $area = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id_area);
+        $stringa = $em->getRepository('KdigArchaeologicalBundle:Us')->freeName($sigla, $area);
         
         return new Response($stringa);
     }
