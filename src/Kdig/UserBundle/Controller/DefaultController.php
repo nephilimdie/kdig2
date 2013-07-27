@@ -18,6 +18,10 @@ use Kdig\UserBundle\Entity\User as User;
  */
 class DefaultController extends Controller
 {
+    /**
+     * @Route("/", name="user_index")
+     * @Template()
+     */
     public function indexAction()
     {
         return false;
