@@ -41,7 +41,7 @@
         $('#kdig_archaeologicalbundle_ustype_area').change(function() {
             id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
             id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
-            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id: id_area, id_area: id_area });
+            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id: id_site, id_area: id_area });
             getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
         });
     });
