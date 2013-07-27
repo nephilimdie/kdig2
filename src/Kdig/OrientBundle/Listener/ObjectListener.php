@@ -25,7 +25,8 @@ class ObjectListener
         
         if ($entity instanceof Object) {
             //add ACL information
-            if ($user = $person->getUser()) {
+            $user = $this->container->get('security.context')->getToken()->getUser();
+            if ($user) {
                 $aclProvider->addObjectPermission($entity, MaskBuilder::MASK_OWNER, $user);
             }
         }
