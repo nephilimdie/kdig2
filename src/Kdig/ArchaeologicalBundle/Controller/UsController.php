@@ -365,9 +365,8 @@ class UsController extends Controller
     public function getdefaulttextaction($id) 
     {
         $user = $this->get('security.context')->getToken()->getUser();
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         
-        $em = $this->getDoctrine()->getEntityManager();
         $site = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id);
         $sigla = $site->getSigla();
         
