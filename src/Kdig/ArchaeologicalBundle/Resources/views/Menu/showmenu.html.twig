@@ -3,5 +3,10 @@
 {% block linkElement %}
 {% import 'knp_menu.html.twig' as macros %}
 {% from 'KdigTemplateBundle:Default:icons.html.twig' import icon %}
-<a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>{% if item.extras.icon|default(false) %}{{ icon(item.extras.icon, item.extras.icon_white|default(false)) }}{% endif %}{{ block('label') }}</a>
+<a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
+    {% if item.extras.icon|default(false) %}
+        {{ icon(item.extras.icon, item.extras.icon_white|default(false)) }}
+    {% endif %}
+    {{ block('label') }}
+</a>
 {% endblock %}
