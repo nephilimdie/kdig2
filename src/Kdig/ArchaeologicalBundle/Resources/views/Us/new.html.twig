@@ -7,6 +7,7 @@
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
+
 <h1>{{ 'views.new.creation'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
 
 <form class="well" action="{{ path('us_create') }}" method="post" {{ form_enctype(form) }}>
@@ -30,7 +31,7 @@
         var routegetdefault = Routing.generate('kdig_us_defaulttext', { id: id_us });
         getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name','fill');
         
-        $('#kdig_archaeologicalbundle_ustype_us').change(function(o) {
+        $('#kdig_archaeologicalbundle_ustype_us').change(function() {
             id_us = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
             var routegetdefault = Routing.generate('kdig_us_defaulttext', { id: id_us });
             getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
