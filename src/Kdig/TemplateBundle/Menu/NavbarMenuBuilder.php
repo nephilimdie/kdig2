@@ -84,8 +84,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         if ($this->role_archaeology) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
-//            $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
-//            $bucket->setChildrenAttribute('class', 'leftMenu dropdown-menu');
+            $bucket = $this->createDropdownMenuItem($menu, "Bucket", true, array('caret' => true));
+            $bucket->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $obj = $this->createDropdownMenuItem($menu, "Object", true, array('caret' => true));
             $obj->setChildrenAttribute('class', 'leftMenu dropdown-menu');
             $pot = $this->createDropdownMenuItem($menu, "Pottery", true, array('caret' => true));
@@ -97,8 +97,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             
             $su->addChild('New', array('route' => 'us_new'));
             $su->addChild('List', array('route' => 'us'));
-//            $bucket->addChild('New', array('route' => 'bucket_new'));
-//            $bucket->addChild('List', array('route' => 'bucket'));
+            $bucket->addChild('New', array('route' => 'bucket_new'));
+            $bucket->addChild('List', array('route' => 'bucket'));
             $obj->addChild('New', array('route' => 'preobject_new'));
             $obj->addChild('List', array('route' => 'preobject'));
             $pot->addChild('New', array('route' => 'prepottery_new'));
