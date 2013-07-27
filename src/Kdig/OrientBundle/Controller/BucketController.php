@@ -15,6 +15,15 @@ use Kdig\OrientBundle\Entity\Bucket;
 use Kdig\OrientBundle\Form\BucketType;
 use Kdig\OrientBundle\Form\BucketFilterType;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Action\MassAction;
+use APY\DataGridBundle\Grid\Action\DeleteMassAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Bucket controller.
  *
@@ -159,6 +168,7 @@ class BucketController extends Controller
      * @Route("/", name="bucket_create")
      * @Method("POST")
      * @Template("KdigOrientBundle:Bucket:new.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -187,6 +197,7 @@ class BucketController extends Controller
      * @Route("/new", name="bucket_new")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function newAction()
     {
@@ -230,6 +241,7 @@ class BucketController extends Controller
      * @Route("/{id}/edit", name="bucket_edit")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -257,6 +269,7 @@ class BucketController extends Controller
      * @Route("/{id}", name="bucket_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Bucket:edit.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -294,6 +307,7 @@ class BucketController extends Controller
      *
      * @Route("/{id}", name="bucket_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
