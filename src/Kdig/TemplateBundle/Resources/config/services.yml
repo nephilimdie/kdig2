@@ -9,7 +9,7 @@ services:
         arguments:
             - { leftmenu: '@kdig.template.navbar_main_menu=', groupmenu: '@kdig.template.navbar_selectgroup_menu=', rightmenu: '@kdig.template.navbar_user_menu=' }
             - {}
-            - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false }
+            - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false, template: 'KdigTemplateBundle:Default:Navbar/navbar.html.twig' }
         tags:
             - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
 
