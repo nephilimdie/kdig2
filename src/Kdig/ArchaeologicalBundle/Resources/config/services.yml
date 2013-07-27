@@ -10,6 +10,27 @@ services:
           - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
+  archaeological.preobject.listener:
+      class: 'Kdig\ArchaeologicalBundle\Listener\PreobjectListener'
+      arguments: [ '@service_container' ]
+      tags:
+          - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+          - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+          
+  archaeological.prepottery.listener:
+      class: 'Kdig\ArchaeologicalBundle\Listener\PrepotteryListener'
+      arguments: [ '@service_container' ]
+      tags:
+          - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+          - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+          
+  archaeological.presample.listener:
+      class: 'Kdig\ArchaeologicalBundle\Listener\PresampleListener'
+      arguments: [ '@service_container' ]
+      tags:
+          - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+          - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+          
 ## show us menu
   kdig.archaeological.usshow:
       class: %mopa_bootstrap.navbar.generic%
