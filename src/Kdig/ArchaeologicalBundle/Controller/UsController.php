@@ -371,8 +371,11 @@ class UsController extends Controller
         $id_area = $request->get('id_area');
         $site = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id_site);
         $sigla = $site->getSigla();
-        
+
         $area = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id_area);
+        if (!$area) {
+            throw $this->createNotFoundException('Unable to find Us entity.');
+        }
         $stringa = $em->getRepository('KdigArchaeologicalBundle:Us')->freeName($sigla, $area);
         
         return new Response($stringa);
