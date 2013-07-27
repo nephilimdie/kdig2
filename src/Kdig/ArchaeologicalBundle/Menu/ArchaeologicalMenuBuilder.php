@@ -42,6 +42,7 @@ class ArchaeologicalMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addDivider($menu, true);
         $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
         $pdf = $export->addChild('PDF', array('route' => 'us'));
+        $zip = $export->addChild('zip', array('route' => 'us'));
         
         return $menu;
     }
