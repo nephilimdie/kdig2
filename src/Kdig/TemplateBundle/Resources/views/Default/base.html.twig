@@ -258,12 +258,11 @@
                 default: 
               }
         }
-        function getdefaultstringAjax (route, where, how, what) { 
+        function getdefaultstringAjax (route, where, how) { 
             var eseguiminchia = jQuery.ajax({
                 url: route,
                 type: 'POST',
                 cache: false,
-                data: what,
                 beforeSend: function () {
                     $(".container-fluid").spin(optsspin);
                     $(where).attr('disabled', true);
