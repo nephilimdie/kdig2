@@ -23,6 +23,6 @@ class UserController extends Controller
      */
     public function changeGroupAction(Request $request)
     {
-        
+        return false;
     }
 }
