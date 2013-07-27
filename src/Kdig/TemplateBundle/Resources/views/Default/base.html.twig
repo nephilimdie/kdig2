@@ -248,7 +248,6 @@
         function showResponse(data, how) {
             $(".container-fluid").spin(false);
             switch(how) { 
-  
                 case 'fill': 
                     $(where).attr('disabled', false);
                     $(where).val(data);
@@ -269,7 +268,6 @@
                     $(where).attr('disabled', true);
                 },
                 success: function(data, how){
-                    $(".container-fluid").spin(false);
                     switch(how) { 
                         case 'fill': 
                             $(where).attr('disabled', false);
@@ -280,10 +278,9 @@
                             break; 
                         default: 
                       }
+                    $(".container-fluid").spin(false);
                 },
-                error: function(jqXHR, exception) {
-                    ajaxerror(jqXHR, exception);
-                }
+                error: jaxerror(jqXHR, exception)
             }) 
         }
         /* post-submit callback 
