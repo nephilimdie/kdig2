@@ -15,15 +15,13 @@ class UsRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
-    public function freeName($sigla, $user) 
+    public function freeName($presigla, $user) 
     {
-        
         $area = $user->getSlectedarea();
         $Frombucket = $area->getFromrefus();
+        
         $Tobucket = $area->getTorefus();
         $numdef = $Frombucket;  
-        
-        $presigla = $sigla;
         
         $newvec = array();
         
@@ -35,22 +33,22 @@ class UsRepository extends EntityRepository
             ->getQuery()
             ->getResult(); 
 
-            foreach ($result as $str){
-                $stringa = str_replace($presigla,'', $str->getName());
-                $newvec[] = (int)$stringa;
-            }
+        foreach ($result as $str){
+            $stringa = str_replace($presigla,'', $str->getName());
+            $newvec[] = (int)$stringa;
+        }
 
-            $count = count($newvec);
-            $numC = (int)$Frombucket;
-            
-            for ( $i = 0; $i < $count; $i++ )
-            {
-                if(!in_array($numC, $newvec)) {
-                    $let = $numC;
-                    return (str_pad($let, 4 , "0000", STR_PAD_LEFT));
-                }
-                $numC++;
+        $count = count($newvec);
+        $numC = (int)$Frombucket;
+
+        for ( $i = 0; $i < $count; $i++ )
+        {
+            if(!in_array($numC, $newvec)) {
+                $let = $numC;
+                return (str_pad($let, 4 , "0000", STR_PAD_LEFT));
             }
+            $numC++;
+        }
 
         return str_pad($numC, 4 , "0000", STR_PAD_LEFT);
     }
