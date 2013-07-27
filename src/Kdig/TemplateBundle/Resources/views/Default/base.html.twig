@@ -219,8 +219,10 @@
                 $(".container-fluid").spin(optsspin);
                 $.address.value($(this).attr('href'));  
             });
-            
-
+            $(".changeGroup dropdown-menu a").on("click", function(event){ 
+                event.preventDefault();
+                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext')
+            });
         });
         
         function ajaxerror(jqXHR, exception) {
@@ -279,7 +281,10 @@
                             $(where).val(data);
                             break; 
                         case 'html': 
-                            $(where).append(data);
+                            where.append(data);
+                            break; 
+                        case 'changetext': 
+                            where.html(data);
                             break; 
                         default: 
                       }
