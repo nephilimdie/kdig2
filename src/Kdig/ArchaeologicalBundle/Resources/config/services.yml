@@ -10,7 +10,7 @@ services:
           - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
-## show pottery menu
+## show us menu
   kdig.archaeological.potteryshow:
       class: %mopa_bootstrap.navbar.generic%
       arguments:
