@@ -32,13 +32,13 @@ class ArchaeologicalMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav');
         $id = $request->get('id');
 //        die(var_dump($request));
-        $edit = $menu->addChild('list', array('route' => 'us'));
-        $this->addIcon($home, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        $list = $menu->addChild('list', array('route' => 'us'));
+        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $edit = $menu->addChild('edit', array('route' => 'us_edit', 'routeParameters' => array('id' => $id)));
-        $this->addIcon($home, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+        $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
         $this->addDivider($menu, true);
         $delete = $menu->addChild('delete', array('route' => 'us_delete', 'routeParameters' => array('id' => $id)));
-        $this->addIcon($home, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+        $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         $this->addDivider($menu, true);
         $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
         $pdf->addChild('PDF', array('route' => 'us'));
