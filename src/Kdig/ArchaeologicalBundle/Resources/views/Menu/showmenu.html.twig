@@ -1,16 +1,3 @@
-{% extends 'knp_menu.html.twig' %}
-
-{% block linkElement %}
-{% import 'knp_menu.html.twig' as macros %}
-{% from 'KdigTemplateBundle:Default:icons.html.twig' import icon %}
-<a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
-    {% if item.extras.icon|default(false) %}
-        {{ icon(item.extras.icon, item.extras.icon_white|default(false)) }}
-    {% endif %}
-    {{ block('label') }}
-</a>
-{% endblock %}
-
 {% block navbar %}
 <div class=" 
      {{ (navbar.hasOption('inverse') and  navbar.getOption('inverse')) ? ' navbar-inverse' : '' }}
