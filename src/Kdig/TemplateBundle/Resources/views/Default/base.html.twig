@@ -280,7 +280,9 @@
                       }
                     $(".container-fluid").spin(false);
                 },
-                error: jaxerror(jqXHR, exception)
+                error: function(jqXHR, exception) {
+                    ajaxerror(jqXHR, exception);
+                }
             }) 
         }
         /* post-submit callback 
