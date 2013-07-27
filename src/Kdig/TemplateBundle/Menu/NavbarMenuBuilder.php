@@ -63,8 +63,18 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
-    public function createSelectareamenu(Request $request)
+    public function createSelectGroupMenu(Request $request)
     {
+        if ($this->isLoggedIn) { 
+            $this->usr->getSlectedgroup();
+            $menu = $this->factory->createItem('root');
+            $menu->setChildrenAttribute('class', 'nav pull-right');
+
+            $dropdown = $this->createDropdownMenuItem($menu, "Area", true, array('caret' => true));
+            foreach ($this->usr->getGroup() as $group)
+                $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('id' => $group->getId())));
+            return $menu;
+        }
         return false;
     }
 
