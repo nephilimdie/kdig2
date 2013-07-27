@@ -1,6 +1,6 @@
 <?php
 
-namespace Kdig\TemplateBundle\Menu;
+namespace Kdig\ArchaeologicalBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
