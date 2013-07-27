@@ -7,7 +7,7 @@ services:
         class: '%mopa_bootstrap.navbar.generic%'
         scope: request
         arguments:
-            - { leftmenu: '@kdig.template.navbar_main_menu=', groupmenu: '@kdig.template.navbar_selectgroup_menu=',rightmenu: '@kdig.template.navbar_user_menu=' }
+            - { leftmenu: '@kdig.template.navbar_main_menu=', groupmenu: '@kdig.template.navbar_selectgroup_menu=', rightmenu: '@kdig.template.navbar_user_menu=' }
             - {}
             - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false }
         tags:
