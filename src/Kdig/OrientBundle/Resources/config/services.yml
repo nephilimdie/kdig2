@@ -3,6 +3,13 @@ parameters:
 
 services:
   ## post pre update event after persist object
+  orient.bucket.listener:
+      class: 'Kdig\OrientBundle\Listener\BucketListener'
+      arguments: [ '@service_container' ]
+      tags:
+          - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
+          - { name: doctrine.event_listener, event: postPersist, method: postPersist }
+          
   orient.pottery.listener:
       class: 'Kdig\OrientBundle\Listener\Potterypostpreupdate'
       arguments: [ '@service_container' ]
