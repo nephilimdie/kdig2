@@ -13,12 +13,12 @@ use Kdig\UserBundle\Entity\User as User;
 /**
  * Bucket controller.
  *
- * @Route("/bucket")
+ * @Route("/user")
  */
 class UserController extends Controller
 {
     /**
-     * @Route("/{group_id}}", name="user_change_group")
+     * @Route("/{group_id}", name="user_change_group")
      * @Method("POST")
      */
     public function changeGroupAction(Request $request)
