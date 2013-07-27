@@ -27,7 +27,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $this->usr = $securityContext->getToken()->getUser();
     }
 
-    public function createPotteryMenu(Request $request)
+    public function createPotteryShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav');
@@ -43,7 +43,23 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
 //        $this->addDivider($menu, true);
         return $menu;
     }
-    public function createObjectMenu(Request $request)
+    public function createObjectShowMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav');
+
+        $home = $menu->addChild('Home', array('route' => 'default_index'));
+        $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
+        $about = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
+        $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
+//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
+//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
+//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
+
+//        $this->addDivider($menu, true);
+        return $menu;
+    }
+    public function createSampleShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav');
