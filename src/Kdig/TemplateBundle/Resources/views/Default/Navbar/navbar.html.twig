@@ -18,7 +18,7 @@
                     {{ form(form_view) }}
                     </form>
                 {% endif %}
-                {{ navbar.hasMenu('selectareamenu') ? knp_menu_render(navbar.getMenu('selectareamenu'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
+                {{ navbar.hasMenu('selectgroup') ? knp_menu_render(navbar.getMenu('selectgroup'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
                 {{ navbar.hasMenu('rightmenu') ? knp_menu_render(navbar.getMenu('rightmenu'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
             </div>
         </div>
