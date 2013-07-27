@@ -67,11 +67,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
     public function createSelectGroupMenu(Request $request)
     {
         if ($this->isLoggedIn) { 
-            $this->usr->getSlectedgroup();
+            $groupSelected = $this->usr->getSlectedgroup();
             $menu = $this->factory->createItem('root');
             $menu->setChildrenAttribute('class', 'nav pull-right');
 
-            $dropdown = $this->createDropdownMenuItem($menu, "Group", true, array('caret' => true));
+            $dropdown = $this->createDropdownMenuItem($menu, $groupSelected->getName(), true, array('caret' => true));
             foreach ($this->usr->getGroups() as $group)
                 $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('group_id' => $group->getId())));
             
