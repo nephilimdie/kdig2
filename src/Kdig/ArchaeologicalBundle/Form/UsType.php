@@ -49,7 +49,11 @@ class UsType extends AbstractType
 //                'attr' => array('sigla' => 'myValue'),
                 'label' => 'Excavation campaign',
             ))
-            ->add('name')
+            ->add('name',null, array(
+                'required' => true,
+                'label' => 'Field Name',
+                'help_block'  => 'Automatic loaded from DB. Or change with your'
+            ))
             ->add('typeus', 'entity', array(
                 'class' => 'KdigArchaeologicalBundle:VocUsType',
                 'required' => true,
