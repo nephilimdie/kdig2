@@ -20,11 +20,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
         $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
-        $this->role_pottery = $this->selectedGroup->isGranted('ROLE_POTTERY');
-        $this->role_object = $this->selectedGroup->isGranted('ROLE_OBJECT');
-        $this->role_sample = $this->selectedGroup->isGranted('ROLE_SAMPLE');
-        $this->role_archaeology = $this->selectedGroup->isGranted('ROLE_ARCHAEOLOGY');
-        $this->role_media = $this->selectedGroup->isGranted('ROLE_MEDIA');
+        $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
+        $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
+        $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
+        $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
+        $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
         $this->usr = $securityContext->getToken()->getUser();
     }
 
