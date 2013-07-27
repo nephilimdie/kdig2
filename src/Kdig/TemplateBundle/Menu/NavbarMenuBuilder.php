@@ -10,22 +10,32 @@ use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 {
     protected $securityContext;
-    protected $isLoggedIn;
+    protected $selectedGroup = null;
+    protected $isLoggedIn = null;
+    protected $isSuperAdmin = null;
+    protected $role_pottery = null;
+    protected $role_object = null;
+    protected $role_sample = null;
+    protected $role_archaeology = null;
+    protected $role_media = null;
+    protected $usr = null;
 
     public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
     {
         parent::__construct($factory);
 
         $this->securityContext = $securityContext;
-        $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
-        $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
-        $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
-        $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
-        $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
-        $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
-        $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
-        $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
-        $this->usr = $securityContext->getToken()->getUser();
+        if($securityContext->getToken()->getUser()->getSlectedgroup()) {
+            $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
+            $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
+            $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
+            $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
+            $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
+            $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
+            $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
+            $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
+            $this->usr = $securityContext->getToken()->getUser();
+        }
     }
 
     public function createMainMenu(Request $request)
