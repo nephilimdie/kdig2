@@ -183,14 +183,11 @@
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
-                $(".container-fluid").spin(optsspin);
-                $(".container-fluid").load(event.value, function() {
-                    $('form').submit(function() { 
-                        $(this).ajaxSubmit(options); 
-                        return false; 
-                    }); 
-                    $(".container-fluid").spin(false);
-                });
+                getdefaultstringAjax (event.value, $(".container-fluid"), 'changetext')
+                $('form').submit(function() { 
+                    $(this).ajaxSubmit(options); 
+                    return false; 
+                }); 
             });  
             $.address.init(function(event) {  
                 return;
@@ -253,17 +250,7 @@
             getdefaultstringAjax(routechecknamesu, element, 'html');
         }
         function showResponse(data, how) {
-            $(".container-fluid").spin(false);
-            switch(how) { 
-                case 'fill': 
-                    $(where).attr('disabled', false);
-                    $(where).val(data);
-                    break; 
-                case 'html': 
-                    $(where).append(data);
-                    break; 
-                default: 
-              }
+            
         }
         function getdefaultstringAjax (route, where, how) { 
             var eseguiminchia = jQuery.ajax({
