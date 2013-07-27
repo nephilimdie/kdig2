@@ -71,7 +71,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $menu->setChildrenAttribute('class', 'nav pull-right');
 
             $dropdown = $this->createDropdownMenuItem($menu, "Area", true, array('caret' => true));
-            foreach ($this->usr->getGroup() as $group)
+            foreach ($this->usr->getGroups() as $group)
                 $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('id' => $group->getId())));
             return $menu;
         }
