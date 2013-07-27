@@ -11,7 +11,7 @@ services:
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
 ## show us menu
-  kdig.archaeological.potteryshow:
+  kdig.archaeological.usshow:
       class: %mopa_bootstrap.navbar.generic%
       arguments:
           # first argument: a named array of menues:
