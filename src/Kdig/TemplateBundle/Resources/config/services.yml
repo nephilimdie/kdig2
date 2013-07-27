@@ -54,7 +54,7 @@ services:
     kdig.template.navbar_selectarea_menu:
         class: Knp\Menu\MenuItem
         factory_service: kdig.template.navbar_menu_builder
-        factory_method: createSelectareamenu
+        factory_method: createSelectGroupMenu
         arguments: [ '@request' ]
         scope: request
         tags:
