@@ -363,11 +363,12 @@ class UsController extends Controller
      * @Route("/{id_site}/{id_area}/getdefaulttext", name="kdig_us_defaulttext", options={"expose"=true})
      * @Method("post")
      */
-    public function getdefaulttextaction($id_site, $id_area) 
+    public function getdefaulttextaction(Request $request) 
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
-        
+        $id_site = $request->get('id_site');
+        $id_area = $request->get('id_area');
         $site = $em->getRepository('KdigArchaeologicalBundle:Site')->findOneById($id_site);
         $sigla = $site->getSigla();
         
