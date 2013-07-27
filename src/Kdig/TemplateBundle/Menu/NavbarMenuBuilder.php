@@ -25,9 +25,9 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         parent::__construct($factory);
 
         $this->securityContext = $securityContext;
-        if($securityContext->getToken()->getUser()->getSlectedgroup()) {
+        $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
+        if($this->isLoggedIn) {
             $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
-            $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
             $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
             $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
             $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
