@@ -15,9 +15,9 @@ class UsRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
-    public function freeName($presigla, $user) 
+    public function freeName($presigla, $area) 
     {
-        $area = $user->getSlectedarea();
+        //$area = $user->getSlectedarea();
         $Frombucket = $area->getFromrefus();
         
         $Tobucket = $area->getTorefus();
