@@ -29,7 +29,6 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/group/", name="user_change_group")
-     * @Method("POST")
      * @Secure(roles="IS_AUTHENTICATED_FULLY")
      */
     public function changeGroupAction(Request $request)
