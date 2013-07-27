@@ -63,6 +63,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
+    
     public function createSelectGroupMenu(Request $request)
     {
         if ($this->isLoggedIn) { 
@@ -72,7 +73,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
             $dropdown = $this->createDropdownMenuItem($menu, "Group", true, array('caret' => true));
             foreach ($this->usr->getGroups() as $group)
-                $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('id' => $group->getId())));
+                $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('group_id' => $group->getId())));
             
             return $menu;
         }
