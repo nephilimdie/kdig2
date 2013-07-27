@@ -10,3 +10,19 @@
     {{ block('label') }}
 </a>
 {% endblock %}
+
+{% block navbar %}
+<div class=" 
+     {{ (navbar.hasOption('inverse') and  navbar.getOption('inverse')) ? ' navbar-inverse' : '' }}
+     {{ (navbar.hasOption('fixedTop') and  navbar.getOption('fixedTop')) ? ' navbar-fixed-top' : '' }}
+     {{ (navbar.hasOption('staticTop') and  navbar.getOption('staticTop')) ? ' navbar-static-top' : '' }}"
+    >
+    {{ navbar.hasMenu('menu') ? 
+        knp_menu_render(navbar.getMenu('menu'), {
+            'currentClass': 'active', 
+            'ancestorClass': 'active', 
+            'allow_safe_labels': 'true'}) 
+        : 
+        '' }}
+</div>
+{% endblock %}
