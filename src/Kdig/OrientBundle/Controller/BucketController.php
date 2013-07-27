@@ -23,11 +23,49 @@ use Kdig\OrientBundle\Form\BucketFilterType;
 class BucketController extends Controller
 {
     /**
-     * Lists all Bucket entities.
+     * Lists all Object entities.ì in grid
      *
      * @Route("/", name="bucket")
      * @Method("GET")
-     * @Template()
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
+     */
+    public function myGridAction()
+    {
+        $user = $this->get('security.context')->getToken()->getUser();
+        
+        $source = new Entity('KdigOrientBundle:Bucket');
+        $grid = $this->get('grid');
+        $grid->setSource($source);
+
+        $grid->setDefaultOrder('number', 'asc');
+
+        $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
+        $actionsColumn->setSeparator("<br />");
+        $grid->addColumn($actionsColumn, 1);
+        $showAction = new RowAction('Show', 'bucket_show');
+        $showAction->setColumn('info_column');
+        $grid->addRowAction($showAction);
+        $grid->addMassAction(new DeleteMassAction());
+        
+        $fileName = 'bucket-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_ARCHAEOLOGY');
+
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
+        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
+        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
+        
+        $grid->addExport($export);
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse();
+    }
+    /**
+     * Lists all Bucket entities.
+     *
+     * @ Template()
      */
     public function indexAction()
     {
