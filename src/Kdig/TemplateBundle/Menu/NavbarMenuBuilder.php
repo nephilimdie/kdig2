@@ -66,8 +66,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
     
     public function createSelectGroupMenu(Request $request)
     {
-        $menu->setChildrenAttribute('class', 'nav pull-right changeGroup');
         $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav pull-right changeGroup');
         if ($this->isLoggedIn) { 
             $groupSelected = $this->usr->getSlectedgroup();
 
