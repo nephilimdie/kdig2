@@ -1,5 +1,4 @@
 <?php
-
 namespace Kdig\ArchaeologicalBundle\Listener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
@@ -9,7 +8,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class UstListener 
+class UsListener 
 {
     private $container;
  
