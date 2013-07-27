@@ -27,7 +27,7 @@ class ArchaeologicalMenuBuilder extends AbstractNavbarMenuBuilder
         $this->usr = $securityContext->getToken()->getUser();
     }
     
-    public function createUsShowMenu (Request $request) {
+    public function createUsShowMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav');
         
