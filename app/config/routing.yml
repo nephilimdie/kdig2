@@ -3,9 +3,10 @@ kdig_media:
     prefix:   /media
 
 kdig_user:
-    resource: "@KdigUserBundle/Resources/config/routing.yml"
-    prefix:   /user
-
+    resource: "@KdigUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    
 kdig_template:
     resource: "@KdigTemplateBundle/Resources/config/routing.yml"
     prefix:   /template
