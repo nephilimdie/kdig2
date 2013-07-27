@@ -37,7 +37,7 @@ class ArchaeologicalMenuBuilder extends AbstractNavbarMenuBuilder
         $edit = $menu->addChild('edit', array('route' => 'us_edit', 'routeParameters' => array('id' => $id)));
         $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
         $this->addDivider($menu, true);
-        $delete = $menu->addChild('delete', array('route' => 'us_delete', 'routeParameters' => array('id' => $id)));
+        $delete = $menu->addChild('delete', array('route' => 'us_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
         $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         $this->addDivider($menu, true);
         $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
