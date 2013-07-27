@@ -51,7 +51,6 @@ class UsType extends AbstractType
             ))
             ->add('name')
             ->add('typeus')
-            ->add('sigla')
             ->add('remarks')
             ->add('media', 'entity', array(
                 'class' => 'KdigMediaBundle:Media',
