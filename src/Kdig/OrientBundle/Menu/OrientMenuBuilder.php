@@ -50,7 +50,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
 
         $home = $menu->addChild('Home', array('route' => 'default_index'));
         $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
-        $home = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
+        $about = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
         $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
 //        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
 //        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
