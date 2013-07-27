@@ -50,7 +50,12 @@ class UsType extends AbstractType
                 'label' => 'Excavation campaign',
             ))
             ->add('name')
-            ->add('typeus')
+            ->add('typeus', 'entity', array(
+                'class' => 'KdigArchaeologicalBundle:VocUsType',
+                'required' => true,
+                'label' => 'Type',
+                'help_block'  => 'Select your kind of US'
+            ))
             ->add('remarks')
             ->add('media', 'entity', array(
                 'class' => 'KdigMediaBundle:Media',
