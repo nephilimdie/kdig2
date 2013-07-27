@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new Bazinga\ExposeTranslationBundle\BazingaExposeTranslationBundle(),
             new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
+            new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
 
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),
