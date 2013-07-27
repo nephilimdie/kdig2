@@ -43,6 +43,6 @@ class DefaultController extends Controller
         $entity->setSlectedgroup($group);
         $em->persist($entity);
         $em->flush();
-        return false;
+        return new Response($group->getName());
     }
 }
