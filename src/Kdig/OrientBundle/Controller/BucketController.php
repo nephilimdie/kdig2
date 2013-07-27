@@ -46,7 +46,7 @@ class BucketController extends Controller
         $grid = $this->get('grid');
         $grid->setSource($source);
 
-        $grid->setDefaultOrder('number', 'asc');
+        $grid->setDefaultOrder('name', 'asc');
 
         $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
         $actionsColumn->setSeparator("<br />");
