@@ -30,10 +30,11 @@ class ArchaeologicalMenuBuilder extends AbstractNavbarMenuBuilder
     public function createUsShowMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav');
+        $id = $request->get('id_site');
         die(var_dump($request));
         $home = $menu->addChild('edit', array(
-            'route' => 'page_show',
-            'routeParameters' => array('id' => 42)
+            'route' => 'us_edit',
+            'routeParameters' => array('id' => $id)
         ));
         $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
         
