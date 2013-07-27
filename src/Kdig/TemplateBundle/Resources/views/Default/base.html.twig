@@ -183,11 +183,14 @@
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
-                getdefaultstringAjax (event.value, $(".container-fluid"), 'changetext')
-                $('form').submit(function() { 
-                    $(this).ajaxSubmit(options); 
-                    return false; 
-                }); 
+                $(".container-fluid").spin(optsspin);
+                $(".container-fluid").load(event.value, function() {
+                    $('form').submit(function() { 
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".container-fluid").spin(false);
+                });
             });  
             $.address.init(function(event) {  
                 return;
@@ -250,11 +253,11 @@
             getdefaultstringAjax(routechecknamesu, element, 'html');
         }
         function showResponse(data, how) {
-            
         }
         function getdefaultstringAjax (route, where, how) { 
             var eseguiminchia = jQuery.ajax({
                 url: route,
+                type: 'POST',
                 cache: false,
                 beforeSend: function () {
                     $(".container-fluid").spin(optsspin);
