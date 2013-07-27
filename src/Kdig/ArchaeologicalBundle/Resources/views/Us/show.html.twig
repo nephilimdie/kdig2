@@ -1,31 +1,29 @@
 {% block title %}
-    {{ 'views.show.show'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.show.show'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }} - {{ entity.typeus.name }}{{ entity.name }}
 {% endblock %}
 
 {% block page %}
 
-<h1>Us</h1>
-
 <div class="row-fluid">
-    <div class="span3">
+    <div class="span4">
         <label class="control-label">Campaign</label>
         <div class="controls">                
             <span class="">{{ entity.site }}</span>            
         </div>
     </div>
-    <div class="span3">
+    <div class="span4">
         <label class="control-label">Area</label>
         <div class="controls">                
             <span class="">{{ entity.area }}</span>            
         </div>
     </div>
-    <div class="span3">
+    <div class="span4">
         <label class="control-label">Name</label>
         <div class="controls">                
-            <span class="">{{ entity.typeus }}{{ entity.name }}</span>            
+            <span class="">{{ entity.typeus.name }} {{ entity.name }}</span>            
         </div>
     </div>
-    <div class="span3">
+    <div class="span12">
         <label class="control-label">Remarks</label>
         <div class="controls">                
             <span class="">{{ entity.remarks }}</span>            
