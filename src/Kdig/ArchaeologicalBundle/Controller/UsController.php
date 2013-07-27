@@ -301,7 +301,7 @@ class UsController extends Controller
             $em->flush();
             $this->get('session')->getFlashBag()->add('success', 'flash.update.success');
 
-            return $this->redirect($this->generateUrl('us_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('us_show', array('id' => $id)));
         } else {
             $this->get('session')->getFlashBag()->add('error', 'flash.update.error');
         }
