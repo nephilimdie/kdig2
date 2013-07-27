@@ -255,7 +255,6 @@
         function getdefaultstringAjax (route, where, how) { 
             var eseguiminchia = jQuery.ajax({
                 url: route,
-                type: 'POST',
                 cache: false,
                 beforeSend: function () {
                     $(".container-fluid").spin(optsspin);
