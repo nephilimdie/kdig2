@@ -10,5 +10,4 @@ mopa_bootstrap:
                 icon_color: white
             widget_add_btn:
                 icon: plus-sign
-    navbar:
-        template: KdigTemplateBundle:Default:Navbar/navbar.html.twig
+    navbar: ~
