@@ -4,8 +4,6 @@
 
 {% block page %}
 
-<h1>{{ 'views.edit.edit'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
-
 <form class="well" action="{{ path('us_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <input type="hidden" name="_method" value="PUT" />
     {{ form_widget(edit_form) }}
@@ -28,4 +26,21 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#kdig_archaeologicalbundle_ustype_site').change(function() {
+            id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
+            id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
+            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
+            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
+        });
+        $('#kdig_archaeologicalbundle_ustype_area').change(function() {
+            id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
+            id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
+            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
+            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
+        });
+    });
+</script>
 {% endblock %}
