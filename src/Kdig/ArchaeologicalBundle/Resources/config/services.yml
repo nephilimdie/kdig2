@@ -3,7 +3,7 @@ parameters:
 
 services:
   ## post pre update event after persist object
-  orient.pottery.listener:
+  archaeological.us.listener:
       class: 'Kdig\ArchaeologicalBundle\Listener\UsListener'
       arguments: [ '@service_container' ]
       tags:
