@@ -4,10 +4,6 @@
 
 {% block page %}
 
-    <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
-    {{ JSFV(form) }}
-
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
@@ -74,22 +70,16 @@ $(document).ready( function () {
         var legend = $(this);
         legend.closest('.control-group').find('.controls').toggle();
     });
+    
+    var id_bucket  = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
+    var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
+    getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+
+    $('#kdig_orientbundle_potterytype_prepottery_bucket').change(function() {
+        var id_bucket = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
+        var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
+        getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+    });
 });
 </script>
-
-    <script type="text/javascript">
-        /*$(document).ready( function () {
-            $('.controls').not('.collection > .control-group > .controls').hide('slow');
-            $('body').click( function() {
-                $('.controls').not('.collection > .control-group > .controls').hide('fast')
-            });
-            $(".control-label").on("click", function(event){ 
-                event.preventDefault(); 
-                event.stopPropagation();
-                var control = $(this).next('.controls').not('.collection > .control-group > .controls');
-                control.toggle('fast');
-            });
-            
-        });*/
-    </script>
 {% endblock %}
