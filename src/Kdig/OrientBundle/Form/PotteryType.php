@@ -103,21 +103,21 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('shape', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocShape',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Shape', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('rim', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocRim',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Rim', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('neck', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocNeck',
@@ -130,98 +130,98 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('upperwall', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocUpperWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Upper wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('lowerwall', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocLowerWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Lower wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('base', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocBase',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Base', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('handle', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocHandle',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Handle', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('handleposition', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocHandlePosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Handle position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('spout', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpout',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Spout', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('spoutposition', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpoutPosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Spout position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('preservation', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocPreservation',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Preservation', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('technique', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocTechnique',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Technique', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('firing', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocFiring',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusion', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusion',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Inclusion', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusionsize', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionSize',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Inclusion size', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusionfrequency', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionFrequency',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'widget_type'  => "inline",
+                
                 'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('surfacetratin', 'collection', array(
                 'type' => new VocPotterySurfacetratinType(), 
@@ -241,7 +241,7 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner surface treatment',
                 'required' => false,
-                'widget_type'  => "inline",
+                
                 'show_child_legend' => true
             ))
             ->add('surfacetratout', 'collection', array(
@@ -262,7 +262,7 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Outer surface treatment',
                 'required' => false,
-                'widget_type'  => "inline",
+                
                 'show_child_legend' => true
             ))
             ->add('surfacetratinout', 'collection', array(
@@ -283,7 +283,7 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner & Outer surface treatment',
                 'required' => false,
-                'widget_type'  => "inline",
+                
                 'show_child_legend' => true
             ))
             ->add('potdecorationin', 'collection', array(
@@ -304,7 +304,7 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner decoration',
                 'required' => false,
-                'widget_type'  => "inline",
+                
                 'show_child_legend' => true
             ))
             ->add('potdecorationout', 'collection', array(
@@ -325,7 +325,7 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Outer decoration',
                 'required' => false,
-                'widget_type'  => "inline",
+                
                 'show_child_legend' => true
             ))
             ->add('potdecorationinout', 'collection', array(
@@ -346,7 +346,7 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner & Outer decoration',
                 'required' => false,
-                'widget_type'  => "inline",
+                
                 'show_child_legend' => true
             ))
             ->add('remarks', 'textarea', array(
