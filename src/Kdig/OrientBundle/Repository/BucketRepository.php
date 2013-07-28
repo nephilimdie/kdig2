@@ -68,7 +68,7 @@ class BucketRepository extends EntityRepository
                 $numC++;
             }
             if ($numC > (int)$Tobucket)
-                return false;
+                return 'you have finish number!!!';
 
         return $stringa = $presigla.str_pad($numC, 4 , "0000", STR_PAD_LEFT);
     }
