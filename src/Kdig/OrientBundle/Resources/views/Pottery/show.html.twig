@@ -4,68 +4,81 @@
 
 {% block page %}
 
-<h1>Pottery</h1>
-
 {#{ mopa_bootstrap_navbar('showmenupottery') }#}
 <div class="container-fluid">
-        <div class="span4">
-            <label class="control-label">Tcode</label>
-                            
-                <div class="selected">{{ entity.tcode }}</legend>
-            </div>
+        <div class="span4 control-group">
+            <legend class="control-label">
+                Tcode
+                <div class="selected">{{ entity.tcode }}</div>
+            </legend>
         </div>        
-        <div class="span4">
-            <label class="control-label">Remarks</label>
-            <div class="selected">{{ entity.remarks }}</div> 
-        </div>        <div class="span4">
-            <label class="control-label">Created</label>
-                            <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>            </div>
-        </div>        <div class="span4">
-            <label class="control-label">Typecontext</label>
-                            
-                <div class="selected">{{ entity.typecontext }}</div>            
-        </div>        <div class="span4">
-            <label class="control-label">Outercolor</label>
+        <div class="span4 control-group">
+            <legend class="control-label">
+                Remarks
+                <div class="selected">{{ entity.remarks }}</div> 
+            </legend>
+        </div>        
+        <div class="span4 control-group">
+            <legend class="control-label">Created
+                            <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>  
+            </legend>          </div>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Typecontext
+                <div class="selected">{{ entity.typecontext }}</div>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Outercolor
                             <div class="selected">{{ entity.outercolor }}</div> 
-        </div>        <div class="span4">
-            <label class="control-label">Innercolor</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Innercolor
                             <div class="selected">{{ entity.innercolor }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Fabriccolor</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Fabriccolor
                             <div class="selected">{{ entity.fabriccolor }}</div> 
-        </div>        <div class="span4">
-            <label class="control-label">Rimdiameter</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Rimdiameter
                             <div class="selected">{{ entity.rimdiameter }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Rimwidth</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Rimwidth
                             <div class="selected">{{ entity.rimwidth }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Wallwidth</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Wallwidth
                             <div class="selected">{{ entity.wallwidth }}</div> 
-        </div>        <div class="span4">
-            <label class="control-label">Maxwalldiameter</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Maxwalldiameter
                             <div class="selected">{{ entity.maxwalldiameter }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Bottomwidth</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Bottomwidth
                             <div class="selected">{{ entity.bottomwidth }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Height</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Height
                             <div class="selected">{{ entity.height }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Basediameter</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Basediameter
                             <div class="selected">{{ entity.basediameter }}</div>
-        </div>        <div class="span4">
-            <label class="control-label">Restored</label>
+            </legend>
+        </div>        <div class="span4 control-group">
+            <legend class="control-label">Restored
                             <div class="selected">{{ entity.restored }}</div> 
+            </legend>
         </div>
-        <div class="span4">
-            <label class="control-label">Datation</label>
-                <div class="selected">{{ entity.datation }}</legend>
-            </div>
+        <div class="span4 control-group">
+            <legend class="control-label">Datation
+                <div class="selected">{{ entity.datation }}</div> 
+            </legend>
         </div>  
         <div class="span12">
             <legend>
-                <label class="control-label">Inner Surface Treatment</label>
+                <legend class="control-label">Inner Surface Treatment
                     {% for element in entity.surfacetratin %}
                         <div class="selected">{{element.vocsurfacetratoption}} - {{element.color}}</div> <br />
                     {% endfor %}
@@ -73,7 +86,7 @@
         </div>  
         <div class="span12">
             <legend>
-                <label class="control-label">Outer Surface Treatment</label>
+                <legend class="control-label">Outer Surface Treatment
                 {% for element in entity.surfacetratout %}
                     <div class="selected">{{element.vocsurfacetratoption}} - {{element.color}}</div> <br />
                 {% endfor %}
@@ -81,7 +94,7 @@
         </div>  
         <div class="span12">
             <legend>
-                <label class="control-label">Inner & Outer Surface Treatment</label>
+                <legend class="control-label">Inner & Outer Surface Treatment
                 {% for element in entity.surfacetratinout %}
                     <div class="selected">{{element.vocsurfacetratoption}} - {{element.color}}</div> <br />
                 {% endfor %}
@@ -89,7 +102,7 @@
         </div>  
         <div class="span12">
             <legend>
-                <label class="control-label">Decoration Inner</label>
+                <legend class="control-label">Decoration Inner
                 {% for element in entity.potdecorationin %}
                     <div class="selected">{{element.decorationoption}} - {{element.color}}</div> <br />
                 {% endfor %}
@@ -97,7 +110,7 @@
         </div>
         <div class="span12">
             <legend>
-                <label class="control-label">Decoration Outer</label>
+                <legend class="control-label">Decoration Outer
                 {% for element in entity.potdecorationout %}
                     <div class="selected">{{element.decorationoption}} - {{element.color}}</div> <br />
                 {% endfor %}
@@ -105,7 +118,7 @@
         </div>
         <div class="span12">
             <legend>
-                <label class="control-label">Decoration Inner & Outer</label>
+                <legend class="control-label">Decoration Inner & Outer
                 {% for element in entity.potdecorationinout %}
                     <div class="selected">{{element.decorationoption}} - {{element.color}}</div> <br />
                 {% endfor %}
