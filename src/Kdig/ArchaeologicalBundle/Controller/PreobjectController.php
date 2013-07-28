@@ -125,8 +125,19 @@ class PreobjectController extends Controller
      */
     public function createAction(Request $request)
     {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $usid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity  = new Preobject();
-        $form = $this->createForm(new PreobjectType(), $entity);
+        $form = $this->createForm(new PreobjectType($bucketid,$usid), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -151,10 +162,21 @@ class PreobjectController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $usid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity = new Preobject();
-        $form   = $this->createForm(new PreobjectType(), $entity);
+        $form   = $this->createForm(new PreobjectType($bucketid,$usid), $entity);
 
         return array(
             'entity' => $entity,
@@ -196,6 +218,17 @@ class PreobjectController extends Controller
      */
     public function editAction($id)
     {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $usid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KdigArchaeologicalBundle:Preobject')->find($id);
@@ -204,7 +237,7 @@ class PreobjectController extends Controller
             throw $this->createNotFoundException('Unable to find Preobject entity.');
         }
 
-        $editForm = $this->createForm(new PreobjectType(), $entity);
+        $editForm = $this->createForm(new PreobjectType($bucketid,$usid), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -223,6 +256,17 @@ class PreobjectController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $usid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KdigArchaeologicalBundle:Preobject')->find($id);
@@ -232,7 +276,7 @@ class PreobjectController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new PreobjectType(), $entity);
+        $editForm = $this->createForm(new PreobjectType($bucketid,$usid), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
