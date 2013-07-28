@@ -4,6 +4,10 @@
 
 {% block page %}
 
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(form) }}
+
 <form class="well" action="{{ path('prepottery_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <p>

@@ -1,10 +1,12 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
 {% block title %}
     {{ 'views.edit.edit'|trans({'%entity%': 'Preobject'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
+
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(form) }}
 
 <form class="well" action="{{ path('preobject_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <input type="hidden" name="_method" value="PUT" />
