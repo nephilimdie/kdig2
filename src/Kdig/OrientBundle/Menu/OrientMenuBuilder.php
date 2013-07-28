@@ -30,49 +30,64 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
     public function createPotteryShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav');
-
-        $home = $menu->addChild('Home', array('route' => 'default_index'));
-        $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
-        $about = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
-        $this->addIcon($about, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
-//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
-//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
-//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
-
-//        $this->addDivider($menu, true);
+        $menu->setChildrenAttribute('class', 'nav show-menu');
+        $id = $request->get('id');
+//        die(var_dump($request));
+        $list = $menu->addChild('list', array('route' => 'pottery'));
+        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        if($this->role_pottery) {
+            $edit = $menu->addChild('edit', array('route' => 'pottery_edit', 'routeParameters' => array('id' => $id)));
+            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+            $this->addDivider($menu, true);
+            $delete = $menu->addChild('delete', array('route' => 'pottery_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
+            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+        }
+        $this->addDivider($menu, true);
+        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
+        $pdf = $export->addChild('PDF', array('route' => 'pottery'));
+        $zip = $export->addChild('zip', array('route' => 'pottery'));
         return $menu;
     }
     public function createObjectShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav');
-
-        $home = $menu->addChild('Home', array('route' => 'default_index'));
-        $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
-        $about = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
-        $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
-//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
-//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
-//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
-
-//        $this->addDivider($menu, true);
+        $menu->setChildrenAttribute('class', 'nav show-menu');
+        $id = $request->get('id');
+//        die(var_dump($request));
+        $list = $menu->addChild('list', array('route' => 'object'));
+        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        if($this->role_object) {
+            $edit = $menu->addChild('edit', array('route' => 'object_edit', 'routeParameters' => array('id' => $id)));
+            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+            $this->addDivider($menu, true);
+            $delete = $menu->addChild('delete', array('route' => 'object_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
+            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+        }
+        $this->addDivider($menu, true);
+        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
+        $pdf = $export->addChild('PDF', array('route' => 'object'));
+        $zip = $export->addChild('zip', array('route' => 'object'));
         return $menu;
     }
     public function createSampleShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav');
-
-        $home = $menu->addChild('Home', array('route' => 'default_index'));
-        $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
-        $about = $menu->addChild('About', array('route' => 'kdig_archaeological_default_about'));
-        $this->addIcon($home, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
-//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
-//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
-//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
-
-//        $this->addDivider($menu, true);
+        $menu->setChildrenAttribute('class', 'nav show-menu');
+        $id = $request->get('id');
+//        die(var_dump($request));
+        $list = $menu->addChild('list', array('route' => 'sample'));
+        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        if($this->role_sample) {
+            $edit = $menu->addChild('edit', array('route' => 'sample_edit', 'routeParameters' => array('id' => $id)));
+            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+            $this->addDivider($menu, true);
+            $delete = $menu->addChild('delete', array('route' => 'sample_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
+            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+        }
+        $this->addDivider($menu, true);
+        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
+        $pdf = $export->addChild('PDF', array('route' => 'sample'));
+        $zip = $export->addChild('zip', array('route' => 'sample'));
         return $menu;
     }
 
