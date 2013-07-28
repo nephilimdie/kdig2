@@ -63,9 +63,11 @@ $(document).ready( function () {
     
     $(".control-group input[type=radio]").change(function(event){ 
         event.preventDefault();
+        var radio = $(this);
         if($(this).is(':checked')) {
             var checked = $(this);
-            $(this).parent('.control-group').find('.selected').html(checked.parent('label').text());
+            alert(checked.parent().text());
+            radio.parent('.control-group').find('.selected').text(checked.parent().text());
         }
     });
 });
