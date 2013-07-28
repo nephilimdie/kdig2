@@ -98,6 +98,9 @@ class PotteryType extends AbstractType
                 'widget_type'  => "inline"
             ))
             ->add('class', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -105,6 +108,9 @@ class PotteryType extends AbstractType
                 
                 'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('shape', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocShape',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -112,6 +118,9 @@ class PotteryType extends AbstractType
                 
                 'expanded' => true, 'label' => 'Shape', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('rim', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocRim',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -119,12 +128,18 @@ class PotteryType extends AbstractType
                 
                 'expanded' => true, 'label' => 'Rim', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('neck', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocNeck',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Neck', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('wall', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -199,7 +214,6 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                
                 'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusion', 'entity', array(
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusion',
@@ -352,8 +366,7 @@ class PotteryType extends AbstractType
                 'label' => 'Description',
                 'help_inline'  => 'Scrivi qualcosa.. -.-',
                 'required' => false,
-                'widget_type'  => "inline",
-                "attr" => array("rows"=>3, 'class'=>'xxlarge')
+                'widget_type'  => "inline"
             ))
 //            ->add('media', 'entity', array(
 //                'class' => 'KdigMediaBundle:Media',
