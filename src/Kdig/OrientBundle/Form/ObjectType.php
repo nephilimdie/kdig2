@@ -24,6 +24,9 @@ class ObjectType extends AbstractType
         $usid = $this->us;
         
         $builder
+            ->add('preobject', new PreobjectType($bucketid, $usid), array(
+                'attr'=> array('class'=>'row-fluid')
+            ))
             ->add('number', null, array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
@@ -31,9 +34,6 @@ class ObjectType extends AbstractType
                 'label' => 'Reference Number',
                 'required' => true,
                 'widget_type'  => ""
-            ))
-            ->add('preobject', new PreobjectType($bucketid, $usid), array(
-                'attr'=> array('class'=>'row-fluid')
             ))
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
@@ -124,14 +124,16 @@ class ObjectType extends AbstractType
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
+                'label' => 'Weight',
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('remarks', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'span12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
-                'required' => true,
+                'label' => 'Remarks',
+                'required' => false,
                 'widget_type'  => ""
             ))
                 
@@ -159,6 +161,7 @@ class ObjectType extends AbstractType
 //                'multiple' => true
 //            ))
         ;
+        $builder->setAttribute('class', 'span4');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
