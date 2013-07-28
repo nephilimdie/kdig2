@@ -17,24 +17,21 @@ use Kdig\OrientBundle\Form\Potteryvoc\VocPotteryDecorationinoutType;
 class PotteryType extends AbstractType
 {
     protected $bucketid;
+    protected $us;
     
-    public function __construct($bucketid = null)
+    public function __construct($bucketid, $usid = null)
     {
         $this->bucketid = $bucketid;
+        $this->us = $usid;
     }
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $bucketid = $this->bucketid;
+        $usid = $this->us;
+        
         $builder
-            ->add('prepottery', new PrepotteryType($bucketid) )
-            ->add('tcode', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
-                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
-                'label_attr' => array('class'=>'mylabelclass'),
-                'label' => 'tcode',
-                'required' => false
-            ))
+            ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'mycontrolsclass'),
