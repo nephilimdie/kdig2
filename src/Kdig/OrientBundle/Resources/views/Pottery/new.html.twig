@@ -38,7 +38,7 @@ form#feedbackform div{ /*CSS used by demo form*/
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
     {% endstylesheets %}
-<form id="potteryform" class="well form-inline" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
+<form id="potteryform" class="" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         {{ form_widget(form) }}
         <p>
