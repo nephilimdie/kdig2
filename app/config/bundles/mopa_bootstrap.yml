@@ -2,7 +2,8 @@ mopa_bootstrap:
     form:
         show_child_legend: true # default is true
         error_type: inline 
-        checkbox_label: 'label' # default is both (label|widget|both)
+        checkbox_label: 'widget' # default is both (label|widget|both)
+        render_required_asterisk: true # default is true
         collection:
             widget_remove_btn:
                 icon: trash
