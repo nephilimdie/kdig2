@@ -59,7 +59,7 @@ $(document).ready( function () {
             pause: 2000 
     });
 
-    $('#kdig_archaeologicalbundle_preobjecttype_bucket').change(function() {
+    $('#kdig_orientbundle_objecttype_preobject_bucket').change(function() {
         var id_bucket = $("#kdig_orientbundle_objecttype_preobject_bucket option:selected").val();
         var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
         getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_objecttype_preobject_name','fill');
