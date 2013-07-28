@@ -26,7 +26,7 @@ class PotteryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $bucketid = $this->bucketid;
-        
+        $builder->setAttribute('class', 'span4');
         $builder
             ->add('prepottery', new PrepotteryType($bucketid) )
             ->add('tcode', null, array(
