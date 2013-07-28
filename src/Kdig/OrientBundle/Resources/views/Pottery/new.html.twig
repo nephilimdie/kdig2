@@ -64,6 +64,7 @@ $(document).ready( function () {
     $(".control-group input[type=radio]").change(function(event){ 
         event.preventDefault();
         if($(this).is(':checked')){
+            alert('blabla');
             $(this).parent('.control-group').find('.selected').html($('.control-group input[type=radio]:checked').text());
         }
     });
