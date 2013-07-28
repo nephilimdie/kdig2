@@ -29,70 +29,112 @@ class PotteryType extends AbstractType
         $builder
             ->add('prepottery', new PrepotteryType($bucketid) )
             ->add('tcode', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'tcode',
                 'required' => false
             ))
             ->add('typecontext', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Type of context',
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('outercolor', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Outer color',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('innercolor', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Inner color',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('fabriccolor', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Fabric color',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('rimdiameter', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Rim Diameter',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('rimwidth', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Rim width',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('wallwidth', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Wall width',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('maxwalldiameter', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Max diameter',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('bottomwidth', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Bottom width',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('height', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Height',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('basediameter', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Base diameter',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('restored', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Restored',
                 'required' => false,
                 'widget_type'  => ""
             ))
             ->add('datation', null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Date',
                 'required' => false,
                 'widget_type'  => ""
