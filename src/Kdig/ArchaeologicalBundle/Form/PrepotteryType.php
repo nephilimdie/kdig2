@@ -39,7 +39,6 @@ class PrepotteryType extends AbstractType
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
             ->add('name',null,array(
-                'attr'=> array('class'=>'span3'),
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
