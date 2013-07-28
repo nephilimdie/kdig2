@@ -1,10 +1,8 @@
 {% block title %}
-{{ 'views.new.creation'|trans({'%entity%': 'Prepottery'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.new.creation'|trans({'%entity%': 'Prepottery'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
-
-<h1>{{ 'views.new.creation'|trans({'%entity%': 'Prepottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
 
 <form class="well" action="{{ path('prepottery_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
@@ -20,4 +18,17 @@
         </a>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var id_bucket  = $("#kdig_archaeologicalbundle_prepotterytype_bucket option:selected").val();
+        var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
+        getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_prepotterytype_name','fill');
+        
+        $('#kdig_archaeologicalbundle_prepotterytype_bucket').change(function() {
+            var id_us = $("#kdig_archaeologicalbundle_prepotterytype_bucket option:selected").val();
+            var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
+            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_prepotterytype_name','fill');
+        });
+    });
+</script>
 {% endblock %}
