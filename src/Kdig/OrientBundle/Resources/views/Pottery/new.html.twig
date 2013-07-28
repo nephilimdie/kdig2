@@ -62,11 +62,10 @@ $(document).ready( function () {
     });
     
     $(".control-group input[type=radio]").change(function(event){ 
-        event.preventDefault();
         var radio = $(this);
         if($(this).is(':checked')) {
             var checked = $(this);
-            radio.parentsUntil('.control-group').find('.selected').text(checked.parent().text());
+            radio.closest('.control-group').find('.selected').html(checked.parent().text());
         }
     });
 });
