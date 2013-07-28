@@ -11,79 +11,128 @@ use Kdig\ArchaeologicalBundle\Form\PreobjectType;
 class ObjectType extends AbstractType
 {
     protected $bucketid;
+    protected $us;
     
-    public function __construct($bucketid = null)
+    public function __construct($bucketid, $usid = null)
     {
         $this->bucketid = $bucketid;
+        $this->us = $usid;
     }
-    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $bucketid = $this->bucketid;
+        $usid = $this->us;
         
         $builder
             ->add('number', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'label' => 'Reference Number',
+                'required' => true,
+                'widget_type'  => ""
             ))
-            ->add('preobject', new PreobjectType($bucketid), array(
+            ->add('preobject', new PreobjectType($bucketid, $usid), array(
                 'attr'=> array('class'=>'row-fluid')
             ))
             ->add('class', 'genemu_jqueryselect2_entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
             ->add('type', 'genemu_jqueryselect2_entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjType',
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
             ->add('material', 'genemu_jqueryselect2_entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjMaterial',
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
             ->add('technique', 'genemu_jqueryselect2_entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjTechnique',
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
             ->add('decoration', 'genemu_jqueryselect2_entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration',
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
             ->add('preservation', 'genemu_jqueryselect2_entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation',
                 'property' => 'name',
                 'attr'=> array('class'=>'span3')
             ))
             ->add('fragments', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('height', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('lenght', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('width', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('thickness', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('diameter', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('perforationdiameter', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('weight', null, array(
-                'attr'=> array('class'=>'span3')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
             ->add('remarks', null, array(
-                'attr'=> array('class'=>'span12')
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'widget_type'  => ""
             ))
                 
 //            ->add('isphotographed')
