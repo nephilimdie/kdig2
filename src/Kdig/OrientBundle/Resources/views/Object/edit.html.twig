@@ -1,1 +1,69 @@
-prova
+{% block title %}
+    {{ 'views.edit.edit'|trans({'%entity%': 'Object'}, 'JordiLlonchCrudGeneratorBundle') }}
+{% endblock %}
+
+{% block page %}
+
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(edit_form) }}
+<style>
+
+div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the top of the form */
+    width:200px;
+    padding:2px 5px;
+    border:1px solid gray;
+    background:#fff6e5;
+    -webkit-box-shadow: 0 0 8px #818181;
+    box-shadow: 0 0 8px #818181;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    color:red;
+    position:absolute;
+    top:-10px;
+    }
+
+form#feedbackform div{ /*CSS used by demo form*/
+    margin-bottom:9px;
+}
+
+</style>
+
+<form id="objectform" class="" action="{{ path('object_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <input type="hidden" name="_method" value="PUT" />
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit" class="btn btn-success">{{ 'views.edit.editbutton'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+    </p>
+</form>
+
+<div>
+    <div class="float-left">
+        <a class="btn" href="{{ path('object') }}">
+            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
+        </a>
+    </div>
+    <div class="float-left">
+        <form action="{{ path('object_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button class="btn btn-danger" type="submit" onclick="return confirm('{{ 'views.recordactions.confirm'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}');">{{ 'views.recordactions.delete'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready( function () {
+    var formsave1 = new autosaveform({
+            formid: 'objectform',
+            pause: 2000 
+    });
+
+    $('#kdig_archaeologicalbundle_preobjecttype_bucket').change(function() {
+        var id_bucket = $("#kdig_orientbundle_objecttype_preobject_bucket option:selected").val();
+        var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
+        getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_objecttype_preobject_name','fill');
+    });
+});
+</script>
+{% endblock %}
