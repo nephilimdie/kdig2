@@ -10,12 +10,7 @@
         <legend class="control-label">Tcode
             <div class="selected">{{ entity.tcode }}</div>
         </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Remarks
-            <div class="selected">{{ entity.remarks }}</div> 
-        </legend>
-    </div>        
+    </div>
     <div class="span4 control-group">
         <legend class="control-label">Created
             <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>  
@@ -140,6 +135,11 @@
             </div>
         </legend>
     </div>
+    <div class="span12 control-group">
+        <legend class="control-label">Remarks
+            <div class="selected">{{ entity.remarks }}</div> 
+        </legend>
+    </div>        
 </div>
 
 <div>
