@@ -42,10 +42,10 @@ class PreobjectRepository extends EntityRepository
         
         $result = $this->createQueryBuilder('b')
             ->select('b', 'u')
-            ->from('KdigArchaelogicalBundle:Bucket', 'u')
-            ->setParameter('bucket', $bucket->getId())
+            ->from('KdigOrientBundle:Bucket', 'u')
             ->where('u.id = :bucket')
             ->orderBy('b.name', 'ASC')
+            ->setParameter('bucket', $bucket->getId())
             ->getQuery()
             ->getResult();
 
