@@ -172,8 +172,20 @@ class ObjectController extends Controller
      */
     public function createAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity  = new Object();
-        $form = $this->createForm(new ObjectType(), $entity);
+        $form = $this->createForm(new ObjectType($bucketid,$usid), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -199,10 +211,22 @@ class ObjectController extends Controller
      * @Template()
      * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity = new Object();
-        $form   = $this->createForm(new ObjectType(), $entity);
+        $form   = $this->createForm(new ObjectType($bucketid,$usid), $entity);
 
         return array(
             'entity' => $entity,
@@ -246,14 +270,21 @@ class ObjectController extends Controller
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity = $em->getRepository('KdigOrientBundle:Object')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Object entity.');
         }
 
-        $editForm = $this->createForm(new ObjectType(), $entity);
+        $editForm = $this->createForm(new ObjectType($bucketid,null), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -274,6 +305,13 @@ class ObjectController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
 
         $entity = $em->getRepository('KdigOrientBundle:Object')->find($id);
 
@@ -282,7 +320,7 @@ class ObjectController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new ObjectType(), $entity);
+        $editForm = $this->createForm(new ObjectType($bucketid,null), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
