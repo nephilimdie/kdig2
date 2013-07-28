@@ -1,9 +1,14 @@
 {% block navbar %}
-<div class="subnav {{ (navbar.hasOption('fixedTop') and navbar.getOption('fixedTop')) ? 'subnavbar-fixed-top' : '' }}">
-    {{ navbar.getMenu('menu') ?
-        knp_menu_render(navbar.getMenu('menu'), {
+<div class="
+    {{ (navbar.hasOption('fixedTop') and navbar.getOption('fixedTop')) 
+        ? 'subnavbar-fixed-top' 
+        : '' }}"
+ >
+    {{ navbar.getMenu('menu') 
+        ? knp_menu_render(navbar.getMenu('menu'), {
             'currentClass': 'active',
             'ancestorClass': 'active',
-            'allow_safe_labels': true}) : '' }}
+            'allow_safe_labels': true}) 
+        : '' }}
 </div>
 {% endblock %}
