@@ -241,7 +241,8 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner surface treatment',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                'show_child_legend' => true
             ))
             ->add('surfacetratout', 'collection', array(
                 'type' => new VocPotterySurfacetratoutType(), 
@@ -261,7 +262,8 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Outer surface treatment',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                'show_child_legend' => true
             ))
             ->add('surfacetratinout', 'collection', array(
                 'type' => new VocPotterySurfacetratinoutType(), 
@@ -281,7 +283,8 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner & Outer surface treatment',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                'show_child_legend' => true
             ))
             ->add('potdecorationin', 'collection', array(
                 'type' => new VocPotteryDecorationinType(), 
@@ -301,7 +304,8 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner decoration',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                'show_child_legend' => true
             ))
             ->add('potdecorationout', 'collection', array(
                 'type' => new VocPotteryDecorationoutType(), 
@@ -321,7 +325,8 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Outer decoration',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                'show_child_legend' => true
             ))
             ->add('potdecorationinout', 'collection', array(
                 'type' => new VocPotteryDecorationinoutType(), 
@@ -341,11 +346,12 @@ class PotteryType extends AbstractType
                 ),
                 'label' => 'Inner & Outer decoration',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                'show_child_legend' => true
             ))
             ->add('remarks', 'textarea', array(
                 'label' => 'Description',
-                'help_block'  => 'Scrivi qualcosa.. -.-',
+                'help_inline'  => 'Scrivi qualcosa.. -.-',
                 'required' => false,
                 'widget_type'  => "inline"
             ))
