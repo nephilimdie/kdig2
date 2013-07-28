@@ -229,8 +229,6 @@ class PreobjectController extends Controller
         if ($bucketid==null || $bucketid=='')
             $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
         
-        $em = $this->getDoctrine()->getManager();
-
         $entity = $em->getRepository('KdigArchaeologicalBundle:Preobject')->find($id);
 
         if (!$entity) {
