@@ -56,7 +56,6 @@ class BucketType extends AbstractType
                 'required' => false,
                 'multiple' => true
             ))
-            ->add('bucketsheet')
         ;
     }
 
