@@ -39,7 +39,7 @@ services:
           - { menu: '@kdig.archaeological.us.show.menu=' }
           - {}
           # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigArchaeologicalBundle:Menu:showmenu.html.twig' }
+          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
       tags:
           # The alias is used to retrieve the navbar in templates
           - { name: mopa_bootstrap.navbar, alias: showmenuus }
