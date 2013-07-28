@@ -176,7 +176,7 @@
 {% block form_legend %}
 {% spaceless %}
     {% if label is empty %}
-        {% set label = name|humanize %}
+        {% set label = name|humanize %} - <div class="selected"></div>
     {% endif %}
         <legend>{{ label|trans({}, translation_domain) }} - <div class="selected"></div></legend>
     {% if widget_add_btn %}
@@ -211,6 +211,7 @@
         {% if help_label %}
             {{ block('help_label') }}
         {% endif %}
+         - <div class="selected"></div>
         </label>
     {% endif %}
 {% endspaceless %}
