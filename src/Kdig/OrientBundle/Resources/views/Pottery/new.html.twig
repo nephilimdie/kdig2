@@ -66,12 +66,13 @@ $(document).ready( function () {
         if($(this).is(':checked')) {
             var checked = $(this);
             radio.closest('.control-group').find('.selected').html(checked.parent().text());
-            radio.closest('.control-group').find('.controls').hide();
+            radio.closest('.control-group').find('.controls').hide('slow');
         }
     });
-    $('.control-group').one('click', function(event){ 
+    $('.control-group legend').on('click', function(event){ 
         event.preventDefault();
-        $(this).find('.controls').toggle();
+        var legend = $(this);
+        legend.closest('.control-group').find('.controls').toggle();
     });
 });
 </script>
