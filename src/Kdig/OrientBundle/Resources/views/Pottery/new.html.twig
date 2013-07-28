@@ -8,166 +8,37 @@
     <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
     {{ JSFV(form) }}
 
-    {# Override this block to add your own files! #}
-    {% stylesheets
-        '@KdigOrientBundle/Resources/public/less/orient.less'
-    %}
-    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
-    {% endstylesheets %}
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(form) }}
+<style>
+
+div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the top of the form */
+    width:200px;
+    padding:2px 5px;
+    border:1px solid gray;
+    background:#fff6e5;
+    -webkit-box-shadow: 0 0 8px #818181;
+    box-shadow: 0 0 8px #818181;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    color:red;
+    position:absolute;
+    top:-10px;
+    }
+
+form#feedbackform div{ /*CSS used by demo form*/
+    margin-bottom:9px;
+}
+
+</style>
 <form id="potteryform" class="well form-inline" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
-        <div class="group span4 ">
-            {{ form_label(form.prepottery.bucket) }}
-            {{ form_errors(form.prepottery.bucket) }}
-            {{ form_widget(form.prepottery.bucket) }}
-        </div>
-        <div class="group span4 ">
-            {{ form_label(form.prepottery.name) }}
-            {{ form_errors(form.prepottery.name) }}
-            {{ form_widget(form.prepottery.name) }}
-            <a href="#" class="form_reload_text noajax button form-cancel" title="Reload field name"><span class="icon icon158"></span></a>
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.typecontext) }}
-            {{ form_row(form.typecontext) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.class) }}
-            {{ form_row(form.class) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.shape) }}
-            {{ form_row(form.shape) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.rim) }}
-            {{ form_row(form.rim) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.neck) }}
-            {{ form_row(form.neck) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.wall) }}
-            {{ form_row(form.wall) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.upperwall) }}
-            {{ form_row(form.upperwall) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.lowerwall) }}
-            {{ form_row(form.lowerwall) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.base) }}
-            {{ form_row(form.base) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.handle) }}
-            {{ form_row(form.handle) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.handleposition) }}
-            {{ form_row(form.handleposition) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.spout) }}
-            {{ form_row(form.spout) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.spoutposition) }}
-            {{ form_row(form.spoutposition) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.preservation) }}
-            {{ form_row(form.preservation) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.technique) }}
-            {{ form_row(form.technique) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.firing) }}
-            {{ form_row(form.firing) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.outercolor) }}
-            {{ form_row(form.outercolor) }}
-            {{ form_errors(form.innercolor) }}
-            {{ form_row(form.innercolor) }}
-            {{ form_errors(form.fabriccolor) }}
-            {{ form_row(form.fabriccolor) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.inclusion) }}
-            {{ form_row(form.inclusion) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.inclusionsize) }}
-            {{ form_row(form.inclusionsize) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.inclusionfrequency) }}
-            {{ form_row(form.inclusionfrequency) }}
-        </div>
-        <div class="group span12 form-box collection large-group">
-            {{ form_row(form.surfacetratin) }}
-        </div>
-        <div class="group span12 form-box collection large-group">
-            {{ form_row(form.surfacetratout) }}
-        </div>
-        <div class="group span12 form-box collection large-group">
-            {{ form_row(form.surfacetratinout) }}
-        </div>
-        <div class="group span12 form-box collection large-group">
-            {{ form_row(form.potdecorationin) }}
-        </div>
-        <div class="group span12 form-box collection large-group">
-            {{ form_row(form.potdecorationout) }}
-        </div>
-        <div class="group span12 form-box collection large-group">
-            {{ form_row(form.potdecorationinout) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.rimdiameter) }}
-            {{ form_row(form.rimdiameter) }}
-            {{ form_errors(form.rimwidth) }}
-            {{ form_row(form.rimwidth) }}
-            {{ form_errors(form.wallwidth) }}
-            {{ form_row(form.wallwidth) }}
-            {{ form_errors(form.maxwalldiameter) }}
-            {{ form_row(form.maxwalldiameter) }}
-        </div>
-        <div class="group span4">
-            {{ form_errors(form.bottomwidth) }}
-            {{ form_row(form.bottomwidth) }}
-            {{ form_errors(form.height) }}
-            {{ form_row(form.height) }}
-            {{ form_errors(form.basediameter) }}
-            {{ form_row(form.basediameter) }}
-            {{ form_errors(form.datation) }}
-            {{ form_row(form.datation) }}
-            {{ form_errors(form.restored) }}
-            {{ form_row(form.restored) }}
-        </div>
-
-        <div class="group span4">
-            {{ form_errors(form.remarks) }}
-            {{ form_row(form.remarks) }}
-        </div>
-        <div class="group span4">
-            <div class="form_input">
-                {{ form_errors(form.tcode) }}
-                {{ form_row(form.tcode) }}
-            </div>
-        </div>
-        {{ form_rest(form) }}
-        <div class="group span12">
-            <p class="create-button">
-                <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-            </p>
-        </div>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
     </div>
 </form>
 
