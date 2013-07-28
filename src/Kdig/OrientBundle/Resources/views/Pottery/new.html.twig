@@ -66,8 +66,7 @@ $(document).ready( function () {
         var radio = $(this);
         if($(this).is(':checked')) {
             var checked = $(this);
-            alert(checked.parent().text());
-            radio.parent('.control-group').find('.selected').text(checked.parent().text());
+            radio.parentsUntil('.control-group').find('.selected').text(checked.parent().text());
         }
     });
 });
