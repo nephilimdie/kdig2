@@ -211,7 +211,7 @@ class PotteryController extends Controller
      * @Template()
      * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
