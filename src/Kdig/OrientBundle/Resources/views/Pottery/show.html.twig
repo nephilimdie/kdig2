@@ -7,119 +7,120 @@
 <h1>Pottery</h1>
 
 {#{ mopa_bootstrap_navbar('showmenupottery') }#}
-<form class="form-horizontal">
-    <fieldset>        
-        <div class="control-group">
+<div class="container-fluid">
+        <div class="span4">
             <label class="control-label">Tcode</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.tcode }}</span>            </div>
+                            
+                <div class="selected">{{ entity.tcode }}</legend>
+            </div>
         </div>        
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Remarks</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.remarks }}</span>            </div>
-        </div>        <div class="control-group">
+            <div class="selected">{{ entity.remarks }}</div> 
+        </div>        <div class="span4">
             <label class="control-label">Created</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>            </div>
+        </div>        <div class="span4">
             <label class="control-label">Typecontext</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.typecontext }}</span>            </div>
-        </div>        <div class="control-group">
+                            
+                <div class="selected">{{ entity.typecontext }}</div>            
+        </div>        <div class="span4">
             <label class="control-label">Outercolor</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.outercolor }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.outercolor }}</div> 
+        </div>        <div class="span4">
             <label class="control-label">Innercolor</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.innercolor }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.innercolor }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Fabriccolor</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.fabriccolor }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.fabriccolor }}</div> 
+        </div>        <div class="span4">
             <label class="control-label">Rimdiameter</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.rimdiameter }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.rimdiameter }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Rimwidth</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.rimwidth }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.rimwidth }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Wallwidth</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.wallwidth }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.wallwidth }}</div> 
+        </div>        <div class="span4">
             <label class="control-label">Maxwalldiameter</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.maxwalldiameter }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.maxwalldiameter }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Bottomwidth</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.bottomwidth }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.bottomwidth }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Height</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.height }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.height }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Basediameter</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.basediameter }}</span>            </div>
-        </div>        <div class="control-group">
+                            <div class="selected">{{ entity.basediameter }}</div>
+        </div>        <div class="span4">
             <label class="control-label">Restored</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.restored }}</span>            </div>
+                            <div class="selected">{{ entity.restored }}</div> 
         </div>
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Datation</label>
-            <div class="controls">                
-                <span class="input-xlarge uneditable-input">{{ entity.datation }}</span>
+                            
+                <div class="selected">{{ entity.datation }}</legend>
             </div>
         </div>  
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Inner Surface Treatment</label>
-            <div class="controls">
-                <span class="input-xlarge uneditable-input">
+            
+                <legend>
                     {% for element in entity.surfacetratin %}
                         <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
                     {% endfor %}
-                </span>
+                </legend>
             </div>
         </div>  
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Outer Surface Treatment</label>
-            <div class="controls">
-                <span class="input-xlarge uneditable-input">
+            
+                <legend>
                 {% for element in entity.surfacetratout %}
                     <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
-                </span>
+                </legend>
             </div>
         </div>  
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Inner & Outer Surface Treatment</label>
-                <span class="input-xlarge uneditable-input">
+                <legend>
                 {% for element in entity.surfacetratinout %}
                     <label>{{element.vocsurfacetratoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
-                </span>
+                </legend>
         </div>  
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Decoration Inner</label>
-            <div class="controls">
-                <span class="input-xlarge uneditable-input">
+            
+                <legend>
                 {% for element in entity.potdecorationin %}
                     <label>{{element.decorationoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
-                </span>
+                </legend>
             </div>
         </div>  
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Decoration Outer</label>
-            <div class="controls">
+            
                 {% for element in entity.potdecorationout %}
                     <p>{{element.decorationoption}}- {{element.color}}</p> <br />
                 {% endfor %}
             </div>
         </div>  
-        <div class="control-group">
+        <div class="span4">
             <label class="control-label">Decoration Inner & Outer</label>
-            <div class="controls">
-                <span class="input-xlarge uneditable-input">
+            
+                <legend>
                 {% for element in entity.potdecorationinout %}
                     <label>{{element.decorationoption}}</label> - <label>{{element.color}}</label> <br />
                 {% endfor %}
-                </span>
+                </legend>
             </div>
         </div>  
-    </fieldset>
-</form>
+</div>
 
 <div>
     <div class="float-left">
