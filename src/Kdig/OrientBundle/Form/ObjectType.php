@@ -117,7 +117,8 @@ class ObjectType extends AbstractType
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
-                'required' => true,
+                'label' => 'Perforation Diameter',
+                'required' => false,
                 'widget_type'  => ""
             ))
             ->add('weight', null, array(
@@ -125,7 +126,7 @@ class ObjectType extends AbstractType
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Weight',
-                'required' => true,
+                'required' => false,
                 'widget_type'  => ""
             ))
             ->add('remarks', null, array(
