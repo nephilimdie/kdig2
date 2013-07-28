@@ -29,7 +29,7 @@ class PresampleRepository extends EntityRepository
         $num = 0;
         $result = $this->createQueryBuilder('b')
             ->select('b', 'u')
-            ->from('KdigArchaelogicalBundle:Bucket', 'u')
+            ->from('KdigOrientBundle:Bucket', 'u')
             ->setParameter('bucket', $bucket->getId())
             ->where('u.id = :bucket')
             ->orderBy('b.name', 'ASC')
