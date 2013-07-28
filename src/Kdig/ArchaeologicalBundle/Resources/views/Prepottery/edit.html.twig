@@ -1,12 +1,8 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
 {% block title %}
-{{ parent() }} -  {{ 'views.edit.edit'|trans({'%entity%': 'Prepottery'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.edit.edit'|trans({'%entity%': 'Prepottery'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
-
-<h1>{{ 'views.edit.edit'|trans({'%entity%': 'Prepottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
 
 <form class="well" action="{{ path('prepottery_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <input type="hidden" name="_method" value="PUT" />
@@ -30,4 +26,13 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#kdig_archaeologicalbundle_prepotterytype_bucket').change(function() {
+            var id_us = $("#kdig_archaeologicalbundle_prepotterytype_bucket option:selected").val();
+            var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
+            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_prepotterytype_name','fill');
+        });
+    });
+</script>
 {% endblock %}
