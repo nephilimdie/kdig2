@@ -173,7 +173,13 @@ class BucketController extends Controller
     public function createAction(Request $request)
     {
         $entity  = new Bucket();
-        $form = $this->createForm(new BucketType(), $entity);
+        
+        $areas = $this->getArea();
+        $usid = null;
+        if($request->get('usid'))
+            $usid = $request->get('usid');
+        
+        $form = $this->createForm(new BucketType($areas, $usid), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -195,14 +201,18 @@ class BucketController extends Controller
      * Displays a form to create a new Bucket entity.
      *
      * @Route("/new", name="bucket_new")
-     * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
+        $areas = $this->getArea();
+        $usid = null;
+        if($request->get('usid'))
+            $usid = $request->get('usid');
+        
         $entity = new Bucket();
-        $form   = $this->createForm(new BucketType(), $entity);
+        $form   = $this->createForm(new BucketType($areas, $usid), $entity);
 
         return array(
             'entity' => $entity,
@@ -253,7 +263,13 @@ class BucketController extends Controller
             throw $this->createNotFoundException('Unable to find Bucket entity.');
         }
 
-        $editForm = $this->createForm(new BucketType(), $entity);
+        $request = $this->getRequest();
+        $areas = $this->getArea();
+        $usid = null;
+        if($request->get('usid'))
+            $usid = $request->get('usid');
+        
+        $editForm = $this->createForm(new BucketType($areas, $usid), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -281,8 +297,13 @@ class BucketController extends Controller
             throw $this->createNotFoundException('Unable to find Bucket entity.');
         }
 
+        $areas = $this->getArea();
+        $usid = null;
+        if($request->get('usid'))
+            $usid = $request->get('usid');
+        
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new BucketType(), $entity);
+        $editForm = $this->createForm(new BucketType($areas, $usid), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
@@ -368,4 +389,12 @@ class BucketController extends Controller
         return new Response($stringa);
     }
     
+    private function getArea() {
+        
+        $user = $this->get('security.context')->getToken()->getUser();
+        $group = $user->getSlectedgroup();
+        foreach ($group->getAreas() as $area)
+            $areas[]=$area->getId(); 
+        return $areas;
+    }
 }
