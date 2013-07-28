@@ -26,12 +26,12 @@
 <script type="text/javascript">
     $(document).ready(function(){
         var id_us = $("#kdig_orientbundle_buckettype_us option:selected").val();
-        var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_us: id_us });
+        var routegetdefault = Routing.generate('kdig_bucket_defaulttext', { id_us: id_us });
         getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_buckettype_name','fill');
         
         $('#kdig_orientbundle_buckettype_us').change(function() {
             var id_us = $("#kdig_orientbundle_buckettype_us option:selected").val();
-            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_us: id_us });
+            var routegetdefault = Routing.generate('kdig_bucket_defaulttext', { id_us: id_us });
             getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_buckettype_name','fill');
         });
     });
