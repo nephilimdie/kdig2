@@ -125,6 +125,7 @@ class PreobjectController extends Controller
      */
     public function createAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
@@ -164,6 +165,7 @@ class PreobjectController extends Controller
      */
     public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
@@ -218,6 +220,7 @@ class PreobjectController extends Controller
      */
     public function editAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
@@ -253,6 +256,7 @@ class PreobjectController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+        $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
