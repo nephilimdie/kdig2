@@ -35,67 +35,67 @@ class PotteryType extends AbstractType
             ->add('typecontext', null, array(
                 'label' => 'Type of context',
                 'required' => true,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('outercolor', null, array(
                 'label' => 'Outer color',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('innercolor', null, array(
                 'label' => 'Inner color',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('fabriccolor', null, array(
                 'label' => 'Fabric color',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('rimdiameter', null, array(
                 'label' => 'Rim Diameter',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('rimwidth', null, array(
                 'label' => 'Rim width',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('wallwidth', null, array(
                 'label' => 'Wall width',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('maxwalldiameter', null, array(
                 'label' => 'Max diameter',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('bottomwidth', null, array(
                 'label' => 'Bottom width',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('height', null, array(
                 'label' => 'Height',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('basediameter', null, array(
                 'label' => 'Base diameter',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('restored', null, array(
                 'label' => 'Restored',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('datation', null, array(
                 'label' => 'Date',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
             ->add('class', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
@@ -364,9 +364,9 @@ class PotteryType extends AbstractType
             ))
             ->add('remarks', 'textarea', array(
                 'label' => 'Description',
-                'help_block'  => 'Scrivi qualcosa.. -.-',
+                'help_'  => 'Scrivi qualcosa.. -.-',
                 'required' => false,
-                'widget_type'  => "block"
+                'widget_type'  => ""
             ))
 //            ->add('media', 'entity', array(
 //                'class' => 'KdigMediaBundle:Media',
