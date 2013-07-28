@@ -346,4 +346,26 @@ class BucketController extends Controller
             ->getForm()
         ;
     }
+    
+    /**
+     * Get a default text for Us from selected us.
+     *
+     * @Route("/{id_us}/getdefaulttext", name="kdig_bucket_defaulttext", options={"expose"=true})
+     * @Method("post")
+     */
+    public function getdefaulttextaction(Request $request) 
+    {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $id_us = $request->get('id_us');
+        $us = $em->getRepository('KdigArchaeologicalBundle:Us')->findOneById($id_us);
+        if (!$us) {
+            throw $this->createNotFoundException('Unable to find Us entity.');
+        }
+        $sigla = $us->getSite();
+        $stringa = $em->getRepository('KdigArchaeologicalBundle:Bucket')->freeName($sigla, $user);
+        
+        return new Response($stringa);
+    }
+    
 }
