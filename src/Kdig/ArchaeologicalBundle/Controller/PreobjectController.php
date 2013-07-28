@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrapView;
@@ -293,5 +294,24 @@ class PreobjectController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    /**
+     * Get a default text for Bucket from selected us.
+     *
+     * @Route("/{id_bucket}/getdefaulttext", name="kdig_preobject_defaulttext", options={"expose"=true})
+     * @Method("post")
+     */
+    public function getdefaulttextAction(Request $request) 
+    {
+        $id_bucket = $request->get('id_bucket');
+        $em = $this->getDoctrine()->getEntityManager();
+        $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneById($id_bucket);
+        if (!$bucket) {
+            throw $this->createNotFoundException('Unable to find Bucket entity.');
+        }
+        $stringa = $em->getRepository('KdigArchaeologicalBundle:Preobject')->freeName($bucket);
+        
+        return new Response($stringa);
     }
 }
