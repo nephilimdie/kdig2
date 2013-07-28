@@ -384,7 +384,7 @@ class BucketController extends Controller
             throw $this->createNotFoundException('Unable to find Us entity.');
         }
         $sigla = $us->getSite();
-        $stringa = $em->getRepository('KdigArchaeologicalBundle:Bucket')->freeName($sigla, $user);
+        $stringa = $em->getRepository('KdigOrientBundle:Bucket')->freeName($sigla, $user);
         
         return new Response($stringa);
     }
