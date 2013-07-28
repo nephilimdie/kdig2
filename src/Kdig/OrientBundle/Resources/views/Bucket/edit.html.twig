@@ -1,5 +1,5 @@
 {% block title %}
- {{ 'views.edit.edit'|trans({'%entity%': 'Bucket'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.edit.edit'|trans({'%entity%': 'Bucket'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
@@ -32,4 +32,14 @@
         </form>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#kdig_orientbundle_buckettype_us').change(function() {
+            var id_us = $("#kdig_orientbundle_buckettype_us option:selected").val();
+            var routegetdefault = Routing.generate('kdig_bucket_defaulttext', { id_us: id_us });
+            getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_buckettype_name','fill');
+        });
+    });
+</script>
 {% endblock %}
