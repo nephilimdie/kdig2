@@ -41,6 +41,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
             $this->addDivider($menu, true);
             $delete = $menu->addChild('delete', array('route' => 'pottery_delete', 'class'=> 'btn btn-danger', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+            $delete->setAttributes(array('class'=>'btn btn-danger'));
         }
         $this->addDivider($menu, true);
         $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
