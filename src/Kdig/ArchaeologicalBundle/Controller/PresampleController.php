@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrapView;
@@ -124,8 +125,20 @@ class PresampleController extends Controller
      */
     public function createAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity  = new Presample();
-        $form = $this->createForm(new PresampleType(), $entity);
+        $form = $this->createForm(new PresampleType($bucketid,$usid), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -150,10 +163,22 @@ class PresampleController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity = new Presample();
-        $form   = $this->createForm(new PresampleType(), $entity);
+        $form   = $this->createForm(new PresampleType($bucketid,$usid), $entity);
 
         return array(
             'entity' => $entity,
@@ -196,6 +221,13 @@ class PresampleController extends Controller
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
 
         $entity = $em->getRepository('KdigArchaeologicalBundle:Presample')->find($id);
 
@@ -203,7 +235,7 @@ class PresampleController extends Controller
             throw $this->createNotFoundException('Unable to find Presample entity.');
         }
 
-        $editForm = $this->createForm(new PresampleType(), $entity);
+        $editForm = $this->createForm(new PresampleType($bucketid,null), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -223,7 +255,14 @@ class PresampleController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity = $em->getRepository('KdigArchaeologicalBundle:Presample')->find($id);
 
         if (!$entity) {
@@ -231,7 +270,7 @@ class PresampleController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new PresampleType(), $entity);
+        $editForm = $this->createForm(new PresampleType($bucketid,null), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
@@ -293,5 +332,25 @@ class PresampleController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    
+    /**
+     * Get a default text for Bucket from selected us.
+     *
+     * @Route("/getdefaulttext", name="kdig_presample_defaulttext", options={"expose"=true})
+     * @Method("post")
+     */
+    public function getdefaulttextAction(Request $request) 
+    {
+        $id_bucket = $request->get('id_bucket');
+        $em = $this->getDoctrine()->getManager();
+        $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneById($id_bucket);
+        if (!$bucket) {
+            throw $this->createNotFoundException('Unable to find Bucket entity.');
+        }
+        $stringa = $em->getRepository('KdigArchaeologicalBundle:Presample')->freeName($bucket);
+        
+        return new Response($stringa);
     }
 }
