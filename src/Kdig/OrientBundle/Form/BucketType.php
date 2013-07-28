@@ -24,7 +24,7 @@ class BucketType extends AbstractType
         
         $builder
             ->add('us', 'entity', array(
-                'class' => 'KdigArchaelogicalBundle:Us',
+                'class' => 'KdigArchaeologicalBundle:Us',
                 'query_builder' => function($repository) use ($idarea, $usid) {
                     $expr = new \Doctrine\ORM\Query\Expr();
                     $idiota = $repository->createQueryBuilder('p')
