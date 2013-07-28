@@ -9,7 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class PreobjectType extends AbstractType
 {
     protected $bucketid;
-    protected $inobject;
     protected $us;
     
     public function __construct($bucketid, $usid = null)
@@ -36,7 +35,9 @@ class PreobjectType extends AbstractType
                     return $idiota;
                 }
             ))
-            ->add('name')
+            ->add('name',null,array(
+                'attr'=> array('class'=>'span3')
+                ))
         ;
     }
 
