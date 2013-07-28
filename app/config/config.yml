@@ -42,8 +42,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-#    form:
-#        resources:
+    form:
+        resources:
+          - KdigTemplateBundle:Deafult:Form/fields.html.twig
 #            - LexikFormFilterBundle:Form:form_div_layout.html.twig
 
 # Assetic Configuration
