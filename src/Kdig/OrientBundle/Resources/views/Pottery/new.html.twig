@@ -60,6 +60,13 @@ $(document).ready( function () {
             formid: 'potteryform',
             pause: 2000 
     });
+    
+    $(".control-group input[type=radio]").change(function(event){ 
+        event.preventDefault();
+        if($(this).is(':checked')){
+            $(this).parent('.control-group').find('.selected').html($('.control-group input[type=radio]:checked').text());
+        }
+    });
 });
 </script>
 
