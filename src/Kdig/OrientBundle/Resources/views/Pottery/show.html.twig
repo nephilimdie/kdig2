@@ -78,44 +78,56 @@
         </div>  
         <div class="span12">
             <legend class="control-label">Inner Surface Treatment
+                <div class="selected">
                     {% for element in entity.surfacetratin %}
-                        <div class="selected">{{element.vocsurfacetratoption}} - {{element.color}}</div>
+                        {{element.vocsurfacetratoption}} - {{element.color}} <br />
                     {% endfor %}
+                </div>
             </legend>
         </div>  
         <div class="span12">
             <legend class="control-label">Outer Surface Treatment
-                {% for element in entity.surfacetratout %}
-                    <div class="selected">{{element.vocsurfacetratoption}} - {{element.color}}</div>
-                {% endfor %}
+                <div class="selected">
+                    {% for element in entity.surfacetratout %}
+                        {{element.vocsurfacetratoption}} - {{element.color}} <br />
+                    {% endfor %}
+                </div>
             </legend>
         </div>  
         <div class="span12">
             <legend class="control-label">Inner & Outer Surface Treatment
-                {% for element in entity.surfacetratinout %}
-                    <div class="selected">{{element.vocsurfacetratoption}} - {{element.color}}</div>
-                {% endfor %}
+                <div class="selected">
+                    {% for element in entity.surfacetratinout %}
+                        {{element.vocsurfacetratoption}} - {{element.color}} <br />
+                    {% endfor %}
+                </div>
             </legend>
         </div>  
         <div class="span12">
             <legend class="control-label">Decoration Inner
-                {% for element in entity.potdecorationin %}
-                    <div class="selected">{{element.decorationoption}} - {{element.color}}</div>
-                {% endfor %}
+                <div class="selected">
+                    {% for element in entity.potdecorationin %}
+                        {{element.decorationoption}} - {{element.color}} <br />
+                    {% endfor %}
+                </div>
             </legend>
         </div>
         <div class="span12">
             <legend class="control-label">Decoration Outer
-                {% for element in entity.potdecorationout %}
-                    <div class="selected">{{element.decorationoption}} - {{element.color}}</div>
-                {% endfor %}
+                <div class="selected">
+                    {% for element in entity.potdecorationout %}
+                        {{element.decorationoption}} - {{element.color}} <br />
+                    {% endfor %}
+                </div>
             </legend>
         </div>
         <div class="span12">
             <legend class="control-label">Decoration Inner & Outer
-                {% for element in entity.potdecorationinout %}
-                    <div class="selected">{{element.decorationoption}} - {{element.color}}</div>
-                {% endfor %}
+                <div class="selected">
+                    {% for element in entity.potdecorationinout %}
+                        {{element.decorationoption}} - {{element.color}} <br />
+                    {% endfor %}
+                </div>
             </legend>
         </div>  
 </div>
