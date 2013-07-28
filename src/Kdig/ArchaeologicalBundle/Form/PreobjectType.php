@@ -36,9 +36,7 @@ class PreobjectType extends AbstractType
                     return $idiota;
                 }
             ))
-            ->add('bucket', null, array(
-                'attr'=> array('class'=>'span3')
-            ))
+            ->add('name')
         ;
     }
 
