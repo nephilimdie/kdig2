@@ -26,7 +26,6 @@ class PotteryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $bucketid = $this->bucketid;
-        $builder->setAttribute('class', 'span4');
         $builder
             ->add('prepottery', new PrepotteryType($bucketid) )
             ->add('tcode', null, array(
@@ -353,7 +352,8 @@ class PotteryType extends AbstractType
                 'label' => 'Description',
                 'help_inline'  => 'Scrivi qualcosa.. -.-',
                 'required' => false,
-                'widget_type'  => "inline"
+                'widget_type'  => "inline",
+                "attr" => array("rows"=>3, 'class'=>'xxlarge')
             ))
 //            ->add('media', 'entity', array(
 //                'class' => 'KdigMediaBundle:Media',
@@ -361,6 +361,8 @@ class PotteryType extends AbstractType
 //                'multiple' => true
 //            ))
         ;
+                
+        $builder->setAttribute('class', 'span4');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
