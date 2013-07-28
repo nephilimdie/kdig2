@@ -172,16 +172,20 @@ class PotteryController extends Controller
      */
     public function createAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
-        $em = $this->getDoctrine()->getEntityManager();
-        $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
         
-        $request = $this->getRequest();
-        if( $request->request->get('bucketid')) {
-            $bucketid = $request->request->get('bucketid');
-        }
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity  = new Pottery();
-        $form   = $this->createForm(new PotteryType($bucketid), $entity);
+        $form   = $this->createForm(new PotteryType($bucketid, $usid), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -209,8 +213,20 @@ class PotteryController extends Controller
      */
     public function newAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        $usid = null;
+        if($request->get('us_id'))
+            $usid = $request->get('us_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        
         $entity = new Pottery();
-        $form   = $this->createForm(new PotteryType(), $entity);
+        $form   = $this->createForm(new PotteryType($bucketid, $usid), $entity);
 
         return array(
             'entity' => $entity,
@@ -254,6 +270,13 @@ class PotteryController extends Controller
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
 
         $entity = $em->getRepository('KdigOrientBundle:Pottery')->find($id);
 
@@ -261,7 +284,7 @@ class PotteryController extends Controller
             throw $this->createNotFoundException('Unable to find Pottery entity.');
         }
 
-        $editForm = $this->createForm(new PotteryType(), $entity);
+        $editForm = $this->createForm(new PotteryType($bucketid,null), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -282,6 +305,13 @@ class PotteryController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $bucketid = null;
+        if($request->get('bucket_id'))
+            $bucketid = $request->get('bucket_id');
+        
+        if ($bucketid==null || $bucketid=='')
+            $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
 
         $entity = $em->getRepository('KdigOrientBundle:Pottery')->find($id);
 
@@ -290,7 +320,7 @@ class PotteryController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new PotteryType(), $entity);
+        $editForm = $this->createForm(new PotteryType($bucketid,null), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
