@@ -345,7 +345,7 @@ class PreobjectController extends Controller
     public function getdefaulttextAction(Request $request) 
     {
         $id_bucket = $request->get('id_bucket');
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $bucket = $em->getRepository('KdigOrientBundle:Bucket')->findOneById($id_bucket);
         if (!$bucket) {
             throw $this->createNotFoundException('Unable to find Bucket entity.');
