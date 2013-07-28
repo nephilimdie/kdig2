@@ -39,7 +39,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
             $edit = $menu->addChild('edit', array('route' => 'pottery_edit', 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
             $this->addDivider($menu, true);
-            $delete = $menu->addChild('delete', array('route' => 'pottery_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
+            $delete = $menu->addChild('delete', array('route' => 'pottery_delete', 'class'=> 'btn btn-danger', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
         $this->addDivider($menu, true);
