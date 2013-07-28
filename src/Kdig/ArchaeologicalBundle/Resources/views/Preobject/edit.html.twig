@@ -32,7 +32,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#kdig_archaeologicalbundle_preobjecttype_bucket').change(function() {
-            var id_us = $("#kdig_archaeologicalbundle_preobjecttype_bucket option:selected").val();
+            var id_bucket = $("#kdig_archaeologicalbundle_preobjecttype_bucket option:selected").val();
             var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
             getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_preobjecttype_name','fill');
         });
