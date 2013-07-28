@@ -128,7 +128,7 @@ class PreobjectController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
-            $usid = $request->get('bucket_id');
+            $bucketid = $request->get('bucket_id');
         $usid = null;
         if($request->get('us_id'))
             $usid = $request->get('us_id');
@@ -167,7 +167,7 @@ class PreobjectController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
-            $usid = $request->get('bucket_id');
+            $bucketid = $request->get('bucket_id');
         $usid = null;
         if($request->get('us_id'))
             $usid = $request->get('us_id');
@@ -221,10 +221,7 @@ class PreobjectController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
-            $usid = $request->get('bucket_id');
-        $usid = null;
-        if($request->get('us_id'))
-            $usid = $request->get('us_id');
+            $bucketid = $request->get('bucket_id');
         
         if ($bucketid==null || $bucketid=='')
             $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
@@ -237,7 +234,7 @@ class PreobjectController extends Controller
             throw $this->createNotFoundException('Unable to find Preobject entity.');
         }
 
-        $editForm = $this->createForm(new PreobjectType($bucketid,$usid), $entity);
+        $editForm = $this->createForm(new PreobjectType($bucketid,null), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -259,10 +256,7 @@ class PreobjectController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
         if($request->get('bucket_id'))
-            $usid = $request->get('bucket_id');
-        $usid = null;
-        if($request->get('us_id'))
-            $usid = $request->get('us_id');
+            $bucketid = $request->get('bucket_id');
         
         if ($bucketid==null || $bucketid=='')
             $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
@@ -276,7 +270,7 @@ class PreobjectController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new PreobjectType($bucketid,$usid), $entity);
+        $editForm = $this->createForm(new PreobjectType($bucketid,null), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
