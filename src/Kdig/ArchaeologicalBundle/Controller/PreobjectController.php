@@ -339,7 +339,7 @@ class PreobjectController extends Controller
     /**
      * Get a default text for Bucket from selected us.
      *
-     * @Route("/{id_bucket}/getdefaulttext", name="kdig_preobject_defaulttext", options={"expose"=true})
+     * @Route("/getdefaulttext", name="kdig_preobject_defaulttext", options={"expose"=true})
      * @Method("post")
      */
     public function getdefaulttextAction(Request $request) 
