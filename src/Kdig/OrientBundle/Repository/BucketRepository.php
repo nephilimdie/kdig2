@@ -34,10 +34,7 @@ class BucketRepository extends EntityRepository
         $area = $user->getSlectedarea();
         $Frombucket = $area->getFromrefbucket();
         $siteid = 1;//$sigla->getId();
-        
         $Tobucket = $area->getTorefbucket();
-        $numdef = $Frombucket;  
-        
         $presigla = $sigla->getSigla().'P.';
 
         $newvec = array();
@@ -45,13 +42,13 @@ class BucketRepository extends EntityRepository
         $result = $this->createQueryBuilder('b')
             ->select('b', 'u')
             ->from('KdigArchaeologicalBundle:Us', 'u')
-            ->setParameter('area', $area)
-                // da cambiare con quello attivo e non con 1
-            ->setParameter('siteid', $siteid)
             ->innerJoin('u.area', 'aid','WITH', 'aid = :area' )
             ->where('u.id = b.us')
             ->andWhere('u.site = :siteid')
             ->orderBy('b.name', 'ASC')
+            ->setParameter('area', $area)
+                // da cambiare con quello attivo e non con 1
+            ->setParameter('siteid', $siteid)
             ->getQuery()->getResult();
         
             foreach ($result as $str){
@@ -65,11 +62,13 @@ class BucketRepository extends EntityRepository
             for ( $i = 0; $i < $count; $i++ )
             {
                 if(!in_array($numC, $newvec)) {
-                        $let = $numC;
-                return ($presigla.str_pad($let, 4 , "0000", STR_PAD_LEFT));
+                    $let = $numC;
+                    return ($presigla.str_pad($let, 4 , "0000", STR_PAD_LEFT));
                 }
                 $numC++;
             }
+            if ($numC > (int)$Tobucket)
+                return false;
 
         return $stringa = $presigla.str_pad($numC, 4 , "0000", STR_PAD_LEFT);
     }
