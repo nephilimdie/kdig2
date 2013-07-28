@@ -2,20 +2,45 @@
     {{ 'views.edit.edit'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
+{% block page %}
+
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
+<style>
 
-{% block page %}
+div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the top of the form */
+    width:200px;
+    padding:2px 5px;
+    border:1px solid gray;
+    background:#fff6e5;
+    -webkit-box-shadow: 0 0 8px #818181;
+    box-shadow: 0 0 8px #818181;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+    color:red;
+    position:absolute;
+    top:-10px;
+    }
 
-<h1>{{ 'views.edit.edit'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
+form#feedbackform div{ /*CSS used by demo form*/
+    margin-bottom:9px;
+}
 
-<form class="well" action="{{ path('pottery_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+</style>
+    {% stylesheets
+        '@KdigOrientBundle/Resources/public/less/orient.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+<form id="potteryform" class="" action="{{ path('pottery_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <input type="hidden" name="_method" value="PUT" />
     {{ form_widget(edit_form) }}
     <p>
-        <button type="submit" class="btn btn-success">{{ 'views.edit.editbutton'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
     </p>
+    </div>
 </form>
 
 <div>
@@ -24,12 +49,37 @@
             {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
         </a>
     </div>
-    <div class="float-left">
-        <form action="{{ path('pottery_delete', { 'id': entity.id }) }}" method="post">
-            <input type="hidden" name="_method" value="DELETE" />
-            {{ form_widget(delete_form) }}
-            <button class="btn btn-danger" type="submit" onclick="return confirm('{{ 'views.recordactions.confirm'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}');">{{ 'views.recordactions.delete'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-        </form>
-    </div>
 </div>
+<script type="text/javascript">
+$(document).ready( function () {
+    var formsave1 = new autosaveform({
+            formid: 'potteryform',
+            pause: 2000 
+    });
+    
+    $(".control-group input[type=radio]").change(function(event){ 
+        var radio = $(this);
+        if($(this).is(':checked')) {
+            var checked = $(this);
+            radio.closest('.control-group').find('.selected').html(checked.parent().text());
+            radio.closest('.control-group').find('.controls').hide('slow');
+        }
+    });
+    $('.control-group legend').on('click', function(event){ 
+        event.preventDefault();
+        var legend = $(this);
+        legend.closest('.control-group').find('.controls').toggle();
+    });
+    
+    var id_bucket  = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
+    var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
+    getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+
+    $('#kdig_orientbundle_potterytype_prepottery_bucket').change(function() {
+        var id_bucket = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
+        var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
+        getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+    });
+});
+</script>
 {% endblock %}
