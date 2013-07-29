@@ -29,8 +29,7 @@ class PhotolistType extends AbstractType
             ->add('vocmachine', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\VocMachine',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('object', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),

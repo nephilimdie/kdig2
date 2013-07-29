@@ -1,33 +1,11 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
 {% block title %}
-{{ parent() }} - {{ 'views.index.list'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.index.list'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
 
 <div class="row">
-
-    <div class="span8">
-        <h1>{{ 'views.index.list'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
-    </div>
-    <div class="span2">
-        {% if form_errors(filterForm) %}
-        <div class="alert alert-block alert-error fade in form-errors">
-            {{ form_errors(filterForm) }}
-        </div>
-        {% endif %}
-        &nbsp;
-    </div>
-    <div class="span2">
-        <div class="filters-right">
-            <a class="btn dropdown-toggle" data-toggle="collapse" data-target="#filters">
-                {{ 'views.index.filters'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-                <span class="caret"></span>
-            </a>
-        </div>
-    </div>
-
+    
     <div class="span12">
         <div id="filters" class="collapse">
 

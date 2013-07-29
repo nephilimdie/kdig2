@@ -39,7 +39,7 @@ services:
           - { menu: '@kdig.orient.pottery.show.menu=' }
           - {}
           # third argument: a named array of options
-          - { fixedTop: true, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
       tags:
           # The alias is used to retrieve the navbar in templates
           - { name: mopa_bootstrap.navbar, alias: showmenupottery }
@@ -57,7 +57,7 @@ services:
           # The alias is used to retrieve the navbar in templates
           - { name: mopa_bootstrap.navbar, alias: showmenuobject }
 
-## show object menu
+## show sample menu
   kdig.archaeological.sampleshow:
       class: %mopa_bootstrap.navbar.generic%
       arguments:
@@ -69,6 +69,19 @@ services:
       tags:
           # The alias is used to retrieve the navbar in templates
           - { name: mopa_bootstrap.navbar, alias: showmenusample }
+
+## show vocs pottery menu
+  kdig.archaeological.potteryshow:
+      class: %mopa_bootstrap.navbar.generic%
+      arguments:
+          # first argument: a named array of menues:
+          - { menu: '@kdig.orient.vocspottery.index.menu=' }
+          - {}
+          # third argument: a named array of options
+          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\squaremenu.html.twig' }
+      tags:
+          # The alias is used to retrieve the navbar in templates
+          - { name: mopa_bootstrap.navbar, alias: vocsmenupottery }
 
 ## reference class            
   kdig.orient.orient_menu_builder:
@@ -101,4 +114,13 @@ services:
       arguments: [ '@request' ]
       scope: request
       tags:
-          - { name: knp_menu.menu, alias: objectmenu }
+          - { name: knp_menu.menu, alias: samplemenu }
+
+  kdig.orient.vocspottery.index.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.orient.orient_menu_builder
+      factory_method: createVocsPotteryMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: vocspotterymenu }

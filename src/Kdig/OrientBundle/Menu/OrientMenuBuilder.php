@@ -91,6 +91,37 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $zip = $export->addChild('zip', array('route' => 'sample'));
         return $menu;
     }
+    
+    public function createVocsPotteryMenu(Request $request) 
+    {
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav show-menu');
+        
+        $menu->addChild('Base', array('route' => 'pottery'));
+        $menu->addChild('Class', array('route' => 'pottery'));
+        $menu->addChild('Color', array('route' => 'pottery'));
+        $menu->addChild('Decoration Option', array('route' => 'pottery'));
+        $menu->addChild('Firing', array('route' => 'pottery'));
+        $menu->addChild('Handle', array('route' => 'pottery'));
+        $menu->addChild('Handle Position', array('route' => 'pottery'));
+        $menu->addChild('Inclusion', array('route' => 'pottery'));
+        $menu->addChild('Inclusion Frequency', array('route' => 'pottery'));
+        $menu->addChild('Inclusion Size', array('route' => 'pottery'));
+        $menu->addChild('Decoration Option', array('route' => 'pottery'));
+        $menu->addChild('Wall', array('route' => 'pottery'));
+        $menu->addChild('Upper Wall', array('route' => 'pottery'));
+        $menu->addChild('Lower Wall', array('route' => 'pottery'));
+        $menu->addChild('Neck', array('route' => 'pottery'));
+        $menu->addChild('Preservation', array('route' => 'pottery'));
+        $menu->addChild('Rim', array('route' => 'pottery'));
+        $menu->addChild('Shape', array('route' => 'pottery'));
+        $menu->addChild('Spout', array('route' => 'pottery'));
+        $menu->addChild('Spout Position', array('route' => 'pottery'));
+        $menu->addChild('Surface Treatment Option', array('route' => 'pottery'));
+        $menu->addChild('Technique', array('route' => 'pottery'));
 
+        return $menu;
+        
+    }
 
 }

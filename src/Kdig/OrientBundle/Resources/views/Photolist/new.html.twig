@@ -4,8 +4,8 @@
 
 {% block page %}
 
-<h1>{{ 'views.new.creation'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
-
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
 <form class="well" action="{{ path('photolist_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <p>
