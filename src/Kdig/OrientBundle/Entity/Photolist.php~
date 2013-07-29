@@ -84,4 +84,50 @@ class Photolist {
      * @ORM\Column(nullable=true, length=10, type="integer")
      */
     private $tonumber;
+    
+    /** 
+     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Object")
+     * @ORM\JoinTable(name="photolists_Objects",
+     *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="object_id", referencedColumnName="id")}
+     *      )
+     */
+    private $object;
+    
+    /** 
+     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery")
+     * @ORM\JoinTable(name="photolists_Potterys",
+     *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="pottery_id", referencedColumnName="id")}
+     *      )
+     */
+    private $pottery;
+    
+    /** 
+     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Sample")
+     * @ORM\JoinTable(name="photolists_Samples",
+     *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="sample_id", referencedColumnName="id")}
+     *      )
+     */
+    private $sample;
+    
+    /** 
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us")
+     * @ORM\JoinTable(name="photolists_Uss",
+     *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="us_id", referencedColumnName="id")}
+     *      )
+     */
+    private $us;
+    
+    /** 
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area")
+     * @ORM\JoinTable(name="photolists_areas",
+     *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="area_id", referencedColumnName="id")}
+     *      )
+     */
+    private $area;
+    
 }
