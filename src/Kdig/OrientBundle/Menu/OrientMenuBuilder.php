@@ -97,6 +97,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
         $base->setAttributes(array('class'=>'span1'));
+        $base->setLinkAttributes(array('class'=>'btn'));
         $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $class = $menu->addChild('Class', array('route' => 'pottery'));
@@ -155,6 +156,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $this->addIcon($upwall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $lowwal = $menu->addChild('Lower Wall', array('route' => 'pottery'));
+        $lowwal->setAttributes(array('class'=>'span1'));
         $lowwal->setLinkAttributes(array('class'=>'btn'));
         $this->addIcon($lowwal, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
