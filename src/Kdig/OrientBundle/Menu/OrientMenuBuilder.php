@@ -119,7 +119,8 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->addChild('Spout Position', array('route' => 'pottery'));
         $menu->addChild('Surface Treatment Option', array('route' => 'pottery'));
         $menu->addChild('Technique', array('route' => 'pottery'));
-
+        
+        $menu->setLabelAttributes(array('class'=> 'sapn1'));
         $menu->setAttributes(array('class'=> 'sapn1'));
         
         return $menu;
