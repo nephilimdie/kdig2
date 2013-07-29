@@ -25,7 +25,8 @@ class UploadListener
     public function onUpload(PostUploadEvent $event)
     {
         $request = $event->getRequest();
-        die(var_dump($request));
+        $file = $event->getFile();
+        die(var_dump($file));
         $gallery = $request->get('gallery');
 
             $mediaClass = $mediaAdmin->getClass();
