@@ -9,7 +9,6 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Oneup\UploaderBundle\Event\PostUploadEvent;
 use Oneup\UploaderBundle\Event\PostPersistEvent;
 use Kdig\MediaBundle\Entity\Media;
 
@@ -22,7 +21,7 @@ class UploadListener
         $this->container = $container;
     }
 
-    public function onUpload(PostUploadEvent $event)
+    public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
         $file = $event->getFile();
