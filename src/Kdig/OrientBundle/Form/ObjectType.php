@@ -37,38 +37,32 @@ class ObjectType extends AbstractType
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('type', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjType',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('material', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjMaterial',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('technique', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjTechnique',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('decoration', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('preservation', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation',
-                'property' => 'name',
-                'attr'=> array('class'=>'')
+                'property' => 'name'
             ))
             ->add('fragments', null, array(
                 'widget_control_group_attr' => array('class'=>'span4'),
