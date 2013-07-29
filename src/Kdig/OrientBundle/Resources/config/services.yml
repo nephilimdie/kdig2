@@ -71,7 +71,7 @@ services:
           - { name: mopa_bootstrap.navbar, alias: showmenusample }
 
 ## show vocs pottery menu
-  kdig.archaeological.potteryshow:
+  kdig.archaeological.vocspotteryhome:
       class: %mopa_bootstrap.navbar.generic%
       arguments:
           # first argument: a named array of menues:
