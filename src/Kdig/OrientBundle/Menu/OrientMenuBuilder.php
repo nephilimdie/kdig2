@@ -60,7 +60,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
             $edit = $menu->addChild('edit', array('route' => 'object_edit', 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
             $this->addDivider($menu, true);
-            $delete = $menu->addChild('delete', array('route' => 'object_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
+            $delete = $menu->addChild('delete', array('route' => 'object_delete', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
         $this->addDivider($menu, true);
@@ -80,7 +80,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
             $edit = $menu->addChild('edit', array('route' => 'sample_edit', 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
             $this->addDivider($menu, true);
-            $delete = $menu->addChild('delete', array('route' => 'sample_delete', 'routeParameters' => array('id' => $id, 'class'=> 'btn btn-danger')));
+            $delete = $menu->addChild('delete', array('route' => 'sample_delete', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
         $this->addDivider($menu, true);
@@ -95,7 +95,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'row-fluid');
         
-        $menu->addChild('Base', array('route' => 'pottery', 'routeParameters' => array('class'=> 'btn')));
+        $menu->addChild('Base', array('route' => 'pottery', 'class'=> 'btn'));
 //        $this->addIcon('Base', array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $menu->addChild('Class', array('route' => 'pottery'));
@@ -120,6 +120,8 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->addChild('Surface Treatment Option', array('route' => 'pottery'));
         $menu->addChild('Technique', array('route' => 'pottery'));
 
+        $menu->setAttributes(array('class'=> 'sapn1'));
+        
         return $menu;
     }
 
