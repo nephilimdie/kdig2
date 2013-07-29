@@ -94,7 +94,6 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'row-fluid');
-        $menu->setLinkAttributes(array('class'=>'btn'));
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
         $base->setAttributes(array('class'=>'btn'));
@@ -128,8 +127,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->addChild('Surface Treatment Option', array('route' => 'pottery'));
         $menu->addChild('Technique', array('route' => 'pottery'));
         
-        $menu->setLabelAttributes(array('class'=> 'sapn1'));
-        $menu->setAttributes(array('class'=> 'sapn1'));
+        $menu->setLinkAttributes(array('class'=>'btn'));
         
         return $menu;
     }
