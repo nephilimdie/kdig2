@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="media")
+     * @Route("/", name="media_index")
      * @Template()
      */
     public function indexAction()
