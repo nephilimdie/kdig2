@@ -33,7 +33,6 @@ class ObjectType extends AbstractType
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Reference Number',
                 'required' => true,
-                'widget_type'  => ""
             ))
             ->add('class', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
