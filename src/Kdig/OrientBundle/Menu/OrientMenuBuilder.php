@@ -54,7 +54,6 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
-//        die(var_dump($request));
         $list = $menu->addChild('list', array('route' => 'object'));
         $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_object) {
@@ -75,7 +74,6 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
-//        die(var_dump($request));
         $list = $menu->addChild('list', array('route' => 'sample'));
         $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_sample) {
@@ -121,7 +119,6 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->addChild('Technique', array('route' => 'pottery'));
 
         return $menu;
-        
     }
 
 }
