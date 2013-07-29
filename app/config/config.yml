@@ -60,7 +60,7 @@ assetic:
             node_paths: [/usr/local/lib/node_modules]
             apply_to: "\.less$"
             load_paths: 
-              - "%kernel.root_dir%/../vendor/mopa/boostrap-bundle/Mopa/Bundle/BootstrapBundle/Resource/bootstrap/"
+              - "%kernel.root_dir%/../vendor/mopa/boostrap-bundle/Mopa/Bundle/BootstrapBundle/Resource/bootstrap/less/"
               - "%kernel.root_dir%/../src/Kdig"
 #        lessphp:
 #            apply_to: "\.less$"
