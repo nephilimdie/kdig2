@@ -34,7 +34,7 @@ class ObjectType extends AbstractType
                 'label' => 'Reference Number',
                 'required' => true,
             ))
-            ->add('class', 'genemu_jqueryselect2_entity', array(
+            ->add('class', 'genemu_jqueryselect2_class', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
                 'property' => 'name'
