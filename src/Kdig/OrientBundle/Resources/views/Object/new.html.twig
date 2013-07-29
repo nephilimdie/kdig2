@@ -30,6 +30,8 @@ form#feedbackform div{ /*CSS used by demo form*/
 
 </style>
 
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
 <form id="objectform" class="" action="{{ path('object_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         {{ form_widget(form) }}
