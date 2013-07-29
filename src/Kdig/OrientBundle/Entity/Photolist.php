@@ -87,7 +87,7 @@ class Photolist {
     
     /** 
      * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Object")
-     * @JoinTable(name="photolists_Objects",
+     * @ORM\JoinTable(name="photolists_Objects",
      *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="object_id", referencedColumnName="id")}
      *      )
@@ -96,7 +96,7 @@ class Photolist {
     
     /** 
      * @ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery")
-     * @JoinTable(name="photolists_Potterys",
+     * @ORM\JoinTable(name="photolists_Potterys",
      *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="pottery_id", referencedColumnName="id")}
      *      )
@@ -105,7 +105,7 @@ class Photolist {
     
     /** 
      * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Sample")
-     * @JoinTable(name="photolists_Samples",
+     * @ORM\JoinTable(name="photolists_Samples",
      *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="sample_id", referencedColumnName="id")}
      *      )
@@ -114,7 +114,7 @@ class Photolist {
     
     /** 
      * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us")
-     * @JoinTable(name="photolists_Uss",
+     * @ORM\JoinTable(name="photolists_Uss",
      *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="us_id", referencedColumnName="id")}
      *      )
@@ -123,7 +123,7 @@ class Photolist {
     
     /** 
      * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area")
-     * @JoinTable(name="photolists_areas",
+     * @ORM\JoinTable(name="photolists_areas",
      *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="area_id", referencedColumnName="id")}
      *      )
