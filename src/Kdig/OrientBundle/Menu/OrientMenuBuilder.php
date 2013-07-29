@@ -92,7 +92,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
     
     public function createVocsPotteryMenu(Request $request) 
     {
-        $menu = $this->factory->createItem('root', array('childrenAttributes' => array('class' => 'btn')));
+        $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'row-fluid');
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
@@ -103,9 +103,9 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $class->setAttributes(array('class'=>'btn'));
         $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
-        $menu->addChild('Color', array('route' => 'pottery'));
-        $class->setAttributes(array('class'=>'btn'));
-        $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $color = $menu->addChild('Color', array('route' => 'pottery'));
+        $color->setChildrenAttribute('class','btn');
+        $this->addIcon($color, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $menu->addChild('Decoration Option', array('route' => 'pottery'));
         $menu->addChild('Firing', array('route' => 'pottery'));
