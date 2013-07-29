@@ -95,7 +95,7 @@ class Photolist {
     private $object;
     
     /** 
-     * @ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery")
+     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery")
      * @ORM\JoinTable(name="photolists_Potterys",
      *      joinColumns={@ORM\JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="pottery_id", referencedColumnName="id")}
