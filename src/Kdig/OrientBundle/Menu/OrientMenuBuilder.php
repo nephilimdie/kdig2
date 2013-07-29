@@ -96,108 +96,108 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'row-fluid');
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
-        $base->setAttributes(array('class'=>'span2'));
-        $base->setLinkAttributes(array('class'=>'btn'));
+        $base->setAttributes(array('class'=>''));
+        $base->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $class = $menu->addChild('Class', array('route' => 'pottery'));
-        $class->setAttributes(array('class'=>'span2'));
-        $class->setLinkAttributes(array('class'=>'btn'));
+        $class->setAttributes(array('class'=>''));
+        $class->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $color = $menu->addChild('Color', array('route' => 'pottery'));
-        $color->setAttributes(array('class'=>'span2'));
-        $color->setLinkAttributes(array('class'=>'btn'));
+        $color->setAttributes(array('class'=>''));
+        $color->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($color, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $firin = $menu->addChild('Firing', array('route' => 'pottery'));
-        $firin->setAttributes(array('class'=>'span2'));
-        $firin->setLinkAttributes(array('class'=>'btn'));
+        $firin->setAttributes(array('class'=>''));
+        $firin->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($firin, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $handle = $menu->addChild('Handle', array('route' => 'pottery'));
-        $handle->setAttributes(array('class'=>'span2'));
-        $handle->setLinkAttributes(array('class'=>'btn'));
+        $handle->setAttributes(array('class'=>''));
+        $handle->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($handle, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $handpos = $menu->addChild('Handle Position', array('route' => 'pottery'));
-        $handpos->setAttributes(array('class'=>'span2'));
-        $handpos->setLinkAttributes(array('class'=>'btn'));
+        $handpos->setAttributes(array('class'=>''));
+        $handpos->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($handpos, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $incl = $menu->addChild('Inclusion', array('route' => 'pottery'));
-        $incl->setAttributes(array('class'=>'span2'));
-        $incl->setLinkAttributes(array('class'=>'btn'));
+        $incl->setAttributes(array('class'=>''));
+        $incl->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($incl, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $inclfre = $menu->addChild('Inclusion Frequency', array('route' => 'pottery'));
-        $inclfre->setAttributes(array('class'=>'span2'));
-        $inclfre->setLinkAttributes(array('class'=>'btn'));
+        $inclfre->setAttributes(array('class'=>''));
+        $inclfre->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($inclfre, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $inclsiz = $menu->addChild('Inclusion Size', array('route' => 'pottery'));
-        $inclsiz->setAttributes(array('class'=>'span2'));
-        $inclsiz->setLinkAttributes(array('class'=>'btn'));
+        $inclsiz->setAttributes(array('class'=>''));
+        $inclsiz->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($inclsiz, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $decopt = $menu->addChild('Decoration Option', array('route' => 'pottery'));
-        $decopt->setAttributes(array('class'=>'span2'));
-        $decopt->setLinkAttributes(array('class'=>'btn'));
+        $decopt->setAttributes(array('class'=>''));
+        $decopt->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($decopt, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $wall = $menu->addChild('Wall', array('route' => 'pottery'));
-        $wall->setAttributes(array('class'=>'span2'));
-        $wall->setLinkAttributes(array('class'=>'btn'));
+        $wall->setAttributes(array('class'=>''));
+        $wall->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($wall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $upwall = $menu->addChild('Upper Wall', array('route' => 'pottery'));
-        $upwall->setAttributes(array('class'=>'span2'));
-        $upwall->setLinkAttributes(array('class'=>'btn'));
+        $upwall->setAttributes(array('class'=>''));
+        $upwall->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($upwall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $lowwal = $menu->addChild('Lower Wall', array('route' => 'pottery'));
-        $lowwal->setAttributes(array('class'=>'span2'));
-        $lowwal->setLinkAttributes(array('class'=>'btn'));
+        $lowwal->setAttributes(array('class'=>''));
+        $lowwal->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($lowwal, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $neck = $menu->addChild('Neck', array('route' => 'pottery'));
-        $neck->setAttributes(array('class'=>'span2'));
-        $neck->setLinkAttributes(array('class'=>'btn'));
+        $neck->setAttributes(array('class'=>''));
+        $neck->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($neck, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $preser = $menu->addChild('Preservation', array('route' => 'pottery'));
-        $preser->setAttributes(array('class'=>'span2'));
-        $preser->setLinkAttributes(array('class'=>'btn'));
+        $preser->setAttributes(array('class'=>''));
+        $preser->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($preser, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $rim = $menu->addChild('Rim', array('route' => 'pottery'));
-        $rim->setAttributes(array('class'=>'span2'));
-        $rim->setLinkAttributes(array('class'=>'btn'));
+        $rim->setAttributes(array('class'=>''));
+        $rim->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($rim, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $shape = $menu->addChild('Shape', array('route' => 'pottery'));
-        $shape->setAttributes(array('class'=>'span2'));
-        $shape->setLinkAttributes(array('class'=>'btn'));
+        $shape->setAttributes(array('class'=>''));
+        $shape->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($shape, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $spout = $menu->addChild('Spout', array('route' => 'pottery'));
-        $spout->setAttributes(array('class'=>'span2'));
-        $spout->setLinkAttributes(array('class'=>'btn'));
+        $spout->setAttributes(array('class'=>''));
+        $spout->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($spout, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $spoutpo = $menu->addChild('Spout Position', array('route' => 'pottery'));
-        $spoutpo->setAttributes(array('class'=>'span2'));
-        $spoutpo->setLinkAttributes(array('class'=>'btn'));
+        $spoutpo->setAttributes(array('class'=>''));
+        $spoutpo->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($spoutpo, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $surf = $menu->addChild('Surface Treatment Option', array('route' => 'pottery'));
-        $surf->setAttributes(array('class'=>'span2'));
-        $surf->setLinkAttributes(array('class'=>'btn'));
+        $surf->setAttributes(array('class'=>''));
+        $surf->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($surf, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $tec = $menu->addChild('Technique', array('route' => 'pottery'));
-        $tec->setAttributes(array('class'=>'span2'));
-        $tec->setLinkAttributes(array('class'=>'btn'));
+        $tec->setAttributes(array('class'=>''));
+        $tec->setLinkAttributes(array('class'=>'btn span2'));
         $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         
