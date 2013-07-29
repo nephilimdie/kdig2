@@ -1,6 +1,6 @@
 kdig_media:
-    resource: "@KdigMediaBundle/Resources/config/routing.yml"
-    prefix:   /media
+    resource: "@KdigMediaBundle/Controller/"
+    prefix:   /
 
 kdig_user:
     resource: "@KdigUserBundle/Controller/"
