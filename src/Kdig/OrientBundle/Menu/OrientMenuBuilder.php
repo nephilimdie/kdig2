@@ -96,22 +96,26 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'row-fluid');
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
-        $base->setAttributes(array('class'=>'btn'));
+        $base->setAttributes(array('class'=>'span1'));
         $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $class = $menu->addChild('Class', array('route' => 'pottery'));
+        $class->setAttributes(array('class'=>'span1'));
         $class->setLinkAttributes(array('class'=>'btn'));
         $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $color = $menu->addChild('Color', array('route' => 'pottery'));
+        $color->setAttributes(array('class'=>'span1'));
         $color->setLinkAttributes(array('class'=>'btn'));
         $this->addIcon($color, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $firin = $menu->addChild('Firing', array('route' => 'pottery'));
+        $firin->setAttributes(array('class'=>'span1'));
         $firin->setLinkAttributes(array('class'=>'btn'));
         $this->addIcon($firin, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $handle = $menu->addChild('Handle', array('route' => 'pottery'));
+        $handle->setAttributes(array('class'=>'span1'));
         $handle->setLinkAttributes(array('class'=>'btn'));
         $this->addIcon($handle, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
