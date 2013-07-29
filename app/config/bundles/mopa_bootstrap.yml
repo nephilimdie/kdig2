@@ -1,4 +1,13 @@
 mopa_bootstrap:
+    initializr:
+        meta:
+            title:        "KdigProject"
+            description:  "Archaeological Data Managment System"
+            keywords:     "kdig,archaeo,archaeological,system,object,pottery,sample,area,us,site,orient,stratigraphic,unit,"
+            author_name:  "Stefano Bassetto"
+            author_url:   "/human.txt"
+            nofollow:     false
+            noindex:      false
     form:
         show_child_legend: true # default is true
         error_type: inline 
