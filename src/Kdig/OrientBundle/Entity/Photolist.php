@@ -86,12 +86,11 @@ class Photolist {
     private $tonumber;
     
     /** 
-     * @ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Object")
+     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Object")
      * @JoinTable(name="photolists_Objects",
      *      joinColumns={@JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="object_id", referencedColumnName="id")}
      *      )
-     * @ORM\OneToMany(targetEntity="", mappedBy="class", cascade={"persist"}) 
      */
     private $object;
     
@@ -105,7 +104,7 @@ class Photolist {
     private $pottery;
     
     /** 
-     * @ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Sample")
+     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Sample")
      * @JoinTable(name="photolists_Samples",
      *      joinColumns={@JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="sample_id", referencedColumnName="id")}
@@ -114,7 +113,7 @@ class Photolist {
     private $sample;
     
     /** 
-     * @ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us")
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Us")
      * @JoinTable(name="photolists_Uss",
      *      joinColumns={@JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="us_id", referencedColumnName="id")}
@@ -123,7 +122,7 @@ class Photolist {
     private $us;
     
     /** 
-     * @ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area")
+     * @ORM\ManyToMany(targetEntity="Kdig\ArchaeologicalBundle\Entity\Area")
      * @JoinTable(name="photolists_areas",
      *      joinColumns={@JoinColumn(name="photolist_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="area_id", referencedColumnName="id")}
