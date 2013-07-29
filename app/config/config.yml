@@ -51,7 +51,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: true
-    bundles:        [ KdigTemplateBundle, KdigOrientBundle, KdigArchaeologicalBundle ]
+    bundles:        [ KdigTemplateBundle, KdigOrientBundle, KdigArchaeologicalBundle, KdigMediaBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
