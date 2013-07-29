@@ -1,4 +1,20 @@
 
+    {% stylesheets
+        '@KdigMediaBundle/Resources/public/css/jquery.fileupload-ui.css'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+    
+    {% javascripts
+        '@KdigMediaBundle/Resources/public/js/jquery.iframe-transport.js'
+        '@KdigMediaBundle/Resources/public/js/jquery.ui.widget.js'
+        '@KdigMediaBundle/Resources/public/js/jquery.fileupload.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        
+    {% endjavascripts %}
+        
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script type="text/javascript">
 $(document).ready(function()
 {
