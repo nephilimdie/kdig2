@@ -13,5 +13,25 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#fileupload').fileupload();
+        $('#fileupload').bind('fileuploadsend', function (e, data) {
+            if (data.dataType.substr(0, 6) === 'iframe') {
+                var progressObj = {
+                    name: '{{ oneup_uploader_upload_key() }}',
+                    value: (new Date()).getTime() // pseudo unique ID
+                };
+
+                data.formData.push(progressObj);
+                data.context.data('interval', setInterval(function () {
+                    $.get('{{ oneup_uploader_progress("gallery") }}', $.param([progressObj]), function (result) {
+                        e = $.Event( 'progress', {bubbles: false, cancelable: true});
+                        $.extend(e, result);
+                        ($('#fileupload').data('blueimp-fileupload') ||
+                            $('#fileupload').data('fileupload'))._onProgress(e, data);
+                    }, 'json');
+                }, 1000));
+            }
+        }).bind('fileuploadalways', function (e, data) {
+            clearInterval(data.context.data('interval'));
+        });
     });
 </script>
