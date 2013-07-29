@@ -99,9 +99,15 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $base->setAttributes(array('class'=>'btn'));
         $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
-        $menu->addChild('Class', array('route' => 'pottery'));
+        $class = $menu->addChild('Class', array('route' => 'pottery'));
+        $class->setAttributes(array('class'=>'btn'));
+        $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        
         $menu->addChild('Color', array('route' => 'pottery'));
-        $menu->addChild('Decoration Option', array('route' => 'pottery'));
+        $class->setAttributes(array('class'=>'btn'));
+        $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        
+        $menu->addChild('Decoration Option', array('route' => 'pottery','childrenAttributes' => array('class' => 'nav')));
         $menu->addChild('Firing', array('route' => 'pottery'));
         $menu->addChild('Handle', array('route' => 'pottery'));
         $menu->addChild('Handle Position', array('route' => 'pottery'));
