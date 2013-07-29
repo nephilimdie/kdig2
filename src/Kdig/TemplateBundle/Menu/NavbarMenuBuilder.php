@@ -146,7 +146,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $pot->addChild('New', array('route' => 'pottery_new'));
             $pot->addChild('List', array('route' => 'pottery'));
             $pot->addChild('Home', array('route' => 'pottery_home'));
-            $media->addChild('New', array('route' => 'default_index'));
+            $media->addChild('New', array('route' => 'media_index'));
             $media->addChild('List', array('route' => 'default_index'));
             
         } elseif ($this->role_object) {
