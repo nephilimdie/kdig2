@@ -2,3 +2,4 @@ oneup_uploader:
     mappings:
         gallery:
             frontend: blueimp
+            enable_progress: true
