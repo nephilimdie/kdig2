@@ -3,3 +3,6 @@ oneup_uploader:
         gallery:
             frontend: blueimp
 #            enable_progress: true
+            storage:
+                type: gaufrette
+                filesystem: gaufrette.gallery_filesystem 
