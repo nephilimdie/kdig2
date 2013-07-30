@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: bundles/mopa_bootstrap.yml }
     - { resource: bundles/knp_menu.yml }
+    - { resource: bundles/knp_gaufrette.yml }
     - { resource: bundles/jms_di_extra.yml }
     - { resource: bundles/jms_security_extra.yml }
     - { resource: bundles/doctrine_extensions.yml }
