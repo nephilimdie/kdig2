@@ -1,0 +1,10 @@
+knp_gaufrette:
+    adapters:
+        gallery:
+            local:
+                directory: %kernel.root_dir%/../web/uploads
+                create: true
+
+    filesystems:
+        gallery:
+            adapter: gallery
