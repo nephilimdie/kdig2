@@ -25,7 +25,8 @@ class UploadListener
     {
         $request = $event->getRequest();
         $file = $event->getFile();
-        die(var_dump($file));
+        die('de dump is ' . var_dump($file));
+        
         $gallery = $request->get('gallery');
 
             $mediaClass = $mediaAdmin->getClass();
