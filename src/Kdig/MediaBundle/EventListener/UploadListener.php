@@ -26,14 +26,14 @@ class UploadListener
     public function postUpload(PostUploadEvent $event) {
         
         $request = $event->getRequest();
-        $file = $event->getFile();
+        $file = $this->getFiles($request->files);
         die('de dump is ' . var_dump($file));
     }
     public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
-        $file = $event->getFile();
-//        die('de dump is ' . var_dump($file));
+        $file = $this->getFiles($request->files);
+        die('de dump is ' . var_dump($file));
         $gallery = $request->get('gallery');
             $mediaClass = $mediaAdmin->getClass();
             /** @var $media \Sonata\MediaBundle\Model\MediaInterface */
