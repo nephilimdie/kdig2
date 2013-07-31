@@ -311,8 +311,6 @@ class PhotolistController extends Controller
     }
     
     /**
-     * Lists all Photolist entities.
-     *
      * @Route("/add/", name="photolist_add")
      * @Method("GET")
      * @Template()
@@ -321,5 +319,74 @@ class PhotolistController extends Controller
     public function addAction()
     {
         return array();
+    }
+    
+    /**
+     * @Route("/merge/", name="photolist_add")
+     * @Method("GET")
+     * @Template()
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
+     */
+    public function mergephoto(Request $request) {
+        // get list isMerged false
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('KdigOrientBundle:Photolist')->findBy(array('isMerged'=>true));
+        //  get photofrom
+        $photoFrom = $entity->getFromnumber();
+        //  get phototo
+        $photoTo = $entity->getTonumber();
+        // get vocmachine
+        $machine = $entity->getVocmachine()->getName();
+        //  $areas = get Entities Area
+        $areas = $entity->getArea();
+        //  $uss = get Entities US
+        $uss = $entity->getUs();
+        //  $objs = get Entities Obj
+        $objs = $entity->getObject();
+        //  $pots = get Entities Pottery
+        $pots = $entity->getPottery();
+        //  $sams = get Entities Sample
+        $sams = $entity->getSample();
+        // 
+        $photonotexist = array();
+        // for from photoFrom to photoTo
+        for ($i=$photoFrom; $i<=$photoTo; $i++) {
+            //make photoname --- check number of character in name, maybe 4 numbers. eg 0291
+            $namePhoto = $machine.$i;
+            //      $photo = find photo in Media
+            $photo  = $em->getRepository('KdigMediaBundle:Media')->findOneBy(array('name'=>$namePhoto));
+        //      if photo not exist in media, so in array -> tell to user
+            if(!$photo)
+                $photonotexist[] = $namePhoto; //so "queste foto non sono state ancora caricate" dunque crea nuova lista photononcaricate
+        //      if photo exist in media
+            else {
+                foreach ($areas as $area) {
+        //                  if photo isInArray() of element
+                    $area->setMedia($photo);
+                    $area->save();
+                }
+        //              foreach ($uss ad $us)
+                foreach ($uss as $us) {
+        //                  if photo isInArray() of element
+                    $us->setMedia($photo);
+                    $us->save();
+                }
+                foreach ($objs as $obj) {
+        //                  if photo isInArray() of element
+                    $obj->setMedia($photo);
+                    $obj->save();
+                }
+                foreach ($pots as $pot){
+        //                  if photo isInArray() of element
+                    $pot->setMedia($photo);
+                    $pot->save();
+                }
+                foreach ($sams as $sam) {
+        //                  if photo isInArray() of element
+                    $sam->setMedia($photo);
+                    $sam->save();
+                }
+            } //end else
+        }  //end for
     }
 }
