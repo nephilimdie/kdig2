@@ -112,10 +112,15 @@
             {% block content_row %}
             <div class="row-fluid">
                 {% block content %}
-                <div class="span3">
-                    {% block content_sidebar %}
+                <div class="span2">
+                    {% block content_sidebar_menu_context %}
                     <h2>Sidebar</h2>
-                    {% endblock content_sidebar %}
+                    {% endblock content_sidebar_menu_context %}
+                </div>
+                <div class="span2">
+                    {% block content_sidebar_menu_vocs %}
+                    <h2>Sidebar</h2>
+                    {% endblock content_sidebar_menu_vocs %}
                 </div>
                 <div class="span9">
                     {% block content_content %}

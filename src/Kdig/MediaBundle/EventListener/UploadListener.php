@@ -1,6 +1,6 @@
 <?php
 
-namespace Kdig\MediaBundle\Listener;
+namespace Kdig\MediaBundle\EventListener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Kdig\OrientBundle\Entity\Bucket as Bucket;
