@@ -1,3 +1,6 @@
+
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
 <div>
     <form class="" action="{{ path('photolist_create') }}" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
@@ -5,4 +8,4 @@
             <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
         </p>
     </form>
-<div>
+</div>
