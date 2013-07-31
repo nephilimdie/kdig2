@@ -1,23 +1,8 @@
-{% block title %}
-    {{ 'views.new.creation'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}
-{% endblock %}
-
-{% block page %}
-
-{{ form_javascript(form) }}
-{{ form_stylesheet(form) }}
-<form class="well" action="{{ path('photolist_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-    </p>
-</form>
-
 <div>
-    <div class="float-left">
-        <a class="btn" href="{{ path('photolist') }}">
-            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
-    </div>
-</div>
-{% endblock %}
+    <form class="" action="{{ path('photolist_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
+    </form>
+<div>
