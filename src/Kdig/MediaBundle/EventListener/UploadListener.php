@@ -33,7 +33,7 @@ class UploadListener
     {
         $request = $event->getRequest();
         $file = $event->getFile();
-        die('de dump is ' . var_dump($file));
+//        die('de dump is ' . var_dump($file));
         
         $gallery = $request->get('gallery');
 
