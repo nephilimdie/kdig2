@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrapView;
@@ -14,6 +15,15 @@ use Pagerfanta\View\TwitterBootstrapView;
 use Kdig\OrientBundle\Entity\Photolist;
 use Kdig\OrientBundle\Form\PhotolistType;
 use Kdig\OrientBundle\Form\PhotolistFilterType;
+
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Action\MassAction;
+use APY\DataGridBundle\Grid\Action\DeleteMassAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Photolist controller.
@@ -121,6 +131,7 @@ class PhotolistController extends Controller
      * @Route("/", name="photolist_create")
      * @Method("POST")
      * @Template("KdigOrientBundle:Photolist:new.html.twig")
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -149,6 +160,7 @@ class PhotolistController extends Controller
      * @Route("/new", name="photolist_new")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
     public function newAction()
     {
@@ -192,6 +204,7 @@ class PhotolistController extends Controller
      * @Route("/{id}/edit", name="photolist_edit")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -219,6 +232,7 @@ class PhotolistController extends Controller
      * @Route("/{id}", name="photolist_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Photolist:edit.html.twig")
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -256,6 +270,7 @@ class PhotolistController extends Controller
      *
      * @Route("/{id}", name="photolist_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
@@ -301,6 +316,7 @@ class PhotolistController extends Controller
      * @Route("/add/", name="photolist_add")
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
     public function addAction()
     {
