@@ -10,6 +10,8 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Oneup\UploaderBundle\Event\PostPersistEvent;
+use Oneup\UploaderBundle\Event\PostUploadEvent;
+
 use Kdig\MediaBundle\Entity\Media;
 
 class UploadListener
@@ -20,7 +22,13 @@ class UploadListener
     {
         $this->container = $container;
     }
-
+    
+    public function postUpload(PostUploadEvent $event) {
+        
+        $request = $event->getRequest();
+        $file = $event->getFile();
+        die('de dump is ' . var_dump($file));
+    }
     public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
