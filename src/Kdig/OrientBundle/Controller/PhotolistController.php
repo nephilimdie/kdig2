@@ -294,4 +294,16 @@ class PhotolistController extends Controller
             ->getForm()
         ;
     }
+    
+    /**
+     * Lists all Photolist entities.
+     *
+     * @Route("/add/", name="photolist_add")
+     * @Method("GET")
+     * @Template()
+     */
+    public function addAction()
+    {
+        return array();
+    }
 }
