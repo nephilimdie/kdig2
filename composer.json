@@ -22,8 +22,8 @@
 
         "presta/sitemap-bundle": "dev-master",
         
-        "mopa/bootstrap-bundle": "dev-master",
-        "twitter/bootstrap": "dev-master",
+        "mopa/bootstrap-bundle": "2.3.2",
+        "twitter/bootstrap": "2.3.2",
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.2",
         "knplabs/knp-menu" : "1.1.2",
@@ -89,7 +89,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
