@@ -273,6 +273,29 @@ class Photolist {
     }
 
     /**
+     * Set isMerged
+     *
+     * @param boolean $isMerged
+     * @return Photolist
+     */
+    public function setIsMerged($isMerged)
+    {
+        $this->isMerged = $isMerged;
+    
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean 
+     */
+    public function getIsMerged()
+    {
+        return $this->isMerged;
+    }
+
+    /**
      * Set isDelete
      *
      * @param boolean $isDelete
