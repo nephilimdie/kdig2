@@ -1,0 +1,25 @@
+{% block title %}
+    {{ 'views.new.creation'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}
+{% endblock %}
+
+{% block page %}
+
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
+
+<p>
+  <button class="btn add_photo" type="button">Add Photolist</button>
+</p>
+
+<div class="add_new_photolist">
+</div>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $('.add_photo').on("click", function(event){ 
+        event.preventDefault();
+        getdefaultstringAjax ($(this).attr('href'), $('.add_new_photolist'), 'html')
+    });
+});
+</script>
+{% endblock %}
