@@ -67,6 +67,11 @@ class Photolist {
     private $isDelete=false;
 
     /**
+     * @ORM\Column(nullable=true, name="is_merged", type="boolean")
+     */
+    private $isMerged=false;
+
+    /**
      * @ORM\ManyToOne(targetEntity="VocMachine", inversedBy="photolist")
      * @ORM\JoinColumn(nullable=true, name="vocmachine_id", referencedColumnName="id", onDelete="SET NULL")
      * @Assert\NotBlank()
