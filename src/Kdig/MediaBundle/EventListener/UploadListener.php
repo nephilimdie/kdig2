@@ -34,14 +34,10 @@ class UploadListener
         $request = $event->getRequest();
         $file = $event->getFile();
 //        die('de dump is ' . var_dump($file));
-        
         $gallery = $request->get('gallery');
-
             $mediaClass = $mediaAdmin->getClass();
             /** @var $media \Sonata\MediaBundle\Model\MediaInterface */
             $media = new $mediaClass();
-
-
         // added with sonata media
             /** @var $mediaAdmin \Sonata\MediaBundle\Admin\ORM\MediaAdmin */
             $mediaAdmin = $this->get('sonata.media.admin.media');
@@ -66,7 +62,5 @@ class UploadListener
         if ($user) {
             $aclProvider->addObjectPermission($media, MaskBuilder::MASK_OWNER, $user);
         }
-
-
     }
 }
