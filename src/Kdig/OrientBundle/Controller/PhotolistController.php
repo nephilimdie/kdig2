@@ -322,7 +322,7 @@ class PhotolistController extends Controller
     }
     
     /**
-     * @Route("/merge/", name="photolist_add")
+     * @Route("/merge/", name="photolist_merge")
      * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
