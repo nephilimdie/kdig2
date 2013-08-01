@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Description of ArchaelogicalBundle 
+ * Description of OrientBundle 
  *
- * @ author Stefano Bassetto <stefano.bassetto@gmail.com>
+ * @author Stefano Bassetto <stefano.bassetto@gmail.com>
  */
 
 namespace Kdig\OrientBundle\Entity;
