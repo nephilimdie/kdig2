@@ -11,7 +11,6 @@ class PhotolistType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('remarks')
             ->add('fromnumber', null, array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
@@ -66,6 +65,14 @@ class PhotolistType extends AbstractType
                 'property' => 'name',
                 'attr'=> array('class'=>''),
                 'required' => false
+            ))
+            ->add('remarks', null, array(
+                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'label' => 'Remarks',
+                'required' => false,
+                'widget_type'  => ""
             ))
         ;
     }
