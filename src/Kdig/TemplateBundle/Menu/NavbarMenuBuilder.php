@@ -91,12 +91,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
     public function createArchaeologicalMenu(Request $request)
     {
-        $menu = null;
-        if ($this->isLoggedIn) { 
-            $menu = $this->factory->createItem('root');
-            $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
-        }
-        
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
         if ($this->role_archaeology) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
             $su->setChildrenAttribute('class', 'leftMenu dropdown-menu');
