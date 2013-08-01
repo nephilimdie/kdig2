@@ -487,9 +487,8 @@ class Us {
      */
     public function addRelationsfrom(\Kdig\ArchaeologicalBundle\Entity\Matrix $relationsfrom)
     {
-        $this->relationsfrom[] = $relationsfrom;
-    
-        return $this;
+        $relationsfrom->setFromuss($this);
+        $this->relationsfrom->add($relationsfrom);
     }
 
     /**
