@@ -1,5 +1,4 @@
 <?php
-// src/Tutorial/BlogBundle/Admin/PostAdmin.php
 namespace Kdig\OrientBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
@@ -11,7 +10,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 
-use Kdig\OrientBundle\Entity\VocMachineType;
+use Kdig\OrientBundle\Entity\VocMachine;
 
 class VocMachineAdmin extends Admin
 {
