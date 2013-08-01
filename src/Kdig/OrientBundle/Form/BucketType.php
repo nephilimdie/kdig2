@@ -23,7 +23,7 @@ class BucketType extends AbstractType
         $usid = $this->usid;
         
         $builder
-            ->add('us', 'entity', array(
+            ->add('us', 'genemu_jqueryselect2_entity', array(
                 'class' => 'KdigArchaeologicalBundle:Us',
                 'query_builder' => function($repository) use ($idarea, $usid) {
                     $expr = new \Doctrine\ORM\Query\Expr();
