@@ -19,6 +19,7 @@ imports:
     - { resource: bundles/admin/sonata_admin.yml }
     - { resource: bundles/admin/sonata_user.yml }
     - { resource: '@KdigArchaeologicalBundle/Resources/config/admin.yml' }
+    - { resource: '@KdigOrientBundle/Resources/config/admin.yml' }
     
 framework:
     #esi:             ~
