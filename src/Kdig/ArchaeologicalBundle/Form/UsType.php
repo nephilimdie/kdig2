@@ -81,7 +81,7 @@ class UsType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
                     'attr' => array('class' => 'span3'),
-                    'widget_control_group_attr' => array('class'=>'span4'),
+                    'widget_control_group_attr' => array('class'=>'span12'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
