@@ -35,31 +35,37 @@ class PhotolistType extends AbstractType
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Object',
                 'property' => 'number',
-                'attr'=> array('class'=>'')
+                'attr'=> array('class'=>''),
+                'required' => false
             ))
             ->add('pottery', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Pottery',
                 'property' => 'prepottery.name',
-                'attr'=> array('class'=>'')
+                'attr'=> array('class'=>''),
+                'required' => false
             ))
             ->add('sample', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Sample',
                 'property' => 'presample.name',
-                'attr'=> array('class'=>'')
+                'attr'=> array('class'=>''),
+                'required' => false
+                
             ))
             ->add('us', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Us',
                 'property' => 'name',
-                'attr'=> array('class'=>'')
+                'attr'=> array('class'=>''),
+                'required' => false
             ))
             ->add('area', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Area',
                 'property' => 'name',
-                'attr'=> array('class'=>'')
+                'attr'=> array('class'=>''),
+                'required' => false
             ))
         ;
     }
