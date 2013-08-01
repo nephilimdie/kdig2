@@ -55,7 +55,6 @@ class PhotolistType extends AbstractType
             ->add('us', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Us',
-                'property' => 'name',
                 'attr'=> array('class'=>''),
                 'required' => false
             ))
