@@ -22,8 +22,11 @@ class MatrixType extends AbstractType
         $idarea = $this->areaid;
         
         $builder
-            ->add('typerelation')
-            ->add('fromuss')
+            ->add('typerelation',null, array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
+            ))
             ->add('touss', 'entity', array(
                 'class' => 'KdigArchaeologicalBundle:Us',
                 'query_builder' => function($repository) use ($idarea) {
@@ -38,7 +41,10 @@ class MatrixType extends AbstractType
                 },
                 'required' => true,
                 'label' => 'SU Definition',
-                'help_block'  => 'Select SU'
+                'help_block'  => 'Select SU',
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'label_attr' => array('class'=>'mylabelclass'),
             ))
         ;
     }
