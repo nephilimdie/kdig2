@@ -4,6 +4,13 @@
 
 {% block page %}
 
+{{ form_javascript(edit_form) }}
+{{ form_stylesheet(edit_form) }}
+
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(edit_form) }}
+
 <form class="well" action="{{ path('us_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <input type="hidden" name="_method" value="PUT" />
     {{ form_widget(edit_form) }}
