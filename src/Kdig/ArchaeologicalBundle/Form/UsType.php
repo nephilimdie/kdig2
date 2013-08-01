@@ -72,7 +72,7 @@ class UsType extends AbstractType
                 'widget_control_group_attr' => array('class'=>'span12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
-                'type' => new MatrixType(), 
+                'type' => new MatrixType($idarea), 
                 'by_reference' => false,
                 'allow_add' => true,
                 'allow_delete' => true,
