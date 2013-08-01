@@ -158,7 +158,6 @@ class PhotolistController extends Controller
      * Displays a form to create a new Photolist entity.
      *
      * @Route("/new", name="photolist_new")
-     * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
