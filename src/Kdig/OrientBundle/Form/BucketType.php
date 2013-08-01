@@ -40,8 +40,7 @@ class BucketType extends AbstractType
                 'required' => true,
                 'label' => 'SU Definition',
                 'help_block'  => 'It defines the SU number'
-            ));
-        $builder
+            ))
             ->add('name', null, array(
                 'label' => 'Bucket Definition',
                 'help_block'  => 'It is automatically given by the DB - if does not appear press the reload button'
