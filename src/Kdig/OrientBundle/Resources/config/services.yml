@@ -1,6 +1,6 @@
 parameters:
     kdig_orient.orient_menu_builder.class: 'Kdig\OrientBundle\Menu\OrientMenuBuilder'
-    kdig_orient.admin.group.name: 'Kdig Archaeological'
+    kdig_orient.admin.group.name: 'Kdig Orient'
 
 services:
   ## post pre update event after persist object
