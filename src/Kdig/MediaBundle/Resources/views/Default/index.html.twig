@@ -7,22 +7,6 @@
     '@KdigMediaBundle/Resources/public/css/jquery.fileupload-ui.css'
 %} <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" /> {% endstylesheets %}
 
-<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
-<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-{% javascripts
-    '@KdigMediaBundle/Resources/public/js/jquery.iframe-transport.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.ui.widget.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.fileupload.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-process.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-image.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-audio.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-video.js'
-    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-validate.js'
-%} <script type="text/javascript" src="{{ asset_url }}"></script> {% endjavascripts %}
-
     <!-- The fileinput-button span is used to style the file input field as button -->
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
@@ -39,6 +23,22 @@
     <!-- The container for the uploaded files -->
     <div id="files" class="files"></div>
     <br>
+
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+{% javascripts
+    '@KdigMediaBundle/Resources/public/js/jquery.iframe-transport.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.ui.widget.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.fileupload.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-process.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-image.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-audio.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-video.js'
+    '@KdigMediaBundle/Resources/public/js/jquery.fileupload-validate.js'
+%} <script type="text/javascript" src="{{ asset_url }}"></script> {% endjavascripts %}
 
 <script type="text/javascript">
 /*jslint unparam: true, regexp: true */
