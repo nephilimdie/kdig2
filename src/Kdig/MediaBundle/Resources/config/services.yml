@@ -3,10 +3,9 @@ parameters:
 
 services:
   ## post pre update event after persist object
-  media.upload.listener:
+  media.upload_listener:
       class: 'Kdig\MediaBundle\EventListener\UploadListener'
       arguments: [ '@service_container' ]
       tags:
           - { name: doctrine.event_listener, event: oneup_uploader.post_persist, method: onUpload }
-          - { name: doctrine.event_listener, event: oneup_uploader.post_upload, method: preUpload }
           
