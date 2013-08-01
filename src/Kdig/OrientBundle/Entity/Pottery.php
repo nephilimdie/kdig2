@@ -25,7 +25,7 @@ use Symfony\Component\HttpKernel\Kernel;
  * @ORM\Table(name="pottery", schema="public")
  * @Gedmo\Loggable
  * @ORM\HasLifecycleCallbacks
- * @GRID\Source(columns="id,surfacetratin,prepottery.bucket.us.site.campagna, prepottery.bucket.us.area.name, typecontext, prepottery.bucket.us.typeus.name, prepottery.bucket.us.name, prepottery.bucket.name, prepottery.name, class.name, shape.name, rim.name, neck.name, wall.name, upperwall.name, lowerwall.name, base.name, handle.name, handleposition.name, spout.name, spoutposition.name, preservation.name, technique.name, firing.name, outercolor, innercolor, fabriccolor, inclusion.name, inclusionsize.name, inclusionfrequency.name, rimdiameter, rimwidth, wallwidth,  maxwalldiameter, bottomwidth, height, basediameter,datation,restored, remarks, created, tcode")
+ * @GRID\Source(columns="id,prepottery.bucket.us.site.campagna, prepottery.bucket.us.area.name, typecontext, prepottery.bucket.us.typeus.name, prepottery.bucket.us.name, prepottery.bucket.name, prepottery.name, class.name, shape.name, rim.name, neck.name, wall.name, upperwall.name, lowerwall.name, base.name, handle.name, handleposition.name, spout.name, spoutposition.name, preservation.name, technique.name, firing.name, outercolor, innercolor, fabriccolor, inclusion.name, inclusionsize.name, inclusionfrequency.name, rimdiameter, rimwidth, wallwidth,  maxwalldiameter, bottomwidth, height, basediameter,datation,restored, remarks, created, tcode")
  */
 class Pottery {
     
