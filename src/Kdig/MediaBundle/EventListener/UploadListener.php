@@ -10,7 +10,6 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Oneup\UploaderBundle\Event\PostPersistEvent;
-use Oneup\UploaderBundle\Event\PostUploadEvent;
 
 use Kdig\MediaBundle\Entity\Media;
 
