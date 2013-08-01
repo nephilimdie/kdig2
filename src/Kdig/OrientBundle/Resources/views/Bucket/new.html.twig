@@ -2,11 +2,14 @@
     {{ 'views.new.creation'|trans({'%entity%': 'Bucket'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
+{% block page %}
+
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
+
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
-
-{% block page %}
 
 <form class="well" action="{{ path('bucket_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
