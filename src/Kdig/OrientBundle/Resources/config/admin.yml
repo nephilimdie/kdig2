@@ -6,6 +6,6 @@ services:
   kdig.orient.admin.vocmachine:
       class: Kdig\OrientBundle\Admin\VocMachineAdmin
       tags:
-        - { name: sonata.admin, manager_type: orm, group: '%kdig_orient.admin.group.name%', label: Voc Photo Machine }
+        - { name: sonata.admin, manager_type: orm, group: '%kdig_orient.admin.group.name%', label: 'Voc Photo Machine' }
       arguments: [null, Kdig\OrientBundle\Entity\VocMachine, KdigOrientBundle:VocMachineAdmin]
       
