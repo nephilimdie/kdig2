@@ -27,7 +27,7 @@ class MatrixType extends AbstractType
                 'widget_controls_attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
-            ->add('touss', 'entity', array(
+            ->add('touss', 'genemu_jqueryselect2_entity', array(
                 'class' => 'KdigArchaeologicalBundle:Us',
                 'query_builder' => function($repository) use ($idarea) {
                     $expr = new \Doctrine\ORM\Query\Expr();
