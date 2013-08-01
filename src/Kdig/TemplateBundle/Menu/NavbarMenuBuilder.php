@@ -91,16 +91,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
     public function createArchaeologicalMenu(Request $request)
     {
-        $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
-
-//        $pot = $menu->addChild('Pottery', array('route' => 'default_index'));
-//        $this->addIcon($pot, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
-//        $obj = $menu->addChild('Object', array('route' => 'default_index'));
-//        $this->addIcon($obj, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
-//        $smp = $menu->addChild('Sample', array('route' => 'default_index'));
-//        $this->addIcon($smp, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
-        
+        $menu = null;
+        if ($this->isLoggedIn) { 
+            $menu = $this->factory->createItem('root');
+            $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked span1');
+        }
         
         if ($this->role_archaeology) {
             $su = $this->createDropdownMenuItem($menu, "SU", true, array('caret' => true));
@@ -196,6 +191,12 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $media->addChild('List', array('route' => 'default_index'));
         }
 
+        if ($this->role_media) {
+            $photolist = $this->createDropdownMenuItem($menu, "Photo List", true, array('caret' => true));
+            $photolist->setChildrenAttribute('class', 'leftMenu dropdown-menu');
+            $photolist->addChild('New', array('route' => 'photolist_add'));
+            $photolist->addChild('List', array('route' => 'default_index'));
+        }
         return $menu;
     }
 
