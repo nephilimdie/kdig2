@@ -1,6 +1,6 @@
 <?php
 // src/Tutorial/BlogBundle/Admin/PostAdmin.php
-namespace Kdig\ArchaeologicalBundle\Admin;
+namespace Kdig\OrientBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -11,7 +11,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 
-use Kdig\ArchaeologicalBundle\Entity\VocAreaType;
+use Kdig\OrientBundle\Entity\VocMachineType;
 
 class VocMachineTypeAdmin extends Admin
 {
