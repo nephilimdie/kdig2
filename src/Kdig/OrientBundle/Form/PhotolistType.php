@@ -34,19 +34,19 @@ class PhotolistType extends AbstractType
             ->add('object', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Object',
-                'property' => 'name',
+                'property' => 'number',
                 'attr'=> array('class'=>'')
             ))
             ->add('pottery', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Pottery',
-                'property' => 'name',
+                'property' => 'prepottery.name',
                 'attr'=> array('class'=>'')
             ))
             ->add('sample', 'genemu_jqueryselect2_entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Sample',
-                'property' => 'name',
+                'property' => 'presample.name',
                 'attr'=> array('class'=>'')
             ))
             ->add('us', 'genemu_jqueryselect2_entity', array(
