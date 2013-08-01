@@ -1,6 +1,6 @@
 <?php
 
-namespace Kdig\VocMachineBundle\Controller;
+namespace Kdig\OrientBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
 
