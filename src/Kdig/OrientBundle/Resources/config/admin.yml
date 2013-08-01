@@ -4,8 +4,8 @@ parameters:
 services:  
    ## admin menu       
   kdig.orient.admin.vocmachine:
-      class: Kdig\ArchaeologicalBundle\Admin\VocMachineAdmin
+      class: Kdig\OrientBundle\Admin\VocMachineAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: '%kdig_orient.admin.group.name%', label: Voc Photo Machine }
-      arguments: [null, Kdig\OrientBundle\Entity\VocMachineType, KdigOrientBundle:VocMachineTypeAdmin]
+      arguments: [null, Kdig\OrientBundle\Entity\VocMachineType, KdigOrientBundle:VocMachineAdmin]
       
