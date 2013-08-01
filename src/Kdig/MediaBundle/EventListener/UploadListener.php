@@ -26,7 +26,7 @@ class UploadListener
     {
         $request = $event->getRequest();
         $file = $this->getFiles($request->files);
-        die('de dump is ' . var_dump($file));
+//        die('de dump is ' . var_dump($file));
         $gallery = $request->get('gallery');
             $mediaClass = $mediaAdmin->getClass();
             /** @var $media \Sonata\MediaBundle\Model\MediaInterface */
@@ -55,5 +55,6 @@ class UploadListener
         if ($user) {
             $aclProvider->addObjectPermission($media, MaskBuilder::MASK_OWNER, $user);
         }
+        $response['name'] = 'value';
     }
 }
