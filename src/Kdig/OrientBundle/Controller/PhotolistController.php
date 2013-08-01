@@ -327,7 +327,7 @@ class PhotolistController extends Controller
      * @Template()
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
-    public function mergephoto(Request $request) {
+    public function mergephotoAction(Request $request) {
         // get list isMerged false
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('KdigOrientBundle:Photolist')->findBy(array('isMerged'=>true));
