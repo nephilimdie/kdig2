@@ -23,12 +23,6 @@ class UploadListener
         $this->container = $container;
     }
     
-    public function postUpload(PostUploadEvent $event) {
-        
-        $request = $event->getRequest();
-        $file = $this->getFiles($request->files);
-        die('de dump is ' . var_dump($file));
-    }
     public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
