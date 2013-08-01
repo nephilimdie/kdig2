@@ -26,6 +26,9 @@ class UsType extends AbstractType
         
         if ($idarea != null)
             $builder->add('area', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_controls_attr' => array('class'=>'labeltext'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Area',
                 'query_builder' => function($repository) use ($idarea) {
                     $expr = new \Doctrine\ORM\Query\Expr();
@@ -43,6 +46,9 @@ class UsType extends AbstractType
         
         $builder
             ->add('site', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_controls_attr' => array('class'=>'labeltext'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Site',
                 'query_builder' => function($repository) {
                     return $repository->createQueryBuilder('p')
@@ -51,18 +57,28 @@ class UsType extends AbstractType
 //                'attr' => array('sigla' => 'myValue'),
                 'label' => 'Excavation campaign',
             ))
-            ->add('name',null, array(
-                'required' => true,
-                'label' => 'Field Name',
-                'help_block'  => 'Automatic loaded from DB. Or change with your'
-            ))
             ->add('typeus', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_controls_attr' => array('class'=>'labeltext'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:VocUsType',
                 'required' => true,
                 'label' => 'Type',
                 'help_block'  => 'Select your kind of US'
             ))
-            ->add('remarks')
+            ->add('name',null, array(
+                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_controls_attr' => array('class'=>'labeltext'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'required' => true,
+                'label' => 'Field Name',
+                'help_block'  => 'Automatic loaded from DB. Or change with your'
+            ))
+            ->add('remarks',null, array(
+                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_controls_attr' => array('class'=>'labeltext'),
+                'label_attr' => array('class'=>'mylabelclass'),
+            ))
             ->add('relationsfrom', 'collection', array(
                 'widget_control_group_attr' => array('class'=>'span12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
