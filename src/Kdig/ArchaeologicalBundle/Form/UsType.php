@@ -56,6 +56,7 @@ class UsType extends AbstractType
                 },
 //                'attr' => array('sigla' => 'myValue'),
                 'label' => 'Excavation campaign',
+                'help_block'  => 'Select your Campaign'
             ))
             ->add('typeus', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span6'),
@@ -101,6 +102,9 @@ class UsType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('media', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigMediaBundle:Media',
                 'required' => false,
                 'multiple' => true
