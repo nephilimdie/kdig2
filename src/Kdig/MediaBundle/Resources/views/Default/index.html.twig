@@ -1,3 +1,8 @@
+{% block title %}
+    {{ 'views.new.creation'|trans({'%entity%': 'Media'}, 'JordiLlonchCrudGeneratorBundle') }}
+{% endblock %}
+
+{% block page %}
 {% stylesheets
     '@KdigMediaBundle/Resources/public/css/jquery.fileupload-ui.css'
 %} <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" /> {% endstylesheets %}
@@ -145,3 +150,4 @@ $(document).ready(function() {
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 });
 </script>
+{% endblock %}
