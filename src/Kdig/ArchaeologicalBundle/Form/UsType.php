@@ -63,11 +63,6 @@ class UsType extends AbstractType
                 'help_block'  => 'Select your kind of US'
             ))
             ->add('remarks')
-            ->add('media', 'entity', array(
-                'class' => 'KdigMediaBundle:Media',
-                'required' => false,
-                'multiple' => true
-            ))
             ->add('relationsfrom', 'collection', array(
                 'widget_control_group_attr' => array('class'=>'span12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
@@ -88,6 +83,11 @@ class UsType extends AbstractType
                 'label' => 'Matrix',
                 'required' => false,
                 'show_child_legend' => true
+            ))
+            ->add('media', 'entity', array(
+                'class' => 'KdigMediaBundle:Media',
+                'required' => false,
+                'multiple' => true
             ))
         ;
     }
