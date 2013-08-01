@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use Kdig\ArchaeologicalBundle\Form\MatrixType;
+
 class UsType extends AbstractType
 {
     protected $areaid;
@@ -65,6 +67,27 @@ class UsType extends AbstractType
                 'class' => 'KdigMediaBundle:Media',
                 'required' => false,
                 'multiple' => true
+            ))
+            ->add('relationsfrom', 'collection', array(
+                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'type' => new MatrixType(), 
+                'by_reference' => false,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+                'widget_add_btn' => array('label' => 'Add Relationship between Us', 'attr' => array('class' => 'btn btn-primary')),
+                'options' => array( // options for collection fields
+                    'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
+                    'attr' => array('class' => 'span3'),
+                    'widget_control_group_attr' => array('class'=>'span4'),
+                    'label_attr' => array('class'=>'mylabelclass'),
+                    'widget_control_group' => false,
+                ),
+                'label' => 'Matrix',
+                'required' => false,
+                'show_child_legend' => true
             ))
         ;
     }
