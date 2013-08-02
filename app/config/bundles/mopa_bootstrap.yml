@@ -15,6 +15,7 @@ mopa_bootstrap:
         error_type: 'block' 
         checkbox_label: 'widget' # default is both (label|widget|both)
         render_required_asterisk: true 
+        render_fieldset: false
         collection:
             widget_remove_btn:
                 icon: trash
