@@ -11,23 +11,20 @@
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
 
-<form class="well" action="{{ path('us_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-    </p>
-</form>
-
-<div>
-    <div class="float-left">
-        <a class="btn" href="{{ path('us') }}">
-            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
+<form id="usform" class="" action="{{ path('us_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="row-fluid">
+        {{ form_widget(form) }}
+        <p class="span12">
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
     </div>
-</div>
+</form>
 <script type="text/javascript">
-    
     $(document).ready(function(){
+        var formsave1 = new autosaveform({
+                formid: 'usform',
+                pause: 2000 
+        });
         var id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
         var id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
         var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
