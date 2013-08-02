@@ -9,10 +9,11 @@ mopa_bootstrap:
             nofollow:     false
             noindex:      false
     form:
-        show_child_legend: true # default is true
-        error_type: inline 
+        show_legend: true 
+        show_child_legend: true
+        error_type: 'block' 
         checkbox_label: 'widget' # default is both (label|widget|both)
-        render_required_asterisk: true # default is true
+        render_required_asterisk: true 
         collection:
             widget_remove_btn:
                 icon: trash
