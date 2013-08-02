@@ -8,6 +8,9 @@
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
 
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
+
 <form id="potteryform" class="" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         {{ form_widget(form) }}
