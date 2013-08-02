@@ -31,7 +31,42 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         //show
-        //
+        $controller = "";
+        $show = "show";
+        $edit = "edit";
+        $new = "new";
+        $delete = "delete";
+        $list = "";
+        $export_pdf = "";
+        $export_zip = "";
+        $id=null;
+
+        $list_menu = $menu->addChild('list', array('route' => $list));
+        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        if($id) {
+            $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
+            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+            $this->addDivider($menu, true);
+            $delete_menu = $menu->addChild('delete', array(
+                'route' => $delete, 
+                'class'=> 'btn btn-danger', 
+                'routeParameters' => array('id' => $id)
+            ));
+            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+            $delete_menu->setAttributes(array('class'=>'btn btn-danger'));
+        }
+        if($this->role_pottery) {
+        } elseif($this->role_object) {
+            
+        } elseif($this->role_sample) {
+            
+        }  elseif($this->role_archaeology) {
+            
+        } 
+        if($this->role_media) {
+            
+        }
+
         //new
         //edit
         //grid
