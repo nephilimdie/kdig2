@@ -2,7 +2,7 @@
 
 namespace Kdig\TemplateBundle\Twig\Extension;
 
-use Symfony\Component\HttpFoundation\Session;
+use Symfony\Component\HttpFoundation\Session as Session;
 
 class FlashMessageExtension extends \Twig_Extension
 {
