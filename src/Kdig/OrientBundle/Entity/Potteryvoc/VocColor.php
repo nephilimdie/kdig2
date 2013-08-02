@@ -513,6 +513,6 @@ class VocColor {
     
     public function __tostring() 
     {
-        return (string)$this->getName().'('.$this->getNumber().')';
+        return (string)$this->getName();
     }
 }
