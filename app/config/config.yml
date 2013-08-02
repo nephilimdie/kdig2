@@ -12,6 +12,7 @@ imports:
     - { resource: bundles/oneup_uploader.yml }
     - { resource: bundles/genemu_form.yml }
     - { resource: bundles/liip_theme.yml }
+    - { resource: bundles/presta_sitemap.yml }
     ## admin 
     - { resource: bundles/admin/sonata_block.yml }
     - { resource: bundles/admin/sonata_cache.yml }
