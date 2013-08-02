@@ -180,7 +180,7 @@
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
                 $(".container-fluid").spin(optsspin);
-                $(".container-fluid").load(event.value, function() {
+                $(".content").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
                         return false; 
