@@ -130,11 +130,13 @@
         </div>
     </div> <!-- /container -->
     {% endblock container %}
-    <footer>
-        {% block footer %}
-        <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
-        <p>someone want to write foot?</p><p>please don't write me.!!!</p>
-        {% endblock footer %}
+    <footer class="footer">
+        <div class="row-fluid">
+            {% block footer %}
+                <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
+                <p>someone want to write foot?</p><p>please don't write me.!!!</p>
+            {% endblock footer %}
+        </div>
     </footer>
     {% block foot_script %}
     
