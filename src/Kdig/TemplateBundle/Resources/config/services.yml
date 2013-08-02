@@ -69,3 +69,8 @@ services:
         tags:
             - { name: knp_menu.menu, alias: archaeologicalmenu }
 
+    kdig.twig.flash_extension:
+        class: Kdig\TemplateBundle\Twig\Extension\FlashMessageExtension
+        arguments: [ '@Session' ]
+        tags:
+            - { name: twig.extension }
