@@ -12,8 +12,6 @@ class FlashMessageExtension extends \Twig_Extension
     protected $session;
     
     /**
-     * Creates a new FlashMessageExtension
-     * 
      * @param Session $session
      */
     public function __construct(Session $session)
