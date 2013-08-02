@@ -8,32 +8,31 @@
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
 
-<form class="well" action="{{ path('preobject_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-    </p>
-</form>
-
-<div>
-    <div class="float-left">
-        <a class="btn" href="{{ path('preobject') }}">
-            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
+<form id="preobjectform" class="" action="{{ path('preobject_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="row-fluid">
+        {{ form_widget(form) }}
+        <p class="span12">
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
     </div>
-</div>
-
+</form>
 <script type="text/javascript">
-    $(document).ready(function(){
-        var id_bucket  = $("#kdig_archaeologicalbundle_preobjecttype_bucket option:selected").val();
+$(document).ready( function () {
+    var formsave1 = new autosaveform({
+            formid: 'preobjectform',
+            pause: 2000 
+    });
+    var id_bucket  = $("#kdig_archaeologicalbundle_preobjecttype_bucket option:selected").val();
+    var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
+    getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_preobjecttype_name','fill');
+
+    $('#kdig_archaeologicalbundle_preobjecttype_bucket').change(function() {
+        var id_bucket = $("#kdig_archaeologicalbundle_preobjecttype_bucket option:selected").val();
         var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
         getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_preobjecttype_name','fill');
-        
-        $('#kdig_archaeologicalbundle_preobjecttype_bucket').change(function() {
-            var id_bucket = $("#kdig_archaeologicalbundle_preobjecttype_bucket option:selected").val();
-            var routegetdefault = Routing.generate('kdig_preobject_defaulttext', { id_bucket: id_bucket });
-            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_preobjecttype_name','fill');
-        });
     });
+});
 </script>
 {% endblock %}
