@@ -8,6 +8,7 @@ mopa_bootstrap:
             author_url:   "/human.txt"
             nofollow:     false
             noindex:      false
+            
     form:
         show_legend: true 
         show_child_legend: true
