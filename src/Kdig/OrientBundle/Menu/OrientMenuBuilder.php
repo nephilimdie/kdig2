@@ -26,7 +26,17 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $this->role_media = $this->securityContext->isGranted('ROLE_MEDIA');
         $this->usr = $securityContext->getToken()->getUser();
     }
-
+    
+    public function createLeftMenu(Request $request) {
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav show-menu');
+        //show
+        //
+        //new
+        //edit
+        //grid
+        //home
+    }
     public function createPotteryShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
