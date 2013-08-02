@@ -11,5 +11,9 @@
 
 <script type="text/javascript">
 $(document).ready( function () {
-    $("form select").select2();
+    $("form select").select2({
+        placeholder: "Select data",
+        allowClear: true,
+        minimumInputLength: 2
+    });
 });
