@@ -92,6 +92,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
     
     public function createVocsPotteryMenu(Request $request) 
     {
+        die(var_dump($request));
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'row-fluid action-nav-normal');
         
