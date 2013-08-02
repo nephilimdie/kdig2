@@ -443,8 +443,6 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
         ;
-                
-        $builder->setAttribute('class', 'span4');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
@@ -454,8 +452,8 @@ class PotteryType extends AbstractType
         ));
     }
 
-    public function getName()
-    {
-        return 'kdig_orientbundle_potterytype';
-    }
+//    public function getName()
+//    {
+//        return 'kdig_orientbundle_potterytype';
+//    }
 }
