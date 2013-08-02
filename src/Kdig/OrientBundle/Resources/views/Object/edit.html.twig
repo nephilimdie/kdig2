@@ -10,7 +10,7 @@
 
 {{ form_javascript(edit_form) }}
 {{ form_stylesheet(edit_form) }}
-<form id="objectform" class="" action="{{ path('object_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+<form id="object_edit_form" class="" action="{{ path('object_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <div class="row-fluid">
         <input type="hidden" name="_method" value="PUT" />
         {{ form_widget(edit_form) }}
@@ -23,7 +23,7 @@
 <script type="text/javascript">
 $(document).ready( function () {
     var formsave1 = new autosaveform({
-            formid: 'objectform',
+            formid: 'object_edit_form',
             pause: 2000 
     });
 
