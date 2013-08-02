@@ -20,7 +20,7 @@ class DefaultController extends Controller
     /**
      * Lists all Index entities.
      *
-     * @Route("/", name="default_index")
+     * @Route("/", name="default_index", options={"sitemap" = true})
      * @Template()
      */
     public function indexAction()
@@ -29,7 +29,7 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/about")
+     * @Route("/about", name="default_about", options={"sitemap" = true})
      * @Template()
      */
     public function aboutAction()
