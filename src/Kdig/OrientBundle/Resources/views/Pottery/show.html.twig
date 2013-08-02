@@ -1,166 +1,152 @@
-{% block title %}
-<div class="page-header">
-    {{ 'views.show.show'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
+{% block content %}
+<div class="span1">
+    {% block content_left_menu %}
+    <h2>Sidebar</h2>
+    {% endblock content_left_menu %}
 </div>
-{% endblock %}
+<div class="span9">
+    {% block page_header %}
+    <div class="page-header span12">
+        <h5>{{ 'views.show.show'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h5>
+    </div>
+    {% endblock page_header %}
+    {% block content_content %}
+        <div class="span12">
+            <div class="span4 control-group">
+                <legend class="control-label">Tcode
+                    <div class="selected">{{ entity.tcode }}</div>
+                </legend>
+            </div>
+            <div class="span4 control-group">
+                <legend class="control-label">Created
+                    <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>  
+                </legend>
+            </div>
 
-{% block page %}
-
-{{ mopa_bootstrap_navbar('vocsmenupottery') }}    
-<div class="container-fluid">
-    <div class="span4 control-group">
-        <legend class="control-label">Tcode
-            <div class="selected">{{ entity.tcode }}</div>
-        </legend>
-    </div>
-    <div class="span4 control-group">
-        <legend class="control-label">Created
-            <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>  
-        </legend>
-    </div>
-
-    <div class="span4 control-group">
-        <legend class="control-label">Typecontext
-            <div class="selected">{{ entity.typecontext }}</div>
-        </legend>
-    </div>        <div class="span4 control-group">
-        <legend class="control-label">Outercolor
-                        <div class="selected">{{ entity.outercolor }}</div> 
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Innercolor
-            <div class="selected">{{ entity.innercolor }}</div>
-        </legend>
-    </div> 
-    <div class="span4 control-group">
-        <legend class="control-label">Fabriccolor
-            <div class="selected">{{ entity.fabriccolor }}</div> 
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Rimdiameter
-            <div class="selected">{{ entity.rimdiameter }}</div>
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Rimwidth
-            <div class="selected">{{ entity.rimwidth }}</div>
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Wallwidth
-            <div class="selected">{{ entity.wallwidth }}</div> 
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Maxwalldiameter
-            <div class="selected">{{ entity.maxwalldiameter }}</div>
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Bottomwidth
-            <div class="selected">{{ entity.bottomwidth }}</div>
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Height
-            <div class="selected">{{ entity.height }}</div>
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Basediameter
-            <div class="selected">{{ entity.basediameter }}</div>
-        </legend>
-    </div>        
-    <div class="span4 control-group">
-        <legend class="control-label">Restored
-            <div class="selected">{{ entity.restored }}</div> 
-        </legend>
-    </div>
-    <div class="span4 control-group">
-        <legend class="control-label">Datation
-            <div class="selected">{{ entity.datation }}</div> 
-        </legend>
-    </div>  
-    <div class="span12 control-group">
-        <legend class="control-label">Inner Surface Treatment
-            <div class="selected">
-                {% for element in entity.surfacetratin %}
-                    {{element.vocsurfacetratoption}} - {{element.color}} <br />
-                {% endfor %}
+            <div class="span4 control-group">
+                <legend class="control-label">Typecontext
+                    <div class="selected">{{ entity.typecontext }}</div>
+                </legend>
+            </div>        <div class="span4 control-group">
+                <legend class="control-label">Outercolor
+                                <div class="selected">{{ entity.outercolor }}</div> 
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Innercolor
+                    <div class="selected">{{ entity.innercolor }}</div>
+                </legend>
+            </div> 
+            <div class="span4 control-group">
+                <legend class="control-label">Fabriccolor
+                    <div class="selected">{{ entity.fabriccolor }}</div> 
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Rimdiameter
+                    <div class="selected">{{ entity.rimdiameter }}</div>
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Rimwidth
+                    <div class="selected">{{ entity.rimwidth }}</div>
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Wallwidth
+                    <div class="selected">{{ entity.wallwidth }}</div> 
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Maxwalldiameter
+                    <div class="selected">{{ entity.maxwalldiameter }}</div>
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Bottomwidth
+                    <div class="selected">{{ entity.bottomwidth }}</div>
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Height
+                    <div class="selected">{{ entity.height }}</div>
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Basediameter
+                    <div class="selected">{{ entity.basediameter }}</div>
+                </legend>
+            </div>        
+            <div class="span4 control-group">
+                <legend class="control-label">Restored
+                    <div class="selected">{{ entity.restored }}</div> 
+                </legend>
             </div>
-        </legend>
-    </div>  
-    <div class="span12 control-group">
-        <legend class="control-label">Outer Surface Treatment
-            <div class="selected">
-                {% for element in entity.surfacetratout %}
-                    {{element.vocsurfacetratoption}} - {{element.color}} <br />
-                {% endfor %}
+            <div class="span4 control-group">
+                <legend class="control-label">Datation
+                    <div class="selected">{{ entity.datation }}</div> 
+                </legend>
+            </div>  
+            <div class="span12 control-group">
+                <legend class="control-label">Inner Surface Treatment
+                    <div class="selected">
+                        {% for element in entity.surfacetratin %}
+                            {{element.vocsurfacetratoption}} - {{element.color}} <br />
+                        {% endfor %}
+                    </div>
+                </legend>
+            </div>  
+            <div class="span12 control-group">
+                <legend class="control-label">Outer Surface Treatment
+                    <div class="selected">
+                        {% for element in entity.surfacetratout %}
+                            {{element.vocsurfacetratoption}} - {{element.color}} <br />
+                        {% endfor %}
+                    </div>
+                </legend>
+            </div>  
+            <div class="span12 control-group">
+                <legend class="control-label">Inner & Outer Surface Treatment
+                    <div class="selected">
+                        {% for element in entity.surfacetratinout %}
+                            {{element.vocsurfacetratoption}} - {{element.color}} <br />
+                        {% endfor %}
+                    </div>
+                </legend>
+            </div>  
+            <div class="span12 control-group">
+                <legend class="control-label">Decoration Inner
+                    <div class="selected">
+                        {% for element in entity.potdecorationin %}
+                            {{element.decorationoption}} - {{element.color}} <br />
+                        {% endfor %}
+                    </div>
+                </legend>
             </div>
-        </legend>
-    </div>  
-    <div class="span12 control-group">
-        <legend class="control-label">Inner & Outer Surface Treatment
-            <div class="selected">
-                {% for element in entity.surfacetratinout %}
-                    {{element.vocsurfacetratoption}} - {{element.color}} <br />
-                {% endfor %}
+            <div class="span12 control-group">
+                <legend class="control-label">Decoration Outer
+                    <div class="selected">
+                        {% for element in entity.potdecorationout %}
+                            {{element.decorationoption}} - {{element.color}} <br />
+                        {% endfor %}
+                    </div>
+                </legend>
             </div>
-        </legend>
-    </div>  
-    <div class="span12 control-group">
-        <legend class="control-label">Decoration Inner
-            <div class="selected">
-                {% for element in entity.potdecorationin %}
-                    {{element.decorationoption}} - {{element.color}} <br />
-                {% endfor %}
+            <div class="span12 control-group">
+                <legend class="control-label">Decoration Inner & Outer
+                    <div class="selected">
+                        {% for element in entity.potdecorationinout %}
+                            {{element.decorationoption}} - {{element.color}} <br />
+                        {% endfor %}
+                    </div>
+                </legend>
             </div>
-        </legend>
-    </div>
-    <div class="span12 control-group">
-        <legend class="control-label">Decoration Outer
-            <div class="selected">
-                {% for element in entity.potdecorationout %}
-                    {{element.decorationoption}} - {{element.color}} <br />
-                {% endfor %}
-            </div>
-        </legend>
-    </div>
-    <div class="span12 control-group">
-        <legend class="control-label">Decoration Inner & Outer
-            <div class="selected">
-                {% for element in entity.potdecorationinout %}
-                    {{element.decorationoption}} - {{element.color}} <br />
-                {% endfor %}
-            </div>
-        </legend>
-    </div>
-    <div class="span12 control-group">
-        <legend class="control-label">Remarks
-            <div class="selected">{{ entity.remarks }}</div> 
-        </legend>
-    </div>        
+            <div class="span12 control-group">
+                <legend class="control-label">Remarks
+                    <div class="selected">{{ entity.remarks }}</div> 
+                </legend>
+            </div>        
+        </div>
+    {% endblock content_content %}
 </div>
-
-<div>
-    <div class="float-left">
-        <a class="btn" href="{{ path('pottery') }}">
-            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
-    </div>
-    <div class="float-left">
-        <a class="btn btn-primary" href="{{ path('pottery_edit', { 'id': entity.id }) }}">
-            {{ 'views.recordactions.edit'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
-    </div>
-    <div class="float-left">
-        <form action="{{ path('pottery_delete', { 'id': entity.id }) }}" method="post">
-            <input type="hidden" name="_method" value="DELETE" />
-            {{ form_widget(delete_form) }}
-            <button class="btn btn-danger" type="submit" onclick="return confirm('{{ 'views.recordactions.confirm'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}');">{{ 'views.recordactions.delete'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-        </form>
-    </div>
-</div>
-{% endblock %}
+{% endblock content %}
