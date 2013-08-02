@@ -11,23 +11,20 @@
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
 {{ JSFV(form) }}
 
-<form class="well" action="{{ path('bucket_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-    </p>
-</form>
-
-<div>
-    <div class="float-left">
-        <a class="btn" href="{{ path('bucket') }}">
-            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
+<form id="bucketform" class="" action="{{ path('bucket_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="row-fluid">
+        {{ form_widget(form) }}
+        <p class="span12">
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
     </div>
-</div>
-
+</form>
 <script type="text/javascript">
     $(document).ready(function(){
+        var formsave1 = new autosaveform({
+                formid: 'bucketform',
+                pause: 2000 
+        });
         var id_us = $("#kdig_orientbundle_buckettype_us option:selected").val();
         var routegetdefault = Routing.generate('kdig_bucket_defaulttext', { id_us: id_us });
         getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_buckettype_name','fill');
