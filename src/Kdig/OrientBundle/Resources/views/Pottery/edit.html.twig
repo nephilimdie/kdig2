@@ -35,11 +35,12 @@ form#feedbackform div{ /*CSS used by demo form*/
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
     {% endstylesheets %}
 <form id="potteryform" class="" action="{{ path('pottery_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    <input type="hidden" name="_method" value="PUT" />
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-    </p>
+    <div class="row-fluid">
+        <input type="hidden" name="_method" value="PUT" />
+        {{ form_widget(edit_form) }}
+        <p class="sapn12">
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
     </div>
 </form>
 
