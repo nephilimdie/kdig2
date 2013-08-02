@@ -88,71 +88,56 @@
     {% endblock navbar %}
 
     {% block container %}
-    {{ mopa_bootstrap_navbar('archaeologicalsubnav') }}
-    <div class="{% block container_class %}container-fluid{% endblock container_class %}">
+    <div class="row-fluid{% block container_class %}container-fluid{% endblock container_class %}">
         {% block header %}
         {% endblock header %}
 
-        <div class="content">
-            {% block page_header %}
-            <div class="page-header">
-                  <h5>{% block title %}Kdig Project .2{% endblock title %}</h5>
+        {% block flashes %}
+        {% if app.session.flashbag.peekAll|length > 0 %}
+        <div class="row-fluid span12">
+            <div id="flash" class="span12">
+            {{ session_flash() }}
             </div>
-            {% endblock page_header %}
-
-            {% block flashes %}
-            {% if app.session.flashbag.peekAll|length > 0 %}
-            <div class="row-fluid">
-                <div id="flash" class="span12">
-                {{ session_flash() }}
-                </div>
-            </div>
-            {% endif %}
-            {% endblock flashes %}
-
-            {% block content_row %}
+        </div>
+        {% endif %}
+        {% endblock flashes %}
+            
+        {% block content_row %}
+        <div class="content span10">
             <div class="row-fluid">
                 {% block content %}
-                <div class="span2">
-                    {% block content_sidebar_menu_context %}
+                <div class="span1">
+                    {% block content_left_menu %}
                     <h2>Sidebar</h2>
-                    {% endblock content_sidebar_menu_context %}
-                </div>
-                <div class="span2">
-                    {% block content_sidebar_menu_vocs %}
-                    <h2>Sidebar</h2>
-                    {% endblock content_sidebar_menu_vocs %}
+                    {% endblock content_left_menu %}
                 </div>
                 <div class="span9">
+                    {% block page_header %}
+                    <div class="page-header span12">
+                          <h5>{% block title %}Kdig Project .2{% endblock title %}</h5>
+                    </div>
+                    {% endblock page_header %}
                     {% block content_content %}
+                        <div class="span12"></div>
                     {% endblock content_content %}
                 </div>
                 {% endblock content %}
             </div>
-            {% endblock content_row %}
         </div>
-        <footer>
-            {% block footer %}
-            <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
-            <p>someone want to write foot?</p>
-            {% endblock footer %}
-        </footer>
+        {% endblock content_row %}
+        <div class="span2"> <!-- menu right -->
+            {{ mopa_bootstrap_navbar('archaeologicalsubnav') }}
+        </div>
     </div> <!-- /container -->
     {% endblock container %}
+    <footer>
+        {% block footer %}
+        <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
+        <p>someone want to write foot?</p><p>please don't write me.!!!</p>
+        {% endblock footer %}
+    </footer>
     {% block foot_script %}
-    {# To only use a subset or add more js overwrite and copy paste this block
-    To speed up page loads save a copy of jQuery in your project and override this block to include the correct path
-    Otherwise the regeneration is done on every load in dev more with use_controller: true
-     #}
-
-    {% endblock foot_script %}
-    {% block foot_script_additional %}
-    {#
-    @link http://twitter.github.io/bootstrap/javascript.html#tooltips
-    To use popover and tooltip you'll need to initialize them
-    If you need only tooltips you can remove the popover initialization
-    and also remove the bootstrap-popover.js include.
-    #}
+    
     <script type="text/javascript">
         /*
         window.addEventListener('load', function(){
@@ -299,7 +284,7 @@
                 '\n\nThe output div should have already been updated with the responseText.'); 
             } */
     </script>
-    {% endblock foot_script_additional %}
+    {% endblock foot_script %}
 {% endblock body %}
 </body>
 </html>
