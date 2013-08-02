@@ -43,7 +43,7 @@ class BucketType extends AbstractType
             ))
             ->add('name', null, array(
                 'label' => 'Bucket Definition',
-                'help_block'  => 'It is automatically given by the DB - if does not appear press the reload button'
+                'help_block'  => 'It is automatically given by the DB'
             ))
             ->add('remarks', 'textarea', array(
                 'label' => 'Description',
