@@ -22,7 +22,7 @@ class PrepotteryType extends AbstractType
         $usid = $this->us;
         
         $builder
-            ->add('bucket', 'entity', array(
+            ->add('bucket', 'genemu_jqueryselect2_entity', array(
                 'class' => 'KdigOrientBundle:Bucket',
                 'query_builder' => function($repository) use ($bucketid, $usid) {
                     $expr = new \Doctrine\ORM\Query\Expr();
