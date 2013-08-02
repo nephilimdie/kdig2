@@ -1,18 +1,23 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
 {% block title %}
-{{ parent() }} - {{ 'views.new.creation'|trans({'%entity%': 'Sample'}, 'JordiLlonchCrudGeneratorBundle') }}
+    {{ 'views.new.creation'|trans({'%entity%': 'Sample'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
 
 {% block page %}
 
-<h1>{{ 'views.new.creation'|trans({'%entity%': 'Sample'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
+{{ form_javascript(form) }}
+{{ form_stylesheet(form) }}
 
-<form class="well" action="{{ path('sample_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-    </p>
+<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+{{ JSFV(form) }}
+
+<form id="sampleform" action="{{ path('sample_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="row-fluid">
+        {{ form_widget(form) }}
+        <p class="span12">
+            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+        </p>
+    </div>
 </form>
 
 <div>
@@ -22,4 +27,12 @@
         </a>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var formsave1 = new autosaveform({
+                formid: 'sampleform',
+                pause: 2000 
+        });
+    });
+</script>
 {% endblock %}
