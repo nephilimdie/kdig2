@@ -15,14 +15,14 @@ class PhotolistType extends AbstractType
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
-                'label' => 'Reference Number',
+                'label' => 'From',
                 'required' => true,
             ))
             ->add('tonumber', null, array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
-                'label' => 'Reference Number',
+                'label' => 'To',
                 'required' => true,
             ))
             ->add('vocmachine', 'entity', array(
