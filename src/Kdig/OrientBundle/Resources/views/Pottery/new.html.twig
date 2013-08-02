@@ -11,7 +11,7 @@
 <form id="potteryform" class="" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
     <div class="row-fluid">
         {{ form_widget(form) }}
-        <p>
+        <p class="sapn12">
             <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
         </p>
     </div>
