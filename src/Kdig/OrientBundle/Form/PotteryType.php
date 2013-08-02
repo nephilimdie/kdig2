@@ -452,8 +452,8 @@ class PotteryType extends AbstractType
         ));
     }
 
-//    public function getName()
-//    {
-//        return 'kdig_orientbundle_potterytype';
-//    }
+    public function getName()
+    {
+        return 'kdig_orientbundle_potterytype';
+    }
 }
