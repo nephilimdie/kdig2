@@ -34,6 +34,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $name =split('_', $request->get('_route'));
         $controller = $name[0];
         $show = $controller."_show";
+        $home = $controller."_index";
         $edit = $controller."_edit";
         $new = $controller."_new";
         $delete = $controller."_delete";
@@ -43,6 +44,8 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $id = $request->get('id', null);
 //        die(var_dump($request));
 
+        $home_menu = $menu->addChild('list', array('route' => $home));
+        $this->addIcon($home_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $list_menu = $menu->addChild('list', array('route' => $list));
         $this->addIcon($list_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $new_menu = $menu->addChild('new', array('route' => $new));
