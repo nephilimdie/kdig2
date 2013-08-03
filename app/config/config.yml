@@ -13,6 +13,8 @@ imports:
     - { resource: bundles/genemu_form.yml }
     - { resource: bundles/liip_theme.yml }
     - { resource: bundles/presta_sitemap.yml }
+    - { resource: bundles/apy_breadcrumb_trail.yml }
+    
     ## admin 
     - { resource: bundles/admin/sonata_block.yml }
     - { resource: bundles/admin/sonata_cache.yml }
