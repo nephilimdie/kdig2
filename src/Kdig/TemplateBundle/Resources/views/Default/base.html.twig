@@ -186,6 +186,12 @@
                 $(".content").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
+                        
+                        $(".ajax").on("click", function(event){ 
+                            event.preventDefault();
+                            $.address.value($(this).attr('href'));  
+                            return false;
+                        });
                         return false; 
                     }); 
                     $(".content").spin(false);
@@ -213,11 +219,6 @@
                 return false;
             });
             $(".left-menu a").on("click", function(event){ 
-                event.preventDefault();
-                $.address.value($(this).attr('href'));  
-                return false;
-            });
-            $(".ajax").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
                 return false;
