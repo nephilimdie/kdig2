@@ -74,22 +74,16 @@ class BucketController extends Controller
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse();
     }
+    
     /**
      * Lists all Bucket entities.
      *
-     * @ Template()
+     * @Route("/home/", name="bucket_home")
+     * @Template()
      */
     public function indexAction()
     {
-        list($filterForm, $queryBuilder) = $this->filter();
-
-        list($entities, $pagerHtml) = $this->paginator($queryBuilder);
-
-        return array(
-            'entities' => $entities,
-            'pagerHtml' => $pagerHtml,
-            'filterForm' => $filterForm->createView(),
-        );
+        return array();
     }
 
     /**
