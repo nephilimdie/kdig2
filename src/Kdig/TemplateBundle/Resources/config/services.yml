@@ -74,8 +74,3 @@ services:
         tags:
             - { name: grid.column.extension }
             
-    kdig.twig.flash_extension:
-        class: Kdig\TemplateBundle\Twig\Extension\FlashMessageExtension
-        arguments: [ '@service_container' ]
-        tags:
-            - { name: twig.extension }
