@@ -15,19 +15,25 @@ use Kdig\OrientBundle\Entity\Sample;
 use Kdig\OrientBundle\Form\SampleType;
 use Kdig\OrientBundle\Form\SampleFilterType;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Sample controller.
  *
  * @Route("/sample")
+ * @Breadcrumb("Sample", route="sample")
  */
 class SampleController extends Controller
 {
     /**
      * Lists all Sample entities.
      *
-     * @Route("/", name="sample")
-     * @Method("GET")
+     * @Route("/home/", name="sample_home")
+     * @Breadcrumb("Sample Home", route="sample_home")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function indexAction()
     {
@@ -120,7 +126,8 @@ class SampleController extends Controller
      *
      * @Route("/", name="sample_create")
      * @Method("POST")
-     * @Template("KdigOrientBundle:Sample:new.html.twig")
+     * @Template("KdigOrientBundle:Bucket:new.html.twig")
+     * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -147,8 +154,9 @@ class SampleController extends Controller
      * Displays a form to create a new Sample entity.
      *
      * @Route("/new", name="sample_new")
-     * @Method("GET")
+     * @Breadcrumb("New sample", route="sample_new")
      * @Template()
+     * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function newAction()
     {
@@ -165,8 +173,10 @@ class SampleController extends Controller
      * Finds and displays a Sample entity.
      *
      * @Route("/{id}", name="sample_show")
+     * @Breadcrumb("Show sample",  route={"name"="sample_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function showAction($id)
     {
@@ -190,8 +200,10 @@ class SampleController extends Controller
      * Displays a form to edit an existing Sample entity.
      *
      * @Route("/{id}/edit", name="sample_edit")
+     * @Breadcrumb("Edit sample",  route={"name"="sample_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -219,6 +231,7 @@ class SampleController extends Controller
      * @Route("/{id}", name="sample_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Sample:edit.html.twig")
+     * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -256,6 +269,7 @@ class SampleController extends Controller
      *
      * @Route("/{id}", name="sample_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {

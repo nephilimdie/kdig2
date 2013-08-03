@@ -22,12 +22,15 @@ use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Pottery controller.
  *
  * @Route("/pottery")
+ * @Breadcrumb("Pottery", route="pottery")
  */
 class PotteryController extends Controller
 {
@@ -35,8 +38,9 @@ class PotteryController extends Controller
      * Lists all Pottery entities.ì in grid
      *
      * @Route("/", name="pottery")
-     * @ Method({"GET", "POST"})
+     * @Breadcrumb("Table", route="pottery")
      * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function myGridAction()
     {
@@ -83,7 +87,9 @@ class PotteryController extends Controller
      * Lists all Pottery entities.
      *
      * @Route("/home/", name="pottery_home")
+     * @Breadcrumb("Pottery Home", route="pottery_home")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function indexAction()
     {
@@ -216,7 +222,7 @@ class PotteryController extends Controller
      * Displays a form to create a new Pottery entity.
      *
      * @Route("/new", name="pottery_new")
-     * @Method("GET")
+     * @Breadcrumb("New bucket", route="pottery_new")
      * @Template()
      * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
@@ -247,6 +253,7 @@ class PotteryController extends Controller
      * Finds and displays a Pottery entity.
      *
      * @Route("/{id}/show", name="pottery_show")
+     * @Breadcrumb("Show pottery",  route={"name"="pottery_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -272,6 +279,7 @@ class PotteryController extends Controller
      * Displays a form to edit an existing Pottery entity.
      *
      * @Route("/{id}/edit", name="pottery_edit")
+     * @Breadcrumb("Edit pottery",  route={"name"="pottery_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")

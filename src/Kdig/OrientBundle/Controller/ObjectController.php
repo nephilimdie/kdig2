@@ -23,11 +23,15 @@ use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
 use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Object controller.
  *
  * @Route("/object")
+ * @Breadcrumb("Object", route="object")
  */
 class ObjectController extends Controller
 {
@@ -35,7 +39,7 @@ class ObjectController extends Controller
      * Lists all Object entities.ì in grid
      *
      * @Route("/", name="object")
-     * @ Method({"GET", "POST"})
+     * @Breadcrumb("Table", route="object")
      * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      */
     public function myGridAction()
@@ -74,7 +78,10 @@ class ObjectController extends Controller
     /**
      * Lists all Object entities.
      *
-     * @ Template()
+     * @Route("/home/", name="object_home")
+     * @Breadcrumb("Object Home", route="object_home")
+     * @Template()
+     * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function indexAction()
     {
@@ -207,7 +214,7 @@ class ObjectController extends Controller
      * Displays a form to create a new Object entity.
      *
      * @Route("/new", name="object_new")
-     * @Method("GET")
+     * @Breadcrumb("New object", route="object_new")
      * @Template()
      * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
@@ -238,6 +245,7 @@ class ObjectController extends Controller
      * Finds and displays a Object entity.
      *
      * @Route("/{id}/show", name="object_show")
+     * @Breadcrumb("Show object",  route={"name"="object_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -263,6 +271,7 @@ class ObjectController extends Controller
      * Displays a form to edit an existing Object entity.
      *
      * @Route("/{id}/edit", name="object_edit")
+     * @Breadcrumb("Edit object",  route={"name"="object_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")

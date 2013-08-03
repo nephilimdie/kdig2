@@ -16,19 +16,25 @@ use Kdig\ArchaeologicalBundle\Entity\Presample;
 use Kdig\ArchaeologicalBundle\Form\PresampleType;
 use Kdig\ArchaeologicalBundle\Form\PresampleFilterType;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Presample controller.
  *
  * @Route("/presample")
+ * @Breadcrumb("Sample", route="presample")
  */
 class PresampleController extends Controller
 {
     /**
      * Lists all Presample entities.
      *
-     * @Route("/", name="presample")
-     * @Method("GET")
+     * @Route("/home/", name="presample_home")
+     * @Breadcrumb("Sample Home", route="presample_home")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function indexAction()
     {
@@ -122,6 +128,7 @@ class PresampleController extends Controller
      * @Route("/", name="presample_create")
      * @Method("POST")
      * @Template("KdigArchaeologicalBundle:Presample:new.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -160,8 +167,9 @@ class PresampleController extends Controller
      * Displays a form to create a new Presample entity.
      *
      * @Route("/new", name="presample_new")
-     * @Method("GET")
+     * @Breadcrumb("New sample", route="presample_new")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function newAction(Request $request)
     {
@@ -190,6 +198,7 @@ class PresampleController extends Controller
      * Finds and displays a Presample entity.
      *
      * @Route("/{id}", name="presample_show")
+     * @Breadcrumb("Show sample",  route={"name"="presample_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -215,8 +224,10 @@ class PresampleController extends Controller
      * Displays a form to edit an existing Presample entity.
      *
      * @Route("/{id}/edit", name="presample_edit")
+     * @Breadcrumb("Edit sample",  route={"name"="presample_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -251,6 +262,7 @@ class PresampleController extends Controller
      * @Route("/{id}", name="presample_update")
      * @Method("PUT")
      * @Template("KdigArchaeologicalBundle:Presample:edit.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -295,6 +307,7 @@ class PresampleController extends Controller
      *
      * @Route("/{id}", name="presample_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
@@ -325,6 +338,7 @@ class PresampleController extends Controller
      * @param mixed $id The entity id
      *
      * @return Symfony\Component\Form\Form The form
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     private function createDeleteForm($id)
     {

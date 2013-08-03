@@ -16,19 +16,25 @@ use Kdig\ArchaeologicalBundle\Entity\Prepottery;
 use Kdig\ArchaeologicalBundle\Form\PrepotteryType;
 use Kdig\ArchaeologicalBundle\Form\PrepotteryFilterType;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Prepottery controller.
  *
  * @Route("/prepottery")
+ * @Breadcrumb("Pottery", route="prepottery")
  */
 class PrepotteryController extends Controller
 {
     /**
      * Lists all Prepottery entities.
      *
-     * @Route("/", name="prepottery")
-     * @Method("GET")
+     * @Route("/home/", name="prepottery_home")
+     * @Breadcrumb("Pottery Home", route="prepottery")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function indexAction()
     {
@@ -122,6 +128,7 @@ class PrepotteryController extends Controller
      * @Route("/", name="prepottery_create")
      * @Method("POST")
      * @Template("KdigArchaeologicalBundle:Prepottery:new.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -160,8 +167,9 @@ class PrepotteryController extends Controller
      * Displays a form to create a new Prepottery entity.
      *
      * @Route("/new", name="prepottery_new")
-     * @Method("GET")
+     * @Breadcrumb("New pottery", route="prepottery_new")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function newAction(Request $request)
     {
@@ -190,6 +198,7 @@ class PrepotteryController extends Controller
      * Finds and displays a Prepottery entity.
      *
      * @Route("/{id}", name="prepottery_show")
+     * @Breadcrumb("Show pottery",  route={"name"="prepottery_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -215,8 +224,10 @@ class PrepotteryController extends Controller
      * Displays a form to edit an existing Prepottery entity.
      *
      * @Route("/{id}/edit", name="prepottery_edit")
+     * @Breadcrumb("Edit pottery",  route={"name"="prepottery_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -251,6 +262,7 @@ class PrepotteryController extends Controller
      * @Route("/{id}", name="prepottery_update")
      * @Method("PUT")
      * @Template("KdigArchaeologicalBundle:Prepottery:edit.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -295,6 +307,7 @@ class PrepotteryController extends Controller
      *
      * @Route("/{id}", name="prepottery_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
