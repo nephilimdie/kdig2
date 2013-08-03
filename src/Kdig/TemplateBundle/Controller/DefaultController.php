@@ -4,6 +4,11 @@ namespace Kdig\TemplateBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Template controller.
+ *
+ * @Route("/template")
+ */
 class DefaultController extends Controller
 {
     public function indexAction($name)
