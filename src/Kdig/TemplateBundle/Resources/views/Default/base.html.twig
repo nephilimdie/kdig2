@@ -212,7 +212,8 @@
                 $.address.value($(this).attr('href'));  
                 return false;
             });
-            $(".breadcrumb > li > a").on("click", function(event){ 
+            $(".breadcrumb > li > a").on("click", function(event){
+                alert('weh');
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
                 return false;
