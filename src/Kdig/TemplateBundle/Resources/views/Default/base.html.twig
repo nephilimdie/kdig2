@@ -209,19 +209,23 @@
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
-                $.address.value($(this).attr('href'));  
+                $.address.value($(this).attr('href'));
+                return false;
             });
             $(".left-menu a").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
+                return false;
             });
             $(".ajax").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
+                return false;
             });
             $(".changeGroup .dropdown-menu a").on("click", function(event){ 
                 event.preventDefault();
-                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext')
+                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
+                return false;
             });
         });
         
