@@ -56,6 +56,14 @@ class PotteryController extends Controller
         $grid->addRowAction($showAction);
         $grid->addMassAction(new DeleteMassAction());
         
+        
+//        $tableAlias = $source::TABLE_ALIAS;
+//        $source->manipulateQuery(function ($query) use ($tableAlias) {
+//            $query->addSelect('array_to_string(array_agg(projects.name), ',')) as points');
+//        });
+//
+//        $grid->addColumn(new BlankColumn(['id' => 'points', 'title' => 'points','size' => '30']));
+        
         $fileName = 'Pottery-'.date("d-m-Y");
         $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
 
