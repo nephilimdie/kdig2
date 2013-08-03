@@ -22,7 +22,7 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/flash", name="tamplate_flash")
+     * @Route("/flash", name="template_flash")
      * @Method("GET")
      * @Template("KdigTemplateBundle:Default:renderFlash.html.twig")
      */
