@@ -23,12 +23,15 @@ use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Bucket controller.
  *
  * @Route("/bucket")
+ * @Breadcrumb("Bucket", route="bucket")
  */
 class BucketController extends Controller
 {
@@ -36,6 +39,7 @@ class BucketController extends Controller
      * Lists all Object entities.ì in grid
      *
      * @Route("/", name="bucket")
+     * @Breadcrumb("Table", route="bucket")
      * @Method("GET")
      * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      */
@@ -79,6 +83,7 @@ class BucketController extends Controller
      * Lists all Bucket entities.
      *
      * @Route("/home/", name="bucket_home")
+     * @Breadcrumb("Home", route="bucket_home")
      * @Template()
      */
     public function indexAction()
@@ -198,6 +203,7 @@ class BucketController extends Controller
      * Displays a form to create a new Bucket entity.
      *
      * @Route("/new", name="bucket_new")
+     * @Breadcrumb("New bucket", route="bucket_new")
      * @Template()
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
@@ -221,6 +227,7 @@ class BucketController extends Controller
      * Finds and displays a Bucket entity.
      *
      * @Route("/{id}", name="bucket_show")
+     * @Breadcrumb("Show bucket {id}", route="bucket_show", "parameters"={"id"})
      * @Method("GET")
      * @Template()
      */
