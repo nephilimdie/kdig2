@@ -16,19 +16,25 @@ use Kdig\ArchaeologicalBundle\Entity\Preobject;
 use Kdig\ArchaeologicalBundle\Form\PreobjectType;
 use Kdig\ArchaeologicalBundle\Form\PreobjectFilterType;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 /**
  * Preobject controller.
  *
  * @Route("/preobject")
+ * @Breadcrumb("Object", route="preobject")
  */
 class PreobjectController extends Controller
 {
     /**
      * Lists all Preobject entities.
      *
-     * @Route("/", name="preobject")
-     * @Method("GET")
+     * @Route("/home/", name="preobject_home")
+     * @Breadcrumb("Object Home", route="preobject_home")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function indexAction()
     {
@@ -122,6 +128,7 @@ class PreobjectController extends Controller
      * @Route("/", name="preobject_create")
      * @Method("POST")
      * @Template("KdigArchaeologicalBundle:Preobject:new.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function createAction(Request $request)
     {
@@ -160,8 +167,9 @@ class PreobjectController extends Controller
      * Displays a form to create a new Preobject entity.
      *
      * @Route("/new", name="preobject_new")
-     * @Method("GET")
+     * @Breadcrumb("New object", route="preobject_new")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function newAction(Request $request)
     {
@@ -190,6 +198,7 @@ class PreobjectController extends Controller
      * Finds and displays a Preobject entity.
      *
      * @Route("/{id}", name="preobject_show")
+     * @Breadcrumb("Show object",  route={"name"="preobject_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -215,8 +224,10 @@ class PreobjectController extends Controller
      * Displays a form to edit an existing Preobject entity.
      *
      * @Route("/{id}/edit", name="preobject_edit")
+     * @Breadcrumb("Edit object",  route={"name"="preobject_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function editAction($id)
     {
@@ -251,6 +262,7 @@ class PreobjectController extends Controller
      * @Route("/{id}", name="preobject_update")
      * @Method("PUT")
      * @Template("KdigArchaeologicalBundle:Preobject:edit.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function updateAction(Request $request, $id)
     {
@@ -297,6 +309,7 @@ class PreobjectController extends Controller
      *
      * @Route("/{id}", name="preobject_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
     {
