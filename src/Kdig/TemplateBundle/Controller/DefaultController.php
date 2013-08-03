@@ -10,4 +10,13 @@ class DefaultController extends Controller
     {
         return $this->render('KdigTemplateBundle:Default:index.html.twig', array('name' => $name));
     }
+    
+    /**
+     * @Route("/", name="tamplate_flash")
+     * @Method("GET")
+     * @Template("KdigTemplateBundle:Default:renderFlash.html.twig")
+     */
+    public function renderFlashAction() {
+        return array();
+    }
 }
