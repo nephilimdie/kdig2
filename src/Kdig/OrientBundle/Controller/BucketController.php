@@ -84,7 +84,7 @@ class BucketController extends Controller
      * Lists all Bucket entities.
      *
      * @Route("/home/", name="bucket_home")
-     * @Breadcrumb("Home", route="bucket_home")
+     * @Breadcrumb("Bucket Home", route="bucket_home")
      * @Template()
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
