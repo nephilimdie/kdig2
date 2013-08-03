@@ -8,7 +8,8 @@ kdig_user:
     prefix:   /
     
 kdig_template:
-    resource: "@KdigTemplateBundle/Resources/config/routing.yml"
+    resource: "@KdigTemplateBundle/Controller/"
+    type:     annotation
     prefix:   /template
 
 kdig_archaeological:
