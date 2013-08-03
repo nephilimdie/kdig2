@@ -1,7 +1,8 @@
 {% block content %}
 <div class="span2 left-menu">
     {% block content_left_menu %}
-    <h2>Sidebar</h2>
+        {{ mopa_bootstrap_navbar('leftmenu') }}
+        {{ mopa_bootstrap_navbar('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
 <div class="span10 center">
