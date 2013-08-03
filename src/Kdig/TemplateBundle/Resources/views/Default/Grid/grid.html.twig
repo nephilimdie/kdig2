@@ -5,7 +5,7 @@
         {{ mopa_bootstrap_navbar('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="span10 center">
+<div class="span11 center">
     {% block page_header %}
     <div class="page-header span12">
         {{ apy_breadcrumb_trail_render() }}
@@ -13,7 +13,7 @@
     {% endblock page_header %}
         
     {% block content_content %}
-    <div class="span12">{{ grid(grid, 'KdigTemplateBundle:Default:Grid/blocks_js.jquery.html.twig') }}</div>
+    <div class="span12 grid-parent-block">{{ grid(grid, 'KdigTemplateBundle:Default:Grid/blocks_js.jquery.html.twig') }}</div>
     {% endblock content_content %}
 </div>
 {% endblock content %}
