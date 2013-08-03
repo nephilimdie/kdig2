@@ -186,12 +186,6 @@
                 $(".content").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
-                        
-                        $(".ajax").on("click", function(event){ 
-                            event.preventDefault();
-                            $.address.value($(this).attr('href'));  
-                            return false;
-                        });
                         return false; 
                     }); 
                     $(".content").spin(false);
@@ -213,6 +207,11 @@
                     e.preventDefault();
                 });
             // load from archaeological menu
+            $(".ajax").on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
+                return false;
+            });
             $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
