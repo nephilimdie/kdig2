@@ -207,12 +207,12 @@
                     e.preventDefault();
                 });
             // load from archaeological menu
-            $(".ajax").on("click", function(event){ 
+            $('body').find(".ajax").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
                 return false;
             });
-            $(".breadcrumb > li > a").on("click", function(event){
+            $('body').find(".breadcrumb > li > a").on("click", function(event){
                 alert('weh');
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
