@@ -44,17 +44,17 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
 //        die(var_dump($request));
 
         $list_menu = $menu->addChild('list', array('route' => $list));
-        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        $this->addIcon($list_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($id) {
             $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
-            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+            $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
             $this->addDivider($menu, true);
             $delete_menu = $menu->addChild('delete', array(
                 'route' => $delete, 
                 'class'=> 'btn btn-danger', 
                 'routeParameters' => array('id' => $id)
             ));
-            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+            $this->addIcon($delete_menu, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
             $delete_menu->setAttributes(array('class'=>'btn btn-danger'));
         }
         if($this->role_pottery) {
@@ -98,6 +98,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $zip = $export->addChild('zip', array('route' => 'pottery'));
         return $menu;
     }
+    
     public function createObjectShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
