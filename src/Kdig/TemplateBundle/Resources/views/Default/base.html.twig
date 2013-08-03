@@ -97,7 +97,7 @@
         {% if app.session.flashbag.peekAll|length > 0 %}
         <div class="row-fluid span12">
             <div id="flash" class="span12">
-            {{ advanced_flash() }}
+            {{ session_flash() }}
             </div>
         </div>
         {% endif %}
@@ -189,7 +189,6 @@
                         return false; 
                     }); 
                     $(".content").spin(false);
-                    getdefaultstringAjax (routeflash, $('#flash'), 'html');
                 });
             });  
             $.address.init(function(event) {  
