@@ -1,2 +1,2 @@
 apy_breadcrumb_trail:
-    template: APYBreadcrumbTrailBundle::breadcrumbtrail.html.twig
+    template: KdigTemplateBundle:Default:Breadcrumb/breadcrumbtrail.html.twig
