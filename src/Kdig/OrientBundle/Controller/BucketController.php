@@ -85,6 +85,7 @@ class BucketController extends Controller
      * @Route("/home/", name="bucket_home")
      * @Breadcrumb("Home", route="bucket_home")
      * @Template()
+     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function indexAction()
     {
