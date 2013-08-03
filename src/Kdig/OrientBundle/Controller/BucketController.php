@@ -227,7 +227,7 @@ class BucketController extends Controller
      * Finds and displays a Bucket entity.
      *
      * @Route("/{id}", name="bucket_show")
-     * @Breadcrumb("Show bucket",  route={"name"=""bucket_show", "parameters"={"{id}"}})
+     * @Breadcrumb("Show bucket",  route={"name"="bucket_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
