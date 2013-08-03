@@ -86,7 +86,7 @@ class BucketController extends Controller
      * @Route("/home/", name="bucket_home")
      * @Breadcrumb("Home", route="bucket_home")
      * @Template()
-     * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function indexAction()
     {
@@ -255,6 +255,7 @@ class BucketController extends Controller
      * Displays a form to edit an existing Bucket entity.
      *
      * @Route("/{id}/edit", name="bucket_edit")
+     * @Breadcrumb("Edit bucket",  route={"name"="bucket_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
