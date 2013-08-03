@@ -1,6 +1,5 @@
 <?php
 
-namespace Kdig\OrientBundle\Menu;
 namespace Kdig\TemplateBundle\Grid\Column;
 
 use APY\DataGridBundle\Grid\Column\Column;
