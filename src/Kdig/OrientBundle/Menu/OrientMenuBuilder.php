@@ -147,12 +147,10 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $zip = $export->addChild('zip', array('route' => 'sample'));
         return $menu;
     }
-    
-    public function createVocsPotteryMenu(Request $request) 
-    {
-//        die(var_dump($request));
-        $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'row-fluid action-nav-normal');
+    private function createVocsObject($menu)  {
+        
+    }
+    private function createVocsPottery($menu) {
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
         $base->setAttributes(array('class'=>''));
@@ -258,9 +256,18 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $tec->setAttributes(array('class'=>''));
         $tec->setLinkAttributes(array('class'=>''));
 //        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
-        
-        
         return $menu;
+    }
+    private function createVocsSample($menu) {
+        
+    }
+    public function createVocsPotteryMenu(Request $request) 
+    {
+//        die(var_dump($request));
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'row-fluid action-nav-normal');
+        if($this->role_pottery)
+            return $this->createVocsPottery ($menu);
     }
 
 }
