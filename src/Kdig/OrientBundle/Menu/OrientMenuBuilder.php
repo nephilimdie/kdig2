@@ -148,7 +148,36 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         return $menu;
     }
     private function createVocsObject($menu)  {
+        $base = $menu->addChild('Class', array('route' => 'pottery'));
+        $base->setAttributes(array('class'=>''));
+        $base->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $tec = $menu->addChild('Date', array('route' => 'pottery'));
+        $tec->setAttributes(array('class'=>''));
+        $tec->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $base = $menu->addChild('Decoration', array('route' => 'pottery'));
+        $base->setAttributes(array('class'=>''));
+        $base->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $tec = $menu->addChild('Material', array('route' => 'pottery'));
+        $tec->setAttributes(array('class'=>''));
+        $tec->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $base = $menu->addChild('Preservation', array('route' => 'pottery'));
+        $base->setAttributes(array('class'=>''));
+        $base->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $tec = $menu->addChild('Technique', array('route' => 'pottery'));
+        $tec->setAttributes(array('class'=>''));
+        $tec->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        $base = $menu->addChild('Type', array('route' => 'pottery'));
+        $base->setAttributes(array('class'=>''));
+        $base->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
+        return $menu;
     }
     private function createVocsPottery($menu) {
         
@@ -260,6 +289,11 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
     }
     private function createVocsSample($menu) {
         
+        $base = $menu->addChild('Type Sample', array('route' => 'samplevoc_vocsampletype'));
+        $base->setAttributes(array('class'=>''));
+        $base->setLinkAttributes(array('class'=>''));
+//        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+        return $menu;
     }
     public function createVocsPotteryMenu(Request $request) 
     {
@@ -267,7 +301,13 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'row-fluid action-nav-normal');
         if($this->role_pottery)
-            return $this->createVocsPottery ($menu);
+            return $this->createVocsPottery($menu);
+        if($this->role_object)
+            return $this->createVocsObject($menu);
+        if($this->role_sample)
+            return $this->createVocsSample($menu);
+        
+        return $menu;
     }
 
 }
