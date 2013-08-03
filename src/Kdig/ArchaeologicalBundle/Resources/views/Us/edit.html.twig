@@ -1,44 +1,54 @@
-{% block title %}
- {{ 'views.edit.edit'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }} - {{ entity.typeus.name }}{{ entity.name }}
-{% endblock %}
-
-{% block page %}
-
-{{ form_javascript(edit_form) }}
-{{ form_stylesheet(edit_form) }}
-
-<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
-<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
-{{ JSFV(edit_form) }}
-
-<form id="us_edit_form" class="" action="{{ path('us_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    <div class="row-fluid">
-        <input type="hidden" name="_method" value="PUT" />
-        {{ form_widget(edit_form) }}
-        <p class="span12">
-            <button type="submit" class="btn btn-success">{{ 'views.edit.editbutton'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-        </p>
+{% block content %}
+<div class="span2 left-menu">
+    {% block content_left_menu %}
+        {{ mopa_bootstrap_navbar('leftmenu') }}
+        {{ mopa_bootstrap_navbar('vocsmenupottery') }}
+    {% endblock content_left_menu %}
+</div>
+<div class="span10 center">
+    {% block page_header %}
+    <div class="page-header span12">
+        <h5>{{ 'views.edit.edit'|trans({'%entity%': 'Us'}, 'JordiLlonchCrudGeneratorBundle') }} - {{ entity.typeus.name }}{{ entity.name }}</h5>
     </div>
-</form>
+    {% endblock page_header %}
+    {% block content_content %}
+        {{ form_javascript(edit_form) }}
+        {{ form_stylesheet(edit_form) }}
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        var formsave1 = new autosaveform({
-                formid: 'us_edit_form',
-                pause: 2000 
-        });
-        $('#kdig_archaeologicalbundle_ustype_site').change(function() {
-            id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
-            id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
-            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
-            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
-        });
-        $('#kdig_archaeologicalbundle_ustype_area').change(function() {
-            id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
-            id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
-            var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
-            getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
-        });
-    });
-</script>
-{% endblock %}
+        <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+        {{ JSFV(edit_form) }}
+
+        <form id="us_edit_form" class="" action="{{ path('us_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            <div class="row-fluid">
+                <input type="hidden" name="_method" value="PUT" />
+                {{ form_widget(edit_form) }}
+                <p class="span12">
+                    <button type="submit" class="btn btn-success">{{ 'views.edit.editbutton'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+                </p>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var formsave1 = new autosaveform({
+                        formid: 'us_edit_form',
+                        pause: 2000 
+                });
+                $('#kdig_archaeologicalbundle_ustype_site').change(function() {
+                    id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
+                    id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
+                    var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
+                    getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
+                });
+                $('#kdig_archaeologicalbundle_ustype_area').change(function() {
+                    id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
+                    id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
+                    var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });
+                    getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_ustype_name', 'fill');
+                });
+            });
+        </script>
+    {% endblock content_content %}
+</div>
+{% endblock content %}

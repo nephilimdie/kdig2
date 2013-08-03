@@ -1,58 +1,44 @@
-{% extends 'JordiLlonchCrudGeneratorBundle::layout.html.twig' %}
-
-{% block title %}
-{{ parent() }} - {{ 'views.show.show'|trans({'%entity%': 'Presample'}, 'JordiLlonchCrudGeneratorBundle') }}
-{% endblock %}
-
-{% block page %}
-
-<h1>Presample</h1>
-
-<form class="form-horizontal">
-    <fieldset>        <div class="control-group">
-            <label class="control-label">Id</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.id }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Name</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.name }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Remarks</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.remarks }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Created</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Updated</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.updated|date('Y-m-d H:i:s') }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Isactive</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isActive }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Ispublic</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isPublic }}</span>            </div>
-        </div>        <div class="control-group">
-            <label class="control-label">Isdelete</label>
-            <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isDelete }}</span>            </div>
-        </div>    </fieldset>
-</form>
-
-<div>
-    <div class="float-left">
-        <a class="btn" href="{{ path('presample') }}">
-            {{ 'views.recordactions.backtothelist'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
-    </div>
-    <div class="float-left">
-        <a class="btn btn-primary" href="{{ path('presample_edit', { 'id': entity.id }) }}">
-            {{ 'views.recordactions.edit'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
-        </a>
-    </div>
-    <div class="float-left">
-        <form action="{{ path('presample_delete', { 'id': entity.id }) }}" method="post">
-            <input type="hidden" name="_method" value="DELETE" />
-            {{ form_widget(delete_form) }}
-            <button class="btn btn-danger" type="submit" onclick="return confirm('{{ 'views.recordactions.confirm'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}');">{{ 'views.recordactions.delete'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-        </form>
-    </div>
+{% block content %}
+<div class="span2 left-menu">
+    {% block content_left_menu %}
+        {{ mopa_bootstrap_navbar('leftmenu') }}
+        {{ mopa_bootstrap_navbar('vocsmenupottery') }}
+    {% endblock content_left_menu %}
 </div>
-{% endblock %}
+<div class="span10 center">
+    {% block page_header %}
+    <div class="page-header span12">
+        <h5>{{ 'views.show.show'|trans({'%entity%': 'Presample'}, 'JordiLlonchCrudGeneratorBundle') }}</h5>
+    </div>
+    {% endblock page_header %}
+    {% block content_content %}
+        <div class="span12">
+            <div class="control-group">
+                <label class="control-label">Id</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.id }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Name</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.name }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Remarks</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.remarks }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Created</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Updated</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.updated|date('Y-m-d H:i:s') }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Isactive</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isActive }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Ispublic</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isPublic }}</span>            </div>
+            </div>        <div class="control-group">
+                <label class="control-label">Isdelete</label>
+                <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.isDelete }}</span>            </div>
+            </div>     
+        </div>
+    {% endblock content_content %}
+</div>
+{% endblock content %}

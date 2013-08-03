@@ -1,12 +1,21 @@
-{% block title %}
-    {{ 'views.edit.edit'|trans({'%entity%': 'Preobject'}, 'JordiLlonchCrudGeneratorBundle') }}
-{% endblock %}
-
-{% block page %}
+{% block content %}
+<div class="span2 left-menu">
+    {% block content_left_menu %}
+        {{ mopa_bootstrap_navbar('leftmenu') }}
+        {{ mopa_bootstrap_navbar('vocsmenupottery') }}
+    {% endblock content_left_menu %}
+</div>
+<div class="span10 center">
+    {% block page_header %}
+    <div class="page-header span12">
+        <h5>{{ 'views.edit.edit'|trans({'%entity%': 'Preobject'}, 'JordiLlonchCrudGeneratorBundle') }}</h5>
+    </div>
+    {% endblock page_header %}
+    {% block content_content %}
 
 <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
-{{ JSFV(form) }}
+{{ JSFV(edit_form) }}
 
 {{ form_javascript(edit_form) }}
 {{ form_stylesheet(edit_form) }}
@@ -32,5 +41,7 @@ $(document).ready( function () {
         getdefaultstringAjax(routegetdefault,'#kdig_archaeologicalbundle_preobjecttype_name','fill');
     });
 });
-</script>
-{% endblock %}
+        </script>
+    {% endblock content_content %}
+</div>
+{% endblock content %}
