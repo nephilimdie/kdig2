@@ -45,6 +45,8 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
 
         $list_menu = $menu->addChild('list', array('route' => $list));
         $this->addIcon($list_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+        $new_menu = $menu->addChild('new', array('route' => $new));
+        $this->addIcon($new_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($id) {
             $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
