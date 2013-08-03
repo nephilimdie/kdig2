@@ -81,7 +81,8 @@ class UsController extends Controller
     /**
      * Lists all Us entities.
      *
-     * @Breadcrumb("Home", route="us_home")
+     * @Route("/home/", name="us_home")
+     * @Breadcrumb("SU Home", route="us_home")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      * @Template()
      */
