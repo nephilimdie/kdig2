@@ -25,6 +25,7 @@ use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
  * Us controller.
  *
  * @Route("/us")
+ * @Breadcrumb("Stratigraphics Unit", route="us")
  */
 class UsController extends Controller
 {
@@ -32,7 +33,10 @@ class UsController extends Controller
      * Lists all Us entities in grid
      *
      * @Route("/", name="us")
+     * @Breadcrumb("Table", route="us")
      * @Method("GET")
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function myGridAction()
     {
@@ -74,6 +78,8 @@ class UsController extends Controller
     /**
      * Lists all Us entities.
      *
+     * @Breadcrumb("Home", route="us_home")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      * @Template()
      */
     public function indexAction()
@@ -205,6 +211,8 @@ class UsController extends Controller
      * Displays a form to create a new Us entity.
      *
      * @Route("/new", name="us_new")
+     * @Breadcrumb("New SU", route="us_new")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      * @Method("GET")
      * @Template()
      */
@@ -224,6 +232,7 @@ class UsController extends Controller
      * Finds and displays a Us entity.
      *
      * @Route("/{id}", name="us_show")
+     * @Breadcrumb("Show SU",  route={"name"="us_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -249,6 +258,7 @@ class UsController extends Controller
      * Displays a form to edit an existing Us entity.
      *
      * @Route("/{id}/edit", name="us_edit")
+     * @Breadcrumb("Edit SU",  route={"name"="us_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
