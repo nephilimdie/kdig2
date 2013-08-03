@@ -212,6 +212,11 @@
                 $.address.value($(this).attr('href'));  
                 return false;
             });
+            $(".breadcrumb > li > a").on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));
+                return false;
+            });
             $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
