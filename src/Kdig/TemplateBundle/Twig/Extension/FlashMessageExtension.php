@@ -2,21 +2,17 @@
 
 namespace Kdig\TemplateBundle\Twig\Extension;
 
-use Symfony\Component\HttpFoundation\Session as Session;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class FlashMessageExtension extends \Twig_Extension
 {
-    /**
-     * @var Session
-     */
-    protected $session;
-    
-    /**
-     * @param Session $session
-     */
-    public function __construct(Session $session)
+    private $container;
+    private $session;
+ 
+    public function __construct(ContainerInterface $container)
     {
-        $this->session = $session;
+        $this->container = $container;
+        $this->session = $this->container->get('session');
     }
     
     /**
