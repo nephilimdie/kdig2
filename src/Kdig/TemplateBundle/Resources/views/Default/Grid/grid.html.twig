@@ -1,5 +1,5 @@
 {% block content %}
-<div class="span2 left-menu">
+<div class="span1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_navbar('leftmenu') }}
         {{ mopa_bootstrap_navbar('vocsmenupottery') }}
@@ -8,9 +8,11 @@
 <div class="span10 center">
     {% block page_header %}
     <div class="page-header span12">
+        {{ apy_breadcrumb_trail_render() }}
         <h5>{{ 'views.index.list'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h5>
     </div>
     {% endblock page_header %}
+        
     {% block content_content %}
     <div class="span12">{{ grid(grid, 'KdigTemplateBundle:Default:Grid/blocks_js.jquery.html.twig') }}</div>
     {% endblock content_content %}
