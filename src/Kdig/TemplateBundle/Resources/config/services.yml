@@ -73,8 +73,10 @@ services:
         class: Kdig\TemplateBundle\Grid\Column\ExtendedTextColumn
         tags:
             - { name: grid.column.extension }
-#    kdig.twig.flash_extension:
-#        class: Kdig\TemplateBundle\Twig\Extension\FlashMessageExtension
-#        arguments: [ '@session' ]
-#        tags:
-#            - { name: twig.extension }
+            
+    kdig.twig.flash_extension:
+        class: Kdig\TemplateBundle\Twig\Extension\FlashMessageExtension
+        arguments: 
+          session: "@session"
+        tags:
+            - { name: twig.extension }
