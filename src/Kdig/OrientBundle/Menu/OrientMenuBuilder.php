@@ -39,7 +39,8 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $list = "";
         $export_pdf = "";
         $export_zip = "";
-        $id=null;
+        $id = $request->get('id', null);
+        die(var_dump($request));
 /*
         $list_menu = $menu->addChild('list', array('route' => $list));
         $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
@@ -79,7 +80,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
-//        die(var_dump($request));
+        die(var_dump($request));
         $list = $menu->addChild('list', array('route' => 'pottery'));
         $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_pottery) {
