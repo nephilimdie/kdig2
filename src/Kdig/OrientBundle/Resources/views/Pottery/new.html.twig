@@ -1,54 +1,65 @@
-{% block title %}
-    {{ 'views.new.creation'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}
-{% endblock %}
-
-{% block page %}
-
-<script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
-<script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
-{{ JSFV(form) }}
-
-{{ form_javascript(form) }}
-{{ form_stylesheet(form) }}
-
-<form id="potteryform" class="" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
-    <div class="row-fluid">
-        {{ form_widget(form) }}
-        <p class="span12">
-            <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
-        </p>
+{% block content %}
+<div class="span2 left-menu">
+    {% block content_left_menu %}
+        {{ mopa_bootstrap_navbar('leftmenu') }}
+        {{ mopa_bootstrap_navbar('vocsmenupottery') }}
+    {% endblock content_left_menu %}
+</div>
+<div class="span10 center">
+    {% block page_header %}
+    <div class="page-header span12">
+        <h5>{{ 'views.new.creation'|trans({'%entity%': 'Pottery'}, 'JordiLlonchCrudGeneratorBundle') }}</h5>
     </div>
-</form>
-<script type="text/javascript">
-$(document).ready( function () {
-    var formsave1 = new autosaveform({
-            formid: 'potteryform',
-            pause: 2000 
-    });
-    
-    $(".control-group input[type=radio]").change(function(event){ 
-        var radio = $(this);
-        if($(this).is(':checked')) {
-            var checked = $(this);
-            radio.closest('.control-group').find('.selected').html(checked.parent().text());
-            radio.closest('.control-group').find('.controls').hide('slow');
-        }
-    });
-    $('.control-group legend').on('click', function(event){ 
-        event.preventDefault();
-        var legend = $(this);
-        legend.closest('.control-group').find('.controls').toggle();
-    });
-    
-    var id_bucket  = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
-    var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
-    getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+    {% endblock page_header %}
+    {% block content_content %}
 
-    $('#kdig_orientbundle_potterytype_prepottery_bucket').change(function() {
-        var id_bucket = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
-        var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
-        getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
-    });
-});
-</script>
-{% endblock %}
+        <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translator.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
+        {{ JSFV(form) }}
+
+        {{ form_javascript(form) }}
+        {{ form_stylesheet(form) }}
+
+        <form id="potteryform" class="" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
+            <div class="row-fluid">
+                {{ form_widget(form) }}
+                <p class="span12">
+                    <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
+                </p>
+            </div>
+        </form>
+        <script type="text/javascript">
+        $(document).ready( function () {
+            var formsave1 = new autosaveform({
+                    formid: 'potteryform',
+                    pause: 2000 
+            });
+
+            $(".control-group input[type=radio]").change(function(event){ 
+                var radio = $(this);
+                if($(this).is(':checked')) {
+                    var checked = $(this);
+                    radio.closest('.control-group').find('.selected').html(checked.parent().text());
+                    radio.closest('.control-group').find('.controls').hide('slow');
+                }
+            });
+            $('.control-group legend').on('click', function(event){ 
+                event.preventDefault();
+                var legend = $(this);
+                legend.closest('.control-group').find('.controls').toggle();
+            });
+
+            var id_bucket  = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
+            var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
+            getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+
+            $('#kdig_orientbundle_potterytype_prepottery_bucket').change(function() {
+                var id_bucket = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
+                var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
+                getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
+            });
+        });
+        </script>
+    {% endblock content_content %}
+</div>
+{% endblock content %}
