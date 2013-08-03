@@ -70,7 +70,7 @@ class BucketController extends Controller
         
         $grid->addExport($export);
         
-        $this->get('session')->getFlashBag()->add('success', 'yeahhhhh');
+        $this->get('session')->setFlash('success', 'yeahhhhh');
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse();
     }
