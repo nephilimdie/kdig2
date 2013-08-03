@@ -40,7 +40,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $export_pdf = "";
         $export_zip = "";
         $id=null;
-
+/*
         $list_menu = $menu->addChild('list', array('route' => $list));
         $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($id) {
@@ -54,7 +54,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
             ));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
             $delete_menu->setAttributes(array('class'=>'btn btn-danger'));
-        }
+        }*/
         if($this->role_pottery) {
         } elseif($this->role_object) {
             
@@ -71,7 +71,9 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         //edit
         //grid
         //home
+        return $menu;
     }
+    
     public function createPotteryShowMenu(Request $request)
     {
         $menu = $this->factory->createItem('root');
