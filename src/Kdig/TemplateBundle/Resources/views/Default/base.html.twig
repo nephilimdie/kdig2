@@ -209,17 +209,14 @@
             // load from archaeological menu
             $(".archaeological ul > li > ul > li > a").on("click", function(event){ 
                 event.preventDefault();
-                $(".content").spin(optsspin);
                 $.address.value($(this).attr('href'));  
             });
             $(".left-menu a").on("click", function(event){ 
                 event.preventDefault();
-                $(".content").spin(optsspin);
                 $.address.value($(this).attr('href'));  
             });
             $(".ajax").on("click", function(event){ 
                 event.preventDefault();
-                $(".content").spin(optsspin);
                 $.address.value($(this).attr('href'));  
             });
             $(".changeGroup .dropdown-menu a").on("click", function(event){ 
