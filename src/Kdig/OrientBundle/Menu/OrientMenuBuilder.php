@@ -34,7 +34,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $name =split('_', $request->get('_route'));
         $controller = $name[0];
         $show = $controller."_show";
-        $home = $controller."_index";
+        $home = $controller."_home";
         $edit = $controller."_edit";
         $new = $controller."_new";
         $delete = $controller."_delete";
