@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new Bazinga\ExposeTranslationBundle\BazingaExposeTranslationBundle(),
             new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
+            new APY\BreadcrumbTrailBundle\APYBreadcrumbTrailBundle(),
 
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),
