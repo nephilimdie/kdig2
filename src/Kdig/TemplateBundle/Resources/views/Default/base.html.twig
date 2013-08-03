@@ -177,6 +177,8 @@
         $(document).ready( function () {
 //            $.address.value('/');
 //            $.address.strict(false);
+
+            var routeflash = Routing.generate('tamplate_flash');
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
@@ -187,6 +189,7 @@
                         return false; 
                     }); 
                     $(".content").spin(false);
+                    getdefaultstringAjax (routeflash, $('#flash'), 'html');
                 });
             });  
             $.address.init(function(event) {  
