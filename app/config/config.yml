@@ -94,7 +94,8 @@ doctrine:
                 dql:
                     string_functions:
                         STRING_AGG: 'Kdig\ArchaeologicalBundle\DQL\StringAgg'
-                        GROUP_CONCAT: Kdig\ArchaeologicalBundle\DQL\GroupConcat
+                        GroupConcat: Kdig\ArchaeologicalBundle\DQL\GroupConcat
+                        AtGroupConcat: Kdig\ArchaeologicalBundle\DQL\AtGroupConcat
                         
                 auto_mapping:         true
                 mappings:
