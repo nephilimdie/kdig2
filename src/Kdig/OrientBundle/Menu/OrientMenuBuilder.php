@@ -157,107 +157,107 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $base = $menu->addChild('Base', array('route' => 'pottery'));
         $base->setAttributes(array('class'=>''));
         $base->setLinkAttributes(array('class'=>''));
-        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $class = $menu->addChild('Class', array('route' => 'pottery'));
         $class->setAttributes(array('class'=>''));
         $class->setLinkAttributes(array('class'=>''));
-        $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($class, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $color = $menu->addChild('Color', array('route' => 'pottery'));
         $color->setAttributes(array('class'=>''));
         $color->setLinkAttributes(array('class'=>''));
-        $this->addIcon($color, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($color, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $firin = $menu->addChild('Firing', array('route' => 'pottery'));
         $firin->setAttributes(array('class'=>''));
         $firin->setLinkAttributes(array('class'=>''));
-        $this->addIcon($firin, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($firin, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $handle = $menu->addChild('Handle', array('route' => 'pottery'));
         $handle->setAttributes(array('class'=>''));
         $handle->setLinkAttributes(array('class'=>''));
-        $this->addIcon($handle, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($handle, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $handpos = $menu->addChild('Handle Position', array('route' => 'pottery'));
         $handpos->setAttributes(array('class'=>''));
         $handpos->setLinkAttributes(array('class'=>''));
-        $this->addIcon($handpos, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($handpos, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $incl = $menu->addChild('Inclusion', array('route' => 'pottery'));
         $incl->setAttributes(array('class'=>''));
         $incl->setLinkAttributes(array('class'=>''));
-        $this->addIcon($incl, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($incl, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $inclfre = $menu->addChild('Inclusion Frequency', array('route' => 'pottery'));
         $inclfre->setAttributes(array('class'=>''));
         $inclfre->setLinkAttributes(array('class'=>''));
-        $this->addIcon($inclfre, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($inclfre, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $inclsiz = $menu->addChild('Inclusion Size', array('route' => 'pottery'));
         $inclsiz->setAttributes(array('class'=>''));
         $inclsiz->setLinkAttributes(array('class'=>''));
-        $this->addIcon($inclsiz, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($inclsiz, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $decopt = $menu->addChild('Decoration Option', array('route' => 'pottery'));
         $decopt->setAttributes(array('class'=>''));
         $decopt->setLinkAttributes(array('class'=>''));
-        $this->addIcon($decopt, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($decopt, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $wall = $menu->addChild('Wall', array('route' => 'pottery'));
         $wall->setAttributes(array('class'=>''));
         $wall->setLinkAttributes(array('class'=>''));
-        $this->addIcon($wall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($wall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $upwall = $menu->addChild('Upper Wall', array('route' => 'pottery'));
         $upwall->setAttributes(array('class'=>''));
         $upwall->setLinkAttributes(array('class'=>''));
-        $this->addIcon($upwall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($upwall, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $lowwal = $menu->addChild('Lower Wall', array('route' => 'pottery'));
         $lowwal->setAttributes(array('class'=>''));
         $lowwal->setLinkAttributes(array('class'=>''));
-        $this->addIcon($lowwal, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($lowwal, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $neck = $menu->addChild('Neck', array('route' => 'pottery'));
         $neck->setAttributes(array('class'=>''));
         $neck->setLinkAttributes(array('class'=>''));
-        $this->addIcon($neck, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($neck, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $preser = $menu->addChild('Preservation', array('route' => 'pottery'));
         $preser->setAttributes(array('class'=>''));
         $preser->setLinkAttributes(array('class'=>''));
-        $this->addIcon($preser, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($preser, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $rim = $menu->addChild('Rim', array('route' => 'pottery'));
         $rim->setAttributes(array('class'=>''));
         $rim->setLinkAttributes(array('class'=>''));
-        $this->addIcon($rim, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($rim, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $shape = $menu->addChild('Shape', array('route' => 'pottery'));
         $shape->setAttributes(array('class'=>''));
         $shape->setLinkAttributes(array('class'=>''));
-        $this->addIcon($shape, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($shape, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $spout = $menu->addChild('Spout', array('route' => 'pottery'));
         $spout->setAttributes(array('class'=>''));
         $spout->setLinkAttributes(array('class'=>''));
-        $this->addIcon($spout, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($spout, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $spoutpo = $menu->addChild('Spout Position', array('route' => 'pottery'));
         $spoutpo->setAttributes(array('class'=>''));
         $spoutpo->setLinkAttributes(array('class'=>''));
-        $this->addIcon($spoutpo, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($spoutpo, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $surf = $menu->addChild('Surface Treatment Option', array('route' => 'pottery'));
         $surf->setAttributes(array('class'=>''));
         $surf->setLinkAttributes(array('class'=>''));
-        $this->addIcon($surf, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($surf, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         $tec = $menu->addChild('Technique', array('route' => 'pottery'));
         $tec->setAttributes(array('class'=>''));
         $tec->setLinkAttributes(array('class'=>''));
-        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         
         
         return $menu;
