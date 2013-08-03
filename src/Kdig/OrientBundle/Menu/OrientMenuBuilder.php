@@ -41,7 +41,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $export_pdf = "";
         $export_zip = "";
         $id = $request->get('id', null);
-        die(var_dump($request));
+//        die(var_dump($request));
 /*
         $list_menu = $menu->addChild('list', array('route' => $list));
         $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
