@@ -31,6 +31,19 @@ services:
           - { name: doctrine.event_listener, event: postUpdate, method: postUpdate }
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
+## show left menu
+  kdig.archaeological.left:
+      class: %mopa_bootstrap.navbar.generic%
+      arguments:
+          # first argument: a named array of menues:
+          - { menu: '@kdig.orient.left.menu=' }
+          - {}
+          # third argument: a named array of options
+          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+      tags:
+          # The alias is used to retrieve the navbar in templates
+          - { name: mopa_bootstrap.navbar, alias: leftmenu }
+
 ## show pottery menu
   kdig.archaeological.potteryshow:
       class: %mopa_bootstrap.navbar.generic%
@@ -89,6 +102,15 @@ services:
       scope: request
       arguments: [ '@knp_menu.factory', '@security.context' ]
  
+  kdig.orient.left.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.orient.orient_menu_builder
+      factory_method: createLeftMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: menuleft }
+          
   kdig.orient.pottery.show.menu:
       class: Knp\Menu\MenuItem
       factory_service: kdig.orient.orient_menu_builder
