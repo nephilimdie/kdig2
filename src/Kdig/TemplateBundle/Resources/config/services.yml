@@ -76,7 +76,6 @@ services:
             
     kdig.twig.flash_extension:
         class: Kdig\TemplateBundle\Twig\Extension\FlashMessageExtension
-        arguments: 
-          session: "@session"
+        arguments: [ '@service_container' ]
         tags:
             - { name: twig.extension }
