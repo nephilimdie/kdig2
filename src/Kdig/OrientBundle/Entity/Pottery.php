@@ -252,7 +252,7 @@ class Pottery {
     
     /**
      * @ORM\OneToMany(targetEntity="Kdig\OrientBundle\Entity\Potteryvoc\VocPotterySurfacetratout", mappedBy="pottery", orphanRemoval=true, cascade={"persist"}) 
-     * @ GRID\Column(field="surfacetratout.color.name:GroupConcat", title="Surface Treatament Out")
+     * @ GRID\Column(field="surfacetratout", title="Surface Treatament Out")
      */
     private $surfacetratout;
     
