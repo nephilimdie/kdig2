@@ -42,6 +42,7 @@ class BucketController extends Controller
      * @Breadcrumb("Table", route="bucket")
      * @Method("GET")
      * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function myGridAction()
     {
