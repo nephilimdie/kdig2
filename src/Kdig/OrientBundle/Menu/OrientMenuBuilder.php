@@ -45,10 +45,13 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
 //        die(var_dump($request));
 
         $home_menu = $menu->addChild('list', array('route' => $home));
+        $home_menu->setLinkAttributes(array('class'=>'ajax'));
         $this->addIcon($home_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $list_menu = $menu->addChild('list', array('route' => $list));
+        $list_menu->setLinkAttributes(array('class'=>'ajax'));
         $this->addIcon($list_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $new_menu = $menu->addChild('new', array('route' => $new));
+        $new_menu->setLinkAttributes(array('class'=>'ajax'));
         $this->addIcon($new_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($id) {
             $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
