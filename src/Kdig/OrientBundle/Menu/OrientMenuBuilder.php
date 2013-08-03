@@ -31,12 +31,13 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         //show
-        $controller = "";
-        $show = "show";
-        $edit = "edit";
-        $new = "new";
-        $delete = "delete";
-        $list = "";
+        $name =split('_', $request->get('_route'));
+        $controller = $name[0];
+        $show = $controller."_show";
+        $edit = $controller."_edit";
+        $new = $controller."_new";
+        $delete = $controller."_delete";
+        $list = $controller;
         $export_pdf = "";
         $export_zip = "";
         $id = $request->get('id', null);
