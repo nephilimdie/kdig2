@@ -1,4 +1,4 @@
-{% from 'KdigTemplateBundle:Default:flash.html.twig' import session_flash %}
+{% from 'KdigTemplateBundle:Default:flash.html.twig' import session_flash, flash, advanced_flash %}
 
 <!DOCTYPE html>
 
@@ -97,7 +97,7 @@
         {% if app.session.flashbag.peekAll|length > 0 %}
         <div class="row-fluid span12">
             <div id="flash" class="span12">
-            {{ session_flash() }}
+            {{ advanced_flash() }}
             </div>
         </div>
         {% endif %}
