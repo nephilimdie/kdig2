@@ -289,8 +289,6 @@ class PotteryController extends Controller
         $em = $this->getDoctrine()->getManager();
         $user = $this->get('security.context')->getToken()->getUser();
         $bucketid = null;
-        if($request->get('bucket_id'))
-            $bucketid = $request->get('bucket_id');
         
         if ($bucketid==null || $bucketid=='')
             $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
