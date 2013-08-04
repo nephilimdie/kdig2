@@ -226,11 +226,6 @@
                 $.address.value($(this).attr('href'));
                 return false;
             });
-            $(".left-menu a").on("click", function(event){ 
-                event.preventDefault();
-                $.address.value($(this).attr('href'));  
-                return false;
-            });
             $(".changeGroup .dropdown-menu a").on("click", function(event){ 
                 event.preventDefault();
                 getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
