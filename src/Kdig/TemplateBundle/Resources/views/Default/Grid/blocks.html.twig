@@ -356,20 +356,16 @@
 {{ grid_scripts_switch_operator(grid) }}
 {{ grid_scripts_submit_form(grid) }}
 {{ grid_scripts_ajax(grid) }}
-{{ grid_scripts_spa() }}
-    
-</script>
-{% endblock grid_scripts %}
-{# spa #}
-{% block grid_scripts_spa %}
+
 $(document).ready( function () {
     $("ul.grid-row-actions > li > a").on("click", function(event){ 
         event.preventDefault();
         $.address.value($(this).attr('href'));
         return false;
     });
-});
-{% endblock grid_scripts_spa %}
+});    
+</script>
+{% endblock grid_scripts %}
 
 {% block grid_scripts_goto %}
 function {{ grid.hash }}_goto(url)
