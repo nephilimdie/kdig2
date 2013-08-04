@@ -1,5 +1,5 @@
 {% block navbar %}
-<div class="
+<div class="on-side-left 
     {{ (navbar.hasOption('fixedTop') and navbar.getOption('fixedTop')) 
         ? 'subnavbar-fixed-top' 
         : '' }}"
@@ -11,4 +11,14 @@
             'allow_safe_labels': true}) 
         : '' }}
 </div>
+
+<script type="text/javascript">
+    $(document).ready( function () {
+        $(".on-side-left a").on("click", function(event){ 
+            event.preventDefault();
+            $.address.value($(this).attr('href'));  
+            return false;
+        });
+    });
+</script>
 {% endblock %}
