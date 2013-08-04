@@ -190,6 +190,12 @@
                         return false; 
                     }); 
                     $(".content").spin(false);
+                    $(".breadcrumb > li > a").on("click", function(event){
+                        alert('weh');
+                        event.preventDefault();
+                        $.address.value($(this).attr('href'));
+                        return false;
+                    });
                 });
             });  
             $.address.init(function(event) {  
@@ -212,12 +218,6 @@
             $('ul.show-menu > li > a').on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
-                return false;
-            });
-            $('body').find(".breadcrumb > li > a").on("click", function(event){
-                alert('weh');
-                event.preventDefault();
-                $.address.value($(this).attr('href'));
                 return false;
             });
             $(".archaeological ul > li > a").on("click", function(event){ 
