@@ -24,7 +24,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
  * Prepottery controller.
  *
  * @Route("/prepottery")
- * @Breadcrumb("Pottery", route="prepottery")
+ * @Breadcrumb("Pottery", route="prepottery_home")
  */
 class PrepotteryController extends Controller
 {
