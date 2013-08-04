@@ -253,7 +253,7 @@ class PotteryController extends Controller
      * Finds and displays a Pottery entity.
      *
      * @Route("/{id}/show", name="pottery_show")
-     * @Breadcrumb("Show pottery",  route={"name"="pottery_show", "parameters"={"id"}})
+     * @Breadcrumb("Show pottery {id}",  route={"name"="pottery_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
