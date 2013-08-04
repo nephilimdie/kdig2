@@ -35,43 +35,47 @@ class PhotolistType extends AbstractType
                 'class' => 'Kdig\OrientBundle\Entity\Object',
                 'property' => 'number',
                 'attr'=> array('class'=>''),
-                'required' => false
+                'required' => false,
+                'multiple' => true
             ))
             ->add('pottery', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Pottery',
                 'property' => 'prepottery.name',
                 'attr'=> array('class'=>''),
-                'required' => false
+                'required' => false,
+                'multiple' => true
             ))
             ->add('sample', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\OrientBundle\Entity\Sample',
                 'property' => 'presample.name',
                 'attr'=> array('class'=>''),
-                'required' => false
+                'required' => false,
+                'multiple' => true
                 
             ))
             ->add('us', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Us',
                 'attr'=> array('class'=>''),
-                'required' => false
+                'required' => false,
+                'multiple' => true
             ))
             ->add('area', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Area',
                 'property' => 'name',
                 'attr'=> array('class'=>''),
-                'required' => false
+                'required' => false,
+                'multiple' => true
             ))
             ->add('remarks', null, array(
                 'widget_control_group_attr' => array('class'=>'span12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Remarks',
-                'required' => false,
-                'widget_type'  => ""
+                'required' => false
             ))
         ;
     }
