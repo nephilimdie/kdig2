@@ -180,77 +180,21 @@
 //            $.address.strict(false);
         
             var routeflash = Routing.generate('template_flash');
-            
-            // Document title
-            var title = document.title;
-
-            // Simple log
-            var log = function(msg) {
-                var log = $('.log');
-                if (!log.size()) {
-                    log = $('<div class="log" />').appendTo('.page');
-                }
-                log.append(msg.replace(/^([^:]*):(.*)$/, '<p><b>$1:</b> <span class="$1">$2</span></p>'))
-                    .attr({scrollTop: log.attr('scrollHeight')})
-                    .find('p:nth-child(even)').addClass('even');
-            };
-            
-            // Default tracker mock
-            var track = function() {
-                log('track: ' + arguments[0]);
-            };
-
-            // Serialization utility
-            var serialize = function(obj, re) {
-                var result = [];
-                $.each(obj, function(i, val) {
-                    if ((re && re.test(i)) || !re)
-                        result.push(i + ': ' + (typeof val == 'object' ? val.join 
-                            ? '\'' + val.join(', ') + '\'' : serialize(val) : '\'' + val + '\''));
-                });
-                return '{' + result.join(', ') + '}';
-            };
-            
-            // Init and change handlers
-            $.address.init(function(event) {
-                
+            $.address.change(function(event) {
+                /*var target = $('.container-fluid');
+                var spinner = new Spinner(opts).spin(target);*/
                 $(".content").spin(optsspin);
-                $(".content").load($.address.value(), function() {
+                $(".content").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
                         return false; 
                     }); 
                     $(".content").spin(false);
                 });
-                
-            }).bind('change', function(event) {
-            
-                $(".content").spin(optsspin);
-                $(".content").load($.address.value(), function() {
-                    $('form').submit(function() { 
-                        $(this).ajaxSubmit(options); 
-                        return false; 
-                    }); 
-                    $(".content").spin(false);
-                });
-                
-                //log('change: ' + serialize(event, /parameters|parametersNames|path|pathNames|queryString|value/));
-                var names = $.map(event.pathNames, function(n) {
-                    return n.substr(0, 1).toUpperCase() + n.substr(1);
-                }).concat(event.parameters.id ? event.parameters.id.split('.') : []);
-                var links = names.slice();
-                var match = links.length ? links.shift() + ' ' + links.join('.') : 'Home';
-                $('a').each(function() {
-                    $(this).toggleClass('selected', $(this).text() == match);
-                });
-                $.address.title([title].concat(names).join(' | '));
-            });
-            
-
-            $('body a').address(function() {
-                return $(this).attr('href');
-            });
-
+            });  
+            $.address.init(function(event) {  
+                return;
+            });  
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
@@ -265,6 +209,33 @@
                 });
                 
             $('.left-menu').affix();
+            // load from archaeological menu
+            $('ul.show-menu > li > a').on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
+                return false;
+            });
+            $('body').find(".breadcrumb > li > a").on("click", function(event){
+                alert('weh');
+                event.preventDefault();
+                $.address.value($(this).attr('href'));
+                return false;
+            });
+            $(".archaeological ul > li > a").on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));
+                return false;
+            });
+            $(".left-menu a").on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
+                return false;
+            });
+            $(".changeGroup .dropdown-menu a").on("click", function(event){ 
+                event.preventDefault();
+                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
+                return false;
+            });
         });
         
         function ajaxerror(jqXHR, exception) {
