@@ -31,7 +31,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
  * Photolist controller.
  *
  * @Route("/photolist")
- * @Breadcrumb("Bucket", route="photolist_home")
+ * @Breadcrumb("Photo List", route="photolist_home")
  */
 class PhotolistController extends Controller
 {
