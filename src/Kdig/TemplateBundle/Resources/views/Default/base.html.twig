@@ -212,7 +212,7 @@
                 $.address.value($(this).attr('href'));  
                 return false;
             });
-            $('.breadcrumb a').live("click", function(event){
+            $('.breadcrumb a').on("click", function(event){
                 alert('weh');
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
