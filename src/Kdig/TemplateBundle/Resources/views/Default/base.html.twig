@@ -247,6 +247,10 @@
             });
             
 
+            $('.body').address(function() {
+                return $(this).attr('href').replace('/kdigproject2/app_dev.php', '');
+            });
+
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
