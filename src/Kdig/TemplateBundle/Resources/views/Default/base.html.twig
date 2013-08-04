@@ -178,7 +178,7 @@
         $(document).ready( function () {
 //            $.address.value('/');
 //            $.address.strict(false);
-
+        
             var routeflash = Routing.generate('template_flash');
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
@@ -207,6 +207,8 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
+                
+            $('.left-menu').affix();
             // load from archaeological menu
             $('ul.show-menu > li > a').on("click", function(event){ 
                 event.preventDefault();
