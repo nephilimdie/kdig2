@@ -189,7 +189,7 @@
                 });
         });
     };
-    $("a.loadUrl").live('click', function(event) {
+    $("a").live('click', function(event) {
         event.preventDefault();
         $.address.parameter("page", $(this).attr("href"));
     });
