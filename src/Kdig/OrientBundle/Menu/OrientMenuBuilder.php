@@ -42,7 +42,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
         $export_pdf = "";
         $export_zip = "";
         $id = $request->get('id', null);
-        die(var_dump($request));
+//        die(var_dump($request));
 
         $home_menu = $menu->addChild('list', array('route' => $home));
         $home_menu->setLinkAttributes(array('class'=>'ajax'));
