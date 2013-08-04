@@ -38,7 +38,7 @@ class Prepottery {
     
     /**
      * @Gedmo\Versioned
-     * @ORM\Column(nullable=false, length=64, type="string", unique=true)
+     * @ORM\Column(nullable=false, length=64, type="string")
      * @Assert\NotBlank()
      * @GRID\Column(size="40", title="Name")
      */
