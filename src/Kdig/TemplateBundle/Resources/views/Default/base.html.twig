@@ -181,10 +181,10 @@
         
             var routeflash = Routing.generate('template_flash');
 
-        var content = $("#content");
+        var content = $(".content");
     var loadUrl = function(url) {
         content.fadeOut("slow", function() {
-            content.load(url + " #content > *", function() {
+            content.load(url + " .content > *", function() {
                     content.fadeIn("slow");
                 });
         });
@@ -195,16 +195,7 @@
     });
     $.address.change(function() {
         var page = $.address.parameter("page");
-        if (page) { 
-                $(".content").spin(optsspin);
-                $(".content").load(page, function() {
-                    $('form').submit(function() { 
-                        $(this).ajaxSubmit(options); 
-                        return false; 
-                    }); 
-                    $(".content").spin(false);
-                });
-                }
+        if (page) { loadUrl(page); }
     });
     
             $("a[data-toggle=tooltip]")
