@@ -99,29 +99,21 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             $menu->addChild('Object', array('route' => 'preobject_home'));
             $menu->addChild('Pottery', array('route' => 'prepottery_home'));
             $menu->addChild('Sample', array('route' => 'presample_home'));
-            $menu->addChild('Media', array('route' => 'media_index'));
-            $menu->addChild('Photo List', array('route' => 'default_index'));
         
         } elseif ($this->role_pottery) {
             $menu->addChild('SU', array('route' => 'us_home'));
             $menu->addChild('Bucket', array('route' => 'bucket_home'));
             $menu->addChild('Pottery', array('route' => 'pottery_home'));
-            $menu->addChild('Media', array('route' => 'media_index'));
-            $menu->addChild('Photo List', array('route' => 'default_index'));
             
         } elseif ($this->role_object) {
             $menu->addChild('SU', array('route' => 'us_home'));
             $menu->addChild('Bucket', array('route' => 'bucket_home'));
             $menu->addChild('Object', array('route' => 'object_home'));
-            $menu->addChild('Media', array('route' => 'media_index'));
-            $menu->addChild('Photo List', array('route' => 'default_index'));
             
         } elseif ($this->role_sample) {
             $menu->addChild('SU', array('route' => 'us_home'));
             $menu->addChild('Bucket', array('route' => 'bucket_home'));
             $menu->addChild('Sample', array('route' => 'sample_home'));
-            $menu->addChild('Media', array('route' => 'default_index'));
-            $menu->addChild('Photo List', array('route' => 'default_index'));
         }
 
         if ($this->role_media) {
