@@ -54,7 +54,16 @@ class PhotolistController extends Controller
             'filterForm' => $filterForm->createView(),
         );
     }
-
+    
+    /**
+     * Lists all Photolist entities.
+     *
+     * @Route("/grid/", name="photolist")
+     * @Method("GET")
+     */
+    public function gridAction() {
+        return array();
+    }
     /**
     * Create filter form and process filter request.
     *
