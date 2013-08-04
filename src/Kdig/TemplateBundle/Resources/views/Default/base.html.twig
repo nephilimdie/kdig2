@@ -189,6 +189,7 @@
                         $(this).ajaxSubmit(options); 
                         return false; 
                     }); 
+                    $('.left-menu').affix();
                     $(".content").spin(false);
                 });
             });  
@@ -208,7 +209,6 @@
                     e.preventDefault();
                 });
                 
-            $('.left-menu').affix();
             // load from archaeological menu
             $('ul.show-menu > li > a').on("click", function(event){ 
                 event.preventDefault();
