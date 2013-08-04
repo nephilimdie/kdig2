@@ -29,7 +29,7 @@ class OrientMenuBuilder extends AbstractNavbarMenuBuilder
     
     public function createLeftMenu(Request $request) {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav show-menu');
+        $menu->setChildrenAttributes(array('class' => 'nav show-menu dropdown-menu', 'role'=>"menu", 'aria-labelledby'=>"dropdownMenu"));
         //show
         $name =split('_', $request->get('_route'));
         $controller = $name[0];
