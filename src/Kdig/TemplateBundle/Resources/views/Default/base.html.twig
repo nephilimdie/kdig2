@@ -14,7 +14,6 @@
     {% stylesheets
         '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
         '@MopaBootstrapBundle/Resources/public/less/eyecon-bootstrap-datepicker.less'
-        '@KdigTemplateBundle/Resources/public/css/jquery.tocify.css'
         '@KdigTemplateBundle/Resources/public/less/archaeological.less'
         '@KdigTemplateBundle/Resources/public/less/grid.less'
         '@KdigOrientBundle/Resources/public/less/orient.less'
@@ -48,8 +47,7 @@
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
         '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
 
-        '@KdigTemplateBundle/Resources/public/js/jquery-ui-1.9.1.custom.min.js'
-        '@KdigTemplateBundle/Resources/public/js/jquery.tocify.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
         '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
         '@KdigTemplateBundle/Resources/public/js/spin.min.js'
         '@KdigTemplateBundle/Resources/public/js/jquery.spin.js'
@@ -81,7 +79,6 @@
 
 {% block body_tag %}
 <body data-spy="scroll">
-    <div id="toc"></div>
 {% endblock body_tag %}
 
 {% block body_start %}
@@ -181,13 +178,12 @@
         $(document).ready( function () {
 //            $.address.value('/');
 //            $.address.strict(false);
-            $("#toc").tocify();
+        
             var routeflash = Routing.generate('template_flash');
-            /*
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);*/
-            /*    $(".content").spin(optsspin);
+                $(".content").spin(optsspin);
                 $(".content").load(event.value, function() {
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
@@ -198,7 +194,7 @@
             });  
             $.address.init(function(event) {  
                 return;
-            });  */
+            });  
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
@@ -216,23 +212,23 @@
             // load from archaeological menu
             $('ul.show-menu > li > a').on("click", function(event){ 
                 event.preventDefault();
-                //$.address.value($(this).attr('href'));  
+                $.address.value($(this).attr('href'));  
                 return false;
             });
             $('body').find(".breadcrumb > li > a").on("click", function(event){
                 alert('weh');
                 event.preventDefault();
-                //$.address.value($(this).attr('href'));
+                $.address.value($(this).attr('href'));
                 return false;
             });
             $(".archaeological ul > li > a").on("click", function(event){ 
                 event.preventDefault();
-                //$.address.value($(this).attr('href'));
+                $.address.value($(this).attr('href'));
                 return false;
             });
             $(".left-menu a").on("click", function(event){ 
                 event.preventDefault();
-                //$.address.value($(this).attr('href'));  
+                $.address.value($(this).attr('href'));  
                 return false;
             });
             $(".changeGroup .dropdown-menu a").on("click", function(event){ 
