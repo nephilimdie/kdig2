@@ -81,6 +81,7 @@
 
 {% block body_tag %}
 <body data-spy="scroll">
+    <div id="toc"></div>
 {% endblock body_tag %}
 
 {% block body_start %}
@@ -180,7 +181,7 @@
         $(document).ready( function () {
 //            $.address.value('/');
 //            $.address.strict(false);
-            $("body").tocify();
+            $("#toc").tocify();
             var routeflash = Routing.generate('template_flash');
             /*
             $.address.change(function(event) {
