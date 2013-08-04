@@ -180,24 +180,21 @@
 //            $.address.strict(false);
         
             var routeflash = Routing.generate('template_flash');
-
-        var content = $(".content");
-    var loadUrl = function(url) {
-        content.fadeOut("slow", function() {
-            content.load(url + " .content > *", function() {
-                    content.fadeIn("slow");
+            $.address.change(function(event) {
+                /*var target = $('.container-fluid');
+                var spinner = new Spinner(opts).spin(target);*/
+                $(".content").spin(optsspin);
+                $(".content").load(event.value, function() {
+                    $('form').submit(function() { 
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".content").spin(false);
                 });
-        });
-    };
-    $("a").live('click', function(event) {
-        event.preventDefault();
-        $.address.parameter("page", $(this).attr("href"));
-    });
-    $.address.change(function() {
-        var page = $.address.parameter("page");
-        if (page) { loadUrl(page); }
-    });
-    
+            });  
+            $.address.init(function(event) {  
+                return;
+            });  
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
@@ -212,6 +209,33 @@
                 });
                 
             $('.left-menu').affix();
+            // load from archaeological menu
+            $('ul.show-menu > li > a').on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
+                return false;
+            });
+            $('body').find(".breadcrumb > li > a").on("click", function(event){
+                alert('weh');
+                event.preventDefault();
+                $.address.value($(this).attr('href'));
+                return false;
+            });
+            $(".archaeological ul > li > a").on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));
+                return false;
+            });
+            $(".left-menu a").on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
+                return false;
+            });
+            $(".changeGroup .dropdown-menu a").on("click", function(event){ 
+                event.preventDefault();
+                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
+                return false;
+            });
         });
         
         function ajaxerror(jqXHR, exception) {
