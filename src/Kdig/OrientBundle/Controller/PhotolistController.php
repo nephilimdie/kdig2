@@ -23,19 +23,22 @@ use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Photolist controller.
  *
  * @Route("/photolist")
+ * @Breadcrumb("Bucket", route="photolist_home")
  */
 class PhotolistController extends Controller
 {
     /**
      * Lists all Photolist entities.
      *
-     * @Route("/", name="photolist")
+     * @Route("/home/", name="photolist_home")
      * @Method("GET")
      * @Template()
      */
@@ -158,6 +161,7 @@ class PhotolistController extends Controller
      * Displays a form to create a new Photolist entity.
      *
      * @Route("/new", name="photolist_new")
+     * @Breadcrumb("New bucket", route="photolist_new")
      * @Template()
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      */
@@ -176,6 +180,7 @@ class PhotolistController extends Controller
      * Finds and displays a Photolist entity.
      *
      * @Route("/{id}", name="photolist_show")
+     * @Breadcrumb("Show Photo list",  route={"name"="photolist_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      */
@@ -201,6 +206,7 @@ class PhotolistController extends Controller
      * Displays a form to edit an existing Photolist entity.
      *
      * @Route("/{id}/edit", name="photolist_edit")
+     * @Breadcrumb("Edit Photo List",  route={"name"="photolist_edit", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
@@ -311,6 +317,7 @@ class PhotolistController extends Controller
     
     /**
      * @Route("/add/", name="photolist_add")
+     * @Breadcrumb("Add Photo List",  route={"name"="photolist_add", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
