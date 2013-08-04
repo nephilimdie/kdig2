@@ -31,7 +31,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
  * Bucket controller.
  *
  * @Route("/bucket")
- * @Breadcrumb("Bucket", route="bucket")
+ * @Breadcrumb("Bucket", route="bucket_home")
  */
 class BucketController extends Controller
 {
