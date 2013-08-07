@@ -201,8 +201,8 @@
                 });
             });  */
             $.address.init(function(event) {
-                $('a').address(function() {
-                    return $(this).attr('href').replace(location.pathname, '');
+                $('a:not(#widgets-area-button, #close-widgets-area)').address(function() {
+                    return $(this).attr('href');
                 });
             }).change(function(event) {
                 var toLoad = event.path;
@@ -216,7 +216,7 @@
                 });
                 return false;
             });
-            $('a').on("click", function(event){ 
+            $('a:not(#widgets-area-button, #close-widgets-area)').on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
                 return false;
@@ -268,7 +268,7 @@
                 b(".right-menu").fadeIn();
                 if (a) {
                   widget_area_functions();
-                  a = false
+                  a = false;
                 }
               } else {
                 b(this).removeClass("close").addClass("open");
@@ -278,7 +278,7 @@
                 var d = "span" + c;
                 b(".right-menu").fadeOut();
                 b(".center").removeClass("span" + e);
-                b(".center").addClass(d)
+                b(".center").addClass(d);
               }
             });
             b("#close-widgets-area").click(function() {
@@ -290,9 +290,9 @@
                 b(".center").removeClass("span" + e);
                 b(".center").addClass(d);
                 if (b("#widgets-area-button").hasClass("open")) {
-                    b("#widgets-area-button").removeClass("open").addClass("close")
+                    b("#widgets-area-button").removeClass("open").addClass("close");
                 } else {
-                    b("#widgets-area-button").removeClass("close").addClass("open")
+                    b("#widgets-area-button").removeClass("close").addClass("open");
                 }
             });
             
@@ -307,7 +307,7 @@
                     b(".center").removeClass("span" + e);
                     b(".center").addClass(d);
                     b(".center").addClass("full-radius");
-                    b(".left-menu").hide()
+                    b(".left-menu").hide();
                 } else {
                     b(this).removeClass("close").addClass("open");
                     var f = b("#content").attr("class");
@@ -317,9 +317,9 @@
                     b(".left-menu").fadeIn();
                     b(".center").removeClass("span" + e);
                     b(".center").removeClass("full-radius");
-                    b(".center").addClass(d)
+                    b(".center").addClass(d);
                 }
-            })
+            });
         });
         
         function ajaxerror(jqXHR, exception) {
