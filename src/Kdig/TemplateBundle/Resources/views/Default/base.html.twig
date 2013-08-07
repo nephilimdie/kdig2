@@ -256,68 +256,68 @@
             });*/
     
             var a = true;
-            b("#widgets-area-button").click(function() {
-              if (b(this).hasClass("open")) {
-                b(this).removeClass("open").addClass("close");
-                var f = b(".center").attr("class");
+            $("#widgets-area-button").click(function() {
+              if ($(this).hasClass("open")) {
+                $(this).removeClass("open").addClass("close");
+                var f = $(".center").attr("class");
                 var e = parseInt(f.replace(/^\D+/g, ""));
                 var c = e - 1;
                 var d = "span" + c;
-                b(".center").removeClass("span" + e);
-                b(".center").addClass(d);
-                b(".right-menu").fadeIn();
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                $(".right-menu").fadeIn();
                 if (a) {
                   widget_area_functions();
                   a = false;
                 }
               } else {
-                b(this).removeClass("close").addClass("open");
-                var f = b(".center").attr("class");
+                $(this).removeClass("close").addClass("open");
+                var f = $(".center").attr("class");
                 var e = parseInt(f.replace(/^\D+/g, ""));
                 var c = e + 1;
                 var d = "span" + c;
-                b(".right-menu").fadeOut();
-                b(".center").removeClass("span" + e);
-                b(".center").addClass(d);
+                $(".right-menu").fadeOut();
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
               }
             });
-            b("#close-widgets-area").click(function() {
-                var f = b(".center").attr("class");
+            $("#close-widgets-area").click(function() {
+                var f = $(".center").attr("class");
                 var e = parseInt(f.replace(/^\D+/g, ""));
                 var c = e + 1;
                 var d = "span" + c;
-                b(".right-menu").fadeOut();
-                b(".center").removeClass("span" + e);
-                b(".center").addClass(d);
-                if (b("#widgets-area-button").hasClass("open")) {
-                    b("#widgets-area-button").removeClass("open").addClass("close");
+                $(".right-menu").fadeOut();
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                if ($("#widgets-area-button").hasClass("open")) {
+                    $("#widgets-area-button").removeClass("open").addClass("close");
                 } else {
-                    b("#widgets-area-button").removeClass("close").addClass("open");
+                    $("#widgets-area-button").removeClass("close").addClass("open");
                 }
             });
             
             var a = true;
-            b("#main-menu-toggle").click(function() {
-                if (b(this).hasClass("open")) {
-                    b(this).removeClass("open").addClass("close");
-                    var f = b(".center").attr("class");
+            $("#main-menu-toggle").click(function() {
+                if ($(this).hasClass("open")) {
+                    $(this).removeClass("open").addClass("close");
+                    var f = $(".center").attr("class");
                     var e = parseInt(f.replace(/^\D+/g, ""));
                     var c = e + 1;
                     var d = "span" + c;
-                    b(".center").removeClass("span" + e);
-                    b(".center").addClass(d);
-                    b(".center").addClass("full-radius");
-                    b(".left-menu").hide();
+                    $(".center").removeClass("span" + e);
+                    $(".center").addClass(d);
+                    $(".center").addClass("full-radius");
+                    $(".left-menu").hide();
                 } else {
-                    b(this).removeClass("close").addClass("open");
-                    var f = b("#content").attr("class");
+                    $(this).removeClass("close").addClass("open");
+                    var f = $("#content").attr("class");
                     var e = parseInt(f.replace(/^\D+/g, ""));
                     var c = e - 1;
                     var d = "span" + c;
-                    b(".left-menu").fadeIn();
-                    b(".center").removeClass("span" + e);
-                    b(".center").removeClass("full-radius");
-                    b(".center").addClass(d);
+                    $(".left-menu").fadeIn();
+                    $(".center").removeClass("span" + e);
+                    $(".center").removeClass("full-radius");
+                    $(".center").addClass(d);
                 }
             });
         });
