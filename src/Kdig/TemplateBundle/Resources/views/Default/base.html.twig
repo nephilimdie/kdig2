@@ -259,31 +259,49 @@
               if ($(this).hasClass("open")) {
                 $(this).removeClass("open").addClass("close");
                 var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
                 var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
                 var c = e - 1;
+                var i = h - 1;
                 var d = "span" + c;
+                var m = "span" + i;
                 $(".center").removeClass("span" + e);
                 $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
                 $(".right-menu").fadeIn();
               } else {
                 $(this).removeClass("close").addClass("open");
                 var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
                 var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
                 var c = e + 1;
+                var i = h + 1;
                 var d = "span" + c;
+                var m = "span" + i;
                 $(".right-menu").fadeOut();
                 $(".center").removeClass("span" + e);
                 $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
               }
             });
             $("#close-widgets-area").click(function() {
                 var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
                 var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
                 var c = e + 1;
+                var i = h + 1;
                 var d = "span" + c;
+                var m = "span" + i;
                 $(".right-menu").fadeOut();
                 $(".center").removeClass("span" + e);
                 $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
                 if ($("#widgets-area-button").hasClass("open")) {
                     $("#widgets-area-button").removeClass("open").addClass("close");
                 } else {
@@ -291,29 +309,38 @@
                 }
             });
             
-            var a = true;
             $("#main-menu-toggle").click(function() {
-                if ($(this).hasClass("open")) {
-                    $(this).removeClass("open").addClass("close");
-                    var f = $(".center").attr("class");
-                    var e = parseInt(f.replace(/^\D+/g, ""));
-                    var c = e + 1;
-                    var d = "span" + c;
-                    $(".center").removeClass("span" + e);
-                    $(".center").addClass(d);
-                    $(".center").addClass("full-radius");
-                    $(".left-menu").hide();
-                } else {
-                    $(this).removeClass("close").addClass("open");
-                    var f = $("#content").attr("class");
-                    var e = parseInt(f.replace(/^\D+/g, ""));
-                    var c = e - 1;
-                    var d = "span" + c;
-                    $(".left-menu").fadeIn();
-                    $(".center").removeClass("span" + e);
-                    $(".center").removeClass("full-radius");
-                    $(".center").addClass(d);
-                }
+              if ($(this).hasClass("open")) {
+                $(this).removeClass("open").addClass("close");
+                var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
+                var c = e - 1;
+                var i = h - 1;
+                var d = "span" + c;
+                var m = "span" + i;
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
+                $(".left-menu").fadeIn();
+              } else {
+                $(this).removeClass("close").addClass("open");
+                var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
+                var c = e + 1;
+                var i = h + 1;
+                var d = "span" + c;
+                var m = "span" + i;
+                $(".left-menu").fadeOut();
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
+              }
             });
         });
         
