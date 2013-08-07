@@ -200,9 +200,7 @@
                     });
                 });
             });  */
-            $.address.init(function(event) {
-                $('a:not(#widgets-area-button, #close-widgets-area)').address();
-            }).change(function(event) {
+            $.address.change(function(event) {
                 var toLoad = event.path;
                 $(".content").spin(optsspin);
                 $(".content").load(toLoad, function() {
