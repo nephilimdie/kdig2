@@ -180,9 +180,10 @@
 //            $.address.strict(false);
         
             var routeflash = Routing.generate('template_flash');
+            /*
             $.address.change(function(event) {
                 /*var target = $('.container-fluid');
-                var spinner = new Spinner(opts).spin(target);*/
+                var spinner = new Spinner(opts).spin(target);
                 $(".content").spin(optsspin);
                 $(".content").load(event.value, function() {
                     $('form').submit(function() { 
@@ -197,10 +198,31 @@
                         return false;
                     });
                 });
-            });  
+            });  */
+            $.address.init(function(event) {
+                $('a').address();
+            }).change(function(event) {
+                var toLoad = event.path;
+                $(".content").spin(optsspin);
+                $(".content").load(toLoad, function() {
+                    $('form').submit(function() { 
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".content").spin(false);
+                    $(".breadcrumb > li > a").on("click", function(event){
+                        alert('weh');
+                        event.preventDefault();
+                        $.address.value($(this).attr('href'));
+                        return false;
+                    });
+                });
+                return false;
+            });
+/*
             $.address.init(function(event) {  
                 return;
-            });  
+            });  */
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
@@ -213,7 +235,7 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
-                
+                /*
             // load from archaeological menu
             $('ul.show-menu > li > a').on("click", function(event){ 
                 event.preventDefault();
@@ -229,7 +251,7 @@
                 event.preventDefault();
                 getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
                 return false;
-            });
+            });*/
         });
         
         function ajaxerror(jqXHR, exception) {
