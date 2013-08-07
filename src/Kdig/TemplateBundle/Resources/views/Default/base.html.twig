@@ -181,9 +181,10 @@
 //            $.address.strict(false);
         
             var routeflash = Routing.generate('template_flash');
-            /*
-            $.address.change(function(event) {
-                /*var target = $('.container-fluid');
+            $.address.state('http://137.204.130.183/kdigproject2/app_dev.php/').init(function(event) {
+                $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').address();
+            }).address.change(function(event) {
+                var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);
                 $(".content").spin(optsspin);
                 $(".content").load(event.value, function() {
@@ -193,55 +194,12 @@
                     }); 
                     $(".content").spin(false);
                     $(".breadcrumb > li > a").on("click", function(event){
-                        alert('weh');
                         event.preventDefault();
                         $.address.value($(this).attr('href'));
                         return false;
                     });
                 });
-            });  */
-        
-            var init = true, 
-                state = window.history.pushState !== undefined;
-
-            $.address.state('http://137.204.130.183/kdigproject2/app_dev.php/').init(function(event) {
-                $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').address();
-            }).change(function(event) {
-                var value = $.address.state().replace(/^\/$/, '#') + event.value;
-                // Selects the proper navigation link
-                $('.nav a').each(function() {
-                    if ($(this).attr('href') == value) {
-                        $(this).addClass('selected').focus();
-                    } else {
-                        $(this).removeClass('selected');
-                    }
-                });
-                if (state && init) {
-                    init = false;
-                
-                } else {
-                    $(".content").spin(optsspin);
-                    $(".content").load(value, function() {
-                        $('left-menu a, grid-row-actions a').on("click", function(event){ 
-                            event.preventDefault();
-                            $.address.value($(this).attr('href'));
-                            return false;
-                        }); 
-                        $('form').submit(function() { 
-                            $(this).ajaxSubmit(options); 
-                            return false; 
-                        }); 
-                        $(".content").spin(false);
-                    });
-                }
-                
-            });
-
-            if (!state) {
-            
-                // Hides the page during initialization
-                document.write('<style type="text/css"> .page { display: none; } </style>');
-            }
+            });  
             $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
