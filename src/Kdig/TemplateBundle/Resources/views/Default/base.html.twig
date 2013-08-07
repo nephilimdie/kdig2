@@ -88,9 +88,10 @@
     {% block navbar %}
     {{ mopa_bootstrap_navbar('ArchaeologicalfrontendNavbar') }}
     {% endblock navbar %}
-
+    <a id="main-menu-toggle" class="hidden-phone open"><i class="fa-icon-reorder"></i></a>
+    <a id="widgets-area-button" class="hidden-tablet hidden-phone open"><i class="fa-icon-reorder"></i></a>
     {% block container %}
-    <div class="row-fluid {#% block container_class %}container-fluid{% endblock container_class %#}">
+    <div class="row-fluid big-container {#% block container_class %}container-fluid{% endblock container_class %#}">
         {% block header %}
         {% endblock header %}
 
@@ -200,7 +201,9 @@
                 });
             });  */
             $.address.init(function(event) {
-                $('a').address();
+                $('a').address(function() {
+                    return $(this).attr('href').replace(location.pathname, '');
+                });
             }).change(function(event) {
                 var toLoad = event.path;
                 $(".content").spin(optsspin);
@@ -210,13 +213,12 @@
                         return false; 
                     }); 
                     $(".content").spin(false);
-                    $(".breadcrumb > li > a").on("click", function(event){
-                        alert('weh');
-                        event.preventDefault();
-                        $.address.value($(this).attr('href'));
-                        return false;
-                    });
                 });
+                return false;
+            });
+            $('a').on("click", function(event){ 
+                event.preventDefault();
+                $.address.value($(this).attr('href'));  
                 return false;
             });
 /*
@@ -252,6 +254,72 @@
                 getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
                 return false;
             });*/
+    
+            var a = true;
+            b("#widgets-area-button").click(function() {
+              if (b(this).hasClass("open")) {
+                b(this).removeClass("open").addClass("close");
+                var f = b(".center").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var c = e - 1;
+                var d = "span" + c;
+                b(".center").removeClass("span" + e);
+                b(".center").addClass(d);
+                b(".right-menu").fadeIn();
+                if (a) {
+                  widget_area_functions();
+                  a = false
+                }
+              } else {
+                b(this).removeClass("close").addClass("open");
+                var f = b(".center").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var c = e + 1;
+                var d = "span" + c;
+                b(".right-menu").fadeOut();
+                b(".center").removeClass("span" + e);
+                b(".center").addClass(d)
+              }
+            });
+            b("#close-widgets-area").click(function() {
+                var f = b(".center").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var c = e + 1;
+                var d = "span" + c;
+                b(".right-menu").fadeOut();
+                b(".center").removeClass("span" + e);
+                b(".center").addClass(d);
+                if (b("#widgets-area-button").hasClass("open")) {
+                    b("#widgets-area-button").removeClass("open").addClass("close")
+                } else {
+                    b("#widgets-area-button").removeClass("close").addClass("open")
+                }
+            });
+            
+            var a = true;
+            b("#main-menu-toggle").click(function() {
+                if (b(this).hasClass("open")) {
+                    b(this).removeClass("open").addClass("close");
+                    var f = b(".center").attr("class");
+                    var e = parseInt(f.replace(/^\D+/g, ""));
+                    var c = e + 1;
+                    var d = "span" + c;
+                    b(".center").removeClass("span" + e);
+                    b(".center").addClass(d);
+                    b(".center").addClass("full-radius");
+                    b(".left-menu").hide()
+                } else {
+                    b(this).removeClass("close").addClass("open");
+                    var f = b("#content").attr("class");
+                    var e = parseInt(f.replace(/^\D+/g, ""));
+                    var c = e - 1;
+                    var d = "span" + c;
+                    b(".left-menu").fadeIn();
+                    b(".center").removeClass("span" + e);
+                    b(".center").removeClass("full-radius");
+                    b(".center").addClass(d)
+                }
+            })
         });
         
         function ajaxerror(jqXHR, exception) {
