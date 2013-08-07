@@ -221,7 +221,7 @@
                 
                 } else {
                     $(".content").spin(optsspin);
-                    $(".content").load(toLoad, function() {
+                    $(".content").load(value, function() {
                         $('left-menu a, grid-row-actions a').on("click", function(event){ 
                             event.preventDefault();
                             $.address.value($(this).attr('href'));
