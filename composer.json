@@ -60,7 +60,6 @@
 
         "oneup/uploader-bundle": "dev-master",
         "devtime/backbone-bundle": "dev-master",
-        "jordillonch/crud-generator": "dev-master",
         "lexik/form-filter-bundle": "1.2.*",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures":  "dev-master",
