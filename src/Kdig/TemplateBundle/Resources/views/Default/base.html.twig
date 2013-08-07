@@ -214,7 +214,7 @@
                 });
                 return false;
             });
-            $('a:not(#widgets-area-button, #close-widgets-area)').on("click", function(event){ 
+            $('.big-container a').on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));  
                 return false;
