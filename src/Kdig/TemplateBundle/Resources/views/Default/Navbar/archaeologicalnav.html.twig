@@ -5,6 +5,12 @@
      {{ (navbar.hasOption('staticTop') and  navbar.getOption('staticTop')) ? ' navbar-static-top' : '' }}"
      data-spy="affix" data-offset-top="70"
      >
+     <ul class="nav tab-menu nav-tabs" id="myTab">
+            <li class="active"><a href="#charts"><i class="fa-icon-bar-chart"></i></a></li>
+            <li><a href="#users"><i class="fa-icon-group"></i></a></li>
+            <li><a href="#messages"><i class="fa-icon-envelope"></i></a></li>
+            <li><a id="close-widgets-area" href="#"><i class="fa-icon-signin"></i></a></li>
+    </ul>
     {{ navbar.hasMenu('menu') ? 
         knp_menu_render(navbar.getMenu('menu'), {
             'currentClass': 'active', 
