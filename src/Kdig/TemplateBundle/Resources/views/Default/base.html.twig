@@ -255,7 +255,6 @@
                 return false;
             });*/
     
-            var a = true;
             $("#widgets-area-button").click(function() {
               if ($(this).hasClass("open")) {
                 $(this).removeClass("open").addClass("close");
@@ -266,10 +265,6 @@
                 $(".center").removeClass("span" + e);
                 $(".center").addClass(d);
                 $(".right-menu").fadeIn();
-                if (a) {
-                  widget_area_functions();
-                  a = false;
-                }
               } else {
                 $(this).removeClass("close").addClass("open");
                 var f = $(".center").attr("class");
