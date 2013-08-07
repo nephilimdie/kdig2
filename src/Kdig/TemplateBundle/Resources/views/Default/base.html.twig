@@ -183,7 +183,7 @@
             var routeflash = Routing.generate('template_flash');
             $.address.state('http://137.204.130.183/kdigproject2/app_dev.php/').init(function(event) {
                 $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').address();
-            }).address.change(function(event) {
+            }).change(function(event) {
                 var target = $('.container-fluid');
                 var spinner = new Spinner(opts).spin(target);
                 $(".content").spin(optsspin);
