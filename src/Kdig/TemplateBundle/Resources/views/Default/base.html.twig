@@ -185,7 +185,7 @@
                 $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').address();
             }).change(function(event) {
                 var target = $('.container-fluid');
-                var spinner = new Spinner(opts).spin(target);
+                var spinner = new Spinner(optsspin).spin(target);
                 $(".content").spin(optsspin);
                 $(".content").load(event.value, function() {
                     $('form').submit(function() { 
