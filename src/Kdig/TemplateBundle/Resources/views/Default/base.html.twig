@@ -205,11 +205,6 @@
                     return $(this).attr('href').replace(location.pathname, '');
                 });
             }).change(function(event) {
-                
-                $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').each(function() {
-                    $(this).toggleClass('selected', $(this).text() == text);
-                });
-
                 var toLoad = event.path;
                 $(".content").spin(optsspin);
                 $(".content").load(toLoad, function() {
