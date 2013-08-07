@@ -255,35 +255,36 @@
     
             $("#widgets-area-button").click(function() {
               if ($(this).hasClass("open")) {
-                $(this).removeClass("open").addClass("close");
-                var f = $(".center").attr("class");
-                var g = $(".content").attr("class");
-                var e = parseInt(f.replace(/^\D+/g, ""));
-                var h = parseInt(g.replace(/^\D+/g, ""));
-                var c = e - 1;
-                var i = h - 1;
-                var d = "span" + c;
-                var m = "span" + i;
-                $(".center").removeClass("span" + e);
-                $(".center").addClass(d);
-                $(".content").removeClass("span" + h);
-                $(".content").addClass(m);
-                $(".right-menu").fadeIn();
+                    $(this).removeClass("open").addClass("close");
+                    var f = $(".center").attr("class");
+                    var g = $(".content").attr("class");
+                    var e = parseInt(f.replace(/^\D+/g, ""));
+                    var h = parseInt(g.replace(/^\D+/g, ""));
+                    var c = e - 1;
+                    var i = h - 1;
+                    var d = "span" + c;
+                    var m = "span" + i;
+                    $(".center").removeClass("span" + e);
+                    $(".center").addClass(d);
+                    $(".content").removeClass("span" + h);
+                    $(".content").addClass(m);
+
+                    $(".right-menu").fadeIn();
               } else {
-                $(this).removeClass("close").addClass("open");
-                var f = $(".center").attr("class");
-                var g = $(".content").attr("class");
-                var e = parseInt(f.replace(/^\D+/g, ""));
-                var h = parseInt(g.replace(/^\D+/g, ""));
-                var c = e + 1;
-                var i = h + 1;
-                var d = "span" + c;
-                var m = "span" + i;
-                $(".right-menu").fadeOut();
-                $(".center").removeClass("span" + e);
-                $(".center").addClass(d);
-                $(".content").removeClass("span" + h);
-                $(".content").addClass(m);
+                    $(this).removeClass("close").addClass("open");
+                    var f = $(".center").attr("class");
+                    var g = $(".content").attr("class");
+                    var e = parseInt(f.replace(/^\D+/g, ""));
+                    var h = parseInt(g.replace(/^\D+/g, ""));
+                    var c = e + 1;
+                    var i = h + 1;
+                    var d = "span" + c;
+                    var m = "span" + i;
+                    $(".right-menu").fadeOut();
+                    $(".center").removeClass("span" + e);
+                    $(".center").addClass(d);
+                    $(".content").removeClass("span" + h);
+                    $(".content").addClass(m);
               }
             });
             $("#close-widgets-area").click(function() {
@@ -320,8 +321,10 @@
                 var m = "span" + i;
                 $(".center").removeClass("span" + e);
                 $(".center").addClass(d);
+                
                 $(".content").removeClass("span" + h);
                 $(".content").addClass(m);
+                
                 $(".left-menu").fadeIn();
               } else {
                 $(this).removeClass("close").addClass("open");
