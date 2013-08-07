@@ -206,11 +206,11 @@
                 var toLoad = event.path;
                 $(".content").spin(optsspin);
                 $(".content").load(toLoad, function() {
-            $('.big-container a').on("click", function(event){ 
-                event.preventDefault();
-                $.address.value($(this).attr('href'));
-                return false;
-            });
+                    $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').on("click", function(event){ 
+                        event.preventDefault();
+                        $.address.value($(this).attr('href'));
+                        return false;
+                    }); 
                     $('form').submit(function() { 
                         $(this).ajaxSubmit(options); 
                         return false; 
@@ -219,7 +219,7 @@
                 });
                 return false;
             });
-            $('.big-container a').on("click", function(event){ 
+            $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
                 return false;
