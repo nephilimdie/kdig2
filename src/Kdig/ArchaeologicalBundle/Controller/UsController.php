@@ -217,7 +217,6 @@ class UsController extends Controller
      * @Route("/new", name="us_new")
      * @Breadcrumb("New SU", route="us_new")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
-     * @Method("GET")
      * @Template()
      */
     public function newAction()
