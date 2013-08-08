@@ -179,15 +179,16 @@
         $(document).ready( function () {
 //            $.address.strict(false);
             $.address.change(function(event){
-                getdefaultstringAjax (event.value, $('.content'), 'changetext');
-                $('form').submit(function() {
-                    $(this).ajaxSubmit(options); 
-                    return false; 
-                }); 
-                $(".breadcrumb > li > a").on("click", function(event){
-                    event.preventDefault();
-                    $.address.value($(this).attr('href'));
-                    return false;
+                getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
+                    $('form').submit(function() {
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".breadcrumb > li > a").on("click", function(event){
+                        event.preventDefault();
+                        $.address.value($(this).attr('href'));
+                        return false;
+                    });
                 });
             });
             var routeflash = Routing.generate('template_flash');
@@ -334,7 +335,8 @@
         }
         function showResponse(data, how) {
         }
-        function getdefaultstringAjax (route, where, how) { 
+        function getdefaultstringAjax (route, where, how, fn) { 
+            fn = typeof fn !== 'undefined' ? fn : function(){};
             var eseguiminchia = jQuery.ajax({
                 url: route,
                 type: 'POST',
@@ -357,6 +359,7 @@
                             break; 
                         default: 
                       }
+                    fn;
                     $(".content").spin(false);
                 },
                 error: function(jqXHR, exception) {
