@@ -200,16 +200,6 @@
                 return false;
             });
             
-            var names = $.map(event.pathNames, function(n) {
-                return n.substr(0, 1).toUpperCase() + n.substr(1);
-            }).concat(event.parameters.id ? event.parameters.id.split('.') : []);
-            var links = names.slice();
-            var match = links.length ? links.shift() + ' ' + links.join('.') : 'Home';
-
-            $('a').each(function() {
-                $(this).toggleClass('selected', $(this).text() == match);
-            });
-
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
