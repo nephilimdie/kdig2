@@ -926,6 +926,7 @@ class Object {
     public function setPreobject(\Kdig\ArchaeologicalBundle\Entity\Preobject $preobject = null)
     {
         $this->preobject = $preobject;
+        $preobject->setObject($this);
     
         return $this;
     }

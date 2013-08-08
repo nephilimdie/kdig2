@@ -820,7 +820,7 @@ class Pottery {
     public function setPrepottery(\Kdig\ArchaeologicalBundle\Entity\Prepottery $prepottery = null)
     {
         $this->prepottery = $prepottery;
-    
+        $prepottery->setPottery($this);
         return $this;
     }
 

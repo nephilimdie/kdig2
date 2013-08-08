@@ -250,7 +250,7 @@ class Sample {
     public function setPresample(\Kdig\ArchaeologicalBundle\Entity\Presample $presample = null)
     {
         $this->presample = $presample;
-    
+        $presample->setSample($this);
         return $this;
     }
 
