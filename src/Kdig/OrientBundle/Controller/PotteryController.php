@@ -364,10 +364,10 @@ class PotteryController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->bind($request);
-
-        if ($form->isValid()) {
+//        $form = $this->createDeleteForm($id);
+//        $form->bind($request);
+//
+//        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('KdigOrientBundle:Pottery')->find($id);
 
@@ -378,9 +378,9 @@ class PotteryController extends Controller
             $em->remove($entity);
             $em->flush();
             $this->get('session')->getFlashBag()->add('success', 'flash.delete.success');
-        } else {
-            $this->get('session')->getFlashBag()->add('error', 'flash.delete.error');
-        }
+//        } else {
+//            $this->get('session')->getFlashBag()->add('error', 'flash.delete.error');
+//        }
 
         return $this->redirect($this->generateUrl('pottery'));
     }
