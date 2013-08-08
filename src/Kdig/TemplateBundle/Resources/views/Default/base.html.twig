@@ -319,6 +319,7 @@
             } else {
                 var title = 'Uncaught Error.\n' + jqXHR.responseText;
             }
+            $(".content").spin(false);
             bootbox.alert(jqXHR.responseText);
         }
         // pre-submit callback 
