@@ -176,7 +176,7 @@
             top: '50', // Top position relative to parent in px
             left: 'auto' // Left position relative to parent in px
         }; 
-        $(document).ready( function () {
+        $(document).ready( function (event) {
 //            $.address.strict(false);
             $.address.change(function(event){
                 getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
