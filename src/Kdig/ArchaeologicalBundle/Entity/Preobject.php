@@ -58,7 +58,7 @@ class Preobject {
     public $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Object", inversedBy="preobject", orphanRemoval=true)
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Object", inversedBy="preobject", orphanRemoval=true, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true, name="object_id", referencedColumnName="id")
      */
     private $object;

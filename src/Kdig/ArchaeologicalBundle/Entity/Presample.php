@@ -102,7 +102,7 @@ class Presample {
     private $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Sample", inversedBy="presample", orphanRemoval=true)
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Sample", inversedBy="presample", orphanRemoval=true, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true, name="sample_id", referencedColumnName="id")
      */
     private $sample;

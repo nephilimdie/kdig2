@@ -80,7 +80,7 @@ class Object {
     private $isDelete=false;
 
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Preobject", inversedBy="object", orphanRemoval=true, cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Kdig\ArchaeologicalBundle\Entity\Preobject", inversedBy="object", orphanRemoval=true, cascade={"persist", "remove"})
      * @GRID\Column(field="preobject.name", title="Name")
      * @GRID\Column(field="preobject.bucket.us.name", title="Locus", size="40")
      * @GRID\Column(field="preobject.bucket.us.typeus.name", title="Type Locus", filter="select", size="40")
