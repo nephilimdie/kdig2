@@ -359,7 +359,7 @@ class PotteryController extends Controller
      * Deletes a Pottery entity.
      *
      * @Route("/{id}/delete", name="pottery_delete")
-     * @Method("DELETE")
+     * @ Method("DELETE")
      * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
