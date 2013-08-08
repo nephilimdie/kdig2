@@ -179,13 +179,11 @@
         $(document).ready( function () {
 //            $.address.strict(false);
             $.address.change(function(event){
-                $(".content").spin(optsspin);
                 getdefaultstringAjax (event.value, $('.content'), 'changetext');
                 $('form').submit(function() {
                     $(this).ajaxSubmit(options); 
                     return false; 
                 }); 
-                $(".content").spin(false);
                 $(".breadcrumb > li > a").on("click", function(event){
                     event.preventDefault();
                     $.address.value($(this).attr('href'));
