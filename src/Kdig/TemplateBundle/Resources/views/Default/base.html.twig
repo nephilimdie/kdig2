@@ -189,7 +189,7 @@
                         $.address.value($(this).attr('href'));
                         return false;
                     });
-                });
+                }, 'GET');
             });
             var routeflash = Routing.generate('template_flash');
             
@@ -335,11 +335,12 @@
         }
         function showResponse(data, how) {
         }
-        function getdefaultstringAjax (route, where, how, fn) { 
+        function getdefaultstringAjax (route, where, how, fn, type) { 
             fn = typeof fn !== 'undefined' ? fn : function(){};
+            type = typeof type !== 'undefined' ? type : 'POST';
             var eseguiminchia = jQuery.ajax({
                 url: route,
-//                type: 'POST',
+                type: type,
                 cache: false,
                 beforeSend: function () {
                     $(".content").spin(optsspin);
