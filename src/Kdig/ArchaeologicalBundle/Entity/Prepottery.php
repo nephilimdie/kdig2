@@ -105,7 +105,7 @@ class Prepottery {
     private $media;
 
     /**
-     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="prepottery", orphanRemoval=true, cascade={"persist"}, onDelete="CASCADE")
+     * @ORM\OneToOne(targetEntity="Kdig\OrientBundle\Entity\Pottery", inversedBy="prepottery", orphanRemoval=true, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true, name="pottery_id", referencedColumnName="id")
      */
     private $pottery;
