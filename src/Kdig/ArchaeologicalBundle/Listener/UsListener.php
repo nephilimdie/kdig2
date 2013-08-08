@@ -7,6 +7,7 @@ use Kdig\ArchaeologicalBundle\Entity\Us as Us;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Security\Acl\Permission\MaskBuilder;
 
 class UsListener 
 {
