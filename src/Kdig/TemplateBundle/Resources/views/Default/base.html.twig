@@ -178,6 +178,7 @@
         }; 
         $(document).ready( function (event) {
 //            $.address.strict(false);
+            $.address.state('/kdigproject2/app_dev.php/');
             $.address.change(function(event){
                 getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
                     alert('check');
