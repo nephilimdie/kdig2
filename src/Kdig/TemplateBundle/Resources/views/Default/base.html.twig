@@ -181,6 +181,10 @@
 //            $.address.strict(false);
         
             var routeflash = Routing.generate('template_flash');
+            
+            $.address.strict(false);
+            $.address.autoUpdate(false);
+            $.address.hash('#');
             $.address.state('http://137.204.130.183/kdigproject2/app_dev.php/').init(function(event) {
                 $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').address();
             }).change(function(event) {
