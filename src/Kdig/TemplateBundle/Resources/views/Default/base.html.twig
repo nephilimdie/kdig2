@@ -180,6 +180,7 @@
 //            $.address.strict(false);
             $.address.change(function(event){
                 getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
+                    alert('check');
                     $('form').submit(function() {
                         $(this).ajaxSubmit(options); 
                         return false; 
