@@ -177,41 +177,31 @@
             left: 'auto' // Left position relative to parent in px
         }; 
         $(document).ready( function () {
-//            $.address.value('/');
+            $.address.value('#!');
 //            $.address.strict(false);
         
             var routeflash = Routing.generate('template_flash');
             
-            $.address.strict(false);
-            $.address.hash('#');
-            $.address.state('http://137.204.130.183/kdigproject2/app_dev.php/').init(function(event) {
-                $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').address();
-            }).change(function(event) {
-                var target = $('.container-fluid');
-                var spinner = new Spinner(optsspin).spin(target);
-                $(".content").spin(optsspin);
-                $(".content").load(event.value, function() {
-                    $('form').submit(function() { 
-                        $(this).ajaxSubmit(options); 
-                        return false; 
-                    }); 
-                    $(".content").spin(false);
-                    $(".breadcrumb > li > a").on("click", function(event){
-                        event.preventDefault();
-                        $.address.value($(this).attr('href'));
-                        return false;
-                    });
-                });
-            });  
             $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').on("click", function(event){ 
                 event.preventDefault();
                 $.address.value($(this).attr('href'));
                 return false;
             });
-/*
-            $.address.init(function(event) {  
-                return;
-            });  */
+            
+            $(".content").spin(optsspin);
+            $(".content").load(event.value, function() {
+                $('form').submit(function() { 
+                    $(this).ajaxSubmit(options); 
+                    return false; 
+                }); 
+                $(".content").spin(false);
+                $(".breadcrumb > li > a").on("click", function(event){
+                    event.preventDefault();
+                    $.address.value($(this).attr('href'));
+                    return false;
+                });
+            });
+
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
@@ -224,23 +214,6 @@
                 .click(function(e) {
                     e.preventDefault();
                 });
-                /*
-            // load from archaeological menu
-            $('ul.show-menu > li > a').on("click", function(event){ 
-                event.preventDefault();
-                $.address.value($(this).attr('href'));  
-                return false;
-            });
-            $(".archaeological ul > li > a").on("click", function(event){ 
-                event.preventDefault();
-                $.address.value($(this).attr('href'));
-                return false;
-            });
-            $(".changeGroup .dropdown-menu a").on("click", function(event){ 
-                event.preventDefault();
-                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
-                return false;
-            });*/
     
             $("#widgets-area-button").click(function() {
               if ($(this).hasClass("open")) {
