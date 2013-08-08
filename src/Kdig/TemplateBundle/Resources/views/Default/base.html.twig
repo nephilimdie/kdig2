@@ -179,7 +179,7 @@
         $(document).ready( function () {
             $.address.value('#!');
 //            $.address.strict(false);
-            $.address.change(function(){
+            $.address.change(function(event){
                 $(".content").spin(optsspin);
                 $(".content").load(event.value, function() {
                     $('form').submit(function() { 
