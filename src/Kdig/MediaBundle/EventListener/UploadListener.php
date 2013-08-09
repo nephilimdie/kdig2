@@ -56,7 +56,6 @@ class UploadListener
         $media->setName($file->getFileName());
         $media->setBinaryContent($file);
         $media->setEnabled(true);
-        $media->setUser($em->merge($this->getReference('user_one')));
         //$media->setName('test');
 
         $this->container->get('sonata.media.pool')->prePersist($media);
