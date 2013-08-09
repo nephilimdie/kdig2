@@ -51,39 +51,51 @@ class UploadListener
 //        }
 
         $url = '';
+        $media = new Media();
+        $media->setProviderName('sonata.media.provider.image');
+        $media->setName($file->getClientOriginalName());
+        $media->setBinaryContent($file);
+        $media->setEnabled(true);
+        $media->setUser($em->merge($this->getReference('user_one')));
+        //$media->setName('test');
+
+        $this->container->get('sonata.media.pool')->prePersist($media);
+        $em->persist($media);
+        $em->flush();
+        $this->container->get('sonata.media.pool')->postPersist($media);
 
 //        if ($file instanceof UploadedFile && $file->isValid()) {
 //            try {
                 /** @var $mediaManager \Sonata\MediaBundle\Admin\Manager\DoctrineORMManager */
-                $mediaManager = $request->get('sonata.media.manager.media');
+//                $mediaManager = $request->get('sonata.media.manager.media');
 
                 /** @var $mediaAdmin \Sonata\MediaBundle\Admin\ORM\MediaAdmin */
-                $mediaAdmin = $request->get('sonata.media.admin.media');
+//                $mediaAdmin = $request->get('sonata.media.admin.media');
 
                 /** @var $provider \Sonata\MediaBundle\Provider\MediaProviderInterface */
-                $provider = $request->get('sonata.media.provider.image');
+//                $provider = $request->get('sonata.media.provider.image');
 
-                $context = $mediaAdmin->getPool()->getDefaultContext();
-                $mediaClass = $mediaAdmin->getClass();
+//                $context = $mediaAdmin->getPool()->getDefaultContext();
+//                $mediaClass = $mediaAdmin->getClass();
 
                 /** @var $media \Sonata\MediaBundle\Model\MediaInterface */
-                $media = new $mediaClass();
-                $media->setProviderName($provider->getName());
-                $media->setContext($context);
-                $media->setEnabled(true);
+//                $media = new $mediaClass();
+//                $media->setProviderName($provider->getName());
+//                $media->setContext($context);
+//                $media->setEnabled(true);
 
 //                $media->setLocale($locale);
 
-                $media->setName($file->getClientOriginalName());
-                $media->setBinaryContent($file);
-                $mediaManager->save($media);
-                $path = $provider->generatePublicUrl($media, 'reference');
+//                $media->setName($file->getClientOriginalName());
+//                $media->setBinaryContent($file);
+//                $mediaManager->save($media);
+//                $path = $provider->generatePublicUrl($media, 'reference');
 
                 // Check the $_FILES array and save the file. Assign the correct path to a variable ($url).
-                $url = $path;
-                // Usually you will only assign something here if the file could not be uploaded.
-                $message = '';
-                $status = 200;
+//                $url = $path;
+//                // Usually you will only assign something here if the file could not be uploaded.
+//                $message = '';
+//                $status = 200;
 //            } catch (\Exception $e) {
 //                $message = $e->getMessage();
 //                $status = 500;
