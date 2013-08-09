@@ -7,5 +7,5 @@ services:
       class: 'Kdig\MediaBundle\EventListener\UploadListener'
       arguments: [ '@service_container' ]
       tags:
-          - { name: container.event_listener, event: oneup_uploader.post_persist, method: onUpload }
+          - { name: kernel.event_listener, event: oneup_uploader.post_persist, method: onUpload }
           
