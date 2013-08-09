@@ -34,7 +34,7 @@ class UploadListener
     {
         $request = $event->getRequest();
         $file = $this->getFiles($request->files);
-//        die('de dump is ' . var_dump($file));
+        var_dump($file);
         $gallery = $request->get('gallery');
         $file = $request->files->get('upload');
 
