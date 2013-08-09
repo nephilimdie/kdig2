@@ -53,7 +53,7 @@ class UploadListener
         $url = '';
         $media = new Media();
         $media->setProviderName('sonata.media.provider.image');
-        $media->setName($file->getOriginalName());
+        $media->setName($file->getFileName());
         $media->setBinaryContent($file);
         $media->setEnabled(true);
         $media->setUser($em->merge($this->getReference('user_one')));
@@ -63,6 +63,7 @@ class UploadListener
         $em->persist($media);
         $em->flush();
         $this->container->get('sonata.media.pool')->postPersist($media);
+        $path = $file->pathName();
 
 //        if ($file instanceof UploadedFile && $file->isValid()) {
 //            try {
