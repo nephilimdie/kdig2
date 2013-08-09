@@ -1,6 +1,6 @@
 parameters:
     kdig_template.navbar_menu_builder.class: 'Kdig\TemplateBundle\Menu\NavbarMenuBuilder'
-    kdig_template.template_extension.class: 'Kdig\TemplateBundle\Menu\NavbarMenuBuilder'
+    kdig_template.template_extension.class: 'Kdig\TemplateBundle\Twig\TemplateExtension'
 
 services:
 ## twig template
