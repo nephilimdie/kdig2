@@ -11,14 +11,4 @@
             'allow_safe_labels': true}) 
         : '' }}
 </div>
-
-<script type="text/javascript">
-    $(document).ready( function () {
-        $(".on-side-left a").on("click", function(event){ 
-            event.preventDefault();
-            $.address.value($(this).attr('href'));  
-            return false;
-        });
-    });
-</script>
 {% endblock %}
