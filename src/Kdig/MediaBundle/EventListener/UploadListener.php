@@ -52,16 +52,16 @@ class UploadListener
 
         $url = '';
 
-        if ($file instanceof UploadedFile && $file->isValid()) {
+//        if ($file instanceof UploadedFile && $file->isValid()) {
             try {
                 /** @var $mediaManager \Sonata\MediaBundle\Admin\Manager\DoctrineORMManager */
-                $mediaManager = $this->get('sonata.media.manager.media');
+                $mediaManager = $request->get('sonata.media.manager.media');
 
                 /** @var $mediaAdmin \Sonata\MediaBundle\Admin\ORM\MediaAdmin */
-                $mediaAdmin = $this->get('sonata.media.admin.media');
+                $mediaAdmin = $request->get('sonata.media.admin.media');
 
                 /** @var $provider \Sonata\MediaBundle\Provider\MediaProviderInterface */
-                $provider = $this->get($providerName);
+                $provider = $request->get($providerName);
 
                 $context = $mediaAdmin->getPool()->getDefaultContext();
                 $mediaClass = $mediaAdmin->getClass();
@@ -88,17 +88,17 @@ class UploadListener
                 $message = $e->getMessage();
                 $status = 500;
             }
-        } elseif ($file instanceof UploadedFile && !$file->isValid()) {
+//        } elseif ($file instanceof UploadedFile && !$file->isValid()) {
+//
+//            $status = 500;
+//        } else {
 
-            $status = 500;
-        } else {
-
-            $message = $this->admin->trans(
-                'error.file_upload_size',
-                array('%max_server_size%' => ini_get('upload_max_filesize'))
-            );
-            $status = 500;
-        }
+//            $message = $this->admin->trans(
+//                'error.file_upload_size',
+//                array('%max_server_size%' => ini_get('upload_max_filesize'))
+//            );
+//            $status = 500;
+//        }
 
         
         $aclProvider = $this->container->get('problematic.acl_manager');
