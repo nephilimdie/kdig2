@@ -4,8 +4,8 @@ namespace Kdig\TemplateBundle\Twig;
 
 class DemoExtension extends \Twig_Extension
 {
-    const FULL_TEMPLATE = '::full-layout.html.twig';
-    const PARTIAL_TEMPLATE = '::partial-layout.html.twig';
+    const FULL_TEMPLATE = 'KdigTemplateBundle:Default:ajax_base.html.twig';
+    const PARTIAL_TEMPLATE = 'KdigTemplateBundle:Default:base.html.twig';
  
     public function getFunctions()
     {
