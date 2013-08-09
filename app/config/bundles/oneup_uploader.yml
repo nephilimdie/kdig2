@@ -6,3 +6,4 @@ oneup_uploader:
             storage:
                 type: gaufrette
                 filesystem: gaufrette.gallery_filesystem 
+            enable_cancelation: true
