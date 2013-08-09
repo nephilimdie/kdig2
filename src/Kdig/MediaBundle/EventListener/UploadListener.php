@@ -61,7 +61,7 @@ class UploadListener
                 $mediaAdmin = $request->get('sonata.media.admin.media');
 
                 /** @var $provider \Sonata\MediaBundle\Provider\MediaProviderInterface */
-                $provider = $request->get($providerName);
+                $provider = $request->get('sonata.media.provider.image');
 
                 $context = $mediaAdmin->getPool()->getDefaultContext();
                 $mediaClass = $mediaAdmin->getClass();
