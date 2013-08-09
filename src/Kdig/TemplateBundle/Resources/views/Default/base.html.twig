@@ -47,7 +47,6 @@
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
         '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
 
-        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
         '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
         '@KdigTemplateBundle/Resources/public/js/spin.min.js'
         '@KdigTemplateBundle/Resources/public/js/jquery.spin.js'
@@ -58,6 +57,27 @@
         '@KdigTemplateBundle/Resources/public/js/select2/select2.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
+        {#
+
+        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
+        
+            $.address.strict(false);
+//            $.address.state('/kdigproject2/app_dev.php/');
+            $.address.change(function(event){
+                getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
+                    alert('check');
+                    $('form').submit(function() {
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".breadcrumb > li > a").on("click", function(event){
+                        event.preventDefault();
+                        $.address.value($(this).attr('href'));
+                        return false;
+                    });
+                }, 'GET');
+            });
+        #}
         
     {% endjavascripts %}
         
@@ -177,30 +197,7 @@
             left: 'auto' // Left position relative to parent in px
         }; 
         $(document).ready( function (event) {
-            $.address.strict(false);
-//            $.address.state('/kdigproject2/app_dev.php/');
-            $.address.change(function(event){
-                getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
-                    alert('check');
-                    $('form').submit(function() {
-                        $(this).ajaxSubmit(options); 
-                        return false; 
-                    }); 
-                    $(".breadcrumb > li > a").on("click", function(event){
-                        event.preventDefault();
-                        $.address.value($(this).attr('href'));
-                        return false;
-                    });
-                }, 'GET');
-            });
             var routeflash = Routing.generate('template_flash');
-            
-            $('.right-menu a:not(#myTab a), left-menu a, grid-row-actions a').on("click", function(event){ 
-                event.preventDefault();
-                $.address.value($(this).attr('href'));
-                return false;
-            });
-            
             $("a[data-toggle=tooltip]")
                 .tooltip()
                 .click(function(e) {
@@ -365,7 +362,6 @@
                     }); 
                     $(".breadcrumb > li > a").on("click", function(event){
                         event.preventDefault();
-                        $.address.value($(this).attr('href'));
                         return false;
                     });
                             
