@@ -53,7 +53,7 @@ class UploadListener
         $url = '';
 
 //        if ($file instanceof UploadedFile && $file->isValid()) {
-            try {
+//            try {
                 /** @var $mediaManager \Sonata\MediaBundle\Admin\Manager\DoctrineORMManager */
                 $mediaManager = $request->get('sonata.media.manager.media');
 
@@ -84,10 +84,10 @@ class UploadListener
                 // Usually you will only assign something here if the file could not be uploaded.
                 $message = '';
                 $status = 200;
-            } catch (\Exception $e) {
-                $message = $e->getMessage();
-                $status = 500;
-            }
+//            } catch (\Exception $e) {
+//                $message = $e->getMessage();
+//                $status = 500;
+//            }
 //        } elseif ($file instanceof UploadedFile && !$file->isValid()) {
 //
 //            $status = 500;
