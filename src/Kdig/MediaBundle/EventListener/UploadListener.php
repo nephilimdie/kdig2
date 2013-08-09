@@ -62,7 +62,7 @@ class UploadListener
 
         $this->em->persist($media);
         $this->em->flush();
-        $path = $file->pathName();
+        $path = $file->getPathName();
 
 //        if ($file instanceof UploadedFile && $file->isValid()) {
 //            try {
