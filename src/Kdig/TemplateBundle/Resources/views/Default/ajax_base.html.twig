@@ -1,0 +1,388 @@
+{% from 'KdigTemplateBundle:Default:flash.html.twig' import session_flash, flash, advanced_flash %}
+
+<!DOCTYPE html>
+
+{% block html_tag %}
+<html>
+{% endblock html_tag %}
+
+{% block head %}
+<head>
+    <meta charset="UTF-8" />
+    {% block head_style %}
+    {# Override this block to add your own files! #}
+    {% stylesheets
+        '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
+        '@MopaBootstrapBundle/Resources/public/less/eyecon-bootstrap-datepicker.less'
+        '@KdigTemplateBundle/Resources/public/less/grid.less'
+        '@KdigOrientBundle/Resources/public/less/orient.less'
+        '@KdigTemplateBundle/Resources/public/css/select2/select2.css'
+        '@KdigTemplateBundle/Resources/public/less/kdigtemplatebundle.less'
+        '@KdigTemplateBundle/Resources/public/less/archaeological.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+    {# To use this without less use the base_css.html.twig template as your base
+     # Be sure you understand whats going on: have a look into
+     # https://github.com/phiamo/KdigTemplateBundle/blob/master/Resources/doc/css-vs-less.md
+     #}
+    {% endblock head_style %}
+
+    {% javascripts
+        '@KdigTemplateBundle/Resources/public/js/jquery-1.9.1.min.js'     
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-transition.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-alert.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-modal.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-scrollspy.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tab.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tooltip.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-popover.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-button.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-collapse.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-carousel.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-typeahead.js'
+        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-affix.js'
+        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
+        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
+        '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
+
+        '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
+        '@KdigTemplateBundle/Resources/public/js/spin.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery.spin.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery.form.min.js'
+        '@KdigTemplateBundle/Resources/public/js/bootbox.min.js'
+        '@KdigTemplateBundle/Resources/public/js/autosaveform.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery.flashMessage.js'
+        '@KdigTemplateBundle/Resources/public/js/select2/select2.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {#
+
+        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
+        
+            $.address.strict(false);
+//            $.address.state('/kdigproject2/app_dev.php/');
+            $.address.change(function(event){
+                getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
+                    alert('check');
+                    $('form').submit(function() {
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".breadcrumb > li > a").on("click", function(event){
+                        event.preventDefault();
+                        $.address.value($(this).attr('href'));
+                        return false;
+                    });
+                }, 'GET');
+            });
+        #}
+        
+    {% endjavascripts %}
+        
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block head_script %}
+    {# Overwrite this block to add your own js here, to get them generated into final files #}
+    {% endblock head_script %}
+
+    <title>{#% block title %}Kdig Project .2{% endblock title %#}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    {% block head_bottom %}
+    {% endblock head_bottom %}
+</head>
+{% endblock head %}
+
+{% block body_tag %}
+<body data-spy="scroll">
+{% endblock body_tag %}
+
+{% block body_start %}
+{% endblock body_start %}
+
+{% block body %}
+    {% block navbar %}
+    {{ mopa_bootstrap_navbar('ArchaeologicalfrontendNavbar') }}
+    {% endblock navbar %}
+    <a id="main-menu-toggle" class="hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
+    <a id="widgets-area-button" class="hidden-tablet hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
+    {% block container %}
+    <div class="row-fluid big-container {#% block container_class %}container-fluid{% endblock container_class %#}">
+        {% block header %}
+        {% endblock header %}
+
+        {% block flashes %}
+        {% if app.session.flashbag.peekAll|length > 0 %}
+        <div class="span11">
+            <div id="flash" class="span12">
+            {{ advanced_flash() }}
+            </div>
+        </div>
+        {% endif %}
+        {% endblock flashes %}
+            
+        {% block content_row %}
+        <div class="content span11">
+            <div class="row-fluid">
+                {% block content %}
+                <div class="span2 left-menu">
+                    {% block content_left_menu %}
+                    <h2>Sidebar</h2>
+                    {% endblock content_left_menu %}
+                </div>
+                <div class="span10 center">
+                    {% block page_header %}
+                    <div class="page-header span12">
+                          <h5>{% block title %}Kdig Project .2{% endblock title %}</h5>
+                    </div>
+                    {% endblock page_header %}
+                    {% block content_content %}
+                        <div class="span12"></div>
+                    {% endblock content_content %}
+                </div>
+                {% endblock content %}
+            </div>
+        </div>
+        {% endblock content_row %}
+        <div class="right-menu span1"> <!-- menu right -->
+            {{ mopa_bootstrap_navbar('archaeologicalsubnav') }}
+        </div>
+    </div> <!-- end container -->
+    {% endblock container %}
+    <footer class="footer">
+        <div class="row-fluid">
+            {% block footer %}
+                <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
+                <p>someone want to write foot?</p><p>please don't write me.!!!</p>
+            {% endblock footer %}
+        </div>
+    </footer>
+    {% block foot_script %}
+    
+    <script type="text/javascript">
+        /*
+        window.addEventListener('load', function(){
+            new Heyoffline();
+        }, false);
+    */
+        var options = { 
+            target:        '.content',
+            beforeSubmit:  showRequest,  
+        //                success:       showResponse,
+            error: function(jqXHR, exception) {
+                ajaxerror(jqXHR, exception);
+            }
+        }; 
+
+        var optsspin = {
+            lines: 13, // The number of lines to draw
+            length: 35, // The length of each line
+            width: 16, // The line thickness
+            radius: 34, // The radius of the inner circle
+            corners: 1, // Corner roundness (0..1)
+            rotate: 40, // The rotation offset
+            direction: 1, // 1: clockwise, -1: counterclockwise
+            color: '#000', // #rgb or #rrggbb
+            speed: 0.8, // Rounds per second
+            trail: 83, // Afterglow percentage
+            shadow: false, // Whether to render a shadow
+            hwaccel: false, // Whether to use hardware acceleration
+            className: 'spinner', // The CSS class to assign to the spinner
+            zIndex: 2e9, // The z-index (defaults to 2000000000)
+            top: '50', // Top position relative to parent in px
+            left: 'auto' // Left position relative to parent in px
+        }; 
+        $(document).ready( function (event) {
+            var routeflash = Routing.generate('template_flash');
+            $("a[data-toggle=tooltip]")
+                .tooltip()
+                .click(function(e) {
+                    e.preventDefault();
+                });
+
+            // tooltip initialization
+            $("a[data-toggle=popover]")
+                .popover()
+                .click(function(e) {
+                    e.preventDefault();
+                });
+    
+            $("#widgets-area-button").click(function() {
+              if ($(this).hasClass("open")) {
+                    $(this).removeClass("open").addClass("close");
+                    var f = $(".center").attr("class");
+                    var g = $(".content").attr("class");
+                    var e = parseInt(f.replace(/^\D+/g, ""));
+                    var h = parseInt(g.replace(/^\D+/g, ""));
+                    var c = e - 1;
+                    var i = h - 1;
+                    var d = "span" + c;
+                    var m = "span" + i;
+                    $(".center").removeClass("span" + e);
+                    $(".center").addClass(d);
+                    $(".content").removeClass("span" + h);
+                    $(".content").addClass(m);
+
+                    $(".right-menu").fadeIn();
+              } else {
+                    $(this).removeClass("close").addClass("open");
+                    var f = $(".center").attr("class");
+                    var g = $(".content").attr("class");
+                    var e = parseInt(f.replace(/^\D+/g, ""));
+                    var h = parseInt(g.replace(/^\D+/g, ""));
+                    var c = e + 1;
+                    var i = h + 1;
+                    var d = "span" + c;
+                    var m = "span" + i;
+                    $(".right-menu").fadeOut();
+                    $(".center").removeClass("span" + e);
+                    $(".center").addClass(d);
+                    $(".content").removeClass("span" + h);
+                    $(".content").addClass(m);
+              }
+            });
+            $("#close-widgets-area").click(function() {
+                var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
+                var c = e + 1;
+                var i = h + 1;
+                var d = "span" + c;
+                var m = "span" + i;
+                $(".right-menu").fadeOut();
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
+                if ($("#widgets-area-button").hasClass("open")) {
+                    $("#widgets-area-button").removeClass("open").addClass("close");
+                } else {
+                    $("#widgets-area-button").removeClass("close").addClass("open");
+                }
+            });
+            
+            $("#main-menu-toggle").click(function() {
+              if ($(this).hasClass("open")) {
+                $(this).removeClass("open").addClass("close");
+                var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
+                var c = e - 1;
+                var i = h - 1;
+                var d = "span" + c;
+                var m = "span" + i;
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
+                
+                $(".left-menu").fadeIn();
+              } else {
+                $(this).removeClass("close").addClass("open");
+                var f = $(".center").attr("class");
+                var g = $(".content").attr("class");
+                var e = parseInt(f.replace(/^\D+/g, ""));
+                var h = parseInt(g.replace(/^\D+/g, ""));
+                var c = e + 1;
+                var i = h + 1;
+                var d = "span" + c;
+                var m = "span" + i;
+                $(".left-menu").fadeOut();
+                $(".center").removeClass("span" + e);
+                $(".center").addClass(d);
+                $(".content").removeClass("span" + h);
+                $(".content").addClass(m);
+              }
+            });
+        });
+        
+        function ajaxerror(jqXHR, exception) {
+            var title = 'not understand';
+            if (jqXHR.status == 404) {
+                var title = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                var title = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                var title = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                var title = 'Time out error.';
+            } else if (exception === 'abort') {
+                var title = 'Ajax request aborted.';
+            } else {
+                var title = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            $(".content").spin(false);
+            bootbox.alert(jqXHR.responseText);
+        }
+        // pre-submit callback 
+        function showRequest(formData, jqForm, options) { 
+            return true; 
+        } 
+
+        function checkname(route, element) {
+            var idname = element.value;
+            var routechecknamesu = Routing.generate(route, { name: idname });
+            getdefaultstringAjax(routechecknamesu, element, 'html');
+        }
+        function showResponse(data, how) {
+        }
+        function getdefaultstringAjax (route, where, how, fn, type) { 
+            fn = typeof fn !== 'undefined' ? fn : function(){};
+            type = typeof type !== 'undefined' ? type : 'POST';
+            var eseguiminchia = jQuery.ajax({
+                url: route,
+                type: type,
+                cache: false,
+                beforeSend: function () {
+                    $(".content").spin(optsspin);
+                    $(where).attr('disabled', true);
+                },
+                success: function(data){
+                    switch(how) { 
+                        case 'fill': 
+                            $(where).attr('disabled', false);
+                            $(where).val(data);
+                            break; 
+                        case 'html': 
+                            where.append(data);
+                            break; 
+                        case 'changetext': 
+                            where.html(data);
+                            
+                    $('form').submit(function() {
+                        $(this).ajaxSubmit(options); 
+                        return false; 
+                    }); 
+                    $(".breadcrumb > li > a").on("click", function(event){
+                        event.preventDefault();
+                        return false;
+                    });
+                            
+                            break; 
+                        default: 
+                      }
+                    fn;
+                    $(".content").spin(false);
+                },
+                error: function(jqXHR, exception) {
+                    ajaxerror(jqXHR, exception);
+                }
+            }) 
+        }
+        /* post-submit callback 
+        function showResponse(responseText, statusText, xhr, $form)  { 
+            alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+                '\n\nThe output div should have already been updated with the responseText.'); 
+            } */
+    </script>
+    {% endblock foot_script %}
+{% endblock body %}
+</body>
+</html>
