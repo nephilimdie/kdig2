@@ -36,11 +36,11 @@ class UploadListener
         $response = $event->getResponse();
 //        $file = $this->getFiles($request->files);
         $gallery = $request->get('gallery');
-        $file = $request->files->get('upload');
+        $file = $event->getFile();
 
         // Optional: might be used to provide localized messages.
-        $locale = $this->getRequest()->getLocale();
-        $session = $this->getRequest()->getSession();
+        $locale = $request->getLocale();
+        $session = $request->getSession();
 //        $pageId = $session->get('Page.last_edited');
 //
 //        $repository = $this->getDoctrine()->getRepository('NetworkingInitCmsBundle:Page');
