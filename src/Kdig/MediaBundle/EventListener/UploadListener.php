@@ -24,10 +24,12 @@ use Kdig\MediaBundle\Entity\Media;
 class UploadListener
 {
     private $container;
+    protected $em;
  
-    public function __construct(ContainerInterface $container)
+    public function __construct(ContainerInterface $container, \Doctrine\ORM\EntityManager $em)
     {
         $this->container = $container;
+        $this->em = $em;
     }
     
     public function onUpload(PostPersistEvent $event)
@@ -58,10 +60,8 @@ class UploadListener
         $media->setEnabled(true);
         //$media->setName('test');
 
-        $this->container->get('sonata.media.pool')->prePersist($media);
-        $em->persist($media);
-        $em->flush();
-        $this->container->get('sonata.media.pool')->postPersist($media);
+        $this->em->persist($media);
+        $this->em->flush();
         $path = $file->pathName();
 
 //        if ($file instanceof UploadedFile && $file->isValid()) {
