@@ -51,6 +51,12 @@ twig:
         resources:
           - KdigTemplateBundle:Default:Form/fields.html.twig
 #            - LexikFormFilterBundle:Form:form_div_layout.html.twig
+    globals:
+        kdig:
+            templates:
+                full: "KdigTemplateBundle:Default:ajax_base.html.twig"
+                partial: "KdigTemplateBundle:Default:base.html.twig"
+                
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
