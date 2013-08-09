@@ -33,6 +33,7 @@ class UploadListener
     public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
+        $response = $event->getResponse();
 //        $file = $this->getFiles($request->files);
         var_dump($request);
         $gallery = $request->get('gallery');
@@ -101,14 +102,12 @@ class UploadListener
         }
 
         
-        // da sistemare
-        $response = "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message');</script>";
-
         $aclProvider = $this->container->get('problematic.acl_manager');
         $user = $this->container->get('security.context')->getToken()->getUser();
         if ($user) {
             $aclProvider->addObjectPermission($media, MaskBuilder::MASK_OWNER, $user);
         }
-        $response['name'] = 'value';
+        $response['name'] = $media->getName();
+        $response['id'] = $media->getId();
     }
 }
