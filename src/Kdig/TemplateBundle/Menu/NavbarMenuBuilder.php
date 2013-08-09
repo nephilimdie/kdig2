@@ -27,14 +27,17 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         $this->securityContext = $securityContext;
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
         if($this->isLoggedIn) {
-            $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
-            $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
-            $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
-            $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
-            $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
-            $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
-            $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
-            $this->usr = $securityContext->getToken()->getUser();
+            if ($this->securityContext->isGranted('ROLE_SUPER_ADMIN'))
+                $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
+            else {
+                $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
+                $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
+                $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
+                $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
+                $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
+                $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
+                $this->usr = $securityContext->getToken()->getUser();
+            }
         }
     }
 
