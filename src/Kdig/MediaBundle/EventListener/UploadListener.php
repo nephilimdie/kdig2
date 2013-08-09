@@ -33,8 +33,8 @@ class UploadListener
     public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
-        $file = $this->getFiles($request->files);
-        var_dump($file);
+//        $file = $this->getFiles($request->files);
+        var_dump($request);
         $gallery = $request->get('gallery');
         $file = $request->files->get('upload');
 
