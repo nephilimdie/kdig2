@@ -42,6 +42,11 @@ class MessageManager implements MessageManagerInterface
      */
     public function save(MessageInterface $message)
     {
+        //Hack for ConsumerHandlerCommand->optimize()
+        if ($message->getId() && !$this->em->getUnitOfWork()->isInIdentityMap($message)) {
+            $this->em->getUnitOfWork()->merge($message);
+        }
+
         $this->em->persist($message);
         $this->em->flush();
     }
@@ -57,9 +62,59 @@ class MessageManager implements MessageManagerInterface
     /**
      * {@inheritDoc}
      */
-    public function findBy(array $criteria)
+    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
     {
-        return $this->em->getRepository($this->class)->findBy($criteria);
+        return $this->em->getRepository($this->class)->findBy($criteria, $orderBy, $limit, $offset);
+    }
+
+    /**
+     * Find messages by types and states
+     *
+     * @param array $types
+     * @param int   $state
+     * @param int   $batchSize
+     *
+     * @return mixed
+     */
+    public function findByTypes(array $types, $state, $batchSize)
+    {
+        $params = array();
+        $query = $this->prepareStateQuery($state, $types, $batchSize, $params);
+
+        $query->setParameters($params);
+
+        return $query->getQuery()->execute();
+    }
+
+    /**
+     * Find messages by types, states and attempts
+     *
+     * @param array $types
+     * @param int   $state
+     * @param int   $batchSize
+     * @param int   $maxAttempts
+     * @param int   $attemptDelay
+     *
+     * @return mixed
+     */
+    public function findByAttempts(array $types, $state, $batchSize, $maxAttempts = null, $attemptDelay = 10)
+    {
+        $params = array();
+        $query = $this->prepareStateQuery($state, $types, $batchSize, $params);
+
+        if ($maxAttempts) {
+            $query
+                ->andWhere('m.restartCount < :maxAttempts')
+                ->andWhere('m.updatedAt < :delayDate');
+
+            $params['maxAttempts'] = $maxAttempts;
+            $now = new \DateTime();
+            $params['delayDate'] = $now->add(\DateInterval::createFromDateString(($attemptDelay * -1) . ' second'));
+        }
+
+        $query->setParameters($params);
+
+        return $query->getQuery()->execute();
     }
 
     /**
@@ -113,46 +168,6 @@ class MessageManager implements MessageManagerInterface
     /**
      * {@inheritDoc}
      */
-    public function getNextOpenMessage($pause = 500000)
-    {
-        $tableName = $this->em->getClassMetadata($this->class)->table['name'];
-
-        $locked = false;
-        try {
-            while (true) {
-                $this->em->getConnection()->exec(sprintf('LOCK TABLES %s as t0 WRITE', $tableName));
-                $locked = true;
-
-                $message = $this->findOneBy(array('state' => MessageInterface::STATE_OPEN));
-
-                if (!$message) {
-                    $this->em->getConnection()->exec(sprintf('UNLOCK TABLES'));
-                    $locked = false;
-
-                    usleep($pause);
-
-                    continue;
-                }
-
-                $message->setState(MessageInterface::STATE_IN_PROGRESS);
-                $this->save($message);
-
-                $this->em->getConnection()->exec(sprintf('UNLOCK TABLES'));
-
-                return $message;
-            }
-        } catch (\Exception $e) {
-            if ($locked) {
-                $this->em->getConnection()->exec(sprintf('UNLOCK TABLES'));
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function cleanup($maxAge)
     {
         $tableName = $this->em->getClassMetadata($this->class)->table['name'];
@@ -164,9 +179,36 @@ class MessageManager implements MessageManagerInterface
             ->delete()
             ->where('message.state = :state')
             ->andWhere('message.completedAt < :date')
-            ->setParameter('state', Message::STATE_DONE)
+            ->setParameter('state', MessageInterface::STATE_DONE)
             ->setParameter('date', $date);
 
         $qb->getQuery()->execute();
+    }
+
+    /**
+     * @param int   $state
+     * @param array $types
+     * @param int   $batchSize
+     * @param array $parameters
+     *
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    protected function prepareStateQuery($state, $types, $batchSize, &$parameters)
+    {
+        $query = $this->em->getRepository($this->class)
+            ->createQueryBuilder('m')
+            ->where('m.state = :state')
+            ->orderBy('m.createdAt');
+
+        $parameters['state'] = $state;
+
+        if (count($types) > 0) {
+            $query->andWhere('m.type IN (:types)');
+            $parameters['types'] = $types;
+        }
+
+        $query->setMaxResults($batchSize);
+
+        return $query;
     }
 }

@@ -42,10 +42,13 @@ interface MessageManagerInterface
      * Finds one message by the given criteria
      *
      * @param array $criteria
+     * @param array $orderBy
+     * @param int   $limit
+     * @param int   $offset
      *
      * @return MessageInterface
      */
-    public function findBy(array $criteria);
+    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null);
 
     /**
      * Returns the message's fully qualified class name
@@ -62,14 +65,6 @@ interface MessageManagerInterface
      * @return void
      */
     public function save(MessageInterface $message);
-
-    /**
-     * Returns the next open message available in the stack
-     *
-     * @param  int              $pause
-     * @return MessageInterface
-     */
-    public function getNextOpenMessage($pause = 500000);
 
     /**
      * @return integer

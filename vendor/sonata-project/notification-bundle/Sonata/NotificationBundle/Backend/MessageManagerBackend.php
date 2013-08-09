@@ -31,18 +31,28 @@ class MessageManagerBackend implements BackendInterface
 
     protected $maxAge;
 
+    protected $dispatcher = null;
+
+    protected $type;
+
+    protected $batchSize;
+
     /**
      * @param \Sonata\NotificationBundle\Model\MessageManagerInterface $messageManager
      * @param array                                                    $checkLevel
      * @param int                                                      $pause
      * @param int                                                      $maxAge
+     * @param int                                                      $batchSize
+     * @param string                                                   $type
      */
-    public function __construct(MessageManagerInterface $messageManager, array $checkLevel, $pause = 500000, $maxAge = 84600)
+    public function __construct(MessageManagerInterface $messageManager, array $checkLevel, $pause = 500000, $maxAge = 84600,  $batchSize = 10, $type = null)
     {
         $this->messageManager = $messageManager;
         $this->checkLevel     = $checkLevel;
         $this->pause          = $pause;
         $this->maxAge         = $maxAge;
+        $this->batchSize      = $batchSize;
+        $this->type           = $type;
     }
 
     /**
@@ -81,7 +91,9 @@ class MessageManagerBackend implements BackendInterface
      */
     public function getIterator()
     {
-        return new MessageManagerMessageIterator($this->messageManager, $this->pause);
+        $types = null !== $this->type ? array($this->type) : array();
+
+        return new MessageManagerMessageIterator($this->messageManager, $types, $this->pause, $this->batchSize);
     }
 
     /**
@@ -89,7 +101,14 @@ class MessageManagerBackend implements BackendInterface
      */
     public function initialize()
     {
+    }
 
+    /**
+     * @param MessageManagerBackendDispatcher $dispatcher
+     */
+    public function setDispatcher(MessageManagerBackendDispatcher $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -109,6 +128,8 @@ class MessageManagerBackend implements BackendInterface
             $message->setCompletedAt(new \DateTime());
             $message->setState(MessageInterface::STATE_DONE);
             $this->messageManager->save($message);
+
+            return $event->getReturnInfo();
 
         } catch (\Exception $e) {
             $message->setCompletedAt(new \DateTime());
@@ -167,5 +188,4 @@ class MessageManagerBackend implements BackendInterface
     {
         return new CheckResult("Message manager backend health check", $message, $status);
     }
-
 }

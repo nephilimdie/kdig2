@@ -41,6 +41,7 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('message_manager')->defaultValue('sonata.notification.manager.message.default')->end()
                             ->scalarNode('max_age')->defaultValue(86400)->end() # max age in second
                             ->scalarNode('pause')->defaultValue(500000)->end()  # delay in microseconds
+                            ->scalarNode('batch_size')->defaultValue(10)->end() # number of items on each iteration
                             ->arrayNode('states')
                                 ->addDefaultsIfNotSet()
                                 ->children()
@@ -74,6 +75,11 @@ class Configuration implements ConfigurationInterface
             ->arrayNode('consumers')
                 ->addDefaultsIfNotSet()
             ->end()
+            ->arrayNode('iteration_listeners')
+                ->defaultValue(array())
+                ->prototype('scalar')
+                ->end()
+            ->end()
             ->arrayNode('class')
                 ->addDefaultsIfNotSet()
                 ->children()
@@ -93,6 +99,10 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
             ->end()
+            ->booleanNode('doctrine_optimize')
+                ->defaultValue(true)->end() # attach doctrine optimize listener
+            ->booleanNode('doctrine_backend_optimize')
+                ->defaultValue(true)->end() # attach doctrine backend optimize listener
         ;
 
         return $treeBuilder;
@@ -117,6 +127,5 @@ class Configuration implements ConfigurationInterface
         ->end();
 
         return $node;
-
     }
 }
