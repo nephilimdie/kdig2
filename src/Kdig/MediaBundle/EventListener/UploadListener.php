@@ -38,7 +38,7 @@ class UploadListener
         $gallery = $request->get('gallery');
         $file = $event->getFile();
         $request = $event->getRequest();
-
+        
         // Optional: might be used to provide localized messages.
         $locale = $this->getRequest()->getLocale();
         $session = $this->getRequest()->getSession();
