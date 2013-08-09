@@ -4,5 +4,6 @@
 /app/config/parameters.yml
 /vendor/*
 /web/
+/nbproject/*
 
 .DS_Store
