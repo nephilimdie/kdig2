@@ -117,7 +117,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
         }
 
         if ($this->role_media) {
-            $menu->addChild('Media', array('route' => 'default_index'));
+            $menu->addChild('Media', array('route' => 'media_index'));
             $menu->addChild('Photo List', array('route' => 'photolist_add'));
         }
         return $menu;
