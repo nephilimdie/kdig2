@@ -4,10 +4,10 @@ parameters:
 
 services:
 ## twig template
-    template.twig.template_extension:
-        class: '%kdig_template.template_extension.class%'
-        tags:
-            - { name: twig.extension }
+#    template.twig.template_extension:
+#        class: '%kdig_template.template_extension.class%'
+#        tags:
+#            - { name: twig.extension }
 
 ## horizontal navbar
     kdig.template.navbar:
