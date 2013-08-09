@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface,
     Sonata\MediaBundle\Provider\MediaProviderInterface,
     Symfony\Component\HttpFoundation\File\UploadedFile,
     Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Security\Acl\Permission\MaskBuilder;
     
 use Oneup\UploaderBundle\Event\PostPersistEvent;
 
