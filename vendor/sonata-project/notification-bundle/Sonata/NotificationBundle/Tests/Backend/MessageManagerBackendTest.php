@@ -12,7 +12,7 @@
 namespace Sonata\NotificationBundle\Tests\Notification;
 
 use Sonata\NotificationBundle\Backend\MessageManagerBackend;
-use Sonata\NotificationBundle\Entity\Message;
+use \Sonata\NotificationBundle\Tests\Entity\Message;
 use Sonata\NotificationBundle\Model\MessageInterface;
 use Sonata\NotificationBundle\Exception\HandlingException;
 
@@ -84,6 +84,10 @@ class MessageManagerProducerTest extends \PHPUnit_Framework_TestCase
      */
     public function testStatus($counts, $expectedStatus, $message)
     {
+        if (!class_exists('Liip\Monitor\Result\CheckResult')) {
+            $this->markTestSkipped('The class Liip\Monitor\Result\CheckResult does not exist');
+        }
+
         $modelManager = $this->getMock('Sonata\NotificationBundle\Model\MessageManagerInterface');
         $modelManager->expects($this->exactly(1))->method('countStates')->will($this->returnValue($counts));
 
@@ -103,6 +107,10 @@ class MessageManagerProducerTest extends \PHPUnit_Framework_TestCase
 
     public static function statusProvider()
     {
+        if (!class_exists('Liip\Monitor\Result\CheckResult')) {
+            return array(array(1,1,1));
+        }
+
         $data = array();
 
         $data[] = array(

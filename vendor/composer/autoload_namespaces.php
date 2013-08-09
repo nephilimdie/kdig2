@@ -8,7 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Twig_Extensions_' => array($vendorDir . '/twig/extensions/lib'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'Trsteel\\CkeditorBundle' => array($vendorDir . '/trsteel/ckeditor-bundle'),
     'Symfony\\Component\\Icu\\' => array($vendorDir . '/symfony/icu'),
     'Symfony\\Bundle\\SwiftmailerBundle' => array($vendorDir . '/symfony/swiftmailer-bundle'),
     'Symfony\\Bundle\\MonologBundle' => array($vendorDir . '/symfony/monolog-bundle'),
@@ -86,5 +85,6 @@ return array(
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
     'APY\\JsFormValidationBundle' => array($vendorDir . '/apy/jsfv-bundle'),
     'APY\\DataGridBundle' => array($vendorDir . '/apy/datagrid-bundle'),
+    'APY\\BreadcrumbTrailBundle' => array($vendorDir . '/apy/breadcrumbtrail-bundle'),
     '' => array($baseDir . '/src'),
 );
