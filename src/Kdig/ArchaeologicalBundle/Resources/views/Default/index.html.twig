@@ -1,4 +1,4 @@
-{% extends parent_template() %}
+{% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content_content %}
 content
 {% endblock %}
