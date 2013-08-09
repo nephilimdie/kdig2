@@ -1,7 +1,14 @@
 parameters:
     kdig_template.navbar_menu_builder.class: 'Kdig\TemplateBundle\Menu\NavbarMenuBuilder'
+    kdig_template.template_extension.class: 'Kdig\TemplateBundle\Menu\NavbarMenuBuilder'
 
 services:
+## twig template
+    template.twig.template_extension:
+        class: '%kdig_template.template_extension.class%'
+        tags:
+            - { name: twig.extension }
+
 ## horizontal navbar
     kdig.template.navbar:
         class: '%mopa_bootstrap.navbar.generic%'
