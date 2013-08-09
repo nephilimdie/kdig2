@@ -37,7 +37,7 @@ class UploadListener
 //        $file = $this->getFiles($request->files);
         $gallery = $request->get('gallery');
         $file = $event->getFile();
-
+        var_dump($file);
         // Optional: might be used to provide localized messages.
         $locale = $request->getLocale();
         $session = $request->getSession();
@@ -53,7 +53,7 @@ class UploadListener
         $url = '';
         $media = new Media();
         $media->setProviderName('sonata.media.provider.image');
-        $media->setName($file->getClientOriginalName());
+        $media->setName($file->getOriginalName());
         $media->setBinaryContent($file);
         $media->setEnabled(true);
         $media->setUser($em->merge($this->getReference('user_one')));
