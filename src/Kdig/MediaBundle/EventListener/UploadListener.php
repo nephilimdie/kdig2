@@ -58,6 +58,7 @@ class UploadListener
         $media->setName($file->getFileName());
         $media->setBinaryContent($file);
         $media->setEnabled(true);
+        $media->setContext('default');
         //$media->setName('test');
 
         $this->em->persist($media);
