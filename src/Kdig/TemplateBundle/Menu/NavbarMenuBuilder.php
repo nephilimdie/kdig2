@@ -36,8 +36,8 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
                 $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
                 $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
                 $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
-                $this->usr = $securityContext->getToken()->getUser();
             }
+            $this->usr = $securityContext->getToken()->getUser();
         }
     }
 
