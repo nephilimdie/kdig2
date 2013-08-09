@@ -108,5 +108,6 @@ class UploadListener
         }
         $response['name'] = $media->getName();
         $response['id'] = $media->getId();
+        $response['url'] = $path;
     }
 }
