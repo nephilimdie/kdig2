@@ -1,3 +1,4 @@
+{% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block title %}
     {{ 'views.new.creation'|trans({'%entity%': 'Photolist'}, 'JordiLlonchCrudGeneratorBundle') }}
 {% endblock %}
