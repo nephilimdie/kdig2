@@ -2,7 +2,7 @@
 
 namespace Kdig\TemplateBundle\Twig;
 
-class DemoExtension extends \Twig_Extension
+class TemplateExtension extends \Twig_Extension
 {
     const FULL_TEMPLATE = 'KdigTemplateBundle:Default:ajax_base.html.twig';
     const PARTIAL_TEMPLATE = 'KdigTemplateBundle:Default:base.html.twig';
