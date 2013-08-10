@@ -33,7 +33,7 @@ sonata_media:
                 
     cdn:
         server:
-            path: project/media
+            path: /project/media
             
         #panther:
         #    path:       http://domain.pantherportal.com/uploads/media
