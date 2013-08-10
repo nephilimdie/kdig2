@@ -70,7 +70,6 @@ class Media extends BaseMedia
     */
     private $bucketsheets;
     
-    
     /**
     * @ORM\ManyToMany(targetEntity="Kdig\OrientBundle\Entity\Pottery", mappedBy="media", cascade={"persist"})
     */
@@ -191,50 +190,4 @@ class Media extends BaseMedia
     		$this->heritage[] = $role;
     	}
     }    
-        
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $galleryHasMedias;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->galleryHasMedias = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add galleryHasMedias
-     *
-     * @param \Kdig\MediaBundle\Entity\GalleryHasMedia $galleryHasMedias
-     * @return Media
-     */
-    public function addGalleryHasMedia(\Kdig\MediaBundle\Entity\GalleryHasMedia $galleryHasMedias)
-    {
-        $this->galleryHasMedias[] = $galleryHasMedias;
-    
-        return $this;
-    }
-
-    /**
-     * Remove galleryHasMedias
-     *
-     * @param \Kdig\MediaBundle\Entity\GalleryHasMedia $galleryHasMedias
-     */
-    public function removeGalleryHasMedia(\Kdig\MediaBundle\Entity\GalleryHasMedia $galleryHasMedias)
-    {
-        $this->galleryHasMedias->removeElement($galleryHasMedias);
-    }
-
-    /**
-     * Get galleryHasMedias
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getGalleryHasMedias()
-    {
-        return $this->galleryHasMedias;
-    }
 }
