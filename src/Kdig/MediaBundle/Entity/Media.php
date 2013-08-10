@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table
  * @Gedmo\Loggable
  * @ORM\HasLifecycleCallbacks()
+ * @ORM\Entity(repositoryClass="Kdig\MediaBundle\Repository\MediaRepository")
  *
  */
 class Media extends BaseMedia
@@ -150,7 +151,7 @@ class Media extends BaseMedia
      */
     public function __toString()
     {
-    	return (string) $this->getId();
+    	return (string) $this->getName();
     }
     
     /**
