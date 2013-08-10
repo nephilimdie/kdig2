@@ -1,11 +1,148 @@
 
 @import "/../../../../../../vendor/twbs/bootstrap/less/responsive.less";
-
+@import "/../../../../../../vendor/twbs/bootstrap/less/variables.less";
 // Sprite icons path
 // -------------------------
 @iconSpritePath:          "../img/glyphicons-halflings.png";
 @iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
 
+@metalblue: @blueDark;
+
+body {
+    background: @grayDarker;
+    color: @textColor;
+    border: 0;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+}
+ul {
+    list-style: none;
+    margin: 0px;
+}
+.navbar-inner {
+    border: 0px !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.big-container {
+    background-color: @grayDarker !important;
+}
+a#widgets-area-button {
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 1px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-shadow: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+a#main-menu-toggle {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 12px;
+    font-size: 16px;
+    text-shadow: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-right: 1px solid #47474e;
+}
+/*.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    filter: alpha(opacity=20);
+}
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.open {
+}*/
+#flash {
+    position: relative;
+    margin-right: 4%;
+    margin-left: 4%;
+}
+.breadcrumb {
+    padding: 0px 15px !important;
+    margin: 0px !important;
+    background-color: transparent !important;
+}
+.content {
+    margin: 0px !important;
+}
+.right-menu {
+    text-align: center !important;
+    margin: 0px !important;
+}
+form .control-label {
+    display: block;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 40px;
+    color: #333333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.required {
+    color: red !important;
+}
+
+div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the top of the form */
+    width:200px;
+    padding:2px 5px;
+    border: 1px solid @yellow;
+    background: #fff6e5;
+    -moz-border-radius: @baseBorderRadius;
+    -webkit-border-radius: @baseBorderRadius;
+    border-radius:5px;
+    color: @yellow;
+    position: fixed;
+    top: 10px;
+    }
+
+form#feedbackform div{ 
+    margin-bottom:9px;
+}
+
+.left-menu {
+    
+}
+.center {
+    min-height: 100%;
+    background: #fff;
+    filter: none;
+    -webkit-border-radius: @baseBorderRadius;
+    -moz-border-radius: @baseBorderRadius;
+    border: 2px solid #eee;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    position: relative;
+    font-size: @fontSizeMini;
+}
+.page-header {
+    padding-top: 9px;
+}
+.grid-parent-block {
+    margin: 0 !important;
+    padding: 7px !important;
+}
+.select2-container {
+    min-width: 100px;
+}
 .navbar {
     margin: 0px !important;
 }
@@ -20,6 +157,14 @@
 
 footer {
     border-top: 1px solid #eeeeee;
+    background-color: @white;
+    .footer {
+      position: relative;
+      margin-top: -150px; 
+      height: 150px;
+      clear: both;
+      padding-top: 20px;
+    } 
 }
 .action-nav-normal { 
     .action-nav-button {
