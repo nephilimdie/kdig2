@@ -89,7 +89,7 @@
                 return "<img src='{{ asset('uploads/thumbnails/') }}" + media.name + "'/><br /><p>"+ media.name +"</p>";
             }
             $field = $('#kdig_archaeologicalbundle_ustype_media');
-            var $configs = {{ configs|json_encode|raw }};
+            var $configs = null;
             // custom configs
             $configs = $.extend($configs, {
                 ajax: { 
