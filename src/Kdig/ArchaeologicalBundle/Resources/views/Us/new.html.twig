@@ -92,21 +92,6 @@
             var $configs = null;
             // custom configs
             $configs = $.extend($configs, {
-                ajax: { 
-                    quietMillis: 100,
-                    url: "{{ path('media_getmediafromquery') }}",
-                    dataType: 'json',
-                    data: function (term, page) {
-                        return {
-                            q: term,
-                            // search term
-                            page_limit: 10
-                        };
-                    },
-                    results: function (data, page) {
-                        return {results: data.results};
-                    }
-                },
                 formatResult: mediaFormatResult, 
                 formatSelection: mediaFormatSelection, 
                 dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
