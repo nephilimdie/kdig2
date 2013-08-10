@@ -16,17 +16,16 @@ use Kdig\ArchaeologicalBundle\Entity\Prepottery;
 use Kdig\ArchaeologicalBundle\Form\PrepotteryType;
 use Kdig\ArchaeologicalBundle\Form\PrepotteryFilterType;
 
-use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
-
-use JMS\SecurityExtraBundle\Annotation\Secure;
-
 use APY\DataGridBundle\Grid\Source\Entity;
 use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Action\MassAction;
 use APY\DataGridBundle\Grid\Action\DeleteMassAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
-use APY\DataGridBundle\Grid\Export\PHPExcel2003Export; 
-use APY\DataGridBundle\Grid\Export\CSVExport;
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Prepottery controller.
