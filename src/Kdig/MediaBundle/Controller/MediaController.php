@@ -28,11 +28,21 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 class MediaController extends Controller
 {
     /**
-     * @Route("/", name="media")
+     * @Route("/", name="media_index")
      * @Breadcrumb("Media", route="media_index")
      * @Template()
      */
     public function indexAction()
+    {
+        return array();
+    }
+    
+    /**
+     * @Route("/list", name="media")
+     * @Breadcrumb("List", route="media")
+     * @Template()
+     */
+    public function listAction()
     {
         return array();
     }
