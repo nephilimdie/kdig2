@@ -33,7 +33,7 @@ sonata_media:
                 
     cdn:
         server:
-            path: /project/media
+            path: /uploads/project/media
             
         #panther:
         #    path:       http://domain.pantherportal.com/uploads/media
@@ -47,7 +47,7 @@ sonata_media:
                 
     filesystem:
         local:
-            directory:  %kernel.root_dir%/../project/media
+            directory:  %kernel.root_dir%/../web/uploads/project/media
             create:     true
 
     providers:
