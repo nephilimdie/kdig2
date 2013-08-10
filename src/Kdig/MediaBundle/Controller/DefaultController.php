@@ -9,6 +9,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Action\MassAction;
+use APY\DataGridBundle\Grid\Action\DeleteMassAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+
+use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
+
+use JMS\SecurityExtraBundle\Annotation\Secure;
 /**
  * Bucket controller.
  *
@@ -25,6 +35,25 @@ class DefaultController extends Controller
         return array();
     }
     
+    /**
+     * @Route("/home/", name="media_home")
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
+     * @Template()
+     */
+    public function homeAction()
+    {
+        return array();
+    }
+    
+    /**
+     * @Route("/home/", name="media_new")
+     * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
+     * @Template()
+     */
+    public function uploadAction()
+    { 
+        
+    }
     /**
      * @Route("/getmediafromquery", name="media_getmediafromquery")
      */
