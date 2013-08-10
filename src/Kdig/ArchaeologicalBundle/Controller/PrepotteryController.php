@@ -20,6 +20,14 @@ use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Action\MassAction;
+use APY\DataGridBundle\Grid\Action\DeleteMassAction;
+
+use APY\DataGridBundle\Grid\Export\PHPExcel2003Export; 
+use APY\DataGridBundle\Grid\Export\CSVExport;
+
 /**
  * Prepottery controller.
  *
@@ -28,6 +36,65 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
  */
 class PrepotteryController extends Controller
 {
+    
+    /**
+     * Lists all object entities.
+     *
+     * @Route("/", name="prepottery")
+     * @Breadcrumb("Table", route="prepottery")
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
+     */
+    public function myGridAction()
+    {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $group = $user->getSlectedgroup();
+        
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $bucketid = $em->getRepository('KdigOrientBundle:Bucket')->getmygroupelement($user);
+        $ids = $em->getRepository('KdigArchaeologicalBundle:Prepottery')->getmygroupelement($bucketid);
+
+        $source = new Entity('KdigArchaeologicalBundle:Prepottery');
+        $tableAlias = $source::TABLE_ALIAS;
+        $source->manipulateQuery(function ($query) use ($tableAlias, $ids)
+        {
+            $query->andWhere($query->expr()->in($tableAlias .'.id', $ids));
+        });
+        
+        $grid = $this->get('grid');
+        
+        $grid->setActionsColumnSize(100);
+        $grid->setSource($source);
+        
+        $grid->setId('datagrid_prepottery');
+        $grid->setLimits(array(20, 50, 100, 1000));
+
+        $rowAction1 = new RowAction('Show', 'prepottery_show', false, '_self', array('class' => 'icon icon199 grid_show_action'));
+        $grid->addRowAction($rowAction1);
+        
+        if ( $group->hasRole('ROLE_ARCHEOLOGO')) {
+            $grid->addMassAction(new DeleteMassAction());
+            $rowAction2 = new RowAction('Edit', 'prepottery_edit', false, '_self', array('class' => 'icon icon145 grid_edit_action'));
+            $grid->addRowAction($rowAction2);
+            $rowAction = new RowAction('Delete', 'prepottery_delete', true, '_self', array('class' => 'icon icon58 grid_delete_action'));
+            $grid->addRowAction($rowAction);
+        }
+        $fileName = 'Pottery-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
+        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
+        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
+        
+        $grid->addExport($export);
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse();
+    }
     /**
      * Lists all Prepottery entities.
      *
