@@ -53,67 +53,6 @@
             });
         </script>
         
-        <style type="text/css">
-            .zebra { background-color: #efefef !important; }
-            img.flag { height: 10px !important; width: 15px !important; padding-right: 10px !important; }
-            .media-result td {vertical-align: top }
-            .media-image { width: 40px !important; }
-            .media-image img { height: 40px !important; width: 40px !important;  }
-            .media-info { padding-left: 10px !important; vertical-align: top; }
-            .media-title { font-size: 1.2em; padding-bottom: 0px !important; }
-            .media-synopsis { font-size: .8em; color: #888; }
-            .select2-highlighted .media-synopsis { font-size: .8em; color: #eee; }
-            .bigdrop.select2-container .select2-results {max-height: 300px !important; width: 600px !important;}
-            .bigdrop .select2-results {max-height: 300px !important;}
-        </style>
-        <script type="text/javascript">
-
-        $(window).load(function(){
-            function mediaFormatResult(media) {
-                var markup = "<table class='media-result'><tr>";
-                if (media.name !== undefined) {
-                    markup += "<td class='media-image'><img src='{{ asset('uploads/thumbnails/') }}" + media.name + "'/></td>";
-                }
-                markup += "<td class='media-info'><div class='media-title'>" + media.name + "</div>";
-                if (media.size !== undefined) {
-                    markup += "<div class='media-synopsis'>" + media.size + "</div>";
-                }
-                else if (media.mime !== undefined) {
-                    markup += "<div class='media-synopsis'>" + media.mime + "</div>";
-                }
-                markup += "</td></tr></table>"
-                return markup;
-            }
-
-            function mediaFormatSelection(media) {
-                return "<img src='{{ asset('uploads/thumbnails/') }}" + media.name + "'/><br /><p>"+ media.name +"</p>";
-            }
-            $field = $('#kdig_archaeologicalbundle_ustype_media');
-            var $configs = null;
-            // custom configs
-            $configs = $.extend($configs, {
-                formatResult: mediaFormatResult, 
-                formatSelection: mediaFormatSelection, 
-                dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
-                initSelection : function (element, callback) {
-                    var items = [];
-                    var spiltter = element.val().split(",");
-                    var countsplit = spiltter.length;
-                    $(spiltter).each(function (index, value) {
-                        $.getJSON("{{ path('media_showjson') }}", {id: this}, function(data) {
-                            //console.log(data.mime);
-                            items.push(data);
-                            if ((countsplit-1) == index) { 
-                                console.log(items);
-                                return callback(items)
-                            };
-                        });
-                    });
-            }
-            });
-            $field.select2($configs);
-        });
-        </script>
     {% endblock content_content %}
 </div>
 {% endblock content %}
