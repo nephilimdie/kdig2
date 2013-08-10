@@ -28,7 +28,7 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 class MediaController extends Controller
 {
     /**
-     * @Route("/", name="media_index")
+     * @Route("/", name="media")
      * @Breadcrumb("Media", route="media_index")
      * @Template()
      */
@@ -49,8 +49,8 @@ class MediaController extends Controller
     }
     
     /**
-     * @Route("/home/", name="media_new")
-     * @Breadcrumb("New", route="media_new")
+     * @Route("/upload/", name="media_new")
+     * @Breadcrumb("Upload", route="media_new")
      * @Secure(roles="ROLE_MEDIA , ROLE_ADMIN")
      * @Template()
      */
