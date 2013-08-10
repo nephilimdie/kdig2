@@ -53,8 +53,6 @@
             });
         </script>
         
-        
-        {% block genemu_jqueryselect2_javascript %}
         <style type="text/css">
             .zebra { background-color: #efefef !important; }
             img.flag { height: 10px !important; width: 15px !important; padding-right: 10px !important; }
@@ -90,7 +88,7 @@
             function mediaFormatSelection(media) {
                 return "<img src='{{ asset('uploads/thumbnails/') }}" + media.name + "'/><br /><p>"+ media.name +"</p>";
             }
-            $field = $('#{{ id }}');
+            $field = $('#kdig_archaeologicalbundle_ustype_media');
             var $configs = {{ configs|json_encode|raw }};
             // custom configs
             $configs = $.extend($configs, {
@@ -131,7 +129,6 @@
             $field.select2($configs);
         });
         </script>
-        {% endblock %}
     {% endblock content_content %}
 </div>
 {% endblock content %}
