@@ -377,31 +377,32 @@ class PhotolistController extends Controller
             else {
                 foreach ($areas as $area) {
         //                  if photo isInArray() of element
-                    $area->setMedia($photo);
+                    $area->addMedia($photo);
                     $area->save();
                 }
         //              foreach ($uss ad $us)
                 foreach ($uss as $us) {
         //                  if photo isInArray() of element
-                    $us->setMedia($photo);
+                    $us->addMedia($photo);
                     $us->save();
                 }
                 foreach ($objs as $obj) {
         //                  if photo isInArray() of element
-                    $obj->setMedia($photo);
+                    $obj->addMedia($photo);
                     $obj->save();
                 }
                 foreach ($pots as $pot){
         //                  if photo isInArray() of element
-                    $pot->setMedia($photo);
+                    $pot->addMedia($photo);
                     $pot->save();
                 }
                 foreach ($sams as $sam) {
         //                  if photo isInArray() of element
-                    $sam->setMedia($photo);
+                    $sam->addMedia($photo);
                     $sam->save();
                 }
             } //end else
         }  //end for
+        $em->flush();
     }
 }
