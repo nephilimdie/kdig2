@@ -210,6 +210,13 @@
                     e.preventDefault();
                 });
     
+            $(".changeGroup .dropdown-menu a").on("click", function(event){ 
+                event.preventDefault();
+                getdefaultstringAjax ($(this).attr('href'), $('.changeGroup a.dropdown-toggle'), 'changetext');
+                location.reload();
+                return false;
+            });
+            
             $("#widgets-area-button").click(function() {
               if ($(this).hasClass("open")) {
                     $(this).removeClass("open").addClass("close");
