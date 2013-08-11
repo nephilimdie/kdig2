@@ -371,7 +371,7 @@ class PrepotteryController extends Controller
     /**
      * Deletes a Prepottery entity.
      *
-     * @Route("/{id}", name="prepottery_delete")
+     * @Route("/{id}/delete", name="prepottery_delete")
      * @Method("DELETE")
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */

@@ -307,7 +307,7 @@ class PreobjectController extends Controller
     /**
      * Deletes a Preobject entity.
      *
-     * @Route("/{id}", name="preobject_delete")
+     * @Route("/{id}/delete", name="preobject_delete")
      * @Method("DELETE")
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */

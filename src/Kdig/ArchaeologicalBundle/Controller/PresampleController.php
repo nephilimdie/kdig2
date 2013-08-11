@@ -305,7 +305,7 @@ class PresampleController extends Controller
     /**
      * Deletes a Presample entity.
      *
-     * @Route("/{id}", name="presample_delete")
+     * @Route("/{id}/delete", name="presample_delete")
      * @Method("DELETE")
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */

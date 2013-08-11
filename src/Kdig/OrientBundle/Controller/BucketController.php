@@ -333,7 +333,7 @@ class BucketController extends Controller
     /**
      * Deletes a Bucket entity.
      *
-     * @Route("/{id}", name="bucket_delete")
+     * @Route("/{id}/delete", name="bucket_delete")
      * @Method("DELETE")
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
