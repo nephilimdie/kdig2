@@ -46,7 +46,7 @@ class PreobjectController extends Controller
     {
         $user = $this->get('security.context')->getToken()->getUser();
         
-        $source = new Entity('KdigOrientBundle:Preobject');
+        $source = new Entity('KdigArchaeologicalBundle:Preobject');
         $grid = $this->get('grid');
         $grid->setSource($source);
 
