@@ -8,6 +8,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\View\TwitterBootstrapView;
 
 use Kdig\ArchaeologicalBundle\Entity\Us;
 use Kdig\ArchaeologicalBundle\Form\UsType;
