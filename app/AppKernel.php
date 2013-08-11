@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             new APY\DataGridBundle\APYDataGridBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
