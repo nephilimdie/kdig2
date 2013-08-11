@@ -356,10 +356,6 @@ class ObjectController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->bind($request);
-
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('KdigOrientBundle:Object')->find($id);
 
@@ -370,9 +366,6 @@ class ObjectController extends Controller
             $em->remove($entity);
             $em->flush();
             $this->get('session')->getFlashBag()->add('success', 'flash.delete.success');
-        } else {
-            $this->get('session')->getFlashBag()->add('error', 'flash.delete.error');
-        }
 
         return $this->redirect($this->generateUrl('object'));
     }

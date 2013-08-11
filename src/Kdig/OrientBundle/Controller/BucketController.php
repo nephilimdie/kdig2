@@ -339,10 +339,6 @@ class BucketController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->bind($request);
-
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('KdigOrientBundle:Bucket')->find($id);
 
@@ -353,9 +349,6 @@ class BucketController extends Controller
             $em->remove($entity);
             $em->flush();
             $this->get('session')->getFlashBag()->add('success', 'flash.delete.success');
-        } else {
-            $this->get('session')->getFlashBag()->add('error', 'flash.delete.error');
-        }
 
         return $this->redirect($this->generateUrl('bucket'));
     }

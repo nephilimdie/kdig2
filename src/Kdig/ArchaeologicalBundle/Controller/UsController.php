@@ -187,6 +187,7 @@ class UsController extends Controller
      * @Route("/", name="us_create")
      * @Method("POST")
      * @Template("KdigArchaeologicalBundle:Us:new.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function createAction(Request $request)
     {
@@ -262,6 +263,7 @@ class UsController extends Controller
      *
      * @Route("/{id}/edit", name="us_edit")
      * @Breadcrumb("Edit SU",  route={"name"="us_edit", "parameters"={"id"}})
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      * @Method("GET")
      * @Template()
      */
@@ -293,6 +295,7 @@ class UsController extends Controller
      * @Route("/{id}", name="us_update")
      * @Method("PUT")
      * @Template("KdigArchaeologicalBundle:Us:edit.html.twig")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function updateAction(Request $request, $id)
     {
@@ -331,13 +334,10 @@ class UsController extends Controller
      *
      * @Route("/{id}", name="us_delete")
      * @Method("DELETE")
+     * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->bind($request);
-
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('KdigArchaeologicalBundle:Us')->find($id);
 
@@ -348,10 +348,6 @@ class UsController extends Controller
             $em->remove($entity);
             $em->flush();
             $this->get('session')->getFlashBag()->add('success', 'flash.delete.success');
-        } else {
-            $this->get('session')->getFlashBag()->add('error', 'flash.delete.error');
-        }
-
         return $this->redirect($this->generateUrl('us'));
     }
 
