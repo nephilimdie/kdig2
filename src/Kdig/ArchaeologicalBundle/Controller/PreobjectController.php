@@ -16,6 +16,13 @@ use Kdig\ArchaeologicalBundle\Entity\Preobject;
 use Kdig\ArchaeologicalBundle\Form\PreobjectType;
 use Kdig\ArchaeologicalBundle\Form\PreobjectFilterType;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+use APY\DataGridBundle\Grid\Action\RowAction;
+use APY\DataGridBundle\Grid\Action\MassAction;
+use APY\DataGridBundle\Grid\Action\DeleteMassAction;
+use APY\DataGridBundle\Grid\Column\ActionsColumn;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+
 use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
 use JMS\SecurityExtraBundle\Annotation\Secure;
@@ -28,6 +35,46 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
  */
 class PreobjectController extends Controller
 {
+    /**
+     * Lists all Preobject entities.ì in grid
+     *
+     * @Route("/", name="preobject")
+     * @Breadcrumb("Table", route="preobject")
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
+     */
+    public function myGridAction()
+    {
+        $user = $this->get('security.context')->getToken()->getUser();
+        
+        $source = new Entity('KdigOrientBundle:Preobject');
+        $grid = $this->get('grid');
+        $grid->setSource($source);
+
+        $grid->setDefaultOrder('number', 'asc');
+
+        $actionsColumn = new ActionsColumn('info_column_1', 'Actions');
+        $actionsColumn->setSeparator("<br />");
+        $grid->addColumn($actionsColumn, 1);
+        $showAction = new RowAction('Show', 'object_show');
+        $showAction->setColumn('info_column');
+        $grid->addRowAction($showAction);
+        $grid->addMassAction(new DeleteMassAction());
+        
+        $fileName = 'object-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_ARCHAEOLOGY');
+
+        $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
+        $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $export->objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setDescription("KdigProject");
+        $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $export->objPHPExcel->getProperties()->setCategory("KdigProject");
+        
+        $grid->addExport($export);
+        // Manage the grid redirection, exports and the response of the controller
+        return $grid->getGridResponse();
+    }
     /**
      * Lists all Preobject entities.
      *
@@ -166,7 +213,7 @@ class PreobjectController extends Controller
     /**
      * Displays a form to create a new Preobject entity.
      *
-     * @Route("/new", name="preobject_new")
+     * @Route("/new/", name="preobject_new")
      * @Breadcrumb("New object", route="preobject_new")
      * @Template()
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
@@ -197,7 +244,7 @@ class PreobjectController extends Controller
     /**
      * Finds and displays a Preobject entity.
      *
-     * @Route("/{id}", name="preobject_show")
+     * @Route("/{id}/show", name="preobject_show")
      * @Breadcrumb("Show object",  route={"name"="preobject_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
@@ -325,21 +372,6 @@ class PreobjectController extends Controller
             $this->get('session')->getFlashBag()->add('success', 'flash.delete.success');
 
         return $this->redirect($this->generateUrl('preobject'));
-    }
-
-    /**
-     * Creates a form to delete a Preobject entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder(array('id' => $id))
-            ->add('id', 'hidden')
-            ->getForm()
-        ;
     }
     
     /**
