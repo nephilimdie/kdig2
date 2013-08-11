@@ -332,7 +332,7 @@ class UsController extends Controller
     /**
      * Deletes a Us entity.
      *
-     * @Route("/{id}", name="us_delete")
+     * @Route("/{id}/delete", name="us_delete")
      * @Method("DELETE")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
