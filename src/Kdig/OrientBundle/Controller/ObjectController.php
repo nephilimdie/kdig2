@@ -351,7 +351,7 @@ class ObjectController extends Controller
      * Deletes a Object entity.
      *
      * @Route("/{id}/delete", name="object_delete")
-     * @Method("DELETE")
+     *
      * @Secure(roles="ROLE_OBJECT , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)

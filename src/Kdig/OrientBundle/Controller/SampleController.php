@@ -268,7 +268,7 @@ class SampleController extends Controller
      * Deletes a Sample entity.
      *
      * @Route("/{id}/delete", name="sample_delete")
-     * @Method("DELETE")
+     *
      * @Secure(roles="ROLE_SAMPLE, ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)

@@ -334,7 +334,7 @@ class BucketController extends Controller
      * Deletes a Bucket entity.
      *
      * @Route("/{id}/delete", name="bucket_delete")
-     * @Method("DELETE")
+     *
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
      */
     public function deleteAction(Request $request, $id)
