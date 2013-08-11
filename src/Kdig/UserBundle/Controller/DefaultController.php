@@ -43,6 +43,10 @@ class DefaultController extends Controller
         $entity->setSlectedgroup($group);
         $em->persist($entity);
         $em->flush();
-        return new Response($group->getName().'<b class="caret"></b>');
+        $this->get('session')->getFlashBag()->add('success', 'Group Selected '.$entity->getSlectedgroup());
+
+        return $this->redirect($this->generateUrl($request->get('_route')));
+
+//        return new Response($group->getName().'<b class="caret"></b>');
     }
 }
