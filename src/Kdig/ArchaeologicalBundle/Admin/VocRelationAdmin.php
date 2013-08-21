@@ -24,6 +24,7 @@ class VocRelationAdmin extends Admin
     {
         $showMapper
             ->add('name')
+            ->add('valueReference')
             ->add('remarks')
             ->add('isActive')
             ->add('isPublic')
@@ -41,6 +42,7 @@ class VocRelationAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
+                ->add('valueReference')
                 ->add('remarks')
                 ->add('isActive')
                 ->add('isPublic')
@@ -57,6 +59,7 @@ class VocRelationAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('valueReference')
             ->add('remarks')
             ->add('isActive')
             ->add('isPublic')
@@ -80,6 +83,7 @@ class VocRelationAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
+            ->add('valueReference')
             ->add('remarks')
             ->add('isActive')
             ->add('isPublic')
