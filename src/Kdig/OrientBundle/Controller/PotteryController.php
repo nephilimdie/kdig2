@@ -343,7 +343,7 @@ class PotteryController extends Controller
             $em->flush();
             $this->get('session')->getFlashBag()->add('success', 'flash.update.success');
 
-            return $this->redirect($this->generateUrl('pottery_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('pottery_show', array('id' => $id)));
         } else {
             $this->get('session')->getFlashBag()->add('error', 'flash.update.error');
         }
