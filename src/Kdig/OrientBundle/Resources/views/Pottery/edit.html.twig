@@ -59,10 +59,6 @@
                 legend.closest('.control-group').find('.controls').toggle();
             });
 
-            var id_bucket  = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
-            var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
-            getdefaultstringAjax(routegetdefault,'#kdig_orientbundle_potterytype_prepottery_name','fill');
-
             $('#kdig_orientbundle_potterytype_prepottery_bucket').change(function() {
                 var id_bucket = $("#kdig_orientbundle_potterytype_prepottery_bucket option:selected").val();
                 var routegetdefault = Routing.generate('kdig_prepottery_defaulttext', { id_bucket: id_bucket });
