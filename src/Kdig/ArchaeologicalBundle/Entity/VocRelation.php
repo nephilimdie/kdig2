@@ -39,6 +39,13 @@ class VocRelation {
     
     /**
      * @Gedmo\Versioned
+     * @ORM\Column(nullable=true,length=64, type="integer")
+     * @GRID\Column(size="20", filter="select", title="Value")
+    */
+    private $valueReference;
+    
+    /**
+     * @Gedmo\Versioned
      * @ORM\Column(nullable=true, length=1024, type="text")
      */
     private $remarks;
@@ -137,6 +144,29 @@ class VocRelation {
         return $this->name;
     }
 
+    /**
+     * Set valueReference
+     *
+     * @param integer $typecontext
+     * @return Pottery
+     */
+    public function setValueReference($valueReference)
+    {
+        $this->valueReference = $valueReference;
+    
+        return $this;
+    }
+
+    /**
+     * Get valueReference
+     *
+     * @return integer 
+     */
+    public function getValueReference()
+    {
+        return $this->valueReference;
+    }
+    
     /**
      * Set remarks
      *
