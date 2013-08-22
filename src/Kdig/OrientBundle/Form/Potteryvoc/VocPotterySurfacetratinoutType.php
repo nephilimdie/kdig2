@@ -11,13 +11,13 @@ class VocPotterySurfacetratinoutType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('color', null, array(
-                'label' => 'Color',
+            ->add('vocsurfacetratoption', null, array(
+                'label' => 'Treatment Surface Option',
                 'required' => false,
                 'widget_type'  => "inline"
             ))
-            ->add('vocsurfacetratoption', null, array(
-                'label' => 'Treatment Surface Option',
+            ->add('color', null, array(
+                'label' => 'Color',
                 'required' => false,
                 'widget_type'  => "inline"
             ))
