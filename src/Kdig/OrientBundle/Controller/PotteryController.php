@@ -20,7 +20,7 @@ use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Action\MassAction;
 use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
-use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+//use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
 use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
@@ -57,6 +57,10 @@ class PotteryController extends Controller
         $grid->addColumn($actionsColumn, 1);
         $showAction = new RowAction('Show', 'pottery_show');
         $showAction->setColumn('info_column');
+        
+        $rowAction2 = new RowAction('Edit', 'pottery_edit', false, '_self', array('class' => 'grid_edit_action'));
+        $grid->addRowAction($rowAction2);
+        
         $grid->addRowAction($showAction);
         $grid->addMassAction(new DeleteMassAction());
         
@@ -69,6 +73,7 @@ class PotteryController extends Controller
 //        $grid->addColumn(new BlankColumn(['id' => 'points', 'title' => 'points','size' => '30']));
         
         $fileName = 'Pottery-'.date("d-m-Y");
+        /*
         $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
@@ -80,6 +85,8 @@ class PotteryController extends Controller
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
         
         $grid->addExport($export);
+         * 
+         */
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse();
     }
@@ -374,6 +381,11 @@ class PotteryController extends Controller
                 throw $this->createNotFoundException('Unable to find Pottery entity.');
             }
             $prepottery = $entity->getPrepottery();
+            $prepottery->setPottery(null);
+            $entity->setPrepottery(null);
+            $em->persist($entity);
+            $em->persist($prepottery);
+            $em->flush();
             $em->remove($prepottery);
             $em->remove($entity);
             $em->flush();
