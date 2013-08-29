@@ -13,7 +13,15 @@
     </div>
     {% endblock page_header %}
     {% block content_content %}
-    <div class="span12 grid-parent-block">{{ grid(grid, 'KdigTemplateBundle:Default:Grid/blocks_js.jquery.html.twig') }}</div>
+    <div class="span12 grid-parent-block">{{ grid(grid, 'KdigTemplateBundle:Default:Grid/blocks.html.twig') }}</div>
     {% endblock content_content %}
 </div>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $(".grid-filter-select-query-from").select2({
+        placeholder: "Select data"
+    });
+});
+</script>
 {% endblock content %}
