@@ -166,15 +166,6 @@ class PotteryType extends AbstractType
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
                 'expanded' => true, 'label' => 'Technique', 'required' => true, 'attr'=> array('class' => 'selection ')))
-            ->add('firing', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
-                'widget_controls_attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
-                'class' => 'KdigOrientBundle:Potteryvoc\VocFiring',
-                'query_builder' => function($repository) {
-                    $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
-                },
-                'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusion', 'entity', array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
@@ -346,6 +337,15 @@ class PotteryType extends AbstractType
 //                'required' => false,
 //                'multiple' => true
 //            ))
+            ->add('firing', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'class' => 'KdigOrientBundle:Potteryvoc\VocFiring',
+                'query_builder' => function($repository) {
+                    $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
+                },
+                'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('outercolor', null, array(
                 'widget_control_group_attr' => array('class'=>'span4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
