@@ -111,6 +111,10 @@ class VocRelation {
         $this->matrix = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    public function __tostring() 
+    {
+        return (string)$this->getName();
+    }
     /**
      * Get id
      *
