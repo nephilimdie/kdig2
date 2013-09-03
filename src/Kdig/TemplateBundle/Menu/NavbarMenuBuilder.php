@@ -31,11 +31,13 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
                 $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
             else {
                 $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
-                $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
-                $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
-                $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
-                $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
-                $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
+                if($this->selectedGroup) {
+                    $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
+                    $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
+                    $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
+                    $this->role_archaeology = $this->selectedGroup->hasRole('ROLE_ARCHAEOLOGY');
+                    $this->role_media = $this->selectedGroup->hasRole('ROLE_MEDIA');
+                }
             }
             $this->usr = $securityContext->getToken()->getUser();
         }
@@ -82,10 +84,11 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
-        if ($this->isLoggedIn) { 
-            $groupSelected = $this->usr->getSlectedgroup();
-
-            $dropdown = $this->createDropdownMenuItem($menu, $groupSelected->getName(), true, array('caret' => true));
+        if ($this->isLoggedIn) {
+            if($this->selectedGroup)
+                $dropdown = $this->createDropdownMenuItem($menu, $this->selectedGroup->getName(), true, array('caret' => true));
+            else
+                $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
             foreach ($this->usr->getGroups() as $group)
                 $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('group_id' => $group->getId())));
         }
