@@ -11,6 +11,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 {
     protected $securityContext;
     protected $selectedGroup = null;
+    protected $selectedArea = null;
     protected $isLoggedIn = null;
     protected $isSuperAdmin = null;
     protected $role_pottery = null;
@@ -32,6 +33,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
             else {
                 $this->selectedGroup = $securityContext->getToken()->getUser()->getSlectedgroup();
                 if($this->selectedGroup) {
+                    $this->selectedArea = $securityContext->getToken()->getUser()->getSlectedarea();
                     $this->role_pottery = $this->selectedGroup->hasRole('ROLE_POTTERY');
                     $this->role_object = $this->selectedGroup->hasRole('ROLE_OBJECT');
                     $this->role_sample = $this->selectedGroup->hasRole('ROLE_SAMPLE');
@@ -91,6 +93,21 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
                 $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
             foreach ($this->usr->getGroups() as $group)
                 $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('group_id' => $group->getId())));
+        }
+        return $menu;
+    }
+    
+    public function createSelectAreaMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav pull-right');
+        if ($this->isLoggedIn) {
+            if($this->selectedArea)
+                $dropdown = $this->createDropdownMenuItem($menu, $this->selectedArea->getName(), true, array('caret' => true));
+            else
+                $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
+            foreach ($this->usr->getSlectedgroup()->getAreas() as $area)
+                $dropdown->addChild($area->getName(), array('route' => 'user_change_area', 'routeParameters' => array('area_id' => $area->getId())));
         }
         return $menu;
     }

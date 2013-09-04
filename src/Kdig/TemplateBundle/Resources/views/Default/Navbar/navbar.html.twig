@@ -24,6 +24,7 @@
                     </form>
                 {% endif %}
                 {{ navbar.hasMenu('rightmenu') ? knp_menu_render(navbar.getMenu('rightmenu'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
+                {{ navbar.hasMenu('areamenu') ? knp_menu_render(navbar.getMenu('areamenu'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
                 {{ navbar.hasMenu('groupmenu') ? knp_menu_render(navbar.getMenu('groupmenu'), {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': 'true'}) : '' }}
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".archaeological">
                     <span class="icon-bar">collapse2</span>
