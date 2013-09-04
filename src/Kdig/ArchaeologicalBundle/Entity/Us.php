@@ -147,7 +147,7 @@ class Us {
     
     public function __tostring() 
     {
-        return (string)$this->getTypeus()->getShort().$this->getName();
+        return (string)$this->getTypeus()->getShort().$this->getName().'('.$this->getSite().')';
     }
     
     /**
