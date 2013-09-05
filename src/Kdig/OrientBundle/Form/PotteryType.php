@@ -37,7 +37,7 @@ class PotteryType extends AbstractType
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Type of context',
-                'required' => true,
+                'required' => false,
                 'widget_type'  => ""
             ))
             ->add('class', 'entity', array(
