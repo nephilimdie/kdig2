@@ -37,8 +37,6 @@ class UsController extends Controller
      *
      * @Route("/", name="us")
      * @Breadcrumb("Table", route="us")
-     * @Method("GET")
-     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function myGridAction()
@@ -61,13 +59,13 @@ class UsController extends Controller
 //        $rowAction2 = new RowAction('Edit', 'pottery_edit');
 //        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
 //        $grid->addColumn($actionsColumn2, $position2);
-        $fileName = 'us-'.date("d-m-Y");
-        $export = new PHPExcel2007Export('Excel Us 2007 Export',$fileName, array(), 'UTF-8', 'ROLE_USER');
+        $fileName = 'su-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel2007_SU_ Export', $fileName);
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject");
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
         $export->objPHPExcel->getProperties()->setTitle("KdigProject Document");
-        $export->objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $export->objPHPExcel->getProperties()->setSubject("KdigProject Stratigraphics Units");
         $export->objPHPExcel->getProperties()->setDescription("KdigProject");
         $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
