@@ -20,6 +20,7 @@ use APY\DataGridBundle\Grid\Source\Entity;
 use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
 use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+use APY\DataGridBundle\Grid\Export\CSVExport;
 use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
 use JMS\SecurityExtraBundle\Annotation\Secure;
@@ -59,8 +60,8 @@ class UsController extends Controller
 //        $rowAction2 = new RowAction('Edit', 'pottery_edit');
 //        $actionsColumn2 = new ActionsColumn($column, $title, array(rowAction2), $separator);
 //        $grid->addColumn($actionsColumn2, $position2);
-        $fileName = 'su-'.date("d-m-Y");
-        $export = new PHPExcel2007Export('Excel2007_SU_ Export', $fileName);
+        $fileName = 'su-excel-'.date("d-m-Y");
+        $export = new PHPExcel2007Export('Excel2007 SU Export', $fileName);
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject");
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
@@ -69,9 +70,13 @@ class UsController extends Controller
         $export->objPHPExcel->getProperties()->setDescription("KdigProject");
         $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
-
+        
+        $fileName = 'su-csv-'.date("d-m-Y");
+        $csvExport = new CSVExport('CSV Export', $fileName);
+        
         $grid->addExport($export);
-
+        $grid->addExport($csvExport);
+        
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse('KdigTemplateBundle:Default:Grid\grid.html.twig');
     }
