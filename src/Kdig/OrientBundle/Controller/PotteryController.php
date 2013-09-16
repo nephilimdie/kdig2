@@ -20,7 +20,7 @@ use APY\DataGridBundle\Grid\Action\RowAction;
 use APY\DataGridBundle\Grid\Action\MassAction;
 use APY\DataGridBundle\Grid\Action\DeleteMassAction;
 use APY\DataGridBundle\Grid\Column\ActionsColumn;
-//use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
+use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 
 use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
@@ -39,6 +39,7 @@ class PotteryController extends Controller
      *
      * @Route("/", name="pottery")
      * @Breadcrumb("Table", route="pottery")
+     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function myGridAction()
