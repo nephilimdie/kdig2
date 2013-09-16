@@ -39,7 +39,6 @@ class PotteryController extends Controller
      *
      * @Route("/", name="pottery")
      * @Breadcrumb("Table", route="pottery")
-     * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
     public function myGridAction()
@@ -87,7 +86,7 @@ class PotteryController extends Controller
         $grid->addExport($export);
         
         // Manage the grid redirection, exports and the response of the controller
-        return $grid->getGridResponse();
+        return $grid->getGridResponse('KdigTemplateBundle:Default:Grid\grid.html.twig');
     }
     /**
      * Lists all Pottery entities.
