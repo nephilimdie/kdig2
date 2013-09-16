@@ -73,7 +73,7 @@ class PotteryController extends Controller
 //        $grid->addColumn(new BlankColumn(['id' => 'points', 'title' => 'points','size' => '30']));
         
         $fileName = 'Pottery-'.date("d-m-Y");
-        /*
+        
         $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
@@ -85,8 +85,7 @@ class PotteryController extends Controller
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
         
         $grid->addExport($export);
-         * 
-         */
+        
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse();
     }
