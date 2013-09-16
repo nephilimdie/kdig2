@@ -74,7 +74,7 @@ class PotteryController extends Controller
         
         $fileName = 'Pottery-'.date("d-m-Y");
         
-        $export = new PHPExcel2007Export('Excel 2007',$fileName, array(), 'UTF-8', 'ROLE_POTTERY');
+        $export = new PHPExcel2007Export('Excel 2007', $fileName, array(), 'UTF-8', 'ROLE_POTTERY');
 
         $export->objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
         $export->objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
