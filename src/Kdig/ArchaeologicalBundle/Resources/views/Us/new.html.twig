@@ -29,10 +29,6 @@
         </form>
         <script type="text/javascript">
             $(document).ready(function(){
-                var formsave1 = new autosaveform({
-                        formid: 'usform',
-                        pause: 2000 
-                });
                 var id_site = $("#kdig_archaeologicalbundle_ustype_site option:selected").val();
                 var id_area = $("#kdig_archaeologicalbundle_ustype_area option:selected").val();
                 var routegetdefault = Routing.generate('kdig_us_defaulttext', { id_site: id_site, id_area: id_area });

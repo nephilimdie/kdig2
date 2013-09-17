@@ -187,7 +187,7 @@ class UsController extends Controller
     /**
      * Creates a new Us entity.
      *
-     * @Route("/", name="us_create")
+     * @Route("/us_create/", name="us_create")
      * @Method("POST")
      * @Template("KdigArchaeologicalBundle:Us:new.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
@@ -195,7 +195,6 @@ class UsController extends Controller
     public function createAction(Request $request)
     {
         $areas = $this->getArea();
-        
         $entity  = new Us();
         $form = $this->createForm(new UsType($areas, null), $entity);
         $form->bind($request);
@@ -238,7 +237,7 @@ class UsController extends Controller
     /**
      * Finds and displays a Us entity.
      *
-     * @Route("/{id}", name="us_show")
+     * @Route("/{id}/show", name="us_show")
      * @Breadcrumb("Show SU",  route={"name"="us_show", "parameters"={"id"}})
      * @Method("GET")
      * @Template()
@@ -295,7 +294,7 @@ class UsController extends Controller
     /**
      * Edits an existing Us entity.
      *
-     * @Route("/{id}", name="us_update")
+     * @Route("/{id}/update", name="us_update")
      * @Method("PUT")
      * @Template("KdigArchaeologicalBundle:Us:edit.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")

@@ -413,7 +413,12 @@ class ObjectController extends Controller
             $preObject->setIsPublic(false);
             $preObject->setIsActive(true);
             $preObject->setIsDelete(false);
-            //find & add bucket
+            //find or add US
+            //$csvus['CAMPAGNA']
+            //$csvus['LOCUS']
+            //$oldnameUS = 
+            //$newbucketname = $em->getRepository('KdigOrientBundle:Bucket')->findOneByName($bucketname);
+            //find or add bucket
             $oldnamebucket = substr_replace($csvus['BUCKET'] ,"",-2);
             $newbucketname = str_pad($oldnamebucket, 4 , "0000", STR_PAD_LEFT);
             $bucketname = 'KH.12.P.'.$newbucketname;

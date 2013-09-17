@@ -22,7 +22,6 @@ class UsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $idarea = $this->areaid;
-        $idus = $this->id;
         
         if ($idarea != null)
             $builder->add('area', 'entity', array(
