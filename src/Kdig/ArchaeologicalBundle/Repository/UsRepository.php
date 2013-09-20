@@ -63,4 +63,24 @@ class UsRepository extends EntityRepository
         $res = $result->getResult();
         return empty($res);
     }
+    
+    public function checkAndAdd($name, $area, $site, $type){
+        if($this->isUnusedMaterial($name)) {
+            //createnew
+            $em = $this->getEntityManager();
+            $entity = new \Kdig\ArchaeologicalBundle\Entity\Us();
+            $entity->setName($name);
+            $entity->setArea($area);
+            $entity->setSite($site);
+            $entity->setTypeus($type);
+            $entity->setIsPublic(false);
+            $entity->setIsActive(true);
+            $entity->setIsDelete(false);
+            $em->persist($entity);
+            $em->flush();
+            return $entity;
+        } else {
+            return $entity = $this->findOneBy(array('name'=>$name));
+        }
+    }
 }

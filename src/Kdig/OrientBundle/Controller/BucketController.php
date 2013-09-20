@@ -40,7 +40,6 @@ class BucketController extends Controller
      *
      * @Route("/", name="bucket")
      * @Breadcrumb("Table", route="bucket")
-     * @Method("GET")
      * @Template("KdigTemplateBundle:Default:Grid/grid.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
@@ -59,6 +58,8 @@ class BucketController extends Controller
         $grid->addColumn($actionsColumn, 1);
         $showAction = new RowAction('Show', 'bucket_show');
         $showAction->setColumn('info_column');
+        $rowAction2 = new RowAction('Edit', 'bucket_edit', false, '_self', array('class' => 'grid_edit_action'));
+        $grid->addRowAction($rowAction2);
         $grid->addRowAction($showAction);
         $grid->addMassAction(new DeleteMassAction());
         
@@ -77,7 +78,7 @@ class BucketController extends Controller
         
         $this->get('session')->getFlashBag()->add('success', 'yeahhhhh');
         // Manage the grid redirection, exports and the response of the controller
-        return $grid->getGridResponse();
+        return $grid->getGridResponse('KdigTemplateBundle:Default:Grid\grid.html.twig');
     }
     
     /**
@@ -169,7 +170,7 @@ class BucketController extends Controller
     /**
      * Creates a new Bucket entity.
      *
-     * @Route("/", name="bucket_create")
+     * @Route("/bucket_create/", name="bucket_create")
      * @Method("POST")
      * @Template("KdigOrientBundle:Bucket:new.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")
@@ -289,7 +290,7 @@ class BucketController extends Controller
     /**
      * Edits an existing Bucket entity.
      *
-     * @Route("/{id}", name="bucket_update")
+     * @Route("/{id}/update", name="bucket_update")
      * @Method("PUT")
      * @Template("KdigOrientBundle:Bucket:edit.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY , ROLE_ADMIN")

@@ -30,28 +30,67 @@ class VocObjClassRepository extends EntityRepository
         return $ids;
     }
     
-    private function isUnusedMaterial($name) {        
+    private function isUnusedMaterial($number) {
         $result = $this->createQueryBuilder('u')
             ->select('u')
-            ->where('u.name = :name')
-            ->setParameter('name', $name)
+            ->where('u.number = :number')
+            ->setParameter('number', $number)
+            ->getQuery();
+
+        $res = $result->getResult();
+        return empty($res);
+    }
+    public function checkVersion($num, $versione) {
+        
+        $result = $this->createQueryBuilder('u')
+            ->select('u')
+            ->where('u.number = :number')
+            ->where('u.version < :versione')
+            ->setParameter('number', $num)
+            ->setParameter('versione', $versione)
             ->getQuery();
 
         $res = $result->getResult();
         return empty($res);
     }
     
-    public function checkAndAdd($name){
-        if($this->isUnusedMaterial($name)) {
+    public function checkAndAdd($num, $weight, $fragments, $height, $lenght, $width, $thickness, $diameter, $perf, $description, 
+                    $material,
+                    $decoration,
+                    $preservation,
+                    $technique,
+                    $type,
+                    $class,
+                    $preObject
+            ) {
+        if($this->isUnusedMaterial($num)) {
             //createnew
             $em = $this->getEntityManager();
             $entity = new \Kdig\OrientBundle\Entity\Object();
-            $entity -> setName($name);
+            
+            $entity ->setNumber($num);
+            $entity ->setWeight($weight);
+            $entity ->setFragments($fragments);
+            $entity ->setHeight($height);
+            $entity ->setLenght($lenght);
+            $entity ->setWidth($width);
+            $entity ->setThickness($thickness);
+            $entity ->setDiameter($diameter);
+            $entity ->setPerforationdiameter($perf);
+            $entity ->setRemarks($description);
+            $entity->setMaterial($material);
+            $entity->setDecoration($decoration);
+            $entity->setPreservation($preservation);
+            $entity->setTechnique($technique);
+            $entity->setType($type);
+            $entity->setClass($class);
+            $entity ->setPreobject($preObject);
+            
             $em->persist($entity);
             $em->flush();
             return $entity;
         } else {
-            return $entity = $this->findOneBy(array('name'=>$name));
+            return $entity = $this->findOneBy(array('number'=>$num));
         }
     }
 }

@@ -85,12 +85,13 @@ class BucketRepository extends EntityRepository
         return empty($res);
     }
     
-    public function checkAndAdd($name){
+    public function checkAndAdd($name, $us){
         if($this->isUnusedMaterial($name)) {
             //createnew
             $em = $this->getEntityManager();
             $entity = new \Kdig\OrientBundle\Entity\Bucket();
-            $entity -> setName($name);
+            $entity->setName($name);
+            $entity->setUs($us);
             $em->persist($entity);
             $em->flush();
             return $entity;

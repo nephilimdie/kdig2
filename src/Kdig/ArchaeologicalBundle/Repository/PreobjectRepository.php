@@ -78,12 +78,16 @@ class PreobjectRepository extends EntityRepository
         return empty($res);
     }
     
-    public function checkAndAdd($name){
+    public function checkAndAdd($name, $bucket){
         if($this->isUnusedMaterial($name)) {
             //createnew
             $em = $this->getEntityManager();
             $entity = new \Kdig\OrientBundle\Entity\Preobject();
             $entity -> setName($name);
+            $entity -> setBucket($bucket);
+            $entity->setIsPublic(false);
+            $entity->setIsActive(true);
+            $entity->setIsDelete(false);
             $em->persist($entity);
             $em->flush();
             return $entity;
