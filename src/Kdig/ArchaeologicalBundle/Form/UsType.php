@@ -25,7 +25,7 @@ class UsType extends AbstractType
         
         if ($idarea != null)
             $builder->add('area', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_control_group_attr' => array('class'=>'span3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Area',
@@ -45,7 +45,7 @@ class UsType extends AbstractType
         
         $builder
             ->add('site', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_control_group_attr' => array('class'=>'span3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Site',
@@ -57,17 +57,29 @@ class UsType extends AbstractType
                 'label' => 'Excavation campaign',
                 'help_block'  => 'Select your Campaign'
             ))
+            ->add('media', 'entity', array(
+                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_controls_attr' => array('class'=>'labelchoice'),
+                'label_attr' => array('class'=>'mylabelclass'),
+                'class' => 'KdigMediaBundle:Media',
+                'required' => false,
+                'multiple' => true
+            ))
             ->add('typeus', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_control_group_attr' => array('class'=>'span3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:VocUsType',
+                'query_builder' => function($repository) {
+                    return $repository->createQueryBuilder('p')
+                        ->orderBy('p.name', 'ASC'); 
+                },
                 'required' => true,
                 'label' => 'Type',
                 'help_block'  => 'Select your kind of US'
             ))
             ->add('name',null, array(
-                'widget_control_group_attr' => array('class'=>'span6'),
+                'widget_control_group_attr' => array('class'=>'span3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
@@ -75,7 +87,7 @@ class UsType extends AbstractType
                 'help_block'  => 'Automatic loaded from DB. Or change with your'
             ))
             ->add('remarks',null, array(
-                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_control_group_attr' => array('class'=>'span3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
@@ -99,14 +111,6 @@ class UsType extends AbstractType
                 'label' => 'Matrix',
                 'required' => false,
                 'show_child_legend' => true
-            ))
-            ->add('media', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span12'),
-                'widget_controls_attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
-                'class' => 'KdigMediaBundle:Media',
-                'required' => false,
-                'multiple' => true
             ))
         ;
     }

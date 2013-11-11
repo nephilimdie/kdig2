@@ -24,7 +24,6 @@ class VocUsTypeAdmin extends Admin
     {
         $showMapper
             ->add('name')
-            ->add('number')
             ->add('remarks')
             ->add('isActive')
             ->add('isPublic')
@@ -42,7 +41,6 @@ class VocUsTypeAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('number')
                 ->add('remarks')
                 ->add('isActive')
                 ->add('isPublic')
@@ -59,7 +57,6 @@ class VocUsTypeAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('number')
             ->add('remarks')
             ->add('isActive')
             ->add('isPublic')
@@ -83,7 +80,6 @@ class VocUsTypeAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('number')
             ->add('remarks')
             ->add('isActive')
             ->add('isPublic')

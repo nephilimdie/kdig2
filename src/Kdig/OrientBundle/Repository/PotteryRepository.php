@@ -7,9 +7,9 @@ use Symfony\Component\Security\Core\SecurityContext;
 class PotteryRepository extends EntityRepository
 {
     public function trovatuttoCazzo() {
-        $result = $this->createQueryBuilder('b')
-            ->select('b')
-            ->getQuery()
+        
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM KdigOrientBundle:Pottery p ORDER BY p.tcode ASC')
             ->getResult();
     }
 }

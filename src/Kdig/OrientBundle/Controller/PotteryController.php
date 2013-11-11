@@ -25,6 +25,7 @@ use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Pottery controller.
@@ -84,7 +85,7 @@ class PotteryController extends Controller
         $export->objPHPExcel->getProperties()->setKeywords("KdigProject");
         $export->objPHPExcel->getProperties()->setCategory("KdigProject");
         
-        $grid->addExport($export);
+        //$grid->addExport($export);
         
         // Manage the grid redirection, exports and the response of the controller
         return $grid->getGridResponse('KdigTemplateBundle:Default:Grid\grid.html.twig');
@@ -409,5 +410,198 @@ class PotteryController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    /**
+     * Download Pottery entity.
+     *
+     * @Route("/download", name="pottery_download")
+     * @Template("KdigOrientBundle:Pottery:edit.html.twig")
+     */
+    public function downloadListAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('KdigOrientBundle:Pottery')->findAll();
+        $objPHPExcel = new \PHPExcel();
+        $fileName = 'Pottery-'.date("d-m-Y");
+
+        $user = $this->get('security.context')->getToken()->getUser();
+        $objPHPExcel->getProperties()->setCreator("KdigProject ".$user);
+        $objPHPExcel->getProperties()->setLastModifiedBy("KdigProject");
+        $objPHPExcel->getProperties()->setTitle("KdigProject ".$fileName);
+        $objPHPExcel->getProperties()->setSubject("KdigProject Document");
+        $objPHPExcel->getProperties()->setDescription("KdigProject");
+        $objPHPExcel->getProperties()->setKeywords("KdigProject");
+        $objPHPExcel->getProperties()->setCategory("KdigProject");
+        
+	$col = 0;
+	$row = 0;
+        
+        $objPHPExcel->setActiveSheetIndex(0);
+        $row++;
+        
+	$title = array(
+	        'Area',
+                'US',
+	        'Name',
+                'Type of context',
+                'TCode',
+	        'Classe',
+	        'Shape',
+                'Rim',
+                'Neck',
+                'Wall',
+                'Upper Wall',
+                'Lower Wall',
+                'Base',
+                'Handle',
+                'Handle Position',
+                'Spout',
+                'Spout Position',
+	        'Preservation',
+	        'Technique',
+	        'Inclusions',
+	        'Inclusions Size',
+	        'Inclusions Frequency',
+	        'Inner Surface Treatment In',	        
+	        'Inner Surface Treatment Out',	        
+	        'Inner Surface Treatment In&Out',
+	        'Decoration In',	        
+	        'Decoration Out',	        
+	        'Decoration In&Out',	 
+                'Remarks',
+	        'Firing',
+	        'Outer color',
+	        'Inner color',
+	        'Fabric color',
+	        'Rim Diameter',	        
+	        'Rim width',	       
+	        'Wall width',
+                'Max wall diameter', 	        
+	        'Botton width',	    	        
+	        'Botton Height',	        
+	        'Base of diameter',	        
+	        'Restored',	        
+	        'Datation',	        
+	        'Created at'
+	);  	
+        
+	foreach($title as $oggetto1)
+	{
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto1);
+            $col++;
+	}
+	
+	$objPHPExcel->getActiveSheet()->setAutoFilter('A1:AH1');
+	$row++;
+        
+	foreach($entities as $oggetto) {
+            $col=0;
+            //die($oggetto->getPrepottery()->getBucket()->getUs());
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, '{$oggetto->getPrepottery()->getBucket()->getUs()->getArea()}'); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getPrepottery()->getBucket()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getPrepottery()->getName()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getTypecontext()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getTcode()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getClass()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getShape()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getRim()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getNeck()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getWall()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getUpperwall()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getLowerwall()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getBase()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getHandle()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getHandleposition()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getSpout()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getSpoutposition()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getPreservation()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getTechnique()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getInclusion()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getInclusionsize()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getInclusionfrequency()); $col++;
+
+            $text = '';
+            $i=0;
+            foreach ($oggetto->getSurfacetratin() as $i => $varia) {
+                $text .= $varia->getVocsurfacetratoption().'-'.$varia->getColor().'\n ';
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $text);
+            $text = ' ';
+            $col++;
+            foreach ($oggetto->getSurfacetratout() as $i => $varia) {
+                $text .= $varia->getVocsurfacetratoption().' '.$varia->getColor().'\n ';
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $text);
+            $text = ' ';
+            $col++;
+            foreach ($oggetto->getSurfacetratinout() as $i => $varia) {
+                $text .= $varia->getVocsurfacetratoption().' '.$varia->getColor().'\n ';
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $text);
+            $text = ' ';
+            $col++;
+            foreach ($oggetto->getPotdecorationin() as $varia) {
+                $text .= $varia->getDecorationoption().' '.$varia->getColor().'\n ';
+                //$surf = Doctrine_Core::getTable('ADSurfacetratmentoption')->find(array($varia->getSurfacetratmentoptionId()));
+                //$text .= $surf.' '.$varia->getColor()->getName().' ';
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $text);
+            $text = ' ';
+            $col++;
+            foreach ($oggetto->getPotdecorationout() as $varia) {
+                $text .= $varia->getDecorationoption().' '.$varia->getColor().'\n ';
+                //$surf = Doctrine_Core::getTable('ADSurfacetratmentoption')->find(array($varia->getSurfacetratmentoptionId()));
+                //$text .= $surf.' '.$varia->getColor()->getName().' ';
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $text);
+            $text = ' ';
+            $col++;
+            foreach ($oggetto->getPotdecorationinout() as $varia) {
+                $text .= $varia->getDecorationoption().' '.$varia->getColor().'\n';
+                //$surf = Doctrine_Core::getTable('ADSurfacetratmentoption')->find(array($varia->getSurfacetratmentoptionId()));
+                //$text .= $surf.' '.$varia->getColor()->getName().' ';
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $text);
+            $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getRemarks()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getFiring()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getOuterColor()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getInnerColor()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getFabricColor()); $col++;
+            
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getRimdiameter()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getRimWidth()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getMaxwalldiameter()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getWallwidth()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getMaxwalldiameter()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getBottomwidth()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getHeight()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getBasediameter()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getDatation()); $col++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $oggetto->getRestored()); $col++;
+            //$objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, ''.$oggetto->getCreated()); $col++;
+            $row++;
+	}
+        $pseudoname = "/tmp/test_xls.xlsx";
+	$objWriter = new \PHPExcel_Writer_Excel2007($objPHPExcel);
+        $objWriter->save($pseudoname);
+
+        $content = file_get_contents($pseudoname);
+        $headers = array(
+            'Content-Description' => 'File Transfer',
+            'Content-Type' => 'application/vnd.ms-excel',
+            'Content-Disposition' => sprintf('attachment; filename="%s"', $fileName.'.xlsx'),
+            'Content-Transfer-Encoding' => 'binary'
+        );
+
+        $response = new Response($content, 200, $headers);
+        $response->setCharset('charset=utf-8');
+        $response->expire();
+
+        return $response;
+        
+        
+        
     }
 }
