@@ -32,17 +32,17 @@ services:
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
 ## show us menu
-  kdig.archaeological.usshow:
-      class: %mopa_bootstrap.navbar.generic%
-      arguments:
-          # first argument: a named array of menues:
-          - { menu: '@kdig.archaeological.us.show.menu=' }
-          - {}
-          # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
-      tags:
-          # The alias is used to retrieve the navbar in templates
-          - { name: mopa_bootstrap.navbar, alias: showmenuus }
+#  kdig.archaeological.usshow:
+#      class: %mopa_bootstrap.navbar.generic%
+#      arguments:
+#          # first argument: a named array of menues:
+#          - { menu: '@kdig.archaeological.us.show.menu=' }
+#          - {}
+#          # third argument: a named array of options
+#          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+#      tags:
+#          # The alias is used to retrieve the navbar in templates
+#          - { name: mopa_bootstrap.navbar, alias: showmenuus }
 
 ## reference class            
   kdig.archaeological.archaeological_menu_builder:
