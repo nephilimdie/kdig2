@@ -5,9 +5,8 @@ namespace Kdig\ArchaeologicalBundle\Menu;
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
-use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 
-class ArchaeologicalMenuBuilder extends AbstractNavbarMenuBuilder
+class ArchaeologicalMenuBuilder 
 {
     protected $securityContext;
     protected $isLoggedIn;
