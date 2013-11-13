@@ -100,6 +100,20 @@
 
 {% block body %}
     {% block navbar %}
+
+    {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, staticTop: false, inverse: true } %}
+        {% block brand %}
+            <a class="navbar-brand" href="#">Mopa Bootstrap</a>
+        {% endblock %}
+
+        {% block menu %}
+            {{ mopa_bootstrap_menu('main') }}
+            {{ mopa_bootstrap_menu('user') }}
+            {{ mopa_bootstrap_menu('selectarea') }}
+            {{ mopa_bootstrap_menu('selectgroup') }}
+        {% endblock %}
+    {% endembed %}
+    
     {{ mopa_bootstrap_navbar('ArchaeologicalfrontendNavbar') }}
     {% endblock navbar %}
     <a id="main-menu-toggle" class="hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
