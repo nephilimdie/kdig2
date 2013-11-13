@@ -1,4 +1,4 @@
-{% from 'KdigTemplateBundle:Default:flash.html.twig' import session_flash, flash, advanced_flash %}
+{% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
     {# Override this block to add your own files! #}
     {% stylesheets
         '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
-        '@MopaBootstrapBundle/Resources/public/less/eyecon-bootstrap-datepicker.less'
+
         '@KdigTemplateBundle/Resources/public/less/grid.less'
         '@KdigOrientBundle/Resources/public/less/orient.less'
         '@KdigTemplateBundle/Resources/public/css/select2/select2.css'
@@ -21,30 +21,25 @@
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
     {% endstylesheets %}
-    {# To use this without less use the base_css.html.twig template as your base
-     # Be sure you understand whats going on: have a look into
-     # https://github.com/phiamo/KdigTemplateBundle/blob/master/Resources/doc/css-vs-less.md
-     #}
     {% endblock head_style %}
 
     {% javascripts
-        '@KdigTemplateBundle/Resources/public/js/jquery-1.9.1.min.js'     
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-transition.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-alert.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-modal.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-scrollspy.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tab.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-tooltip.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-popover.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-button.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-collapse.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-carousel.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-typeahead.js'
-        '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-affix.js'
+        '@KdigTemplateBundle/Resources/public/js/jquery-1.9.1.min.js'    
+ 
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/tooltip.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/affix.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/alert.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/button.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/carousel.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/collapse.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/dropdown.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/modal.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/popover.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/scrollspy.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/tab.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/transition.js'
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
-        '@MopaBootstrapBundle/Resources/public/js/eyecon-bootstrap-datepicker.js'
 
         '@KdigTemplateBundle/Resources/public/js/spin.min.js'
         '@KdigTemplateBundle/Resources/public/js/jquery.spin.js'
@@ -110,64 +105,61 @@
     <a id="main-menu-toggle" class="hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
     <a id="widgets-area-button" class="hidden-tablet hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
     {% block container %}
-    <div class="row-fluid big-container {#% block container_class %}container-fluid{% endblock container_class %#}">
+    <div class="row big-container container ">
         {% block header %}
         {% endblock header %}
 
         {% block flashes %}
-        {% if app.session.flashbag.peekAll|length > 0 %}
-        <div class="span11">
-            <div id="flash" class="span12">
-            {{ advanced_flash() }}
+            {% if app.session.flashbag.peekAll|length > 0 %}
+            <div class="row">
+                <div class="col-sm-12">
+                {{ session_flash() }}
+                </div>
             </div>
-        </div>
-        {% endif %}
+            {% endif %}
         {% endblock flashes %}
             
         {% block content_row %}
-        <div class="content span11">
-            <div class="row-fluid">
+        <div class="content col-sm-11">
+            <div class="row">
                 {% block content %}
-                <div class="span2 left-menu">
+                <div class="col-sm-2 left-menu">
                     {% block content_left_menu %}
                     <h2>Sidebar</h2>
                     {% endblock content_left_menu %}
                 </div>
-                <div class="span10 center">
+                <div class="col-sm-10 center">
                     {% block page_header %}
-                    <div class="page-header span12">
+                    <div class="page-header col-sm-12">
                           <h5>{% block title %}Kdig Project .2{% endblock title %}</h5>
                     </div>
                     {% endblock page_header %}
                     {% block content_content %}
-                        <div class="span12"></div>
+                        <div class="col-sm-12"></div>
                     {% endblock content_content %}
                 </div>
                 {% endblock content %}
             </div>
         </div>
         {% endblock content_row %}
-        <div class="right-menu span1"> <!-- menu right -->
+        <div class="right-menu col-sm-1"> <!-- menu right -->
             {{ mopa_bootstrap_navbar('archaeologicalsubnav') }}
         </div>
     </div> <!-- end container -->
     {% endblock container %}
+    {% block footer %}
     <footer class="footer">
-        <div class="row-fluid">
-            {% block footer %}
+        <div class="row">
+            <div class="right-menu col-sm-1">
                 <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
                 <p>someone want to write foot?</p><p>please don't write me.!!!</p>
-            {% endblock footer %}
+            </div>
         </div>
     </footer>
+    {% endblock footer %}
     {% block foot_script %}
     
     <script type="text/javascript">
-        /*
-        window.addEventListener('load', function(){
-            new Heyoffline();
-        }, false);
-    */
         var options = { 
             target:        '.content',
             beforeSubmit:  showRequest,  
@@ -387,6 +379,13 @@
             alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
                 '\n\nThe output div should have already been updated with the responseText.'); 
             } */
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+        });
     </script>
     {% endblock foot_script %}
 {% endblock body %}
