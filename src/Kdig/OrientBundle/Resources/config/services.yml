@@ -32,69 +32,69 @@ services:
           - { name: doctrine.event_listener, event: postPersist, method: postPersist }
           
 ## show left menu
-  kdig.archaeological.left:
-      class: %mopa_bootstrap.navbar.generic%
-      arguments:
-          # first argument: a named array of menues:
-          - { menu: '@kdig.orient.left.menu=' }
-          - {}
-          # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
-      tags:
-          # The alias is used to retrieve the navbar in templates
-          - { name: mopa_bootstrap.navbar, alias: leftmenu }
-
-## show pottery menu
-  kdig.archaeological.potteryshow:
-      class: %mopa_bootstrap.navbar.generic%
-      arguments:
-          # first argument: a named array of menues:
-          - { menu: '@kdig.orient.pottery.show.menu=' }
-          - {}
-          # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
-      tags:
-          # The alias is used to retrieve the navbar in templates
-          - { name: mopa_bootstrap.navbar, alias: showmenupottery }
-
-## show object menu
-  kdig.archaeological.objectshow:
-      class: %mopa_bootstrap.navbar.generic%
-      arguments:
-          # first argument: a named array of menues:
-          - { menu: '@kdig.orient.object.show.menu=' }
-          - {}
-          # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
-      tags:
-          # The alias is used to retrieve the navbar in templates
-          - { name: mopa_bootstrap.navbar, alias: showmenuobject }
-
-## show sample menu
-  kdig.archaeological.sampleshow:
-      class: %mopa_bootstrap.navbar.generic%
-      arguments:
-          # first argument: a named array of menues:
-          - { menu: '@kdig.orient.sample.show.menu=' }
-          - {}
-          # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
-      tags:
-          # The alias is used to retrieve the navbar in templates
-          - { name: mopa_bootstrap.navbar, alias: showmenusample }
-
-## show vocs pottery menu
-  kdig.archaeological.vocspotteryhome:
-      class: %mopa_bootstrap.navbar.generic%
-      arguments:
-          # first argument: a named array of menues:
-          - { menu: '@kdig.orient.vocspottery.index.menu=' }
-          - {}
-          # third argument: a named array of options
-          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\squaremenu.html.twig' }
-      tags:
-          # The alias is used to retrieve the navbar in templates
-          - { name: mopa_bootstrap.navbar, alias: vocsmenupottery }
+#  kdig.archaeological.left:
+#      class: %mopa_bootstrap.navbar.generic%
+#      arguments:
+#          # first argument: a named array of menues:
+#          - { menu: '@kdig.orient.left.menu=' }
+#          - {}
+#          # third argument: a named array of options
+#          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+#      tags:
+#          # The alias is used to retrieve the navbar in templates
+#          - { name: mopa_bootstrap.navbar, alias: leftmenu }
+#
+### show pottery menu
+#  kdig.archaeological.potteryshow:
+#      class: %mopa_bootstrap.navbar.generic%
+#      arguments:
+#          # first argument: a named array of menues:
+#          - { menu: '@kdig.orient.pottery.show.menu=' }
+#          - {}
+#          # third argument: a named array of options
+#          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+#      tags:
+#          # The alias is used to retrieve the navbar in templates
+#          - { name: mopa_bootstrap.navbar, alias: showmenupottery }
+#
+### show object menu
+#  kdig.archaeological.objectshow:
+#      class: %mopa_bootstrap.navbar.generic%
+#      arguments:
+#          # first argument: a named array of menues:
+#          - { menu: '@kdig.orient.object.show.menu=' }
+#          - {}
+#          # third argument: a named array of options
+#          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+#      tags:
+#          # The alias is used to retrieve the navbar in templates
+#          - { name: mopa_bootstrap.navbar, alias: showmenuobject }
+#
+### show sample menu
+#  kdig.archaeological.sampleshow:
+#      class: %mopa_bootstrap.navbar.generic%
+#      arguments:
+#          # first argument: a named array of menues:
+#          - { menu: '@kdig.orient.sample.show.menu=' }
+#          - {}
+#          # third argument: a named array of options
+#          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\showmenu.html.twig' }
+#      tags:
+#          # The alias is used to retrieve the navbar in templates
+#          - { name: mopa_bootstrap.navbar, alias: showmenusample }
+#
+### show vocs pottery menu
+#  kdig.archaeological.vocspotteryhome:
+#      class: %mopa_bootstrap.navbar.generic%
+#      arguments:
+#          # first argument: a named array of menues:
+#          - { menu: '@kdig.orient.vocspottery.index.menu=' }
+#          - {}
+#          # third argument: a named array of options
+#          - { fixedTop: false, isFluid: true, template: 'KdigTemplateBundle:Default:Menu\squaremenu.html.twig' }
+#      tags:
+#          # The alias is used to retrieve the navbar in templates
+#          - { name: mopa_bootstrap.navbar, alias: vocsmenupottery }
 
 ## reference class            
   kdig.orient.orient_menu_builder:
