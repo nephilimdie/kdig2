@@ -10,15 +10,15 @@ services:
 #            - { name: twig.extension }
 
 ## horizontal navbar
-    kdig.template.navbar:
-        class: '%mopa_bootstrap.navbar.generic%'
-        scope: request
-        arguments:
-            - { leftmenu: '@kdig.template.navbar_main_menu=', groupmenu: '@kdig.template.navbar_selectgroup_menu=', areamenu: '@kdig.template.navbar_selectarea_menu=', rightmenu: '@kdig.template.navbar_user_menu=' }
-            - {}
-            - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false, inverse: false }
-        tags:
-            - { name: mopa_bootstrap.navbar, alias: ArchaeologicalfrontendNavbar }
+#    kdig.template.navbar:
+#        class: '%mopa_bootstrap.navbar.generic%'
+#        scope: request
+#        arguments:
+#            - { leftmenu: '@kdig.template.navbar_main_menu=', groupmenu: '@kdig.template.navbar_selectgroup_menu=', areamenu: '@kdig.template.navbar_selectarea_menu=', rightmenu: '@kdig.template.navbar_user_menu=' }
+#            - {}
+#            - { title: "KdigProject", titleRoute: "default_index", fixedTop: false, isFluid: false, inverse: false }
+#        tags:
+#            - { name: mopa_bootstrap.navbar, alias: ArchaeologicalfrontendNavbar }
 
 ## vertical nav bar
     kdig.archaeological.verticalnavbar:
