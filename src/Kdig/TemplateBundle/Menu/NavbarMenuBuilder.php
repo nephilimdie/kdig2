@@ -47,16 +47,23 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
     public function createMainMenu(Request $request)
     {
-        $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav');
+//        $menu = $this->factory->createItem('root');
+        
+        $menu = $factory->createItem('root', array(
+            'navbar' => true,
+            'pull-right' => true,
+        ));
+        
+        //$menu->setChildrenAttribute('class', 'nav');
 
-        $home = $menu->addChild('Home', array('route' => 'default_index'));
-        $this->addIcon($home, array('icon' => 'home', 'inverted'=>false, 'append'=>false ));
-        $about = $menu->addChild('About', array('route' => 'default_about'));
-        $this->addIcon($about, array('icon' => 'info-sign', 'inverted'=>false, 'append'=>false ));
-//        $dropdown = $this->createDropdownMenuItem($menu, "Mehr");
-//        $dropdown->addChild('Captain Ränge', array('route' => 'revorix_ranks'));
-//        $dropdown->addChild('Schiffs-XP', array('route' => 'revorix_xptool'));
+        $layout = $menu->addChild('Home', array(
+            'icon' => 'home',
+            'route' => 'default_index',
+        ));
+        $layout = $menu->addChild('About', array(
+            'icon' => 'sign',
+            'route' => 'default_about',
+        ));
 
 //        $this->addDivider($menu, true);
         return $menu;
