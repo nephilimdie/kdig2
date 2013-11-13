@@ -1,26 +1,23 @@
 mopa_bootstrap:
-    initializr:
-        meta:
-            title:        "KdigProject"
-            description:  "Archaeological Data Managment System"
-            keywords:     "kdig,archaeo,archaeological,system,object,pottery,sample,area,us,site,orient,stratigraphic,unit,"
-            author_name:  "Stefano Bassetto"
-            author_url:   "/human.txt"
-            nofollow:     false
-            noindex:      false
-            
-    menu: 
-        template: KdigTemplateBundle:Default:Navbar/navbar.html.twig
     form:
-        show_legend: true 
-        show_child_legend: true
-        error_type: 'block' 
+        templating: false # default is true
+        render_fieldset: true # default is true
+        render_collection_item: true # default is true
+        show_legend: true # default is true
+        show_child_legend: false # default is false
+        render_required_asterisk: true # default is true
         checkbox_label: 'widget' # default is both (label|widget|both)
-        render_required_asterisk: true 
-        render_fieldset: false
+        error_type: 'block' # default is null
         collection:
             widget_remove_btn:
+                attr:
+                    class: btn
                 icon: trash
-                icon_color: white
+                icon_inverted: false
             widget_add_btn:
+                attr:
+                    class: btn
                 icon: plus-sign
+                icon_inverted: false
+                
+    navbar: ~
