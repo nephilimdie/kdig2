@@ -5,9 +5,8 @@ namespace Kdig\OrientBundle\Menu;
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
-use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 
-class OrientMenuBuilder extends AbstractNavbarMenuBuilder
+class OrientMenuBuilder 
 {
     protected $securityContext;
     protected $isLoggedIn;
