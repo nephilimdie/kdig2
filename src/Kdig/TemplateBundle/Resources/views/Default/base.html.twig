@@ -50,28 +50,6 @@
         '@KdigTemplateBundle/Resources/public/js/select2/select2.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
-        {#
-
-        '@KdigTemplateBundle/Resources/public/js/jquery.address.js'
-        '@KdigTemplateBundle/Resources/public/js/heyoffline.js'
-
-            $.address.strict(false);
-//            $.address.state('/kdigproject2/app_dev.php/');
-            $.address.change(function(event){
-                getdefaultstringAjax (event.value, $('.content'), 'changetext', function(){
-                    alert('check');
-                    $('form').submit(function() {
-                        $(this).ajaxSubmit(options); 
-                        return false; 
-                    }); 
-                    $(".breadcrumb > li > a").on("click", function(event){
-                        event.preventDefault();
-                        $.address.value($(this).attr('href'));
-                        return false;
-                    });
-                }, 'GET');
-            });
-        #}
         
     {% endjavascripts %}
         
@@ -101,20 +79,19 @@
 {% block body %}
     {% block navbar %}
 
-    {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, staticTop: false, inverse: true } %}
+    {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: false, staticTop: false, inverse: false } %}
         {% block brand %}
-            <a class="navbar-brand" href="#">Mopa Bootstrap</a>
+            <a class="navbar-brand" href="{{ path('default_index' }}">KdigProject</a>
         {% endblock %}
 
         {% block menu %}
             {{ mopa_bootstrap_menu('main') }}
-            {{ mopa_bootstrap_menu('user') }}
             {{ mopa_bootstrap_menu('selectarea') }}
             {{ mopa_bootstrap_menu('selectgroup') }}
+            {{ mopa_bootstrap_menu('user') }}
         {% endblock %}
     {% endembed %}
     
-    {{ mopa_bootstrap_navbar('ArchaeologicalfrontendNavbar') }}
     {% endblock navbar %}
     <a id="main-menu-toggle" class="hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
     <a id="widgets-area-button" class="hidden-tablet hidden-phone open"><i class="fa-icon-reorder"></i>&nbsp;</a>
@@ -157,14 +134,14 @@
         </div>
         {% endblock content_row %}
         <div class="right-menu col-sm-1"> <!-- menu right -->
-            {{ mopa_bootstrap_navbar('archaeologicalsubnav') }}
+            {{ mopa_bootstrap_menu('archaeologicalmenu') }}
         </div>
     </div> <!-- end container -->
     {% endblock container %}
     {% block footer %}
     <footer class="footer">
         <div class="row">
-            <div class="right-menu col-sm-1">
+            <div class="right-menu col-sm-12">
                 <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
                 <p>someone want to write foot?</p><p>please don't write me.!!!</p>
             </div>
