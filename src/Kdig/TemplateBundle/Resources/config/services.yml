@@ -74,7 +74,7 @@ services:
         arguments: [ '@request' ]
         scope: request
         tags:
-            - { name: knp_menu.menu, alias: selectgroup }
+            - { name: knp_menu.menu, alias: selectarea }
             
     kdig.template.navbar_archaeological_menu:
         class: Knp\Menu\MenuItem
