@@ -1,14 +1,14 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content %}
-<div class="span1 left-menu">
+<div class="col-sm-1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_navbar('leftmenu') }}
         {{ mopa_bootstrap_navbar('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="span11 center">
+<div class="col-sm-11 center">
     {% block page_header %}
-    <div class="page-header span12">
+    <div class="page-header col-sm-12">
         {{ apy_breadcrumb_trail_render() }}
     </div>
     {% endblock page_header %}
@@ -24,7 +24,7 @@
         <form id="potteryform" class="" action="{{ path('pottery_create') }}" method="post" {{ form_enctype(form) }}>
             <div class="row-fluid">
                 {{ form_widget(form) }}
-                <p class="span12">
+                <p class="col-sm-12">
                     <button type="submit" class="btn btn-success">{{ 'views.new.create'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
                 </p>
             </div>
