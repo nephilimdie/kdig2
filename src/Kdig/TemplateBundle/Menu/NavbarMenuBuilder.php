@@ -22,7 +22,7 @@ class NavbarMenuBuilder
 
     public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
     {
-        parent::__construct($factory);
+//        parent::__construct($factory);
 
         $this->securityContext = $securityContext;
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
