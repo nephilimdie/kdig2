@@ -6,11 +6,15 @@
 @iconSpritePath:          "../img/glyphicons-halflings.png";
 @iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
 
-/*@metalblue: @blueDark;*/
+
+/* some colors*/
+@white: "#fff";
+@yellow: "#F5FF00";
+/*@metalblue: @blue-dark;*/
 
 body {
-    background: @grayDarker;
-    color: @textColor;
+    background: @gray-dark;
+    color: @text-color;
     border: 0;
     font-family: 'Open Sans',sans-serif;
     font-weight: 400;
@@ -26,7 +30,7 @@ ul {
     border-radius: 0px;
 }
 .big-container {
-    background-color: @grayDarker !important;
+    background-color: @gray-dark !important;
 }
 a#widgets-area-button {
     color: #fff;
@@ -106,8 +110,8 @@ div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the
     padding:2px 5px;
     border: 1px solid @yellow;
     background: #fff6e5;
-    -moz-border-radius: @baseBorderRadius;
-    -webkit-border-radius: @baseBorderRadius;
+    -moz-border-radius: @border-radius-base;
+    -webkit-border-radius: @border-radius-base;
     border-radius:5px;
     color: @yellow;
     position: fixed;
@@ -125,13 +129,13 @@ form#feedbackform div{
     min-height: 100%;
     background: #fff;
     filter: none;
-    -webkit-border-radius: @baseBorderRadius;
-    -moz-border-radius: @baseBorderRadius;
+    -webkit-border-radius: @border-radius-base;
+    -moz-border-radius: @border-radius-base;
     border: 2px solid #eee;
     margin-bottom: 20px;
     margin-top: 10px;
     position: relative;
-    font-size: @fontSizeMini;
+    font-size: @font-size-small;
 }
 .page-header {
     padding-top: 9px;
