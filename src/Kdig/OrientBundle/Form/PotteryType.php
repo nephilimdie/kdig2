@@ -209,7 +209,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'horizontal_input_wrapper_class' => "col-lg-3",
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
+                    
                 ),
                 'label' => 'Inner surface treatment',
                 'required' => false,
@@ -231,7 +231,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'horizontal_input_wrapper_class' => "col-lg-3",
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
+                    
                 ),
                 'label' => 'Outer surface treatment',
                 'required' => false,
@@ -253,7 +253,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'horizontal_input_wrapper_class' => "col-lg-3",
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
+                    
                 ),
                 'label' => 'Inner & Outer surface treatment',
                 'required' => false,
@@ -275,7 +275,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'horizontal_input_wrapper_class' => "col-lg-3",
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
+                    
                 ),
                 'label' => 'Inner decoration',
                 'required' => false,
@@ -296,7 +296,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'horizontal_input_wrapper_class' => "col-lg-3",
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
+                    
                 ),
                 'label' => 'Outer decoration',
                 'required' => false,
@@ -317,7 +317,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'horizontal_input_wrapper_class' => "col-lg-3",
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
+                    
                 ),
                 'label' => 'Inner & Outer decoration',
                 'required' => false,
