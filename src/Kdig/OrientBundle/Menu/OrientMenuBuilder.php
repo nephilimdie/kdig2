@@ -13,8 +13,10 @@ class OrientMenuBuilder
 
     public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
     {
-        parent::__construct($factory);
+        //parent::__construct($factory);
 
+        $this->factory = $factory;
+        
         $this->securityContext = $securityContext;
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
         $this->isSuperAdmin = $this->securityContext->isGranted('ROLE_SUPER_ADMIN');
@@ -55,7 +57,7 @@ class OrientMenuBuilder
         if($id) {
             $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
-            $this->addDivider($menu, true);
+//            $this->addDivider($menu, true);
             $delete_menu = $menu->addChild('delete', array(
                 'route' => $delete, 
                 'class'=> 'btn btn-danger', 
@@ -94,13 +96,18 @@ class OrientMenuBuilder
         if($this->role_pottery) {
             $edit = $menu->addChild('edit', array('route' => 'pottery_edit', 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
-            $this->addDivider($menu, true);
+//            $this->addDivider($menu, true);
             $delete = $menu->addChild('delete', array('route' => 'pottery_delete', 'class'=> 'btn btn-danger', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
             $delete->setAttributes(array('class'=>'btn btn-danger'));
         }
-        $this->addDivider($menu, true);
-        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
+//        $this->addDivider($menu, true);
+        
+        $export = $menu->addChild('export', array(
+            'dropdown' => true,
+            'caret' => true,
+        ));
+//        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
         $pdf = $export->addChild('PDF', array('route' => 'pottery'));
         $zip = $export->addChild('zip', array('route' => 'pottery'));
         return $menu;
@@ -116,12 +123,17 @@ class OrientMenuBuilder
         if($this->role_object) {
             $edit = $menu->addChild('edit', array('route' => 'object_edit', 'routeParameters' => array('id' => $id)));
             $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
-            $this->addDivider($menu, true);
+//            $this->addDivider($menu, true);
             $delete = $menu->addChild('delete', array('route' => 'object_delete', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
-        $this->addDivider($menu, true);
-        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
+//        $this->addDivider($menu, true);
+        
+        $export = $menu->addChild('export', array(
+            'dropdown' => true,
+            'caret' => true,
+        ));
+//        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
         $pdf = $export->addChild('PDF', array('route' => 'object'));
         $zip = $export->addChild('zip', array('route' => 'object'));
         return $menu;
@@ -140,8 +152,12 @@ class OrientMenuBuilder
             $delete = $menu->addChild('delete', array('route' => 'sample_delete', 'routeParameters' => array('id' => $id)));
             $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
-        $this->addDivider($menu, true);
-        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
+//        $this->addDivider($menu, true);
+        $export = $menu->addChild('export', array(
+            'dropdown' => true,
+            'caret' => true,
+        ));
+//        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
         $pdf = $export->addChild('PDF', array('route' => 'sample'));
         $zip = $export->addChild('zip', array('route' => 'sample'));
         return $menu;
