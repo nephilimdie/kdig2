@@ -145,5 +145,5 @@ services:
       arguments: [ '@request' ]
       scope: request
       tags:
-          - { name: knp_menu.menu, alias: vocspotterymenu }
+          - { name: knp_menu.menu, alias: vocsmenupottery }
           
