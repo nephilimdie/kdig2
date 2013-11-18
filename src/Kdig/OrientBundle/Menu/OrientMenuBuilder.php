@@ -313,7 +313,7 @@ class OrientMenuBuilder
     public function createVocsPotteryMenu(Request $request) {
 //        die(var_dump($request));
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', '');
+        $menu->setChildrenAttribute('class', 'nav show-menu');
         if($this->role_pottery)
             return $this->createVocsPottery($menu);
         if($this->role_object)
