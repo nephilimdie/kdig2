@@ -48,7 +48,7 @@ class NavbarMenuBuilder
     {
 //        $menu = $this->factory->createItem('root');
         
-        $menu = $factory->createItem('root', array(
+        $menu = $this->factory->createItem('root', array(
             'navbar' => true,
             'pull-right' => true,
         ));
