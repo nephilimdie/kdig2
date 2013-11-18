@@ -93,7 +93,7 @@ class NavbarMenuBuilder
         } else {
             $dropdown->addChild('login', array('route' => 'fos_user_security_login'));
         }
-        $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($dropdown, array('icon' => 'user', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
     
