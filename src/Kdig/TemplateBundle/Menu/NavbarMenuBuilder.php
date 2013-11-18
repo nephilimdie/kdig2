@@ -87,7 +87,7 @@ class NavbarMenuBuilder
             $dropdown->setLabel($this->usr->getUsername());
             if ($this->isSuperAdmin) {
                 $dropdown->addChild('Administration', array('route' => 'sonata_admin_dashboard'));
-                $this->addDivider($menu, true);
+//                $this->addDivider($menu, true);
             }
             $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
         } else {
