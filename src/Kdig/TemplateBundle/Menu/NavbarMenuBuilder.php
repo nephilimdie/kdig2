@@ -6,7 +6,7 @@ use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-class NavbarMenuBuilder
+class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 {
     protected $securityContext;
     protected $selectedGroup = null;
