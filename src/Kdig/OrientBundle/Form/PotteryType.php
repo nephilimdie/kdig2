@@ -330,7 +330,7 @@ class PotteryType extends AbstractType
                 ),
                     'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Description',
-                'help_inline'  => 'Scrivi qualcosa.. -.-',
+                'help_block'  => 'Scrivi qualcosa.. -.-',
                 'required' => false,
                 'widget_type'  => ""
             ))
