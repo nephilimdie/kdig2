@@ -310,11 +310,10 @@ class OrientMenuBuilder
 //        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
-    public function createVocsPotteryMenu(Request $request) 
-    {
+    public function createVocsPotteryMenu(Request $request) {
 //        die(var_dump($request));
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'row-fluid action-nav-normal');
+        $menu->setChildrenAttribute('class', '');
         if($this->role_pottery)
             return $this->createVocsPottery($menu);
         if($this->role_object)
