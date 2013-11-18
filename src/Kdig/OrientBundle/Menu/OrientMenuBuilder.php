@@ -47,23 +47,23 @@ class OrientMenuBuilder
 
         $home_menu = $menu->addChild('list', array('route' => $home));
         $home_menu->setLinkAttributes(array('class'=>'ajax'));
-        $this->addIcon($home_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($home_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $list_menu = $menu->addChild('list', array('route' => $list));
         $list_menu->setLinkAttributes(array('class'=>'ajax'));
-        $this->addIcon($list_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($list_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         $new_menu = $menu->addChild('new', array('route' => $new));
         $new_menu->setLinkAttributes(array('class'=>'ajax'));
-        $this->addIcon($new_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($new_menu, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($id) {
             $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
-            $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
 //            $this->addDivider($menu, true);
             $delete_menu = $menu->addChild('delete', array(
                 'route' => $delete, 
                 'class'=> 'btn btn-danger', 
                 'routeParameters' => array('id' => $id)
             ));
-            $this->addIcon($delete_menu, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($delete_menu, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
             $delete_menu->setAttributes(array('class'=>'btn btn-danger'));
         }
         if($this->role_pottery) {
@@ -92,13 +92,13 @@ class OrientMenuBuilder
         $id = $request->get('id');
         die(var_dump($request));
         $list = $menu->addChild('list', array('route' => 'pottery'));
-        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_pottery) {
             $edit = $menu->addChild('edit', array('route' => 'pottery_edit', 'routeParameters' => array('id' => $id)));
-            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
 //            $this->addDivider($menu, true);
             $delete = $menu->addChild('delete', array('route' => 'pottery_delete', 'class'=> 'btn btn-danger', 'routeParameters' => array('id' => $id)));
-            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
             $delete->setAttributes(array('class'=>'btn btn-danger'));
         }
 //        $this->addDivider($menu, true);
@@ -119,13 +119,13 @@ class OrientMenuBuilder
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'object'));
-        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_object) {
             $edit = $menu->addChild('edit', array('route' => 'object_edit', 'routeParameters' => array('id' => $id)));
-            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
 //            $this->addDivider($menu, true);
             $delete = $menu->addChild('delete', array('route' => 'object_delete', 'routeParameters' => array('id' => $id)));
-            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
 //        $this->addDivider($menu, true);
         
@@ -144,13 +144,13 @@ class OrientMenuBuilder
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'sample'));
-        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
+//        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_sample) {
             $edit = $menu->addChild('edit', array('route' => 'sample_edit', 'routeParameters' => array('id' => $id)));
-            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
             $this->addDivider($menu, true);
             $delete = $menu->addChild('delete', array('route' => 'sample_delete', 'routeParameters' => array('id' => $id)));
-            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+//            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
 //        $this->addDivider($menu, true);
         $export = $menu->addChild('export', array(
