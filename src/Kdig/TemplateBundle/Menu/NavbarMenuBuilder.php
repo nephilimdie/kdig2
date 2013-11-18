@@ -19,11 +19,15 @@ class NavbarMenuBuilder
     protected $role_archaeology = null;
     protected $role_media = null;
     protected $usr = null;
+    
+    private $factory;
 
     public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
     {
 //        parent::__construct($factory);
 
+        $this->factory = $factory;
+        
         $this->securityContext = $securityContext;
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
         if($this->isLoggedIn) {
