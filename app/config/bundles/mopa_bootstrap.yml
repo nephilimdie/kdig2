@@ -11,9 +11,10 @@ mopa_bootstrap:
         collection:
             widget_remove_btn:
                 attr:
-                    class: btn
+                    class: btn btn-danger
                 icon: trash
                 icon_inverted: false
+                label: remove
             widget_add_btn:
                 attr:
                     class: btn
