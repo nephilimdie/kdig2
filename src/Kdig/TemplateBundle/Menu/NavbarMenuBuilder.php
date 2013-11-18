@@ -5,6 +5,7 @@ namespace Kdig\TemplateBundle\Menu;
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
+use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 
 class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 {
@@ -24,7 +25,7 @@ class NavbarMenuBuilder extends AbstractNavbarMenuBuilder
 
     public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
     {
-//        parent::__construct($factory);
+        parent::__construct($factory);
 
         $this->factory = $factory;
         
