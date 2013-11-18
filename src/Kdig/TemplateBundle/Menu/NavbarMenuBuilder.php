@@ -77,7 +77,12 @@ class NavbarMenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
-        $dropdown = $this->createDropdownMenuItem($menu, "User", true, array('caret' => true));
+        $dropdown = $menu->addChild('User', array(
+            'dropdown' => true,
+            'caret' => true,
+        ));
+        
+//        $dropdown = $this->createDropdownMenuItem($menu, "User", true, array('caret' => true));
         if ($this->isLoggedIn) {
             $dropdown->setLabel($this->usr->getUsername());
             if ($this->isSuperAdmin) {
@@ -98,9 +103,19 @@ class NavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav pull-right');
         if ($this->isLoggedIn) {
             if($this->selectedGroup)
-                $dropdown = $this->createDropdownMenuItem($menu, $this->selectedGroup->getName(), true, array('caret' => true));
+                
+                $dropdown = $menu->addChild($this->selectedGroup->getName(), array(
+                    'dropdown' => true,
+                    'caret' => true,
+                ));
+        
+//                $dropdown = $this->createDropdownMenuItem($menu, $this->selectedGroup->getName(), true, array('caret' => true));
             else
-                $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
+                $dropdown = $menu->addChild('none', array(
+                    'dropdown' => true,
+                    'caret' => true,
+                ));
+//                $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
             foreach ($this->usr->getGroups() as $group)
                 $dropdown->addChild($group->getName(), array('route' => 'user_change_group', 'routeParameters' => array('group_id' => $group->getId())));
         }
@@ -113,9 +128,17 @@ class NavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav pull-right');
         if ($this->isLoggedIn) {
             if($this->selectedArea)
-                $dropdown = $this->createDropdownMenuItem($menu, $this->selectedArea->getName(), true, array('caret' => true));
+                $dropdown = $menu->addChild($this->selectedArea->getName(), array(
+                    'dropdown' => true,
+                    'caret' => true,
+                ));
+//                $dropdown = $this->createDropdownMenuItem($menu, $this->selectedArea->getName(), true, array('caret' => true));
             else
-                $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
+                $dropdown = $menu->addChild('none', array(
+                    'dropdown' => true,
+                    'caret' => true,
+                ));
+//                $dropdown = $this->createDropdownMenuItem($menu, 'none', true, array('caret' => true));
             foreach ($this->usr->getSlectedgroup()->getAreas() as $area)
                 $dropdown->addChild($area->getName(), array('route' => 'user_change_area', 'routeParameters' => array('area_id' => $area->getId())));
         }
