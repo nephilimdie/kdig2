@@ -109,7 +109,7 @@ services:
       arguments: [ '@request' ]
       scope: request
       tags:
-          - { name: knp_menu.menu, alias: menuleft }
+          - { name: knp_menu.menu, alias: leftmenu }
           
   kdig.orient.pottery.show.menu:
       class: Knp\Menu\MenuItem
