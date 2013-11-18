@@ -33,7 +33,7 @@ class PotteryType extends AbstractType
         $builder
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Type of context',
@@ -41,7 +41,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('class', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
@@ -50,7 +50,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('shape', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocShape',
@@ -59,7 +59,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Shape', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('rim', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocRim',
@@ -68,7 +68,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Rim', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('neck', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocNeck',
@@ -77,7 +77,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Neck', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('wall', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocWall',
@@ -86,7 +86,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('upperwall', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocUpperWall',
@@ -95,7 +95,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Upper wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('lowerwall', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocLowerWall',
@@ -104,7 +104,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Lower wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('base', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocBase',
@@ -113,7 +113,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Base', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('handle', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocHandle',
@@ -122,7 +122,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Handle', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('handleposition', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocHandlePosition',
@@ -131,7 +131,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Handle position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('spout', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpout',
@@ -140,7 +140,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Spout', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('spoutposition', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpoutPosition',
@@ -149,7 +149,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Spout position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('preservation', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocPreservation',
@@ -158,7 +158,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Preservation', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('technique', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocTechnique',
@@ -167,7 +167,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Technique', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusion', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusion',
@@ -176,7 +176,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Inclusion', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusionsize', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionSize',
@@ -185,7 +185,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Inclusion size', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('inclusionfrequency', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionFrequency',
@@ -206,7 +206,7 @@ class PotteryType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-lg-3'),
-                    'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                    'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
@@ -228,7 +228,7 @@ class PotteryType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-lg-3'),
-                    'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                    'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
@@ -250,7 +250,7 @@ class PotteryType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-lg-3'),
-                    'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                    'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
@@ -272,7 +272,7 @@ class PotteryType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-lg-3'),
-                    'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                    'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
@@ -293,7 +293,7 @@ class PotteryType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-lg-3'),
-                    'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                    'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
@@ -314,7 +314,7 @@ class PotteryType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-lg-3'),
-                    'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                    'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
@@ -338,7 +338,7 @@ class PotteryType extends AbstractType
 //                'multiple' => true
 //            ))
             ->add('firing', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocFiring',
@@ -347,7 +347,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('outercolor', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Outer color',
@@ -355,7 +355,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('innercolor', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Inner color',
@@ -363,7 +363,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('fabriccolor', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Fabric color',
@@ -371,7 +371,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('rimdiameter', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Rim Diameter',
@@ -379,7 +379,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('rimwidth', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Rim width',
@@ -387,7 +387,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('wallwidth', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Wall width',
@@ -395,7 +395,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('maxwalldiameter', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Max diameter',
@@ -403,7 +403,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('bottomwidth', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Bottom width',
@@ -411,7 +411,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('height', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Height',
@@ -419,7 +419,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('basediameter', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Base diameter',
@@ -427,7 +427,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('restored', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Restored',
@@ -435,7 +435,7 @@ class PotteryType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('datation', null, array(
-                'widget_control_group_attr' => array('class'=>'col-lg-3'),
+                'horizontal_input_wrapper_class' => array('class'=>'col-lg-3'),
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Date',
