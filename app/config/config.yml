@@ -68,7 +68,7 @@ assetic:
         less:
           # change with yours
             node: /usr/bin/node
-            node_paths: [/usr/lib/node_modules]
+            node_paths: [/usr/local/lib/node_modules]
             apply_to: "\.less$"
 #        lessphp:
 #            apply_to: "\.less$"
