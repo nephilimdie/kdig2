@@ -34,13 +34,13 @@ class PrepotteryType extends AbstractType
                             $idiota->setParameter('usid', $usid)->andWhere($expr->in('p.us', ':usid'));
                     return $idiota;
                 },
-                'widget_control_group_attr' => array('class'=>'span4'),
-                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
+                'attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
             ->add('name',null,array(
-                'widget_control_group_attr' => array('class'=>'span4'),
-                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
+                'attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 ))
         ;
