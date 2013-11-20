@@ -34,14 +34,14 @@ class PotteryType extends AbstractType
         $builder
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Type of context',
                 'required' => false,
                 'widget_type'  => "", 
                 'attr'=> array('class' => 'selection col-sm-12')
             ))
             ->add('class', 'entity', array(
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -50,7 +50,7 @@ class PotteryType extends AbstractType
             ->add('shape', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocShape',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -59,7 +59,7 @@ class PotteryType extends AbstractType
             ->add('rim', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocRim',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -68,7 +68,7 @@ class PotteryType extends AbstractType
             ->add('neck', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocNeck',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -77,7 +77,7 @@ class PotteryType extends AbstractType
             ->add('wall', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -86,7 +86,7 @@ class PotteryType extends AbstractType
             ->add('upperwall', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocUpperWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -95,7 +95,7 @@ class PotteryType extends AbstractType
             ->add('lowerwall', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocLowerWall',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -104,7 +104,7 @@ class PotteryType extends AbstractType
             ->add('base', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocBase',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -113,7 +113,7 @@ class PotteryType extends AbstractType
             ->add('handle', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocHandle',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -122,7 +122,7 @@ class PotteryType extends AbstractType
             ->add('handleposition', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocHandlePosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -131,7 +131,7 @@ class PotteryType extends AbstractType
             ->add('spout', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpout',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -140,7 +140,7 @@ class PotteryType extends AbstractType
             ->add('spoutposition', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpoutPosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -149,7 +149,7 @@ class PotteryType extends AbstractType
             ->add('preservation', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocPreservation',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -158,7 +158,7 @@ class PotteryType extends AbstractType
             ->add('technique', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocTechnique',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -167,7 +167,7 @@ class PotteryType extends AbstractType
             ->add('inclusion', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusion',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -176,7 +176,7 @@ class PotteryType extends AbstractType
             ->add('inclusionsize', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionSize',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -185,7 +185,7 @@ class PotteryType extends AbstractType
             ->add('inclusionfrequency', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocInclusionFrequency',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -194,7 +194,7 @@ class PotteryType extends AbstractType
             ->add('surfacetratin', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotterySurfacetratinType(), 
                 'by_reference' => false,
                 'allow_add' => true,
@@ -205,7 +205,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-sm-3'),
                     
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                     
                 ),
                 'label' => 'Inner surface treatment',
@@ -216,7 +216,7 @@ class PotteryType extends AbstractType
             ->add('surfacetratout', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotterySurfacetratoutType(), 
                 'by_reference' => false,
                 'allow_add' => true,
@@ -227,7 +227,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-sm-3'),
                     
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                     
                 ),
                 'label' => 'Outer surface treatment',
@@ -238,7 +238,7 @@ class PotteryType extends AbstractType
             ->add('surfacetratinout', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotterySurfacetratinoutType(), 
                 'by_reference' => false,
                 'allow_add' => true,
@@ -249,7 +249,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-sm-3'),
                     
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                     
                 ),
                 'label' => 'Inner & Outer surface treatment',
@@ -260,7 +260,7 @@ class PotteryType extends AbstractType
             ->add('potdecorationin', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotteryDecorationinType(), 
                 'by_reference' => false,
                 'allow_add' => true,
@@ -271,7 +271,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-sm-3'),
                     
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                     
                 ),
                 'label' => 'Inner decoration',
@@ -281,7 +281,7 @@ class PotteryType extends AbstractType
             ->add('potdecorationout', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotteryDecorationoutType(), 
                 'by_reference' => false,
                 'allow_add' => true,
@@ -292,7 +292,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-sm-3'),
                     
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                     
                 ),
                 'label' => 'Outer decoration',
@@ -302,7 +302,7 @@ class PotteryType extends AbstractType
             ->add('potdecorationinout', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotteryDecorationinoutType(), 
                 'by_reference' => false,
                 'allow_add' => true,
@@ -313,7 +313,7 @@ class PotteryType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-danger')),
                     'attr' => array('class' => 'col-sm-3'),
                     
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                     
                 ),
                 'label' => 'Inner & Outer decoration',
@@ -324,7 +324,7 @@ class PotteryType extends AbstractType
             ->add('remarks', 'textarea', array(
                     'horizontal_input_wrapper_class' => 'col-sm-11',
                     'attr' => array('class'=>'labelchoice'),
-                    'label_attr' => array('class'=>'mylabelclass'),
+                    'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Description',
                 'help_block'  => 'Scrivi qualcosa.. -.-',
                 'required' => false,
@@ -338,7 +338,7 @@ class PotteryType extends AbstractType
             ->add('firing', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocFiring',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
@@ -347,7 +347,7 @@ class PotteryType extends AbstractType
             ->add('outercolor', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Outer color',
                 'required' => false,
                 'widget_type'  => ""
@@ -355,7 +355,7 @@ class PotteryType extends AbstractType
             ->add('innercolor', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Inner color',
                 'required' => false,
                 'widget_type'  => ""
@@ -363,7 +363,7 @@ class PotteryType extends AbstractType
             ->add('fabriccolor', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Fabric color',
                 'required' => false,
                 'widget_type'  => ""
@@ -371,7 +371,7 @@ class PotteryType extends AbstractType
             ->add('rimdiameter', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Rim Diameter',
                 'required' => false,
                 'widget_type'  => ""
@@ -379,7 +379,7 @@ class PotteryType extends AbstractType
             ->add('rimwidth', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Rim width',
                 'required' => false,
                 'widget_type'  => ""
@@ -387,7 +387,7 @@ class PotteryType extends AbstractType
             ->add('wallwidth', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Wall width',
                 'required' => false,
                 'widget_type'  => ""
@@ -395,7 +395,7 @@ class PotteryType extends AbstractType
             ->add('maxwalldiameter', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Max diameter',
                 'required' => false,
                 'widget_type'  => ""
@@ -403,7 +403,7 @@ class PotteryType extends AbstractType
             ->add('bottomwidth', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Bottom width',
                 'required' => false,
                 'widget_type'  => ""
@@ -411,7 +411,7 @@ class PotteryType extends AbstractType
             ->add('height', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Height',
                 'required' => false,
                 'widget_type'  => ""
@@ -419,7 +419,7 @@ class PotteryType extends AbstractType
             ->add('basediameter', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Base diameter',
                 'required' => false,
                 'widget_type'  => ""
@@ -427,7 +427,7 @@ class PotteryType extends AbstractType
             ->add('restored', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Restored',
                 'required' => false,
                 'widget_type'  => ""
@@ -435,7 +435,7 @@ class PotteryType extends AbstractType
             ->add('datation', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
-                'label_attr' => array('class'=>'mylabelclass'),
+                'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Date',
                 'required' => false,
                 'widget_type'  => ""
