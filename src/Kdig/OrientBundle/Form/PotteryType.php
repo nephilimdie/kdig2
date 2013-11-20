@@ -30,6 +30,7 @@ class PotteryType extends AbstractType
         $bucketid = $this->bucketid;
         $usid = $this->us;
         
+        
         $builder
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
@@ -37,6 +38,7 @@ class PotteryType extends AbstractType
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Type of context',
+                
                 'required' => false,
                 'widget_type'  => ""
             ))
@@ -146,7 +148,7 @@ class PotteryType extends AbstractType
                 'class' => 'KdigOrientBundle:Potteryvoc\VocSpoutPosition',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
-                },
+                }, 
                 'expanded' => true, 'label' => 'Spout position', 'required' => true, 'attr'=> array('class' => 'selection ')))
             ->add('preservation', 'entity', array(
                 
