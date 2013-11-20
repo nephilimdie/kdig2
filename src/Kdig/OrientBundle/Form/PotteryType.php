@@ -41,6 +41,7 @@ class PotteryType extends AbstractType
                 'attr'=> array('class' => 'selection control-group')
             ))
             ->add('class', 'entity', array(
+                'horizontal_input_wrapper_class'=>'control-group',
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
