@@ -34,23 +34,19 @@ class PotteryType extends AbstractType
         $builder
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
-                
-                'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Type of context',
-                
                 'required' => false,
-                'widget_type'  => ""
+                'widget_type'  => "", 
+                'attr'=> array('class' => 'selection col-lg-12')
             ))
             ->add('class', 'entity', array(
-                
-                'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('shape', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -59,7 +55,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Shape', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Shape', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('rim', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -68,7 +64,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Rim', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Rim', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('neck', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -77,7 +73,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Neck', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Neck', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('wall', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -86,7 +82,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Wall', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('upperwall', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -95,7 +91,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Upper wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Upper wall', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('lowerwall', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -104,7 +100,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Lower wall', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Lower wall', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('base', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -113,7 +109,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Base', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Base', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('handle', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -122,7 +118,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Handle', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Handle', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('handleposition', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -131,7 +127,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Handle position', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Handle position', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('spout', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -140,7 +136,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Spout', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Spout', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('spoutposition', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -149,7 +145,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 }, 
-                'expanded' => true, 'label' => 'Spout position', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Spout position', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('preservation', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -158,7 +154,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Preservation', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Preservation', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('technique', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -167,7 +163,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Technique', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Technique', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('inclusion', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -176,7 +172,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Inclusion', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Inclusion', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('inclusionsize', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -185,7 +181,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Inclusion size', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Inclusion size', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('inclusionfrequency', 'entity', array(
                 
                 'attr' => array('class'=>'labelchoice'),
@@ -194,7 +190,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('surfacetratin', 'collection', array(
                 'horizontal_input_wrapper_class' => 'col-lg-11',
                 'attr' => array('class'=>'labelchoice'),
@@ -347,7 +343,7 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection ')))
+                'expanded' => true, 'label' => 'Firing', 'required' => true, 'attr'=> array('class' => 'selection col-lg-3 ')))
             ->add('outercolor', null, array(
                 
                 'attr' => array('class'=>'labelchoice'),
