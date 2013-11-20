@@ -229,7 +229,7 @@ class PotteryController extends Controller
      * Displays a form to create a new Pottery entity.
      *
      * @Route("/new", name="pottery_new")
-     * @Breadcrumb("New bucket", route="pottery_new")
+     * @Breadcrumb("New", route="pottery_new")
      * @Template()
      * @Secure(roles="ROLE_POTTERY , ROLE_ADMIN")
      */
