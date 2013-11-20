@@ -3,7 +3,7 @@ mopa_bootstrap:
         templating: true 
         render_fieldset: true
         render_collection_item: true 
-        show_legend: true 
+        show_legend: false 
         show_child_legend: false 
         render_required_asterisk: true 
         checkbox_label: 'widget' # default is both (label|widget|both)
@@ -24,3 +24,7 @@ mopa_bootstrap:
         horizontal_input_wrapper_class: ~
                 
     navbar: ~
+
+    icons:
+        icon_set: glyphicons
+        shortcut: icon
