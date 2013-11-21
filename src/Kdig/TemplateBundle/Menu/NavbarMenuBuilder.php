@@ -64,7 +64,7 @@ class NavbarMenuBuilder
             'route' => 'default_index',
         ));
         $layout = $menu->addChild('About', array(
-            'icon' => 'sign',
+            'icon' => 'info-sign',
             'route' => 'default_about',
         ));
 
