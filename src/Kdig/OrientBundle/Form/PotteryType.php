@@ -302,7 +302,7 @@ class PotteryType extends AbstractType
             ))
             ->add('remarks', 'textarea', array(
                 'horizontal_input_wrapper_class' => 'col-sm-11',
-                'attr' => array('class'=>'labelchoice', "rows" => 10, "cols" => 10),
+                'attr' => array('class'=>'labelchoice', "rows" => 10, "cols" => 50),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Description',
                 'help_block'  => 'Scrivi qualcosa.. -.-',
