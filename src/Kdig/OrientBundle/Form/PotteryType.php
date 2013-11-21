@@ -35,7 +35,7 @@ class PotteryType extends AbstractType
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
 //                'widget_control_group_attr' => array('class'=>'control-group'),
-//                'widget_controls_attr' => array('class'=>'control-group2'),
+                'widget_form_group_attr' => array('class'=>'control-group2'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Type of context',
                 'required' => false,
