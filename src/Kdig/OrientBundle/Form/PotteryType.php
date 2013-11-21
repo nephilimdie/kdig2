@@ -447,6 +447,7 @@ class PotteryType extends AbstractType
                 'save',
                 'submit',
                 [
+                    'attr' => array('class'=>'btn'),
                     'icon'       => 'ok-sign',
                     'icon_inverted' => true,
                 ]
@@ -455,6 +456,7 @@ class PotteryType extends AbstractType
                 'reset',
                 'reset',
                 [
+                    'attr' => array('class'=>'btn'),
                     'icon'       => 'remove-sign',
                     'icon_inverted' => true,
                 ]
