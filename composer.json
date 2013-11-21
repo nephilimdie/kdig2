@@ -25,7 +25,6 @@
         "mopa/bootstrap-bundle": "dev-master",
         "twbs/bootstrap": "dev-master",
         
-        
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu": "dev-master as 1.1",
         "knplabs/knp-menu-bundle": "dev-master as 1.1",
