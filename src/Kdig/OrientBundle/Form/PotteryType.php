@@ -443,6 +443,22 @@ class PotteryType extends AbstractType
                 'required' => false,
                 'widget_type'  => ""
             ))
+            ->add(
+                'save',
+                'submit',
+                [
+                    'icon'       => 'ok-sign',
+                    'icon_inverted' => true,
+                ]
+            )
+            ->add(
+                'reset',
+                'reset',
+                [
+                    'icon'       => 'remove-sign',
+                    'icon_inverted' => true,
+                ]
+            )
         ;
     }
 
