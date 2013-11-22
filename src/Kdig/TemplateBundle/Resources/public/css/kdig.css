@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'kdig';
+  src: url('../font/kdig.eot?55097120');
+  src: url('../font/kdig.eot?55097120#iefix') format('embedded-opentype'),
+       url('../font/kdig.woff?55097120') format('woff'),
+       url('../font/kdig.ttf?55097120') format('truetype'),
+       url('../font/kdig.svg?55097120#kdig') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'kdig';
+    src: url('../font/kdig.svg?55097120#kdig') format('svg');
+  }
+}
+*/
+ 
+ [class^="glyphicon-"]:before, [class*=" glyphicon-"]:before {
+  font-family: "kdig";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.glyphicon-picture:before { content: '\e800'; } /* '' */
+.glyphicon-globe-inv:before { content: '\e816'; } /* '' */
+.glyphicon-fork:before { content: '\e818'; } /* '' */
+.glyphicon-beaker:before { content: '\e802'; } /* '' */
+.glyphicon-sitemap:before { content: '\e804'; } /* '' */
+.glyphicon-beer:before { content: '\e803'; } /* '' */
+.glyphicon-monitor:before { content: '\e80a'; } /* '' */
+.glyphicon-mobile:before { content: '\e80b'; } /* '' */
+.glyphicon-flow-cascade:before { content: '\e808'; } /* '' */
+.glyphicon-flow-branch:before { content: '\e807'; } /* '' */
+.glyphicon-flow-tree:before { content: '\e805'; } /* '' */
+.glyphicon-flow-line:before { content: '\e806'; } /* '' */
+.glyphicon-globe:before { content: '\e801'; } /* '' */
+.glyphicon-cc:before { content: '\e80c'; } /* '' */
+.glyphicon-picture-outline:before { content: '\e80d'; } /* '' */
+.glyphicon-picture-1:before { content: '\e80e'; } /* '' */
+.glyphicon-desktop:before { content: '\e80f'; } /* '' */
+.glyphicon-laptop:before { content: '\e810'; } /* '' */
+.glyphicon-tablet:before { content: '\e811'; } /* '' */
+.glyphicon-mobile-1:before { content: '\e812'; } /* '' */
+.glyphicon-flow-split:before { content: '\e813'; } /* '' */
+.glyphicon-flow-merge:before { content: '\e814'; } /* '' */
+.glyphicon-flow-parallel-1:before { content: '\e815'; } /* '' */
+.glyphicon-globe-1:before { content: '\e817'; } /* '' */
+.glyphicon-flow-parallel:before { content: '\e809'; } /* '' */
