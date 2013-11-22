@@ -33,7 +33,8 @@ class OrientMenuBuilder
         $menu = $dropdown->addChild('Actions', array(
             'dropdown' => true,
             'caret' => true,
-            'icon' => 'cog'
+            'icon' => 'cog',
+            'data-toggle' => 'tooltip'
         ));
 //        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
