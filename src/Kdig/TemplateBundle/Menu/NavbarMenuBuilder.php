@@ -155,7 +155,7 @@ class NavbarMenuBuilder
             $menu->addChild('Sample', array('route' => 'presample_home'));
         
         } elseif ($this->role_pottery) {
-            $menu->addChild('SU', array('route' => 'us_home'));
+            $menu->addChild('SU', array('route' => 'us_home', 'icon'=>'kdig-picture'));
             $menu->addChild('Bucket', array('route' => 'bucket_home'));
             $menu->addChild('Pottery', array('route' => 'pottery_home'));
             
