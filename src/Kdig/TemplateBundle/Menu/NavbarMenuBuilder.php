@@ -142,7 +142,6 @@ class NavbarMenuBuilder
 
     public function createArchaeologicalMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
-            'stacked' => true,
             'pull-right' => true,
             'pills' => true
         ));
