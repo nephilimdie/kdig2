@@ -11,8 +11,7 @@ class OrientMenuBuilder
     protected $securityContext;
     protected $isLoggedIn;
 
-    public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
-    {
+    public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext) {
         //parent::__construct($factory);
 
         $this->factory = $factory;
@@ -85,8 +84,7 @@ class OrientMenuBuilder
         return $menu;
     }
     
-    public function createPotteryShowMenu(Request $request)
-    {
+    public function createPotteryShowMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
@@ -113,8 +111,7 @@ class OrientMenuBuilder
         return $menu;
     }
     
-    public function createObjectShowMenu(Request $request)
-    {
+    public function createObjectShowMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
@@ -138,8 +135,8 @@ class OrientMenuBuilder
         $zip = $export->addChild('zip', array('route' => 'object'));
         return $menu;
     }
-    public function createSampleShowMenu(Request $request)
-    {
+    
+    public function createSampleShowMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
@@ -162,6 +159,7 @@ class OrientMenuBuilder
         $zip = $export->addChild('zip', array('route' => 'sample'));
         return $menu;
     }
+    
     private function createVocsObject($menu)  {
         $base = $menu->addChild('Class', array('route' => 'pottery'));
         $base->setAttributes(array('class'=>''));
@@ -194,6 +192,7 @@ class OrientMenuBuilder
         
         return $menu;
     }
+    
     private function createVocsPottery($menu) {
         
         $base = $menu->addChild('Base', array('route' => 'pottery'));
@@ -302,6 +301,7 @@ class OrientMenuBuilder
 //        $this->addIcon($tec, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
+    
     private function createVocsSample($menu) {
         
         $base = $menu->addChild('Type Sample', array('route' => 'samplevoc_vocsampletype'));
@@ -310,6 +310,7 @@ class OrientMenuBuilder
 //        $this->addIcon($base, array('icon' => 'file', 'inverted'=>false, 'append'=>false ));
         return $menu;
     }
+    
     public function createVocsPotteryMenu(Request $request) {
 //        die(var_dump($request));
         $menu = $this->factory->createItem('root');
