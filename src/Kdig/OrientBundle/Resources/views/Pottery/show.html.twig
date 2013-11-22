@@ -8,21 +8,21 @@
 </div>
 <div class="col-sm-11 center">
     {% block page_header %}
-    <div class="page-header col-sm-7">
-        {{ apy_breadcrumb_trail_render() }}
-    </div>
-    <div class="page-header col-sm-5">
-        {{ mopa_bootstrap_menu('showmenu') }}
-    </div>
-    {% endblock page_header %}
-    {% block content_content %}
+    <div class="row">
+        <div class="page-header col-sm-7">
+            {{ apy_breadcrumb_trail_render() }}
+        </div>
+        <div class="page-header col-sm-5">
+            {{ mopa_bootstrap_menu('showmenu') }}
+        </div>
+        {% endblock page_header %}
+        {% block content_content %}
         <div class="col-sm-12">
             <div class="col-sm-4 control-group">
                 <legend class="control-label">Tcode
                     <div class="selected">{{ entity.tcode }}</div>
                 </legend>
             </div>
-
             <div class="col-sm-4 control-group">
                 <legend class="control-label">Type of context
                     <div class="selected">{{ entity.typecontext }}</div>
@@ -243,6 +243,7 @@
                 </legend>
             </div>  
         </div>
-    {% endblock content_content %}
+        {% endblock content_content %}
+    </div>
 </div>
 {% endblock content %}
