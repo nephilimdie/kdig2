@@ -34,12 +34,10 @@ class PotteryType extends AbstractType
         $builder
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
-                'widget_form_group_attr' => array('class'=>'control-group2'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Type of context',
                 'required' => false,
-                'widget_type'  => "", 
-                'attr'=> array('class' => 'selection ')
+                'widget_type'  => "block"
             ))
             ->add('class', 'entity', array(
                 'label_attr' => array('class'=>'mylabelclass control-label'),
@@ -47,7 +45,9 @@ class PotteryType extends AbstractType
                 'query_builder' => function($repository) {
                     $idiota = $repository->createQueryBuilder('p')->orderBy('p.number', 'ASC'); return $idiota;
                 },
-                'expanded' => true, 'label' => 'Class', 'required' => true, 'attr'=> array('class' => 'selection control-group ')))
+                'expanded' => true, 'label' => 'Class', 'required' => true, 
+                'attr'=> array('class' => 'selection control-group ')
+            ))
             ->add('shape', 'entity', array(
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
