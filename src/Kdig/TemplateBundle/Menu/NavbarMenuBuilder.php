@@ -22,8 +22,7 @@ class NavbarMenuBuilder
     
     private $factory;
 
-    public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext)
-    {
+    public function __construct(FactoryInterface $factory, SecurityContextInterface $securityContext) {
 //        parent::__construct($factory);
 
         $this->factory = $factory;
@@ -48,8 +47,7 @@ class NavbarMenuBuilder
         }
     }
 
-    public function createMainMenu(Request $request)
-    {
+    public function createMainMenu(Request $request) {
 //        $menu = $this->factory->createItem('root');
         
         $menu = $this->factory->createItem('root', array(
@@ -72,8 +70,7 @@ class NavbarMenuBuilder
         return $menu;
     }
 
-    public function createUserSideDropdownMenu(Request $request)
-    {
+    public function createUserSideDropdownMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
@@ -97,8 +94,7 @@ class NavbarMenuBuilder
         return $menu;
     }
     
-    public function createSelectGroupMenu(Request $request)
-    {
+    public function createSelectGroupMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
         if ($this->isLoggedIn) {
@@ -122,8 +118,7 @@ class NavbarMenuBuilder
         return $menu;
     }
     
-    public function createSelectAreaMenu(Request $request)
-    {
+    public function createSelectAreaMenu(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
         if ($this->isLoggedIn) {
@@ -145,10 +140,11 @@ class NavbarMenuBuilder
         return $menu;
     }
 
-    public function createArchaeologicalMenu(Request $request)
-    {
-        $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked');
+    public function createArchaeologicalMenu(Request $request) {
+        $menu = $this->factory->createItem('root', array(
+            'stacked' => true
+        ));
+//        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked');
         if ($this->role_archaeology) { 
             $menu->addChild('SU', array('route' => 'us_home'));
             $menu->addChild('Bucket', array('route' => 'bucket_home'));
