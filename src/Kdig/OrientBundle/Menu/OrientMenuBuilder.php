@@ -91,7 +91,6 @@ class OrientMenuBuilder
     public function createPotteryShowMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
             'stacked' => true,
-            'pull-right' => true,
             'pills' => true
         ));
 //        $menu->setChildrenAttribute('class', 'nav show-menu');
@@ -122,7 +121,6 @@ class OrientMenuBuilder
     public function createObjectShowMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
             'stacked' => true,
-            'pull-right' => true,
             'pills' => true
         ));
 //        $menu->setChildrenAttribute('class', 'nav show-menu');
@@ -154,7 +152,7 @@ class OrientMenuBuilder
             'pull-right' => true,
             'pills' => true
         ));
-        $menu->setChildrenAttribute('class', 'nav show-menu');
+//        $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'sample'));
 //        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
@@ -329,8 +327,11 @@ class OrientMenuBuilder
     
     public function createVocsPotteryMenu(Request $request) {
 //        die(var_dump($request));
-        $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav show-menu');
+        $menu = $this->factory->createItem('root', array(
+            'stacked' => true,
+            'pills' => true
+        ));
+//        $menu->setChildrenAttribute('class', 'nav show-menu');
         if($this->role_pottery)
             return $this->createVocsPottery($menu);
         if($this->role_object)
