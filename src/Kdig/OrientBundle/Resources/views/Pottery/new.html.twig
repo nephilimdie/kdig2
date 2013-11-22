@@ -1,4 +1,5 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
+{% form_theme form _self %}
 {% block content %}
 <div class="col-sm-1 left-menu">
     {% block content_left_menu %}
