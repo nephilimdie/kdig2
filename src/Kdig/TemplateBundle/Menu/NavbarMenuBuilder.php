@@ -148,7 +148,7 @@ class NavbarMenuBuilder
         ));
 //        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked');
         if ($this->role_archaeology) { 
-            $menu->addChild('SU', array('route' => 'us_home'));
+            $menu->addChild('SU', array('route' => 'us_home', 'icon'=>'kdig-picture'));
             $menu->addChild('Bucket', array('route' => 'bucket_home'));
             $menu->addChild('Object', array('route' => 'preobject_home'));
             $menu->addChild('Pottery', array('route' => 'prepottery_home'));
