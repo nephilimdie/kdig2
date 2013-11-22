@@ -33,7 +33,7 @@ class OrientMenuBuilder
             'pull-right' => true,
             'pills' => true
         ));
-        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
+//        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
         $name =split('_', $request->get('_route'));
         $controller = $name[0];
@@ -94,7 +94,7 @@ class OrientMenuBuilder
             'pull-right' => true,
             'pills' => true
         ));
-        $menu->setChildrenAttribute('class', 'nav show-menu');
+//        $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         die(var_dump($request));
         $list = $menu->addChild('list', array('route' => 'pottery'));
@@ -125,7 +125,7 @@ class OrientMenuBuilder
             'pull-right' => true,
             'pills' => true
         ));
-        $menu->setChildrenAttribute('class', 'nav show-menu');
+//        $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'object'));
 //        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
