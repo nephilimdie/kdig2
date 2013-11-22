@@ -27,7 +27,7 @@ class OrientMenuBuilder
         $this->usr = $securityContext->getToken()->getUser();
     }
     
-    public function createShowElementMenu () {
+    public function createShowElementMenu (Request $request) {
         $menu = $this->factory->createItem('root', array(
             'pull-right' => true,
             'pills' => true
