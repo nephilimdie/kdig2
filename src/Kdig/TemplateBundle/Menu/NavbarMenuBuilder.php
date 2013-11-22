@@ -142,7 +142,9 @@ class NavbarMenuBuilder
 
     public function createArchaeologicalMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
-            'stacked' => true
+            'stacked' => true,
+            'pull-right' => true,
+            'pills' => true
         ));
 //        $menu->setChildrenAttribute('class', 'nav nav-pills nav-stacked');
         if ($this->role_archaeology) { 
