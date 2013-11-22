@@ -11,36 +11,32 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h5 class="text-center">
-                        Login</h5>
-<form action="{{ path("fos_user_security_check") }}" method="post" class="form form-signup">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="{{ 'security.login.username'|trans }}" />
-
+                    <h5 class="text-center">Login</h5>
+                    <form action="{{ path("fos_user_security_check") }}" method="post" class="form form-signup">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="{{ 'security.login.username'|trans }}" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-    <input type="password" id="password" name="_password" required="required"  class="form-control" placeholder="{{ 'security.login.password'|trans }}" />
-
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" id="password" name="_password" required="required"  class="form-control" placeholder="{{ 'security.login.password'|trans }}" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                            </div>
                         </div>
-                    </div>
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  class="btn btn-sm btn-primary btn-block"/>
-</form>
+                        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  class="btn btn-sm btn-primary btn-block"/>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div> 
 {% endblock fos_user_content %}
