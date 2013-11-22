@@ -49,7 +49,7 @@ class OrientMenuBuilder
         $list_menu = $menu->addChild('list', array('route' => $list, 'icon' => 'list'));
         $new_menu = $menu->addChild('new', array('route' => $new, 'icon' => 'plus-sign'));
         
-        $dropdown = $dropdown->addChild('Actions', array(
+        $dropdown = $menu->addChild('Actions', array(
             'dropdown' => true,
             'caret' => true,
             'icon' => 'cog'
