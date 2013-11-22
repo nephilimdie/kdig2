@@ -34,7 +34,6 @@ class PotteryType extends AbstractType
         $builder
             ->add('prepottery', new PrepotteryType($bucketid, $usid) )
             ->add('typecontext', null, array(
-                'horizontal_wrapper_class' => 'control-group',
                 'widget_form_group_attr' => array('class'=>'control-group2'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Type of context',
@@ -43,7 +42,6 @@ class PotteryType extends AbstractType
                 'attr'=> array('class' => 'selection ')
             ))
             ->add('class', 'entity', array(
-                'horizontal_input_wrapper_class'=>'control-group',
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'class' => 'KdigOrientBundle:Potteryvoc\VocClass',
                 'query_builder' => function($repository) {
