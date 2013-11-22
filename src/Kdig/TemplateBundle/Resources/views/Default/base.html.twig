@@ -76,23 +76,22 @@
 {% block body_start %}
 {% endblock body_start %}
 
+{% block navbar %}
+{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: false, staticTop: false, inverse: false } %}
+    {% block brand %}
+        <a class="navbar-brand" href="{{ path('default_index') }}">KdigProject</a>
+    {% endblock brand %}
+
+    {% block menu %}
+        {{ mopa_bootstrap_menu('main', {'automenu': 'navbar', 'pull-left': true}) }}
+        {{ mopa_bootstrap_menu('usermenu', {'automenu': 'navbar', 'pull-right': true}) }}
+        {{ mopa_bootstrap_menu('selectgroup', {'automenu': 'navbar', 'pull-right': true}) }}
+        {{ mopa_bootstrap_menu('selectarea', {'automenu': 'navbar', 'pull-right': true}) }}
+    {% endblock %}
+{% endembed %}
+{% endblock navbar %}
+            
 {% block body %}
-    {% block navbar %}
-
-    {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: false, staticTop: false, inverse: false } %}
-        {% block brand %}
-            <a class="navbar-brand" href="{{ path('default_index') }}">KdigProject</a>
-        {% endblock brand %}
-
-        {% block menu %}
-            {{ mopa_bootstrap_menu('main', {'automenu': 'navbar', 'pull-left': true}) }}
-            {{ mopa_bootstrap_menu('usermenu', {'automenu': 'navbar', 'pull-right': true}) }}
-            {{ mopa_bootstrap_menu('selectgroup', {'automenu': 'navbar', 'pull-right': true}) }}
-            {{ mopa_bootstrap_menu('selectarea', {'automenu': 'navbar', 'pull-right': true}) }}
-        {% endblock %}
-    {% endembed %}
-    
-    {% endblock navbar %}
     <a id="main-menu-toggle" class="hidden-phone open">{{ icon('indent-left') }}</i>&nbsp;</a>
     <a id="widgets-area-button" class="hidden-tablet hidden-phone open">{{ icon('indent-right') }}</i>&nbsp;</a>
     {% block container %}
