@@ -29,8 +29,8 @@ class OrientMenuBuilder
     
     public function createShowElementMenu (Request $request) {
         $menu = $this->factory->createItem('root', array(
-            'pull-right' => true,
-            'pills' => true
+            'dropdown' => true,
+            'caret' => true,
         ));
 //        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
@@ -47,20 +47,17 @@ class OrientMenuBuilder
         $id = $request->get('id', null);
 //        die(var_dump($request));
 
-        $home_menu = $menu->addChild('list', array('route' => $home));
-        $list_menu = $menu->addChild('list', array('route' => $list));
-        $new_menu = $menu->addChild('new', array('route' => $new));
+        $home_menu = $menu->addChild('list', array('route' => $home, 'icon' => 'list'));
+        $list_menu = $menu->addChild('list', array('route' => $list, 'icon' => 'list'));
+        $new_menu = $menu->addChild('new', array('route' => $new, 'icon' => 'plus-sign'));
         if($id) {
-            $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
-//            $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
-//            $this->addDivider($menu, true);
+            $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id), 'icon' => 'pencil'));
+            $this->addDivider($menu, true);
             $delete_menu = $menu->addChild('delete', array(
                 'route' => $delete, 
-                'class'=> 'btn btn-danger', 
-                'routeParameters' => array('id' => $id)
+                'routeParameters' => array('id' => $id), 
+                'icon' => 'remove-circle'
             ));
-//            $this->addIcon($delete_menu, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
-            $delete_menu->setAttributes(array('class'=>'btn btn-danger'));
         }
         if($this->role_pottery) {
         } elseif($this->role_object) {
