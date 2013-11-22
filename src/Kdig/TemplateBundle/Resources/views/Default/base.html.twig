@@ -9,6 +9,7 @@
 {% block head %}
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head_style %}
     {# Override this block to add your own files! #}
     {% stylesheets
@@ -24,6 +25,11 @@
     {% endstylesheets %}
     {% endblock head_style %}
 
+        
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
+    {% block head_script %}
     {% javascripts
         '@KdigTemplateBundle/Resources/public/js/jquery-1.9.1.min.js'    
  
@@ -53,17 +59,9 @@
         <script type="text/javascript" src="{{ asset_url }}"></script>
         
     {% endjavascripts %}
-        
-    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% block head_script %}
-    {# Overwrite this block to add your own js here, to get them generated into final files #}
     {% endblock head_script %}
 
-    <title>{#% block title %}Kdig Project .2{% endblock title %#}</title>
+    <title>{% block title %}Kdig Project .2{% endblock title %}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     {% block head_bottom %}
     {% endblock head_bottom %}
