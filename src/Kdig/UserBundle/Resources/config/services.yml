@@ -1,5 +1,5 @@
 parameters:
-    kdig_user.menu_builder.class: 'Kdig\UserBundle\Menu\NavbarMenuBuilder'
+    kdig_user.menu_builder.class: 'Kdig\UserBundle\Menu\MenuBuilder'
 #    kdig_user.example.class: Kdig\UserBundle\Example
 
 services:
@@ -20,5 +20,5 @@ services:
         arguments: [ '@request' ]
         scope: request
         tags:
-            - { name: knp_menu.menu, alias: user }
+            - { name: knp_menu.menu, alias: usermenu }
             
