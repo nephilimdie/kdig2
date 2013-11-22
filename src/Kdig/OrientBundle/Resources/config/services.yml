@@ -111,6 +111,15 @@ services:
       tags:
           - { name: knp_menu.menu, alias: leftmenu }
           
+  kdig.orient.showelement.menu:
+      class: Knp\Menu\MenuItem
+      factory_service: kdig.orient.orient_menu_builder
+      factory_method: createShowElementMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: showmenu }
+          
   kdig.orient.pottery.show.menu:
       class: Knp\Menu\MenuItem
       factory_service: kdig.orient.orient_menu_builder
