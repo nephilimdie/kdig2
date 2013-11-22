@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'kdig';
-  src: url('../font/kdig.eot?25563967');
-  src: url('../font/kdig.eot?25563967#iefix') format('embedded-opentype'),
-       url('../font/kdig.woff?25563967') format('woff'),
-       url('../font/kdig.ttf?25563967') format('truetype'),
-       url('../font/kdig.svg?25563967#kdig') format('svg');
+  src: url('../bundles/kdigtemplate/font/kdig.eot?25563967');
+  src: url('../bundles/kdigtemplate/font/kdig.eot?25563967#iefix') format('embedded-opentype'),
+       url('../bundles/kdigtemplate/font/kdig.woff?25563967') format('woff'),
+       url('../bundles/kdigtemplate/font/kdig.ttf?25563967') format('truetype'),
+       url('../bundles/kdigtemplate/font/kdig.svg?25563967#kdig') format('svg');
   font-weight: normal;
   font-style: normal;
 }
