@@ -29,7 +29,10 @@ class OrientMenuBuilder
     
     public function createShowElementMenu (Request $request) {
         
-        $menu = $this->factory->createItem('root');
+        $menu = $this->factory->createItem('root', array(
+            'pull-right' => true,
+            'pills' => true
+        ));
 //        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
         $name =split('_', $request->get('_route'));
