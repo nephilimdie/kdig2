@@ -26,5 +26,5 @@ mopa_bootstrap:
     navbar: ~
 
     icons:
-        icon_set: glyphicons
+#        icon_set: glyphicons
         shortcut: icon
