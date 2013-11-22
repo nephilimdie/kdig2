@@ -49,15 +49,6 @@ services:
         tags:
             - { name: knp_menu.menu, alias: main }
 
-    kdig.template.navbar_user_menu:
-        class: Knp\Menu\MenuItem
-        factory_service: kdig.template.navbar_menu_builder
-        factory_method: createUserSideDropdownMenu
-        arguments: [ '@request' ]
-        scope: request
-        tags:
-            - { name: knp_menu.menu, alias: user }
-            
     kdig.template.navbar_selectgroup_menu:
         class: Knp\Menu\MenuItem
         factory_service: kdig.template.navbar_menu_builder

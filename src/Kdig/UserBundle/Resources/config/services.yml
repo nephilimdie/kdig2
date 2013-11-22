@@ -1,7 +1,24 @@
 parameters:
+    kdig_user.menu_builder.class: 'Kdig\UserBundle\Menu\NavbarMenuBuilder'
 #    kdig_user.example.class: Kdig\UserBundle\Example
 
 services:
 #    kdig_user.example:
 #        class: %kdig_user.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+# reference class            
+    kdig.user.menu_builder:
+        class: %kdig_user.menu_builder.class%
+        scope: request
+        arguments: [ '@knp_menu.factory', '@security.context' ]
+
+    kdig.user.user_menu:
+        class: Knp\Menu\MenuItem
+        factory_service: kdig.user.menu_builder
+        factory_method: createUserSideDropdownMenu
+        arguments: [ '@request' ]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: user }
+            
