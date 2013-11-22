@@ -27,6 +27,55 @@ class OrientMenuBuilder
         $this->usr = $securityContext->getToken()->getUser();
     }
     
+    public function createShowElementMenu () {
+        $menu = $this->factory->createItem('root', array(
+            'pull-right' => true,
+            'pills' => true
+        ));
+//        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
+        //show
+        $name =split('_', $request->get('_route'));
+        $controller = $name[0];
+        $show = $controller."_show";
+        $home = $controller."_home";
+        $edit = $controller."_edit";
+        $new = $controller."_new";
+        $delete = $controller."_delete";
+        $list = $controller;
+        $export_pdf = "";
+        $export_zip = "";
+        $id = $request->get('id', null);
+//        die(var_dump($request));
+
+        $home_menu = $menu->addChild('list', array('route' => $home));
+        $list_menu = $menu->addChild('list', array('route' => $list));
+        $new_menu = $menu->addChild('new', array('route' => $new));
+        if($id) {
+            $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id)));
+//            $this->addIcon($edit_menu, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
+//            $this->addDivider($menu, true);
+            $delete_menu = $menu->addChild('delete', array(
+                'route' => $delete, 
+                'class'=> 'btn btn-danger', 
+                'routeParameters' => array('id' => $id)
+            ));
+//            $this->addIcon($delete_menu, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
+            $delete_menu->setAttributes(array('class'=>'btn btn-danger'));
+        }
+        if($this->role_pottery) {
+        } elseif($this->role_object) {
+            
+        } elseif($this->role_sample) {
+            
+        }  elseif($this->role_archaeology) {
+            
+        } 
+        if($this->role_media) {
+            
+        }
+
+        return $menu;
+    }
     public function createLeftMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
             'stacked' => true,
