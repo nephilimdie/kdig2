@@ -28,7 +28,11 @@ class OrientMenuBuilder
     }
     
     public function createLeftMenu(Request $request) {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->factory->createItem('root', array(
+            'stacked' => true,
+            'pull-right' => true,
+            'pills' => true
+        ));
         $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
         $name =split('_', $request->get('_route'));
@@ -85,7 +89,11 @@ class OrientMenuBuilder
     }
     
     public function createPotteryShowMenu(Request $request) {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->factory->createItem('root', array(
+            'stacked' => true,
+            'pull-right' => true,
+            'pills' => true
+        ));
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         die(var_dump($request));
@@ -112,7 +120,11 @@ class OrientMenuBuilder
     }
     
     public function createObjectShowMenu(Request $request) {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->factory->createItem('root', array(
+            'stacked' => true,
+            'pull-right' => true,
+            'pills' => true
+        ));
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'object'));
@@ -137,7 +149,11 @@ class OrientMenuBuilder
     }
     
     public function createSampleShowMenu(Request $request) {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->factory->createItem('root', array(
+            'stacked' => true,
+            'pull-right' => true,
+            'pills' => true
+        ));
         $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'sample'));
