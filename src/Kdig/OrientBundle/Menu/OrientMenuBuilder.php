@@ -28,7 +28,9 @@ class OrientMenuBuilder
     }
     
     public function createShowElementMenu (Request $request) {
-        $menu = $this->factory->createItem('root', array(
+        
+        $dropdown = $this->factory->createItem('root');
+        $menu = $dropdown->addChild('Actions', array(
             'dropdown' => true,
             'caret' => true,
         ));
@@ -52,7 +54,6 @@ class OrientMenuBuilder
         $new_menu = $menu->addChild('new', array('route' => $new, 'icon' => 'plus-sign'));
         if($id) {
             $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id), 'icon' => 'pencil'));
-            $this->addDivider($menu, true);
             $delete_menu = $menu->addChild('delete', array(
                 'route' => $delete, 
                 'routeParameters' => array('id' => $id), 
