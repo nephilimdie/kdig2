@@ -23,6 +23,9 @@ class MenuBuilder
         
         $this->securityContext = $securityContext;
         $this->isLoggedIn = $this->securityContext->isGranted('IS_AUTHENTICATED_FULLY');
+        if($this->isLoggedIn) {
+            $this->usr = $securityContext->getToken()->getUser();
+        }
     }
 
     public function createUserSideDropdownMenu(Request $request)
