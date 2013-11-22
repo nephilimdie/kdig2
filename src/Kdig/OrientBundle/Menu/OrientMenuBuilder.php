@@ -30,7 +30,7 @@ class OrientMenuBuilder
     public function createLeftMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
             'stacked' => true,
-            'pull-right' => true,
+            'pull-left' => true,
             'pills' => true
         ));
 //        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
@@ -329,6 +329,7 @@ class OrientMenuBuilder
 //        die(var_dump($request));
         $menu = $this->factory->createItem('root', array(
             'stacked' => true,
+            'pull-left' => true,
             'pills' => true
         ));
 //        $menu->setChildrenAttribute('class', 'nav show-menu');
