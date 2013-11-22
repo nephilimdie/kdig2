@@ -29,13 +29,7 @@ class OrientMenuBuilder
     
     public function createShowElementMenu (Request $request) {
         
-        $dropdown = $this->factory->createItem('root');
-        $menu = $dropdown->addChild('Actions', array(
-            'dropdown' => true,
-            'caret' => true,
-            'icon' => 'cog',
-            'data-toggle' => 'tooltip'
-        ));
+        $menu = $this->factory->createItem('root');
 //        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
         $name =split('_', $request->get('_route'));
@@ -54,9 +48,15 @@ class OrientMenuBuilder
         $home_menu = $menu->addChild('list', array('route' => $home, 'icon' => 'list'));
         $list_menu = $menu->addChild('list', array('route' => $list, 'icon' => 'list'));
         $new_menu = $menu->addChild('new', array('route' => $new, 'icon' => 'plus-sign'));
+        
+        $dropdown = $dropdown->addChild('Actions', array(
+            'dropdown' => true,
+            'caret' => true,
+            'icon' => 'cog'
+        ));
         if($id) {
-            $edit_menu = $menu->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id), 'icon' => 'pencil'));
-            $delete_menu = $menu->addChild('delete', array(
+            $edit_menu = $dropdown->addChild('edit', array('route' => $edit, 'routeParameters' => array('id' => $id), 'icon' => 'pencil'));
+            $delete_menu = $dropdown->addChild('delete', array(
                 'route' => $delete, 
                 'routeParameters' => array('id' => $id), 
                 'icon' => 'remove-circle'
@@ -74,7 +74,7 @@ class OrientMenuBuilder
             
         }
 
-        return $dropdown;
+        return $menu;
     }
     public function createLeftMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
