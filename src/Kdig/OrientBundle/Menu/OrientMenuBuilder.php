@@ -72,7 +72,7 @@ class OrientMenuBuilder
             
         }
 
-        return $menu;
+        return $dropdown;
     }
     public function createLeftMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
