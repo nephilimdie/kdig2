@@ -23,10 +23,8 @@ class UsType extends AbstractType
     {
         $idarea = $this->areaid;
         
-        if ($idarea != null)
+        if ($idarea != null) {
             $builder->add('area', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-md-3'),
-                'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Area',
                 'query_builder' => function($repository) use ($idarea) {
@@ -40,9 +38,9 @@ class UsType extends AbstractType
                 'label' => 'Area',
                 'help_block'  => 'Select your excavation area'
             ));
-        else
+        } else {
             $builder->add('area');
-        
+        }
         $builder
             ->add('site', 'entity', array(
                 'label_attr' => array('class'=>'mylabelclass'),
