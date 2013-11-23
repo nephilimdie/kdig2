@@ -1,38 +1,38 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content %}
-<div class="span1 left-menu">
+<div class="col-md-1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_menu('leftmenu') }}
         {{ mopa_bootstrap_menu('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="span11 center">
+<div class="col-md-11 center">
     {% block page_header %}
-    <div class="page-header span12">
+    <div class="page-header col-md-12">
         {{ apy_breadcrumb_trail_render() }}
     </div>
     {% endblock page_header %}
     {% block content_content %}
-        <div class="span12">
-            <div class="span4">
+        <div class="col-md-12">
+            <div class="col-md-4">
                 <div class="title-field">Campaign</div>
                 <div class="controls">                
                     <span class="">{{ entity.site }}</span>            
                 </div>
             </div>
-            <div class="span4">
+            <div class="col-md-4">
                 <div class="title-field">Area</div>
                 <div class="controls">                
                     <span class="">{{ entity.area }}</span>            
                 </div>
             </div>
-            <div class="span4">
+            <div class="col-md-4">
                 <div class="title-field">Name</div>
                 <div class="controls">                
                     <span class="">{{ entity.typeus.name }} {{ entity.name }}</span>            
                 </div>
             </div>
-            <div class="span12">
+            <div class="col-md-12">
                 <div class="title-field">Remarks</div>
                 <div class="controls">                
                     <span class="">{{ entity.remarks }}</span>            

@@ -23,7 +23,7 @@ class MatrixType extends AbstractType
         
         $builder
             ->add('typerelation',null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
@@ -42,7 +42,7 @@ class MatrixType extends AbstractType
                 'required' => true,
                 'label' => 'SU Definition',
                 'help_block'  => 'Select SU',
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))

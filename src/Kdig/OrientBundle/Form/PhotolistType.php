@@ -12,26 +12,26 @@ class PhotolistType extends AbstractType
     {
         $builder
             ->add('fromnumber', null, array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'From',
                 'required' => true,
             ))
             ->add('tonumber', null, array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'To',
                 'required' => true,
             ))
             ->add('vocmachine', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'class' => 'Kdig\OrientBundle\Entity\VocMachine',
                 'property' => 'name'
             ))
             ->add('object', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'class' => 'Kdig\OrientBundle\Entity\Object',
                 'property' => 'number',
                 'attr'=> array('class'=>''),
@@ -39,7 +39,7 @@ class PhotolistType extends AbstractType
                 'multiple' => true
             ))
             ->add('pottery', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'class' => 'Kdig\OrientBundle\Entity\Pottery',
                 'property' => 'prepottery.name',
                 'attr'=> array('class'=>''),
@@ -47,7 +47,7 @@ class PhotolistType extends AbstractType
                 'multiple' => true
             ))
             ->add('sample', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'class' => 'Kdig\OrientBundle\Entity\Sample',
                 'property' => 'presample.name',
                 'attr'=> array('class'=>''),
@@ -56,14 +56,14 @@ class PhotolistType extends AbstractType
                 
             ))
             ->add('us', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Us',
                 'attr'=> array('class'=>''),
                 'required' => false,
                 'multiple' => true
             ))
             ->add('area', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span2'),
+                'widget_control_group_attr' => array('class'=>'col-md-2'),
                 'class' => 'Kdig\ArchaeologicalBundle\Entity\Area',
                 'property' => 'name',
                 'attr'=> array('class'=>''),
@@ -71,7 +71,7 @@ class PhotolistType extends AbstractType
                 'multiple' => true
             ))
             ->add('remarks', null, array(
-                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_control_group_attr' => array('class'=>'col-md-12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Remarks',

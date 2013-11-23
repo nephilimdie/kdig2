@@ -28,86 +28,86 @@ class ObjectType extends AbstractType
                 'attr'=> array('class'=>'row-fluid')
             ))
             ->add('number', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Reference Number',
                 'required' => true,
             ))
             ->add('class', 'genemu_jqueryselect2_entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjClass',
                 'property' => 'name'
             ))
             ->add('type', 'genemu_jqueryselect2_entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjType',
                 'property' => 'name'
             ))
             ->add('material', 'genemu_jqueryselect2_entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjMaterial',
                 'property' => 'name'
             ))
             ->add('technique', 'genemu_jqueryselect2_entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjTechnique',
                 'property' => 'name'
             ))
             ->add('decoration', 'genemu_jqueryselect2_entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjDecoration',
                 'property' => 'name'
             ))
             ->add('preservation', 'genemu_jqueryselect2_entity', array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'class' => 'Kdig\OrientBundle\Entity\Objectvoc\VocObjPreservation',
                 'property' => 'name'
             ))
             ->add('fragments', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('height', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('lenght', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('width', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('thickness', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('diameter', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'widget_type'  => ""
             ))
             ->add('perforationdiameter', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Perforation Diameter',
@@ -115,7 +115,7 @@ class ObjectType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('weight', null, array(
-                'widget_control_group_attr' => array('class'=>'span4'),
+                'widget_control_group_attr' => array('class'=>'col-md-4'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Weight',
@@ -123,7 +123,7 @@ class ObjectType extends AbstractType
                 'widget_type'  => ""
             ))
             ->add('remarks', null, array(
-                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_control_group_attr' => array('class'=>'col-md-12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'label' => 'Remarks',
@@ -155,7 +155,7 @@ class ObjectType extends AbstractType
 //                'multiple' => true
 //            ))
         ;
-        $builder->setAttribute('class', 'span4');
+        $builder->setAttribute('class', 'col-md-4');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

@@ -8,10 +8,10 @@
 
 <div class="row">
 
-    <div class="span8">
+    <div class="col-md-8">
         <h1>{{ 'views.index.list'|trans({'%entity%': 'VocUsType'}, 'JordiLlonchCrudGeneratorBundle') }}</h1>
     </div>
-    <div class="span2">
+    <div class="col-md-2">
         {% if form_errors(filterForm) %}
         <div class="alert alert-block alert-error fade in form-errors">
             {{ form_errors(filterForm) }}
@@ -19,7 +19,7 @@
         {% endif %}
         &nbsp;
     </div>
-    <div class="span2">
+    <div class="col-md-2">
         <div class="filters-right">
             <a class="btn dropdown-toggle" data-toggle="collapse" data-target="#filters">
                 {{ 'views.index.filters'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="span12">
+    <div class="col-md-12">
         <div id="filters" class="collapse">
 
             <form class="well" action="{{ path('vocustype') }}" method="get" {{ form_enctype(filterForm) }}>
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="span12">
+    <div class="col-md-12">
 
     <table class="table table-striped table-bordered table-condensed">
     <thead>
@@ -93,11 +93,11 @@
 </table>
     </div>
 
-    <div class="span4">
+    <div class="col-md-4">
     {{ pagerHtml|raw }}
     </div>
 
-        <div class="span8">
+        <div class="col-md-8">
     <a class="btn btn-primary likepaginator" href="{{ path('vocustype_new') }}">
             {{ 'views.index.createnew'|trans({}, 'JordiLlonchCrudGeneratorBundle') }} VocUsType
         </a>

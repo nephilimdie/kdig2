@@ -1,14 +1,14 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content %}
-<div class="span1 left-menu">
+<div class="col-md-1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_menu('leftmenu') }}
         {{ mopa_bootstrap_menu('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="span11 center">
+<div class="col-md-11 center">
     {% block page_header %}
-    <div class="page-header span12">
+    <div class="page-header col-md-12">
         {{ apy_breadcrumb_trail_render() }}
     </div>
     {% endblock page_header %}
@@ -24,7 +24,7 @@
     <div class="row-fluid">
         <input type="hidden" name="_method" value="PUT" />
         {{ form_widget(edit_form) }}
-        <p class="span12">
+        <p class="col-md-12">
             <button type="submit" class="btn btn-success">{{ 'views.edit.editbutton'|trans({}, 'JordiLlonchCrudGeneratorBundle') }}</button>
         </p>
     </div>

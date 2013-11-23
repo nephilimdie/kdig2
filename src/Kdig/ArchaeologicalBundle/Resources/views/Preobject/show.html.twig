@@ -1,19 +1,19 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content %}
-<div class="span1 left-menu">
+<div class="col-md-1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_menu('leftmenu') }}
         {{ mopa_bootstrap_menu('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="span11 center">
+<div class="col-md-11 center">
     {% block page_header %}
-    <div class="page-header span12">
+    <div class="page-header col-md-12">
         {{ apy_breadcrumb_trail_render() }}
     </div>
     {% endblock page_header %}
     {% block content_content %}
-        <div class="span12">      
+        <div class="col-md-12">      
             <div class="control-group">
                 <label class="control-label">Name</label>
                 <div class="controls">                <span class="input-xlarge uneditable-input">{{ entity.name }}</span>            </div>

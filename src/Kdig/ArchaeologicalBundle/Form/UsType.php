@@ -25,7 +25,7 @@ class UsType extends AbstractType
         
         if ($idarea != null)
             $builder->add('area', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_control_group_attr' => array('class'=>'col-md-3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Area',
@@ -45,7 +45,7 @@ class UsType extends AbstractType
         
         $builder
             ->add('site', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_control_group_attr' => array('class'=>'col-md-3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Site',
@@ -58,7 +58,7 @@ class UsType extends AbstractType
                 'help_block'  => 'Select your Campaign'
             ))
             ->add('media', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_control_group_attr' => array('class'=>'col-md-3'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigMediaBundle:Media',
@@ -66,7 +66,7 @@ class UsType extends AbstractType
                 'multiple' => true
             ))
             ->add('typeus', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_control_group_attr' => array('class'=>'col-md-3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:VocUsType',
@@ -79,7 +79,7 @@ class UsType extends AbstractType
                 'help_block'  => 'Select your kind of US'
             ))
             ->add('name',null, array(
-                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_control_group_attr' => array('class'=>'col-md-3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
@@ -87,12 +87,12 @@ class UsType extends AbstractType
                 'help_block'  => 'Automatic loaded from DB. Or change with your'
             ))
             ->add('remarks',null, array(
-                'widget_control_group_attr' => array('class'=>'span3'),
+                'widget_control_group_attr' => array('class'=>'col-md-3'),
                 'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
             ->add('relationsfrom', 'collection', array(
-                'widget_control_group_attr' => array('class'=>'span12'),
+                'widget_control_group_attr' => array('class'=>'col-md-12'),
                 'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'type' => new MatrixType($idarea), 
@@ -103,8 +103,8 @@ class UsType extends AbstractType
                 'widget_add_btn' => array('label' => 'Add Relationship between Us', 'attr' => array('class' => 'btn btn-primary')),
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
-                    'attr' => array('class' => 'span3'),
-                    'widget_control_group_attr' => array('class'=>'span12'),
+                    'attr' => array('class' => 'col-md-3'),
+                    'widget_control_group_attr' => array('class'=>'col-md-12'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
