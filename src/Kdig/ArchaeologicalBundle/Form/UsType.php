@@ -45,8 +45,6 @@ class UsType extends AbstractType
         
         $builder
             ->add('site', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-md-3'),
-                'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:Site',
                 'query_builder' => function($repository) {
@@ -58,16 +56,12 @@ class UsType extends AbstractType
                 'help_block'  => 'Select your Campaign'
             ))
             ->add('media', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-md-3'),
-                'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigMediaBundle:Media',
                 'required' => false,
                 'multiple' => true
             ))
             ->add('typeus', 'entity', array(
-                'widget_control_group_attr' => array('class'=>'col-md-3'),
-                'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'class' => 'KdigArchaeologicalBundle:VocUsType',
                 'query_builder' => function($repository) {
@@ -79,21 +73,15 @@ class UsType extends AbstractType
                 'help_block'  => 'Select your kind of US'
             ))
             ->add('name',null, array(
-                'widget_control_group_attr' => array('class'=>'col-md-3'),
-                'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'required' => true,
                 'label' => 'Field Name',
                 'help_block'  => 'Automatic loaded from DB. Or change with your'
             ))
             ->add('remarks',null, array(
-                'widget_control_group_attr' => array('class'=>'col-md-3'),
-                'widget_controls_attr' => array('class'=>'labeltext'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
             ->add('relationsfrom', 'collection', array(
-                'widget_control_group_attr' => array('class'=>'col-md-12'),
-                'widget_controls_attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass'),
                 'type' => new MatrixType($idarea), 
                 'by_reference' => false,
@@ -104,7 +92,6 @@ class UsType extends AbstractType
                 'options' => array( // options for collection fields
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
                     'attr' => array('class' => 'col-md-3'),
-                    'widget_control_group_attr' => array('class'=>'col-md-12'),
                     'label_attr' => array('class'=>'mylabelclass'),
                     'widget_control_group' => false,
                 ),
