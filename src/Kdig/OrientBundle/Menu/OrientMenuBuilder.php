@@ -77,6 +77,7 @@ class OrientMenuBuilder
 
         return $menu;
     }
+    
     public function createLeftMenu(Request $request) {
         $menu = $this->factory->createItem('root', array(
             'stacked' => true,
