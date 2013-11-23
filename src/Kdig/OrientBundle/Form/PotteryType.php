@@ -184,7 +184,7 @@ class PotteryType extends AbstractType
                 },
                 'expanded' => true, 'label' => 'Inclusion frequency', 'required' => true, 'attr'=> array('class' => 'selection control-group ')))
             ->add('surfacetratin', 'collection', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotterySurfacetratinType(), 
@@ -203,7 +203,7 @@ class PotteryType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('surfacetratout', 'collection', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotterySurfacetratoutType(), 
@@ -223,7 +223,7 @@ class PotteryType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('surfacetratinout', 'collection', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotterySurfacetratinoutType(), 
@@ -243,7 +243,7 @@ class PotteryType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('potdecorationin', 'collection', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotteryDecorationinType(), 
@@ -262,7 +262,7 @@ class PotteryType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('potdecorationout', 'collection', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotteryDecorationoutType(), 
@@ -281,7 +281,7 @@ class PotteryType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('potdecorationinout', 'collection', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice'),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'type' => new VocPotteryDecorationinoutType(), 
@@ -301,7 +301,7 @@ class PotteryType extends AbstractType
                 'show_child_legend' => true
             ))
             ->add('remarks', 'textarea', array(
-                'horizontal_input_wrapper_class' => 'col-sm-11',
+                'horizontal_input_wrapper_class' => 'col-md-11',
                 'attr' => array('class'=>'labelchoice', "rows" => 10, "cols" => 50),
                 'label_attr' => array('class'=>'mylabelclass control-label'),
                 'label' => 'Description',

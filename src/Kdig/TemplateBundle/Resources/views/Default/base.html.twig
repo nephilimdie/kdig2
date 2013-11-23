@@ -124,7 +124,7 @@
         {% block flashes %}
             {% if app.session.flashbag.peekAll|length > 0 %}
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-md-12">
                 {{ session_flash() }}
                 </div>
             </div>
@@ -132,29 +132,29 @@
         {% endblock flashes %}
             
         {% block content_row %}
-        <div class="content col-sm-11">
+        <div class="content col-md-11">
             <div class="row">
                 {% block content %}
-                <div class="col-sm-2 left-menu">
+                <div class="col-md-2 left-menu">
                     {% block content_left_menu %}
                     <h2>Sidebar</h2>
                     {% endblock content_left_menu %}
                 </div>
-                <div class="col-sm-10 center">
+                <div class="col-md-10 center">
                     {% block page_header %}
-                    <div class="page-header col-sm-12">
+                    <div class="page-header col-md-12">
                           <h5>{% block title %}Kdig Project .2{% endblock title %}</h5>
                     </div>
                     {% endblock page_header %}
                     {% block content_content %}
-                        <div class="col-sm-12"></div>
+                        <div class="col-md-12"></div>
                     {% endblock content_content %}
                 </div>
                 {% endblock content %}
             </div>
         </div>
         {% endblock content_row %}
-        <div class="right-menu col-sm-1"> <!-- menu right -->
+        <div class="right-menu col-md-1"> <!-- menu right -->
             {{ mopa_bootstrap_menu('archaeologicalmenu') }}
         </div>
     </div> <!-- end container -->
@@ -163,7 +163,7 @@
     {% block footer %}
     <footer class="footer">
         <div class="row">
-            <div class="right-menu col-sm-12">
+            <div class="right-menu col-md-12">
                 <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
                 <p>someone want to write foot?</p><p>please don't write me.!!!</p>
             </div>

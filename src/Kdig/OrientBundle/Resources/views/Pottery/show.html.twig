@@ -1,119 +1,119 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content %}
-<div class="col-sm-1 left-menu">
+<div class="col-md-1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_menu('leftmenu') }}
         {{ mopa_bootstrap_menu('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="col-sm-11 center">
+<div class="col-md-11 center">
     {% block page_header %}
     <div class="row">
-        <div class="page-header col-sm-7">
+        <div class="page-header col-md-7">
             {{ apy_breadcrumb_trail_render() }}
         </div>
-        <div class="page-header col-sm-5">
+        <div class="page-header col-md-5">
             {{ mopa_bootstrap_menu('showmenu') }}
         </div>
         {% endblock page_header %}
         {% block content_content %}
-        <div class="col-sm-12">
-            <div class="col-sm-4 control-group">
+        <div class="col-md-12">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Tcode
                     <div class="selected">{{ entity.tcode }}</div>
                 </legend>
             </div>
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Type of context
                     <div class="selected">{{ entity.typecontext }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Class
                     <div class="selected">{{ entity.class }}</div> 
                 </legend>
             </div>         
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Shape
                     <div class="selected">{{ entity.shape }}</div> 
                 </legend>
             </div>              
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Rim
                     <div class="selected">{{ entity.rim }}</div> 
                 </legend>
             </div>                
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Neck
                     <div class="selected">{{ entity.neck }}</div> 
                 </legend>
             </div>              
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Wall
                     <div class="selected">{{ entity.wall }}</div> 
                 </legend>
             </div>              
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Upper Wall
                     <div class="selected">{{ entity.upperwall }}</div> 
                 </legend>
             </div>              
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Lower Wall
                     <div class="selected">{{ entity.lowerwall }}</div> 
                 </legend>
             </div>          
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Base
                     <div class="selected">{{ entity.base }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Handle
                     <div class="selected">{{ entity.handle }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Handle Position
                     <div class="selected">{{ entity.handleposition }}</div> 
                 </legend>
             </div>     
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Spout
                     <div class="selected">{{ entity.spout }}</div> 
                 </legend>
             </div>       
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Spout position
                     <div class="selected">{{ entity.spoutposition }}</div> 
                 </legend>
             </div>      
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Preservation
                     <div class="selected">{{ entity.preservation }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Technique
                     <div class="selected">{{ entity.technique }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Inclusion
                     <div class="selected">{{ entity.inclusion }}</div> 
                 </legend>
             </div>         
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Inclusion size
                     <div class="selected">{{ entity.inclusionsize }}</div> 
                 </legend>
             </div>         
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Inclusion frequency
                     <div class="selected">{{ entity.inclusionfrequency }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Inner Surface Treatment
                     <div class="selected">
                         {% for element in entity.surfacetratin %}
@@ -122,7 +122,7 @@
                     </div>
                 </legend>
             </div>  
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Outer Surface Treatment
                     <div class="selected">
                         {% for element in entity.surfacetratout %}
@@ -131,7 +131,7 @@
                     </div>
                 </legend>
             </div>  
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Inner & Outer Surface Treatment
                     <div class="selected">
                         {% for element in entity.surfacetratinout %}
@@ -140,7 +140,7 @@
                     </div>
                 </legend>
             </div>  
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Decoration Inner
                     <div class="selected">
                         {% for element in entity.potdecorationin %}
@@ -149,7 +149,7 @@
                     </div>
                 </legend>
             </div>
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Decoration Outer
                     <div class="selected">
                         {% for element in entity.potdecorationout %}
@@ -158,7 +158,7 @@
                     </div>
                 </legend>
             </div>
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Decoration Inner & Outer
                     <div class="selected">
                         {% for element in entity.potdecorationinout %}
@@ -167,77 +167,77 @@
                     </div>
                 </legend>
             </div>
-            <div class="col-sm-12 control-group">
+            <div class="col-md-12 control-group">
                 <legend class="control-label">Remarks
                     <div class="selected">{{ entity.remarks }}</div> 
                 </legend>
             </div>      
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Firing
                     <div class="selected">{{ entity.firing }}</div> 
                 </legend>
             </div>     
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Outer color
                     <div class="selected">{{ entity.outercolor }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Inner color
                     <div class="selected">{{ entity.innercolor }}</div>
                 </legend>
             </div> 
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Fabric color
                     <div class="selected">{{ entity.fabriccolor }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Rim diameter
                     <div class="selected">{{ entity.rimdiameter }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Rim width
                     <div class="selected">{{ entity.rimwidth }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Wall width
                     <div class="selected">{{ entity.wallwidth }}</div> 
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Max wall diameter
                     <div class="selected">{{ entity.maxwalldiameter }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Bottom width
                     <div class="selected">{{ entity.bottomwidth }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Height
                     <div class="selected">{{ entity.height }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Base of diameter
                     <div class="selected">{{ entity.basediameter }}</div>
                 </legend>
             </div>        
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Restored
                     <div class="selected">{{ entity.restored }}</div> 
                 </legend>
             </div>
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Datation
                     <div class="selected">{{ entity.datation }}</div> 
                 </legend>
             </div>  
-            <div class="col-sm-4 control-group">
+            <div class="col-md-4 control-group">
                 <legend class="control-label">Created
                     <div class="selected">{{ entity.created|date('Y-m-d H:i:s') }}</div>  
                 </legend>

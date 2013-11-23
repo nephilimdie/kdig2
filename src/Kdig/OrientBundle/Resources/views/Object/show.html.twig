@@ -1,103 +1,103 @@
 {% extends app.request.xmlHttpRequest ? kdig.templates.full : kdig.templates.partial %}
 {% block content %}
-<div class="col-sm-1 left-menu">
+<div class="col-md-1 left-menu">
     {% block content_left_menu %}
         {{ mopa_bootstrap_menu('leftmenu') }}
         {{ mopa_bootstrap_menu('vocsmenupottery') }}
     {% endblock content_left_menu %}
 </div>
-<div class="col-sm-11 center">
+<div class="col-md-11 center">
     {% block page_header %}
-    <div class="page-header col-sm-12">
+    <div class="page-header col-md-12">
         {{ apy_breadcrumb_trail_render() }}
     </div>
     {% endblock page_header %}
     {% block content_content %}
-        <div class="col-sm-12"> 
+        <div class="col-md-12"> 
             <div class="control-group">
                 <label class="control-label">Number</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.number }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.number }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Remarks</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.remarks }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.remarks }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Created</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.created|date('Y-m-d H:i:s') }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Updated</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.updated|date('Y-m-d H:i:s') }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.updated|date('Y-m-d H:i:s') }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Isactive</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.isActive }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.isActive }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Ispublic</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.isPublic }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.isPublic }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Isdelete</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.isDelete }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.isDelete }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Isphotographed</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.isphotographed }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.isphotographed }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Drawned</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.drawned }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.drawned }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Fragments</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.fragments }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.fragments }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Inscription</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.inscription }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.inscription }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Dateoofcontext</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.dateoofcontext }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.dateoofcontext }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Height</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.height }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.height }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Lenght</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.lenght }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.lenght }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Width</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.width }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.width }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Thickness</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.thickness }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.thickness }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Diameter</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.diameter }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.diameter }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Perforationdiameter</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.perforationdiameter }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.perforationdiameter }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Weight</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.weight }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.weight }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Bibliography</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.bibliography }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.bibliography }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Restorationdate</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.restorationdate|date('Y-m-d H:i:s') }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.restorationdate|date('Y-m-d H:i:s') }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Analysisdate</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.analysisdate|date('Y-m-d H:i:s') }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.analysisdate|date('Y-m-d H:i:s') }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Analysisreport</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.analysisreport }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.analysisreport }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Location</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.location }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.location }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Museum_acquisition</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.museumacquisition }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.museumacquisition }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Museum_acquisition_notes</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.museumacquisitionnotes }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.museumacquisitionnotes }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Exhibition_history</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.exhibitionhistory }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.exhibitionhistory }}</col-md->            </div>
             </div>        <div class="control-group">
                 <label class="control-label">Itaremarks</label>
-                <div class="controls">                <col-sm- class="input-xlarge uneditable-input">{{ entity.itaremarks }}</col-sm->            </div>
+                <div class="controls">                <col-md- class="input-xlarge uneditable-input">{{ entity.itaremarks }}</col-md->            </div>
             </div>      
         </div>
     {% endblock content_content %}
