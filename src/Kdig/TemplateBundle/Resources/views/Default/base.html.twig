@@ -77,6 +77,9 @@
 
 {% block navbar %}
 {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: false, staticTop: false, inverse: false } %}
+    <a id="" class="hidden-phone open">{{ icon('indent-left') }}</i>&nbsp;</a>
+    <a id="" class="hidden-tablet hidden-phone open">{{ icon('indent-right') }}</i>&nbsp;</a>
+    
     {% block brand %}
         <a class="navbar-brand" href="{{ path('default_index') }}">KdigProject</a>
     {% endblock brand %}
@@ -91,8 +94,6 @@
 {% endblock navbar %}
             
 {% block body %}
-    <a id="main-menu-toggle" class="hidden-phone open">{{ icon('indent-left') }}</i>&nbsp;</a>
-    <a id="widgets-area-button" class="hidden-tablet hidden-phone open">{{ icon('indent-right') }}</i>&nbsp;</a>
     {% block container %}
     <div class="row big-container ">
         {% block header %}
