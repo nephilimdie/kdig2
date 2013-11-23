@@ -116,7 +116,8 @@
     <a id="widgets-area-button" class="hidden-tablet hidden-phone open">{{ icon('indent-right') }}</i>&nbsp;</a>
     
     {% block container %}
-    <div class="row big-container ">
+<div class="container">
+    <div class="row">
         {% block header %}
         {% endblock header %}
 
@@ -157,6 +158,7 @@
             {{ mopa_bootstrap_menu('archaeologicalmenu') }}
         </div>
     </div> <!-- end container -->
+    </div>
     {% endblock container %}
     {% block footer %}
     <footer class="footer">
