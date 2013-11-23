@@ -23,8 +23,6 @@ class MatrixType extends AbstractType
         
         $builder
             ->add('typerelation',null, array(
-                'widget_control_group_attr' => array('class'=>'col-md-4'),
-                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
             ->add('touss', 'genemu_jqueryselect2_entity', array(
@@ -42,8 +40,6 @@ class MatrixType extends AbstractType
                 'required' => true,
                 'label' => 'SU Definition',
                 'help_block'  => 'Select SU',
-                'widget_control_group_attr' => array('class'=>'col-md-4'),
-                'widget_controls_attr' => array('class'=>'mycontrolsclass'),
                 'label_attr' => array('class'=>'mylabelclass'),
             ))
         ;
