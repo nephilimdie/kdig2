@@ -33,7 +33,6 @@ class OrientMenuBuilder
             'pull-right' => true,
             'pills' => true
         ));
-//        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
         $name =split('_', $request->get('_route'));
         $controller = $name[0];
@@ -46,7 +45,6 @@ class OrientMenuBuilder
         $export_pdf = "";
         $export_zip = "";
         $id = $request->get('id', null);
-//        die(var_dump($request));
 
         $home_menu = $menu->addChild('list', array('route' => $home, 'icon' => 'list'));
         $list_menu = $menu->addChild('list', array('route' => $list, 'icon' => 'list'));
@@ -85,7 +83,6 @@ class OrientMenuBuilder
             'pull-left' => true,
             'pills' => true
         ));
-//        $menu->setChildrenAttributes(array('class' =>'nav show-menu'));
         //show
         $name =split('_', $request->get('_route'));
         $controller = $name[0];
@@ -98,7 +95,6 @@ class OrientMenuBuilder
         $export_pdf = "";
         $export_zip = "";
         $id = $request->get('id', null);
-//        die(var_dump($request));
 
         $home_menu = $menu->addChild('list', array('route' => $home));
         $list_menu = $menu->addChild('list', array('route' => $list));
@@ -127,11 +123,9 @@ class OrientMenuBuilder
             'stacked' => true,
             'pills' => true
         ));
-//        $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         die(var_dump($request));
         $list = $menu->addChild('list', array('route' => 'pottery'));
-//        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_pottery) {
             $edit = $menu->addChild('edit', array('route' => 'pottery_edit', 'routeParameters' => array('id' => $id)));
 //            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
@@ -140,13 +134,11 @@ class OrientMenuBuilder
 //            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
             $delete->setAttributes(array('class'=>'btn btn-danger'));
         }
-//        $this->addDivider($menu, true);
         
         $export = $menu->addChild('export', array(
             'dropdown' => true,
             'caret' => true,
         ));
-//        $export = $this->createDropdownMenuItem($menu, "export", true, array('caret' => true));
         $pdf = $export->addChild('PDF', array('route' => 'pottery'));
         $zip = $export->addChild('zip', array('route' => 'pottery'));
         return $menu;
@@ -157,10 +149,8 @@ class OrientMenuBuilder
             'stacked' => true,
             'pills' => true
         ));
-//        $menu->setChildrenAttribute('class', 'nav show-menu');
         $id = $request->get('id');
         $list = $menu->addChild('list', array('route' => 'object'));
-//        $this->addIcon($list, array('icon' => 'th-list', 'inverted'=>false, 'append'=>false ));
         if($this->role_object) {
             $edit = $menu->addChild('edit', array('route' => 'object_edit', 'routeParameters' => array('id' => $id)));
 //            $this->addIcon($edit, array('icon' => 'pencil', 'inverted'=>false, 'append'=>false ));
@@ -168,7 +158,6 @@ class OrientMenuBuilder
             $delete = $menu->addChild('delete', array('route' => 'object_delete', 'routeParameters' => array('id' => $id)));
 //            $this->addIcon($delete, array('icon' => 'remove', 'inverted'=>false, 'append'=>false ));
         }
-//        $this->addDivider($menu, true);
         
         $export = $menu->addChild('export', array(
             'dropdown' => true,
