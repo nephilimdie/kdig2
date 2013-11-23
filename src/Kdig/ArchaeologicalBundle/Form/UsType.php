@@ -91,7 +91,6 @@ class UsType extends AbstractType
                     'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
                     'attr' => array('class' => 'col-md-3'),
                     'label_attr' => array('class'=>'mylabelclass'),
-                    'widget_control_group' => false,
                 ),
                 'label' => 'Matrix',
                 'required' => false,
