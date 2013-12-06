@@ -114,7 +114,7 @@ class UsController extends Controller
      * Creates
      *
      * @return \Symfony\Component\HttpFoundation\Response
-     * @PreAuthorize("isFullyAuthenticated()")
+     * @ PreAuthorize("isFullyAuthenticated()")
      */
     public function cpostAction()
     {
@@ -127,7 +127,7 @@ class UsController extends Controller
      * @param  int   $us
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-     * @PreAuthorize("isFullyAuthenticated()")
+     * @ PreAuthorize("isFullyAuthenticated()")
      */
     public function putAction($id)
     {
@@ -149,7 +149,7 @@ class UsController extends Controller
      * @param  int  $id
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-     * @PreAuthorize("isFullyAuthenticated()")
+     * @ PreAuthorize("isFullyAuthenticated()")
      */
     public function delete2Action($id)
     {
