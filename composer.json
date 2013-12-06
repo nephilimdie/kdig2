@@ -55,6 +55,7 @@
         "sonata-project/jquery-bundle": "1.8.3",
         "sonata-project/media-bundle": "dev-master",
         "sonata-project/user-bundle": "dev-master",
+        "sonata-project/core-bundle": "~2.2",
         "liip/imagine-bundle": "dev-master",
         "liip/doctrine-cache-bundle": "dev-master",
         "liip/theme-bundle": "dev-master",
