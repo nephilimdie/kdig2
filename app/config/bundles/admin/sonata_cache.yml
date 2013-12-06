@@ -4,7 +4,7 @@ sonata_cache:
             token:  s3cur3   # token used to clear the related cache
             prefix: kdig_cache     # prefix to ensure there is no clash between instances
             servers:
-                - { domain: kdig.local, ip: 127.0.0.1, port: 80}
+                - { domain: kdig.local, ip: 127.0.0.1, port: 80, basic: 'user:login' }
                 
 #sonata_page_cache:
 #    resource: '@SonataCacheBundle/Resources/config/routing/cache.xml'
