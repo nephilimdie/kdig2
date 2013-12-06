@@ -2,11 +2,11 @@
 
 var globalTemplate = '<div compile-html="data"></div>';
 // Declare app level module which depends on filters, and services
-angular.module('commusoft', [
+angular.module('KdigApp', [
         'ui.compat', 
-        'kdig.filters', 
-        'kdig.services', 
-        'kdig.directives', 
+//        'KdigApp.filters', 
+//        'KdigApp.services', 
+//        'KdigApp.directives', 
         'http-auth-interceptor'
     ]).
     constant('prefix', '/app_dev.php').
