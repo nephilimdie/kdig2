@@ -30,43 +30,6 @@
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
 
     {% block head_script %}
-    {% javascripts
-        '@KdigTemplateBundle/Resources/public/js/lib/jquery-1.9.1.min.js'    
- 
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/tooltip.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/affix.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/alert.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/button.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/carousel.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/collapse.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/dropdown.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/modal.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/popover.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/scrollspy.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/tab.js'
-        '@MopaBootstrapBundle/Resources/public/bootstrap/js/transition.js'
-        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
-        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
-
-        '@KdigTemplateBundle/Resources/public/js/spin.min.js'
-        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.spin.js'
-        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.form.min.js'
-        '@KdigTemplateBundle/Resources/public/js/jqplugin/bootbox.min.js'
-        '@KdigTemplateBundle/Resources/public/js/jqplugin/select2/select2.js'
-
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-loader.min.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-cookies.min.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-resource.min.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-sanitize.min.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-route.min.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-ui-router.min.js'
-        '@KdigTemplateBundle/Resources/public/js/lib/angular/http-auth-interceptor.js'
-        '@KdigTemplateBundle/Resources/public/js/app.js'
-    %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-        
-    {% endjavascripts %}
     {% endblock head_script %}
 
     <title>{#{% block title %}#}Kdig Project .2{#{% endblock title %}#}</title>
@@ -181,6 +144,43 @@
     {% endblock footer %}
     {% block foot_script %}
     
+    {% javascripts
+        '@KdigTemplateBundle/Resources/public/js/lib/jquery-1.9.1.min.js'    
+ 
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/tooltip.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/affix.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/alert.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/button.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/carousel.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/collapse.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/dropdown.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/modal.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/popover.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/scrollspy.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/tab.js'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/js/transition.js'
+        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
+        '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
+
+        '@KdigTemplateBundle/Resources/public/js/spin.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.spin.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.form.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/bootbox.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/select2/select2.js'
+
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-loader.min.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-cookies.min.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-resource.min.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-sanitize.min.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-route.min.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/angular-ui-router.min.js'
+        '@KdigTemplateBundle/Resources/public/js/lib/angular/http-auth-interceptor.js'
+        '@KdigTemplateBundle/Resources/public/js/app.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        
+    {% endjavascripts %}
     <script type="text/javascript">
         var options = { 
             target:        '.content',
