@@ -52,6 +52,7 @@ class AppKernel extends Kernel
             //admin
             new Presta\SitemapBundle\PrestaSitemapBundle(),
             new Sonata\CacheBundle\SonataCacheBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
