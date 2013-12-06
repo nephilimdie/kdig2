@@ -29,7 +29,7 @@ angular.module('KdigApp', [
                     url: '/',
                     template: globalTemplate,
                     templateUrl: function(params) { return Routing.generate('index') },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us', {
@@ -37,43 +37,43 @@ angular.module('KdigApp', [
                     abstract: true, 
                     template: globalTemplate,
                     templateUrl: function(params) { return Routing.generate('us') },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us', {
                     url: '/home',
                     templateUrl: function(params) { return Routing.generate('us') },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us.show', {
                     url: '/show/:id',
                     templateUrl: function(params) { return Routing.generate('us_show', params) },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us.list', {
                     url: '/list',
                     templateUrl: function(params) { return Routing.generate('us_list') },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us.new', {
                     url: '/new',
                     templateUrl: function(params) { return Routing.generate('us_new', params) },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us.edit', {
                     url: '/edit/:id',
                     templateUrl: function(params) { return Routing.generate('us_edit', params) },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 })
                 .state('us.delete', {
                     url: '/delete/:id',
                     templateUrl: function(params) { return Routing.generate('us_delete', params) },
-                    controller: LogoutCtrl,
+//                    controller: LogoutCtrl,
                     resolve: Resolver
                 });
         }
