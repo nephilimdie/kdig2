@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 {% block html_tag %}
-<html>
+<html lang="en" ng-app="KdigApp">
 {% endblock html_tag %}
 
 {% block head %}
@@ -31,7 +31,8 @@
 
     {% block head_script %}
     {% javascripts
-        '@KdigTemplateBundle/Resources/public/js/jquery-1.9.1.min.js'    
+        '@KdigTemplateBundle/Resources/public/js/lib/jquery-1.9.1.min.js'    
+        '@KdigTemplateBundle/Resources/public/js/lib/angular.min.js'    
  
         '@MopaBootstrapBundle/Resources/public/bootstrap/js/tooltip.js'
         '@MopaBootstrapBundle/Resources/public/bootstrap/js/affix.js'
@@ -49,12 +50,12 @@
         '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
 
         '@KdigTemplateBundle/Resources/public/js/spin.min.js'
-        '@KdigTemplateBundle/Resources/public/js/jquery.spin.js'
-        '@KdigTemplateBundle/Resources/public/js/jquery.form.min.js'
-        '@KdigTemplateBundle/Resources/public/js/bootbox.min.js'
-        '@KdigTemplateBundle/Resources/public/js/autosaveform.js'
-        '@KdigTemplateBundle/Resources/public/js/jquery.flashMessage.js'
-        '@KdigTemplateBundle/Resources/public/js/select2/select2.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.spin.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.form.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/bootbox.min.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/autosaveform.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/jquery.flashMessage.js'
+        '@KdigTemplateBundle/Resources/public/js/jqplugin/select2/select2.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         
@@ -133,7 +134,7 @@
             
         {% block content_row %}
         <div class="content col-md-11">
-            <div class="row">
+            <div class="row" ng-view>
                 {% block content %}
                 <div class="col-md-2 left-menu">
                     {% block content_left_menu %}
@@ -166,6 +167,7 @@
             <div class="right-menu col-md-12">
                 <p>&copy; <a href="mailto:stefano.bassetto.nep@gmail.com" target="_blank">Stefano Bassetto</a> 2013</p>
                 <p>someone want to write foot?</p><p>please don't write me.!!!</p>
+                <p><div>Angular seed app: v<span app-version></span></div></p>
             </div>
         </div>
     </footer>
@@ -183,18 +185,18 @@
         }; 
 
         var optsspin = {
-            lines: 13, // The number of lines to draw
-            length: 35, // The length of each line
-            width: 16, // The line thickness
-            radius: 34, // The radius of the inner circle
+            lines: 5, // The number of lines to draw
+            length: 40, // The length of each line
+            width: 12, // The line thickness
+            radius: 7, // The radius of the inner circle
             corners: 1, // Corner roundness (0..1)
-            rotate: 40, // The rotation offset
+            rotate: 54, // The rotation offset
             direction: 1, // 1: clockwise, -1: counterclockwise
-            color: '#000', // #rgb or #rrggbb
-            speed: 0.8, // Rounds per second
-            trail: 83, // Afterglow percentage
-            shadow: false, // Whether to render a shadow
-            hwaccel: false, // Whether to use hardware acceleration
+            color: '#000', // #rgb or #rrggbb or array of colors
+            speed: 0.6, // Rounds per second
+            trail: 64, // Afterglow percentage
+            shadow: true, // Whether to render a shadow
+            hwaccel: true, // Whether to use hardware acceleration
             className: 'spinner', // The CSS class to assign to the spinner
             zIndex: 2e9, // The z-index (defaults to 2000000000)
             top: '50', // Top position relative to parent in px

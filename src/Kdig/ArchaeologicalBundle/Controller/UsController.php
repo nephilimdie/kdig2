@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\HttpFoundation\Response;
+
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrapView;
@@ -23,7 +23,18 @@ use APY\DataGridBundle\Grid\Export\PHPExcel2007Export;
 use APY\DataGridBundle\Grid\Export\CSVExport;
 use APY\BreadcrumbTrailBundle\Annotation\Breadcrumb;
 
+/* start - for json api */
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
+use JMS\DiExtraBundle\Annotation\Inject;
 use JMS\SecurityExtraBundle\Annotation\Secure;
+
+use FOS\RestBundle\View\View;
+use FOS\RestBundle\Controller\Annotations as Rest;
+use FOS\RestBundle\Routing\ClassResourceInterface;
+/* end - for json api */
 
 /**
  * Us controller.
@@ -33,6 +44,163 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
  */
 class UsController extends Controller
 {
+    
+/************************/
+/* start new environment*/
+/************************/
+    
+    /**
+     * @Inject("doctrine")
+     */
+    protected $doctrine;
+
+    /**
+     * @Inject("form.factory")
+     */
+    protected $formFactory;
+
+    /**
+     * @Inject("request")
+     */
+    protected $request;
+
+    /**
+     * @Inject("jms_serializer")
+     */
+    protected $serializer;
+
+    /**
+     * Gets the Us repository
+     *
+     * @return Doctrine\Common\Persistence\AbstractManagerRegistry
+     */
+    private function getUsRepository()
+    {
+        return $this
+            ->doctrine
+            ->getRepository('KdigArchaeologicalBundle:Us');
+    }
+    
+    /**
+     * Reads (all the collection)
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Rest\View(serializerGroups={"usList"})
+     */
+    public function cgetAction()
+    {
+        return $this
+                ->getUsRepository()
+                ->findAll()
+        ;
+    }
+
+    /**
+     * Reads (an element)
+     *
+     * @param  int  $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * 
+     * @Rest\View(serializerGroups={"usDetail"})
+     * @ParamConverter("id", class="KdigArchaeologicalBundle:Us")
+     */
+    public function getAction(Us $id)
+    {
+        return $id;
+    }
+
+    /**
+     * Creates
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @PreAuthorize("isFullyAuthenticated()")
+     */
+    public function cpostAction()
+    {
+        return $this->processForm(new Us());
+    }
+
+    /**
+     * Updates
+     *
+     * @param  int   $us
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @PreAuthorize("isFullyAuthenticated()")
+     */
+    public function putAction($id)
+    {
+        $us = $this
+            ->getUsRepository()
+            ->find($id)
+        ;
+
+        if (!$us instanceof Us) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->processForm($us);
+    }
+    
+    /**
+     * Deletes
+     *
+     * @param  int  $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @PreAuthorize("isFullyAuthenticated()")
+     */
+    public function delete2Action($id)
+    {
+        $us = $this
+            ->getUsRepository()
+            ->find($id)
+        ;
+
+        if (!$us instanceof Us) {
+            throw new NotFoundHttpException();
+        }
+
+        $this->doctrine->getEntityManager()->remove($us);
+        $this->doctrine->getEntityManager()->flush();
+
+        return new Response();
+    }
+
+    /**
+     * @param Us $us
+     * @return \Symfony\Component\HttpFoundation\Response|\FOS\RestBundle\View\View
+     */
+    protected function processForm(Us $us)
+    {
+        $statusCode = $us->getId() > 0 ? 204 : 201;
+        $form = $this->formFactory->create(new UsType(), $us);
+        $form->bind($this->request);
+
+        if ($form->isValid()) {
+            $em = $this->doctrine->getEntityManager();
+            $em->persist($us);
+            $em->flush();
+
+            $response = new Response();
+            $response->setContent($this->serializer->serialize($us, 'json'));
+            $response->setStatusCode($statusCode);
+
+            return $response;
+        }
+
+        return View::create($form, 400);
+    }
+    
+    
+/**********************/    
+/* end new environment*/
+/**********************/
+ 
+    
+    
+    
     /**
      * Lists all Us entities in grid
      *
@@ -40,8 +208,7 @@ class UsController extends Controller
      * @Breadcrumb("Table", route="us")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
-    public function myGridAction()
-    {
+    public function myGridAction() {
         $source = new Entity('KdigArchaeologicalBundle:Us');
         $grid = $this->get('grid');
         $grid->setSource($source);
@@ -89,90 +256,9 @@ class UsController extends Controller
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      * @Template()
      */
-    public function indexAction()
-    {
-        list($filterForm, $queryBuilder) = $this->filter();
-
-        list($entities, $pagerHtml) = $this->paginator($queryBuilder);
-
+    public function indexAction() {
         return array(
-            'entities' => $entities,
-            'pagerHtml' => $pagerHtml,
-            'filterForm' => $filterForm->createView(),
         );
-    }
-
-    /**
-    * Create filter form and process filter request.
-    *
-    */
-    protected function filter()
-    {
-        $request = $this->getRequest();
-        $session = $request->getSession();
-        $filterForm = $this->createForm(new UsFilterType());
-        $em = $this->getDoctrine()->getManager();
-        $queryBuilder = $em->getRepository('KdigArchaeologicalBundle:Us')->createQueryBuilder('e');
-
-        // Reset filter
-        if ($request->get('filter_action') == 'reset') {
-            $session->remove('UsControllerFilter');
-        }
-
-        // Filter action
-        if ($request->get('filter_action') == 'filter') {
-            // Bind values from the request
-            $filterForm->bind($request);
-
-            if ($filterForm->isValid()) {
-                // Build the query from the given form object
-                $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
-                // Save filter to session
-                $filterData = $filterForm->getData();
-                $session->set('UsControllerFilter', $filterData);
-            }
-        } else {
-            // Get filter from session
-            if ($session->has('UsControllerFilter')) {
-                $filterData = $session->get('UsControllerFilter');
-                $filterForm = $this->createForm(new UsFilterType(), $filterData);
-                $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
-            }
-        }
-
-        return array($filterForm, $queryBuilder);
-    }
-
-    /**
-    * Get results from paginator and get paginator view.
-    *
-    */
-    protected function paginator($queryBuilder)
-    {
-        // Paginator
-        $adapter = new DoctrineORMAdapter($queryBuilder);
-        $pagerfanta = new Pagerfanta($adapter);
-        $currentPage = $this->getRequest()->get('page', 1);
-        $pagerfanta->setCurrentPage($currentPage);
-        $entities = $pagerfanta->getCurrentPageResults();
-
-        // Paginator - route generator
-        $me = $this;
-        $routeGenerator = function($page) use ($me)
-        {
-            return $me->generateUrl('us', array('page' => $page));
-        };
-
-        // Paginator - view
-        $translator = $this->get('translator');
-        $view = new TwitterBootstrapView();
-        $pagerHtml = $view->render($pagerfanta, $routeGenerator, array(
-            'proximity' => 3,
-            'prev_message' => $translator->trans('views.index.pagprev', array(), 'JordiLlonchCrudGeneratorBundle'),
-            'next_message' => $translator->trans('views.index.pagnext', array(), 'JordiLlonchCrudGeneratorBundle'),
-        ));
-
-        return array($entities, $pagerHtml);
     }
 
     private function getArea() {
@@ -192,8 +278,7 @@ class UsController extends Controller
      * @Template("KdigArchaeologicalBundle:Us:new.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $areas = $this->getArea();
         $entity  = new Us();
         $form = $this->createForm(new UsType($areas, null), $entity);
@@ -222,8 +307,7 @@ class UsController extends Controller
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      * @Template()
      */
-    public function newAction()
-    {
+    public function newAction() {
         $areas = $this->getArea();
         $entity = new Us();
         $form   = $this->createForm(new UsType($areas, null), $entity);
@@ -242,8 +326,7 @@ class UsController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
-    {
+    public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KdigArchaeologicalBundle:Us')->find($id);
@@ -269,8 +352,7 @@ class UsController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function editAction($id)
-    {
+    public function editAction($id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KdigArchaeologicalBundle:Us')->find($id);
@@ -299,8 +381,7 @@ class UsController extends Controller
      * @Template("KdigArchaeologicalBundle:Us:edit.html.twig")
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('KdigArchaeologicalBundle:Us')->find($id);
@@ -338,8 +419,7 @@ class UsController extends Controller
      *
      * @Secure(roles="ROLE_ARCHAEOLOGY, ROLE_ADMIN, ROLE_POTTERY, ROLE_SAMPLE, ROLE_OBJECT")
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('KdigArchaeologicalBundle:Us')->find($id);
 
@@ -360,8 +440,7 @@ class UsController extends Controller
      *
      * @return Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder(array('id' => $id))
             ->add('id', 'hidden')
             ->getForm()
@@ -374,8 +453,7 @@ class UsController extends Controller
      * @Route("/{id_site}/{id_area}/getdefaulttext", name="kdig_us_defaulttext", options={"expose"=true})
      * @Method("post")
      */
-    public function getdefaulttextaction(Request $request) 
-    {
+    public function getdefaulttextaction(Request $request) {
         $user = $this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
         $id_site = $request->get('id_site');
@@ -398,8 +476,7 @@ class UsController extends Controller
      * @Route("/{name}/checkname", name="kdig_us_checkname", options={"expose"=true})
      * @Method("get")
      */
-    public function checkname($name)
-    { 
+    public function checkname($name) { 
         $em = $this->getDoctrine()->getEntityManager();
         $response = $em->getRepository('KdigArchaeologicalBundle:Us')->isUnusedName($name);
         if($response)
