@@ -78,7 +78,8 @@ angular.module('KdigApp', [
                     resolve: Resolver
                 });
         }*/
-    ]).
+    ]);
+            /*.
     run(function($rootScope, $state) {
         $rootScope.$on('event:auth-loginRequired', function() {
             $state.transitionTo('demologin');
