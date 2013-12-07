@@ -2,15 +2,28 @@
 
 var globalTemplate = '<div compile-html="data"></div>';
 // Declare app level module which depends on filters, and services
-angular.module('KdigApp', [
-    /*
+var kdig = angular.module('KdigApp', [
         'ui.compat', 
-//        'KdigApp.filters', 
-//        'KdigApp.services', 
-//        'KdigApp.directives', 
+        'KdigApp.filters', 
+        'KdigApp.services', 
+        'KdigApp.directives', 
+        'KdigApp.controllers', 
         'http-auth-interceptor'
-    ]).
-    constant('prefix', '/app_dev.php').
+            ])
+            .constant('prefix', '/app_dev.php')
+            .config([
+                '$stateProvider', 
+                '$routeProvider', 
+                '$urlRouterProvider', 
+                '$locationProvider', 
+                '$httpProvider', 
+                'prefix', 
+                function() {
+                    
+                }
+            ])
+            ;
+    /*
     config([
         '$stateProvider', 
         '$routeProvider', 
@@ -77,8 +90,8 @@ angular.module('KdigApp', [
 //                    controller: LogoutCtrl,
                     resolve: Resolver
                 });
-        }*/
-    ]);
+        }
+    ]);*/
             /*.
     run(function($rootScope, $state) {
         $rootScope.$on('event:auth-loginRequired', function() {
