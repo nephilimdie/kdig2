@@ -18,8 +18,19 @@ var kdig = angular.module('KdigApp', [
                 '$locationProvider', 
                 '$httpProvider', 
                 'prefix', 
-                function() {
-                    
+                function($stateProvider, $routeProvider, $urlRouterProvider, $locationProvider, $httpProvider, prefix) {
+                    fos.Router.getInstance().setBaseUrl(prefix);
+                    $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+                    $locationProvider.html5Mode(true).hashPrefix('!');
+
+                    $stateProvider  
+                        .state('example', {
+                            url: '/example',
+                            template: globalTemplate,
+//                            templateUrl: function(params) { return Routing.generate('index') },
+                            controller: 'KdigApp.example',
+//                            resolve: Resolver
+                        });
                 }
             ])
             ;

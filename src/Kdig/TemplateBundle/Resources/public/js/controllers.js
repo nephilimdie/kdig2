@@ -3,7 +3,10 @@
 /* Controllers */
 
 angular.module('KdigApp.controllers', []).
-  controller('rootCtrl', ['$scope', 'Hello', function($scope, Hello) {
+  controller('KdigApp.example',['$scope'], function($scope){
+    alert('try');
+  })
+  .controller('rootCtrl', ['$scope', 'Hello', function($scope, Hello) {
     // Simple communication sample, return world
     $scope.hello = Hello.get();
   }])
