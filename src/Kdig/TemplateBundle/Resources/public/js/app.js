@@ -3,39 +3,40 @@
 var globalTemplate = '<div compile-html="data"></div>';
 // Declare app level module which depends on filters, and services
 var kdig = angular.module('KdigApp', [
-        'ui.router',
-        'ui.state',
-        'ui.compat', 
-        'KdigApp.filters', 
-//        'KdigApp.services', 
-        'KdigApp.directives', 
-        'KdigApp.controllers', 
-        'http-auth-interceptor'
-            ])
-            .constant('prefix', '/app_dev.php')
-            .config([
-                '$stateProvider', 
-                '$routeProvider', 
-                '$urlRouterProvider', 
-                '$locationProvider', 
-                '$httpProvider', 
-                'prefix', 
-                function($stateProvider, $routeProvider, $urlRouterProvider, $locationProvider, $httpProvider, prefix) {
-                    fos.Router.getInstance().setBaseUrl(prefix);
-                    $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-                    $locationProvider.html5Mode(true).hashPrefix('!');
+//    'ui.router',
+//    'ui.state',
+//    'ui.compat', 
+    'KdigApp.filters', 
+    //        'KdigApp.services', 
+    'KdigApp.directives', 
+    'KdigApp.controllers', 
+//    'http-auth-interceptor'
+    ])
+    .constant('prefix', '/app_dev.php');
+    /*
+kdig.config([
+    '$stateProvider', 
+    '$routeProvider', 
+    '$urlRouterProvider', 
+    '$locationProvider', 
+    '$httpProvider', 
+    'prefix', 
+    function($stateProvider) {
+//        fos.Router.getInstance().setBaseUrl(prefix);
+//        $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+//        $locationProvider.html5Mode(true).hashPrefix('!');
 
-                    $stateProvider  
-                        .state('example', {
-                            url: '/example',
-                            template: globalTemplate,
+        $stateProvider  
+            .state('example', {
+                url: '/example',
+                template: globalTemplate,
 //                            templateUrl: function(params) { return Routing.generate('index') },
-                            controller: 'KdigApp.example',
+                controller: 'KdigApp.example',
 //                            resolve: Resolver
-                        });
-                }
-            ])
-            ;
+            });
+    }
+])
+;
     /*
     config([
         '$stateProvider', 
