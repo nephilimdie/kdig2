@@ -8,7 +8,8 @@ var kdig = angular.module('KdigApp', [
 //        'KdigApp.services', 
         'KdigApp.directives', 
         'KdigApp.controllers', 
-        'http-auth-interceptor'
+        'http-auth-interceptor',
+        'ui.router'
             ])
             .constant('prefix', '/app_dev.php')
             .config([
