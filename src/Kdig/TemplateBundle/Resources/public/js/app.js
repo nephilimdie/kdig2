@@ -3,7 +3,7 @@
 var globalTemplate = '<div compile-html="data"></div>';
 // Declare app level module which depends on filters, and services
 var kdig = angular.module('KdigApp', [
-        'ui.compat', 
+//        'ui.compat', 
         'KdigApp.filters', 
         'KdigApp.services', 
         'KdigApp.directives', 
