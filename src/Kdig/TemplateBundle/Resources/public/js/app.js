@@ -5,7 +5,7 @@ var globalTemplate = '<div compile-html="data"></div>';
 var kdig = angular.module('KdigApp', [
 //        'ui.compat', 
         'KdigApp.filters', 
-        'KdigApp.services', 
+//        'KdigApp.services', 
         'KdigApp.directives', 
         'KdigApp.controllers', 
         'http-auth-interceptor'
