@@ -3,13 +3,14 @@
 var globalTemplate = '<div compile-html="data"></div>';
 // Declare app level module which depends on filters, and services
 var kdig = angular.module('KdigApp', [
+        'ui.router',
+        'ui.state',
         'ui.compat', 
         'KdigApp.filters', 
 //        'KdigApp.services', 
         'KdigApp.directives', 
         'KdigApp.controllers', 
         'http-auth-interceptor',
-        'ui.router',
         'http-auth-interceptor'
             ])
             .constant('prefix', '/app_dev.php')
