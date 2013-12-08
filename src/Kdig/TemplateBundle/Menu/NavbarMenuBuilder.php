@@ -65,6 +65,10 @@ class NavbarMenuBuilder
             'icon' => 'info-sign',
             'route' => 'default_about',
         ));
+        $layout = $menu->addChild('About', array(
+            'icon' => 'info-sign',
+            'uri' => '!example',
+        ));
 
 //        $this->addDivider($menu, true);
         return $menu;
